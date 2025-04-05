@@ -1,0 +1,165 @@
+@theme {
+  /* Primary Colors - Black */
+  --color-black-50: rgba(249, 249, 249, 1);
+  --color-black-100: rgba(242, 242, 242, 1);
+  --color-black-200: rgba(221, 221, 221, 1);
+  --color-black-300: rgba(189, 189, 189, 1);
+  --color-black-400: rgba(157, 159, 161, 1);
+  --color-black-500: rgba(75, 75, 75, 1);
+  --color-black-600: rgba(56, 56, 56, 1);
+  --color-black-700: rgba(40, 40, 40, 1);
+  --color-black-800: rgba(17, 17, 17, 1);
+  --color-black-900: rgba(0, 0, 0, 1);
+
+  /* Primary Colors - Orange */
+  --color-orange-50: rgba(255, 234, 216, 1);
+  --color-orange-100: rgba(254, 209, 170, 1);
+  --color-orange-200: rgba(254, 188, 133, 1);
+  --color-orange-300: rgba(254, 167, 95, 1);
+  --color-orange-400: rgba(253, 147, 58, 1);
+  --color-orange-500: rgba(253, 126, 20, 1);
+  --color-orange-600: rgba(213, 106, 17, 1);
+  --color-orange-700: rgba(172, 86, 14, 1);
+  --color-orange-800: rgba(132, 66, 10, 1);
+  --color-orange-900: rgba(91, 45, 7, 1);
+
+  /* Secondary Colors - Purple */
+  --color-purple-50: rgba(233, 221, 255, 1);
+  --color-purple-100: rgba(203, 187, 233, 1);
+  --color-purple-200: rgba(180, 157, 223, 1);
+  --color-purple-300: rgba(157, 126, 213, 1);
+  --color-purple-400: rgba(134, 96, 203, 1);
+  --color-purple-500: rgba(111, 66, 193, 1);
+  --color-purple-600: rgba(93, 55, 162, 1);
+  --color-purple-700: rgba(75, 45, 131, 1);
+  --color-purple-800: rgba(58, 34, 100, 1);
+  --color-purple-900: rgba(40, 24, 69, 1);
+
+  /* Additional Colors */
+  --color-brand: rgba(255, 240, 227, 1);
+  --color-white: #fff;
+  --color-black: #000;
+
+  /* Font Families */
+  --font-sans: Inter, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+  --font-display: Inter, sans-serif;
+  --font-heading: Inter, sans-serif;
+  --font-body: Inter, sans-serif;
+  --font-button: Inter, sans-serif;
+
+  /* Spacing */
+  --spacing: 0.25rem;
+
+  /* Breakpoints */
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 96rem;
+
+  /* Container sizes */
+  --container-sm: 24rem;
+  --container-md: 28rem;
+  --container-lg: 32rem;
+  --container-xl: 36rem;
+  --container-2xl: 42rem;
+  --container-3xl: 48rem;
+  --container-4xl: 56rem;
+  --container-5xl: 64rem;
+  --container-6xl: 72rem;
+  --container-7xl: 80rem;
+
+  /* Font sizes with line heights */
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1rem;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.25rem;
+  --text-base: 1rem;
+  --text-base--line-height: 1.5rem;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.75rem;
+  --text-xl: 1.25rem;
+  --text-xl--line-height: 1.75rem;
+  --text-2xl: 1.5rem;
+  --text-2xl--line-height: 2rem;
+  --text-3xl: 1.875rem;
+  --text-3xl--line-height: 2.25rem;
+  --text-4xl: 2.25rem;
+  --text-4xl--line-height: 2.5rem;
+
+  /* Display sizes */
+  --text-display-1: 8.75rem;
+  --text-display-1--line-height: 9rem;
+  --text-display-1--letter-spacing: -7.5px;
+  --text-display-2: 6.875rem;
+  --text-display-2--line-height: 7rem;
+  --text-display-2--letter-spacing: -5.5px;
+  --text-display-3: 6.125rem;
+  --text-display-3--line-height: 6.5rem;
+  --text-display-3--letter-spacing: -4.5px;
+
+  /* Heading sizes */
+  --text-h1: 5.25rem;
+  --text-h1--line-height: 5.563rem;
+  --text-h1--letter-spacing: -3.5px;
+  --text-h2: 3.938rem;
+  --text-h2--line-height: 4.563rem;
+  --text-h2--letter-spacing: -2.5px;
+  --text-h3: 3.375rem;
+  --text-h3--line-height: 3.938rem;
+  --text-h3--letter-spacing: -1.5px;
+  --text-h4: 2.625rem;
+  --text-h4--line-height: 2.875rem;
+  --text-h4--letter-spacing: -2px;
+  --text-h5: 2.125rem;
+  --text-h5--line-height: 2.5rem;
+  --text-h5--letter-spacing: -1px;
+  --text-h6: 1.75rem;
+  --text-h6--line-height: 2.125rem;
+  --text-h6--letter-spacing: -0.6px;
+  --text-h7: 1.25rem;
+  --text-h7--line-height: 1.75rem;
+  --text-h7--letter-spacing: 0px;
+
+  /* Font Weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Border Radius */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: 0.5rem;
+  --radius: 0.5rem;
+
+  /* Shadows */
+  --shadow-sm: 0px 1px 10px 0px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0px 16px 40px 0px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0px 8px 60px 0px rgba(0, 0, 0, 0.01);
+
+  /* Animation */
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --animate-accordion-down: accordion-down 0.2s var(--ease-in-out);
+  --animate-accordion-up: accordion-up 0.2s var(--ease-in-out);
+
+  /* Animation Keyframes */
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
