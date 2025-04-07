@@ -1,17 +1,58 @@
+import type { Metadata } from 'next';
 import './tailwind.css';
 
-export const metadata = {
-  description: 'A blank template using Payload in a Next.js app.',
-  title: 'Payload Blank Template',
+export const metadata: Metadata = {
+  description: "Srijan Srivastava's Portfolio, showcasing his work",
+  title: 'Srijan | Portfolio',
+  icons: {
+    icon: [
+      {
+        url: '/assets/favicons/favicon-16x16.png',
+        sizes: '16x16',
+        type: 'image/png',
+      },
+      {
+        url: '/assets/favicons/favicon-32x32.png',
+        sizes: '32x32',
+        type: 'image/png',
+      },
+      {
+        url: '/assets/favicons/favicon.ico',
+        sizes: 'any',
+      },
+    ],
+    apple: {
+      url: '/assets/favicons/apple-touch-icon.png',
+      sizes: '180x180',
+      type: 'image/png',
+    },
+    other: [
+      {
+        rel: 'android-chrome-192x192',
+        url: '/assets/favicons/android-chrome-192x192.png',
+        sizes: '192x192',
+        type: 'image/png',
+      },
+      {
+        rel: 'android-chrome-512x512',
+        url: '/assets/favicons/android-chrome-512x512.png',
+        sizes: '512x512',
+        type: 'image/png',
+      },
+      {
+        rel: 'manifest',
+        url: '/assets/favicons/site.webmanifest',
+      },
+    ],
+  },
 };
-
 export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props;
 
   return (
     <html lang="en">
       <body>
-        <main>{children}</main>
+        <main className="dark">{children}</main>
       </body>
     </html>
   );

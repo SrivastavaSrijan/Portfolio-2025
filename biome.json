@@ -11,7 +11,8 @@
 			"build",
 			".vercel",
 			"coverage",
-			"public"
+			"public",
+			"app/(payload)/**"
 		]
 	},
 	"formatter": {

@@ -3,43 +3,6 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
-@theme {
-  /* Black scale (keep if you want bg-black‑700, etc.) */
-  --color-black-50: oklch(0.985 0 0);
-  --color-black-100: oklch(0.967 0 0);
-  --color-black-200: oklch(0.922 0 0);
-  --color-black-300: oklch(0.87 0 0);
-  --color-black-400: oklch(0.708 0 0);
-  --color-black-500: oklch(0.556 0 0);
-  --color-black-600: oklch(0.439 0 0);
-  --color-black-700: oklch(0.269 0 0); /* <‑ you were using this */
-  --color-black-800: oklch(0.205 0 0);
-  --color-black-900: oklch(0.145 0 0);
-
-  /* Orange scale (primary) — converted from HSL 32 97 53 */
-  --color-orange-50: oklch(0.98 0.016 73.684);
-  --color-orange-100: oklch(0.954 0.038 75.164);
-  --color-orange-200: oklch(0.901 0.076 70.697);
-  --color-orange-300: oklch(0.837 0.128 66.29);
-  --color-orange-400: oklch(0.75 0.183 55.934);
-  --color-orange-500: oklch(0.705 0.213 47.604); /* <-- primary */
-  --color-orange-600: oklch(0.646 0.222 41.116);
-  --color-orange-700: oklch(0.553 0.195 38.402);
-  --color-orange-800: oklch(0.47 0.157 37.304);
-  --color-orange-900: oklch(0.408 0.123 38.172);
-
-  /* Purple scale (secondary) — converted from HSL 271 61 51 */
-  --color-purple-50: oklch(0.977 0.014 308.299);
-  --color-purple-100: oklch(0.946 0.033 307.174);
-  --color-purple-200: oklch(0.902 0.063 306.703);
-  --color-purple-300: oklch(0.827 0.119 306.383);
-  --color-purple-400: oklch(0.714 0.203 305.504);
-  --color-purple-500: oklch(0.627 0.265 303.9); /* <-- secondary */
-  --color-purple-600: oklch(0.558 0.288 302.321);
-  --color-purple-700: oklch(0.496 0.265 301.924);
-  --color-purple-800: oklch(0.438 0.218 303.724);
-  --color-purple-900: oklch(0.381 0.176 304.987);
-}
 
 /* ────────────────────────────────────────────────
    2. Semantic tokens that ShadCN components
@@ -53,7 +16,7 @@
     --background: var(--color-black-50); /* white */
     --foreground: var(--color-black-900); /* near‑black */
 
-    --primary: var(--color-orange-500);
+    --primary: var(--color-orange-300);
     --primary-foreground: var(--color-black-50);
 
     --secondary: var(--color-purple-500);
@@ -65,7 +28,7 @@
     --muted: var(--color-black-100);
     --muted-foreground: var(--color-black-600);
 
-    --destructive: oklch(0.577 0.245 27.325); /* red‑600 */
+    --destructive: var(--color-black-700);
     --destructive-foreground: var(--color-black-50);
 
     --card: var(--background);
@@ -87,7 +50,7 @@
   }
 
   .dark {
-    --background: var(--color-black-900);
+    --background: var(--color-black-700);
     --foreground: var(--color-black-50);
 
     --card: var(--color-black-800);
@@ -96,7 +59,7 @@
     --popover: var(--card);
     --popover-foreground: var(--foreground);
 
-    --primary: var(--color-orange-500);
+    --primary: var(--color-orange-300);
     --primary-foreground: var(--color-black-900);
 
     --secondary: var(--color-purple-500);
@@ -108,8 +71,8 @@
     --muted: var(--color-black-700);
     --muted-foreground: var(--color-black-400);
 
-    --destructive: oklch(0.704 0.191 22.216); /* red‑400 */
-    --destructive-foreground: var(--color-black-50);
+    --destructive: var(--color-black-50);
+    --destructive-foreground: var(--color-black-700);
 
     --border: oklch(1 0 0 / 0.1);
     --input: oklch(1 0 0 / 0.15);
