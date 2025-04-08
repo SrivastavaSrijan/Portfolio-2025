@@ -12,7 +12,13 @@
 			".vercel",
 			"coverage",
 			"public",
-			"app/(payload)/**"
+			"app/(payload)/**",
+			"src/gql/__generated__/**",
+			"src/gql/graphql/**",
+			"src/gql/gql.ts",
+			"src/gql/fragment-masking.ts",
+			"src/gql/graphql.ts",
+			"src/lib/graphql/__generated__/**"
 		]
 	},
 	"formatter": {

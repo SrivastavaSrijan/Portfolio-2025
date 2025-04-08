@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import './tailwind.css';
+import { ApolloWrapper } from '../../components/wrappers/ApolloWrapper';
+import { Toaster } from 'sonner';
 
 export const metadata: Metadata = {
   description: "Srijan Srivastava's Portfolio, showcasing his work",
@@ -46,13 +48,16 @@ export const metadata: Metadata = {
     ],
   },
 };
+
 export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props;
-
   return (
     <html lang="en">
       <body>
-        <main className="dark">{children}</main>
+        <ApolloWrapper>
+          <main className="dark">{children}</main>
+          <Toaster position="top-right" />
+        </ApolloWrapper>
       </body>
     </html>
   );

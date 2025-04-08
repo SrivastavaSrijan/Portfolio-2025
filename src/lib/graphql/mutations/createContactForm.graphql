@@ -1,0 +1,10 @@
+mutation CreateContactForm($name: String!, $email: String!, $subject: String!, $message: String!) {
+  createContactForm(data: { name: $name, email: $email, subject: $subject, message: $message }) {
+    id
+    name
+    email
+    subject
+    message
+    status
+  }
+}

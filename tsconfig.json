@@ -28,7 +28,10 @@
       ],
       "@payload-config": [
         "./src/payload.config.ts"
-      ]
+      ],
+      "@graphql-codegen": [
+        "./src/lib/graphql/__generated__/hooks.ts"
+      ],
     }
   },
   "include": [

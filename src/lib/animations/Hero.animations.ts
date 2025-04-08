@@ -1,6 +1,6 @@
 import type { Variants } from 'framer-motion';
 
-// Container variants with more subtle staggering
+// Page section animation variants
 export const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -13,7 +13,7 @@ export const containerVariants: Variants = {
   },
 };
 
-// Item variants with more subtle, natural physics
+// Text element animation variants with subtle physics
 export const itemVariants: Variants = {
   hidden: {
     opacity: 0,
@@ -39,6 +39,7 @@ export const itemVariants: Variants = {
   },
 };
 
+// Paragraph animation variants
 export const paragraphVariants: Variants = {
   hidden: {
     opacity: 0,
@@ -51,7 +52,6 @@ export const paragraphVariants: Variants = {
       damping: 20,
       mass: 1,
       delay: 0.1,
-
       duration: 0.6,
     },
   },
@@ -67,83 +67,54 @@ export const paragraphVariants: Variants = {
   },
 };
 
-// Enhanced variant for the profile image with subtle physics
-export const imageVariants: Variants = {
+// Profile toggle animation variants
+export const toggleKnobVariants: Variants = {
   hidden: {
     opacity: 0,
-    x: -15,
-    filter: 'blur(3px)',
+    scale: 0.9,
   },
   visible: {
     opacity: 1,
-    x: 0,
-    filter: 'blur(0px)',
+    scale: 1,
     transition: {
-      type: 'spring',
-      stiffness: 60,
-      damping: 16,
-      mass: 1,
-    },
-  },
-  hover: {
-    scale: 1.05,
-    rotate: 2,
-    transition: {
-      type: 'spring',
-      stiffness: 300,
-      damping: 10,
-      mass: 1.2,
-    },
-  },
-  exit: {
-    opacity: 0,
-    scale: 0.9,
-    x: -50,
-    transition: {
-      duration: 0.5,
-      ease: 'easeInOut',
+      duration: 0.6,
+      ease: 'easeOut',
     },
   },
   pulse: {
-    scale: [1, 1.03, 1],
-    opacity: [1, 0.8, 1],
-    rotate: [0, 1, 0],
+    scale: [1, 1.05, 1],
     transition: {
-      duration: 2.5,
+      duration: 2,
       ease: 'easeInOut',
-      times: [0, 0.5, 1],
       repeat: Number.POSITIVE_INFINITY,
-      repeatDelay: 3,
-    },
-  },
-  // Subtle, continuous fluid motion inspired by macOS dock
-  subtle: {
-    opacity: 1,
-    filter: 'blur(0px)',
-    y: [0, -2, 0],
-    x: [0, 2, 0],
-    transition: {
-      y: {
-        duration: 4,
-        repeat: Number.POSITIVE_INFINITY,
-        ease: 'easeInOut',
-        repeatType: 'reverse',
-      },
+      repeatType: 'reverse',
     },
   },
 };
 
-// Toggle container animation variants - removed, using direct controls instead
 export const toggleContainerVariants: Variants = {
-  // We're now handling this with useAnimation directly in the component
+  hidden: {
+    opacity: 0,
+    y: 10,
+    backgroundColor: 'var(--color-orange-300)',
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    backgroundColor: 'var(--color-orange-300)',
+    transition: { duration: 0.5 },
+  },
+  toggled: {
+    backgroundColor: 'var(--color-orange-500)',
+    transition: { duration: 0.3 },
+  },
+  untoggled: {
+    backgroundColor: 'var(--color-orange-300)',
+    transition: { duration: 0.3 },
+  },
 };
 
-// Knob/image animation variants - removed, using direct controls instead
-export const toggleKnobVariants: Variants = {
-  // We're now handling this with useAnimation directly in the component
-};
-
-// Subtle phrase variant for tagline
+// Tagline animation variants
 export const phraseVariants: Variants = {
   hidden: {
     opacity: 0,
@@ -158,17 +129,9 @@ export const phraseVariants: Variants = {
       duration: 0.8,
     },
   },
-  exit: {
-    opacity: 0,
-    y: -20,
-    transition: {
-      duration: 0.3,
-      ease: 'easeIn',
-    },
-  },
 };
 
-// Refined emphasis variant for "good" with sophisticated highlight
+// Outline animation for "good" text
 export const emphasisVariants: Variants = {
   hidden: {
     opacity: 0,
@@ -187,32 +150,63 @@ export const emphasisVariants: Variants = {
       mass: 1,
     },
   },
-  // Subtle background glow effect
-  glow: {
-    textShadow: [
-      '0px 0px 0px rgba(253, 126, 20, 0.0)',
-      '0px 0px 3px rgba(253, 126, 20, 0.4)',
-      '0px 0px 0px rgba(253, 126, 20, 0.0)',
-    ],
+  outlineAnim: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    strokeDasharray: ['100 0', '90 10', '80 20', '0 100', '20 80', '40 60', '100 0'],
+    strokeWidth: [1, 1.2, 1.5, 1.2, 1],
     transition: {
-      duration: 2.8,
-      repeat: Number.POSITIVE_INFINITY,
-      repeatType: 'reverse',
-      ease: 'easeInOut',
-    },
-  },
-  exit: {
-    opacity: 0,
-    scale: 1.2,
-    y: -30,
-    transition: {
-      duration: 0.6,
-      ease: 'backIn',
+      strokeDasharray: {
+        duration: 8,
+        ease: 'easeInOut',
+        repeat: Number.POSITIVE_INFINITY,
+        repeatType: 'loop',
+      },
+      strokeWidth: {
+        duration: 8,
+        ease: 'easeInOut',
+        repeat: Number.POSITIVE_INFINITY,
+        repeatType: 'loop',
+      },
+      opacity: { duration: 0 },
+      scale: { duration: 0 },
+      y: { duration: 0 },
     },
   },
 };
 
-// SVG path animation for underline effect
+// Fill animation for "good" text
+export const textFillVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    fillOpacity: 0,
+  },
+  initialFill: {
+    opacity: 1,
+    fillOpacity: 0.7,
+    transition: {
+      opacity: { duration: 0.1, ease: 'easeIn' },
+      fillOpacity: { duration: 0.8, ease: 'easeIn', delay: 1.2 },
+    },
+  },
+  fillAnim: {
+    opacity: 1,
+    fillOpacity: [0.6, 0.8, 0.6],
+    transition: {
+      fillOpacity: {
+        duration: 4,
+        times: [0, 0.5, 1],
+        ease: 'easeInOut',
+        repeat: Number.POSITIVE_INFINITY,
+        repeatType: 'loop',
+      },
+      opacity: { duration: 0 },
+    },
+  },
+};
+
+// Underline path animation
 export const underlinePathVariants: Variants = {
   hidden: {
     opacity: 0,
@@ -222,8 +216,8 @@ export const underlinePathVariants: Variants = {
     opacity: 1,
     pathLength: 1,
     transition: {
-      delay: 1.6,
-      duration: 0.8,
+      delay: 1.2,
+      duration: 1.0,
       ease: 'easeOut',
     },
   },

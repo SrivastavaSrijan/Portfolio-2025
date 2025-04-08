@@ -1,0 +1,16 @@
+query GetContactForms {
+  ContactForms(limit: 100) {
+    docs {
+      id
+      name
+      email
+      subject
+      message
+      status
+      createdAt
+    }
+    totalDocs
+    page
+    totalPages
+  }
+}

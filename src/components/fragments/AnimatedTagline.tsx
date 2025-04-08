@@ -4,6 +4,7 @@ import {
   phraseVariants,
   emphasisVariants,
   underlinePathVariants,
+  textFillVariants,
 } from '@/lib/animations/Hero.animations';
 
 interface AnimatedTaglineProps {
@@ -16,21 +17,57 @@ export const AnimatedTagline = ({ isClient, initialAnimComplete }: AnimatedTagli
     <div className="md:text-display-5 text-xl md:font-normal font-semibold text-brand flex flex-wrap items-end gap-2 md:gap-3 relative">
       {isClient ? (
         <>
-          <motion.span className="inline-block" variants={phraseVariants}>
+          <motion.span
+            className="inline-block"
+            variants={phraseVariants}
+            initial="hidden"
+            animate="visible"
+          >
             I make things look
           </motion.span>
 
           <div className="inline-block relative">
-            <motion.span
-              className="inline-block font-bold relative text-orange-300"
-              style={{ fontSize: '108%' }}
-              variants={emphasisVariants}
-              animate={initialAnimComplete ? 'glow' : 'visible'}
+            <svg
+              className="inline-block w-[70px] md:w-[100px] lg:w-[120px] xl:w-[140px] h-[40px] md:h-[55px] lg:h-[65px]"
+              viewBox="0 0 100 50"
+              preserveAspectRatio="xMidYMid meet"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              good
-            </motion.span>
+              <title>Good</title>
+              {/* Outline text */}
+              <motion.text
+                x="10"
+                y="35"
+                fontSize="32"
+                fontWeight="bold"
+                fill="none"
+                stroke="var(--color-orange-300)"
+                strokeWidth="1"
+                variants={emphasisVariants}
+                initial="hidden"
+                animate={initialAnimComplete ? 'outlineAnim' : 'visible'}
+                className="font-bold"
+              >
+                good
+              </motion.text>
 
-            {/* SVG underline for the "good" part */}
+              {/* Fill text */}
+              <motion.text
+                x="10"
+                y="35"
+                fontSize="32"
+                fontWeight="bold"
+                fill="var(--color-orange-300)"
+                variants={textFillVariants}
+                initial="hidden"
+                animate={initialAnimComplete ? 'fillAnim' : 'initialFill'}
+                className="font-bold"
+              >
+                good
+              </motion.text>
+            </svg>
+
+            {/* Underline */}
             <svg
               className="absolute -bottom-1 left-0 w-full"
               height="6"
@@ -51,12 +88,7 @@ export const AnimatedTagline = ({ isClient, initialAnimComplete }: AnimatedTagli
           </div>
         </>
       ) : (
-        <span className="inline-block">
-          I make things look{' '}
-          <span className="font-bold text-orange-300" style={{ fontSize: '108%' }}>
-            good
-          </span>
-        </span>
+        <span className="inline-block">I make things look good</span>
       )}
     </div>
   );
