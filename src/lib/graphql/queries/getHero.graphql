@@ -1,0 +1,14 @@
+query GetHero {
+  Hero {
+    name
+    title
+    taglines {
+      text
+    }
+    description
+    buttons {
+      text
+      url
+    }
+  }
+}

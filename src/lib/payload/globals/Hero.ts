@@ -1,0 +1,68 @@
+import type { GlobalConfig } from 'payload';
+
+export const Hero: GlobalConfig = {
+  slug: 'hero',
+  access: {
+    read: () => true,
+  },
+  fields: [
+    {
+      name: 'name',
+      type: 'text',
+      label: 'Your Name',
+      required: true,
+      defaultValue: 'Srijan.',
+    },
+    {
+      name: 'title',
+      type: 'text',
+      label: 'Your Title',
+      required: true,
+      defaultValue: 'frontend / fullstack',
+    },
+    {
+      name: 'taglines',
+      type: 'array',
+      label: 'Taglines (will be animated)',
+      required: true,
+      minRows: 1,
+      fields: [
+        {
+          name: 'text',
+          type: 'text',
+          required: true,
+        },
+      ],
+      defaultValue: [
+        { text: 'building digital products with empathy.' },
+        { text: 'crafting elegant solutions to complex problems.' },
+      ],
+    },
+    {
+      name: 'description',
+      type: 'richText',
+      label: 'Description Sentences',
+      required: true,
+    },
+    {
+      name: 'buttons',
+      type: 'array',
+      label: 'buttons',
+      required: true,
+      fields: [
+        {
+          name: 'text',
+          type: 'text',
+          label: 'Button Text',
+          required: true,
+        },
+        {
+          name: 'url',
+          type: 'text',
+          label: 'Button URL',
+          required: true,
+        },
+      ],
+    },
+  ],
+};

@@ -7,7 +7,7 @@ import {
   useToggleKnobAnimation,
   useToggleContainerAnimation,
 } from '@/lib/animations';
-import { useResizeObserver } from '@/hooks';
+import { useResizeObserver } from '@/lib/hooks';
 
 interface ProfileToggleProps {
   initialAnimComplete: boolean;
@@ -66,7 +66,7 @@ export const ProfileToggle = ({ initialAnimComplete }: ProfileToggleProps) => {
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1 }}
       >
-        <img src={AssetsMap.Images.Face} alt="Face" className="object-cover h-full w-full" />
+        <img src={AssetsMap.RemoteImages.Face} alt="Face" className="object-cover h-full w-full" />
       </motion.div>
     </motion.div>
   );

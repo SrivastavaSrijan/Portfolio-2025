@@ -57,5 +57,3 @@ export const ContactForms: CollectionConfig = {
     },
   ],
 };
-
-export default ContactForms;

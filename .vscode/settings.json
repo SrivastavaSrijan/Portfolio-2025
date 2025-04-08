@@ -4,4 +4,5 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": "always",
   },
+  "workbench.colorTheme": "One Dark Pro Darker"
 }

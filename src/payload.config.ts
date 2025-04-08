@@ -6,9 +6,8 @@ import path from 'node:path';
 import { buildConfig } from 'payload';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
-import { Users } from './collections/Users';
-import { Media } from './collections/Media';
-import { ContactForms } from './collections/ContactForms';
+import { Users, Media, ContactForms } from './lib/payload/collections';
+import { Hero } from './lib/payload/globals';
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -21,6 +20,7 @@ export default buildConfig({
     },
   },
   collections: [Users, Media, ContactForms],
+  globals: [Hero],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {

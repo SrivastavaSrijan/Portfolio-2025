@@ -2,6 +2,7 @@
 import { motion, useAnimation } from 'framer-motion';
 import { useTaglineAnimation } from '@/lib/animations';
 import { useEffect, useState, useRef } from 'react';
+import { useGetHeroSuspenseQuery } from '@/lib/graphql/__generated__/hooks';
 
 interface AnimatedTaglineProps {
   isClient: boolean;
@@ -14,6 +15,9 @@ export const AnimatedTagline = ({ isClient, initialAnimComplete }: AnimatedTagli
   const controls = useAnimation();
   const textRef = useRef<SVGTextElement>(null);
 
+  const { data = {} } = useGetHeroSuspenseQuery();
+  const { taglines = [] } = data?.Hero ?? {};
+  const [leadingText, animatedText] = taglines;
   // Get animation values from custom hook
   const { fillOpacity, strokeDasharray, strokeWidth, pathLength } = useTaglineAnimation(
     isClient,
@@ -63,18 +67,18 @@ export const AnimatedTagline = ({ isClient, initialAnimComplete }: AnimatedTagli
               damping: 15,
             }}
           >
-            i make things look
+            {leadingText?.text}
           </motion.span>
 
           {/* "good" text with SVG effects */}
           <div className="inline-block relative md:top-2 top-1.5">
             <svg
-              className="inline-block w-[80px] md:w-[110px] lg:w-[140px] xl:w-[160px] h-[45px] md:h-[60px] lg:h-[70px] xl:h-[80px]"
+              className="inline-block w-[80px] md:w-[110px] lg:w-[140px] xl:w-[160px] h-[42px] md:h-[60px] lg:h-[70px] xl:h-[80px]"
               viewBox="0 0 100 50"
               preserveAspectRatio="xMidYMid meet"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <title>good</title>
+              <title>{animatedText?.text}</title>
               {/* Outline text */}
               <motion.text
                 ref={textRef}
@@ -89,7 +93,7 @@ export const AnimatedTagline = ({ isClient, initialAnimComplete }: AnimatedTagli
                 initial={{ opacity: 1 }}
                 animate={{ opacity: 1 }}
               >
-                good
+                {animatedText?.text}
               </motion.text>
 
               {/* Fill text */}
@@ -104,13 +108,13 @@ export const AnimatedTagline = ({ isClient, initialAnimComplete }: AnimatedTagli
                 initial={{ opacity: 1 }}
                 animate={{ opacity: 1 }}
               >
-                good
+                {animatedText?.text}
               </motion.text>
             </svg>
 
             {/* Underline - positioned based on text width */}
             <svg
-              className="absolute -bottom-1 left-0 w-full"
+              className="absolute md:-bottom-1 -bottom-0 left-0 w-full"
               height="8"
               viewBox="0 0 100 8"
               preserveAspectRatio="none"
@@ -128,7 +132,9 @@ export const AnimatedTagline = ({ isClient, initialAnimComplete }: AnimatedTagli
           </div>
         </>
       ) : (
-        <span className="inline-block">i make things look good</span>
+        <span className="inline-block">
+          {leadingText?.text} {animatedText?.text}
+        </span>
       )}
     </div>
   );

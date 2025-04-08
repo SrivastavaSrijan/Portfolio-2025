@@ -11,4 +11,10 @@ export const AssetsMap = {
       return `${this.root}face.png`;
     },
   },
+  RemoteImages: {
+    root: '/api/media/file/',
+    get Face() {
+      return `${this.root}face-1.png`;
+    },
+  },
 };
