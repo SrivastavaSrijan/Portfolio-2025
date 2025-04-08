@@ -1,6 +1,6 @@
 import type { GlobalConfig } from 'payload';
 
-export const Hero: GlobalConfig = {
+const Hero: GlobalConfig = {
   slug: 'hero',
   access: {
     read: () => true,
@@ -66,3 +66,5 @@ export const Hero: GlobalConfig = {
     },
   ],
 };
+
+export default Hero;
