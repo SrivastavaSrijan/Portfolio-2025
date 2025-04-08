@@ -2,10 +2,7 @@ import { Suspense } from 'react';
 import { Hero } from '@/components/sections';
 import { Navbar, Skeleton } from '@/components/ui';
 
-// This makes the page static at build time and prevents prerender errors
-export const dynamic = 'error';
-// Alternatively, use force-dynamic if you need truly dynamic content
-// export const dynamic = 'force-dynamic';
+export const dynamic = 'force-dynamic';
 
 export default function HomePage() {
   return (
