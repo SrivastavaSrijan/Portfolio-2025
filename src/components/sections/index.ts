@@ -1,2 +1,2 @@
 export * from './Hero';
-export * from './ContactForm';
+export * from '../fragments/ContactForm';

@@ -1,11 +1,7 @@
 'use client';
-import { motion } from 'framer-motion';
-import {
-  phraseVariants,
-  emphasisVariants,
-  underlinePathVariants,
-  textFillVariants,
-} from '@/lib/animations/Hero.animations';
+import { motion, useAnimation } from 'framer-motion';
+import { useTaglineAnimation } from '@/lib/animations';
+import { useEffect, useState, useRef } from 'react';
 
 interface AnimatedTaglineProps {
   isClient: boolean;
@@ -13,82 +9,126 @@ interface AnimatedTaglineProps {
 }
 
 export const AnimatedTagline = ({ isClient, initialAnimComplete }: AnimatedTaglineProps) => {
+  // Responsive font size based on viewport width
+  const [fontSize, setFontSize] = useState(32);
+  const controls = useAnimation();
+  const textRef = useRef<SVGTextElement>(null);
+
+  // Get animation values from custom hook
+  const { fillOpacity, strokeDasharray, strokeWidth, pathLength } = useTaglineAnimation(
+    isClient,
+    initialAnimComplete
+  );
+
+  // Update font size based on viewport
+  useEffect(() => {
+    const updateFontSize = () => {
+      if (window.innerWidth < 640) {
+        setFontSize(28);
+      } else if (window.innerWidth < 1024) {
+        setFontSize(32);
+      } else if (window.innerWidth < 1280) {
+        setFontSize(36);
+      } else {
+        setFontSize(42);
+      }
+    };
+
+    updateFontSize();
+    window.addEventListener('resize', updateFontSize);
+    return () => window.removeEventListener('resize', updateFontSize);
+  }, []);
+
+  // Start phrase animation as soon as possible
+  useEffect(() => {
+    if (isClient) {
+      // Force immediate animation on client side
+      controls.start('visible');
+    }
+  }, [isClient, controls]);
+
   return (
     <div className="md:text-display-5 text-xl md:font-normal font-semibold text-brand flex flex-wrap items-end gap-2 md:gap-3 relative">
       {isClient ? (
         <>
+          {/* "I make things look" text */}
           <motion.span
             className="inline-block"
-            variants={phraseVariants}
-            initial="hidden"
-            animate="visible"
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              type: 'spring',
+              duration: 0.8,
+              stiffness: 100,
+              damping: 15,
+            }}
           >
-            I make things look
+            i make things look
           </motion.span>
 
-          <div className="inline-block relative">
+          {/* "good" text with SVG effects */}
+          <div className="inline-block relative md:top-2 top-1.5">
             <svg
-              className="inline-block w-[70px] md:w-[100px] lg:w-[120px] xl:w-[140px] h-[40px] md:h-[55px] lg:h-[65px]"
+              className="inline-block w-[80px] md:w-[110px] lg:w-[140px] xl:w-[160px] h-[45px] md:h-[60px] lg:h-[70px] xl:h-[80px]"
               viewBox="0 0 100 50"
               preserveAspectRatio="xMidYMid meet"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <title>Good</title>
+              <title>good</title>
               {/* Outline text */}
               <motion.text
-                x="10"
+                ref={textRef}
+                x="5"
                 y="35"
-                fontSize="32"
+                fontSize={fontSize}
                 fontWeight="bold"
                 fill="none"
                 stroke="var(--color-orange-300)"
-                strokeWidth="1"
-                variants={emphasisVariants}
-                initial="hidden"
-                animate={initialAnimComplete ? 'outlineAnim' : 'visible'}
                 className="font-bold"
+                style={{ strokeDasharray, strokeWidth }}
+                initial={{ opacity: 1 }}
+                animate={{ opacity: 1 }}
               >
                 good
               </motion.text>
 
               {/* Fill text */}
               <motion.text
-                x="10"
+                x="5"
                 y="35"
-                fontSize="32"
+                fontSize={fontSize}
                 fontWeight="bold"
                 fill="var(--color-orange-300)"
-                variants={textFillVariants}
-                initial="hidden"
-                animate={initialAnimComplete ? 'fillAnim' : 'initialFill'}
                 className="font-bold"
+                style={{ fillOpacity }}
+                initial={{ opacity: 1 }}
+                animate={{ opacity: 1 }}
               >
                 good
               </motion.text>
             </svg>
 
-            {/* Underline */}
+            {/* Underline - positioned based on text width */}
             <svg
               className="absolute -bottom-1 left-0 w-full"
-              height="6"
-              viewBox="0 0 100 6"
+              height="8"
+              viewBox="0 0 100 8"
               preserveAspectRatio="none"
             >
               <title>Underline</title>
               <motion.path
-                d="M0,3 Q25,6 50,3 T100,3"
+                d="M0,4 Q25,8 50,4 T100,4"
                 stroke="var(--color-orange-400)"
-                strokeWidth="2"
+                strokeWidth="2.5"
                 fill="none"
-                variants={underlinePathVariants}
-                initial="hidden"
-                animate="visible"
+                style={{ pathLength }}
+                initial={{ opacity: 1 }}
               />
             </svg>
           </div>
         </>
       ) : (
-        <span className="inline-block">I make things look good</span>
+        <span className="inline-block">i make things look good</span>
       )}
     </div>
   );

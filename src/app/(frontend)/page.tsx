@@ -1,4 +1,4 @@
-import { Hero, ContactForm } from '@/components/sections';
+import { Hero } from '@/components/sections';
 import { Navbar } from '@/components/ui';
 
 export default async function HomePage() {
@@ -6,7 +6,6 @@ export default async function HomePage() {
     <div className="home bg-background min-h-screen flex flex-col @container">
       <Navbar />
       <Hero />
-      <ContactForm />
     </div>
   );
 }

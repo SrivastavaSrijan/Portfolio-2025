@@ -1,41 +1,16 @@
 'use client';
-import { motion, AnimatePresence, useAnimation } from 'framer-motion';
-import {
-  containerVariants,
-  itemVariants,
-  paragraphVariants,
-} from '@/lib/animations/Hero.animations';
-import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { containerVariants, itemVariants, paragraphVariants } from '@/lib/animations';
 import { ProfileToggle, AnimatedTagline } from '@/components/fragments';
 import { Button } from '../ui';
+import { useClientSide, useAnimationSequence } from '@/hooks';
+import { ContactForm } from '../fragments/ContactForm';
 
 export const Hero = () => {
-  const [isClient, setIsClient] = useState(false);
-  const [initialAnimComplete, setInitialAnimComplete] = useState(false);
-  const mainControls = useAnimation();
-
-  // Handle client-side rendering detection
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  // Orchestrate the main animation sequence
-  useEffect(() => {
-    const sequence = async () => {
-      if (isClient) {
-        // Start main animation
-        await mainControls.start('visible');
-
-        // Mark initial animation as complete after a slight delay
-        // This ensures any state-based transitions have a smooth handoff
-        setTimeout(() => {
-          setInitialAnimComplete(true);
-        }, 200);
-      }
-    };
-
-    sequence();
-  }, [isClient, mainControls]);
+  const isClient = useClientSide();
+  const { controls, isAnimationComplete } = useAnimationSequence({
+    shouldAnimate: isClient,
+  });
 
   return (
     <AnimatePresence mode="wait">
@@ -43,7 +18,7 @@ export const Hero = () => {
         key="hero-section"
         className="flex flex-col md:px-20 md:py-10 md:gap-15 py-5 px-5 gap-7 flex-grow h-full"
         initial="hidden"
-        animate={mainControls}
+        animate={controls}
         exit="exit"
         variants={containerVariants}
       >
@@ -56,17 +31,17 @@ export const Hero = () => {
           </motion.h1>
           <span className="md:basis basis-full md:hidden flex" />
 
-          <ProfileToggle initialAnimComplete={initialAnimComplete} />
+          <ProfileToggle initialAnimComplete={isAnimationComplete} />
         </div>
         <div className="flex flex-col md:gap-2 gap-1">
           <motion.h2
             className="md:text-display-2 text-3xl md:font-normal font-medium text-brand"
             variants={itemVariants}
           >
-            Frontend Developer.
+            frontend / fullstack
           </motion.h2>
 
-          <AnimatedTagline isClient={isClient} initialAnimComplete={initialAnimComplete} />
+          <AnimatedTagline isClient={isClient} initialAnimComplete={isAnimationComplete} />
         </div>
         <motion.div
           className="md:gap-5 gap-2"
@@ -85,7 +60,9 @@ export const Hero = () => {
           </p>
         </motion.div>
         <div className="flex flex-row md:mt-32 mt-10">
-          <Button variant="link">Get in touch</Button>
+          <ContactForm>
+            <Button variant="link">Get in touch</Button>
+          </ContactForm>
         </div>
       </motion.div>
     </AnimatePresence>
