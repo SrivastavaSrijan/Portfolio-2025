@@ -62,7 +62,11 @@
         "noDangerouslySetInnerHtml": "warn"
       },
       "nursery": {
-        "useSortedClasses": "error"
+        "useSortedClasses": {
+          "level": "error",
+          "fix": "safe",
+          "options": {}
+        }
       },
       "style": {
         "noNonNullAssertion": "warn",

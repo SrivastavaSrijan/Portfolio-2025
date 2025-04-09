@@ -26,7 +26,7 @@ export function ContactForm({ children }: ContactFormProps) {
     message: '',
   });
 
-  const { submitContactForm, loading, success, resetForm } = useContactForm();
+  const { submitContactForm, loading } = useContactForm();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -41,7 +41,7 @@ export function ContactForm({ children }: ContactFormProps) {
       toast.success('Message sent successfully!');
       // Clear form
       setFormData({ name: '', email: '', subject: '', message: '' });
-    } catch (error) {
+    } catch (_error) {
       toast.error('Failed to send message. Please try again.');
     }
   };

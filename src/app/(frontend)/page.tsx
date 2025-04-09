@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import { Hero, Skills } from '@/components/sections';
-import { Navbar, Skeleton } from '@/components/ui';
+import { Skeleton } from '@/components/ui';
+import { Navbar } from '@/components/fragments';
 
 export const dynamic = 'force-dynamic';
 
