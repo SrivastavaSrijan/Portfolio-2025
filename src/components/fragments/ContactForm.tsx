@@ -54,14 +54,14 @@ export function ContactForm({ children }: ContactFormProps) {
       <DialogContent>
         <DialogHeader>
           <DialogTitle>
-            <p className="text-3xl font-bold">get in touch</p>
+            <p className="font-bold text-3xl">get in touch</p>
           </DialogTitle>
           <DialogDescription>
             if you'd like speak, please hmu and i'll get back to you as soon as possible.
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="name">Name</Label>
               <Input id="name" name="name" value={formData.name} onChange={handleChange} required />

@@ -52,7 +52,7 @@ export const AnimatedTagline = ({ isClient, initialAnimComplete }: AnimatedTagli
   }, [isClient, controls]);
 
   return (
-    <div className="md:text-display-5 text-xl md:font-normal font-semibold text-brand flex flex-wrap items-end gap-2 md:gap-3 relative">
+    <div className="relative flex flex-wrap items-end gap-2 font-semibold text-brand text-xl md:gap-3 md:font-normal md:text-display-5">
       {isClient ? (
         <>
           {/* "I make things look" text */}
@@ -71,9 +71,9 @@ export const AnimatedTagline = ({ isClient, initialAnimComplete }: AnimatedTagli
           </motion.span>
 
           {/* "good" text with SVG effects */}
-          <div className="inline-block relative md:top-2 top-1.5">
+          <div className="relative top-1.5 inline-block md:top-2">
             <svg
-              className="inline-block w-[80px] md:w-[110px] lg:w-[140px] xl:w-[160px] h-[42px] md:h-[60px] lg:h-[70px] xl:h-[80px]"
+              className="inline-block h-[42px] w-[80px] md:h-[60px] md:w-[110px] lg:h-[70px] lg:w-[140px] xl:h-[80px] xl:w-[160px]"
               viewBox="0 0 100 50"
               preserveAspectRatio="xMidYMid meet"
               xmlns="http://www.w3.org/2000/svg"
@@ -114,7 +114,7 @@ export const AnimatedTagline = ({ isClient, initialAnimComplete }: AnimatedTagli
 
             {/* Underline - positioned based on text width */}
             <svg
-              className="absolute md:-bottom-1 -bottom-0 left-0 w-full"
+              className="md:-bottom-1 -bottom-0 absolute left-0 w-full"
               height="8"
               viewBox="0 0 100 8"
               preserveAspectRatio="none"

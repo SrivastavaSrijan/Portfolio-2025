@@ -41,8 +41,7 @@ export const ProfileToggle = ({ initialAnimComplete }: ProfileToggleProps) => {
   return (
     <motion.div
       ref={ref}
-      className="rounded-r-full rounded-l-full md:w-72 w-60 md:h-30 h-20
-                relative cursor-pointer shadow-md overflow-hidden"
+      className="relative h-20 w-60 cursor-pointer overflow-hidden rounded-r-full rounded-l-full shadow-md md:h-30 md:w-72"
       variants={toggleContainerVariants}
       initial="hidden"
       animate="visible"
@@ -60,13 +59,12 @@ export const ProfileToggle = ({ initialAnimComplete }: ProfileToggleProps) => {
     >
       {/* Image as toggle knob */}
       <motion.div
-        className="h-full aspect-square flex items-center justify-center 
-                  overflow-hidden shadow-lg z-10 absolute top-0"
+        className="absolute top-0 z-10 flex aspect-square h-full items-center justify-center overflow-hidden shadow-lg"
         style={{ x, scale, opacity }}
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1 }}
       >
-        <img src={AssetsMap.RemoteImages.Face} alt="Face" className="object-cover h-full w-full" />
+        <img src={AssetsMap.RemoteImages.Face} alt="Face" className="h-full w-full object-cover" />
       </motion.div>
     </motion.div>
   );
