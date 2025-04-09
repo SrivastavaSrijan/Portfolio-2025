@@ -10,6 +10,7 @@ import Users from './lib/payload/collections/Users';
 import Media from './lib/payload/collections/Media';
 import ContactForms from './lib/payload/collections/ContactForms';
 import Hero from './lib/payload/globals/Hero';
+import Skills from './lib/payload/globals/Skills';
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -22,7 +23,7 @@ export default buildConfig({
     },
   },
   collections: [Users, Media, ContactForms],
-  globals: [Hero],
+  globals: [Hero, Skills],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {

@@ -20,7 +20,7 @@ export const Hero = () => {
     <AnimatePresence mode="wait">
       <motion.div
         key="hero-section"
-        className="dark flex h-full flex-grow flex-col gap-7 px-5 py-5 md:gap-15 md:px-20 md:py-10"
+        className="flex h-full flex-grow flex-col gap-7 px-5 py-5 md:gap-15 md:px-20 md:py-10"
         initial="hidden"
         animate={controls}
         exit="exit"

@@ -29,6 +29,7 @@ export type Access = {
   readonly media?: Maybe<MediaAccess>;
   readonly payload_locked_documents?: Maybe<Payload_Locked_DocumentsAccess>;
   readonly payload_preferences?: Maybe<Payload_PreferencesAccess>;
+  readonly skills?: Maybe<SkillsAccess>;
   readonly users?: Maybe<UsersAccess>;
 };
 
@@ -2425,6 +2426,7 @@ export type Mutation = {
   readonly updateMedia?: Maybe<Media>;
   readonly updatePayloadLockedDocument?: Maybe<PayloadLockedDocument>;
   readonly updatePayloadPreference?: Maybe<PayloadPreference>;
+  readonly updateSkill?: Maybe<Skill>;
   readonly updateUser?: Maybe<User>;
   readonly verifyEmailUser?: Maybe<Scalars['Boolean']['output']>;
 };
@@ -2568,6 +2570,12 @@ export type MutationUpdatePayloadPreferenceArgs = {
   data: MutationPayloadPreferenceUpdateInput;
   draft?: InputMaybe<Scalars['Boolean']['input']>;
   id: Scalars['Int']['input'];
+};
+
+
+export type MutationUpdateSkillArgs = {
+  data: MutationSkillInput;
+  draft?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
@@ -3623,6 +3631,7 @@ export type Query = {
   readonly PayloadLockedDocuments?: Maybe<PayloadLockedDocuments>;
   readonly PayloadPreference?: Maybe<PayloadPreference>;
   readonly PayloadPreferences?: Maybe<PayloadPreferences>;
+  readonly Skill?: Maybe<Skill>;
   readonly User?: Maybe<User>;
   readonly Users?: Maybe<Users>;
   readonly allMedia?: Maybe<AllMedia>;
@@ -3636,6 +3645,7 @@ export type Query = {
   readonly docAccessMedia?: Maybe<MediaDocAccess>;
   readonly docAccessPayloadLockedDocument?: Maybe<Payload_Locked_DocumentsDocAccess>;
   readonly docAccessPayloadPreference?: Maybe<Payload_PreferencesDocAccess>;
+  readonly docAccessSkill?: Maybe<SkillsDocAccess>;
   readonly docAccessUser?: Maybe<UsersDocAccess>;
   readonly initializedUser?: Maybe<Scalars['Boolean']['output']>;
   readonly meUser?: Maybe<UsersMe>;
@@ -3698,6 +3708,11 @@ export type QueryPayloadPreferencesArgs = {
   pagination?: InputMaybe<Scalars['Boolean']['input']>;
   sort?: InputMaybe<Scalars['String']['input']>;
   where?: InputMaybe<PayloadPreference_Where>;
+};
+
+
+export type QuerySkillArgs = {
+  draft?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
@@ -3779,6 +3794,533 @@ export type QueryDocAccessPayloadPreferenceArgs = {
 
 export type QueryDocAccessUserArgs = {
   id: Scalars['Int']['input'];
+};
+
+export type Skill = {
+  readonly __typename?: 'Skill';
+  readonly createdAt?: Maybe<Scalars['DateTime']['output']>;
+  readonly skills: ReadonlyArray<Skill_Skills>;
+  readonly subtitle?: Maybe<Scalars['String']['output']>;
+  readonly title: Scalars['String']['output'];
+  readonly updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type Skill_Skills = {
+  readonly __typename?: 'Skill_Skills';
+  readonly description?: Maybe<Scalars['JSON']['output']>;
+  readonly id?: Maybe<Scalars['String']['output']>;
+  readonly name?: Maybe<Scalars['String']['output']>;
+};
+
+
+export type Skill_SkillsDescriptionArgs = {
+  depth?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export type SkillsDocAccessFields = {
+  readonly __typename?: 'SkillsDocAccessFields';
+  readonly createdAt?: Maybe<SkillsDocAccessFields_CreatedAt>;
+  readonly skills?: Maybe<SkillsDocAccessFields_Skills>;
+  readonly subtitle?: Maybe<SkillsDocAccessFields_Subtitle>;
+  readonly title?: Maybe<SkillsDocAccessFields_Title>;
+  readonly updatedAt?: Maybe<SkillsDocAccessFields_UpdatedAt>;
+};
+
+export type SkillsDocAccessFields_CreatedAt = {
+  readonly __typename?: 'SkillsDocAccessFields_createdAt';
+  readonly create?: Maybe<SkillsDocAccessFields_CreatedAt_Create>;
+  readonly delete?: Maybe<SkillsDocAccessFields_CreatedAt_Delete>;
+  readonly read?: Maybe<SkillsDocAccessFields_CreatedAt_Read>;
+  readonly update?: Maybe<SkillsDocAccessFields_CreatedAt_Update>;
+};
+
+export type SkillsDocAccessFields_CreatedAt_Create = {
+  readonly __typename?: 'SkillsDocAccessFields_createdAt_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_CreatedAt_Delete = {
+  readonly __typename?: 'SkillsDocAccessFields_createdAt_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_CreatedAt_Read = {
+  readonly __typename?: 'SkillsDocAccessFields_createdAt_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_CreatedAt_Update = {
+  readonly __typename?: 'SkillsDocAccessFields_createdAt_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_Skills = {
+  readonly __typename?: 'SkillsDocAccessFields_skills';
+  readonly create?: Maybe<SkillsDocAccessFields_Skills_Create>;
+  readonly delete?: Maybe<SkillsDocAccessFields_Skills_Delete>;
+  readonly fields?: Maybe<SkillsDocAccessFields_Skills_Fields>;
+  readonly read?: Maybe<SkillsDocAccessFields_Skills_Read>;
+  readonly update?: Maybe<SkillsDocAccessFields_Skills_Update>;
+};
+
+export type SkillsDocAccessFields_Skills_Create = {
+  readonly __typename?: 'SkillsDocAccessFields_skills_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_Skills_Delete = {
+  readonly __typename?: 'SkillsDocAccessFields_skills_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_Skills_Fields = {
+  readonly __typename?: 'SkillsDocAccessFields_skills_Fields';
+  readonly description?: Maybe<SkillsDocAccessFields_Skills_Description>;
+  readonly id?: Maybe<SkillsDocAccessFields_Skills_Id>;
+  readonly name?: Maybe<SkillsDocAccessFields_Skills_Name>;
+};
+
+export type SkillsDocAccessFields_Skills_Read = {
+  readonly __typename?: 'SkillsDocAccessFields_skills_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_Skills_Update = {
+  readonly __typename?: 'SkillsDocAccessFields_skills_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_Skills_Description = {
+  readonly __typename?: 'SkillsDocAccessFields_skills_description';
+  readonly create?: Maybe<SkillsDocAccessFields_Skills_Description_Create>;
+  readonly delete?: Maybe<SkillsDocAccessFields_Skills_Description_Delete>;
+  readonly read?: Maybe<SkillsDocAccessFields_Skills_Description_Read>;
+  readonly update?: Maybe<SkillsDocAccessFields_Skills_Description_Update>;
+};
+
+export type SkillsDocAccessFields_Skills_Description_Create = {
+  readonly __typename?: 'SkillsDocAccessFields_skills_description_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_Skills_Description_Delete = {
+  readonly __typename?: 'SkillsDocAccessFields_skills_description_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_Skills_Description_Read = {
+  readonly __typename?: 'SkillsDocAccessFields_skills_description_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_Skills_Description_Update = {
+  readonly __typename?: 'SkillsDocAccessFields_skills_description_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_Skills_Id = {
+  readonly __typename?: 'SkillsDocAccessFields_skills_id';
+  readonly create?: Maybe<SkillsDocAccessFields_Skills_Id_Create>;
+  readonly delete?: Maybe<SkillsDocAccessFields_Skills_Id_Delete>;
+  readonly read?: Maybe<SkillsDocAccessFields_Skills_Id_Read>;
+  readonly update?: Maybe<SkillsDocAccessFields_Skills_Id_Update>;
+};
+
+export type SkillsDocAccessFields_Skills_Id_Create = {
+  readonly __typename?: 'SkillsDocAccessFields_skills_id_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_Skills_Id_Delete = {
+  readonly __typename?: 'SkillsDocAccessFields_skills_id_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_Skills_Id_Read = {
+  readonly __typename?: 'SkillsDocAccessFields_skills_id_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_Skills_Id_Update = {
+  readonly __typename?: 'SkillsDocAccessFields_skills_id_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_Skills_Name = {
+  readonly __typename?: 'SkillsDocAccessFields_skills_name';
+  readonly create?: Maybe<SkillsDocAccessFields_Skills_Name_Create>;
+  readonly delete?: Maybe<SkillsDocAccessFields_Skills_Name_Delete>;
+  readonly read?: Maybe<SkillsDocAccessFields_Skills_Name_Read>;
+  readonly update?: Maybe<SkillsDocAccessFields_Skills_Name_Update>;
+};
+
+export type SkillsDocAccessFields_Skills_Name_Create = {
+  readonly __typename?: 'SkillsDocAccessFields_skills_name_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_Skills_Name_Delete = {
+  readonly __typename?: 'SkillsDocAccessFields_skills_name_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_Skills_Name_Read = {
+  readonly __typename?: 'SkillsDocAccessFields_skills_name_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_Skills_Name_Update = {
+  readonly __typename?: 'SkillsDocAccessFields_skills_name_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_Subtitle = {
+  readonly __typename?: 'SkillsDocAccessFields_subtitle';
+  readonly create?: Maybe<SkillsDocAccessFields_Subtitle_Create>;
+  readonly delete?: Maybe<SkillsDocAccessFields_Subtitle_Delete>;
+  readonly read?: Maybe<SkillsDocAccessFields_Subtitle_Read>;
+  readonly update?: Maybe<SkillsDocAccessFields_Subtitle_Update>;
+};
+
+export type SkillsDocAccessFields_Subtitle_Create = {
+  readonly __typename?: 'SkillsDocAccessFields_subtitle_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_Subtitle_Delete = {
+  readonly __typename?: 'SkillsDocAccessFields_subtitle_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_Subtitle_Read = {
+  readonly __typename?: 'SkillsDocAccessFields_subtitle_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_Subtitle_Update = {
+  readonly __typename?: 'SkillsDocAccessFields_subtitle_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_Title = {
+  readonly __typename?: 'SkillsDocAccessFields_title';
+  readonly create?: Maybe<SkillsDocAccessFields_Title_Create>;
+  readonly delete?: Maybe<SkillsDocAccessFields_Title_Delete>;
+  readonly read?: Maybe<SkillsDocAccessFields_Title_Read>;
+  readonly update?: Maybe<SkillsDocAccessFields_Title_Update>;
+};
+
+export type SkillsDocAccessFields_Title_Create = {
+  readonly __typename?: 'SkillsDocAccessFields_title_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_Title_Delete = {
+  readonly __typename?: 'SkillsDocAccessFields_title_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_Title_Read = {
+  readonly __typename?: 'SkillsDocAccessFields_title_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_Title_Update = {
+  readonly __typename?: 'SkillsDocAccessFields_title_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_UpdatedAt = {
+  readonly __typename?: 'SkillsDocAccessFields_updatedAt';
+  readonly create?: Maybe<SkillsDocAccessFields_UpdatedAt_Create>;
+  readonly delete?: Maybe<SkillsDocAccessFields_UpdatedAt_Delete>;
+  readonly read?: Maybe<SkillsDocAccessFields_UpdatedAt_Read>;
+  readonly update?: Maybe<SkillsDocAccessFields_UpdatedAt_Update>;
+};
+
+export type SkillsDocAccessFields_UpdatedAt_Create = {
+  readonly __typename?: 'SkillsDocAccessFields_updatedAt_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_UpdatedAt_Delete = {
+  readonly __typename?: 'SkillsDocAccessFields_updatedAt_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_UpdatedAt_Read = {
+  readonly __typename?: 'SkillsDocAccessFields_updatedAt_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_UpdatedAt_Update = {
+  readonly __typename?: 'SkillsDocAccessFields_updatedAt_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields = {
+  readonly __typename?: 'SkillsFields';
+  readonly createdAt?: Maybe<SkillsFields_CreatedAt>;
+  readonly skills?: Maybe<SkillsFields_Skills>;
+  readonly subtitle?: Maybe<SkillsFields_Subtitle>;
+  readonly title?: Maybe<SkillsFields_Title>;
+  readonly updatedAt?: Maybe<SkillsFields_UpdatedAt>;
+};
+
+export type SkillsFields_CreatedAt = {
+  readonly __typename?: 'SkillsFields_createdAt';
+  readonly create?: Maybe<SkillsFields_CreatedAt_Create>;
+  readonly delete?: Maybe<SkillsFields_CreatedAt_Delete>;
+  readonly read?: Maybe<SkillsFields_CreatedAt_Read>;
+  readonly update?: Maybe<SkillsFields_CreatedAt_Update>;
+};
+
+export type SkillsFields_CreatedAt_Create = {
+  readonly __typename?: 'SkillsFields_createdAt_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_CreatedAt_Delete = {
+  readonly __typename?: 'SkillsFields_createdAt_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_CreatedAt_Read = {
+  readonly __typename?: 'SkillsFields_createdAt_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_CreatedAt_Update = {
+  readonly __typename?: 'SkillsFields_createdAt_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_Skills = {
+  readonly __typename?: 'SkillsFields_skills';
+  readonly create?: Maybe<SkillsFields_Skills_Create>;
+  readonly delete?: Maybe<SkillsFields_Skills_Delete>;
+  readonly fields?: Maybe<SkillsFields_Skills_Fields>;
+  readonly read?: Maybe<SkillsFields_Skills_Read>;
+  readonly update?: Maybe<SkillsFields_Skills_Update>;
+};
+
+export type SkillsFields_Skills_Create = {
+  readonly __typename?: 'SkillsFields_skills_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_Skills_Delete = {
+  readonly __typename?: 'SkillsFields_skills_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_Skills_Fields = {
+  readonly __typename?: 'SkillsFields_skills_Fields';
+  readonly description?: Maybe<SkillsFields_Skills_Description>;
+  readonly id?: Maybe<SkillsFields_Skills_Id>;
+  readonly name?: Maybe<SkillsFields_Skills_Name>;
+};
+
+export type SkillsFields_Skills_Read = {
+  readonly __typename?: 'SkillsFields_skills_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_Skills_Update = {
+  readonly __typename?: 'SkillsFields_skills_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_Skills_Description = {
+  readonly __typename?: 'SkillsFields_skills_description';
+  readonly create?: Maybe<SkillsFields_Skills_Description_Create>;
+  readonly delete?: Maybe<SkillsFields_Skills_Description_Delete>;
+  readonly read?: Maybe<SkillsFields_Skills_Description_Read>;
+  readonly update?: Maybe<SkillsFields_Skills_Description_Update>;
+};
+
+export type SkillsFields_Skills_Description_Create = {
+  readonly __typename?: 'SkillsFields_skills_description_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_Skills_Description_Delete = {
+  readonly __typename?: 'SkillsFields_skills_description_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_Skills_Description_Read = {
+  readonly __typename?: 'SkillsFields_skills_description_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_Skills_Description_Update = {
+  readonly __typename?: 'SkillsFields_skills_description_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_Skills_Id = {
+  readonly __typename?: 'SkillsFields_skills_id';
+  readonly create?: Maybe<SkillsFields_Skills_Id_Create>;
+  readonly delete?: Maybe<SkillsFields_Skills_Id_Delete>;
+  readonly read?: Maybe<SkillsFields_Skills_Id_Read>;
+  readonly update?: Maybe<SkillsFields_Skills_Id_Update>;
+};
+
+export type SkillsFields_Skills_Id_Create = {
+  readonly __typename?: 'SkillsFields_skills_id_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_Skills_Id_Delete = {
+  readonly __typename?: 'SkillsFields_skills_id_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_Skills_Id_Read = {
+  readonly __typename?: 'SkillsFields_skills_id_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_Skills_Id_Update = {
+  readonly __typename?: 'SkillsFields_skills_id_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_Skills_Name = {
+  readonly __typename?: 'SkillsFields_skills_name';
+  readonly create?: Maybe<SkillsFields_Skills_Name_Create>;
+  readonly delete?: Maybe<SkillsFields_Skills_Name_Delete>;
+  readonly read?: Maybe<SkillsFields_Skills_Name_Read>;
+  readonly update?: Maybe<SkillsFields_Skills_Name_Update>;
+};
+
+export type SkillsFields_Skills_Name_Create = {
+  readonly __typename?: 'SkillsFields_skills_name_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_Skills_Name_Delete = {
+  readonly __typename?: 'SkillsFields_skills_name_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_Skills_Name_Read = {
+  readonly __typename?: 'SkillsFields_skills_name_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_Skills_Name_Update = {
+  readonly __typename?: 'SkillsFields_skills_name_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_Subtitle = {
+  readonly __typename?: 'SkillsFields_subtitle';
+  readonly create?: Maybe<SkillsFields_Subtitle_Create>;
+  readonly delete?: Maybe<SkillsFields_Subtitle_Delete>;
+  readonly read?: Maybe<SkillsFields_Subtitle_Read>;
+  readonly update?: Maybe<SkillsFields_Subtitle_Update>;
+};
+
+export type SkillsFields_Subtitle_Create = {
+  readonly __typename?: 'SkillsFields_subtitle_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_Subtitle_Delete = {
+  readonly __typename?: 'SkillsFields_subtitle_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_Subtitle_Read = {
+  readonly __typename?: 'SkillsFields_subtitle_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_Subtitle_Update = {
+  readonly __typename?: 'SkillsFields_subtitle_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_Title = {
+  readonly __typename?: 'SkillsFields_title';
+  readonly create?: Maybe<SkillsFields_Title_Create>;
+  readonly delete?: Maybe<SkillsFields_Title_Delete>;
+  readonly read?: Maybe<SkillsFields_Title_Read>;
+  readonly update?: Maybe<SkillsFields_Title_Update>;
+};
+
+export type SkillsFields_Title_Create = {
+  readonly __typename?: 'SkillsFields_title_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_Title_Delete = {
+  readonly __typename?: 'SkillsFields_title_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_Title_Read = {
+  readonly __typename?: 'SkillsFields_title_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_Title_Update = {
+  readonly __typename?: 'SkillsFields_title_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_UpdatedAt = {
+  readonly __typename?: 'SkillsFields_updatedAt';
+  readonly create?: Maybe<SkillsFields_UpdatedAt_Create>;
+  readonly delete?: Maybe<SkillsFields_UpdatedAt_Delete>;
+  readonly read?: Maybe<SkillsFields_UpdatedAt_Read>;
+  readonly update?: Maybe<SkillsFields_UpdatedAt_Update>;
+};
+
+export type SkillsFields_UpdatedAt_Create = {
+  readonly __typename?: 'SkillsFields_updatedAt_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_UpdatedAt_Delete = {
+  readonly __typename?: 'SkillsFields_updatedAt_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_UpdatedAt_Read = {
+  readonly __typename?: 'SkillsFields_updatedAt_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_UpdatedAt_Update = {
+  readonly __typename?: 'SkillsFields_updatedAt_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsReadAccess = {
+  readonly __typename?: 'SkillsReadAccess';
+  readonly permission: Scalars['Boolean']['output'];
+  readonly where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type SkillsReadDocAccess = {
+  readonly __typename?: 'SkillsReadDocAccess';
+  readonly permission: Scalars['Boolean']['output'];
+  readonly where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type SkillsUpdateAccess = {
+  readonly __typename?: 'SkillsUpdateAccess';
+  readonly permission: Scalars['Boolean']['output'];
+  readonly where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type SkillsUpdateDocAccess = {
+  readonly __typename?: 'SkillsUpdateDocAccess';
+  readonly permission: Scalars['Boolean']['output'];
+  readonly where?: Maybe<Scalars['JSONObject']['output']>;
 };
 
 export type User = {
@@ -4314,6 +4856,20 @@ export type MutationPayloadPreferenceUpdateInput = {
   readonly value?: InputMaybe<Scalars['JSON']['input']>;
 };
 
+export type MutationSkillInput = {
+  readonly createdAt?: InputMaybe<Scalars['String']['input']>;
+  readonly skills?: InputMaybe<ReadonlyArray<MutationSkill_SkillsInput>>;
+  readonly subtitle?: InputMaybe<Scalars['String']['input']>;
+  readonly title: Scalars['String']['input'];
+  readonly updatedAt?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MutationSkill_SkillsInput = {
+  readonly description: Scalars['JSON']['input'];
+  readonly id?: InputMaybe<Scalars['String']['input']>;
+  readonly name: Scalars['String']['input'];
+};
+
 export type MutationUserInput = {
   readonly createdAt?: InputMaybe<Scalars['String']['input']>;
   readonly email: Scalars['String']['input'];
@@ -4374,6 +4930,20 @@ export type Payload_PreferencesDocAccess = {
   readonly fields?: Maybe<PayloadPreferencesDocAccessFields>;
   readonly read?: Maybe<PayloadPreferencesReadDocAccess>;
   readonly update?: Maybe<PayloadPreferencesUpdateDocAccess>;
+};
+
+export type SkillsAccess = {
+  readonly __typename?: 'skillsAccess';
+  readonly fields?: Maybe<SkillsFields>;
+  readonly read?: Maybe<SkillsReadAccess>;
+  readonly update?: Maybe<SkillsUpdateAccess>;
+};
+
+export type SkillsDocAccess = {
+  readonly __typename?: 'skillsDocAccess';
+  readonly fields?: Maybe<SkillsDocAccessFields>;
+  readonly read?: Maybe<SkillsReadDocAccess>;
+  readonly update?: Maybe<SkillsUpdateDocAccess>;
 };
 
 export type UsersAccess = {
@@ -4451,6 +5021,11 @@ export type GetHeroQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetHeroQuery = { readonly __typename?: 'Query', readonly Hero?: { readonly __typename?: 'Hero', readonly name: string, readonly title: string, readonly description: any, readonly taglines: ReadonlyArray<{ readonly __typename?: 'Hero_Taglines', readonly text?: string | null }>, readonly buttons: ReadonlyArray<{ readonly __typename?: 'Hero_Buttons', readonly text?: string | null, readonly url?: string | null }> } | null };
+
+export type GetSkillsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetSkillsQuery = { readonly __typename?: 'Query', readonly Skill?: { readonly __typename?: 'Skill', readonly title: string, readonly subtitle?: string | null, readonly skills: ReadonlyArray<{ readonly __typename?: 'Skill_Skills', readonly name?: string | null, readonly description?: any | null }> } | null };
 
 
 export const CreateContactFormDocument = gql`
@@ -4594,3 +5169,47 @@ export type GetHeroQueryHookResult = ReturnType<typeof useGetHeroQuery>;
 export type GetHeroLazyQueryHookResult = ReturnType<typeof useGetHeroLazyQuery>;
 export type GetHeroSuspenseQueryHookResult = ReturnType<typeof useGetHeroSuspenseQuery>;
 export type GetHeroQueryResult = Apollo.QueryResult<GetHeroQuery, GetHeroQueryVariables>;
+export const GetSkillsDocument = gql`
+    query GetSkills {
+  Skill {
+    title
+    subtitle
+    skills {
+      name
+      description
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetSkillsQuery__
+ *
+ * To run a query within a React component, call `useGetSkillsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetSkillsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetSkillsQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetSkillsQuery(baseOptions?: Apollo.QueryHookOptions<GetSkillsQuery, GetSkillsQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetSkillsQuery, GetSkillsQueryVariables>(GetSkillsDocument, options);
+      }
+export function useGetSkillsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetSkillsQuery, GetSkillsQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetSkillsQuery, GetSkillsQueryVariables>(GetSkillsDocument, options);
+        }
+export function useGetSkillsSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetSkillsQuery, GetSkillsQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetSkillsQuery, GetSkillsQueryVariables>(GetSkillsDocument, options);
+        }
+export type GetSkillsQueryHookResult = ReturnType<typeof useGetSkillsQuery>;
+export type GetSkillsLazyQueryHookResult = ReturnType<typeof useGetSkillsLazyQuery>;
+export type GetSkillsSuspenseQueryHookResult = ReturnType<typeof useGetSkillsSuspenseQuery>;
+export type GetSkillsQueryResult = Apollo.QueryResult<GetSkillsQuery, GetSkillsQueryVariables>;

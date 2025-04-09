@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import './tailwind.css';
-import { ApolloWrapper } from '../../components/wrappers/ApolloWrapper';
+import { ApolloWrapper } from '@/components/context/ApolloWrapper';
 import { Toaster } from 'sonner';
 
 export const metadata: Metadata = {

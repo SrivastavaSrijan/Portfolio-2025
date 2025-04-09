@@ -1,0 +1,41 @@
+'use client';
+import { useGetSkillsSuspenseQuery } from '@/lib/graphql/__generated__/hooks';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui';
+import { RichText } from '../fragments/RichText';
+
+export const Skills = () => {
+  const { data } = useGetSkillsSuspenseQuery();
+  const { skills = [], title, subtitle } = data?.Skill ?? {};
+
+  return (
+    <div className="flex flex-col gap-5 bg-primary px-5 py-5 md:px-96 md:py-20">
+      <div className="flex gap-3">
+        <h2 className="w-full font-semibold text-3xl text-accent md:text-center md:font-normal md:text-display-6">
+          {title}
+        </h2>
+        <h3 className="font-semibold text-2xl text-accent md:font-normal md:text-display-2">
+          {subtitle}
+        </h3>
+      </div>
+      <Accordion
+        type="multiple"
+        className="flex w-full flex-col gap-2 text-accent *:border-accent md:gap-2"
+      >
+        {skills.map(({ name, description }, index) => (
+          <AccordionItem value={name || index?.toString()} key={name || index}>
+            <AccordionTrigger className="[&>svg]:text-accent [&>svg]:hover:text-accent">
+              <div className="flex flex-col gap-1 font-medium text-sm md:gap-2 md:font-normal md:text-3xl">
+                <h4>{name}</h4>
+              </div>
+            </AccordionTrigger>
+            <AccordionContent>
+              <div className="px-0.5 text-xs md:px-2 md:text-base">
+                <RichText data={description} />
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+        ))}
+      </Accordion>
+    </div>
+  );
+};

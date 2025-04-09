@@ -1,0 +1,10 @@
+query GetSkills {
+  Skill {
+    title
+    subtitle
+    skills {
+      name
+      description
+    }
+  }
+}
