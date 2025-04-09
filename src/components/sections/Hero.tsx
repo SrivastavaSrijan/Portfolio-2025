@@ -20,25 +20,25 @@ export const Hero = () => {
     <AnimatePresence mode="wait">
       <motion.div
         key="hero-section"
-        className="dark flex flex-col md:px-20 md:py-10 md:gap-15 py-5 px-5 gap-7 flex-grow h-full"
+        className="dark flex h-full flex-grow flex-col gap-7 px-5 py-5 md:gap-15 md:px-20 md:py-10"
         initial="hidden"
         animate={controls}
         exit="exit"
         variants={containerVariants}
       >
-        <div className="flex flex-wrap items-end md:gap-10 gap-1 md:mb-0 mb-6">
+        <div className="flex flex-wrap items-end gap-1 md:gap-10">
           <motion.h1
-            className="md:text-display-1 text-display-3 text-brand"
+            className="text-brand text-display-3 md:text-display-1"
             variants={itemVariants}
           >
             {name}
           </motion.h1>
-          <span className="md:basis basis-full md:hidden flex" />
+          <span className="md:basis flex basis-full md:hidden" />
           <ProfileToggle initialAnimComplete={isAnimationComplete} />
         </div>
-        <div className="flex flex-col md:gap-2 gap-1">
+        <div className="flex flex-col gap-1 md:gap-2">
           <motion.h2
-            className="md:text-display-2 text-3xl md:font-normal font-medium text-brand"
+            className="font-medium text-3xl text-brand md:font-normal md:text-display-2"
             variants={itemVariants}
           >
             {title}
@@ -46,7 +46,7 @@ export const Hero = () => {
           <AnimatedTagline isClient={isClient} initialAnimComplete={isAnimationComplete} />
         </div>
         <motion.div
-          className="md:gap-5 gap-2"
+          className="gap-2 md:gap-5"
           variants={paragraphVariants}
           initial="hidden"
           animate="visible"
@@ -54,35 +54,36 @@ export const Hero = () => {
         >
           <RichText
             data={description}
-            className="md:text-3xl  md:font-normal font-medium  text-xs text-brand flex md:gap-2 gap-1 flex-col"
+            className="flex flex-col gap-1 font-medium text-brand text-sm md:gap-2 md:font-normal md:text-3xl"
           />
         </motion.div>
 
         <motion.div
-          className="flex flex-row md:mt-32 mt-10 justify-between flex-wrap md:gap-0 gap-3"
+          className="mt-3 flex flex-row flex-wrap justify-between gap-3 md:mt-32 md:gap-0"
           variants={containerVariants}
         >
           <ContactForm>
-            <Button variant="link" color="brand" size="lg">
+            <Button variant="link" color="brand">
               Get In Touch
             </Button>
           </ContactForm>
-          <span className="md:basis basis-full md:hidden flex" />
-          {buttons.map((button) => (
-            <Button
-              size="default"
-              variant="outlined"
-              color="ghost"
-              key={button.text}
-              onClick={() => {
-                if (button.url) {
-                  window.open(button.url, '_blank');
-                }
-              }}
-            >
-              {button.text}
-            </Button>
-          ))}
+          <span className="md:basis flex basis-full md:hidden" />
+          <div className="flex w-full justify-between md:w-fit md:justify-end md:gap-5">
+            {buttons.map((button) => (
+              <Button
+                variant="outlined"
+                color="ghost"
+                key={button.text}
+                onClick={() => {
+                  if (button.url) {
+                    window.open(button.url, '_blank');
+                  }
+                }}
+              >
+                {button.text}
+              </Button>
+            ))}
+          </div>
         </motion.div>
       </motion.div>
     </AnimatePresence>

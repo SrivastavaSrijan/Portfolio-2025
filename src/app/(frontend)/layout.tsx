@@ -4,8 +4,8 @@ import { ApolloWrapper } from '../../components/wrappers/ApolloWrapper';
 import { Toaster } from 'sonner';
 
 export const metadata: Metadata = {
-  description: "Srijan Srivastava's Portfolio, showcasing his work",
-  title: 'Srijan | Portfolio',
+  description: "Srijan Srivastava's portfolio - case studies, blogs, projects and more.",
+  title: 'Srijan / Frontend',
   icons: {
     icon: [
       {
@@ -52,10 +52,10 @@ export const metadata: Metadata = {
 export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props;
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body>
         <ApolloWrapper>
-          <main className="dark">{children}</main>
+          <main>{children}</main>
           <Toaster position="top-right" />
         </ApolloWrapper>
       </body>

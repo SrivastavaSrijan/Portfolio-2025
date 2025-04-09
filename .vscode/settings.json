@@ -4,5 +4,8 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": "always",
   },
-  "workbench.colorTheme": "One Dark Pro Darker"
+  "workbench.colorTheme": "One Dark Pro Darker",
+  "[css]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  }
 }

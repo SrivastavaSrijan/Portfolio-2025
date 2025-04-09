@@ -41,8 +41,8 @@
   --color-black: #000;
 
   /* Font Families */
-  --font-sans: Inter, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-    "Noto Color Emoji";
+  --font-sans: Inter, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
   --font-display: Inter, sans-serif;
   --font-heading: Inter, sans-serif;
   --font-body: Inter, sans-serif;

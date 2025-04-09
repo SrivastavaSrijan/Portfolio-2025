@@ -61,6 +61,9 @@
 			"security": {
 				"noDangerouslySetInnerHtml": "warn"
 			},
+			"nursery": {
+				"useSortedClasses": "error"
+			},
 			"style": {
 				"noNonNullAssertion": "warn",
 				"useShorthandArrayType": "error",

@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "codegen": "graphql-codegen --config src/lib/graphql/config/codegen.ts",
-    "codegen:watch": "graphql-codegen --watch --config src/lib/graphql/config/codegen.ts"
+    "codegen:watch": "graphql-codegen --watch --config src/lib/graphql/config/codegen.ts",
+    "lint": "biome lint",
+    "format": "biome format"
   },
   "dependencies": {
     "@apollo/client": "^3.13.6",
