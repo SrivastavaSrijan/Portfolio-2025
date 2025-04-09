@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "buildCommand": "yarn prepare-deploy && yarn build",
+  "installCommand": "yarn install",
+  "framework": "nextjs"
+}

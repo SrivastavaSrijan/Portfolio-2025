@@ -1,87 +1,87 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-	"organizeImports": {
-		"enabled": true
-	},
-	"files": {
-		"ignore": [
-			"node_modules",
-			"dist",
-			".next",
-			"build",
-			".vercel",
-			"coverage",
-			"public",
-			"app/(payload)/**",
-			"src/gql/__generated__/**",
-			"src/gql/graphql/**",
-			"src/gql/gql.ts",
-			"src/gql/fragment-masking.ts",
-			"src/gql/graphql.ts",
-			"src/lib/graphql/__generated__/**"
-		]
-	},
-	"formatter": {
-		"enabled": true,
-		"indentWidth": 2,
-		"lineWidth": 100,
-		"indentStyle": "space",
-		"formatWithErrors": false
-	},
-	"javascript": {
-		"formatter": {
-			"quoteStyle": "single",
-			"trailingCommas": "es5",
-			"semicolons": "always",
-			"arrowParentheses": "always"
-		}
-	},
-	"linter": {
-		"enabled": true,
-		"rules": {
-			"recommended": true,
-			"a11y": {
-				"useButtonType": "error",
-				"useKeyWithClickEvents": "error"
-			},
-			"complexity": {
-				"noUselessCatch": "error",
-				"useOptionalChain": "error",
-				"noForEach": "off",
-				"noBannedTypes": "warn"
-			},
-			"correctness": {
-				"noUnusedVariables": "warn",
-				"useExhaustiveDependencies": "warn",
-				"noUnusedImports": "warn"
-			},
-			"performance": {
-				"noDelete": "warn"
-			},
-			"security": {
-				"noDangerouslySetInnerHtml": "warn"
-			},
-			"nursery": {
-				"useSortedClasses": "error"
-			},
-			"style": {
-				"noNonNullAssertion": "warn",
-				"useShorthandArrayType": "error",
-				"useTemplate": "error",
-				"noDefaultExport": "off",
-				"useConst": "error",
-				"useConsistentArrayType": "error",
-				"noUselessElse": "warn",
-				"noParameterAssign": "error",
-				"noInferrableTypes": "warn"
-			},
-			"suspicious": {
-				"noArrayIndexKey": "warn",
-				"noExplicitAny": "warn",
-				"noDoubleEquals": "error",
-				"noConsoleLog": "warn",
-				"noEmptyInterface": "warn"
-			}
-		}
-	}
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "organizeImports": {
+    "enabled": true
+  },
+  "files": {
+    "ignore": [
+      "node_modules",
+      "dist",
+      ".next",
+      "build",
+      ".vercel",
+      "coverage",
+      "public",
+      "app/(payload)/**",
+      "src/gql/__generated__/**",
+      "src/gql/graphql/**",
+      "src/gql/gql.ts",
+      "src/gql/fragment-masking.ts",
+      "src/gql/graphql.ts",
+      "src/lib/graphql/__generated__/**"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentWidth": 2,
+    "lineWidth": 100,
+    "indentStyle": "space",
+    "formatWithErrors": false
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "trailingCommas": "es5",
+      "semicolons": "always",
+      "arrowParentheses": "always"
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "a11y": {
+        "useButtonType": "error",
+        "useKeyWithClickEvents": "error"
+      },
+      "complexity": {
+        "noUselessCatch": "error",
+        "useOptionalChain": "error",
+        "noForEach": "off",
+        "noBannedTypes": "warn"
+      },
+      "correctness": {
+        "noUnusedVariables": "warn",
+        "useExhaustiveDependencies": "warn",
+        "noUnusedImports": "warn"
+      },
+      "performance": {
+        "noDelete": "warn"
+      },
+      "security": {
+        "noDangerouslySetInnerHtml": "warn"
+      },
+      "nursery": {
+        "useSortedClasses": "error"
+      },
+      "style": {
+        "noNonNullAssertion": "warn",
+        "useShorthandArrayType": "error",
+        "useTemplate": "error",
+        "noDefaultExport": "off",
+        "useConst": "error",
+        "useConsistentArrayType": "error",
+        "noUselessElse": "warn",
+        "noParameterAssign": "error",
+        "noInferrableTypes": "warn"
+      },
+      "suspicious": {
+        "noArrayIndexKey": "warn",
+        "noExplicitAny": "warn",
+        "noDoubleEquals": "error",
+        "noConsoleLog": "warn",
+        "noEmptyInterface": "warn"
+      }
+    }
+  }
 }
