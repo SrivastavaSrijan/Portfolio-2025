@@ -1,6 +1,6 @@
 import type { CollectionConfig } from 'payload';
 
-const ContactForms: CollectionConfig = {
+export const ContactForms: CollectionConfig = {
   slug: 'contact-forms',
   admin: {
     useAsTitle: 'email',
@@ -57,5 +57,3 @@ const ContactForms: CollectionConfig = {
     },
   ],
 };
-
-export default ContactForms;

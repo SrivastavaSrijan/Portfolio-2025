@@ -1,6 +1,6 @@
 import type { GlobalConfig } from 'payload';
 
-const Skills: GlobalConfig = {
+export const Skills: GlobalConfig = {
   slug: 'skills',
   access: {
     read: () => true,
@@ -41,4 +41,3 @@ const Skills: GlobalConfig = {
     },
   ],
 };
-export default Skills;
