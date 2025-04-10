@@ -19,6 +19,7 @@ export interface Config {
   db: {
     defaultIDType: string;
   };
+  // biome-ignore lint/complexity/noBannedTypes: <explanation>
   globals: {};
   locale: null;
   user: User & {

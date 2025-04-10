@@ -5,7 +5,7 @@ function Card({ className, ...props }: React.ComponentProps<'div'>) {
     <div
       data-slot="card"
       className={cn(
-        // biome-ignore lint/nursery/useSortedClasses: <explanation>
+        // biome-ignore lint/nursery/useSortedClasses: biome messes up the class order
         'bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm',
         className
       )}
@@ -31,7 +31,7 @@ function CardTitle({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
       data-slot="card-title"
-      // biome-ignore lint/nursery/useSortedClasses: <explanation>
+      // biome-ignore lint/nursery/useSortedClasses: biome messes up the class order
       className={cn('leading-none font-semibold', className)}
       {...props}
     />
