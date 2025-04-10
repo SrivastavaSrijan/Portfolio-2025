@@ -8,14 +8,14 @@ export const Skills = () => {
   const { skills = [], title, subtitle } = data?.Skill ?? {};
 
   return (
-    <div className="flex flex-col gap-5 bg-primary px-5 py-5 md:px-96 md:py-20">
-      <div className="flex gap-3">
-        <h2 className="w-full font-semibold text-3xl text-accent md:text-center md:font-normal md:text-display-6">
-          {title}
-        </h2>
+    <div className="flex flex-col gap-4 bg-primary px-5 py-5 md:gap-8 md:px-96 md:py-20">
+      <div className="flex flex-col gap-3">
         <h3 className="font-semibold text-2xl text-accent md:font-normal md:text-display-2">
           {subtitle}
         </h3>
+        <h2 className="w-full font-medium text-3xl text-accent md:text-center md:text-display-6">
+          {title}
+        </h2>
       </div>
       <Accordion
         type="multiple"
@@ -24,7 +24,7 @@ export const Skills = () => {
         {skills.map(({ name, description }, index) => (
           <AccordionItem value={name || index?.toString()} key={name || index}>
             <AccordionTrigger className="[&>svg]:text-accent [&>svg]:hover:text-accent">
-              <div className="flex flex-col gap-1 font-medium text-sm md:gap-2 md:font-normal md:text-3xl">
+              <div className="flex flex-col gap-1 font-medium text-sm md:gap-2 md:text-2xl">
                 <h4>{name}</h4>
               </div>
             </AccordionTrigger>

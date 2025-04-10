@@ -6,9 +6,5 @@ query GetHero {
       text
     }
     description
-    buttons {
-      text
-      url
-    }
   }
 }

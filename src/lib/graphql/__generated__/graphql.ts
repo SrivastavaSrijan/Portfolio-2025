@@ -27,13 +27,1061 @@ export type Scalars = {
 export type Access = {
   __typename?: 'Access';
   canAccessAdmin: Scalars['Boolean']['output'];
+  case_studies?: Maybe<Case_StudiesAccess>;
   contact_forms?: Maybe<Contact_FormsAccess>;
+  experiences?: Maybe<ExperiencesAccess>;
+  footer?: Maybe<FooterAccess>;
   hero?: Maybe<HeroAccess>;
   media?: Maybe<MediaAccess>;
   payload_locked_documents?: Maybe<Payload_Locked_DocumentsAccess>;
   payload_preferences?: Maybe<Payload_PreferencesAccess>;
   skills?: Maybe<SkillsAccess>;
   users?: Maybe<UsersAccess>;
+  work_buttons?: Maybe<Work_ButtonsAccess>;
+};
+
+export type CaseStudies = {
+  __typename?: 'CaseStudies';
+  docs: Array<CaseStudy>;
+  hasNextPage: Scalars['Boolean']['output'];
+  hasPrevPage: Scalars['Boolean']['output'];
+  limit: Scalars['Int']['output'];
+  nextPage: Scalars['Int']['output'];
+  offset?: Maybe<Scalars['Int']['output']>;
+  page: Scalars['Int']['output'];
+  pagingCounter: Scalars['Int']['output'];
+  prevPage: Scalars['Int']['output'];
+  totalDocs: Scalars['Int']['output'];
+  totalPages: Scalars['Int']['output'];
+};
+
+export type CaseStudiesCreateAccess = {
+  __typename?: 'CaseStudiesCreateAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type CaseStudiesCreateDocAccess = {
+  __typename?: 'CaseStudiesCreateDocAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type CaseStudiesDeleteAccess = {
+  __typename?: 'CaseStudiesDeleteAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type CaseStudiesDeleteDocAccess = {
+  __typename?: 'CaseStudiesDeleteDocAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type CaseStudiesDocAccessFields = {
+  __typename?: 'CaseStudiesDocAccessFields';
+  content?: Maybe<CaseStudiesDocAccessFields_Content>;
+  createdAt?: Maybe<CaseStudiesDocAccessFields_CreatedAt>;
+  experience?: Maybe<CaseStudiesDocAccessFields_Experience>;
+  featured?: Maybe<CaseStudiesDocAccessFields_Featured>;
+  illustration?: Maybe<CaseStudiesDocAccessFields_Illustration>;
+  publishedAt?: Maybe<CaseStudiesDocAccessFields_PublishedAt>;
+  slug?: Maybe<CaseStudiesDocAccessFields_Slug>;
+  summary?: Maybe<CaseStudiesDocAccessFields_Summary>;
+  tags?: Maybe<CaseStudiesDocAccessFields_Tags>;
+  title?: Maybe<CaseStudiesDocAccessFields_Title>;
+  updatedAt?: Maybe<CaseStudiesDocAccessFields_UpdatedAt>;
+};
+
+export type CaseStudiesDocAccessFields_Content = {
+  __typename?: 'CaseStudiesDocAccessFields_content';
+  create?: Maybe<CaseStudiesDocAccessFields_Content_Create>;
+  delete?: Maybe<CaseStudiesDocAccessFields_Content_Delete>;
+  read?: Maybe<CaseStudiesDocAccessFields_Content_Read>;
+  update?: Maybe<CaseStudiesDocAccessFields_Content_Update>;
+};
+
+export type CaseStudiesDocAccessFields_Content_Create = {
+  __typename?: 'CaseStudiesDocAccessFields_content_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Content_Delete = {
+  __typename?: 'CaseStudiesDocAccessFields_content_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Content_Read = {
+  __typename?: 'CaseStudiesDocAccessFields_content_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Content_Update = {
+  __typename?: 'CaseStudiesDocAccessFields_content_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_CreatedAt = {
+  __typename?: 'CaseStudiesDocAccessFields_createdAt';
+  create?: Maybe<CaseStudiesDocAccessFields_CreatedAt_Create>;
+  delete?: Maybe<CaseStudiesDocAccessFields_CreatedAt_Delete>;
+  read?: Maybe<CaseStudiesDocAccessFields_CreatedAt_Read>;
+  update?: Maybe<CaseStudiesDocAccessFields_CreatedAt_Update>;
+};
+
+export type CaseStudiesDocAccessFields_CreatedAt_Create = {
+  __typename?: 'CaseStudiesDocAccessFields_createdAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_CreatedAt_Delete = {
+  __typename?: 'CaseStudiesDocAccessFields_createdAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_CreatedAt_Read = {
+  __typename?: 'CaseStudiesDocAccessFields_createdAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_CreatedAt_Update = {
+  __typename?: 'CaseStudiesDocAccessFields_createdAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Experience = {
+  __typename?: 'CaseStudiesDocAccessFields_experience';
+  create?: Maybe<CaseStudiesDocAccessFields_Experience_Create>;
+  delete?: Maybe<CaseStudiesDocAccessFields_Experience_Delete>;
+  read?: Maybe<CaseStudiesDocAccessFields_Experience_Read>;
+  update?: Maybe<CaseStudiesDocAccessFields_Experience_Update>;
+};
+
+export type CaseStudiesDocAccessFields_Experience_Create = {
+  __typename?: 'CaseStudiesDocAccessFields_experience_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Experience_Delete = {
+  __typename?: 'CaseStudiesDocAccessFields_experience_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Experience_Read = {
+  __typename?: 'CaseStudiesDocAccessFields_experience_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Experience_Update = {
+  __typename?: 'CaseStudiesDocAccessFields_experience_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Featured = {
+  __typename?: 'CaseStudiesDocAccessFields_featured';
+  create?: Maybe<CaseStudiesDocAccessFields_Featured_Create>;
+  delete?: Maybe<CaseStudiesDocAccessFields_Featured_Delete>;
+  read?: Maybe<CaseStudiesDocAccessFields_Featured_Read>;
+  update?: Maybe<CaseStudiesDocAccessFields_Featured_Update>;
+};
+
+export type CaseStudiesDocAccessFields_Featured_Create = {
+  __typename?: 'CaseStudiesDocAccessFields_featured_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Featured_Delete = {
+  __typename?: 'CaseStudiesDocAccessFields_featured_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Featured_Read = {
+  __typename?: 'CaseStudiesDocAccessFields_featured_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Featured_Update = {
+  __typename?: 'CaseStudiesDocAccessFields_featured_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Illustration = {
+  __typename?: 'CaseStudiesDocAccessFields_illustration';
+  create?: Maybe<CaseStudiesDocAccessFields_Illustration_Create>;
+  delete?: Maybe<CaseStudiesDocAccessFields_Illustration_Delete>;
+  read?: Maybe<CaseStudiesDocAccessFields_Illustration_Read>;
+  update?: Maybe<CaseStudiesDocAccessFields_Illustration_Update>;
+};
+
+export type CaseStudiesDocAccessFields_Illustration_Create = {
+  __typename?: 'CaseStudiesDocAccessFields_illustration_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Illustration_Delete = {
+  __typename?: 'CaseStudiesDocAccessFields_illustration_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Illustration_Read = {
+  __typename?: 'CaseStudiesDocAccessFields_illustration_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Illustration_Update = {
+  __typename?: 'CaseStudiesDocAccessFields_illustration_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_PublishedAt = {
+  __typename?: 'CaseStudiesDocAccessFields_publishedAt';
+  create?: Maybe<CaseStudiesDocAccessFields_PublishedAt_Create>;
+  delete?: Maybe<CaseStudiesDocAccessFields_PublishedAt_Delete>;
+  read?: Maybe<CaseStudiesDocAccessFields_PublishedAt_Read>;
+  update?: Maybe<CaseStudiesDocAccessFields_PublishedAt_Update>;
+};
+
+export type CaseStudiesDocAccessFields_PublishedAt_Create = {
+  __typename?: 'CaseStudiesDocAccessFields_publishedAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_PublishedAt_Delete = {
+  __typename?: 'CaseStudiesDocAccessFields_publishedAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_PublishedAt_Read = {
+  __typename?: 'CaseStudiesDocAccessFields_publishedAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_PublishedAt_Update = {
+  __typename?: 'CaseStudiesDocAccessFields_publishedAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Slug = {
+  __typename?: 'CaseStudiesDocAccessFields_slug';
+  create?: Maybe<CaseStudiesDocAccessFields_Slug_Create>;
+  delete?: Maybe<CaseStudiesDocAccessFields_Slug_Delete>;
+  read?: Maybe<CaseStudiesDocAccessFields_Slug_Read>;
+  update?: Maybe<CaseStudiesDocAccessFields_Slug_Update>;
+};
+
+export type CaseStudiesDocAccessFields_Slug_Create = {
+  __typename?: 'CaseStudiesDocAccessFields_slug_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Slug_Delete = {
+  __typename?: 'CaseStudiesDocAccessFields_slug_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Slug_Read = {
+  __typename?: 'CaseStudiesDocAccessFields_slug_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Slug_Update = {
+  __typename?: 'CaseStudiesDocAccessFields_slug_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Summary = {
+  __typename?: 'CaseStudiesDocAccessFields_summary';
+  create?: Maybe<CaseStudiesDocAccessFields_Summary_Create>;
+  delete?: Maybe<CaseStudiesDocAccessFields_Summary_Delete>;
+  read?: Maybe<CaseStudiesDocAccessFields_Summary_Read>;
+  update?: Maybe<CaseStudiesDocAccessFields_Summary_Update>;
+};
+
+export type CaseStudiesDocAccessFields_Summary_Create = {
+  __typename?: 'CaseStudiesDocAccessFields_summary_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Summary_Delete = {
+  __typename?: 'CaseStudiesDocAccessFields_summary_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Summary_Read = {
+  __typename?: 'CaseStudiesDocAccessFields_summary_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Summary_Update = {
+  __typename?: 'CaseStudiesDocAccessFields_summary_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Tags = {
+  __typename?: 'CaseStudiesDocAccessFields_tags';
+  create?: Maybe<CaseStudiesDocAccessFields_Tags_Create>;
+  delete?: Maybe<CaseStudiesDocAccessFields_Tags_Delete>;
+  fields?: Maybe<CaseStudiesDocAccessFields_Tags_Fields>;
+  read?: Maybe<CaseStudiesDocAccessFields_Tags_Read>;
+  update?: Maybe<CaseStudiesDocAccessFields_Tags_Update>;
+};
+
+export type CaseStudiesDocAccessFields_Tags_Create = {
+  __typename?: 'CaseStudiesDocAccessFields_tags_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Tags_Delete = {
+  __typename?: 'CaseStudiesDocAccessFields_tags_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Tags_Fields = {
+  __typename?: 'CaseStudiesDocAccessFields_tags_Fields';
+  id?: Maybe<CaseStudiesDocAccessFields_Tags_Id>;
+  tag?: Maybe<CaseStudiesDocAccessFields_Tags_Tag>;
+};
+
+export type CaseStudiesDocAccessFields_Tags_Read = {
+  __typename?: 'CaseStudiesDocAccessFields_tags_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Tags_Update = {
+  __typename?: 'CaseStudiesDocAccessFields_tags_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Tags_Id = {
+  __typename?: 'CaseStudiesDocAccessFields_tags_id';
+  create?: Maybe<CaseStudiesDocAccessFields_Tags_Id_Create>;
+  delete?: Maybe<CaseStudiesDocAccessFields_Tags_Id_Delete>;
+  read?: Maybe<CaseStudiesDocAccessFields_Tags_Id_Read>;
+  update?: Maybe<CaseStudiesDocAccessFields_Tags_Id_Update>;
+};
+
+export type CaseStudiesDocAccessFields_Tags_Id_Create = {
+  __typename?: 'CaseStudiesDocAccessFields_tags_id_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Tags_Id_Delete = {
+  __typename?: 'CaseStudiesDocAccessFields_tags_id_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Tags_Id_Read = {
+  __typename?: 'CaseStudiesDocAccessFields_tags_id_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Tags_Id_Update = {
+  __typename?: 'CaseStudiesDocAccessFields_tags_id_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Tags_Tag = {
+  __typename?: 'CaseStudiesDocAccessFields_tags_tag';
+  create?: Maybe<CaseStudiesDocAccessFields_Tags_Tag_Create>;
+  delete?: Maybe<CaseStudiesDocAccessFields_Tags_Tag_Delete>;
+  read?: Maybe<CaseStudiesDocAccessFields_Tags_Tag_Read>;
+  update?: Maybe<CaseStudiesDocAccessFields_Tags_Tag_Update>;
+};
+
+export type CaseStudiesDocAccessFields_Tags_Tag_Create = {
+  __typename?: 'CaseStudiesDocAccessFields_tags_tag_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Tags_Tag_Delete = {
+  __typename?: 'CaseStudiesDocAccessFields_tags_tag_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Tags_Tag_Read = {
+  __typename?: 'CaseStudiesDocAccessFields_tags_tag_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Tags_Tag_Update = {
+  __typename?: 'CaseStudiesDocAccessFields_tags_tag_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Title = {
+  __typename?: 'CaseStudiesDocAccessFields_title';
+  create?: Maybe<CaseStudiesDocAccessFields_Title_Create>;
+  delete?: Maybe<CaseStudiesDocAccessFields_Title_Delete>;
+  read?: Maybe<CaseStudiesDocAccessFields_Title_Read>;
+  update?: Maybe<CaseStudiesDocAccessFields_Title_Update>;
+};
+
+export type CaseStudiesDocAccessFields_Title_Create = {
+  __typename?: 'CaseStudiesDocAccessFields_title_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Title_Delete = {
+  __typename?: 'CaseStudiesDocAccessFields_title_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Title_Read = {
+  __typename?: 'CaseStudiesDocAccessFields_title_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Title_Update = {
+  __typename?: 'CaseStudiesDocAccessFields_title_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_UpdatedAt = {
+  __typename?: 'CaseStudiesDocAccessFields_updatedAt';
+  create?: Maybe<CaseStudiesDocAccessFields_UpdatedAt_Create>;
+  delete?: Maybe<CaseStudiesDocAccessFields_UpdatedAt_Delete>;
+  read?: Maybe<CaseStudiesDocAccessFields_UpdatedAt_Read>;
+  update?: Maybe<CaseStudiesDocAccessFields_UpdatedAt_Update>;
+};
+
+export type CaseStudiesDocAccessFields_UpdatedAt_Create = {
+  __typename?: 'CaseStudiesDocAccessFields_updatedAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_UpdatedAt_Delete = {
+  __typename?: 'CaseStudiesDocAccessFields_updatedAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_UpdatedAt_Read = {
+  __typename?: 'CaseStudiesDocAccessFields_updatedAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_UpdatedAt_Update = {
+  __typename?: 'CaseStudiesDocAccessFields_updatedAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields = {
+  __typename?: 'CaseStudiesFields';
+  content?: Maybe<CaseStudiesFields_Content>;
+  createdAt?: Maybe<CaseStudiesFields_CreatedAt>;
+  experience?: Maybe<CaseStudiesFields_Experience>;
+  featured?: Maybe<CaseStudiesFields_Featured>;
+  illustration?: Maybe<CaseStudiesFields_Illustration>;
+  publishedAt?: Maybe<CaseStudiesFields_PublishedAt>;
+  slug?: Maybe<CaseStudiesFields_Slug>;
+  summary?: Maybe<CaseStudiesFields_Summary>;
+  tags?: Maybe<CaseStudiesFields_Tags>;
+  title?: Maybe<CaseStudiesFields_Title>;
+  updatedAt?: Maybe<CaseStudiesFields_UpdatedAt>;
+};
+
+export type CaseStudiesFields_Content = {
+  __typename?: 'CaseStudiesFields_content';
+  create?: Maybe<CaseStudiesFields_Content_Create>;
+  delete?: Maybe<CaseStudiesFields_Content_Delete>;
+  read?: Maybe<CaseStudiesFields_Content_Read>;
+  update?: Maybe<CaseStudiesFields_Content_Update>;
+};
+
+export type CaseStudiesFields_Content_Create = {
+  __typename?: 'CaseStudiesFields_content_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Content_Delete = {
+  __typename?: 'CaseStudiesFields_content_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Content_Read = {
+  __typename?: 'CaseStudiesFields_content_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Content_Update = {
+  __typename?: 'CaseStudiesFields_content_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_CreatedAt = {
+  __typename?: 'CaseStudiesFields_createdAt';
+  create?: Maybe<CaseStudiesFields_CreatedAt_Create>;
+  delete?: Maybe<CaseStudiesFields_CreatedAt_Delete>;
+  read?: Maybe<CaseStudiesFields_CreatedAt_Read>;
+  update?: Maybe<CaseStudiesFields_CreatedAt_Update>;
+};
+
+export type CaseStudiesFields_CreatedAt_Create = {
+  __typename?: 'CaseStudiesFields_createdAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_CreatedAt_Delete = {
+  __typename?: 'CaseStudiesFields_createdAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_CreatedAt_Read = {
+  __typename?: 'CaseStudiesFields_createdAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_CreatedAt_Update = {
+  __typename?: 'CaseStudiesFields_createdAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Experience = {
+  __typename?: 'CaseStudiesFields_experience';
+  create?: Maybe<CaseStudiesFields_Experience_Create>;
+  delete?: Maybe<CaseStudiesFields_Experience_Delete>;
+  read?: Maybe<CaseStudiesFields_Experience_Read>;
+  update?: Maybe<CaseStudiesFields_Experience_Update>;
+};
+
+export type CaseStudiesFields_Experience_Create = {
+  __typename?: 'CaseStudiesFields_experience_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Experience_Delete = {
+  __typename?: 'CaseStudiesFields_experience_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Experience_Read = {
+  __typename?: 'CaseStudiesFields_experience_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Experience_Update = {
+  __typename?: 'CaseStudiesFields_experience_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Featured = {
+  __typename?: 'CaseStudiesFields_featured';
+  create?: Maybe<CaseStudiesFields_Featured_Create>;
+  delete?: Maybe<CaseStudiesFields_Featured_Delete>;
+  read?: Maybe<CaseStudiesFields_Featured_Read>;
+  update?: Maybe<CaseStudiesFields_Featured_Update>;
+};
+
+export type CaseStudiesFields_Featured_Create = {
+  __typename?: 'CaseStudiesFields_featured_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Featured_Delete = {
+  __typename?: 'CaseStudiesFields_featured_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Featured_Read = {
+  __typename?: 'CaseStudiesFields_featured_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Featured_Update = {
+  __typename?: 'CaseStudiesFields_featured_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Illustration = {
+  __typename?: 'CaseStudiesFields_illustration';
+  create?: Maybe<CaseStudiesFields_Illustration_Create>;
+  delete?: Maybe<CaseStudiesFields_Illustration_Delete>;
+  read?: Maybe<CaseStudiesFields_Illustration_Read>;
+  update?: Maybe<CaseStudiesFields_Illustration_Update>;
+};
+
+export type CaseStudiesFields_Illustration_Create = {
+  __typename?: 'CaseStudiesFields_illustration_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Illustration_Delete = {
+  __typename?: 'CaseStudiesFields_illustration_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Illustration_Read = {
+  __typename?: 'CaseStudiesFields_illustration_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Illustration_Update = {
+  __typename?: 'CaseStudiesFields_illustration_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_PublishedAt = {
+  __typename?: 'CaseStudiesFields_publishedAt';
+  create?: Maybe<CaseStudiesFields_PublishedAt_Create>;
+  delete?: Maybe<CaseStudiesFields_PublishedAt_Delete>;
+  read?: Maybe<CaseStudiesFields_PublishedAt_Read>;
+  update?: Maybe<CaseStudiesFields_PublishedAt_Update>;
+};
+
+export type CaseStudiesFields_PublishedAt_Create = {
+  __typename?: 'CaseStudiesFields_publishedAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_PublishedAt_Delete = {
+  __typename?: 'CaseStudiesFields_publishedAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_PublishedAt_Read = {
+  __typename?: 'CaseStudiesFields_publishedAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_PublishedAt_Update = {
+  __typename?: 'CaseStudiesFields_publishedAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Slug = {
+  __typename?: 'CaseStudiesFields_slug';
+  create?: Maybe<CaseStudiesFields_Slug_Create>;
+  delete?: Maybe<CaseStudiesFields_Slug_Delete>;
+  read?: Maybe<CaseStudiesFields_Slug_Read>;
+  update?: Maybe<CaseStudiesFields_Slug_Update>;
+};
+
+export type CaseStudiesFields_Slug_Create = {
+  __typename?: 'CaseStudiesFields_slug_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Slug_Delete = {
+  __typename?: 'CaseStudiesFields_slug_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Slug_Read = {
+  __typename?: 'CaseStudiesFields_slug_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Slug_Update = {
+  __typename?: 'CaseStudiesFields_slug_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Summary = {
+  __typename?: 'CaseStudiesFields_summary';
+  create?: Maybe<CaseStudiesFields_Summary_Create>;
+  delete?: Maybe<CaseStudiesFields_Summary_Delete>;
+  read?: Maybe<CaseStudiesFields_Summary_Read>;
+  update?: Maybe<CaseStudiesFields_Summary_Update>;
+};
+
+export type CaseStudiesFields_Summary_Create = {
+  __typename?: 'CaseStudiesFields_summary_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Summary_Delete = {
+  __typename?: 'CaseStudiesFields_summary_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Summary_Read = {
+  __typename?: 'CaseStudiesFields_summary_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Summary_Update = {
+  __typename?: 'CaseStudiesFields_summary_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Tags = {
+  __typename?: 'CaseStudiesFields_tags';
+  create?: Maybe<CaseStudiesFields_Tags_Create>;
+  delete?: Maybe<CaseStudiesFields_Tags_Delete>;
+  fields?: Maybe<CaseStudiesFields_Tags_Fields>;
+  read?: Maybe<CaseStudiesFields_Tags_Read>;
+  update?: Maybe<CaseStudiesFields_Tags_Update>;
+};
+
+export type CaseStudiesFields_Tags_Create = {
+  __typename?: 'CaseStudiesFields_tags_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Tags_Delete = {
+  __typename?: 'CaseStudiesFields_tags_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Tags_Fields = {
+  __typename?: 'CaseStudiesFields_tags_Fields';
+  id?: Maybe<CaseStudiesFields_Tags_Id>;
+  tag?: Maybe<CaseStudiesFields_Tags_Tag>;
+};
+
+export type CaseStudiesFields_Tags_Read = {
+  __typename?: 'CaseStudiesFields_tags_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Tags_Update = {
+  __typename?: 'CaseStudiesFields_tags_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Tags_Id = {
+  __typename?: 'CaseStudiesFields_tags_id';
+  create?: Maybe<CaseStudiesFields_Tags_Id_Create>;
+  delete?: Maybe<CaseStudiesFields_Tags_Id_Delete>;
+  read?: Maybe<CaseStudiesFields_Tags_Id_Read>;
+  update?: Maybe<CaseStudiesFields_Tags_Id_Update>;
+};
+
+export type CaseStudiesFields_Tags_Id_Create = {
+  __typename?: 'CaseStudiesFields_tags_id_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Tags_Id_Delete = {
+  __typename?: 'CaseStudiesFields_tags_id_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Tags_Id_Read = {
+  __typename?: 'CaseStudiesFields_tags_id_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Tags_Id_Update = {
+  __typename?: 'CaseStudiesFields_tags_id_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Tags_Tag = {
+  __typename?: 'CaseStudiesFields_tags_tag';
+  create?: Maybe<CaseStudiesFields_Tags_Tag_Create>;
+  delete?: Maybe<CaseStudiesFields_Tags_Tag_Delete>;
+  read?: Maybe<CaseStudiesFields_Tags_Tag_Read>;
+  update?: Maybe<CaseStudiesFields_Tags_Tag_Update>;
+};
+
+export type CaseStudiesFields_Tags_Tag_Create = {
+  __typename?: 'CaseStudiesFields_tags_tag_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Tags_Tag_Delete = {
+  __typename?: 'CaseStudiesFields_tags_tag_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Tags_Tag_Read = {
+  __typename?: 'CaseStudiesFields_tags_tag_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Tags_Tag_Update = {
+  __typename?: 'CaseStudiesFields_tags_tag_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Title = {
+  __typename?: 'CaseStudiesFields_title';
+  create?: Maybe<CaseStudiesFields_Title_Create>;
+  delete?: Maybe<CaseStudiesFields_Title_Delete>;
+  read?: Maybe<CaseStudiesFields_Title_Read>;
+  update?: Maybe<CaseStudiesFields_Title_Update>;
+};
+
+export type CaseStudiesFields_Title_Create = {
+  __typename?: 'CaseStudiesFields_title_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Title_Delete = {
+  __typename?: 'CaseStudiesFields_title_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Title_Read = {
+  __typename?: 'CaseStudiesFields_title_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Title_Update = {
+  __typename?: 'CaseStudiesFields_title_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_UpdatedAt = {
+  __typename?: 'CaseStudiesFields_updatedAt';
+  create?: Maybe<CaseStudiesFields_UpdatedAt_Create>;
+  delete?: Maybe<CaseStudiesFields_UpdatedAt_Delete>;
+  read?: Maybe<CaseStudiesFields_UpdatedAt_Read>;
+  update?: Maybe<CaseStudiesFields_UpdatedAt_Update>;
+};
+
+export type CaseStudiesFields_UpdatedAt_Create = {
+  __typename?: 'CaseStudiesFields_updatedAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_UpdatedAt_Delete = {
+  __typename?: 'CaseStudiesFields_updatedAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_UpdatedAt_Read = {
+  __typename?: 'CaseStudiesFields_updatedAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_UpdatedAt_Update = {
+  __typename?: 'CaseStudiesFields_updatedAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesReadAccess = {
+  __typename?: 'CaseStudiesReadAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type CaseStudiesReadDocAccess = {
+  __typename?: 'CaseStudiesReadDocAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type CaseStudiesUpdateAccess = {
+  __typename?: 'CaseStudiesUpdateAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type CaseStudiesUpdateDocAccess = {
+  __typename?: 'CaseStudiesUpdateDocAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type CaseStudy = {
+  __typename?: 'CaseStudy';
+  content: Scalars['JSON']['output'];
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  experience: Experience;
+  featured?: Maybe<Scalars['Boolean']['output']>;
+  id: Scalars['Int']['output'];
+  illustration?: Maybe<Media>;
+  publishedAt?: Maybe<Scalars['DateTime']['output']>;
+  slug?: Maybe<Scalars['String']['output']>;
+  summary: Scalars['JSON']['output'];
+  tags?: Maybe<Array<CaseStudy_Tags>>;
+  title: Scalars['String']['output'];
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+
+export type CaseStudyContentArgs = {
+  depth?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+export type CaseStudySummaryArgs = {
+  depth?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export type CaseStudy_Tags = {
+  __typename?: 'CaseStudy_Tags';
+  id?: Maybe<Scalars['String']['output']>;
+  tag?: Maybe<Scalars['String']['output']>;
+};
+
+export type CaseStudy_Content_Operator = {
+  contains?: InputMaybe<Scalars['JSON']['input']>;
+  equals?: InputMaybe<Scalars['JSON']['input']>;
+  like?: InputMaybe<Scalars['JSON']['input']>;
+  not_equals?: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type CaseStudy_CreatedAt_Operator = {
+  equals?: InputMaybe<Scalars['DateTime']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  greater_than?: InputMaybe<Scalars['DateTime']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+  less_than?: InputMaybe<Scalars['DateTime']['input']>;
+  less_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+  like?: InputMaybe<Scalars['DateTime']['input']>;
+  not_equals?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+export type CaseStudy_Experience_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  equals?: InputMaybe<Scalars['JSON']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_equals?: InputMaybe<Scalars['JSON']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+};
+
+export type CaseStudy_Featured_Operator = {
+  equals?: InputMaybe<Scalars['Boolean']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  not_equals?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type CaseStudy_Id_Operator = {
+  equals?: InputMaybe<Scalars['Int']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export type CaseStudy_Illustration_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  equals?: InputMaybe<Scalars['JSON']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_equals?: InputMaybe<Scalars['JSON']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+};
+
+export type CaseStudy_PublishedAt_Operator = {
+  equals?: InputMaybe<Scalars['DateTime']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  greater_than?: InputMaybe<Scalars['DateTime']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+  less_than?: InputMaybe<Scalars['DateTime']['input']>;
+  less_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+  like?: InputMaybe<Scalars['DateTime']['input']>;
+  not_equals?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+export type CaseStudy_Slug_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type CaseStudy_Summary_Operator = {
+  contains?: InputMaybe<Scalars['JSON']['input']>;
+  equals?: InputMaybe<Scalars['JSON']['input']>;
+  like?: InputMaybe<Scalars['JSON']['input']>;
+  not_equals?: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type CaseStudy_Tags__Id_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type CaseStudy_Tags__Tag_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type CaseStudy_Title_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type CaseStudy_UpdatedAt_Operator = {
+  equals?: InputMaybe<Scalars['DateTime']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  greater_than?: InputMaybe<Scalars['DateTime']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+  less_than?: InputMaybe<Scalars['DateTime']['input']>;
+  less_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+  like?: InputMaybe<Scalars['DateTime']['input']>;
+  not_equals?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+export type CaseStudy_Where = {
+  AND?: InputMaybe<Array<InputMaybe<CaseStudy_Where_And>>>;
+  OR?: InputMaybe<Array<InputMaybe<CaseStudy_Where_Or>>>;
+  content?: InputMaybe<CaseStudy_Content_Operator>;
+  createdAt?: InputMaybe<CaseStudy_CreatedAt_Operator>;
+  experience?: InputMaybe<CaseStudy_Experience_Operator>;
+  featured?: InputMaybe<CaseStudy_Featured_Operator>;
+  id?: InputMaybe<CaseStudy_Id_Operator>;
+  illustration?: InputMaybe<CaseStudy_Illustration_Operator>;
+  publishedAt?: InputMaybe<CaseStudy_PublishedAt_Operator>;
+  slug?: InputMaybe<CaseStudy_Slug_Operator>;
+  summary?: InputMaybe<CaseStudy_Summary_Operator>;
+  tags__id?: InputMaybe<CaseStudy_Tags__Id_Operator>;
+  tags__tag?: InputMaybe<CaseStudy_Tags__Tag_Operator>;
+  title?: InputMaybe<CaseStudy_Title_Operator>;
+  updatedAt?: InputMaybe<CaseStudy_UpdatedAt_Operator>;
+};
+
+export type CaseStudy_Where_And = {
+  AND?: InputMaybe<Array<InputMaybe<CaseStudy_Where_And>>>;
+  OR?: InputMaybe<Array<InputMaybe<CaseStudy_Where_Or>>>;
+  content?: InputMaybe<CaseStudy_Content_Operator>;
+  createdAt?: InputMaybe<CaseStudy_CreatedAt_Operator>;
+  experience?: InputMaybe<CaseStudy_Experience_Operator>;
+  featured?: InputMaybe<CaseStudy_Featured_Operator>;
+  id?: InputMaybe<CaseStudy_Id_Operator>;
+  illustration?: InputMaybe<CaseStudy_Illustration_Operator>;
+  publishedAt?: InputMaybe<CaseStudy_PublishedAt_Operator>;
+  slug?: InputMaybe<CaseStudy_Slug_Operator>;
+  summary?: InputMaybe<CaseStudy_Summary_Operator>;
+  tags__id?: InputMaybe<CaseStudy_Tags__Id_Operator>;
+  tags__tag?: InputMaybe<CaseStudy_Tags__Tag_Operator>;
+  title?: InputMaybe<CaseStudy_Title_Operator>;
+  updatedAt?: InputMaybe<CaseStudy_UpdatedAt_Operator>;
+};
+
+export type CaseStudy_Where_Or = {
+  AND?: InputMaybe<Array<InputMaybe<CaseStudy_Where_And>>>;
+  OR?: InputMaybe<Array<InputMaybe<CaseStudy_Where_Or>>>;
+  content?: InputMaybe<CaseStudy_Content_Operator>;
+  createdAt?: InputMaybe<CaseStudy_CreatedAt_Operator>;
+  experience?: InputMaybe<CaseStudy_Experience_Operator>;
+  featured?: InputMaybe<CaseStudy_Featured_Operator>;
+  id?: InputMaybe<CaseStudy_Id_Operator>;
+  illustration?: InputMaybe<CaseStudy_Illustration_Operator>;
+  publishedAt?: InputMaybe<CaseStudy_PublishedAt_Operator>;
+  slug?: InputMaybe<CaseStudy_Slug_Operator>;
+  summary?: InputMaybe<CaseStudy_Summary_Operator>;
+  tags__id?: InputMaybe<CaseStudy_Tags__Id_Operator>;
+  tags__tag?: InputMaybe<CaseStudy_Tags__Tag_Operator>;
+  title?: InputMaybe<CaseStudy_Title_Operator>;
+  updatedAt?: InputMaybe<CaseStudy_UpdatedAt_Operator>;
 };
 
 export type ContactForm = {
@@ -666,9 +1714,1346 @@ export type ContactFormsUpdateDocAccess = {
   where?: Maybe<Scalars['JSONObject']['output']>;
 };
 
+export type Experience = {
+  __typename?: 'Experience';
+  caseStudies?: Maybe<Array<CaseStudy>>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  endDate?: Maybe<Scalars['DateTime']['output']>;
+  id: Scalars['Int']['output'];
+  role?: Maybe<Scalars['String']['output']>;
+  slug?: Maybe<Scalars['String']['output']>;
+  startDate?: Maybe<Scalars['DateTime']['output']>;
+  summary: Scalars['JSON']['output'];
+  thumbnailImage?: Maybe<Media>;
+  title: Scalars['String']['output'];
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+
+export type ExperienceSummaryArgs = {
+  depth?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export type Experience_CaseStudies_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  equals?: InputMaybe<Scalars['JSON']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_equals?: InputMaybe<Scalars['JSON']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+};
+
+export type Experience_CreatedAt_Operator = {
+  equals?: InputMaybe<Scalars['DateTime']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  greater_than?: InputMaybe<Scalars['DateTime']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+  less_than?: InputMaybe<Scalars['DateTime']['input']>;
+  less_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+  like?: InputMaybe<Scalars['DateTime']['input']>;
+  not_equals?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+export type Experience_EndDate_Operator = {
+  equals?: InputMaybe<Scalars['DateTime']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  greater_than?: InputMaybe<Scalars['DateTime']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+  less_than?: InputMaybe<Scalars['DateTime']['input']>;
+  less_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+  like?: InputMaybe<Scalars['DateTime']['input']>;
+  not_equals?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+export type Experience_Id_Operator = {
+  equals?: InputMaybe<Scalars['Int']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export type Experience_Role_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Experience_Slug_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Experience_StartDate_Operator = {
+  equals?: InputMaybe<Scalars['DateTime']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  greater_than?: InputMaybe<Scalars['DateTime']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+  less_than?: InputMaybe<Scalars['DateTime']['input']>;
+  less_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+  like?: InputMaybe<Scalars['DateTime']['input']>;
+  not_equals?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+export type Experience_Summary_Operator = {
+  contains?: InputMaybe<Scalars['JSON']['input']>;
+  equals?: InputMaybe<Scalars['JSON']['input']>;
+  like?: InputMaybe<Scalars['JSON']['input']>;
+  not_equals?: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type Experience_ThumbnailImage_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  equals?: InputMaybe<Scalars['JSON']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_equals?: InputMaybe<Scalars['JSON']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+};
+
+export type Experience_Title_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Experience_UpdatedAt_Operator = {
+  equals?: InputMaybe<Scalars['DateTime']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  greater_than?: InputMaybe<Scalars['DateTime']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+  less_than?: InputMaybe<Scalars['DateTime']['input']>;
+  less_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+  like?: InputMaybe<Scalars['DateTime']['input']>;
+  not_equals?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+export type Experience_Where = {
+  AND?: InputMaybe<Array<InputMaybe<Experience_Where_And>>>;
+  OR?: InputMaybe<Array<InputMaybe<Experience_Where_Or>>>;
+  caseStudies?: InputMaybe<Experience_CaseStudies_Operator>;
+  createdAt?: InputMaybe<Experience_CreatedAt_Operator>;
+  endDate?: InputMaybe<Experience_EndDate_Operator>;
+  id?: InputMaybe<Experience_Id_Operator>;
+  role?: InputMaybe<Experience_Role_Operator>;
+  slug?: InputMaybe<Experience_Slug_Operator>;
+  startDate?: InputMaybe<Experience_StartDate_Operator>;
+  summary?: InputMaybe<Experience_Summary_Operator>;
+  thumbnailImage?: InputMaybe<Experience_ThumbnailImage_Operator>;
+  title?: InputMaybe<Experience_Title_Operator>;
+  updatedAt?: InputMaybe<Experience_UpdatedAt_Operator>;
+};
+
+export type Experience_Where_And = {
+  AND?: InputMaybe<Array<InputMaybe<Experience_Where_And>>>;
+  OR?: InputMaybe<Array<InputMaybe<Experience_Where_Or>>>;
+  caseStudies?: InputMaybe<Experience_CaseStudies_Operator>;
+  createdAt?: InputMaybe<Experience_CreatedAt_Operator>;
+  endDate?: InputMaybe<Experience_EndDate_Operator>;
+  id?: InputMaybe<Experience_Id_Operator>;
+  role?: InputMaybe<Experience_Role_Operator>;
+  slug?: InputMaybe<Experience_Slug_Operator>;
+  startDate?: InputMaybe<Experience_StartDate_Operator>;
+  summary?: InputMaybe<Experience_Summary_Operator>;
+  thumbnailImage?: InputMaybe<Experience_ThumbnailImage_Operator>;
+  title?: InputMaybe<Experience_Title_Operator>;
+  updatedAt?: InputMaybe<Experience_UpdatedAt_Operator>;
+};
+
+export type Experience_Where_Or = {
+  AND?: InputMaybe<Array<InputMaybe<Experience_Where_And>>>;
+  OR?: InputMaybe<Array<InputMaybe<Experience_Where_Or>>>;
+  caseStudies?: InputMaybe<Experience_CaseStudies_Operator>;
+  createdAt?: InputMaybe<Experience_CreatedAt_Operator>;
+  endDate?: InputMaybe<Experience_EndDate_Operator>;
+  id?: InputMaybe<Experience_Id_Operator>;
+  role?: InputMaybe<Experience_Role_Operator>;
+  slug?: InputMaybe<Experience_Slug_Operator>;
+  startDate?: InputMaybe<Experience_StartDate_Operator>;
+  summary?: InputMaybe<Experience_Summary_Operator>;
+  thumbnailImage?: InputMaybe<Experience_ThumbnailImage_Operator>;
+  title?: InputMaybe<Experience_Title_Operator>;
+  updatedAt?: InputMaybe<Experience_UpdatedAt_Operator>;
+};
+
+export type Experiences = {
+  __typename?: 'Experiences';
+  docs: Array<Experience>;
+  hasNextPage: Scalars['Boolean']['output'];
+  hasPrevPage: Scalars['Boolean']['output'];
+  limit: Scalars['Int']['output'];
+  nextPage: Scalars['Int']['output'];
+  offset?: Maybe<Scalars['Int']['output']>;
+  page: Scalars['Int']['output'];
+  pagingCounter: Scalars['Int']['output'];
+  prevPage: Scalars['Int']['output'];
+  totalDocs: Scalars['Int']['output'];
+  totalPages: Scalars['Int']['output'];
+};
+
+export type ExperiencesCreateAccess = {
+  __typename?: 'ExperiencesCreateAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type ExperiencesCreateDocAccess = {
+  __typename?: 'ExperiencesCreateDocAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type ExperiencesDeleteAccess = {
+  __typename?: 'ExperiencesDeleteAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type ExperiencesDeleteDocAccess = {
+  __typename?: 'ExperiencesDeleteDocAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type ExperiencesDocAccessFields = {
+  __typename?: 'ExperiencesDocAccessFields';
+  caseStudies?: Maybe<ExperiencesDocAccessFields_CaseStudies>;
+  createdAt?: Maybe<ExperiencesDocAccessFields_CreatedAt>;
+  endDate?: Maybe<ExperiencesDocAccessFields_EndDate>;
+  role?: Maybe<ExperiencesDocAccessFields_Role>;
+  slug?: Maybe<ExperiencesDocAccessFields_Slug>;
+  startDate?: Maybe<ExperiencesDocAccessFields_StartDate>;
+  summary?: Maybe<ExperiencesDocAccessFields_Summary>;
+  thumbnailImage?: Maybe<ExperiencesDocAccessFields_ThumbnailImage>;
+  title?: Maybe<ExperiencesDocAccessFields_Title>;
+  updatedAt?: Maybe<ExperiencesDocAccessFields_UpdatedAt>;
+};
+
+export type ExperiencesDocAccessFields_CaseStudies = {
+  __typename?: 'ExperiencesDocAccessFields_caseStudies';
+  create?: Maybe<ExperiencesDocAccessFields_CaseStudies_Create>;
+  delete?: Maybe<ExperiencesDocAccessFields_CaseStudies_Delete>;
+  read?: Maybe<ExperiencesDocAccessFields_CaseStudies_Read>;
+  update?: Maybe<ExperiencesDocAccessFields_CaseStudies_Update>;
+};
+
+export type ExperiencesDocAccessFields_CaseStudies_Create = {
+  __typename?: 'ExperiencesDocAccessFields_caseStudies_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_CaseStudies_Delete = {
+  __typename?: 'ExperiencesDocAccessFields_caseStudies_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_CaseStudies_Read = {
+  __typename?: 'ExperiencesDocAccessFields_caseStudies_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_CaseStudies_Update = {
+  __typename?: 'ExperiencesDocAccessFields_caseStudies_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_CreatedAt = {
+  __typename?: 'ExperiencesDocAccessFields_createdAt';
+  create?: Maybe<ExperiencesDocAccessFields_CreatedAt_Create>;
+  delete?: Maybe<ExperiencesDocAccessFields_CreatedAt_Delete>;
+  read?: Maybe<ExperiencesDocAccessFields_CreatedAt_Read>;
+  update?: Maybe<ExperiencesDocAccessFields_CreatedAt_Update>;
+};
+
+export type ExperiencesDocAccessFields_CreatedAt_Create = {
+  __typename?: 'ExperiencesDocAccessFields_createdAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_CreatedAt_Delete = {
+  __typename?: 'ExperiencesDocAccessFields_createdAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_CreatedAt_Read = {
+  __typename?: 'ExperiencesDocAccessFields_createdAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_CreatedAt_Update = {
+  __typename?: 'ExperiencesDocAccessFields_createdAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_EndDate = {
+  __typename?: 'ExperiencesDocAccessFields_endDate';
+  create?: Maybe<ExperiencesDocAccessFields_EndDate_Create>;
+  delete?: Maybe<ExperiencesDocAccessFields_EndDate_Delete>;
+  read?: Maybe<ExperiencesDocAccessFields_EndDate_Read>;
+  update?: Maybe<ExperiencesDocAccessFields_EndDate_Update>;
+};
+
+export type ExperiencesDocAccessFields_EndDate_Create = {
+  __typename?: 'ExperiencesDocAccessFields_endDate_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_EndDate_Delete = {
+  __typename?: 'ExperiencesDocAccessFields_endDate_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_EndDate_Read = {
+  __typename?: 'ExperiencesDocAccessFields_endDate_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_EndDate_Update = {
+  __typename?: 'ExperiencesDocAccessFields_endDate_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_Role = {
+  __typename?: 'ExperiencesDocAccessFields_role';
+  create?: Maybe<ExperiencesDocAccessFields_Role_Create>;
+  delete?: Maybe<ExperiencesDocAccessFields_Role_Delete>;
+  read?: Maybe<ExperiencesDocAccessFields_Role_Read>;
+  update?: Maybe<ExperiencesDocAccessFields_Role_Update>;
+};
+
+export type ExperiencesDocAccessFields_Role_Create = {
+  __typename?: 'ExperiencesDocAccessFields_role_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_Role_Delete = {
+  __typename?: 'ExperiencesDocAccessFields_role_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_Role_Read = {
+  __typename?: 'ExperiencesDocAccessFields_role_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_Role_Update = {
+  __typename?: 'ExperiencesDocAccessFields_role_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_Slug = {
+  __typename?: 'ExperiencesDocAccessFields_slug';
+  create?: Maybe<ExperiencesDocAccessFields_Slug_Create>;
+  delete?: Maybe<ExperiencesDocAccessFields_Slug_Delete>;
+  read?: Maybe<ExperiencesDocAccessFields_Slug_Read>;
+  update?: Maybe<ExperiencesDocAccessFields_Slug_Update>;
+};
+
+export type ExperiencesDocAccessFields_Slug_Create = {
+  __typename?: 'ExperiencesDocAccessFields_slug_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_Slug_Delete = {
+  __typename?: 'ExperiencesDocAccessFields_slug_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_Slug_Read = {
+  __typename?: 'ExperiencesDocAccessFields_slug_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_Slug_Update = {
+  __typename?: 'ExperiencesDocAccessFields_slug_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_StartDate = {
+  __typename?: 'ExperiencesDocAccessFields_startDate';
+  create?: Maybe<ExperiencesDocAccessFields_StartDate_Create>;
+  delete?: Maybe<ExperiencesDocAccessFields_StartDate_Delete>;
+  read?: Maybe<ExperiencesDocAccessFields_StartDate_Read>;
+  update?: Maybe<ExperiencesDocAccessFields_StartDate_Update>;
+};
+
+export type ExperiencesDocAccessFields_StartDate_Create = {
+  __typename?: 'ExperiencesDocAccessFields_startDate_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_StartDate_Delete = {
+  __typename?: 'ExperiencesDocAccessFields_startDate_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_StartDate_Read = {
+  __typename?: 'ExperiencesDocAccessFields_startDate_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_StartDate_Update = {
+  __typename?: 'ExperiencesDocAccessFields_startDate_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_Summary = {
+  __typename?: 'ExperiencesDocAccessFields_summary';
+  create?: Maybe<ExperiencesDocAccessFields_Summary_Create>;
+  delete?: Maybe<ExperiencesDocAccessFields_Summary_Delete>;
+  read?: Maybe<ExperiencesDocAccessFields_Summary_Read>;
+  update?: Maybe<ExperiencesDocAccessFields_Summary_Update>;
+};
+
+export type ExperiencesDocAccessFields_Summary_Create = {
+  __typename?: 'ExperiencesDocAccessFields_summary_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_Summary_Delete = {
+  __typename?: 'ExperiencesDocAccessFields_summary_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_Summary_Read = {
+  __typename?: 'ExperiencesDocAccessFields_summary_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_Summary_Update = {
+  __typename?: 'ExperiencesDocAccessFields_summary_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_ThumbnailImage = {
+  __typename?: 'ExperiencesDocAccessFields_thumbnailImage';
+  create?: Maybe<ExperiencesDocAccessFields_ThumbnailImage_Create>;
+  delete?: Maybe<ExperiencesDocAccessFields_ThumbnailImage_Delete>;
+  read?: Maybe<ExperiencesDocAccessFields_ThumbnailImage_Read>;
+  update?: Maybe<ExperiencesDocAccessFields_ThumbnailImage_Update>;
+};
+
+export type ExperiencesDocAccessFields_ThumbnailImage_Create = {
+  __typename?: 'ExperiencesDocAccessFields_thumbnailImage_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_ThumbnailImage_Delete = {
+  __typename?: 'ExperiencesDocAccessFields_thumbnailImage_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_ThumbnailImage_Read = {
+  __typename?: 'ExperiencesDocAccessFields_thumbnailImage_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_ThumbnailImage_Update = {
+  __typename?: 'ExperiencesDocAccessFields_thumbnailImage_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_Title = {
+  __typename?: 'ExperiencesDocAccessFields_title';
+  create?: Maybe<ExperiencesDocAccessFields_Title_Create>;
+  delete?: Maybe<ExperiencesDocAccessFields_Title_Delete>;
+  read?: Maybe<ExperiencesDocAccessFields_Title_Read>;
+  update?: Maybe<ExperiencesDocAccessFields_Title_Update>;
+};
+
+export type ExperiencesDocAccessFields_Title_Create = {
+  __typename?: 'ExperiencesDocAccessFields_title_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_Title_Delete = {
+  __typename?: 'ExperiencesDocAccessFields_title_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_Title_Read = {
+  __typename?: 'ExperiencesDocAccessFields_title_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_Title_Update = {
+  __typename?: 'ExperiencesDocAccessFields_title_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_UpdatedAt = {
+  __typename?: 'ExperiencesDocAccessFields_updatedAt';
+  create?: Maybe<ExperiencesDocAccessFields_UpdatedAt_Create>;
+  delete?: Maybe<ExperiencesDocAccessFields_UpdatedAt_Delete>;
+  read?: Maybe<ExperiencesDocAccessFields_UpdatedAt_Read>;
+  update?: Maybe<ExperiencesDocAccessFields_UpdatedAt_Update>;
+};
+
+export type ExperiencesDocAccessFields_UpdatedAt_Create = {
+  __typename?: 'ExperiencesDocAccessFields_updatedAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_UpdatedAt_Delete = {
+  __typename?: 'ExperiencesDocAccessFields_updatedAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_UpdatedAt_Read = {
+  __typename?: 'ExperiencesDocAccessFields_updatedAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_UpdatedAt_Update = {
+  __typename?: 'ExperiencesDocAccessFields_updatedAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields = {
+  __typename?: 'ExperiencesFields';
+  caseStudies?: Maybe<ExperiencesFields_CaseStudies>;
+  createdAt?: Maybe<ExperiencesFields_CreatedAt>;
+  endDate?: Maybe<ExperiencesFields_EndDate>;
+  role?: Maybe<ExperiencesFields_Role>;
+  slug?: Maybe<ExperiencesFields_Slug>;
+  startDate?: Maybe<ExperiencesFields_StartDate>;
+  summary?: Maybe<ExperiencesFields_Summary>;
+  thumbnailImage?: Maybe<ExperiencesFields_ThumbnailImage>;
+  title?: Maybe<ExperiencesFields_Title>;
+  updatedAt?: Maybe<ExperiencesFields_UpdatedAt>;
+};
+
+export type ExperiencesFields_CaseStudies = {
+  __typename?: 'ExperiencesFields_caseStudies';
+  create?: Maybe<ExperiencesFields_CaseStudies_Create>;
+  delete?: Maybe<ExperiencesFields_CaseStudies_Delete>;
+  read?: Maybe<ExperiencesFields_CaseStudies_Read>;
+  update?: Maybe<ExperiencesFields_CaseStudies_Update>;
+};
+
+export type ExperiencesFields_CaseStudies_Create = {
+  __typename?: 'ExperiencesFields_caseStudies_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_CaseStudies_Delete = {
+  __typename?: 'ExperiencesFields_caseStudies_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_CaseStudies_Read = {
+  __typename?: 'ExperiencesFields_caseStudies_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_CaseStudies_Update = {
+  __typename?: 'ExperiencesFields_caseStudies_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_CreatedAt = {
+  __typename?: 'ExperiencesFields_createdAt';
+  create?: Maybe<ExperiencesFields_CreatedAt_Create>;
+  delete?: Maybe<ExperiencesFields_CreatedAt_Delete>;
+  read?: Maybe<ExperiencesFields_CreatedAt_Read>;
+  update?: Maybe<ExperiencesFields_CreatedAt_Update>;
+};
+
+export type ExperiencesFields_CreatedAt_Create = {
+  __typename?: 'ExperiencesFields_createdAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_CreatedAt_Delete = {
+  __typename?: 'ExperiencesFields_createdAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_CreatedAt_Read = {
+  __typename?: 'ExperiencesFields_createdAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_CreatedAt_Update = {
+  __typename?: 'ExperiencesFields_createdAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_EndDate = {
+  __typename?: 'ExperiencesFields_endDate';
+  create?: Maybe<ExperiencesFields_EndDate_Create>;
+  delete?: Maybe<ExperiencesFields_EndDate_Delete>;
+  read?: Maybe<ExperiencesFields_EndDate_Read>;
+  update?: Maybe<ExperiencesFields_EndDate_Update>;
+};
+
+export type ExperiencesFields_EndDate_Create = {
+  __typename?: 'ExperiencesFields_endDate_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_EndDate_Delete = {
+  __typename?: 'ExperiencesFields_endDate_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_EndDate_Read = {
+  __typename?: 'ExperiencesFields_endDate_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_EndDate_Update = {
+  __typename?: 'ExperiencesFields_endDate_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_Role = {
+  __typename?: 'ExperiencesFields_role';
+  create?: Maybe<ExperiencesFields_Role_Create>;
+  delete?: Maybe<ExperiencesFields_Role_Delete>;
+  read?: Maybe<ExperiencesFields_Role_Read>;
+  update?: Maybe<ExperiencesFields_Role_Update>;
+};
+
+export type ExperiencesFields_Role_Create = {
+  __typename?: 'ExperiencesFields_role_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_Role_Delete = {
+  __typename?: 'ExperiencesFields_role_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_Role_Read = {
+  __typename?: 'ExperiencesFields_role_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_Role_Update = {
+  __typename?: 'ExperiencesFields_role_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_Slug = {
+  __typename?: 'ExperiencesFields_slug';
+  create?: Maybe<ExperiencesFields_Slug_Create>;
+  delete?: Maybe<ExperiencesFields_Slug_Delete>;
+  read?: Maybe<ExperiencesFields_Slug_Read>;
+  update?: Maybe<ExperiencesFields_Slug_Update>;
+};
+
+export type ExperiencesFields_Slug_Create = {
+  __typename?: 'ExperiencesFields_slug_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_Slug_Delete = {
+  __typename?: 'ExperiencesFields_slug_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_Slug_Read = {
+  __typename?: 'ExperiencesFields_slug_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_Slug_Update = {
+  __typename?: 'ExperiencesFields_slug_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_StartDate = {
+  __typename?: 'ExperiencesFields_startDate';
+  create?: Maybe<ExperiencesFields_StartDate_Create>;
+  delete?: Maybe<ExperiencesFields_StartDate_Delete>;
+  read?: Maybe<ExperiencesFields_StartDate_Read>;
+  update?: Maybe<ExperiencesFields_StartDate_Update>;
+};
+
+export type ExperiencesFields_StartDate_Create = {
+  __typename?: 'ExperiencesFields_startDate_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_StartDate_Delete = {
+  __typename?: 'ExperiencesFields_startDate_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_StartDate_Read = {
+  __typename?: 'ExperiencesFields_startDate_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_StartDate_Update = {
+  __typename?: 'ExperiencesFields_startDate_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_Summary = {
+  __typename?: 'ExperiencesFields_summary';
+  create?: Maybe<ExperiencesFields_Summary_Create>;
+  delete?: Maybe<ExperiencesFields_Summary_Delete>;
+  read?: Maybe<ExperiencesFields_Summary_Read>;
+  update?: Maybe<ExperiencesFields_Summary_Update>;
+};
+
+export type ExperiencesFields_Summary_Create = {
+  __typename?: 'ExperiencesFields_summary_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_Summary_Delete = {
+  __typename?: 'ExperiencesFields_summary_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_Summary_Read = {
+  __typename?: 'ExperiencesFields_summary_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_Summary_Update = {
+  __typename?: 'ExperiencesFields_summary_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_ThumbnailImage = {
+  __typename?: 'ExperiencesFields_thumbnailImage';
+  create?: Maybe<ExperiencesFields_ThumbnailImage_Create>;
+  delete?: Maybe<ExperiencesFields_ThumbnailImage_Delete>;
+  read?: Maybe<ExperiencesFields_ThumbnailImage_Read>;
+  update?: Maybe<ExperiencesFields_ThumbnailImage_Update>;
+};
+
+export type ExperiencesFields_ThumbnailImage_Create = {
+  __typename?: 'ExperiencesFields_thumbnailImage_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_ThumbnailImage_Delete = {
+  __typename?: 'ExperiencesFields_thumbnailImage_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_ThumbnailImage_Read = {
+  __typename?: 'ExperiencesFields_thumbnailImage_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_ThumbnailImage_Update = {
+  __typename?: 'ExperiencesFields_thumbnailImage_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_Title = {
+  __typename?: 'ExperiencesFields_title';
+  create?: Maybe<ExperiencesFields_Title_Create>;
+  delete?: Maybe<ExperiencesFields_Title_Delete>;
+  read?: Maybe<ExperiencesFields_Title_Read>;
+  update?: Maybe<ExperiencesFields_Title_Update>;
+};
+
+export type ExperiencesFields_Title_Create = {
+  __typename?: 'ExperiencesFields_title_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_Title_Delete = {
+  __typename?: 'ExperiencesFields_title_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_Title_Read = {
+  __typename?: 'ExperiencesFields_title_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_Title_Update = {
+  __typename?: 'ExperiencesFields_title_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_UpdatedAt = {
+  __typename?: 'ExperiencesFields_updatedAt';
+  create?: Maybe<ExperiencesFields_UpdatedAt_Create>;
+  delete?: Maybe<ExperiencesFields_UpdatedAt_Delete>;
+  read?: Maybe<ExperiencesFields_UpdatedAt_Read>;
+  update?: Maybe<ExperiencesFields_UpdatedAt_Update>;
+};
+
+export type ExperiencesFields_UpdatedAt_Create = {
+  __typename?: 'ExperiencesFields_updatedAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_UpdatedAt_Delete = {
+  __typename?: 'ExperiencesFields_updatedAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_UpdatedAt_Read = {
+  __typename?: 'ExperiencesFields_updatedAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_UpdatedAt_Update = {
+  __typename?: 'ExperiencesFields_updatedAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesReadAccess = {
+  __typename?: 'ExperiencesReadAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type ExperiencesReadDocAccess = {
+  __typename?: 'ExperiencesReadDocAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type ExperiencesUpdateAccess = {
+  __typename?: 'ExperiencesUpdateAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type ExperiencesUpdateDocAccess = {
+  __typename?: 'ExperiencesUpdateDocAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type Footer = {
+  __typename?: 'Footer';
+  bottomText: Scalars['String']['output'];
+  buttonText: Scalars['String']['output'];
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  description: Scalars['String']['output'];
+  hero: Scalars['String']['output'];
+  title1: Scalars['String']['output'];
+  title2: Scalars['String']['output'];
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type FooterDocAccessFields = {
+  __typename?: 'FooterDocAccessFields';
+  bottomText?: Maybe<FooterDocAccessFields_BottomText>;
+  buttonText?: Maybe<FooterDocAccessFields_ButtonText>;
+  createdAt?: Maybe<FooterDocAccessFields_CreatedAt>;
+  description?: Maybe<FooterDocAccessFields_Description>;
+  hero?: Maybe<FooterDocAccessFields_Hero>;
+  title1?: Maybe<FooterDocAccessFields_Title1>;
+  title2?: Maybe<FooterDocAccessFields_Title2>;
+  updatedAt?: Maybe<FooterDocAccessFields_UpdatedAt>;
+};
+
+export type FooterDocAccessFields_BottomText = {
+  __typename?: 'FooterDocAccessFields_bottomText';
+  create?: Maybe<FooterDocAccessFields_BottomText_Create>;
+  delete?: Maybe<FooterDocAccessFields_BottomText_Delete>;
+  read?: Maybe<FooterDocAccessFields_BottomText_Read>;
+  update?: Maybe<FooterDocAccessFields_BottomText_Update>;
+};
+
+export type FooterDocAccessFields_BottomText_Create = {
+  __typename?: 'FooterDocAccessFields_bottomText_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_BottomText_Delete = {
+  __typename?: 'FooterDocAccessFields_bottomText_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_BottomText_Read = {
+  __typename?: 'FooterDocAccessFields_bottomText_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_BottomText_Update = {
+  __typename?: 'FooterDocAccessFields_bottomText_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_ButtonText = {
+  __typename?: 'FooterDocAccessFields_buttonText';
+  create?: Maybe<FooterDocAccessFields_ButtonText_Create>;
+  delete?: Maybe<FooterDocAccessFields_ButtonText_Delete>;
+  read?: Maybe<FooterDocAccessFields_ButtonText_Read>;
+  update?: Maybe<FooterDocAccessFields_ButtonText_Update>;
+};
+
+export type FooterDocAccessFields_ButtonText_Create = {
+  __typename?: 'FooterDocAccessFields_buttonText_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_ButtonText_Delete = {
+  __typename?: 'FooterDocAccessFields_buttonText_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_ButtonText_Read = {
+  __typename?: 'FooterDocAccessFields_buttonText_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_ButtonText_Update = {
+  __typename?: 'FooterDocAccessFields_buttonText_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_CreatedAt = {
+  __typename?: 'FooterDocAccessFields_createdAt';
+  create?: Maybe<FooterDocAccessFields_CreatedAt_Create>;
+  delete?: Maybe<FooterDocAccessFields_CreatedAt_Delete>;
+  read?: Maybe<FooterDocAccessFields_CreatedAt_Read>;
+  update?: Maybe<FooterDocAccessFields_CreatedAt_Update>;
+};
+
+export type FooterDocAccessFields_CreatedAt_Create = {
+  __typename?: 'FooterDocAccessFields_createdAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_CreatedAt_Delete = {
+  __typename?: 'FooterDocAccessFields_createdAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_CreatedAt_Read = {
+  __typename?: 'FooterDocAccessFields_createdAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_CreatedAt_Update = {
+  __typename?: 'FooterDocAccessFields_createdAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_Description = {
+  __typename?: 'FooterDocAccessFields_description';
+  create?: Maybe<FooterDocAccessFields_Description_Create>;
+  delete?: Maybe<FooterDocAccessFields_Description_Delete>;
+  read?: Maybe<FooterDocAccessFields_Description_Read>;
+  update?: Maybe<FooterDocAccessFields_Description_Update>;
+};
+
+export type FooterDocAccessFields_Description_Create = {
+  __typename?: 'FooterDocAccessFields_description_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_Description_Delete = {
+  __typename?: 'FooterDocAccessFields_description_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_Description_Read = {
+  __typename?: 'FooterDocAccessFields_description_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_Description_Update = {
+  __typename?: 'FooterDocAccessFields_description_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_Hero = {
+  __typename?: 'FooterDocAccessFields_hero';
+  create?: Maybe<FooterDocAccessFields_Hero_Create>;
+  delete?: Maybe<FooterDocAccessFields_Hero_Delete>;
+  read?: Maybe<FooterDocAccessFields_Hero_Read>;
+  update?: Maybe<FooterDocAccessFields_Hero_Update>;
+};
+
+export type FooterDocAccessFields_Hero_Create = {
+  __typename?: 'FooterDocAccessFields_hero_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_Hero_Delete = {
+  __typename?: 'FooterDocAccessFields_hero_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_Hero_Read = {
+  __typename?: 'FooterDocAccessFields_hero_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_Hero_Update = {
+  __typename?: 'FooterDocAccessFields_hero_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_Title1 = {
+  __typename?: 'FooterDocAccessFields_title1';
+  create?: Maybe<FooterDocAccessFields_Title1_Create>;
+  delete?: Maybe<FooterDocAccessFields_Title1_Delete>;
+  read?: Maybe<FooterDocAccessFields_Title1_Read>;
+  update?: Maybe<FooterDocAccessFields_Title1_Update>;
+};
+
+export type FooterDocAccessFields_Title1_Create = {
+  __typename?: 'FooterDocAccessFields_title1_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_Title1_Delete = {
+  __typename?: 'FooterDocAccessFields_title1_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_Title1_Read = {
+  __typename?: 'FooterDocAccessFields_title1_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_Title1_Update = {
+  __typename?: 'FooterDocAccessFields_title1_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_Title2 = {
+  __typename?: 'FooterDocAccessFields_title2';
+  create?: Maybe<FooterDocAccessFields_Title2_Create>;
+  delete?: Maybe<FooterDocAccessFields_Title2_Delete>;
+  read?: Maybe<FooterDocAccessFields_Title2_Read>;
+  update?: Maybe<FooterDocAccessFields_Title2_Update>;
+};
+
+export type FooterDocAccessFields_Title2_Create = {
+  __typename?: 'FooterDocAccessFields_title2_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_Title2_Delete = {
+  __typename?: 'FooterDocAccessFields_title2_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_Title2_Read = {
+  __typename?: 'FooterDocAccessFields_title2_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_Title2_Update = {
+  __typename?: 'FooterDocAccessFields_title2_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_UpdatedAt = {
+  __typename?: 'FooterDocAccessFields_updatedAt';
+  create?: Maybe<FooterDocAccessFields_UpdatedAt_Create>;
+  delete?: Maybe<FooterDocAccessFields_UpdatedAt_Delete>;
+  read?: Maybe<FooterDocAccessFields_UpdatedAt_Read>;
+  update?: Maybe<FooterDocAccessFields_UpdatedAt_Update>;
+};
+
+export type FooterDocAccessFields_UpdatedAt_Create = {
+  __typename?: 'FooterDocAccessFields_updatedAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_UpdatedAt_Delete = {
+  __typename?: 'FooterDocAccessFields_updatedAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_UpdatedAt_Read = {
+  __typename?: 'FooterDocAccessFields_updatedAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_UpdatedAt_Update = {
+  __typename?: 'FooterDocAccessFields_updatedAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields = {
+  __typename?: 'FooterFields';
+  bottomText?: Maybe<FooterFields_BottomText>;
+  buttonText?: Maybe<FooterFields_ButtonText>;
+  createdAt?: Maybe<FooterFields_CreatedAt>;
+  description?: Maybe<FooterFields_Description>;
+  hero?: Maybe<FooterFields_Hero>;
+  title1?: Maybe<FooterFields_Title1>;
+  title2?: Maybe<FooterFields_Title2>;
+  updatedAt?: Maybe<FooterFields_UpdatedAt>;
+};
+
+export type FooterFields_BottomText = {
+  __typename?: 'FooterFields_bottomText';
+  create?: Maybe<FooterFields_BottomText_Create>;
+  delete?: Maybe<FooterFields_BottomText_Delete>;
+  read?: Maybe<FooterFields_BottomText_Read>;
+  update?: Maybe<FooterFields_BottomText_Update>;
+};
+
+export type FooterFields_BottomText_Create = {
+  __typename?: 'FooterFields_bottomText_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_BottomText_Delete = {
+  __typename?: 'FooterFields_bottomText_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_BottomText_Read = {
+  __typename?: 'FooterFields_bottomText_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_BottomText_Update = {
+  __typename?: 'FooterFields_bottomText_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_ButtonText = {
+  __typename?: 'FooterFields_buttonText';
+  create?: Maybe<FooterFields_ButtonText_Create>;
+  delete?: Maybe<FooterFields_ButtonText_Delete>;
+  read?: Maybe<FooterFields_ButtonText_Read>;
+  update?: Maybe<FooterFields_ButtonText_Update>;
+};
+
+export type FooterFields_ButtonText_Create = {
+  __typename?: 'FooterFields_buttonText_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_ButtonText_Delete = {
+  __typename?: 'FooterFields_buttonText_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_ButtonText_Read = {
+  __typename?: 'FooterFields_buttonText_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_ButtonText_Update = {
+  __typename?: 'FooterFields_buttonText_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_CreatedAt = {
+  __typename?: 'FooterFields_createdAt';
+  create?: Maybe<FooterFields_CreatedAt_Create>;
+  delete?: Maybe<FooterFields_CreatedAt_Delete>;
+  read?: Maybe<FooterFields_CreatedAt_Read>;
+  update?: Maybe<FooterFields_CreatedAt_Update>;
+};
+
+export type FooterFields_CreatedAt_Create = {
+  __typename?: 'FooterFields_createdAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_CreatedAt_Delete = {
+  __typename?: 'FooterFields_createdAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_CreatedAt_Read = {
+  __typename?: 'FooterFields_createdAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_CreatedAt_Update = {
+  __typename?: 'FooterFields_createdAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_Description = {
+  __typename?: 'FooterFields_description';
+  create?: Maybe<FooterFields_Description_Create>;
+  delete?: Maybe<FooterFields_Description_Delete>;
+  read?: Maybe<FooterFields_Description_Read>;
+  update?: Maybe<FooterFields_Description_Update>;
+};
+
+export type FooterFields_Description_Create = {
+  __typename?: 'FooterFields_description_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_Description_Delete = {
+  __typename?: 'FooterFields_description_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_Description_Read = {
+  __typename?: 'FooterFields_description_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_Description_Update = {
+  __typename?: 'FooterFields_description_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_Hero = {
+  __typename?: 'FooterFields_hero';
+  create?: Maybe<FooterFields_Hero_Create>;
+  delete?: Maybe<FooterFields_Hero_Delete>;
+  read?: Maybe<FooterFields_Hero_Read>;
+  update?: Maybe<FooterFields_Hero_Update>;
+};
+
+export type FooterFields_Hero_Create = {
+  __typename?: 'FooterFields_hero_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_Hero_Delete = {
+  __typename?: 'FooterFields_hero_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_Hero_Read = {
+  __typename?: 'FooterFields_hero_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_Hero_Update = {
+  __typename?: 'FooterFields_hero_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_Title1 = {
+  __typename?: 'FooterFields_title1';
+  create?: Maybe<FooterFields_Title1_Create>;
+  delete?: Maybe<FooterFields_Title1_Delete>;
+  read?: Maybe<FooterFields_Title1_Read>;
+  update?: Maybe<FooterFields_Title1_Update>;
+};
+
+export type FooterFields_Title1_Create = {
+  __typename?: 'FooterFields_title1_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_Title1_Delete = {
+  __typename?: 'FooterFields_title1_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_Title1_Read = {
+  __typename?: 'FooterFields_title1_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_Title1_Update = {
+  __typename?: 'FooterFields_title1_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_Title2 = {
+  __typename?: 'FooterFields_title2';
+  create?: Maybe<FooterFields_Title2_Create>;
+  delete?: Maybe<FooterFields_Title2_Delete>;
+  read?: Maybe<FooterFields_Title2_Read>;
+  update?: Maybe<FooterFields_Title2_Update>;
+};
+
+export type FooterFields_Title2_Create = {
+  __typename?: 'FooterFields_title2_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_Title2_Delete = {
+  __typename?: 'FooterFields_title2_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_Title2_Read = {
+  __typename?: 'FooterFields_title2_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_Title2_Update = {
+  __typename?: 'FooterFields_title2_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_UpdatedAt = {
+  __typename?: 'FooterFields_updatedAt';
+  create?: Maybe<FooterFields_UpdatedAt_Create>;
+  delete?: Maybe<FooterFields_UpdatedAt_Delete>;
+  read?: Maybe<FooterFields_UpdatedAt_Read>;
+  update?: Maybe<FooterFields_UpdatedAt_Update>;
+};
+
+export type FooterFields_UpdatedAt_Create = {
+  __typename?: 'FooterFields_updatedAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_UpdatedAt_Delete = {
+  __typename?: 'FooterFields_updatedAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_UpdatedAt_Read = {
+  __typename?: 'FooterFields_updatedAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_UpdatedAt_Update = {
+  __typename?: 'FooterFields_updatedAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterReadAccess = {
+  __typename?: 'FooterReadAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type FooterReadDocAccess = {
+  __typename?: 'FooterReadDocAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type FooterUpdateAccess = {
+  __typename?: 'FooterUpdateAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type FooterUpdateDocAccess = {
+  __typename?: 'FooterUpdateDocAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
 export type Hero = {
   __typename?: 'Hero';
-  buttons: Array<Hero_Buttons>;
   createdAt?: Maybe<Scalars['DateTime']['output']>;
   description: Scalars['JSON']['output'];
   name: Scalars['String']['output'];
@@ -684,133 +3069,12 @@ export type HeroDescriptionArgs = {
 
 export type HeroDocAccessFields = {
   __typename?: 'HeroDocAccessFields';
-  buttons?: Maybe<HeroDocAccessFields_Buttons>;
   createdAt?: Maybe<HeroDocAccessFields_CreatedAt>;
   description?: Maybe<HeroDocAccessFields_Description>;
   name?: Maybe<HeroDocAccessFields_Name>;
   taglines?: Maybe<HeroDocAccessFields_Taglines>;
   title?: Maybe<HeroDocAccessFields_Title>;
   updatedAt?: Maybe<HeroDocAccessFields_UpdatedAt>;
-};
-
-export type HeroDocAccessFields_Buttons = {
-  __typename?: 'HeroDocAccessFields_buttons';
-  create?: Maybe<HeroDocAccessFields_Buttons_Create>;
-  delete?: Maybe<HeroDocAccessFields_Buttons_Delete>;
-  fields?: Maybe<HeroDocAccessFields_Buttons_Fields>;
-  read?: Maybe<HeroDocAccessFields_Buttons_Read>;
-  update?: Maybe<HeroDocAccessFields_Buttons_Update>;
-};
-
-export type HeroDocAccessFields_Buttons_Create = {
-  __typename?: 'HeroDocAccessFields_buttons_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type HeroDocAccessFields_Buttons_Delete = {
-  __typename?: 'HeroDocAccessFields_buttons_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type HeroDocAccessFields_Buttons_Fields = {
-  __typename?: 'HeroDocAccessFields_buttons_Fields';
-  id?: Maybe<HeroDocAccessFields_Buttons_Id>;
-  text?: Maybe<HeroDocAccessFields_Buttons_Text>;
-  url?: Maybe<HeroDocAccessFields_Buttons_Url>;
-};
-
-export type HeroDocAccessFields_Buttons_Read = {
-  __typename?: 'HeroDocAccessFields_buttons_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type HeroDocAccessFields_Buttons_Update = {
-  __typename?: 'HeroDocAccessFields_buttons_Update';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type HeroDocAccessFields_Buttons_Id = {
-  __typename?: 'HeroDocAccessFields_buttons_id';
-  create?: Maybe<HeroDocAccessFields_Buttons_Id_Create>;
-  delete?: Maybe<HeroDocAccessFields_Buttons_Id_Delete>;
-  read?: Maybe<HeroDocAccessFields_Buttons_Id_Read>;
-  update?: Maybe<HeroDocAccessFields_Buttons_Id_Update>;
-};
-
-export type HeroDocAccessFields_Buttons_Id_Create = {
-  __typename?: 'HeroDocAccessFields_buttons_id_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type HeroDocAccessFields_Buttons_Id_Delete = {
-  __typename?: 'HeroDocAccessFields_buttons_id_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type HeroDocAccessFields_Buttons_Id_Read = {
-  __typename?: 'HeroDocAccessFields_buttons_id_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type HeroDocAccessFields_Buttons_Id_Update = {
-  __typename?: 'HeroDocAccessFields_buttons_id_Update';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type HeroDocAccessFields_Buttons_Text = {
-  __typename?: 'HeroDocAccessFields_buttons_text';
-  create?: Maybe<HeroDocAccessFields_Buttons_Text_Create>;
-  delete?: Maybe<HeroDocAccessFields_Buttons_Text_Delete>;
-  read?: Maybe<HeroDocAccessFields_Buttons_Text_Read>;
-  update?: Maybe<HeroDocAccessFields_Buttons_Text_Update>;
-};
-
-export type HeroDocAccessFields_Buttons_Text_Create = {
-  __typename?: 'HeroDocAccessFields_buttons_text_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type HeroDocAccessFields_Buttons_Text_Delete = {
-  __typename?: 'HeroDocAccessFields_buttons_text_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type HeroDocAccessFields_Buttons_Text_Read = {
-  __typename?: 'HeroDocAccessFields_buttons_text_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type HeroDocAccessFields_Buttons_Text_Update = {
-  __typename?: 'HeroDocAccessFields_buttons_text_Update';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type HeroDocAccessFields_Buttons_Url = {
-  __typename?: 'HeroDocAccessFields_buttons_url';
-  create?: Maybe<HeroDocAccessFields_Buttons_Url_Create>;
-  delete?: Maybe<HeroDocAccessFields_Buttons_Url_Delete>;
-  read?: Maybe<HeroDocAccessFields_Buttons_Url_Read>;
-  update?: Maybe<HeroDocAccessFields_Buttons_Url_Update>;
-};
-
-export type HeroDocAccessFields_Buttons_Url_Create = {
-  __typename?: 'HeroDocAccessFields_buttons_url_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type HeroDocAccessFields_Buttons_Url_Delete = {
-  __typename?: 'HeroDocAccessFields_buttons_url_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type HeroDocAccessFields_Buttons_Url_Read = {
-  __typename?: 'HeroDocAccessFields_buttons_url_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type HeroDocAccessFields_Buttons_Url_Update = {
-  __typename?: 'HeroDocAccessFields_buttons_url_Update';
-  permission: Scalars['Boolean']['output'];
 };
 
 export type HeroDocAccessFields_CreatedAt = {
@@ -1046,133 +3310,12 @@ export type HeroDocAccessFields_UpdatedAt_Update = {
 
 export type HeroFields = {
   __typename?: 'HeroFields';
-  buttons?: Maybe<HeroFields_Buttons>;
   createdAt?: Maybe<HeroFields_CreatedAt>;
   description?: Maybe<HeroFields_Description>;
   name?: Maybe<HeroFields_Name>;
   taglines?: Maybe<HeroFields_Taglines>;
   title?: Maybe<HeroFields_Title>;
   updatedAt?: Maybe<HeroFields_UpdatedAt>;
-};
-
-export type HeroFields_Buttons = {
-  __typename?: 'HeroFields_buttons';
-  create?: Maybe<HeroFields_Buttons_Create>;
-  delete?: Maybe<HeroFields_Buttons_Delete>;
-  fields?: Maybe<HeroFields_Buttons_Fields>;
-  read?: Maybe<HeroFields_Buttons_Read>;
-  update?: Maybe<HeroFields_Buttons_Update>;
-};
-
-export type HeroFields_Buttons_Create = {
-  __typename?: 'HeroFields_buttons_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type HeroFields_Buttons_Delete = {
-  __typename?: 'HeroFields_buttons_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type HeroFields_Buttons_Fields = {
-  __typename?: 'HeroFields_buttons_Fields';
-  id?: Maybe<HeroFields_Buttons_Id>;
-  text?: Maybe<HeroFields_Buttons_Text>;
-  url?: Maybe<HeroFields_Buttons_Url>;
-};
-
-export type HeroFields_Buttons_Read = {
-  __typename?: 'HeroFields_buttons_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type HeroFields_Buttons_Update = {
-  __typename?: 'HeroFields_buttons_Update';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type HeroFields_Buttons_Id = {
-  __typename?: 'HeroFields_buttons_id';
-  create?: Maybe<HeroFields_Buttons_Id_Create>;
-  delete?: Maybe<HeroFields_Buttons_Id_Delete>;
-  read?: Maybe<HeroFields_Buttons_Id_Read>;
-  update?: Maybe<HeroFields_Buttons_Id_Update>;
-};
-
-export type HeroFields_Buttons_Id_Create = {
-  __typename?: 'HeroFields_buttons_id_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type HeroFields_Buttons_Id_Delete = {
-  __typename?: 'HeroFields_buttons_id_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type HeroFields_Buttons_Id_Read = {
-  __typename?: 'HeroFields_buttons_id_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type HeroFields_Buttons_Id_Update = {
-  __typename?: 'HeroFields_buttons_id_Update';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type HeroFields_Buttons_Text = {
-  __typename?: 'HeroFields_buttons_text';
-  create?: Maybe<HeroFields_Buttons_Text_Create>;
-  delete?: Maybe<HeroFields_Buttons_Text_Delete>;
-  read?: Maybe<HeroFields_Buttons_Text_Read>;
-  update?: Maybe<HeroFields_Buttons_Text_Update>;
-};
-
-export type HeroFields_Buttons_Text_Create = {
-  __typename?: 'HeroFields_buttons_text_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type HeroFields_Buttons_Text_Delete = {
-  __typename?: 'HeroFields_buttons_text_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type HeroFields_Buttons_Text_Read = {
-  __typename?: 'HeroFields_buttons_text_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type HeroFields_Buttons_Text_Update = {
-  __typename?: 'HeroFields_buttons_text_Update';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type HeroFields_Buttons_Url = {
-  __typename?: 'HeroFields_buttons_url';
-  create?: Maybe<HeroFields_Buttons_Url_Create>;
-  delete?: Maybe<HeroFields_Buttons_Url_Delete>;
-  read?: Maybe<HeroFields_Buttons_Url_Read>;
-  update?: Maybe<HeroFields_Buttons_Url_Update>;
-};
-
-export type HeroFields_Buttons_Url_Create = {
-  __typename?: 'HeroFields_buttons_url_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type HeroFields_Buttons_Url_Delete = {
-  __typename?: 'HeroFields_buttons_url_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type HeroFields_Buttons_Url_Read = {
-  __typename?: 'HeroFields_buttons_url_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type HeroFields_Buttons_Url_Update = {
-  __typename?: 'HeroFields_buttons_url_Update';
-  permission: Scalars['Boolean']['output'];
 };
 
 export type HeroFields_CreatedAt = {
@@ -1428,13 +3571,6 @@ export type HeroUpdateDocAccess = {
   __typename?: 'HeroUpdateDocAccess';
   permission: Scalars['Boolean']['output'];
   where?: Maybe<Scalars['JSONObject']['output']>;
-};
-
-export type Hero_Buttons = {
-  __typename?: 'Hero_Buttons';
-  id?: Maybe<Scalars['String']['output']>;
-  text?: Maybe<Scalars['String']['output']>;
-  url?: Maybe<Scalars['String']['output']>;
 };
 
 export type Hero_Taglines = {
@@ -2404,17 +4540,23 @@ export type Media_Width_Operator = {
 
 export type Mutation = {
   __typename?: 'Mutation';
+  createCaseStudy?: Maybe<CaseStudy>;
   createContactForm?: Maybe<ContactForm>;
+  createExperience?: Maybe<Experience>;
   createMedia?: Maybe<Media>;
   createPayloadLockedDocument?: Maybe<PayloadLockedDocument>;
   createPayloadPreference?: Maybe<PayloadPreference>;
   createUser?: Maybe<User>;
+  deleteCaseStudy?: Maybe<CaseStudy>;
   deleteContactForm?: Maybe<ContactForm>;
+  deleteExperience?: Maybe<Experience>;
   deleteMedia?: Maybe<Media>;
   deletePayloadLockedDocument?: Maybe<PayloadLockedDocument>;
   deletePayloadPreference?: Maybe<PayloadPreference>;
   deleteUser?: Maybe<User>;
+  duplicateCaseStudy?: Maybe<CaseStudy>;
   duplicateContactForm?: Maybe<ContactForm>;
+  duplicateExperience?: Maybe<Experience>;
   duplicateMedia?: Maybe<Media>;
   duplicatePayloadLockedDocument?: Maybe<PayloadLockedDocument>;
   duplicatePayloadPreference?: Maybe<PayloadPreference>;
@@ -2424,19 +4566,35 @@ export type Mutation = {
   refreshTokenUser?: Maybe<UsersRefreshedUser>;
   resetPasswordUser?: Maybe<UsersResetPassword>;
   unlockUser: Scalars['Boolean']['output'];
+  updateCaseStudy?: Maybe<CaseStudy>;
   updateContactForm?: Maybe<ContactForm>;
+  updateExperience?: Maybe<Experience>;
+  updateFooter?: Maybe<Footer>;
   updateHero?: Maybe<Hero>;
   updateMedia?: Maybe<Media>;
   updatePayloadLockedDocument?: Maybe<PayloadLockedDocument>;
   updatePayloadPreference?: Maybe<PayloadPreference>;
   updateSkill?: Maybe<Skill>;
   updateUser?: Maybe<User>;
+  updateWorkButton?: Maybe<WorkButton>;
   verifyEmailUser?: Maybe<Scalars['Boolean']['output']>;
+};
+
+
+export type MutationCreateCaseStudyArgs = {
+  data: MutationCaseStudyInput;
+  draft?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
 export type MutationCreateContactFormArgs = {
   data: MutationContactFormInput;
+  draft?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type MutationCreateExperienceArgs = {
+  data: MutationExperienceInput;
   draft?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
@@ -2465,7 +4623,17 @@ export type MutationCreateUserArgs = {
 };
 
 
+export type MutationDeleteCaseStudyArgs = {
+  id: Scalars['Int']['input'];
+};
+
+
 export type MutationDeleteContactFormArgs = {
+  id: Scalars['Int']['input'];
+};
+
+
+export type MutationDeleteExperienceArgs = {
   id: Scalars['Int']['input'];
 };
 
@@ -2490,8 +4658,20 @@ export type MutationDeleteUserArgs = {
 };
 
 
+export type MutationDuplicateCaseStudyArgs = {
+  data: MutationCaseStudyInput;
+  id: Scalars['Int']['input'];
+};
+
+
 export type MutationDuplicateContactFormArgs = {
   data: MutationContactFormInput;
+  id: Scalars['Int']['input'];
+};
+
+
+export type MutationDuplicateExperienceArgs = {
+  data: MutationExperienceInput;
   id: Scalars['Int']['input'];
 };
 
@@ -2538,11 +4718,33 @@ export type MutationUnlockUserArgs = {
 };
 
 
+export type MutationUpdateCaseStudyArgs = {
+  autosave?: InputMaybe<Scalars['Boolean']['input']>;
+  data: MutationCaseStudyUpdateInput;
+  draft?: InputMaybe<Scalars['Boolean']['input']>;
+  id: Scalars['Int']['input'];
+};
+
+
 export type MutationUpdateContactFormArgs = {
   autosave?: InputMaybe<Scalars['Boolean']['input']>;
   data: MutationContactFormUpdateInput;
   draft?: InputMaybe<Scalars['Boolean']['input']>;
   id: Scalars['Int']['input'];
+};
+
+
+export type MutationUpdateExperienceArgs = {
+  autosave?: InputMaybe<Scalars['Boolean']['input']>;
+  data: MutationExperienceUpdateInput;
+  draft?: InputMaybe<Scalars['Boolean']['input']>;
+  id: Scalars['Int']['input'];
+};
+
+
+export type MutationUpdateFooterArgs = {
+  data: MutationFooterInput;
+  draft?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
@@ -2590,6 +4792,12 @@ export type MutationUpdateUserArgs = {
 };
 
 
+export type MutationUpdateWorkButtonArgs = {
+  data: MutationWorkButtonInput;
+  draft?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
 export type MutationVerifyEmailUserArgs = {
   token?: InputMaybe<Scalars['String']['input']>;
 };
@@ -2610,7 +4818,9 @@ export type PayloadLockedDocumentUpdate_DocumentRelationshipInput = {
 };
 
 export enum PayloadLockedDocumentUpdate_DocumentRelationshipInputRelationTo {
+  CaseStudies = 'case_studies',
   ContactForms = 'contact_forms',
+  Experiences = 'experiences',
   Media = 'media',
   Users = 'users'
 }
@@ -2624,7 +4834,7 @@ export enum PayloadLockedDocumentUpdate_UserRelationshipInputRelationTo {
   Users = 'users'
 }
 
-export type PayloadLockedDocument_Document = ContactForm | Media | User;
+export type PayloadLockedDocument_Document = CaseStudy | ContactForm | Experience | Media | User;
 
 export type PayloadLockedDocument_DocumentRelationshipInput = {
   relationTo?: InputMaybe<PayloadLockedDocument_DocumentRelationshipInputRelationTo>;
@@ -2632,13 +4842,17 @@ export type PayloadLockedDocument_DocumentRelationshipInput = {
 };
 
 export enum PayloadLockedDocument_DocumentRelationshipInputRelationTo {
+  CaseStudies = 'case_studies',
   ContactForms = 'contact_forms',
+  Experiences = 'experiences',
   Media = 'media',
   Users = 'users'
 }
 
 export enum PayloadLockedDocument_Document_RelationTo {
+  CaseStudies = 'case_studies',
   ContactForms = 'contact_forms',
+  Experiences = 'experiences',
   Media = 'media',
   Users = 'users'
 }
@@ -2687,7 +4901,9 @@ export type PayloadLockedDocument_Document_Relation = {
 };
 
 export enum PayloadLockedDocument_Document_Relation_RelationTo {
+  CaseStudies = 'case_studies',
   ContactForms = 'contact_forms',
+  Experiences = 'experiences',
   Media = 'media',
   Users = 'users'
 }
@@ -3626,8 +5842,13 @@ export type PayloadPreferencesUpdateDocAccess = {
 export type Query = {
   __typename?: 'Query';
   Access?: Maybe<Access>;
+  CaseStudies?: Maybe<CaseStudies>;
+  CaseStudy?: Maybe<CaseStudy>;
   ContactForm?: Maybe<ContactForm>;
   ContactForms?: Maybe<ContactForms>;
+  Experience?: Maybe<Experience>;
+  Experiences?: Maybe<Experiences>;
+  Footer?: Maybe<Footer>;
   Hero?: Maybe<Hero>;
   Media?: Maybe<Media>;
   PayloadLockedDocument?: Maybe<PayloadLockedDocument>;
@@ -3637,21 +5858,44 @@ export type Query = {
   Skill?: Maybe<Skill>;
   User?: Maybe<User>;
   Users?: Maybe<Users>;
+  WorkButton?: Maybe<WorkButton>;
   allMedia?: Maybe<AllMedia>;
+  countCaseStudies?: Maybe<CountCaseStudies>;
   countContactForms?: Maybe<CountContactForms>;
+  countExperiences?: Maybe<CountExperiences>;
   countPayloadLockedDocuments?: Maybe<CountPayloadLockedDocuments>;
   countPayloadPreferences?: Maybe<CountPayloadPreferences>;
   countUsers?: Maybe<CountUsers>;
   countallMedia?: Maybe<CountallMedia>;
+  docAccessCaseStudy?: Maybe<Case_StudiesDocAccess>;
   docAccessContactForm?: Maybe<Contact_FormsDocAccess>;
+  docAccessExperience?: Maybe<ExperiencesDocAccess>;
+  docAccessFooter?: Maybe<FooterDocAccess>;
   docAccessHero?: Maybe<HeroDocAccess>;
   docAccessMedia?: Maybe<MediaDocAccess>;
   docAccessPayloadLockedDocument?: Maybe<Payload_Locked_DocumentsDocAccess>;
   docAccessPayloadPreference?: Maybe<Payload_PreferencesDocAccess>;
   docAccessSkill?: Maybe<SkillsDocAccess>;
   docAccessUser?: Maybe<UsersDocAccess>;
+  docAccessWorkButton?: Maybe<Work_ButtonsDocAccess>;
   initializedUser?: Maybe<Scalars['Boolean']['output']>;
   meUser?: Maybe<UsersMe>;
+};
+
+
+export type QueryCaseStudiesArgs = {
+  draft?: InputMaybe<Scalars['Boolean']['input']>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  page?: InputMaybe<Scalars['Int']['input']>;
+  pagination?: InputMaybe<Scalars['Boolean']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  where?: InputMaybe<CaseStudy_Where>;
+};
+
+
+export type QueryCaseStudyArgs = {
+  draft?: InputMaybe<Scalars['Boolean']['input']>;
+  id: Scalars['Int']['input'];
 };
 
 
@@ -3668,6 +5912,27 @@ export type QueryContactFormsArgs = {
   pagination?: InputMaybe<Scalars['Boolean']['input']>;
   sort?: InputMaybe<Scalars['String']['input']>;
   where?: InputMaybe<ContactForm_Where>;
+};
+
+
+export type QueryExperienceArgs = {
+  draft?: InputMaybe<Scalars['Boolean']['input']>;
+  id: Scalars['Int']['input'];
+};
+
+
+export type QueryExperiencesArgs = {
+  draft?: InputMaybe<Scalars['Boolean']['input']>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  page?: InputMaybe<Scalars['Int']['input']>;
+  pagination?: InputMaybe<Scalars['Boolean']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  where?: InputMaybe<Experience_Where>;
+};
+
+
+export type QueryFooterArgs = {
+  draft?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
@@ -3735,6 +6000,11 @@ export type QueryUsersArgs = {
 };
 
 
+export type QueryWorkButtonArgs = {
+  draft?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
 export type QueryAllMediaArgs = {
   draft?: InputMaybe<Scalars['Boolean']['input']>;
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -3745,9 +6015,21 @@ export type QueryAllMediaArgs = {
 };
 
 
+export type QueryCountCaseStudiesArgs = {
+  draft?: InputMaybe<Scalars['Boolean']['input']>;
+  where?: InputMaybe<CaseStudy_Where>;
+};
+
+
 export type QueryCountContactFormsArgs = {
   draft?: InputMaybe<Scalars['Boolean']['input']>;
   where?: InputMaybe<ContactForm_Where>;
+};
+
+
+export type QueryCountExperiencesArgs = {
+  draft?: InputMaybe<Scalars['Boolean']['input']>;
+  where?: InputMaybe<Experience_Where>;
 };
 
 
@@ -3775,7 +6057,17 @@ export type QueryCountallMediaArgs = {
 };
 
 
+export type QueryDocAccessCaseStudyArgs = {
+  id: Scalars['Int']['input'];
+};
+
+
 export type QueryDocAccessContactFormArgs = {
+  id: Scalars['Int']['input'];
+};
+
+
+export type QueryDocAccessExperienceArgs = {
   id: Scalars['Int']['input'];
 };
 
@@ -3813,6 +6105,7 @@ export type Skill_Skills = {
   description?: Maybe<Scalars['JSON']['output']>;
   id?: Maybe<Scalars['String']['output']>;
   name?: Maybe<Scalars['String']['output']>;
+  subtitle?: Maybe<Scalars['String']['output']>;
 };
 
 
@@ -3881,6 +6174,7 @@ export type SkillsDocAccessFields_Skills_Fields = {
   description?: Maybe<SkillsDocAccessFields_Skills_Description>;
   id?: Maybe<SkillsDocAccessFields_Skills_Id>;
   name?: Maybe<SkillsDocAccessFields_Skills_Name>;
+  subtitle?: Maybe<SkillsDocAccessFields_Skills_Subtitle>;
 };
 
 export type SkillsDocAccessFields_Skills_Read = {
@@ -3974,6 +6268,34 @@ export type SkillsDocAccessFields_Skills_Name_Read = {
 
 export type SkillsDocAccessFields_Skills_Name_Update = {
   __typename?: 'SkillsDocAccessFields_skills_name_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_Skills_Subtitle = {
+  __typename?: 'SkillsDocAccessFields_skills_subtitle';
+  create?: Maybe<SkillsDocAccessFields_Skills_Subtitle_Create>;
+  delete?: Maybe<SkillsDocAccessFields_Skills_Subtitle_Delete>;
+  read?: Maybe<SkillsDocAccessFields_Skills_Subtitle_Read>;
+  update?: Maybe<SkillsDocAccessFields_Skills_Subtitle_Update>;
+};
+
+export type SkillsDocAccessFields_Skills_Subtitle_Create = {
+  __typename?: 'SkillsDocAccessFields_skills_subtitle_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_Skills_Subtitle_Delete = {
+  __typename?: 'SkillsDocAccessFields_skills_subtitle_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_Skills_Subtitle_Read = {
+  __typename?: 'SkillsDocAccessFields_skills_subtitle_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsDocAccessFields_Skills_Subtitle_Update = {
+  __typename?: 'SkillsDocAccessFields_skills_subtitle_Update';
   permission: Scalars['Boolean']['output'];
 };
 
@@ -4122,6 +6444,7 @@ export type SkillsFields_Skills_Fields = {
   description?: Maybe<SkillsFields_Skills_Description>;
   id?: Maybe<SkillsFields_Skills_Id>;
   name?: Maybe<SkillsFields_Skills_Name>;
+  subtitle?: Maybe<SkillsFields_Skills_Subtitle>;
 };
 
 export type SkillsFields_Skills_Read = {
@@ -4215,6 +6538,34 @@ export type SkillsFields_Skills_Name_Read = {
 
 export type SkillsFields_Skills_Name_Update = {
   __typename?: 'SkillsFields_skills_name_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_Skills_Subtitle = {
+  __typename?: 'SkillsFields_skills_subtitle';
+  create?: Maybe<SkillsFields_Skills_Subtitle_Create>;
+  delete?: Maybe<SkillsFields_Skills_Subtitle_Delete>;
+  read?: Maybe<SkillsFields_Skills_Subtitle_Read>;
+  update?: Maybe<SkillsFields_Skills_Subtitle_Update>;
+};
+
+export type SkillsFields_Skills_Subtitle_Create = {
+  __typename?: 'SkillsFields_skills_subtitle_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_Skills_Subtitle_Delete = {
+  __typename?: 'SkillsFields_skills_subtitle_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_Skills_Subtitle_Read = {
+  __typename?: 'SkillsFields_skills_subtitle_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type SkillsFields_Skills_Subtitle_Update = {
+  __typename?: 'SkillsFields_skills_subtitle_Update';
   permission: Scalars['Boolean']['output'];
 };
 
@@ -4666,6 +7017,410 @@ export type UsersUpdateDocAccess = {
   where?: Maybe<Scalars['JSONObject']['output']>;
 };
 
+export type WorkButton = {
+  __typename?: 'WorkButton';
+  buttons: Array<WorkButton_Buttons>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type WorkButton_Buttons = {
+  __typename?: 'WorkButton_Buttons';
+  id?: Maybe<Scalars['String']['output']>;
+  text?: Maybe<Scalars['String']['output']>;
+  url?: Maybe<Scalars['String']['output']>;
+};
+
+export type WorkButtonsDocAccessFields = {
+  __typename?: 'WorkButtonsDocAccessFields';
+  buttons?: Maybe<WorkButtonsDocAccessFields_Buttons>;
+  createdAt?: Maybe<WorkButtonsDocAccessFields_CreatedAt>;
+  updatedAt?: Maybe<WorkButtonsDocAccessFields_UpdatedAt>;
+};
+
+export type WorkButtonsDocAccessFields_Buttons = {
+  __typename?: 'WorkButtonsDocAccessFields_buttons';
+  create?: Maybe<WorkButtonsDocAccessFields_Buttons_Create>;
+  delete?: Maybe<WorkButtonsDocAccessFields_Buttons_Delete>;
+  fields?: Maybe<WorkButtonsDocAccessFields_Buttons_Fields>;
+  read?: Maybe<WorkButtonsDocAccessFields_Buttons_Read>;
+  update?: Maybe<WorkButtonsDocAccessFields_Buttons_Update>;
+};
+
+export type WorkButtonsDocAccessFields_Buttons_Create = {
+  __typename?: 'WorkButtonsDocAccessFields_buttons_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsDocAccessFields_Buttons_Delete = {
+  __typename?: 'WorkButtonsDocAccessFields_buttons_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsDocAccessFields_Buttons_Fields = {
+  __typename?: 'WorkButtonsDocAccessFields_buttons_Fields';
+  id?: Maybe<WorkButtonsDocAccessFields_Buttons_Id>;
+  text?: Maybe<WorkButtonsDocAccessFields_Buttons_Text>;
+  url?: Maybe<WorkButtonsDocAccessFields_Buttons_Url>;
+};
+
+export type WorkButtonsDocAccessFields_Buttons_Read = {
+  __typename?: 'WorkButtonsDocAccessFields_buttons_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsDocAccessFields_Buttons_Update = {
+  __typename?: 'WorkButtonsDocAccessFields_buttons_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsDocAccessFields_Buttons_Id = {
+  __typename?: 'WorkButtonsDocAccessFields_buttons_id';
+  create?: Maybe<WorkButtonsDocAccessFields_Buttons_Id_Create>;
+  delete?: Maybe<WorkButtonsDocAccessFields_Buttons_Id_Delete>;
+  read?: Maybe<WorkButtonsDocAccessFields_Buttons_Id_Read>;
+  update?: Maybe<WorkButtonsDocAccessFields_Buttons_Id_Update>;
+};
+
+export type WorkButtonsDocAccessFields_Buttons_Id_Create = {
+  __typename?: 'WorkButtonsDocAccessFields_buttons_id_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsDocAccessFields_Buttons_Id_Delete = {
+  __typename?: 'WorkButtonsDocAccessFields_buttons_id_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsDocAccessFields_Buttons_Id_Read = {
+  __typename?: 'WorkButtonsDocAccessFields_buttons_id_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsDocAccessFields_Buttons_Id_Update = {
+  __typename?: 'WorkButtonsDocAccessFields_buttons_id_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsDocAccessFields_Buttons_Text = {
+  __typename?: 'WorkButtonsDocAccessFields_buttons_text';
+  create?: Maybe<WorkButtonsDocAccessFields_Buttons_Text_Create>;
+  delete?: Maybe<WorkButtonsDocAccessFields_Buttons_Text_Delete>;
+  read?: Maybe<WorkButtonsDocAccessFields_Buttons_Text_Read>;
+  update?: Maybe<WorkButtonsDocAccessFields_Buttons_Text_Update>;
+};
+
+export type WorkButtonsDocAccessFields_Buttons_Text_Create = {
+  __typename?: 'WorkButtonsDocAccessFields_buttons_text_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsDocAccessFields_Buttons_Text_Delete = {
+  __typename?: 'WorkButtonsDocAccessFields_buttons_text_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsDocAccessFields_Buttons_Text_Read = {
+  __typename?: 'WorkButtonsDocAccessFields_buttons_text_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsDocAccessFields_Buttons_Text_Update = {
+  __typename?: 'WorkButtonsDocAccessFields_buttons_text_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsDocAccessFields_Buttons_Url = {
+  __typename?: 'WorkButtonsDocAccessFields_buttons_url';
+  create?: Maybe<WorkButtonsDocAccessFields_Buttons_Url_Create>;
+  delete?: Maybe<WorkButtonsDocAccessFields_Buttons_Url_Delete>;
+  read?: Maybe<WorkButtonsDocAccessFields_Buttons_Url_Read>;
+  update?: Maybe<WorkButtonsDocAccessFields_Buttons_Url_Update>;
+};
+
+export type WorkButtonsDocAccessFields_Buttons_Url_Create = {
+  __typename?: 'WorkButtonsDocAccessFields_buttons_url_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsDocAccessFields_Buttons_Url_Delete = {
+  __typename?: 'WorkButtonsDocAccessFields_buttons_url_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsDocAccessFields_Buttons_Url_Read = {
+  __typename?: 'WorkButtonsDocAccessFields_buttons_url_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsDocAccessFields_Buttons_Url_Update = {
+  __typename?: 'WorkButtonsDocAccessFields_buttons_url_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsDocAccessFields_CreatedAt = {
+  __typename?: 'WorkButtonsDocAccessFields_createdAt';
+  create?: Maybe<WorkButtonsDocAccessFields_CreatedAt_Create>;
+  delete?: Maybe<WorkButtonsDocAccessFields_CreatedAt_Delete>;
+  read?: Maybe<WorkButtonsDocAccessFields_CreatedAt_Read>;
+  update?: Maybe<WorkButtonsDocAccessFields_CreatedAt_Update>;
+};
+
+export type WorkButtonsDocAccessFields_CreatedAt_Create = {
+  __typename?: 'WorkButtonsDocAccessFields_createdAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsDocAccessFields_CreatedAt_Delete = {
+  __typename?: 'WorkButtonsDocAccessFields_createdAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsDocAccessFields_CreatedAt_Read = {
+  __typename?: 'WorkButtonsDocAccessFields_createdAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsDocAccessFields_CreatedAt_Update = {
+  __typename?: 'WorkButtonsDocAccessFields_createdAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsDocAccessFields_UpdatedAt = {
+  __typename?: 'WorkButtonsDocAccessFields_updatedAt';
+  create?: Maybe<WorkButtonsDocAccessFields_UpdatedAt_Create>;
+  delete?: Maybe<WorkButtonsDocAccessFields_UpdatedAt_Delete>;
+  read?: Maybe<WorkButtonsDocAccessFields_UpdatedAt_Read>;
+  update?: Maybe<WorkButtonsDocAccessFields_UpdatedAt_Update>;
+};
+
+export type WorkButtonsDocAccessFields_UpdatedAt_Create = {
+  __typename?: 'WorkButtonsDocAccessFields_updatedAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsDocAccessFields_UpdatedAt_Delete = {
+  __typename?: 'WorkButtonsDocAccessFields_updatedAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsDocAccessFields_UpdatedAt_Read = {
+  __typename?: 'WorkButtonsDocAccessFields_updatedAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsDocAccessFields_UpdatedAt_Update = {
+  __typename?: 'WorkButtonsDocAccessFields_updatedAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsFields = {
+  __typename?: 'WorkButtonsFields';
+  buttons?: Maybe<WorkButtonsFields_Buttons>;
+  createdAt?: Maybe<WorkButtonsFields_CreatedAt>;
+  updatedAt?: Maybe<WorkButtonsFields_UpdatedAt>;
+};
+
+export type WorkButtonsFields_Buttons = {
+  __typename?: 'WorkButtonsFields_buttons';
+  create?: Maybe<WorkButtonsFields_Buttons_Create>;
+  delete?: Maybe<WorkButtonsFields_Buttons_Delete>;
+  fields?: Maybe<WorkButtonsFields_Buttons_Fields>;
+  read?: Maybe<WorkButtonsFields_Buttons_Read>;
+  update?: Maybe<WorkButtonsFields_Buttons_Update>;
+};
+
+export type WorkButtonsFields_Buttons_Create = {
+  __typename?: 'WorkButtonsFields_buttons_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsFields_Buttons_Delete = {
+  __typename?: 'WorkButtonsFields_buttons_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsFields_Buttons_Fields = {
+  __typename?: 'WorkButtonsFields_buttons_Fields';
+  id?: Maybe<WorkButtonsFields_Buttons_Id>;
+  text?: Maybe<WorkButtonsFields_Buttons_Text>;
+  url?: Maybe<WorkButtonsFields_Buttons_Url>;
+};
+
+export type WorkButtonsFields_Buttons_Read = {
+  __typename?: 'WorkButtonsFields_buttons_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsFields_Buttons_Update = {
+  __typename?: 'WorkButtonsFields_buttons_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsFields_Buttons_Id = {
+  __typename?: 'WorkButtonsFields_buttons_id';
+  create?: Maybe<WorkButtonsFields_Buttons_Id_Create>;
+  delete?: Maybe<WorkButtonsFields_Buttons_Id_Delete>;
+  read?: Maybe<WorkButtonsFields_Buttons_Id_Read>;
+  update?: Maybe<WorkButtonsFields_Buttons_Id_Update>;
+};
+
+export type WorkButtonsFields_Buttons_Id_Create = {
+  __typename?: 'WorkButtonsFields_buttons_id_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsFields_Buttons_Id_Delete = {
+  __typename?: 'WorkButtonsFields_buttons_id_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsFields_Buttons_Id_Read = {
+  __typename?: 'WorkButtonsFields_buttons_id_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsFields_Buttons_Id_Update = {
+  __typename?: 'WorkButtonsFields_buttons_id_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsFields_Buttons_Text = {
+  __typename?: 'WorkButtonsFields_buttons_text';
+  create?: Maybe<WorkButtonsFields_Buttons_Text_Create>;
+  delete?: Maybe<WorkButtonsFields_Buttons_Text_Delete>;
+  read?: Maybe<WorkButtonsFields_Buttons_Text_Read>;
+  update?: Maybe<WorkButtonsFields_Buttons_Text_Update>;
+};
+
+export type WorkButtonsFields_Buttons_Text_Create = {
+  __typename?: 'WorkButtonsFields_buttons_text_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsFields_Buttons_Text_Delete = {
+  __typename?: 'WorkButtonsFields_buttons_text_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsFields_Buttons_Text_Read = {
+  __typename?: 'WorkButtonsFields_buttons_text_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsFields_Buttons_Text_Update = {
+  __typename?: 'WorkButtonsFields_buttons_text_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsFields_Buttons_Url = {
+  __typename?: 'WorkButtonsFields_buttons_url';
+  create?: Maybe<WorkButtonsFields_Buttons_Url_Create>;
+  delete?: Maybe<WorkButtonsFields_Buttons_Url_Delete>;
+  read?: Maybe<WorkButtonsFields_Buttons_Url_Read>;
+  update?: Maybe<WorkButtonsFields_Buttons_Url_Update>;
+};
+
+export type WorkButtonsFields_Buttons_Url_Create = {
+  __typename?: 'WorkButtonsFields_buttons_url_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsFields_Buttons_Url_Delete = {
+  __typename?: 'WorkButtonsFields_buttons_url_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsFields_Buttons_Url_Read = {
+  __typename?: 'WorkButtonsFields_buttons_url_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsFields_Buttons_Url_Update = {
+  __typename?: 'WorkButtonsFields_buttons_url_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsFields_CreatedAt = {
+  __typename?: 'WorkButtonsFields_createdAt';
+  create?: Maybe<WorkButtonsFields_CreatedAt_Create>;
+  delete?: Maybe<WorkButtonsFields_CreatedAt_Delete>;
+  read?: Maybe<WorkButtonsFields_CreatedAt_Read>;
+  update?: Maybe<WorkButtonsFields_CreatedAt_Update>;
+};
+
+export type WorkButtonsFields_CreatedAt_Create = {
+  __typename?: 'WorkButtonsFields_createdAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsFields_CreatedAt_Delete = {
+  __typename?: 'WorkButtonsFields_createdAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsFields_CreatedAt_Read = {
+  __typename?: 'WorkButtonsFields_createdAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsFields_CreatedAt_Update = {
+  __typename?: 'WorkButtonsFields_createdAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsFields_UpdatedAt = {
+  __typename?: 'WorkButtonsFields_updatedAt';
+  create?: Maybe<WorkButtonsFields_UpdatedAt_Create>;
+  delete?: Maybe<WorkButtonsFields_UpdatedAt_Delete>;
+  read?: Maybe<WorkButtonsFields_UpdatedAt_Read>;
+  update?: Maybe<WorkButtonsFields_UpdatedAt_Update>;
+};
+
+export type WorkButtonsFields_UpdatedAt_Create = {
+  __typename?: 'WorkButtonsFields_updatedAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsFields_UpdatedAt_Delete = {
+  __typename?: 'WorkButtonsFields_updatedAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsFields_UpdatedAt_Read = {
+  __typename?: 'WorkButtonsFields_updatedAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsFields_UpdatedAt_Update = {
+  __typename?: 'WorkButtonsFields_updatedAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type WorkButtonsReadAccess = {
+  __typename?: 'WorkButtonsReadAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type WorkButtonsReadDocAccess = {
+  __typename?: 'WorkButtonsReadDocAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type WorkButtonsUpdateAccess = {
+  __typename?: 'WorkButtonsUpdateAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type WorkButtonsUpdateDocAccess = {
+  __typename?: 'WorkButtonsUpdateDocAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
 export type AllMedia = {
   __typename?: 'allMedia';
   docs: Array<Media>;
@@ -4679,6 +7434,24 @@ export type AllMedia = {
   prevPage: Scalars['Int']['output'];
   totalDocs: Scalars['Int']['output'];
   totalPages: Scalars['Int']['output'];
+};
+
+export type Case_StudiesAccess = {
+  __typename?: 'case_studiesAccess';
+  create?: Maybe<CaseStudiesCreateAccess>;
+  delete?: Maybe<CaseStudiesDeleteAccess>;
+  fields?: Maybe<CaseStudiesFields>;
+  read?: Maybe<CaseStudiesReadAccess>;
+  update?: Maybe<CaseStudiesUpdateAccess>;
+};
+
+export type Case_StudiesDocAccess = {
+  __typename?: 'case_studiesDocAccess';
+  create?: Maybe<CaseStudiesCreateDocAccess>;
+  delete?: Maybe<CaseStudiesDeleteDocAccess>;
+  fields?: Maybe<CaseStudiesDocAccessFields>;
+  read?: Maybe<CaseStudiesReadDocAccess>;
+  update?: Maybe<CaseStudiesUpdateDocAccess>;
 };
 
 export type Contact_FormsAccess = {
@@ -4699,8 +7472,18 @@ export type Contact_FormsDocAccess = {
   update?: Maybe<ContactFormsUpdateDocAccess>;
 };
 
+export type CountCaseStudies = {
+  __typename?: 'countCaseStudies';
+  totalDocs?: Maybe<Scalars['Int']['output']>;
+};
+
 export type CountContactForms = {
   __typename?: 'countContactForms';
+  totalDocs?: Maybe<Scalars['Int']['output']>;
+};
+
+export type CountExperiences = {
+  __typename?: 'countExperiences';
   totalDocs?: Maybe<Scalars['Int']['output']>;
 };
 
@@ -4722,6 +7505,38 @@ export type CountUsers = {
 export type CountallMedia = {
   __typename?: 'countallMedia';
   totalDocs?: Maybe<Scalars['Int']['output']>;
+};
+
+export type ExperiencesAccess = {
+  __typename?: 'experiencesAccess';
+  create?: Maybe<ExperiencesCreateAccess>;
+  delete?: Maybe<ExperiencesDeleteAccess>;
+  fields?: Maybe<ExperiencesFields>;
+  read?: Maybe<ExperiencesReadAccess>;
+  update?: Maybe<ExperiencesUpdateAccess>;
+};
+
+export type ExperiencesDocAccess = {
+  __typename?: 'experiencesDocAccess';
+  create?: Maybe<ExperiencesCreateDocAccess>;
+  delete?: Maybe<ExperiencesDeleteDocAccess>;
+  fields?: Maybe<ExperiencesDocAccessFields>;
+  read?: Maybe<ExperiencesReadDocAccess>;
+  update?: Maybe<ExperiencesUpdateDocAccess>;
+};
+
+export type FooterAccess = {
+  __typename?: 'footerAccess';
+  fields?: Maybe<FooterFields>;
+  read?: Maybe<FooterReadAccess>;
+  update?: Maybe<FooterUpdateAccess>;
+};
+
+export type FooterDocAccess = {
+  __typename?: 'footerDocAccess';
+  fields?: Maybe<FooterDocAccessFields>;
+  read?: Maybe<FooterReadDocAccess>;
+  update?: Maybe<FooterUpdateDocAccess>;
 };
 
 export type HeroAccess = {
@@ -4756,6 +7571,44 @@ export type MediaDocAccess = {
   update?: Maybe<MediaUpdateDocAccess>;
 };
 
+export type MutationCaseStudyInput = {
+  content: Scalars['JSON']['input'];
+  createdAt?: InputMaybe<Scalars['String']['input']>;
+  experience?: InputMaybe<Scalars['Int']['input']>;
+  featured?: InputMaybe<Scalars['Boolean']['input']>;
+  illustration?: InputMaybe<Scalars['Int']['input']>;
+  publishedAt?: InputMaybe<Scalars['String']['input']>;
+  slug?: InputMaybe<Scalars['String']['input']>;
+  summary: Scalars['JSON']['input'];
+  tags?: InputMaybe<Array<InputMaybe<MutationCaseStudy_TagsInput>>>;
+  title: Scalars['String']['input'];
+  updatedAt?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MutationCaseStudyUpdateInput = {
+  content?: InputMaybe<Scalars['JSON']['input']>;
+  createdAt?: InputMaybe<Scalars['String']['input']>;
+  experience?: InputMaybe<Scalars['Int']['input']>;
+  featured?: InputMaybe<Scalars['Boolean']['input']>;
+  illustration?: InputMaybe<Scalars['Int']['input']>;
+  publishedAt?: InputMaybe<Scalars['String']['input']>;
+  slug?: InputMaybe<Scalars['String']['input']>;
+  summary?: InputMaybe<Scalars['JSON']['input']>;
+  tags?: InputMaybe<Array<InputMaybe<MutationCaseStudyUpdate_TagsInput>>>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  updatedAt?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MutationCaseStudyUpdate_TagsInput = {
+  id?: InputMaybe<Scalars['String']['input']>;
+  tag?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MutationCaseStudy_TagsInput = {
+  id?: InputMaybe<Scalars['String']['input']>;
+  tag?: InputMaybe<Scalars['String']['input']>;
+};
+
 export type MutationContactFormInput = {
   createdAt?: InputMaybe<Scalars['String']['input']>;
   email: Scalars['String']['input'];
@@ -4776,20 +7629,50 @@ export type MutationContactFormUpdateInput = {
   updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
 
+export type MutationExperienceInput = {
+  caseStudies?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+  createdAt?: InputMaybe<Scalars['String']['input']>;
+  endDate?: InputMaybe<Scalars['String']['input']>;
+  role?: InputMaybe<Scalars['String']['input']>;
+  slug?: InputMaybe<Scalars['String']['input']>;
+  startDate?: InputMaybe<Scalars['String']['input']>;
+  summary: Scalars['JSON']['input'];
+  thumbnailImage?: InputMaybe<Scalars['Int']['input']>;
+  title: Scalars['String']['input'];
+  updatedAt?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MutationExperienceUpdateInput = {
+  caseStudies?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+  createdAt?: InputMaybe<Scalars['String']['input']>;
+  endDate?: InputMaybe<Scalars['String']['input']>;
+  role?: InputMaybe<Scalars['String']['input']>;
+  slug?: InputMaybe<Scalars['String']['input']>;
+  startDate?: InputMaybe<Scalars['String']['input']>;
+  summary?: InputMaybe<Scalars['JSON']['input']>;
+  thumbnailImage?: InputMaybe<Scalars['Int']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  updatedAt?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MutationFooterInput = {
+  bottomText: Scalars['String']['input'];
+  buttonText: Scalars['String']['input'];
+  createdAt?: InputMaybe<Scalars['String']['input']>;
+  description: Scalars['String']['input'];
+  hero: Scalars['String']['input'];
+  title1: Scalars['String']['input'];
+  title2: Scalars['String']['input'];
+  updatedAt?: InputMaybe<Scalars['String']['input']>;
+};
+
 export type MutationHeroInput = {
-  buttons?: InputMaybe<Array<MutationHero_ButtonsInput>>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   description: Scalars['JSON']['input'];
   name: Scalars['String']['input'];
   taglines?: InputMaybe<Array<MutationHero_TaglinesInput>>;
   title: Scalars['String']['input'];
   updatedAt?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type MutationHero_ButtonsInput = {
-  id?: InputMaybe<Scalars['String']['input']>;
-  text: Scalars['String']['input'];
-  url: Scalars['String']['input'];
 };
 
 export type MutationHero_TaglinesInput = {
@@ -4871,6 +7754,7 @@ export type MutationSkill_SkillsInput = {
   description: Scalars['JSON']['input'];
   id?: InputMaybe<Scalars['String']['input']>;
   name: Scalars['String']['input'];
+  subtitle: Scalars['String']['input'];
 };
 
 export type MutationUserInput = {
@@ -4897,6 +7781,18 @@ export type MutationUserUpdateInput = {
   resetPasswordToken?: InputMaybe<Scalars['String']['input']>;
   salt?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MutationWorkButtonInput = {
+  buttons?: InputMaybe<Array<MutationWorkButton_ButtonsInput>>;
+  createdAt?: InputMaybe<Scalars['String']['input']>;
+  updatedAt?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MutationWorkButton_ButtonsInput = {
+  id?: InputMaybe<Scalars['String']['input']>;
+  text: Scalars['String']['input'];
+  url: Scalars['String']['input'];
 };
 
 export type Payload_Locked_DocumentsAccess = {
@@ -5005,6 +7901,20 @@ export type UsersResetPassword = {
   user?: Maybe<User>;
 };
 
+export type Work_ButtonsAccess = {
+  __typename?: 'work_buttonsAccess';
+  fields?: Maybe<WorkButtonsFields>;
+  read?: Maybe<WorkButtonsReadAccess>;
+  update?: Maybe<WorkButtonsUpdateAccess>;
+};
+
+export type Work_ButtonsDocAccess = {
+  __typename?: 'work_buttonsDocAccess';
+  fields?: Maybe<WorkButtonsDocAccessFields>;
+  read?: Maybe<WorkButtonsReadDocAccess>;
+  update?: Maybe<WorkButtonsUpdateDocAccess>;
+};
+
 export type CreateContactFormMutationVariables = Exact<{
   name: Scalars['String']['input'];
   email: Scalars['String']['input'];
@@ -5023,15 +7933,21 @@ export type GetContactFormsQuery = { __typename?: 'Query', ContactForms?: { __ty
 export type GetHeroQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetHeroQuery = { __typename?: 'Query', Hero?: { __typename?: 'Hero', name: string, title: string, description: any, taglines: Array<{ __typename?: 'Hero_Taglines', text?: string | null }>, buttons: Array<{ __typename?: 'Hero_Buttons', text?: string | null, url?: string | null }> } | null };
+export type GetHeroQuery = { __typename?: 'Query', Hero?: { __typename?: 'Hero', name: string, title: string, description: any, taglines: Array<{ __typename?: 'Hero_Taglines', text?: string | null }> } | null };
 
 export type GetSkillsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetSkillsQuery = { __typename?: 'Query', Skill?: { __typename?: 'Skill', title: string, subtitle?: string | null, skills: Array<{ __typename?: 'Skill_Skills', name?: string | null, description?: any | null }> } | null };
 
+export type GetWorkButtonsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetWorkButtonsQuery = { __typename?: 'Query', WorkButton?: { __typename?: 'WorkButton', buttons: Array<{ __typename?: 'WorkButton_Buttons', text?: string | null, url?: string | null }> } | null };
+
 
 export const CreateContactFormDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"CreateContactForm"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"name"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"email"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"subject"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"message"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"createContactForm"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"data"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"name"},"value":{"kind":"Variable","name":{"kind":"Name","value":"name"}}},{"kind":"ObjectField","name":{"kind":"Name","value":"email"},"value":{"kind":"Variable","name":{"kind":"Name","value":"email"}}},{"kind":"ObjectField","name":{"kind":"Name","value":"subject"},"value":{"kind":"Variable","name":{"kind":"Name","value":"subject"}}},{"kind":"ObjectField","name":{"kind":"Name","value":"message"},"value":{"kind":"Variable","name":{"kind":"Name","value":"message"}}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"email"}},{"kind":"Field","name":{"kind":"Name","value":"subject"}},{"kind":"Field","name":{"kind":"Name","value":"message"}},{"kind":"Field","name":{"kind":"Name","value":"status"}}]}}]}}]} as unknown as DocumentNode<CreateContactFormMutation, CreateContactFormMutationVariables>;
 export const GetContactFormsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetContactForms"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"ContactForms"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"limit"},"value":{"kind":"IntValue","value":"100"}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"email"}},{"kind":"Field","name":{"kind":"Name","value":"subject"}},{"kind":"Field","name":{"kind":"Name","value":"message"}},{"kind":"Field","name":{"kind":"Name","value":"status"}},{"kind":"Field","name":{"kind":"Name","value":"createdAt"}}]}},{"kind":"Field","name":{"kind":"Name","value":"totalDocs"}},{"kind":"Field","name":{"kind":"Name","value":"page"}},{"kind":"Field","name":{"kind":"Name","value":"totalPages"}}]}}]}}]} as unknown as DocumentNode<GetContactFormsQuery, GetContactFormsQueryVariables>;
-export const GetHeroDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetHero"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Hero"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"taglines"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"text"}}]}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"buttons"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"text"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]} as unknown as DocumentNode<GetHeroQuery, GetHeroQueryVariables>;
+export const GetHeroDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetHero"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Hero"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"taglines"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"text"}}]}},{"kind":"Field","name":{"kind":"Name","value":"description"}}]}}]}}]} as unknown as DocumentNode<GetHeroQuery, GetHeroQueryVariables>;
 export const GetSkillsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetSkills"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Skill"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}},{"kind":"Field","name":{"kind":"Name","value":"skills"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"description"}}]}}]}}]}}]} as unknown as DocumentNode<GetSkillsQuery, GetSkillsQueryVariables>;
+export const GetWorkButtonsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetWorkButtons"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"WorkButton"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"buttons"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"text"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]} as unknown as DocumentNode<GetWorkButtonsQuery, GetWorkButtonsQueryVariables>;

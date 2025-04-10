@@ -1,0 +1,90 @@
+name: postgres-backup
+on:
+  schedule:
+    - cron: "0 5 * * *" # Runs at 5 AM UTC daily
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  db-backup:
+    runs-on: ubuntu-latest
+    env:
+      RETENTION: 7
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
+      PG_VERSION: "16" # Update to match your Postgres version
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install PostgreSQL
+        run: |
+          sudo apt update
+          yes '' | sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh
+          sudo apt install -y postgresql-${{ env.PG_VERSION }}
+
+      - name: Set PostgreSQL binary path
+        run: echo "POSTGRES=/usr/lib/postgresql/${{ env.PG_VERSION }}/bin" >> $GITHUB_ENV
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Install @vercel/blob
+        run: npm install @vercel/blob
+
+      - name: Set file name variables
+        run: |
+          TIMESTAMP=$(date +'%Y-%m-%d-%H-%M-%S')
+          GZIP_NAME="postgres-backup-${TIMESTAMP}.sql.gz"
+          echo "GZIP_NAME=${GZIP_NAME}" >> $GITHUB_ENV
+
+      - name: Run pg_dump
+        run: |
+          $POSTGRES/pg_dump ${{ env.DATABASE_URL }} | gzip > "${{ env.GZIP_NAME }}"
+
+      - name: Upload to Vercel Blob Storage
+        run: |
+          cat > upload-blob.js << 'EOL'
+          const { put, list, del } = require('@vercel/blob');
+          const fs = require('fs');
+
+          async function uploadBackup() {
+            try {
+              const fileName = process.env.GZIP_NAME;
+              const fileContent = fs.readFileSync(fileName);
+              
+              // Upload current backup
+              console.log(`Uploading ${fileName} to Vercel Blob Storage...`);
+              const blob = await put(fileName, fileContent, {
+                access: 'private',
+                addRandomSuffix: false,
+              });
+              console.log(`✓ Uploaded ${fileName} to ${blob.url}`);
+              
+              // Delete old backups based on retention period
+              const retention = parseInt(process.env.RETENTION, 10);
+              const retentionDate = new Date();
+              retentionDate.setDate(retentionDate.getDate() - retention);
+              
+              console.log(`Listing blobs to check for old backups...`);
+              const { blobs } = await list();
+              
+              for (const blob of blobs) {
+                const blobDate = new Date(blob.uploadedAt);
+                if (blobDate < retentionDate && blob.pathname.startsWith('postgres-backup-')) {
+                  console.log(`Deleting old backup: ${blob.pathname}`);
+                  await del(blob.url);
+                }
+              }
+              
+            } catch (error) {
+              console.error('Error:', error);
+              process.exit(1);
+            }
+          }
+
+          uploadBackup();
+          EOL
+
+          BLOB_READ_WRITE_TOKEN=${{ env.BLOB_READ_WRITE_TOKEN }} node upload-blob.js

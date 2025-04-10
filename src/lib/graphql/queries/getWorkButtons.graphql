@@ -1,0 +1,8 @@
+query GetWorkButtons {
+  WorkButton {
+    buttons {
+      text
+      url
+    }
+  }
+}

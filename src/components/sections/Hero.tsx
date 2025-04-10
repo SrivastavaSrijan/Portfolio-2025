@@ -5,7 +5,10 @@ import { ProfileToggle, AnimatedTagline } from '@/components/fragments';
 import { Button } from '../ui';
 import { useClientSide, useAnimationSequence } from '@/lib/hooks';
 import { ContactForm } from '../fragments/ContactForm';
-import { useGetHeroSuspenseQuery } from '@/lib/graphql/__generated__/hooks';
+import {
+  useGetHeroSuspenseQuery,
+  useGetWorkButtonsSuspenseQuery,
+} from '@/lib/graphql/__generated__/hooks';
 import { RichText } from '../fragments/RichText';
 
 export const Hero = () => {
@@ -14,7 +17,10 @@ export const Hero = () => {
     shouldAnimate: isClient,
   });
   const { data = {} } = useGetHeroSuspenseQuery();
-  const { buttons = [], description = [], name, title } = data?.Hero ?? {};
+
+  const { data: buttonData = {} } = useGetWorkButtonsSuspenseQuery();
+  const { description = [], name, title } = data?.Hero ?? {};
+  const { buttons = [] } = buttonData?.WorkButton ?? {};
 
   return (
     <AnimatePresence mode="wait">

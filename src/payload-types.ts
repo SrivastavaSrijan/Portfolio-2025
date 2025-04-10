@@ -93,10 +93,14 @@ export interface Config {
   globals: {
     hero: Hero;
     skills: Skill;
+    'work-buttons': WorkButton;
+    footer: Footer;
   };
   globalsSelect: {
     hero: HeroSelect<false> | HeroSelect<true>;
     skills: SkillsSelect<false> | SkillsSelect<true>;
+    'work-buttons': WorkButtonsSelect<false> | WorkButtonsSelect<true>;
+    footer: FooterSelect<false> | FooterSelect<true>;
   };
   locale: null;
   user: User & {
@@ -471,11 +475,6 @@ export interface Hero {
     };
     [k: string]: unknown;
   };
-  buttons: {
-    text: string;
-    url: string;
-    id?: string | null;
-  }[];
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -489,6 +488,7 @@ export interface Skill {
   subtitle?: string | null;
   skills: {
     name: string;
+    subtitle: string;
     description: {
       root: {
         type: string;
@@ -511,6 +511,35 @@ export interface Skill {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "work-buttons".
+ */
+export interface WorkButton {
+  id: number;
+  buttons: {
+    text: string;
+    url: string;
+    id?: string | null;
+  }[];
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "footer".
+ */
+export interface Footer {
+  id: number;
+  title1: string;
+  title2: string;
+  description: string;
+  buttonText: string;
+  hero: string;
+  bottomText: string;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "hero_select".
  */
 export interface HeroSelect<T extends boolean = true> {
@@ -523,13 +552,6 @@ export interface HeroSelect<T extends boolean = true> {
         id?: T;
       };
   description?: T;
-  buttons?:
-    | T
-    | {
-        text?: T;
-        url?: T;
-        id?: T;
-      };
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
@@ -545,9 +567,41 @@ export interface SkillsSelect<T extends boolean = true> {
     | T
     | {
         name?: T;
+        subtitle?: T;
         description?: T;
         id?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "work-buttons_select".
+ */
+export interface WorkButtonsSelect<T extends boolean = true> {
+  buttons?:
+    | T
+    | {
+        text?: T;
+        url?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "footer_select".
+ */
+export interface FooterSelect<T extends boolean = true> {
+  title1?: T;
+  title2?: T;
+  description?: T;
+  buttonText?: T;
+  hero?: T;
+  bottomText?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

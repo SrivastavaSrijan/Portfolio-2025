@@ -3,7 +3,7 @@ import { type JSXConvertersFunction, LinkJSXConverter } from '@payloadcms/richte
 import { internalDocToHref } from './InternalLink';
 import { headingConverter } from './HeadingConverter';
 import { listConverter } from './ListConverter';
-import { richTextConverter } from './RichTextConverter';
+import { linkConverter } from './LinkConverter';
 
 type NodeTypes = DefaultNodeTypes;
 
@@ -12,6 +12,6 @@ export const jsxConverter: JSXConvertersFunction<NodeTypes> = ({ defaultConverte
   ...LinkJSXConverter({ internalDocToHref }),
   ...headingConverter,
   ...listConverter,
-  ...richTextConverter,
+  ...linkConverter,
   // Additional converters can be added here
 });

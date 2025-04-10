@@ -1,9 +1,9 @@
 'use client';
 
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
-import { ChevronDownIcon } from 'lucide-react';
 
-import { cn } from '@/lib/utils';
+import { cn, isElementInViewport } from '@/lib/utils';
+import { useState } from 'react';
 
 function Accordion({ ...props }: React.ComponentProps<typeof AccordionPrimitive.Root>) {
   return <AccordionPrimitive.Root data-slot="accordion" {...props} />;
@@ -27,20 +27,61 @@ function AccordionTrigger({
   children,
   ...props
 }: React.ComponentProps<typeof AccordionPrimitive.Trigger>) {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <AccordionPrimitive.Header className="flex">
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
+        ref={(el) => {
+          const parent = el?.closest('[data-state]');
+          const dataIsOpen = parent?.getAttribute('data-state');
+          setIsOpen(dataIsOpen === 'open');
+          if (dataIsOpen === 'open') {
+            setTimeout(() => {
+              const accordionBottom = parent?.getBoundingClientRect().bottom;
+              if (!accordionBottom) return;
+              if (isElementInViewport(accordionBottom)) return;
+              // Scroll to the accordion item if it's not in the viewport
+              window.scrollTo({ top: accordionBottom + 128, behavior: 'smooth' });
+            }, 100);
+          }
+        }}
         className={cn(
           // biome-ignore lint/nursery/useSortedClasses: biome messes up the class order
-          'focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-left text-sm font-medium transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180',
+          'focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md md:py-4 py-2 text-left text-sm font-medium transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180',
           className
         )}
         {...props}
       >
         {children}
-        {/* biome-ignore lint/nursery/useSortedClasses: <explanation> */}
-        <ChevronDownIcon className="text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200" />
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="scale-50 text-muted-foreground transition-transform duration-200 md:scale-100 "
+        >
+          <title>Expand/Collapse</title>
+          {/* Horizontal line (always visible) */}
+          <line x1="5" y1="12" x2="19" y2="12" />
+          {/* Vertical line (rotates out when open) */}
+          <line
+            x1="12"
+            y1="5"
+            x2="12"
+            y2="19"
+            className={cn('origin-center transition-transform duration-200', {
+              'rotate-0': !isOpen,
+              'rotate-90 opacity-0': isOpen,
+            })}
+          />
+        </svg>
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
   );

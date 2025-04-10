@@ -32,6 +32,12 @@ export const Skills: GlobalConfig = {
           label: 'Skill Name',
         },
         {
+          name: 'subtitle',
+          type: 'text',
+          label: 'Skill Subtitle',
+          required: true,
+        },
+        {
           name: 'description',
           type: 'richText',
           required: true,
