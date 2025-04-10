@@ -1,0 +1,9 @@
+query GetFooter {
+  Footer {
+    title1
+    title2
+    description
+    buttonText
+    bottomText
+  }
+}

@@ -37,6 +37,11 @@ const buttonVariants = cva(
     },
     compoundVariants: [
       {
+        variant: 'contained',
+        color: 'brand',
+        class: 'bg-brand dark:text-accent hover:bg-brand/10 dark:bg-brand',
+      },
+      {
         variant: 'outlined',
         color: 'primary',
         class: 'border-primary text-primary hover:bg-primary/10',
@@ -55,6 +60,11 @@ const buttonVariants = cva(
         variant: 'outlined',
         color: 'ghost',
         class: 'border-accent text-brand hover:bg-accent/10 dark:border-brand dark:text-brand',
+      },
+      {
+        variant: 'outlined',
+        color: 'brand',
+        class: 'border-accent text-accent hover:bg-brand/10 dark:border-accent dark:text-accent',
       },
       {
         variant: 'text',

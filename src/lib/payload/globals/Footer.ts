@@ -37,13 +37,6 @@ export const Footer: GlobalConfig = {
     },
     {
       type: 'text',
-      name: 'hero',
-      label: 'Button Text',
-      required: true,
-      defaultValue: 'Schedule a call',
-    },
-    {
-      type: 'text',
       name: 'bottomText',
       label: 'Bottom Text',
       required: true,

@@ -16,6 +16,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
 type Documents = {
     "mutation CreateContactForm($name: String!, $email: String!, $subject: String!, $message: String!) {\n  createContactForm(\n    data: {name: $name, email: $email, subject: $subject, message: $message}\n  ) {\n    id\n    name\n    email\n    subject\n    message\n    status\n  }\n}": typeof types.CreateContactFormDocument,
     "query GetContactForms {\n  ContactForms(limit: 100) {\n    docs {\n      id\n      name\n      email\n      subject\n      message\n      status\n      createdAt\n    }\n    totalDocs\n    page\n    totalPages\n  }\n}": typeof types.GetContactFormsDocument,
+    "query GetFooter {\n  Footer {\n    title1\n    title2\n    description\n    buttonText\n    bottomText\n  }\n}": typeof types.GetFooterDocument,
     "query GetHero {\n  Hero {\n    name\n    title\n    taglines {\n      text\n    }\n    description\n  }\n}": typeof types.GetHeroDocument,
     "query GetSkills {\n  Skill {\n    title\n    subtitle\n    skills {\n      name\n      description\n    }\n  }\n}": typeof types.GetSkillsDocument,
     "query GetWorkButtons {\n  WorkButton {\n    buttons {\n      text\n      url\n    }\n  }\n}": typeof types.GetWorkButtonsDocument,
@@ -23,6 +24,7 @@ type Documents = {
 const documents: Documents = {
     "mutation CreateContactForm($name: String!, $email: String!, $subject: String!, $message: String!) {\n  createContactForm(\n    data: {name: $name, email: $email, subject: $subject, message: $message}\n  ) {\n    id\n    name\n    email\n    subject\n    message\n    status\n  }\n}": types.CreateContactFormDocument,
     "query GetContactForms {\n  ContactForms(limit: 100) {\n    docs {\n      id\n      name\n      email\n      subject\n      message\n      status\n      createdAt\n    }\n    totalDocs\n    page\n    totalPages\n  }\n}": types.GetContactFormsDocument,
+    "query GetFooter {\n  Footer {\n    title1\n    title2\n    description\n    buttonText\n    bottomText\n  }\n}": types.GetFooterDocument,
     "query GetHero {\n  Hero {\n    name\n    title\n    taglines {\n      text\n    }\n    description\n  }\n}": types.GetHeroDocument,
     "query GetSkills {\n  Skill {\n    title\n    subtitle\n    skills {\n      name\n      description\n    }\n  }\n}": types.GetSkillsDocument,
     "query GetWorkButtons {\n  WorkButton {\n    buttons {\n      text\n      url\n    }\n  }\n}": types.GetWorkButtonsDocument,
@@ -50,6 +52,10 @@ export function gql(source: "mutation CreateContactForm($name: String!, $email: 
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(source: "query GetContactForms {\n  ContactForms(limit: 100) {\n    docs {\n      id\n      name\n      email\n      subject\n      message\n      status\n      createdAt\n    }\n    totalDocs\n    page\n    totalPages\n  }\n}"): (typeof documents)["query GetContactForms {\n  ContactForms(limit: 100) {\n    docs {\n      id\n      name\n      email\n      subject\n      message\n      status\n      createdAt\n    }\n    totalDocs\n    page\n    totalPages\n  }\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "query GetFooter {\n  Footer {\n    title1\n    title2\n    description\n    buttonText\n    bottomText\n  }\n}"): (typeof documents)["query GetFooter {\n  Footer {\n    title1\n    title2\n    description\n    buttonText\n    bottomText\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

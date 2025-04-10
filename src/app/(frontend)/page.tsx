@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { Hero, Skills } from '@/components/sections';
+import { Footer, Hero, Skills } from '@/components/sections';
 import { Skeleton } from '@/components/ui';
 import { Navbar } from '@/components/fragments';
 
@@ -12,6 +12,7 @@ export default function HomePage() {
       <Suspense fallback={<HeroSkeleton />}>
         <Hero />
         <Skills />
+        <Footer />
       </Suspense>
     </div>
   );

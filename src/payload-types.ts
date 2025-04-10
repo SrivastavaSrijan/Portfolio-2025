@@ -535,7 +535,6 @@ export interface Footer {
   title2: string;
   description: string;
   buttonText: string;
-  hero: string;
   bottomText: string;
   updatedAt?: string | null;
   createdAt?: string | null;
@@ -602,7 +601,6 @@ export interface FooterSelect<T extends boolean = true> {
   title2?: T;
   description?: T;
   buttonText?: T;
-  hero?: T;
   bottomText?: T;
   updatedAt?: T;
   createdAt?: T;

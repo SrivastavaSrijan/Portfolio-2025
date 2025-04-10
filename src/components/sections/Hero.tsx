@@ -1,7 +1,7 @@
 'use client';
 import { motion, AnimatePresence } from 'framer-motion';
 import { containerVariants, itemVariants, paragraphVariants } from '@/lib/animations';
-import { ProfileToggle, AnimatedTagline } from '@/components/fragments';
+import { ProfileToggle, AnimatedTagline, WorkButtons } from '@/components/fragments';
 import { Button } from '../ui';
 import { useClientSide, useAnimationSequence } from '@/lib/hooks';
 import { ContactForm } from '../fragments/ContactForm';
@@ -74,22 +74,7 @@ export const Hero = () => {
             </Button>
           </ContactForm>
           <span className="md:basis flex basis-full md:hidden" />
-          <div className="flex w-full justify-between md:w-fit md:justify-end md:gap-5">
-            {buttons.map((button) => (
-              <Button
-                variant="outlined"
-                color="ghost"
-                key={button.text}
-                onClick={() => {
-                  if (button.url) {
-                    window.open(button.url, '_blank');
-                  }
-                }}
-              >
-                {button.text}
-              </Button>
-            ))}
-          </div>
+          <WorkButtons />
         </motion.div>
       </motion.div>
     </AnimatePresence>

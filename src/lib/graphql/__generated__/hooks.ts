@@ -2547,7 +2547,6 @@ export type Footer = {
   readonly buttonText: Scalars['String']['output'];
   readonly createdAt?: Maybe<Scalars['DateTime']['output']>;
   readonly description: Scalars['String']['output'];
-  readonly hero: Scalars['String']['output'];
   readonly title1: Scalars['String']['output'];
   readonly title2: Scalars['String']['output'];
   readonly updatedAt?: Maybe<Scalars['DateTime']['output']>;
@@ -2559,7 +2558,6 @@ export type FooterDocAccessFields = {
   readonly buttonText?: Maybe<FooterDocAccessFields_ButtonText>;
   readonly createdAt?: Maybe<FooterDocAccessFields_CreatedAt>;
   readonly description?: Maybe<FooterDocAccessFields_Description>;
-  readonly hero?: Maybe<FooterDocAccessFields_Hero>;
   readonly title1?: Maybe<FooterDocAccessFields_Title1>;
   readonly title2?: Maybe<FooterDocAccessFields_Title2>;
   readonly updatedAt?: Maybe<FooterDocAccessFields_UpdatedAt>;
@@ -2677,34 +2675,6 @@ export type FooterDocAccessFields_Description_Update = {
   readonly permission: Scalars['Boolean']['output'];
 };
 
-export type FooterDocAccessFields_Hero = {
-  readonly __typename?: 'FooterDocAccessFields_hero';
-  readonly create?: Maybe<FooterDocAccessFields_Hero_Create>;
-  readonly delete?: Maybe<FooterDocAccessFields_Hero_Delete>;
-  readonly read?: Maybe<FooterDocAccessFields_Hero_Read>;
-  readonly update?: Maybe<FooterDocAccessFields_Hero_Update>;
-};
-
-export type FooterDocAccessFields_Hero_Create = {
-  readonly __typename?: 'FooterDocAccessFields_hero_Create';
-  readonly permission: Scalars['Boolean']['output'];
-};
-
-export type FooterDocAccessFields_Hero_Delete = {
-  readonly __typename?: 'FooterDocAccessFields_hero_Delete';
-  readonly permission: Scalars['Boolean']['output'];
-};
-
-export type FooterDocAccessFields_Hero_Read = {
-  readonly __typename?: 'FooterDocAccessFields_hero_Read';
-  readonly permission: Scalars['Boolean']['output'];
-};
-
-export type FooterDocAccessFields_Hero_Update = {
-  readonly __typename?: 'FooterDocAccessFields_hero_Update';
-  readonly permission: Scalars['Boolean']['output'];
-};
-
 export type FooterDocAccessFields_Title1 = {
   readonly __typename?: 'FooterDocAccessFields_title1';
   readonly create?: Maybe<FooterDocAccessFields_Title1_Create>;
@@ -2795,7 +2765,6 @@ export type FooterFields = {
   readonly buttonText?: Maybe<FooterFields_ButtonText>;
   readonly createdAt?: Maybe<FooterFields_CreatedAt>;
   readonly description?: Maybe<FooterFields_Description>;
-  readonly hero?: Maybe<FooterFields_Hero>;
   readonly title1?: Maybe<FooterFields_Title1>;
   readonly title2?: Maybe<FooterFields_Title2>;
   readonly updatedAt?: Maybe<FooterFields_UpdatedAt>;
@@ -2910,34 +2879,6 @@ export type FooterFields_Description_Read = {
 
 export type FooterFields_Description_Update = {
   readonly __typename?: 'FooterFields_description_Update';
-  readonly permission: Scalars['Boolean']['output'];
-};
-
-export type FooterFields_Hero = {
-  readonly __typename?: 'FooterFields_hero';
-  readonly create?: Maybe<FooterFields_Hero_Create>;
-  readonly delete?: Maybe<FooterFields_Hero_Delete>;
-  readonly read?: Maybe<FooterFields_Hero_Read>;
-  readonly update?: Maybe<FooterFields_Hero_Update>;
-};
-
-export type FooterFields_Hero_Create = {
-  readonly __typename?: 'FooterFields_hero_Create';
-  readonly permission: Scalars['Boolean']['output'];
-};
-
-export type FooterFields_Hero_Delete = {
-  readonly __typename?: 'FooterFields_hero_Delete';
-  readonly permission: Scalars['Boolean']['output'];
-};
-
-export type FooterFields_Hero_Read = {
-  readonly __typename?: 'FooterFields_hero_Read';
-  readonly permission: Scalars['Boolean']['output'];
-};
-
-export type FooterFields_Hero_Update = {
-  readonly __typename?: 'FooterFields_hero_Update';
   readonly permission: Scalars['Boolean']['output'];
 };
 
@@ -7657,7 +7598,6 @@ export type MutationFooterInput = {
   readonly buttonText: Scalars['String']['input'];
   readonly createdAt?: InputMaybe<Scalars['String']['input']>;
   readonly description: Scalars['String']['input'];
-  readonly hero: Scalars['String']['input'];
   readonly title1: Scalars['String']['input'];
   readonly title2: Scalars['String']['input'];
   readonly updatedAt?: InputMaybe<Scalars['String']['input']>;
@@ -7927,6 +7867,11 @@ export type GetContactFormsQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetContactFormsQuery = { readonly __typename?: 'Query', readonly ContactForms?: { readonly __typename?: 'ContactForms', readonly totalDocs: number, readonly page: number, readonly totalPages: number, readonly docs: ReadonlyArray<{ readonly __typename?: 'ContactForm', readonly id: number, readonly name: string, readonly email: any, readonly subject: string, readonly message: string, readonly status?: ContactForm_Status | null, readonly createdAt?: any | null }> } | null };
 
+export type GetFooterQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetFooterQuery = { readonly __typename?: 'Query', readonly Footer?: { readonly __typename?: 'Footer', readonly title1: string, readonly title2: string, readonly description: string, readonly buttonText: string, readonly bottomText: string } | null };
+
 export type GetHeroQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -8036,6 +7981,49 @@ export type GetContactFormsQueryHookResult = ReturnType<typeof useGetContactForm
 export type GetContactFormsLazyQueryHookResult = ReturnType<typeof useGetContactFormsLazyQuery>;
 export type GetContactFormsSuspenseQueryHookResult = ReturnType<typeof useGetContactFormsSuspenseQuery>;
 export type GetContactFormsQueryResult = Apollo.QueryResult<GetContactFormsQuery, GetContactFormsQueryVariables>;
+export const GetFooterDocument = gql`
+    query GetFooter {
+  Footer {
+    title1
+    title2
+    description
+    buttonText
+    bottomText
+  }
+}
+    `;
+
+/**
+ * __useGetFooterQuery__
+ *
+ * To run a query within a React component, call `useGetFooterQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetFooterQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetFooterQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetFooterQuery(baseOptions?: Apollo.QueryHookOptions<GetFooterQuery, GetFooterQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetFooterQuery, GetFooterQueryVariables>(GetFooterDocument, options);
+      }
+export function useGetFooterLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetFooterQuery, GetFooterQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetFooterQuery, GetFooterQueryVariables>(GetFooterDocument, options);
+        }
+export function useGetFooterSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetFooterQuery, GetFooterQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetFooterQuery, GetFooterQueryVariables>(GetFooterDocument, options);
+        }
+export type GetFooterQueryHookResult = ReturnType<typeof useGetFooterQuery>;
+export type GetFooterLazyQueryHookResult = ReturnType<typeof useGetFooterLazyQuery>;
+export type GetFooterSuspenseQueryHookResult = ReturnType<typeof useGetFooterSuspenseQuery>;
+export type GetFooterQueryResult = Apollo.QueryResult<GetFooterQuery, GetFooterQueryVariables>;
 export const GetHeroDocument = gql`
     query GetHero {
   Hero {

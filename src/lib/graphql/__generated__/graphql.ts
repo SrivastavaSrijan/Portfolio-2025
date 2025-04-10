@@ -2550,7 +2550,6 @@ export type Footer = {
   buttonText: Scalars['String']['output'];
   createdAt?: Maybe<Scalars['DateTime']['output']>;
   description: Scalars['String']['output'];
-  hero: Scalars['String']['output'];
   title1: Scalars['String']['output'];
   title2: Scalars['String']['output'];
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
@@ -2562,7 +2561,6 @@ export type FooterDocAccessFields = {
   buttonText?: Maybe<FooterDocAccessFields_ButtonText>;
   createdAt?: Maybe<FooterDocAccessFields_CreatedAt>;
   description?: Maybe<FooterDocAccessFields_Description>;
-  hero?: Maybe<FooterDocAccessFields_Hero>;
   title1?: Maybe<FooterDocAccessFields_Title1>;
   title2?: Maybe<FooterDocAccessFields_Title2>;
   updatedAt?: Maybe<FooterDocAccessFields_UpdatedAt>;
@@ -2680,34 +2678,6 @@ export type FooterDocAccessFields_Description_Update = {
   permission: Scalars['Boolean']['output'];
 };
 
-export type FooterDocAccessFields_Hero = {
-  __typename?: 'FooterDocAccessFields_hero';
-  create?: Maybe<FooterDocAccessFields_Hero_Create>;
-  delete?: Maybe<FooterDocAccessFields_Hero_Delete>;
-  read?: Maybe<FooterDocAccessFields_Hero_Read>;
-  update?: Maybe<FooterDocAccessFields_Hero_Update>;
-};
-
-export type FooterDocAccessFields_Hero_Create = {
-  __typename?: 'FooterDocAccessFields_hero_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type FooterDocAccessFields_Hero_Delete = {
-  __typename?: 'FooterDocAccessFields_hero_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type FooterDocAccessFields_Hero_Read = {
-  __typename?: 'FooterDocAccessFields_hero_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type FooterDocAccessFields_Hero_Update = {
-  __typename?: 'FooterDocAccessFields_hero_Update';
-  permission: Scalars['Boolean']['output'];
-};
-
 export type FooterDocAccessFields_Title1 = {
   __typename?: 'FooterDocAccessFields_title1';
   create?: Maybe<FooterDocAccessFields_Title1_Create>;
@@ -2798,7 +2768,6 @@ export type FooterFields = {
   buttonText?: Maybe<FooterFields_ButtonText>;
   createdAt?: Maybe<FooterFields_CreatedAt>;
   description?: Maybe<FooterFields_Description>;
-  hero?: Maybe<FooterFields_Hero>;
   title1?: Maybe<FooterFields_Title1>;
   title2?: Maybe<FooterFields_Title2>;
   updatedAt?: Maybe<FooterFields_UpdatedAt>;
@@ -2913,34 +2882,6 @@ export type FooterFields_Description_Read = {
 
 export type FooterFields_Description_Update = {
   __typename?: 'FooterFields_description_Update';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type FooterFields_Hero = {
-  __typename?: 'FooterFields_hero';
-  create?: Maybe<FooterFields_Hero_Create>;
-  delete?: Maybe<FooterFields_Hero_Delete>;
-  read?: Maybe<FooterFields_Hero_Read>;
-  update?: Maybe<FooterFields_Hero_Update>;
-};
-
-export type FooterFields_Hero_Create = {
-  __typename?: 'FooterFields_hero_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type FooterFields_Hero_Delete = {
-  __typename?: 'FooterFields_hero_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type FooterFields_Hero_Read = {
-  __typename?: 'FooterFields_hero_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type FooterFields_Hero_Update = {
-  __typename?: 'FooterFields_hero_Update';
   permission: Scalars['Boolean']['output'];
 };
 
@@ -7660,7 +7601,6 @@ export type MutationFooterInput = {
   buttonText: Scalars['String']['input'];
   createdAt?: InputMaybe<Scalars['String']['input']>;
   description: Scalars['String']['input'];
-  hero: Scalars['String']['input'];
   title1: Scalars['String']['input'];
   title2: Scalars['String']['input'];
   updatedAt?: InputMaybe<Scalars['String']['input']>;
@@ -7930,6 +7870,11 @@ export type GetContactFormsQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetContactFormsQuery = { __typename?: 'Query', ContactForms?: { __typename?: 'ContactForms', totalDocs: number, page: number, totalPages: number, docs: Array<{ __typename?: 'ContactForm', id: number, name: string, email: any, subject: string, message: string, status?: ContactForm_Status | null, createdAt?: any | null }> } | null };
 
+export type GetFooterQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetFooterQuery = { __typename?: 'Query', Footer?: { __typename?: 'Footer', title1: string, title2: string, description: string, buttonText: string, bottomText: string } | null };
+
 export type GetHeroQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -7948,6 +7893,7 @@ export type GetWorkButtonsQuery = { __typename?: 'Query', WorkButton?: { __typen
 
 export const CreateContactFormDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"CreateContactForm"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"name"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"email"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"subject"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"message"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"createContactForm"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"data"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"name"},"value":{"kind":"Variable","name":{"kind":"Name","value":"name"}}},{"kind":"ObjectField","name":{"kind":"Name","value":"email"},"value":{"kind":"Variable","name":{"kind":"Name","value":"email"}}},{"kind":"ObjectField","name":{"kind":"Name","value":"subject"},"value":{"kind":"Variable","name":{"kind":"Name","value":"subject"}}},{"kind":"ObjectField","name":{"kind":"Name","value":"message"},"value":{"kind":"Variable","name":{"kind":"Name","value":"message"}}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"email"}},{"kind":"Field","name":{"kind":"Name","value":"subject"}},{"kind":"Field","name":{"kind":"Name","value":"message"}},{"kind":"Field","name":{"kind":"Name","value":"status"}}]}}]}}]} as unknown as DocumentNode<CreateContactFormMutation, CreateContactFormMutationVariables>;
 export const GetContactFormsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetContactForms"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"ContactForms"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"limit"},"value":{"kind":"IntValue","value":"100"}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"email"}},{"kind":"Field","name":{"kind":"Name","value":"subject"}},{"kind":"Field","name":{"kind":"Name","value":"message"}},{"kind":"Field","name":{"kind":"Name","value":"status"}},{"kind":"Field","name":{"kind":"Name","value":"createdAt"}}]}},{"kind":"Field","name":{"kind":"Name","value":"totalDocs"}},{"kind":"Field","name":{"kind":"Name","value":"page"}},{"kind":"Field","name":{"kind":"Name","value":"totalPages"}}]}}]}}]} as unknown as DocumentNode<GetContactFormsQuery, GetContactFormsQueryVariables>;
+export const GetFooterDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetFooter"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Footer"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title1"}},{"kind":"Field","name":{"kind":"Name","value":"title2"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"buttonText"}},{"kind":"Field","name":{"kind":"Name","value":"bottomText"}}]}}]}}]} as unknown as DocumentNode<GetFooterQuery, GetFooterQueryVariables>;
 export const GetHeroDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetHero"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Hero"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"taglines"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"text"}}]}},{"kind":"Field","name":{"kind":"Name","value":"description"}}]}}]}}]} as unknown as DocumentNode<GetHeroQuery, GetHeroQueryVariables>;
 export const GetSkillsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetSkills"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Skill"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}},{"kind":"Field","name":{"kind":"Name","value":"skills"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"description"}}]}}]}}]}}]} as unknown as DocumentNode<GetSkillsQuery, GetSkillsQueryVariables>;
 export const GetWorkButtonsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetWorkButtons"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"WorkButton"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"buttons"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"text"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]} as unknown as DocumentNode<GetWorkButtonsQuery, GetWorkButtonsQueryVariables>;
