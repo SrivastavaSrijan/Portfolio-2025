@@ -11,7 +11,8 @@
     "codegen": "graphql-codegen --config codegen.ts",
     "codegen:watch": "graphql-codegen --watch --config codegen.ts",
     "format": "biome format --write",
-    "update": "yarn payload generate:types && yarn payload generate:importmap"
+    "update": "yarn payload generate:types && yarn payload generate:importmap",
+    "precommit": "biome lint --fix && yarn tsc",
   },
   "dependencies": {
     "@apollo/client": "^3.13.6",
