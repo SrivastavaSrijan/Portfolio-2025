@@ -11,7 +11,7 @@ type CaseStudyCardProps = NonNullable<
 
 export const CaseStudyCard = ({ title, tags, slug, illustration }: CaseStudyCardProps) => {
   return (
-    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden md:rounded-[42px] ">
+    <div className="relative mx-auto flex w-full max-w-256 flex-col items-center justify-center overflow-hidden md:rounded-[42px]">
       <div className="relative h-40 w-full md:h-208 ">
         {illustration?.url && (
           <Image

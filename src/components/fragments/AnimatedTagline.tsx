@@ -52,7 +52,7 @@ export const AnimatedTagline = ({ isClient, initialAnimComplete }: AnimatedTagli
   }, [isClient, controls]);
 
   return (
-    <div className="relative flex flex-wrap items-end gap-2 font-semibold text-brand text-xl md:gap-3 md:font-normal md:text-display-5">
+    <div className="-mt-4 relative flex flex-wrap items-end gap-2 font-semibold text-brand text-xl md:mt-0 md:gap-3 md:font-normal md:text-display-5">
       {isClient ? (
         <>
           {/* "I make things look" text */}
@@ -71,7 +71,7 @@ export const AnimatedTagline = ({ isClient, initialAnimComplete }: AnimatedTagli
           </motion.span>
 
           {/* "good" text with SVG effects */}
-          <div className="relative top-1.5 inline-block md:top-2">
+          <div className="-left-1 relative top-1.5 inline-block md:top-2 md:left-0">
             <svg
               className="inline-block h-[42px] w-[80px] md:h-[60px] md:w-[110px] lg:h-[70px] lg:w-[140px] xl:h-[80px] xl:w-[160px]"
               viewBox="0 0 100 50"
@@ -114,7 +114,7 @@ export const AnimatedTagline = ({ isClient, initialAnimComplete }: AnimatedTagli
 
             {/* Underline - positioned based on text width */}
             <svg
-              className="md:-bottom-1 -bottom-0 absolute left-0 w-full"
+              className="md:-bottom-1 -bottom-1 absolute left-0 w-full"
               height="8"
               viewBox="0 0 100 8"
               preserveAspectRatio="none"
@@ -123,7 +123,7 @@ export const AnimatedTagline = ({ isClient, initialAnimComplete }: AnimatedTagli
               <motion.path
                 d="M0,4 Q25,8 50,4 T100,4"
                 stroke="var(--color-orange-400)"
-                strokeWidth="2.5"
+                strokeWidth="1.5"
                 fill="none"
                 style={{ pathLength }}
                 initial={{ opacity: 1 }}
