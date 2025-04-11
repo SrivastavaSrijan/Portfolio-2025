@@ -15,7 +15,9 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  */
 type Documents = {
     "mutation CreateContactForm($name: String!, $email: String!, $subject: String!, $message: String!) {\n  createContactForm(\n    data: {name: $name, email: $email, subject: $subject, message: $message}\n  ) {\n    id\n    name\n    email\n    subject\n    message\n    status\n  }\n}": typeof types.CreateContactFormDocument,
+    "query GetCaseStudyBySlug($slug: String!) {\n  CaseStudies(where: {slug: {equals: $slug}}) {\n    docs {\n      title\n      experience {\n        title\n        role\n        startDate\n        endDate\n        id\n      }\n      tags {\n        tag\n      }\n      content\n      summary\n      illustration {\n        url\n      }\n      updatedAt\n    }\n  }\n}": typeof types.GetCaseStudyBySlugDocument,
     "query GetContactForms {\n  ContactForms(limit: 100) {\n    docs {\n      id\n      name\n      email\n      subject\n      message\n      status\n      createdAt\n    }\n    totalDocs\n    page\n    totalPages\n  }\n}": typeof types.GetContactFormsDocument,
+    "query GetFeaturedCaseStudies {\n  FeaturedCaseStudy {\n    title\n    subtitle\n    description\n    caseStudies {\n      title\n      slug\n      illustration {\n        url\n        alt\n      }\n      tags {\n        tag\n      }\n    }\n  }\n}": typeof types.GetFeaturedCaseStudiesDocument,
     "query GetFooter {\n  Footer {\n    title1\n    title2\n    description\n    buttonText\n    bottomText\n  }\n}": typeof types.GetFooterDocument,
     "query GetHero {\n  Hero {\n    name\n    title\n    taglines {\n      text\n    }\n    description\n  }\n}": typeof types.GetHeroDocument,
     "query GetSkills {\n  Skill {\n    title\n    subtitle\n    skills {\n      name\n      description\n    }\n  }\n}": typeof types.GetSkillsDocument,
@@ -23,7 +25,9 @@ type Documents = {
 };
 const documents: Documents = {
     "mutation CreateContactForm($name: String!, $email: String!, $subject: String!, $message: String!) {\n  createContactForm(\n    data: {name: $name, email: $email, subject: $subject, message: $message}\n  ) {\n    id\n    name\n    email\n    subject\n    message\n    status\n  }\n}": types.CreateContactFormDocument,
+    "query GetCaseStudyBySlug($slug: String!) {\n  CaseStudies(where: {slug: {equals: $slug}}) {\n    docs {\n      title\n      experience {\n        title\n        role\n        startDate\n        endDate\n        id\n      }\n      tags {\n        tag\n      }\n      content\n      summary\n      illustration {\n        url\n      }\n      updatedAt\n    }\n  }\n}": types.GetCaseStudyBySlugDocument,
     "query GetContactForms {\n  ContactForms(limit: 100) {\n    docs {\n      id\n      name\n      email\n      subject\n      message\n      status\n      createdAt\n    }\n    totalDocs\n    page\n    totalPages\n  }\n}": types.GetContactFormsDocument,
+    "query GetFeaturedCaseStudies {\n  FeaturedCaseStudy {\n    title\n    subtitle\n    description\n    caseStudies {\n      title\n      slug\n      illustration {\n        url\n        alt\n      }\n      tags {\n        tag\n      }\n    }\n  }\n}": types.GetFeaturedCaseStudiesDocument,
     "query GetFooter {\n  Footer {\n    title1\n    title2\n    description\n    buttonText\n    bottomText\n  }\n}": types.GetFooterDocument,
     "query GetHero {\n  Hero {\n    name\n    title\n    taglines {\n      text\n    }\n    description\n  }\n}": types.GetHeroDocument,
     "query GetSkills {\n  Skill {\n    title\n    subtitle\n    skills {\n      name\n      description\n    }\n  }\n}": types.GetSkillsDocument,
@@ -51,7 +55,15 @@ export function gql(source: "mutation CreateContactForm($name: String!, $email: 
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
+export function gql(source: "query GetCaseStudyBySlug($slug: String!) {\n  CaseStudies(where: {slug: {equals: $slug}}) {\n    docs {\n      title\n      experience {\n        title\n        role\n        startDate\n        endDate\n        id\n      }\n      tags {\n        tag\n      }\n      content\n      summary\n      illustration {\n        url\n      }\n      updatedAt\n    }\n  }\n}"): (typeof documents)["query GetCaseStudyBySlug($slug: String!) {\n  CaseStudies(where: {slug: {equals: $slug}}) {\n    docs {\n      title\n      experience {\n        title\n        role\n        startDate\n        endDate\n        id\n      }\n      tags {\n        tag\n      }\n      content\n      summary\n      illustration {\n        url\n      }\n      updatedAt\n    }\n  }\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
 export function gql(source: "query GetContactForms {\n  ContactForms(limit: 100) {\n    docs {\n      id\n      name\n      email\n      subject\n      message\n      status\n      createdAt\n    }\n    totalDocs\n    page\n    totalPages\n  }\n}"): (typeof documents)["query GetContactForms {\n  ContactForms(limit: 100) {\n    docs {\n      id\n      name\n      email\n      subject\n      message\n      status\n      createdAt\n    }\n    totalDocs\n    page\n    totalPages\n  }\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "query GetFeaturedCaseStudies {\n  FeaturedCaseStudy {\n    title\n    subtitle\n    description\n    caseStudies {\n      title\n      slug\n      illustration {\n        url\n        alt\n      }\n      tags {\n        tag\n      }\n    }\n  }\n}"): (typeof documents)["query GetFeaturedCaseStudies {\n  FeaturedCaseStudy {\n    title\n    subtitle\n    description\n    caseStudies {\n      title\n      slug\n      illustration {\n        url\n        alt\n      }\n      tags {\n        tag\n      }\n    }\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

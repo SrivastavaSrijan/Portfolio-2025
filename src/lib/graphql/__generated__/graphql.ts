@@ -30,6 +30,7 @@ export type Access = {
   case_studies?: Maybe<Case_StudiesAccess>;
   contact_forms?: Maybe<Contact_FormsAccess>;
   experiences?: Maybe<ExperiencesAccess>;
+  featured_case_studies?: Maybe<Featured_Case_StudiesAccess>;
   footer?: Maybe<FooterAccess>;
   hero?: Maybe<HeroAccess>;
   media?: Maybe<MediaAccess>;
@@ -2544,6 +2545,396 @@ export type ExperiencesUpdateDocAccess = {
   where?: Maybe<Scalars['JSONObject']['output']>;
 };
 
+export type FeaturedCaseStudiesDocAccessFields = {
+  __typename?: 'FeaturedCaseStudiesDocAccessFields';
+  caseStudies?: Maybe<FeaturedCaseStudiesDocAccessFields_CaseStudies>;
+  createdAt?: Maybe<FeaturedCaseStudiesDocAccessFields_CreatedAt>;
+  description?: Maybe<FeaturedCaseStudiesDocAccessFields_Description>;
+  subtitle?: Maybe<FeaturedCaseStudiesDocAccessFields_Subtitle>;
+  title?: Maybe<FeaturedCaseStudiesDocAccessFields_Title>;
+  updatedAt?: Maybe<FeaturedCaseStudiesDocAccessFields_UpdatedAt>;
+};
+
+export type FeaturedCaseStudiesDocAccessFields_CaseStudies = {
+  __typename?: 'FeaturedCaseStudiesDocAccessFields_caseStudies';
+  create?: Maybe<FeaturedCaseStudiesDocAccessFields_CaseStudies_Create>;
+  delete?: Maybe<FeaturedCaseStudiesDocAccessFields_CaseStudies_Delete>;
+  read?: Maybe<FeaturedCaseStudiesDocAccessFields_CaseStudies_Read>;
+  update?: Maybe<FeaturedCaseStudiesDocAccessFields_CaseStudies_Update>;
+};
+
+export type FeaturedCaseStudiesDocAccessFields_CaseStudies_Create = {
+  __typename?: 'FeaturedCaseStudiesDocAccessFields_caseStudies_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_CaseStudies_Delete = {
+  __typename?: 'FeaturedCaseStudiesDocAccessFields_caseStudies_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_CaseStudies_Read = {
+  __typename?: 'FeaturedCaseStudiesDocAccessFields_caseStudies_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_CaseStudies_Update = {
+  __typename?: 'FeaturedCaseStudiesDocAccessFields_caseStudies_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_CreatedAt = {
+  __typename?: 'FeaturedCaseStudiesDocAccessFields_createdAt';
+  create?: Maybe<FeaturedCaseStudiesDocAccessFields_CreatedAt_Create>;
+  delete?: Maybe<FeaturedCaseStudiesDocAccessFields_CreatedAt_Delete>;
+  read?: Maybe<FeaturedCaseStudiesDocAccessFields_CreatedAt_Read>;
+  update?: Maybe<FeaturedCaseStudiesDocAccessFields_CreatedAt_Update>;
+};
+
+export type FeaturedCaseStudiesDocAccessFields_CreatedAt_Create = {
+  __typename?: 'FeaturedCaseStudiesDocAccessFields_createdAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_CreatedAt_Delete = {
+  __typename?: 'FeaturedCaseStudiesDocAccessFields_createdAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_CreatedAt_Read = {
+  __typename?: 'FeaturedCaseStudiesDocAccessFields_createdAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_CreatedAt_Update = {
+  __typename?: 'FeaturedCaseStudiesDocAccessFields_createdAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_Description = {
+  __typename?: 'FeaturedCaseStudiesDocAccessFields_description';
+  create?: Maybe<FeaturedCaseStudiesDocAccessFields_Description_Create>;
+  delete?: Maybe<FeaturedCaseStudiesDocAccessFields_Description_Delete>;
+  read?: Maybe<FeaturedCaseStudiesDocAccessFields_Description_Read>;
+  update?: Maybe<FeaturedCaseStudiesDocAccessFields_Description_Update>;
+};
+
+export type FeaturedCaseStudiesDocAccessFields_Description_Create = {
+  __typename?: 'FeaturedCaseStudiesDocAccessFields_description_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_Description_Delete = {
+  __typename?: 'FeaturedCaseStudiesDocAccessFields_description_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_Description_Read = {
+  __typename?: 'FeaturedCaseStudiesDocAccessFields_description_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_Description_Update = {
+  __typename?: 'FeaturedCaseStudiesDocAccessFields_description_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_Subtitle = {
+  __typename?: 'FeaturedCaseStudiesDocAccessFields_subtitle';
+  create?: Maybe<FeaturedCaseStudiesDocAccessFields_Subtitle_Create>;
+  delete?: Maybe<FeaturedCaseStudiesDocAccessFields_Subtitle_Delete>;
+  read?: Maybe<FeaturedCaseStudiesDocAccessFields_Subtitle_Read>;
+  update?: Maybe<FeaturedCaseStudiesDocAccessFields_Subtitle_Update>;
+};
+
+export type FeaturedCaseStudiesDocAccessFields_Subtitle_Create = {
+  __typename?: 'FeaturedCaseStudiesDocAccessFields_subtitle_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_Subtitle_Delete = {
+  __typename?: 'FeaturedCaseStudiesDocAccessFields_subtitle_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_Subtitle_Read = {
+  __typename?: 'FeaturedCaseStudiesDocAccessFields_subtitle_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_Subtitle_Update = {
+  __typename?: 'FeaturedCaseStudiesDocAccessFields_subtitle_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_Title = {
+  __typename?: 'FeaturedCaseStudiesDocAccessFields_title';
+  create?: Maybe<FeaturedCaseStudiesDocAccessFields_Title_Create>;
+  delete?: Maybe<FeaturedCaseStudiesDocAccessFields_Title_Delete>;
+  read?: Maybe<FeaturedCaseStudiesDocAccessFields_Title_Read>;
+  update?: Maybe<FeaturedCaseStudiesDocAccessFields_Title_Update>;
+};
+
+export type FeaturedCaseStudiesDocAccessFields_Title_Create = {
+  __typename?: 'FeaturedCaseStudiesDocAccessFields_title_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_Title_Delete = {
+  __typename?: 'FeaturedCaseStudiesDocAccessFields_title_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_Title_Read = {
+  __typename?: 'FeaturedCaseStudiesDocAccessFields_title_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_Title_Update = {
+  __typename?: 'FeaturedCaseStudiesDocAccessFields_title_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_UpdatedAt = {
+  __typename?: 'FeaturedCaseStudiesDocAccessFields_updatedAt';
+  create?: Maybe<FeaturedCaseStudiesDocAccessFields_UpdatedAt_Create>;
+  delete?: Maybe<FeaturedCaseStudiesDocAccessFields_UpdatedAt_Delete>;
+  read?: Maybe<FeaturedCaseStudiesDocAccessFields_UpdatedAt_Read>;
+  update?: Maybe<FeaturedCaseStudiesDocAccessFields_UpdatedAt_Update>;
+};
+
+export type FeaturedCaseStudiesDocAccessFields_UpdatedAt_Create = {
+  __typename?: 'FeaturedCaseStudiesDocAccessFields_updatedAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_UpdatedAt_Delete = {
+  __typename?: 'FeaturedCaseStudiesDocAccessFields_updatedAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_UpdatedAt_Read = {
+  __typename?: 'FeaturedCaseStudiesDocAccessFields_updatedAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_UpdatedAt_Update = {
+  __typename?: 'FeaturedCaseStudiesDocAccessFields_updatedAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields = {
+  __typename?: 'FeaturedCaseStudiesFields';
+  caseStudies?: Maybe<FeaturedCaseStudiesFields_CaseStudies>;
+  createdAt?: Maybe<FeaturedCaseStudiesFields_CreatedAt>;
+  description?: Maybe<FeaturedCaseStudiesFields_Description>;
+  subtitle?: Maybe<FeaturedCaseStudiesFields_Subtitle>;
+  title?: Maybe<FeaturedCaseStudiesFields_Title>;
+  updatedAt?: Maybe<FeaturedCaseStudiesFields_UpdatedAt>;
+};
+
+export type FeaturedCaseStudiesFields_CaseStudies = {
+  __typename?: 'FeaturedCaseStudiesFields_caseStudies';
+  create?: Maybe<FeaturedCaseStudiesFields_CaseStudies_Create>;
+  delete?: Maybe<FeaturedCaseStudiesFields_CaseStudies_Delete>;
+  read?: Maybe<FeaturedCaseStudiesFields_CaseStudies_Read>;
+  update?: Maybe<FeaturedCaseStudiesFields_CaseStudies_Update>;
+};
+
+export type FeaturedCaseStudiesFields_CaseStudies_Create = {
+  __typename?: 'FeaturedCaseStudiesFields_caseStudies_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_CaseStudies_Delete = {
+  __typename?: 'FeaturedCaseStudiesFields_caseStudies_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_CaseStudies_Read = {
+  __typename?: 'FeaturedCaseStudiesFields_caseStudies_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_CaseStudies_Update = {
+  __typename?: 'FeaturedCaseStudiesFields_caseStudies_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_CreatedAt = {
+  __typename?: 'FeaturedCaseStudiesFields_createdAt';
+  create?: Maybe<FeaturedCaseStudiesFields_CreatedAt_Create>;
+  delete?: Maybe<FeaturedCaseStudiesFields_CreatedAt_Delete>;
+  read?: Maybe<FeaturedCaseStudiesFields_CreatedAt_Read>;
+  update?: Maybe<FeaturedCaseStudiesFields_CreatedAt_Update>;
+};
+
+export type FeaturedCaseStudiesFields_CreatedAt_Create = {
+  __typename?: 'FeaturedCaseStudiesFields_createdAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_CreatedAt_Delete = {
+  __typename?: 'FeaturedCaseStudiesFields_createdAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_CreatedAt_Read = {
+  __typename?: 'FeaturedCaseStudiesFields_createdAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_CreatedAt_Update = {
+  __typename?: 'FeaturedCaseStudiesFields_createdAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_Description = {
+  __typename?: 'FeaturedCaseStudiesFields_description';
+  create?: Maybe<FeaturedCaseStudiesFields_Description_Create>;
+  delete?: Maybe<FeaturedCaseStudiesFields_Description_Delete>;
+  read?: Maybe<FeaturedCaseStudiesFields_Description_Read>;
+  update?: Maybe<FeaturedCaseStudiesFields_Description_Update>;
+};
+
+export type FeaturedCaseStudiesFields_Description_Create = {
+  __typename?: 'FeaturedCaseStudiesFields_description_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_Description_Delete = {
+  __typename?: 'FeaturedCaseStudiesFields_description_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_Description_Read = {
+  __typename?: 'FeaturedCaseStudiesFields_description_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_Description_Update = {
+  __typename?: 'FeaturedCaseStudiesFields_description_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_Subtitle = {
+  __typename?: 'FeaturedCaseStudiesFields_subtitle';
+  create?: Maybe<FeaturedCaseStudiesFields_Subtitle_Create>;
+  delete?: Maybe<FeaturedCaseStudiesFields_Subtitle_Delete>;
+  read?: Maybe<FeaturedCaseStudiesFields_Subtitle_Read>;
+  update?: Maybe<FeaturedCaseStudiesFields_Subtitle_Update>;
+};
+
+export type FeaturedCaseStudiesFields_Subtitle_Create = {
+  __typename?: 'FeaturedCaseStudiesFields_subtitle_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_Subtitle_Delete = {
+  __typename?: 'FeaturedCaseStudiesFields_subtitle_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_Subtitle_Read = {
+  __typename?: 'FeaturedCaseStudiesFields_subtitle_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_Subtitle_Update = {
+  __typename?: 'FeaturedCaseStudiesFields_subtitle_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_Title = {
+  __typename?: 'FeaturedCaseStudiesFields_title';
+  create?: Maybe<FeaturedCaseStudiesFields_Title_Create>;
+  delete?: Maybe<FeaturedCaseStudiesFields_Title_Delete>;
+  read?: Maybe<FeaturedCaseStudiesFields_Title_Read>;
+  update?: Maybe<FeaturedCaseStudiesFields_Title_Update>;
+};
+
+export type FeaturedCaseStudiesFields_Title_Create = {
+  __typename?: 'FeaturedCaseStudiesFields_title_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_Title_Delete = {
+  __typename?: 'FeaturedCaseStudiesFields_title_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_Title_Read = {
+  __typename?: 'FeaturedCaseStudiesFields_title_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_Title_Update = {
+  __typename?: 'FeaturedCaseStudiesFields_title_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_UpdatedAt = {
+  __typename?: 'FeaturedCaseStudiesFields_updatedAt';
+  create?: Maybe<FeaturedCaseStudiesFields_UpdatedAt_Create>;
+  delete?: Maybe<FeaturedCaseStudiesFields_UpdatedAt_Delete>;
+  read?: Maybe<FeaturedCaseStudiesFields_UpdatedAt_Read>;
+  update?: Maybe<FeaturedCaseStudiesFields_UpdatedAt_Update>;
+};
+
+export type FeaturedCaseStudiesFields_UpdatedAt_Create = {
+  __typename?: 'FeaturedCaseStudiesFields_updatedAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_UpdatedAt_Delete = {
+  __typename?: 'FeaturedCaseStudiesFields_updatedAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_UpdatedAt_Read = {
+  __typename?: 'FeaturedCaseStudiesFields_updatedAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_UpdatedAt_Update = {
+  __typename?: 'FeaturedCaseStudiesFields_updatedAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesReadAccess = {
+  __typename?: 'FeaturedCaseStudiesReadAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type FeaturedCaseStudiesReadDocAccess = {
+  __typename?: 'FeaturedCaseStudiesReadDocAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type FeaturedCaseStudiesUpdateAccess = {
+  __typename?: 'FeaturedCaseStudiesUpdateAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type FeaturedCaseStudiesUpdateDocAccess = {
+  __typename?: 'FeaturedCaseStudiesUpdateDocAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type FeaturedCaseStudy = {
+  __typename?: 'FeaturedCaseStudy';
+  caseStudies: Array<CaseStudy>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  description: Scalars['String']['output'];
+  subtitle?: Maybe<Scalars['String']['output']>;
+  title: Scalars['String']['output'];
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
 export type Footer = {
   __typename?: 'Footer';
   bottomText: Scalars['String']['output'];
@@ -4510,6 +4901,7 @@ export type Mutation = {
   updateCaseStudy?: Maybe<CaseStudy>;
   updateContactForm?: Maybe<ContactForm>;
   updateExperience?: Maybe<Experience>;
+  updateFeaturedCaseStudy?: Maybe<FeaturedCaseStudy>;
   updateFooter?: Maybe<Footer>;
   updateHero?: Maybe<Hero>;
   updateMedia?: Maybe<Media>;
@@ -4680,6 +5072,12 @@ export type MutationUpdateExperienceArgs = {
   data: MutationExperienceUpdateInput;
   draft?: InputMaybe<Scalars['Boolean']['input']>;
   id: Scalars['Int']['input'];
+};
+
+
+export type MutationUpdateFeaturedCaseStudyArgs = {
+  data: MutationFeaturedCaseStudyInput;
+  draft?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
@@ -5789,6 +6187,7 @@ export type Query = {
   ContactForms?: Maybe<ContactForms>;
   Experience?: Maybe<Experience>;
   Experiences?: Maybe<Experiences>;
+  FeaturedCaseStudy?: Maybe<FeaturedCaseStudy>;
   Footer?: Maybe<Footer>;
   Hero?: Maybe<Hero>;
   Media?: Maybe<Media>;
@@ -5811,6 +6210,7 @@ export type Query = {
   docAccessCaseStudy?: Maybe<Case_StudiesDocAccess>;
   docAccessContactForm?: Maybe<Contact_FormsDocAccess>;
   docAccessExperience?: Maybe<ExperiencesDocAccess>;
+  docAccessFeaturedCaseStudy?: Maybe<Featured_Case_StudiesDocAccess>;
   docAccessFooter?: Maybe<FooterDocAccess>;
   docAccessHero?: Maybe<HeroDocAccess>;
   docAccessMedia?: Maybe<MediaDocAccess>;
@@ -5869,6 +6269,11 @@ export type QueryExperiencesArgs = {
   pagination?: InputMaybe<Scalars['Boolean']['input']>;
   sort?: InputMaybe<Scalars['String']['input']>;
   where?: InputMaybe<Experience_Where>;
+};
+
+
+export type QueryFeaturedCaseStudyArgs = {
+  draft?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
@@ -7466,6 +7871,20 @@ export type ExperiencesDocAccess = {
   update?: Maybe<ExperiencesUpdateDocAccess>;
 };
 
+export type Featured_Case_StudiesAccess = {
+  __typename?: 'featured_case_studiesAccess';
+  fields?: Maybe<FeaturedCaseStudiesFields>;
+  read?: Maybe<FeaturedCaseStudiesReadAccess>;
+  update?: Maybe<FeaturedCaseStudiesUpdateAccess>;
+};
+
+export type Featured_Case_StudiesDocAccess = {
+  __typename?: 'featured_case_studiesDocAccess';
+  fields?: Maybe<FeaturedCaseStudiesDocAccessFields>;
+  read?: Maybe<FeaturedCaseStudiesReadDocAccess>;
+  update?: Maybe<FeaturedCaseStudiesUpdateDocAccess>;
+};
+
 export type FooterAccess = {
   __typename?: 'footerAccess';
   fields?: Maybe<FooterFields>;
@@ -7593,6 +8012,15 @@ export type MutationExperienceUpdateInput = {
   summary?: InputMaybe<Scalars['JSON']['input']>;
   thumbnailImage?: InputMaybe<Scalars['Int']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
+  updatedAt?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MutationFeaturedCaseStudyInput = {
+  caseStudies?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+  createdAt?: InputMaybe<Scalars['String']['input']>;
+  description: Scalars['String']['input'];
+  subtitle?: InputMaybe<Scalars['String']['input']>;
+  title: Scalars['String']['input'];
   updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -7865,10 +8293,22 @@ export type CreateContactFormMutationVariables = Exact<{
 
 export type CreateContactFormMutation = { __typename?: 'Mutation', createContactForm?: { __typename?: 'ContactForm', id: number, name: string, email: any, subject: string, message: string, status?: ContactForm_Status | null } | null };
 
+export type GetCaseStudyBySlugQueryVariables = Exact<{
+  slug: Scalars['String']['input'];
+}>;
+
+
+export type GetCaseStudyBySlugQuery = { __typename?: 'Query', CaseStudies?: { __typename?: 'CaseStudies', docs: Array<{ __typename?: 'CaseStudy', title: string, content: any, summary: any, updatedAt?: any | null, experience: { __typename?: 'Experience', title: string, role?: string | null, startDate?: any | null, endDate?: any | null, id: number }, tags?: Array<{ __typename?: 'CaseStudy_Tags', tag?: string | null }> | null, illustration?: { __typename?: 'Media', url?: string | null } | null }> } | null };
+
 export type GetContactFormsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetContactFormsQuery = { __typename?: 'Query', ContactForms?: { __typename?: 'ContactForms', totalDocs: number, page: number, totalPages: number, docs: Array<{ __typename?: 'ContactForm', id: number, name: string, email: any, subject: string, message: string, status?: ContactForm_Status | null, createdAt?: any | null }> } | null };
+
+export type GetFeaturedCaseStudiesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetFeaturedCaseStudiesQuery = { __typename?: 'Query', FeaturedCaseStudy?: { __typename?: 'FeaturedCaseStudy', title: string, subtitle?: string | null, description: string, caseStudies: Array<{ __typename?: 'CaseStudy', title: string, slug?: string | null, illustration?: { __typename?: 'Media', url?: string | null, alt: string } | null, tags?: Array<{ __typename?: 'CaseStudy_Tags', tag?: string | null }> | null }> } | null };
 
 export type GetFooterQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -7892,7 +8332,9 @@ export type GetWorkButtonsQuery = { __typename?: 'Query', WorkButton?: { __typen
 
 
 export const CreateContactFormDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"CreateContactForm"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"name"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"email"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"subject"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"message"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"createContactForm"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"data"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"name"},"value":{"kind":"Variable","name":{"kind":"Name","value":"name"}}},{"kind":"ObjectField","name":{"kind":"Name","value":"email"},"value":{"kind":"Variable","name":{"kind":"Name","value":"email"}}},{"kind":"ObjectField","name":{"kind":"Name","value":"subject"},"value":{"kind":"Variable","name":{"kind":"Name","value":"subject"}}},{"kind":"ObjectField","name":{"kind":"Name","value":"message"},"value":{"kind":"Variable","name":{"kind":"Name","value":"message"}}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"email"}},{"kind":"Field","name":{"kind":"Name","value":"subject"}},{"kind":"Field","name":{"kind":"Name","value":"message"}},{"kind":"Field","name":{"kind":"Name","value":"status"}}]}}]}}]} as unknown as DocumentNode<CreateContactFormMutation, CreateContactFormMutationVariables>;
+export const GetCaseStudyBySlugDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetCaseStudyBySlug"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"slug"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"CaseStudies"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"equals"},"value":{"kind":"Variable","name":{"kind":"Name","value":"slug"}}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"experience"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"role"}},{"kind":"Field","name":{"kind":"Name","value":"startDate"}},{"kind":"Field","name":{"kind":"Name","value":"endDate"}},{"kind":"Field","name":{"kind":"Name","value":"id"}}]}},{"kind":"Field","name":{"kind":"Name","value":"tags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"tag"}}]}},{"kind":"Field","name":{"kind":"Name","value":"content"}},{"kind":"Field","name":{"kind":"Name","value":"summary"}},{"kind":"Field","name":{"kind":"Name","value":"illustration"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"updatedAt"}}]}}]}}]}}]} as unknown as DocumentNode<GetCaseStudyBySlugQuery, GetCaseStudyBySlugQueryVariables>;
 export const GetContactFormsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetContactForms"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"ContactForms"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"limit"},"value":{"kind":"IntValue","value":"100"}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"email"}},{"kind":"Field","name":{"kind":"Name","value":"subject"}},{"kind":"Field","name":{"kind":"Name","value":"message"}},{"kind":"Field","name":{"kind":"Name","value":"status"}},{"kind":"Field","name":{"kind":"Name","value":"createdAt"}}]}},{"kind":"Field","name":{"kind":"Name","value":"totalDocs"}},{"kind":"Field","name":{"kind":"Name","value":"page"}},{"kind":"Field","name":{"kind":"Name","value":"totalPages"}}]}}]}}]} as unknown as DocumentNode<GetContactFormsQuery, GetContactFormsQueryVariables>;
+export const GetFeaturedCaseStudiesDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetFeaturedCaseStudies"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"FeaturedCaseStudy"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"caseStudies"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"illustration"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}}]}},{"kind":"Field","name":{"kind":"Name","value":"tags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"tag"}}]}}]}}]}}]}}]} as unknown as DocumentNode<GetFeaturedCaseStudiesQuery, GetFeaturedCaseStudiesQueryVariables>;
 export const GetFooterDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetFooter"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Footer"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title1"}},{"kind":"Field","name":{"kind":"Name","value":"title2"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"buttonText"}},{"kind":"Field","name":{"kind":"Name","value":"bottomText"}}]}}]}}]} as unknown as DocumentNode<GetFooterQuery, GetFooterQueryVariables>;
 export const GetHeroDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetHero"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Hero"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"taglines"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"text"}}]}},{"kind":"Field","name":{"kind":"Name","value":"description"}}]}}]}}]} as unknown as DocumentNode<GetHeroQuery, GetHeroQueryVariables>;
 export const GetSkillsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetSkills"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Skill"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}},{"kind":"Field","name":{"kind":"Name","value":"skills"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"description"}}]}}]}}]}}]} as unknown as DocumentNode<GetSkillsQuery, GetSkillsQueryVariables>;

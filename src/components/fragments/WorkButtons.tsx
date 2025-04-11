@@ -15,7 +15,7 @@ export const WorkButtons = ({ invert = false }: WorkButtonProps) => {
       {buttons.map((button) => (
         <Button
           variant="outlined"
-          color={invert ? 'brand' : 'ghost'}
+          color={!invert ? 'brand' : 'accent'}
           key={button.text}
           onClick={() => {
             if (button.url) {

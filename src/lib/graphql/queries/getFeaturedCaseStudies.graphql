@@ -1,0 +1,18 @@
+query GetFeaturedCaseStudies {
+  FeaturedCaseStudy {
+    title
+    subtitle
+    description
+    caseStudies {
+      title
+      slug
+      illustration {
+        url
+        alt
+      }
+      tags {
+        tag
+      }
+    }
+  }
+}

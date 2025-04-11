@@ -10,3 +10,12 @@ export const isElementInViewport = (bottom: number) => {
   const { top } = document.documentElement.getBoundingClientRect();
   return bottom <= innerHeight + top;
 };
+
+export type DeepRequired<T> = { [K in keyof T]: DeepRequired<T[K]> } & Required<T>;
+export type DeepNonNullable<T> = {
+  [K in keyof T]: DeepNonNullable<T[K]>;
+} & NonNullable<T>;
+
+export const isStringParam = (param: unknown): param is string => {
+  return typeof param === 'string';
+};

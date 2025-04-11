@@ -2,7 +2,7 @@
 
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 
-import { cn, isElementInViewport } from '@/lib/utils';
+import { cn } from '@/lib/utils';
 import { useState } from 'react';
 
 function Accordion({ ...props }: React.ComponentProps<typeof AccordionPrimitive.Root>) {
@@ -36,15 +36,6 @@ function AccordionTrigger({
           const parent = el?.closest('[data-state]');
           const dataIsOpen = parent?.getAttribute('data-state');
           setIsOpen(dataIsOpen === 'open');
-          if (dataIsOpen === 'open') {
-            setTimeout(() => {
-              const accordionBottom = parent?.getBoundingClientRect().bottom;
-              if (!accordionBottom) return;
-              if (isElementInViewport(accordionBottom)) return;
-              // Scroll to the accordion item if it's not in the viewport
-              window.scrollTo({ top: accordionBottom + 128, behavior: 'smooth' });
-            }, 100);
-          }
         }}
         className={cn(
           // biome-ignore lint/nursery/useSortedClasses: biome messes up the class order

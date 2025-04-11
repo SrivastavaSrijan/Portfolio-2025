@@ -1,17 +1,16 @@
 import { Suspense } from 'react';
-import { Footer, Hero, Skills } from '@/components/sections';
+import { FeaturedCaseStudies, Footer, Hero, Skills } from '@/components/sections';
 import { Skeleton } from '@/components/ui';
-import { Navbar } from '@/components/fragments';
 
 export const dynamic = 'force-dynamic';
 
 export default function HomePage() {
   return (
     <div className="home @container flex min-h-screen flex-col bg-background">
-      <Navbar />
       <Suspense fallback={<HeroSkeleton />}>
         <Hero />
         <Skills />
+        <FeaturedCaseStudies />
         <Footer />
       </Suspense>
     </div>

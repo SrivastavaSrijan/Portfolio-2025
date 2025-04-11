@@ -5,10 +5,7 @@ import { ProfileToggle, AnimatedTagline, WorkButtons } from '@/components/fragme
 import { Button } from '../ui';
 import { useClientSide, useAnimationSequence } from '@/lib/hooks';
 import { ContactForm } from '../fragments/ContactForm';
-import {
-  useGetHeroSuspenseQuery,
-  useGetWorkButtonsSuspenseQuery,
-} from '@/lib/graphql/__generated__/hooks';
+import { useGetHeroSuspenseQuery } from '@/lib/graphql/__generated__/hooks';
 import { RichText } from '../fragments/RichText';
 
 export const Hero = () => {
@@ -17,16 +14,13 @@ export const Hero = () => {
     shouldAnimate: isClient,
   });
   const { data = {} } = useGetHeroSuspenseQuery();
-
-  const { data: buttonData = {} } = useGetWorkButtonsSuspenseQuery();
   const { description = [], name, title } = data?.Hero ?? {};
-  const { buttons = [] } = buttonData?.WorkButton ?? {};
 
   return (
     <AnimatePresence mode="wait">
       <motion.div
         key="hero-section"
-        className="flex h-full flex-grow flex-col gap-7 px-5 py-5 md:gap-15 md:px-20 md:py-10"
+        className="flex h-full flex-grow flex-col gap-4 px-5 py-5 md:gap-4 md:px-20 md:py-10"
         initial="hidden"
         animate={controls}
         exit="exit"
@@ -44,7 +38,7 @@ export const Hero = () => {
         </div>
         <div className="flex flex-col gap-1 md:gap-2">
           <motion.h2
-            className="font-medium text-3xl text-brand md:font-normal md:text-display-2"
+            className="font-medium text-3xl text-brand md:font-normal md:text-display-4"
             variants={itemVariants}
           >
             {title}
@@ -52,7 +46,7 @@ export const Hero = () => {
           <AnimatedTagline isClient={isClient} initialAnimComplete={isAnimationComplete} />
         </div>
         <motion.div
-          className="gap-2 md:gap-5"
+          className="gap-2 md:mt-10 md:gap-10"
           variants={paragraphVariants}
           initial="hidden"
           animate="visible"

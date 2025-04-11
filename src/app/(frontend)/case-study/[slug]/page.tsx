@@ -1,0 +1,58 @@
+'use client';
+import { useGetCaseStudyBySlugSuspenseQuery } from '@/lib/graphql/__generated__/hooks';
+import { isStringParam } from '@/lib/utils';
+import { Clock, Undo2 } from 'lucide-react';
+import { useParams } from 'next/navigation';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+import { RichText } from '@/components/fragments';
+import Image from 'next/image';
+dayjs.extend(relativeTime);
+
+const NoCaseStudy = () => {
+  return <div className="text-center font-semibold text-2xl">No case study found</div>;
+};
+export default function CaseStudies() {
+  const { slug } = useParams();
+  if (!isStringParam(slug)) {
+    return <NoCaseStudy />;
+  }
+  const { data } = useGetCaseStudyBySlugSuspenseQuery({ variables: { slug } });
+  const { docs = [] } = data?.CaseStudies ?? {};
+  if (!docs || docs.length === 0) {
+    return <NoCaseStudy />;
+  }
+  const { title, content, updatedAt, illustration } = docs[0];
+
+  return (
+    <div className="flex flex-col bg-white">
+      <div className="bg-accent px-4 py-4 md:px-20 md:pb-20">
+        <div className="flex flex-col gap-5 md:gap-10">
+          <div className="flex flex-row items-center gap-2">
+            <Undo2 className="h-3 w-3 rotate-180 scale-x-[-1]" />
+            <p className="text-xs ">Back to blog</p>
+          </div>
+          <h1 className="font-semibold text-4xl text-white md:text-display-4">{title}</h1>
+          <div className="flex flex-row items-center gap-2 text-black-400">
+            <Clock className=" h-4 w-4" />{' '}
+            <p className="text-base text-black-400">{dayjs(updatedAt).fromNow()}</p>
+          </div>
+        </div>
+      </div>
+      {illustration?.url && (
+        <Image
+          priority
+          quality={100}
+          width={1440}
+          height={576}
+          src={illustration?.url}
+          alt="Illustration"
+          className="h-40 w-full object-cover md:h-144"
+        />
+      )}
+      <div className="mx-auto flex flex-col gap-5 px-4 py-10 text-accent text-sm md:max-w-205 md:px-4 md:py-20 md:text-base">
+        <RichText data={content} />
+      </div>
+    </div>
+  );
+}

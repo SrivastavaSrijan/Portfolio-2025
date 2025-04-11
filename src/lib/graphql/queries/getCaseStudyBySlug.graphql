@@ -1,0 +1,25 @@
+query GetCaseStudyBySlug($slug: String!) {
+  CaseStudies(where: { slug: { equals: $slug } }) {
+    docs {
+      title
+      experience {
+        title
+        role
+
+        startDate
+        endDate
+
+        id
+      }
+      tags {
+        tag
+      }
+      content
+      summary
+      illustration {
+        url
+      }
+      updatedAt
+    }
+  }
+}

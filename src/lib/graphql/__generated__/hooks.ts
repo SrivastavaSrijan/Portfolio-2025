@@ -27,6 +27,7 @@ export type Access = {
   readonly case_studies?: Maybe<Case_StudiesAccess>;
   readonly contact_forms?: Maybe<Contact_FormsAccess>;
   readonly experiences?: Maybe<ExperiencesAccess>;
+  readonly featured_case_studies?: Maybe<Featured_Case_StudiesAccess>;
   readonly footer?: Maybe<FooterAccess>;
   readonly hero?: Maybe<HeroAccess>;
   readonly media?: Maybe<MediaAccess>;
@@ -2541,6 +2542,396 @@ export type ExperiencesUpdateDocAccess = {
   readonly where?: Maybe<Scalars['JSONObject']['output']>;
 };
 
+export type FeaturedCaseStudiesDocAccessFields = {
+  readonly __typename?: 'FeaturedCaseStudiesDocAccessFields';
+  readonly caseStudies?: Maybe<FeaturedCaseStudiesDocAccessFields_CaseStudies>;
+  readonly createdAt?: Maybe<FeaturedCaseStudiesDocAccessFields_CreatedAt>;
+  readonly description?: Maybe<FeaturedCaseStudiesDocAccessFields_Description>;
+  readonly subtitle?: Maybe<FeaturedCaseStudiesDocAccessFields_Subtitle>;
+  readonly title?: Maybe<FeaturedCaseStudiesDocAccessFields_Title>;
+  readonly updatedAt?: Maybe<FeaturedCaseStudiesDocAccessFields_UpdatedAt>;
+};
+
+export type FeaturedCaseStudiesDocAccessFields_CaseStudies = {
+  readonly __typename?: 'FeaturedCaseStudiesDocAccessFields_caseStudies';
+  readonly create?: Maybe<FeaturedCaseStudiesDocAccessFields_CaseStudies_Create>;
+  readonly delete?: Maybe<FeaturedCaseStudiesDocAccessFields_CaseStudies_Delete>;
+  readonly read?: Maybe<FeaturedCaseStudiesDocAccessFields_CaseStudies_Read>;
+  readonly update?: Maybe<FeaturedCaseStudiesDocAccessFields_CaseStudies_Update>;
+};
+
+export type FeaturedCaseStudiesDocAccessFields_CaseStudies_Create = {
+  readonly __typename?: 'FeaturedCaseStudiesDocAccessFields_caseStudies_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_CaseStudies_Delete = {
+  readonly __typename?: 'FeaturedCaseStudiesDocAccessFields_caseStudies_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_CaseStudies_Read = {
+  readonly __typename?: 'FeaturedCaseStudiesDocAccessFields_caseStudies_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_CaseStudies_Update = {
+  readonly __typename?: 'FeaturedCaseStudiesDocAccessFields_caseStudies_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_CreatedAt = {
+  readonly __typename?: 'FeaturedCaseStudiesDocAccessFields_createdAt';
+  readonly create?: Maybe<FeaturedCaseStudiesDocAccessFields_CreatedAt_Create>;
+  readonly delete?: Maybe<FeaturedCaseStudiesDocAccessFields_CreatedAt_Delete>;
+  readonly read?: Maybe<FeaturedCaseStudiesDocAccessFields_CreatedAt_Read>;
+  readonly update?: Maybe<FeaturedCaseStudiesDocAccessFields_CreatedAt_Update>;
+};
+
+export type FeaturedCaseStudiesDocAccessFields_CreatedAt_Create = {
+  readonly __typename?: 'FeaturedCaseStudiesDocAccessFields_createdAt_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_CreatedAt_Delete = {
+  readonly __typename?: 'FeaturedCaseStudiesDocAccessFields_createdAt_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_CreatedAt_Read = {
+  readonly __typename?: 'FeaturedCaseStudiesDocAccessFields_createdAt_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_CreatedAt_Update = {
+  readonly __typename?: 'FeaturedCaseStudiesDocAccessFields_createdAt_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_Description = {
+  readonly __typename?: 'FeaturedCaseStudiesDocAccessFields_description';
+  readonly create?: Maybe<FeaturedCaseStudiesDocAccessFields_Description_Create>;
+  readonly delete?: Maybe<FeaturedCaseStudiesDocAccessFields_Description_Delete>;
+  readonly read?: Maybe<FeaturedCaseStudiesDocAccessFields_Description_Read>;
+  readonly update?: Maybe<FeaturedCaseStudiesDocAccessFields_Description_Update>;
+};
+
+export type FeaturedCaseStudiesDocAccessFields_Description_Create = {
+  readonly __typename?: 'FeaturedCaseStudiesDocAccessFields_description_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_Description_Delete = {
+  readonly __typename?: 'FeaturedCaseStudiesDocAccessFields_description_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_Description_Read = {
+  readonly __typename?: 'FeaturedCaseStudiesDocAccessFields_description_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_Description_Update = {
+  readonly __typename?: 'FeaturedCaseStudiesDocAccessFields_description_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_Subtitle = {
+  readonly __typename?: 'FeaturedCaseStudiesDocAccessFields_subtitle';
+  readonly create?: Maybe<FeaturedCaseStudiesDocAccessFields_Subtitle_Create>;
+  readonly delete?: Maybe<FeaturedCaseStudiesDocAccessFields_Subtitle_Delete>;
+  readonly read?: Maybe<FeaturedCaseStudiesDocAccessFields_Subtitle_Read>;
+  readonly update?: Maybe<FeaturedCaseStudiesDocAccessFields_Subtitle_Update>;
+};
+
+export type FeaturedCaseStudiesDocAccessFields_Subtitle_Create = {
+  readonly __typename?: 'FeaturedCaseStudiesDocAccessFields_subtitle_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_Subtitle_Delete = {
+  readonly __typename?: 'FeaturedCaseStudiesDocAccessFields_subtitle_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_Subtitle_Read = {
+  readonly __typename?: 'FeaturedCaseStudiesDocAccessFields_subtitle_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_Subtitle_Update = {
+  readonly __typename?: 'FeaturedCaseStudiesDocAccessFields_subtitle_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_Title = {
+  readonly __typename?: 'FeaturedCaseStudiesDocAccessFields_title';
+  readonly create?: Maybe<FeaturedCaseStudiesDocAccessFields_Title_Create>;
+  readonly delete?: Maybe<FeaturedCaseStudiesDocAccessFields_Title_Delete>;
+  readonly read?: Maybe<FeaturedCaseStudiesDocAccessFields_Title_Read>;
+  readonly update?: Maybe<FeaturedCaseStudiesDocAccessFields_Title_Update>;
+};
+
+export type FeaturedCaseStudiesDocAccessFields_Title_Create = {
+  readonly __typename?: 'FeaturedCaseStudiesDocAccessFields_title_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_Title_Delete = {
+  readonly __typename?: 'FeaturedCaseStudiesDocAccessFields_title_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_Title_Read = {
+  readonly __typename?: 'FeaturedCaseStudiesDocAccessFields_title_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_Title_Update = {
+  readonly __typename?: 'FeaturedCaseStudiesDocAccessFields_title_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_UpdatedAt = {
+  readonly __typename?: 'FeaturedCaseStudiesDocAccessFields_updatedAt';
+  readonly create?: Maybe<FeaturedCaseStudiesDocAccessFields_UpdatedAt_Create>;
+  readonly delete?: Maybe<FeaturedCaseStudiesDocAccessFields_UpdatedAt_Delete>;
+  readonly read?: Maybe<FeaturedCaseStudiesDocAccessFields_UpdatedAt_Read>;
+  readonly update?: Maybe<FeaturedCaseStudiesDocAccessFields_UpdatedAt_Update>;
+};
+
+export type FeaturedCaseStudiesDocAccessFields_UpdatedAt_Create = {
+  readonly __typename?: 'FeaturedCaseStudiesDocAccessFields_updatedAt_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_UpdatedAt_Delete = {
+  readonly __typename?: 'FeaturedCaseStudiesDocAccessFields_updatedAt_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_UpdatedAt_Read = {
+  readonly __typename?: 'FeaturedCaseStudiesDocAccessFields_updatedAt_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesDocAccessFields_UpdatedAt_Update = {
+  readonly __typename?: 'FeaturedCaseStudiesDocAccessFields_updatedAt_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields = {
+  readonly __typename?: 'FeaturedCaseStudiesFields';
+  readonly caseStudies?: Maybe<FeaturedCaseStudiesFields_CaseStudies>;
+  readonly createdAt?: Maybe<FeaturedCaseStudiesFields_CreatedAt>;
+  readonly description?: Maybe<FeaturedCaseStudiesFields_Description>;
+  readonly subtitle?: Maybe<FeaturedCaseStudiesFields_Subtitle>;
+  readonly title?: Maybe<FeaturedCaseStudiesFields_Title>;
+  readonly updatedAt?: Maybe<FeaturedCaseStudiesFields_UpdatedAt>;
+};
+
+export type FeaturedCaseStudiesFields_CaseStudies = {
+  readonly __typename?: 'FeaturedCaseStudiesFields_caseStudies';
+  readonly create?: Maybe<FeaturedCaseStudiesFields_CaseStudies_Create>;
+  readonly delete?: Maybe<FeaturedCaseStudiesFields_CaseStudies_Delete>;
+  readonly read?: Maybe<FeaturedCaseStudiesFields_CaseStudies_Read>;
+  readonly update?: Maybe<FeaturedCaseStudiesFields_CaseStudies_Update>;
+};
+
+export type FeaturedCaseStudiesFields_CaseStudies_Create = {
+  readonly __typename?: 'FeaturedCaseStudiesFields_caseStudies_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_CaseStudies_Delete = {
+  readonly __typename?: 'FeaturedCaseStudiesFields_caseStudies_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_CaseStudies_Read = {
+  readonly __typename?: 'FeaturedCaseStudiesFields_caseStudies_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_CaseStudies_Update = {
+  readonly __typename?: 'FeaturedCaseStudiesFields_caseStudies_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_CreatedAt = {
+  readonly __typename?: 'FeaturedCaseStudiesFields_createdAt';
+  readonly create?: Maybe<FeaturedCaseStudiesFields_CreatedAt_Create>;
+  readonly delete?: Maybe<FeaturedCaseStudiesFields_CreatedAt_Delete>;
+  readonly read?: Maybe<FeaturedCaseStudiesFields_CreatedAt_Read>;
+  readonly update?: Maybe<FeaturedCaseStudiesFields_CreatedAt_Update>;
+};
+
+export type FeaturedCaseStudiesFields_CreatedAt_Create = {
+  readonly __typename?: 'FeaturedCaseStudiesFields_createdAt_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_CreatedAt_Delete = {
+  readonly __typename?: 'FeaturedCaseStudiesFields_createdAt_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_CreatedAt_Read = {
+  readonly __typename?: 'FeaturedCaseStudiesFields_createdAt_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_CreatedAt_Update = {
+  readonly __typename?: 'FeaturedCaseStudiesFields_createdAt_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_Description = {
+  readonly __typename?: 'FeaturedCaseStudiesFields_description';
+  readonly create?: Maybe<FeaturedCaseStudiesFields_Description_Create>;
+  readonly delete?: Maybe<FeaturedCaseStudiesFields_Description_Delete>;
+  readonly read?: Maybe<FeaturedCaseStudiesFields_Description_Read>;
+  readonly update?: Maybe<FeaturedCaseStudiesFields_Description_Update>;
+};
+
+export type FeaturedCaseStudiesFields_Description_Create = {
+  readonly __typename?: 'FeaturedCaseStudiesFields_description_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_Description_Delete = {
+  readonly __typename?: 'FeaturedCaseStudiesFields_description_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_Description_Read = {
+  readonly __typename?: 'FeaturedCaseStudiesFields_description_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_Description_Update = {
+  readonly __typename?: 'FeaturedCaseStudiesFields_description_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_Subtitle = {
+  readonly __typename?: 'FeaturedCaseStudiesFields_subtitle';
+  readonly create?: Maybe<FeaturedCaseStudiesFields_Subtitle_Create>;
+  readonly delete?: Maybe<FeaturedCaseStudiesFields_Subtitle_Delete>;
+  readonly read?: Maybe<FeaturedCaseStudiesFields_Subtitle_Read>;
+  readonly update?: Maybe<FeaturedCaseStudiesFields_Subtitle_Update>;
+};
+
+export type FeaturedCaseStudiesFields_Subtitle_Create = {
+  readonly __typename?: 'FeaturedCaseStudiesFields_subtitle_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_Subtitle_Delete = {
+  readonly __typename?: 'FeaturedCaseStudiesFields_subtitle_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_Subtitle_Read = {
+  readonly __typename?: 'FeaturedCaseStudiesFields_subtitle_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_Subtitle_Update = {
+  readonly __typename?: 'FeaturedCaseStudiesFields_subtitle_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_Title = {
+  readonly __typename?: 'FeaturedCaseStudiesFields_title';
+  readonly create?: Maybe<FeaturedCaseStudiesFields_Title_Create>;
+  readonly delete?: Maybe<FeaturedCaseStudiesFields_Title_Delete>;
+  readonly read?: Maybe<FeaturedCaseStudiesFields_Title_Read>;
+  readonly update?: Maybe<FeaturedCaseStudiesFields_Title_Update>;
+};
+
+export type FeaturedCaseStudiesFields_Title_Create = {
+  readonly __typename?: 'FeaturedCaseStudiesFields_title_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_Title_Delete = {
+  readonly __typename?: 'FeaturedCaseStudiesFields_title_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_Title_Read = {
+  readonly __typename?: 'FeaturedCaseStudiesFields_title_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_Title_Update = {
+  readonly __typename?: 'FeaturedCaseStudiesFields_title_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_UpdatedAt = {
+  readonly __typename?: 'FeaturedCaseStudiesFields_updatedAt';
+  readonly create?: Maybe<FeaturedCaseStudiesFields_UpdatedAt_Create>;
+  readonly delete?: Maybe<FeaturedCaseStudiesFields_UpdatedAt_Delete>;
+  readonly read?: Maybe<FeaturedCaseStudiesFields_UpdatedAt_Read>;
+  readonly update?: Maybe<FeaturedCaseStudiesFields_UpdatedAt_Update>;
+};
+
+export type FeaturedCaseStudiesFields_UpdatedAt_Create = {
+  readonly __typename?: 'FeaturedCaseStudiesFields_updatedAt_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_UpdatedAt_Delete = {
+  readonly __typename?: 'FeaturedCaseStudiesFields_updatedAt_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_UpdatedAt_Read = {
+  readonly __typename?: 'FeaturedCaseStudiesFields_updatedAt_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesFields_UpdatedAt_Update = {
+  readonly __typename?: 'FeaturedCaseStudiesFields_updatedAt_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedCaseStudiesReadAccess = {
+  readonly __typename?: 'FeaturedCaseStudiesReadAccess';
+  readonly permission: Scalars['Boolean']['output'];
+  readonly where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type FeaturedCaseStudiesReadDocAccess = {
+  readonly __typename?: 'FeaturedCaseStudiesReadDocAccess';
+  readonly permission: Scalars['Boolean']['output'];
+  readonly where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type FeaturedCaseStudiesUpdateAccess = {
+  readonly __typename?: 'FeaturedCaseStudiesUpdateAccess';
+  readonly permission: Scalars['Boolean']['output'];
+  readonly where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type FeaturedCaseStudiesUpdateDocAccess = {
+  readonly __typename?: 'FeaturedCaseStudiesUpdateDocAccess';
+  readonly permission: Scalars['Boolean']['output'];
+  readonly where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type FeaturedCaseStudy = {
+  readonly __typename?: 'FeaturedCaseStudy';
+  readonly caseStudies: ReadonlyArray<CaseStudy>;
+  readonly createdAt?: Maybe<Scalars['DateTime']['output']>;
+  readonly description: Scalars['String']['output'];
+  readonly subtitle?: Maybe<Scalars['String']['output']>;
+  readonly title: Scalars['String']['output'];
+  readonly updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
 export type Footer = {
   readonly __typename?: 'Footer';
   readonly bottomText: Scalars['String']['output'];
@@ -4507,6 +4898,7 @@ export type Mutation = {
   readonly updateCaseStudy?: Maybe<CaseStudy>;
   readonly updateContactForm?: Maybe<ContactForm>;
   readonly updateExperience?: Maybe<Experience>;
+  readonly updateFeaturedCaseStudy?: Maybe<FeaturedCaseStudy>;
   readonly updateFooter?: Maybe<Footer>;
   readonly updateHero?: Maybe<Hero>;
   readonly updateMedia?: Maybe<Media>;
@@ -4677,6 +5069,12 @@ export type MutationUpdateExperienceArgs = {
   data: MutationExperienceUpdateInput;
   draft?: InputMaybe<Scalars['Boolean']['input']>;
   id: Scalars['Int']['input'];
+};
+
+
+export type MutationUpdateFeaturedCaseStudyArgs = {
+  data: MutationFeaturedCaseStudyInput;
+  draft?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
@@ -5786,6 +6184,7 @@ export type Query = {
   readonly ContactForms?: Maybe<ContactForms>;
   readonly Experience?: Maybe<Experience>;
   readonly Experiences?: Maybe<Experiences>;
+  readonly FeaturedCaseStudy?: Maybe<FeaturedCaseStudy>;
   readonly Footer?: Maybe<Footer>;
   readonly Hero?: Maybe<Hero>;
   readonly Media?: Maybe<Media>;
@@ -5808,6 +6207,7 @@ export type Query = {
   readonly docAccessCaseStudy?: Maybe<Case_StudiesDocAccess>;
   readonly docAccessContactForm?: Maybe<Contact_FormsDocAccess>;
   readonly docAccessExperience?: Maybe<ExperiencesDocAccess>;
+  readonly docAccessFeaturedCaseStudy?: Maybe<Featured_Case_StudiesDocAccess>;
   readonly docAccessFooter?: Maybe<FooterDocAccess>;
   readonly docAccessHero?: Maybe<HeroDocAccess>;
   readonly docAccessMedia?: Maybe<MediaDocAccess>;
@@ -5866,6 +6266,11 @@ export type QueryExperiencesArgs = {
   pagination?: InputMaybe<Scalars['Boolean']['input']>;
   sort?: InputMaybe<Scalars['String']['input']>;
   where?: InputMaybe<Experience_Where>;
+};
+
+
+export type QueryFeaturedCaseStudyArgs = {
+  draft?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
@@ -7463,6 +7868,20 @@ export type ExperiencesDocAccess = {
   readonly update?: Maybe<ExperiencesUpdateDocAccess>;
 };
 
+export type Featured_Case_StudiesAccess = {
+  readonly __typename?: 'featured_case_studiesAccess';
+  readonly fields?: Maybe<FeaturedCaseStudiesFields>;
+  readonly read?: Maybe<FeaturedCaseStudiesReadAccess>;
+  readonly update?: Maybe<FeaturedCaseStudiesUpdateAccess>;
+};
+
+export type Featured_Case_StudiesDocAccess = {
+  readonly __typename?: 'featured_case_studiesDocAccess';
+  readonly fields?: Maybe<FeaturedCaseStudiesDocAccessFields>;
+  readonly read?: Maybe<FeaturedCaseStudiesReadDocAccess>;
+  readonly update?: Maybe<FeaturedCaseStudiesUpdateDocAccess>;
+};
+
 export type FooterAccess = {
   readonly __typename?: 'footerAccess';
   readonly fields?: Maybe<FooterFields>;
@@ -7590,6 +8009,15 @@ export type MutationExperienceUpdateInput = {
   readonly summary?: InputMaybe<Scalars['JSON']['input']>;
   readonly thumbnailImage?: InputMaybe<Scalars['Int']['input']>;
   readonly title?: InputMaybe<Scalars['String']['input']>;
+  readonly updatedAt?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MutationFeaturedCaseStudyInput = {
+  readonly caseStudies?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['Int']['input']>>>;
+  readonly createdAt?: InputMaybe<Scalars['String']['input']>;
+  readonly description: Scalars['String']['input'];
+  readonly subtitle?: InputMaybe<Scalars['String']['input']>;
+  readonly title: Scalars['String']['input'];
   readonly updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -7862,10 +8290,22 @@ export type CreateContactFormMutationVariables = Exact<{
 
 export type CreateContactFormMutation = { readonly __typename?: 'Mutation', readonly createContactForm?: { readonly __typename?: 'ContactForm', readonly id: number, readonly name: string, readonly email: any, readonly subject: string, readonly message: string, readonly status?: ContactForm_Status | null } | null };
 
+export type GetCaseStudyBySlugQueryVariables = Exact<{
+  slug: Scalars['String']['input'];
+}>;
+
+
+export type GetCaseStudyBySlugQuery = { readonly __typename?: 'Query', readonly CaseStudies?: { readonly __typename?: 'CaseStudies', readonly docs: ReadonlyArray<{ readonly __typename?: 'CaseStudy', readonly title: string, readonly content: any, readonly summary: any, readonly updatedAt?: any | null, readonly experience: { readonly __typename?: 'Experience', readonly title: string, readonly role?: string | null, readonly startDate?: any | null, readonly endDate?: any | null, readonly id: number }, readonly tags?: ReadonlyArray<{ readonly __typename?: 'CaseStudy_Tags', readonly tag?: string | null }> | null, readonly illustration?: { readonly __typename?: 'Media', readonly url?: string | null } | null }> } | null };
+
 export type GetContactFormsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetContactFormsQuery = { readonly __typename?: 'Query', readonly ContactForms?: { readonly __typename?: 'ContactForms', readonly totalDocs: number, readonly page: number, readonly totalPages: number, readonly docs: ReadonlyArray<{ readonly __typename?: 'ContactForm', readonly id: number, readonly name: string, readonly email: any, readonly subject: string, readonly message: string, readonly status?: ContactForm_Status | null, readonly createdAt?: any | null }> } | null };
+
+export type GetFeaturedCaseStudiesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetFeaturedCaseStudiesQuery = { readonly __typename?: 'Query', readonly FeaturedCaseStudy?: { readonly __typename?: 'FeaturedCaseStudy', readonly title: string, readonly subtitle?: string | null, readonly description: string, readonly caseStudies: ReadonlyArray<{ readonly __typename?: 'CaseStudy', readonly title: string, readonly slug?: string | null, readonly illustration?: { readonly __typename?: 'Media', readonly url?: string | null, readonly alt: string } | null, readonly tags?: ReadonlyArray<{ readonly __typename?: 'CaseStudy_Tags', readonly tag?: string | null }> | null }> } | null };
 
 export type GetFooterQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -7931,6 +8371,64 @@ export function useCreateContactFormMutation(baseOptions?: Apollo.MutationHookOp
 export type CreateContactFormMutationHookResult = ReturnType<typeof useCreateContactFormMutation>;
 export type CreateContactFormMutationResult = Apollo.MutationResult<CreateContactFormMutation>;
 export type CreateContactFormMutationOptions = Apollo.BaseMutationOptions<CreateContactFormMutation, CreateContactFormMutationVariables>;
+export const GetCaseStudyBySlugDocument = gql`
+    query GetCaseStudyBySlug($slug: String!) {
+  CaseStudies(where: {slug: {equals: $slug}}) {
+    docs {
+      title
+      experience {
+        title
+        role
+        startDate
+        endDate
+        id
+      }
+      tags {
+        tag
+      }
+      content
+      summary
+      illustration {
+        url
+      }
+      updatedAt
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetCaseStudyBySlugQuery__
+ *
+ * To run a query within a React component, call `useGetCaseStudyBySlugQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetCaseStudyBySlugQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetCaseStudyBySlugQuery({
+ *   variables: {
+ *      slug: // value for 'slug'
+ *   },
+ * });
+ */
+export function useGetCaseStudyBySlugQuery(baseOptions: Apollo.QueryHookOptions<GetCaseStudyBySlugQuery, GetCaseStudyBySlugQueryVariables> & ({ variables: GetCaseStudyBySlugQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetCaseStudyBySlugQuery, GetCaseStudyBySlugQueryVariables>(GetCaseStudyBySlugDocument, options);
+      }
+export function useGetCaseStudyBySlugLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetCaseStudyBySlugQuery, GetCaseStudyBySlugQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetCaseStudyBySlugQuery, GetCaseStudyBySlugQueryVariables>(GetCaseStudyBySlugDocument, options);
+        }
+export function useGetCaseStudyBySlugSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetCaseStudyBySlugQuery, GetCaseStudyBySlugQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetCaseStudyBySlugQuery, GetCaseStudyBySlugQueryVariables>(GetCaseStudyBySlugDocument, options);
+        }
+export type GetCaseStudyBySlugQueryHookResult = ReturnType<typeof useGetCaseStudyBySlugQuery>;
+export type GetCaseStudyBySlugLazyQueryHookResult = ReturnType<typeof useGetCaseStudyBySlugLazyQuery>;
+export type GetCaseStudyBySlugSuspenseQueryHookResult = ReturnType<typeof useGetCaseStudyBySlugSuspenseQuery>;
+export type GetCaseStudyBySlugQueryResult = Apollo.QueryResult<GetCaseStudyBySlugQuery, GetCaseStudyBySlugQueryVariables>;
 export const GetContactFormsDocument = gql`
     query GetContactForms {
   ContactForms(limit: 100) {
@@ -7981,6 +8479,58 @@ export type GetContactFormsQueryHookResult = ReturnType<typeof useGetContactForm
 export type GetContactFormsLazyQueryHookResult = ReturnType<typeof useGetContactFormsLazyQuery>;
 export type GetContactFormsSuspenseQueryHookResult = ReturnType<typeof useGetContactFormsSuspenseQuery>;
 export type GetContactFormsQueryResult = Apollo.QueryResult<GetContactFormsQuery, GetContactFormsQueryVariables>;
+export const GetFeaturedCaseStudiesDocument = gql`
+    query GetFeaturedCaseStudies {
+  FeaturedCaseStudy {
+    title
+    subtitle
+    description
+    caseStudies {
+      title
+      slug
+      illustration {
+        url
+        alt
+      }
+      tags {
+        tag
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetFeaturedCaseStudiesQuery__
+ *
+ * To run a query within a React component, call `useGetFeaturedCaseStudiesQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetFeaturedCaseStudiesQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetFeaturedCaseStudiesQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetFeaturedCaseStudiesQuery(baseOptions?: Apollo.QueryHookOptions<GetFeaturedCaseStudiesQuery, GetFeaturedCaseStudiesQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetFeaturedCaseStudiesQuery, GetFeaturedCaseStudiesQueryVariables>(GetFeaturedCaseStudiesDocument, options);
+      }
+export function useGetFeaturedCaseStudiesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetFeaturedCaseStudiesQuery, GetFeaturedCaseStudiesQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetFeaturedCaseStudiesQuery, GetFeaturedCaseStudiesQueryVariables>(GetFeaturedCaseStudiesDocument, options);
+        }
+export function useGetFeaturedCaseStudiesSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetFeaturedCaseStudiesQuery, GetFeaturedCaseStudiesQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetFeaturedCaseStudiesQuery, GetFeaturedCaseStudiesQueryVariables>(GetFeaturedCaseStudiesDocument, options);
+        }
+export type GetFeaturedCaseStudiesQueryHookResult = ReturnType<typeof useGetFeaturedCaseStudiesQuery>;
+export type GetFeaturedCaseStudiesLazyQueryHookResult = ReturnType<typeof useGetFeaturedCaseStudiesLazyQuery>;
+export type GetFeaturedCaseStudiesSuspenseQueryHookResult = ReturnType<typeof useGetFeaturedCaseStudiesSuspenseQuery>;
+export type GetFeaturedCaseStudiesQueryResult = Apollo.QueryResult<GetFeaturedCaseStudiesQuery, GetFeaturedCaseStudiesQueryVariables>;
 export const GetFooterDocument = gql`
     query GetFooter {
   Footer {

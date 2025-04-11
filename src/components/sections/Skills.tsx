@@ -9,11 +9,9 @@ export const Skills = () => {
 
   return (
     <div className="flex flex-col gap-4 bg-primary px-5 py-5 md:gap-8 md:px-96 md:py-20">
-      <div className="flex flex-col gap-3">
-        <h3 className="font-semibold text-2xl text-accent md:font-normal md:text-display-2">
-          {subtitle}
-        </h3>
-        <h2 className="w-full font-medium text-3xl text-accent md:text-center md:text-display-6">
+      <div className="flex flex-col items-start gap-1 md:mx-auto md:gap-2 ">
+        <h3 className="text-accent text-xs md:text-lg">{subtitle}</h3>
+        <h2 className="w-full font-medium text-4xl text-accent md:text-center md:text-display-6">
           {title}
         </h2>
       </div>

@@ -96,12 +96,14 @@ export interface Config {
     hero: Hero;
     skills: Skill;
     'work-buttons': WorkButton;
+    'featured-case-studies': FeaturedCaseStudy;
     footer: Footer;
   };
   globalsSelect: {
     hero: HeroSelect<false> | HeroSelect<true>;
     skills: SkillsSelect<false> | SkillsSelect<true>;
     'work-buttons': WorkButtonsSelect<false> | WorkButtonsSelect<true>;
+    'featured-case-studies': FeaturedCaseStudiesSelect<false> | FeaturedCaseStudiesSelect<true>;
     footer: FooterSelect<false> | FooterSelect<true>;
   };
   locale: null;
@@ -527,6 +529,19 @@ export interface WorkButton {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "featured-case-studies".
+ */
+export interface FeaturedCaseStudy {
+  id: number;
+  title: string;
+  subtitle?: string | null;
+  description: string;
+  caseStudies: (number | CaseStudy)[];
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "footer".
  */
 export interface Footer {
@@ -588,6 +603,19 @@ export interface WorkButtonsSelect<T extends boolean = true> {
         url?: T;
         id?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "featured-case-studies_select".
+ */
+export interface FeaturedCaseStudiesSelect<T extends boolean = true> {
+  title?: T;
+  subtitle?: T;
+  description?: T;
+  caseStudies?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
