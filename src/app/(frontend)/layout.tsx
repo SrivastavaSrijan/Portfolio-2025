@@ -1,5 +1,5 @@
 import './tailwind.css';
-import { ApolloWrapper } from '@/components/context';
+import { ApolloWrapper, ProgressProviderClient } from '@/components/context';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { metadata as importedMeta } from '@/lib/config/metadata';
 import { Toaster } from '@/components/ui';
@@ -11,12 +11,14 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="en" className="dark">
       <body>
-        <ApolloWrapper>
-          <Navbar />
-          <main>{children}</main>
-          <SpeedInsights />
-          <Toaster position="top-right" />
-        </ApolloWrapper>
+        <ProgressProviderClient>
+          <ApolloWrapper>
+            <Navbar />
+            <main>{children}</main>
+            <SpeedInsights />
+            <Toaster position="top-right" />
+          </ApolloWrapper>
+        </ProgressProviderClient>
       </body>
     </html>
   );

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   description: "Srijan Srivastava's portfolio - case studies, blogs, projects and more.",
-  title: 'Srijan / Frontend / Good',
+  title: 'Srijan / Frontend',
   icons: {
     icon: [
       {
@@ -43,5 +43,28 @@ export const metadata: Metadata = {
         url: '/assets/favicons/site.webmanifest',
       },
     ],
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://www.srijansrivastava.com',
+    title: 'Srijan / Frontend',
+    description: "Srijan Srivastava's portfolio - case studies, blogs, projects and more.",
+    siteName: 'Srijan Srivastava',
+    images: [
+      {
+        url: 'https://www.srijansrivastava.com/api/media/file/preview.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Srijan Srivastava Portfolio',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Srijan / Frontend',
+    description: "Srijan Srivastava's portfolio - case studies, blogs, projects and more.",
+    images: ['https://www.srijansrivastava.com/api/media/file/preview.jpg'],
+    creator: '@yourTwitterHandle',
   },
 };

@@ -25,9 +25,9 @@ export default function CaseStudies() {
   const { title, content, updatedAt, illustration } = docs[0];
 
   return (
-    <div className="flex flex-col bg-white">
+    <div className="flex flex-col">
       <div className="bg-accent px-4 py-4 md:px-20 md:pb-20">
-        <div className="flex flex-col gap-5 md:gap-10">
+        <div className="flex flex-col gap-5 md:gap-5">
           <div className="flex flex-row items-center gap-2">
             <Undo2 className="h-3 w-3 rotate-180 scale-x-[-1]" />
             <p className="text-xs ">Back to blog</p>
@@ -35,7 +35,7 @@ export default function CaseStudies() {
           <h1 className="font-semibold text-4xl text-white md:text-display-4">{title}</h1>
           <div className="flex flex-row items-center gap-2 text-black-400">
             <Clock className=" h-4 w-4" />{' '}
-            <p className="text-base text-black-400">{dayjs(updatedAt).fromNow()}</p>
+            <p className="text-black-400 text-xs md:text-base">{dayjs(updatedAt).fromNow()}</p>
           </div>
         </div>
       </div>
@@ -50,8 +50,10 @@ export default function CaseStudies() {
           className="h-40 w-full object-cover md:h-144"
         />
       )}
-      <div className="mx-auto flex flex-col gap-5 px-4 py-10 text-accent text-sm md:max-w-205 md:px-4 md:py-20 md:text-base">
-        <RichText data={content} />
+      <div className="bg-white">
+        <div className="mx-auto flex flex-col gap-5 px-4 py-10 text-accent text-sm md:max-w-205 md:px-4 md:py-20 md:text-base">
+          <RichText data={content} />
+        </div>
       </div>
     </div>
   );
