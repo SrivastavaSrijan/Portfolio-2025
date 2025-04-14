@@ -6,7 +6,8 @@ import type { WithFlexibleTypename } from '../utils';
 export const defaultMetadata = {
   title: 'Srijan / Frontend',
   description: 'Srijan is a frontend engineer who loves to build passionately and with conviction.',
-  image: AssetsMap.RemoteImages.Preview,
+  image: { url: AssetsMap.RemoteImages.Preview },
+  __typename: 'Meta',
 };
 
 // Apply the utility type to the GraphQL generated type
@@ -21,7 +22,7 @@ export const createMetadata = (data: MetadataPayload) => {
   } = data ?? {};
   const title = remoteTitle ?? defaultMetadata.title;
   const description = remoteDesc ?? defaultMetadata.description;
-  const image = remoteImage?.url ?? defaultMetadata.image;
+  const image = remoteImage?.url ?? defaultMetadata.image.url;
 
   const metadata = {
     icons: {

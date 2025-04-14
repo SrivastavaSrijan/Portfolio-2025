@@ -13,9 +13,6 @@ interface CaseStudyBySlugProps extends GetServerSideProps {
   params: Promise<{
     slug: string;
   }>;
-  searchParams: {
-    [key: string]: string | string[] | undefined;
-  };
 }
 export async function generateMetadata({ params }: CaseStudyBySlugProps): Promise<Metadata> {
   const { slug } = await params;
