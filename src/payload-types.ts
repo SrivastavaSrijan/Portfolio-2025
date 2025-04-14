@@ -233,6 +233,14 @@ export interface CaseStudy {
   slug?: string | null;
   publishedAt?: string | null;
   featured?: boolean | null;
+  meta?: {
+    title?: string | null;
+    description?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (number | null) | Media;
+  };
   updatedAt: string;
   createdAt: string;
 }
@@ -264,6 +272,14 @@ export interface Experience {
   caseStudies?: (number | CaseStudy)[] | null;
   slug?: string | null;
   thumbnailImage?: (number | null) | Media;
+  meta?: {
+    title?: string | null;
+    description?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (number | null) | Media;
+  };
   updatedAt: string;
   createdAt: string;
 }
@@ -401,6 +417,13 @@ export interface CaseStudiesSelect<T extends boolean = true> {
   slug?: T;
   publishedAt?: T;
   featured?: T;
+  meta?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        image?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }
@@ -417,6 +440,13 @@ export interface ExperiencesSelect<T extends boolean = true> {
   caseStudies?: T;
   slug?: T;
   thumbnailImage?: T;
+  meta?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        image?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }
@@ -478,6 +508,14 @@ export interface Hero {
       version: number;
     };
     [k: string]: unknown;
+  };
+  meta?: {
+    title?: string | null;
+    description?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (number | null) | Media;
   };
   updatedAt?: string | null;
   createdAt?: string | null;
@@ -568,6 +606,13 @@ export interface HeroSelect<T extends boolean = true> {
         id?: T;
       };
   description?: T;
+  meta?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        image?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

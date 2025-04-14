@@ -16,5 +16,8 @@ export const AssetsMap = {
     get Face() {
       return `${this.root}face.png`;
     },
+    get Preview() {
+      return `${this.root}preview.jpg`;
+    },
   },
 };

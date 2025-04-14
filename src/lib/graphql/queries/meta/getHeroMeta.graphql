@@ -1,0 +1,11 @@
+query GetHeroMeta {
+  Hero {
+    meta {
+      title
+      description
+      image {
+        url
+      }
+    }
+  }
+}

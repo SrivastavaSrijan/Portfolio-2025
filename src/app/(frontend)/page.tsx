@@ -1,8 +1,20 @@
 import { Suspense } from 'react';
-import { FeaturedCaseStudies, Footer, Hero, Skills } from '@/components/sections';
+import { FeaturedCaseStudies, Hero, Skills } from '@/components/sections';
 import { Skeleton } from '@/components/ui';
+import type { Metadata } from 'next';
+import { createMetadata } from '@/lib/config/metadata';
+import { query } from '@/lib/apollo/apolloClient';
+import { GetHeroMetaDocument, type GetHeroMetaQuery } from '@/lib/graphql/__generated__/hooks';
 
 export const dynamic = 'force-dynamic';
+
+export async function generateMetadata(): Promise<Metadata> {
+  const { data } = await query<GetHeroMetaQuery>({
+    query: GetHeroMetaDocument,
+  });
+  const remoteMetadata = data?.Hero?.meta ?? {};
+  return createMetadata(remoteMetadata);
+}
 
 export default function HomePage() {
   return (
@@ -11,7 +23,6 @@ export default function HomePage() {
         <Hero />
         <Skills />
         <FeaturedCaseStudies />
-        <Footer />
       </Suspense>
     </div>
   );

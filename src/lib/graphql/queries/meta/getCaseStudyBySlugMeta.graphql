@@ -1,0 +1,13 @@
+query GetCaseStudyBySlugMeta($slug: String!) {
+  CaseStudies(where: { slug: { equals: $slug } }) {
+    docs {
+      meta {
+        title
+        description
+        image {
+          url
+        }
+      }
+    }
+  }
+}

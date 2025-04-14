@@ -1,5 +1,6 @@
 // storage-adapter-import-placeholder
 import { vercelPostgresAdapter } from '@payloadcms/db-vercel-postgres';
+import { seoPlugin } from '@payloadcms/plugin-seo';
 import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob';
 import { lexicalEditor } from '@payloadcms/richtext-lexical';
 import path from 'node:path';
@@ -8,6 +9,7 @@ import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 import { ContactForms, Media, Users, CaseStudies, Experiences } from './lib/payload/collections';
 import { FeaturedCaseStudies, Footer, Hero, Skills, WorkButtons } from './lib/payload/globals';
+import { seoConfig } from './lib/payload/seoConfig';
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -40,5 +42,6 @@ export default buildConfig({
       },
       token: process.env.BLOB_READ_WRITE_TOKEN || '',
     }),
+    seoPlugin(seoConfig),
   ],
 });

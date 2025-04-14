@@ -22,6 +22,8 @@ type Documents = {
     "query GetHero {\n  Hero {\n    name\n    title\n    taglines {\n      text\n    }\n    description\n  }\n}": typeof types.GetHeroDocument,
     "query GetSkills {\n  Skill {\n    title\n    subtitle\n    skills {\n      name\n      description\n    }\n  }\n}": typeof types.GetSkillsDocument,
     "query GetWorkButtons {\n  WorkButton {\n    buttons {\n      text\n      url\n    }\n  }\n}": typeof types.GetWorkButtonsDocument,
+    "query GetCaseStudyBySlugMeta($slug: String!) {\n  CaseStudies(where: {slug: {equals: $slug}}) {\n    docs {\n      meta {\n        title\n        description\n        image {\n          url\n        }\n      }\n    }\n  }\n}": typeof types.GetCaseStudyBySlugMetaDocument,
+    "query GetHeroMeta {\n  Hero {\n    meta {\n      title\n      description\n      image {\n        url\n      }\n    }\n  }\n}": typeof types.GetHeroMetaDocument,
 };
 const documents: Documents = {
     "mutation CreateContactForm($name: String!, $email: String!, $subject: String!, $message: String!) {\n  createContactForm(\n    data: {name: $name, email: $email, subject: $subject, message: $message}\n  ) {\n    id\n    name\n    email\n    subject\n    message\n    status\n  }\n}": types.CreateContactFormDocument,
@@ -32,6 +34,8 @@ const documents: Documents = {
     "query GetHero {\n  Hero {\n    name\n    title\n    taglines {\n      text\n    }\n    description\n  }\n}": types.GetHeroDocument,
     "query GetSkills {\n  Skill {\n    title\n    subtitle\n    skills {\n      name\n      description\n    }\n  }\n}": types.GetSkillsDocument,
     "query GetWorkButtons {\n  WorkButton {\n    buttons {\n      text\n      url\n    }\n  }\n}": types.GetWorkButtonsDocument,
+    "query GetCaseStudyBySlugMeta($slug: String!) {\n  CaseStudies(where: {slug: {equals: $slug}}) {\n    docs {\n      meta {\n        title\n        description\n        image {\n          url\n        }\n      }\n    }\n  }\n}": types.GetCaseStudyBySlugMetaDocument,
+    "query GetHeroMeta {\n  Hero {\n    meta {\n      title\n      description\n      image {\n        url\n      }\n    }\n  }\n}": types.GetHeroMetaDocument,
 };
 
 /**
@@ -80,6 +84,14 @@ export function gql(source: "query GetSkills {\n  Skill {\n    title\n    subtit
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(source: "query GetWorkButtons {\n  WorkButton {\n    buttons {\n      text\n      url\n    }\n  }\n}"): (typeof documents)["query GetWorkButtons {\n  WorkButton {\n    buttons {\n      text\n      url\n    }\n  }\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "query GetCaseStudyBySlugMeta($slug: String!) {\n  CaseStudies(where: {slug: {equals: $slug}}) {\n    docs {\n      meta {\n        title\n        description\n        image {\n          url\n        }\n      }\n    }\n  }\n}"): (typeof documents)["query GetCaseStudyBySlugMeta($slug: String!) {\n  CaseStudies(where: {slug: {equals: $slug}}) {\n    docs {\n      meta {\n        title\n        description\n        image {\n          url\n        }\n      }\n    }\n  }\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "query GetHeroMeta {\n  Hero {\n    meta {\n      title\n      description\n      image {\n        url\n      }\n    }\n  }\n}"): (typeof documents)["query GetHeroMeta {\n  Hero {\n    meta {\n      title\n      description\n      image {\n        url\n      }\n    }\n  }\n}"];
 
 export function gql(source: string) {
   return (documents as any)[source] ?? {};

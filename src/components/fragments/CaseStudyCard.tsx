@@ -2,7 +2,7 @@ import type { GetFeaturedCaseStudiesQuery } from '@/lib/graphql/__generated__/ho
 import { Button, Card, CardAction, CardContent, CardDescription } from '../ui';
 import { ArrowUpRightIcon } from 'lucide-react';
 import Link from 'next/link';
-import { Routes } from '@/lib/graphql/config/routes';
+import { Routes } from '@/lib/config/config/routes';
 import Image from 'next/image';
 
 type CaseStudyCardProps = NonNullable<
