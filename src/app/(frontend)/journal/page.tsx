@@ -7,6 +7,7 @@ import {
 } from '@/lib/graphql/__generated__/hooks';
 import type { Metadata } from 'next';
 
+export const dynamic = 'force-dynamic';
 export async function generateMetadata(): Promise<Metadata> {
   const { data } = await query<GetJournalMetaQuery>({
     query: GetJournalMetaDocument,
