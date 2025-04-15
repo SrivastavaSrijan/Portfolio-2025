@@ -13,10 +13,7 @@ export const { getClient, query, PreloadQuery } = registerApolloClient(() => {
     cache: new InMemoryCache(),
     link: new HttpLink({
       uri: API_URL,
-      fetchOptions: {
-        // For server-side data fetching in RSC
-        cache: 'no-store', // Don't cache by default for RSC queries
-      },
+      fetchOptions: {},
     }),
   });
 });
