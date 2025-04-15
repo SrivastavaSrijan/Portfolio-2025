@@ -1,0 +1,9 @@
+query GetAllTags {
+  CaseStudies {
+    docs {
+      tags {
+        tag
+      }
+    }
+  }
+}

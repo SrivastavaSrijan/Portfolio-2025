@@ -1,5 +1,5 @@
 export const Routes = {
-  CaseStudies: '/case-study',
+  CaseStudies: '/journal',
   Experiences: '/experience',
 };
 

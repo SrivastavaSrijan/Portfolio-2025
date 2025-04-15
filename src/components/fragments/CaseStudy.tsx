@@ -6,6 +6,9 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 import { NotFound } from './404';
 import { Undo2, Clock } from 'lucide-react';
 import { RichText } from './RichText';
+import Link from 'next/link';
+import { Routes } from '@/lib/config/config/routes';
+import { Button } from '../ui';
 dayjs.extend(relativeTime);
 
 interface CaseStudyProps {
@@ -25,7 +28,16 @@ export const CaseStudy = ({ slug }: CaseStudyProps) => {
         <div className="flex flex-col gap-5 md:gap-5">
           <div className="flex flex-row items-center gap-2">
             <Undo2 className="h-3 w-3 rotate-180 scale-x-[-1]" />
-            <p className="text-xs ">Back to blog</p>
+            <Link href={Routes.CaseStudies}>
+              <Button
+                type="button"
+                variant="link"
+                color="accent"
+                className="cursor-pointer text-xs "
+              >
+                Back to blog
+              </Button>
+            </Link>
           </div>
           <h1 className="font-semibold text-4xl text-white md:text-display-4">{title}</h1>
           <div className="flex flex-row items-center gap-2 text-black-400">

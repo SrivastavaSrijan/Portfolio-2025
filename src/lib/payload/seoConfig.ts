@@ -11,6 +11,7 @@ import { FullURLs } from '../config/config/routes';
 import { AssetsMap } from '../assets';
 import { Media, CaseStudies, Experiences } from './collections';
 import { defaultMetadata } from '../config/metadata';
+import { Journal } from './globals';
 
 const Config = {
   MaxLengths: {
@@ -173,7 +174,7 @@ const generateURL: GenerateURL = async ({ doc, collectionSlug, globalSlug }) => 
  */
 export const seoConfig: SEOPluginConfig = {
   collections: [CaseStudies.slug, Experiences.slug],
-  globals: [Hero.slug],
+  globals: [Hero.slug, Journal.slug],
   uploadsCollection: Media.slug,
   tabbedUI: true,
   generateTitle,

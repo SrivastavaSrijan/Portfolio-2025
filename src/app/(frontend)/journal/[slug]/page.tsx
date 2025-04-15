@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: CaseStudyBySlugProps): Promis
   return createMetadata(remoteMetadata);
 }
 
-export default async function CaseStudies({ params }: CaseStudyBySlugProps) {
+export default async function CaseStudyBySlug({ params }: CaseStudyBySlugProps) {
   const { slug } = await params;
   if (!isStringParam(slug)) {
     return <NotFound />;

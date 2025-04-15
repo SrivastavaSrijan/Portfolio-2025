@@ -1,0 +1,12 @@
+query GetJournalMeta {
+  Journal {
+    meta {
+      title
+      description
+      image {
+        alt
+        url
+      }
+    }
+  }
+}

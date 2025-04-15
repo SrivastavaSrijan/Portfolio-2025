@@ -6,3 +6,5 @@ export * from './CaseStudy';
 export * from './RichText';
 export * from './ProfileToggle';
 export * from './CaseStudyCard';
+export * from './CaseStudyFilter';
+export * from './Journal';

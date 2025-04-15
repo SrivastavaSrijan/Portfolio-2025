@@ -1,0 +1,30 @@
+query GetCaseStudies {
+  CaseStudies(limit: 5, page: 1, sort: "-updatedAt") {
+    offset
+    totalDocs
+    docs {
+      id
+      slug
+      title
+      tags {
+        tag
+      }
+      updatedAt
+      illustration {
+        url
+        alt
+      }
+      experience {
+        role
+        title
+        slug
+      }
+    }
+    pagingCounter
+  }
+  Journal {
+    title
+    subtitle
+    description
+  }
+}

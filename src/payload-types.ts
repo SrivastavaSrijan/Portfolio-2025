@@ -98,6 +98,7 @@ export interface Config {
     'work-buttons': WorkButton;
     'featured-case-studies': FeaturedCaseStudy;
     footer: Footer;
+    journal: Journal;
   };
   globalsSelect: {
     hero: HeroSelect<false> | HeroSelect<true>;
@@ -105,6 +106,7 @@ export interface Config {
     'work-buttons': WorkButtonsSelect<false> | WorkButtonsSelect<true>;
     'featured-case-studies': FeaturedCaseStudiesSelect<false> | FeaturedCaseStudiesSelect<true>;
     footer: FooterSelect<false> | FooterSelect<true>;
+    journal: JournalSelect<false> | JournalSelect<true>;
   };
   locale: null;
   user: User & {
@@ -594,6 +596,26 @@ export interface Footer {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "journal".
+ */
+export interface Journal {
+  id: number;
+  title: string;
+  subtitle?: string | null;
+  description: string;
+  meta?: {
+    title?: string | null;
+    description?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (number | null) | Media;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "hero_select".
  */
 export interface HeroSelect<T extends boolean = true> {
@@ -675,6 +697,25 @@ export interface FooterSelect<T extends boolean = true> {
   description?: T;
   buttonText?: T;
   bottomText?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "journal_select".
+ */
+export interface JournalSelect<T extends boolean = true> {
+  title?: T;
+  subtitle?: T;
+  description?: T;
+  meta?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        image?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

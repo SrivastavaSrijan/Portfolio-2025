@@ -8,7 +8,14 @@ import { buildConfig } from 'payload';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 import { ContactForms, Media, Users, CaseStudies, Experiences } from './lib/payload/collections';
-import { FeaturedCaseStudies, Footer, Hero, Skills, WorkButtons } from './lib/payload/globals';
+import {
+  FeaturedCaseStudies,
+  Footer,
+  Hero,
+  Journal,
+  Skills,
+  WorkButtons,
+} from './lib/payload/globals';
 import { seoConfig } from './lib/payload/seoConfig';
 
 const filename = fileURLToPath(import.meta.url);
@@ -22,7 +29,7 @@ export default buildConfig({
     },
   },
   collections: [Users, Media, ContactForms, CaseStudies, Experiences],
-  globals: [Hero, Skills, WorkButtons, FeaturedCaseStudies, Footer],
+  globals: [Hero, Skills, WorkButtons, FeaturedCaseStudies, Footer, Journal],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {

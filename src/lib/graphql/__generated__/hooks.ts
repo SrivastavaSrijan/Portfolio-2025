@@ -30,6 +30,7 @@ export type Access = {
   readonly featured_case_studies?: Maybe<Featured_Case_StudiesAccess>;
   readonly footer?: Maybe<FooterAccess>;
   readonly hero?: Maybe<HeroAccess>;
+  readonly journal?: Maybe<JournalAccess>;
   readonly media?: Maybe<MediaAccess>;
   readonly payload_locked_documents?: Maybe<Payload_Locked_DocumentsAccess>;
   readonly payload_preferences?: Maybe<Payload_PreferencesAccess>;
@@ -4732,6 +4733,587 @@ export type Hero_Taglines = {
   readonly text?: Maybe<Scalars['String']['output']>;
 };
 
+export type Journal = {
+  readonly __typename?: 'Journal';
+  readonly createdAt?: Maybe<Scalars['DateTime']['output']>;
+  readonly description: Scalars['String']['output'];
+  readonly meta?: Maybe<Journal_Meta>;
+  readonly subtitle?: Maybe<Scalars['String']['output']>;
+  readonly title: Scalars['String']['output'];
+  readonly updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type JournalDocAccessFields = {
+  readonly __typename?: 'JournalDocAccessFields';
+  readonly createdAt?: Maybe<JournalDocAccessFields_CreatedAt>;
+  readonly description?: Maybe<JournalDocAccessFields_Description>;
+  readonly meta?: Maybe<JournalDocAccessFields_Meta>;
+  readonly subtitle?: Maybe<JournalDocAccessFields_Subtitle>;
+  readonly title?: Maybe<JournalDocAccessFields_Title>;
+  readonly updatedAt?: Maybe<JournalDocAccessFields_UpdatedAt>;
+};
+
+export type JournalDocAccessFields_CreatedAt = {
+  readonly __typename?: 'JournalDocAccessFields_createdAt';
+  readonly create?: Maybe<JournalDocAccessFields_CreatedAt_Create>;
+  readonly delete?: Maybe<JournalDocAccessFields_CreatedAt_Delete>;
+  readonly read?: Maybe<JournalDocAccessFields_CreatedAt_Read>;
+  readonly update?: Maybe<JournalDocAccessFields_CreatedAt_Update>;
+};
+
+export type JournalDocAccessFields_CreatedAt_Create = {
+  readonly __typename?: 'JournalDocAccessFields_createdAt_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_CreatedAt_Delete = {
+  readonly __typename?: 'JournalDocAccessFields_createdAt_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_CreatedAt_Read = {
+  readonly __typename?: 'JournalDocAccessFields_createdAt_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_CreatedAt_Update = {
+  readonly __typename?: 'JournalDocAccessFields_createdAt_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_Description = {
+  readonly __typename?: 'JournalDocAccessFields_description';
+  readonly create?: Maybe<JournalDocAccessFields_Description_Create>;
+  readonly delete?: Maybe<JournalDocAccessFields_Description_Delete>;
+  readonly read?: Maybe<JournalDocAccessFields_Description_Read>;
+  readonly update?: Maybe<JournalDocAccessFields_Description_Update>;
+};
+
+export type JournalDocAccessFields_Description_Create = {
+  readonly __typename?: 'JournalDocAccessFields_description_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_Description_Delete = {
+  readonly __typename?: 'JournalDocAccessFields_description_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_Description_Read = {
+  readonly __typename?: 'JournalDocAccessFields_description_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_Description_Update = {
+  readonly __typename?: 'JournalDocAccessFields_description_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_Meta = {
+  readonly __typename?: 'JournalDocAccessFields_meta';
+  readonly create?: Maybe<JournalDocAccessFields_Meta_Create>;
+  readonly delete?: Maybe<JournalDocAccessFields_Meta_Delete>;
+  readonly fields?: Maybe<JournalDocAccessFields_Meta_Fields>;
+  readonly read?: Maybe<JournalDocAccessFields_Meta_Read>;
+  readonly update?: Maybe<JournalDocAccessFields_Meta_Update>;
+};
+
+export type JournalDocAccessFields_Meta_Create = {
+  readonly __typename?: 'JournalDocAccessFields_meta_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_Meta_Delete = {
+  readonly __typename?: 'JournalDocAccessFields_meta_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_Meta_Fields = {
+  readonly __typename?: 'JournalDocAccessFields_meta_Fields';
+  readonly description?: Maybe<JournalDocAccessFields_Meta_Description>;
+  readonly image?: Maybe<JournalDocAccessFields_Meta_Image>;
+  readonly title?: Maybe<JournalDocAccessFields_Meta_Title>;
+};
+
+export type JournalDocAccessFields_Meta_Read = {
+  readonly __typename?: 'JournalDocAccessFields_meta_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_Meta_Update = {
+  readonly __typename?: 'JournalDocAccessFields_meta_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_Meta_Description = {
+  readonly __typename?: 'JournalDocAccessFields_meta_description';
+  readonly create?: Maybe<JournalDocAccessFields_Meta_Description_Create>;
+  readonly delete?: Maybe<JournalDocAccessFields_Meta_Description_Delete>;
+  readonly read?: Maybe<JournalDocAccessFields_Meta_Description_Read>;
+  readonly update?: Maybe<JournalDocAccessFields_Meta_Description_Update>;
+};
+
+export type JournalDocAccessFields_Meta_Description_Create = {
+  readonly __typename?: 'JournalDocAccessFields_meta_description_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_Meta_Description_Delete = {
+  readonly __typename?: 'JournalDocAccessFields_meta_description_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_Meta_Description_Read = {
+  readonly __typename?: 'JournalDocAccessFields_meta_description_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_Meta_Description_Update = {
+  readonly __typename?: 'JournalDocAccessFields_meta_description_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_Meta_Image = {
+  readonly __typename?: 'JournalDocAccessFields_meta_image';
+  readonly create?: Maybe<JournalDocAccessFields_Meta_Image_Create>;
+  readonly delete?: Maybe<JournalDocAccessFields_Meta_Image_Delete>;
+  readonly read?: Maybe<JournalDocAccessFields_Meta_Image_Read>;
+  readonly update?: Maybe<JournalDocAccessFields_Meta_Image_Update>;
+};
+
+export type JournalDocAccessFields_Meta_Image_Create = {
+  readonly __typename?: 'JournalDocAccessFields_meta_image_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_Meta_Image_Delete = {
+  readonly __typename?: 'JournalDocAccessFields_meta_image_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_Meta_Image_Read = {
+  readonly __typename?: 'JournalDocAccessFields_meta_image_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_Meta_Image_Update = {
+  readonly __typename?: 'JournalDocAccessFields_meta_image_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_Meta_Title = {
+  readonly __typename?: 'JournalDocAccessFields_meta_title';
+  readonly create?: Maybe<JournalDocAccessFields_Meta_Title_Create>;
+  readonly delete?: Maybe<JournalDocAccessFields_Meta_Title_Delete>;
+  readonly read?: Maybe<JournalDocAccessFields_Meta_Title_Read>;
+  readonly update?: Maybe<JournalDocAccessFields_Meta_Title_Update>;
+};
+
+export type JournalDocAccessFields_Meta_Title_Create = {
+  readonly __typename?: 'JournalDocAccessFields_meta_title_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_Meta_Title_Delete = {
+  readonly __typename?: 'JournalDocAccessFields_meta_title_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_Meta_Title_Read = {
+  readonly __typename?: 'JournalDocAccessFields_meta_title_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_Meta_Title_Update = {
+  readonly __typename?: 'JournalDocAccessFields_meta_title_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_Subtitle = {
+  readonly __typename?: 'JournalDocAccessFields_subtitle';
+  readonly create?: Maybe<JournalDocAccessFields_Subtitle_Create>;
+  readonly delete?: Maybe<JournalDocAccessFields_Subtitle_Delete>;
+  readonly read?: Maybe<JournalDocAccessFields_Subtitle_Read>;
+  readonly update?: Maybe<JournalDocAccessFields_Subtitle_Update>;
+};
+
+export type JournalDocAccessFields_Subtitle_Create = {
+  readonly __typename?: 'JournalDocAccessFields_subtitle_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_Subtitle_Delete = {
+  readonly __typename?: 'JournalDocAccessFields_subtitle_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_Subtitle_Read = {
+  readonly __typename?: 'JournalDocAccessFields_subtitle_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_Subtitle_Update = {
+  readonly __typename?: 'JournalDocAccessFields_subtitle_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_Title = {
+  readonly __typename?: 'JournalDocAccessFields_title';
+  readonly create?: Maybe<JournalDocAccessFields_Title_Create>;
+  readonly delete?: Maybe<JournalDocAccessFields_Title_Delete>;
+  readonly read?: Maybe<JournalDocAccessFields_Title_Read>;
+  readonly update?: Maybe<JournalDocAccessFields_Title_Update>;
+};
+
+export type JournalDocAccessFields_Title_Create = {
+  readonly __typename?: 'JournalDocAccessFields_title_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_Title_Delete = {
+  readonly __typename?: 'JournalDocAccessFields_title_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_Title_Read = {
+  readonly __typename?: 'JournalDocAccessFields_title_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_Title_Update = {
+  readonly __typename?: 'JournalDocAccessFields_title_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_UpdatedAt = {
+  readonly __typename?: 'JournalDocAccessFields_updatedAt';
+  readonly create?: Maybe<JournalDocAccessFields_UpdatedAt_Create>;
+  readonly delete?: Maybe<JournalDocAccessFields_UpdatedAt_Delete>;
+  readonly read?: Maybe<JournalDocAccessFields_UpdatedAt_Read>;
+  readonly update?: Maybe<JournalDocAccessFields_UpdatedAt_Update>;
+};
+
+export type JournalDocAccessFields_UpdatedAt_Create = {
+  readonly __typename?: 'JournalDocAccessFields_updatedAt_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_UpdatedAt_Delete = {
+  readonly __typename?: 'JournalDocAccessFields_updatedAt_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_UpdatedAt_Read = {
+  readonly __typename?: 'JournalDocAccessFields_updatedAt_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalDocAccessFields_UpdatedAt_Update = {
+  readonly __typename?: 'JournalDocAccessFields_updatedAt_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields = {
+  readonly __typename?: 'JournalFields';
+  readonly createdAt?: Maybe<JournalFields_CreatedAt>;
+  readonly description?: Maybe<JournalFields_Description>;
+  readonly meta?: Maybe<JournalFields_Meta>;
+  readonly subtitle?: Maybe<JournalFields_Subtitle>;
+  readonly title?: Maybe<JournalFields_Title>;
+  readonly updatedAt?: Maybe<JournalFields_UpdatedAt>;
+};
+
+export type JournalFields_CreatedAt = {
+  readonly __typename?: 'JournalFields_createdAt';
+  readonly create?: Maybe<JournalFields_CreatedAt_Create>;
+  readonly delete?: Maybe<JournalFields_CreatedAt_Delete>;
+  readonly read?: Maybe<JournalFields_CreatedAt_Read>;
+  readonly update?: Maybe<JournalFields_CreatedAt_Update>;
+};
+
+export type JournalFields_CreatedAt_Create = {
+  readonly __typename?: 'JournalFields_createdAt_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_CreatedAt_Delete = {
+  readonly __typename?: 'JournalFields_createdAt_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_CreatedAt_Read = {
+  readonly __typename?: 'JournalFields_createdAt_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_CreatedAt_Update = {
+  readonly __typename?: 'JournalFields_createdAt_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_Description = {
+  readonly __typename?: 'JournalFields_description';
+  readonly create?: Maybe<JournalFields_Description_Create>;
+  readonly delete?: Maybe<JournalFields_Description_Delete>;
+  readonly read?: Maybe<JournalFields_Description_Read>;
+  readonly update?: Maybe<JournalFields_Description_Update>;
+};
+
+export type JournalFields_Description_Create = {
+  readonly __typename?: 'JournalFields_description_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_Description_Delete = {
+  readonly __typename?: 'JournalFields_description_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_Description_Read = {
+  readonly __typename?: 'JournalFields_description_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_Description_Update = {
+  readonly __typename?: 'JournalFields_description_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_Meta = {
+  readonly __typename?: 'JournalFields_meta';
+  readonly create?: Maybe<JournalFields_Meta_Create>;
+  readonly delete?: Maybe<JournalFields_Meta_Delete>;
+  readonly fields?: Maybe<JournalFields_Meta_Fields>;
+  readonly read?: Maybe<JournalFields_Meta_Read>;
+  readonly update?: Maybe<JournalFields_Meta_Update>;
+};
+
+export type JournalFields_Meta_Create = {
+  readonly __typename?: 'JournalFields_meta_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_Meta_Delete = {
+  readonly __typename?: 'JournalFields_meta_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_Meta_Fields = {
+  readonly __typename?: 'JournalFields_meta_Fields';
+  readonly description?: Maybe<JournalFields_Meta_Description>;
+  readonly image?: Maybe<JournalFields_Meta_Image>;
+  readonly title?: Maybe<JournalFields_Meta_Title>;
+};
+
+export type JournalFields_Meta_Read = {
+  readonly __typename?: 'JournalFields_meta_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_Meta_Update = {
+  readonly __typename?: 'JournalFields_meta_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_Meta_Description = {
+  readonly __typename?: 'JournalFields_meta_description';
+  readonly create?: Maybe<JournalFields_Meta_Description_Create>;
+  readonly delete?: Maybe<JournalFields_Meta_Description_Delete>;
+  readonly read?: Maybe<JournalFields_Meta_Description_Read>;
+  readonly update?: Maybe<JournalFields_Meta_Description_Update>;
+};
+
+export type JournalFields_Meta_Description_Create = {
+  readonly __typename?: 'JournalFields_meta_description_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_Meta_Description_Delete = {
+  readonly __typename?: 'JournalFields_meta_description_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_Meta_Description_Read = {
+  readonly __typename?: 'JournalFields_meta_description_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_Meta_Description_Update = {
+  readonly __typename?: 'JournalFields_meta_description_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_Meta_Image = {
+  readonly __typename?: 'JournalFields_meta_image';
+  readonly create?: Maybe<JournalFields_Meta_Image_Create>;
+  readonly delete?: Maybe<JournalFields_Meta_Image_Delete>;
+  readonly read?: Maybe<JournalFields_Meta_Image_Read>;
+  readonly update?: Maybe<JournalFields_Meta_Image_Update>;
+};
+
+export type JournalFields_Meta_Image_Create = {
+  readonly __typename?: 'JournalFields_meta_image_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_Meta_Image_Delete = {
+  readonly __typename?: 'JournalFields_meta_image_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_Meta_Image_Read = {
+  readonly __typename?: 'JournalFields_meta_image_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_Meta_Image_Update = {
+  readonly __typename?: 'JournalFields_meta_image_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_Meta_Title = {
+  readonly __typename?: 'JournalFields_meta_title';
+  readonly create?: Maybe<JournalFields_Meta_Title_Create>;
+  readonly delete?: Maybe<JournalFields_Meta_Title_Delete>;
+  readonly read?: Maybe<JournalFields_Meta_Title_Read>;
+  readonly update?: Maybe<JournalFields_Meta_Title_Update>;
+};
+
+export type JournalFields_Meta_Title_Create = {
+  readonly __typename?: 'JournalFields_meta_title_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_Meta_Title_Delete = {
+  readonly __typename?: 'JournalFields_meta_title_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_Meta_Title_Read = {
+  readonly __typename?: 'JournalFields_meta_title_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_Meta_Title_Update = {
+  readonly __typename?: 'JournalFields_meta_title_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_Subtitle = {
+  readonly __typename?: 'JournalFields_subtitle';
+  readonly create?: Maybe<JournalFields_Subtitle_Create>;
+  readonly delete?: Maybe<JournalFields_Subtitle_Delete>;
+  readonly read?: Maybe<JournalFields_Subtitle_Read>;
+  readonly update?: Maybe<JournalFields_Subtitle_Update>;
+};
+
+export type JournalFields_Subtitle_Create = {
+  readonly __typename?: 'JournalFields_subtitle_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_Subtitle_Delete = {
+  readonly __typename?: 'JournalFields_subtitle_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_Subtitle_Read = {
+  readonly __typename?: 'JournalFields_subtitle_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_Subtitle_Update = {
+  readonly __typename?: 'JournalFields_subtitle_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_Title = {
+  readonly __typename?: 'JournalFields_title';
+  readonly create?: Maybe<JournalFields_Title_Create>;
+  readonly delete?: Maybe<JournalFields_Title_Delete>;
+  readonly read?: Maybe<JournalFields_Title_Read>;
+  readonly update?: Maybe<JournalFields_Title_Update>;
+};
+
+export type JournalFields_Title_Create = {
+  readonly __typename?: 'JournalFields_title_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_Title_Delete = {
+  readonly __typename?: 'JournalFields_title_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_Title_Read = {
+  readonly __typename?: 'JournalFields_title_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_Title_Update = {
+  readonly __typename?: 'JournalFields_title_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_UpdatedAt = {
+  readonly __typename?: 'JournalFields_updatedAt';
+  readonly create?: Maybe<JournalFields_UpdatedAt_Create>;
+  readonly delete?: Maybe<JournalFields_UpdatedAt_Delete>;
+  readonly read?: Maybe<JournalFields_UpdatedAt_Read>;
+  readonly update?: Maybe<JournalFields_UpdatedAt_Update>;
+};
+
+export type JournalFields_UpdatedAt_Create = {
+  readonly __typename?: 'JournalFields_updatedAt_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_UpdatedAt_Delete = {
+  readonly __typename?: 'JournalFields_updatedAt_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_UpdatedAt_Read = {
+  readonly __typename?: 'JournalFields_updatedAt_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalFields_UpdatedAt_Update = {
+  readonly __typename?: 'JournalFields_updatedAt_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type JournalReadAccess = {
+  readonly __typename?: 'JournalReadAccess';
+  readonly permission: Scalars['Boolean']['output'];
+  readonly where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type JournalReadDocAccess = {
+  readonly __typename?: 'JournalReadDocAccess';
+  readonly permission: Scalars['Boolean']['output'];
+  readonly where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type JournalUpdateAccess = {
+  readonly __typename?: 'JournalUpdateAccess';
+  readonly permission: Scalars['Boolean']['output'];
+  readonly where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type JournalUpdateDocAccess = {
+  readonly __typename?: 'JournalUpdateDocAccess';
+  readonly permission: Scalars['Boolean']['output'];
+  readonly where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type Journal_Meta = {
+  readonly __typename?: 'Journal_Meta';
+  readonly description?: Maybe<Scalars['String']['output']>;
+  readonly image?: Maybe<Media>;
+  readonly title?: Maybe<Scalars['String']['output']>;
+};
+
 export type Media = {
   readonly __typename?: 'Media';
   readonly alt: Scalars['String']['output'];
@@ -5725,6 +6307,7 @@ export type Mutation = {
   readonly updateFeaturedCaseStudy?: Maybe<FeaturedCaseStudy>;
   readonly updateFooter?: Maybe<Footer>;
   readonly updateHero?: Maybe<Hero>;
+  readonly updateJournal?: Maybe<Journal>;
   readonly updateMedia?: Maybe<Media>;
   readonly updatePayloadLockedDocument?: Maybe<PayloadLockedDocument>;
   readonly updatePayloadPreference?: Maybe<PayloadPreference>;
@@ -5910,6 +6493,12 @@ export type MutationUpdateFooterArgs = {
 
 export type MutationUpdateHeroArgs = {
   data: MutationHeroInput;
+  draft?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type MutationUpdateJournalArgs = {
+  data: MutationJournalInput;
   draft?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
@@ -7011,6 +7600,7 @@ export type Query = {
   readonly FeaturedCaseStudy?: Maybe<FeaturedCaseStudy>;
   readonly Footer?: Maybe<Footer>;
   readonly Hero?: Maybe<Hero>;
+  readonly Journal?: Maybe<Journal>;
   readonly Media?: Maybe<Media>;
   readonly PayloadLockedDocument?: Maybe<PayloadLockedDocument>;
   readonly PayloadLockedDocuments?: Maybe<PayloadLockedDocuments>;
@@ -7034,6 +7624,7 @@ export type Query = {
   readonly docAccessFeaturedCaseStudy?: Maybe<Featured_Case_StudiesDocAccess>;
   readonly docAccessFooter?: Maybe<FooterDocAccess>;
   readonly docAccessHero?: Maybe<HeroDocAccess>;
+  readonly docAccessJournal?: Maybe<JournalDocAccess>;
   readonly docAccessMedia?: Maybe<MediaDocAccess>;
   readonly docAccessPayloadLockedDocument?: Maybe<Payload_Locked_DocumentsDocAccess>;
   readonly docAccessPayloadPreference?: Maybe<Payload_PreferencesDocAccess>;
@@ -7104,6 +7695,11 @@ export type QueryFooterArgs = {
 
 
 export type QueryHeroArgs = {
+  draft?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryJournalArgs = {
   draft?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
@@ -8734,6 +9330,20 @@ export type HeroDocAccess = {
   readonly update?: Maybe<HeroUpdateDocAccess>;
 };
 
+export type JournalAccess = {
+  readonly __typename?: 'journalAccess';
+  readonly fields?: Maybe<JournalFields>;
+  readonly read?: Maybe<JournalReadAccess>;
+  readonly update?: Maybe<JournalUpdateAccess>;
+};
+
+export type JournalDocAccess = {
+  readonly __typename?: 'journalDocAccess';
+  readonly fields?: Maybe<JournalDocAccessFields>;
+  readonly read?: Maybe<JournalReadDocAccess>;
+  readonly update?: Maybe<JournalUpdateDocAccess>;
+};
+
 export type MediaAccess = {
   readonly __typename?: 'mediaAccess';
   readonly create?: Maybe<MediaCreateAccess>;
@@ -8902,6 +9512,21 @@ export type MutationHero_MetaInput = {
 export type MutationHero_TaglinesInput = {
   readonly id?: InputMaybe<Scalars['String']['input']>;
   readonly text: Scalars['String']['input'];
+};
+
+export type MutationJournalInput = {
+  readonly createdAt?: InputMaybe<Scalars['String']['input']>;
+  readonly description: Scalars['String']['input'];
+  readonly meta?: InputMaybe<MutationJournal_MetaInput>;
+  readonly subtitle?: InputMaybe<Scalars['String']['input']>;
+  readonly title: Scalars['String']['input'];
+  readonly updatedAt?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MutationJournal_MetaInput = {
+  readonly description?: InputMaybe<Scalars['String']['input']>;
+  readonly image?: InputMaybe<Scalars['Int']['input']>;
+  readonly title?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type MutationMediaInput = {
@@ -9149,6 +9774,16 @@ export type CreateContactFormMutationVariables = Exact<{
 
 export type CreateContactFormMutation = { readonly __typename?: 'Mutation', readonly createContactForm?: { readonly __typename?: 'ContactForm', readonly id: number, readonly name: string, readonly email: any, readonly subject: string, readonly message: string, readonly status?: ContactForm_Status | null } | null };
 
+export type GetAllTagsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetAllTagsQuery = { readonly __typename?: 'Query', readonly CaseStudies?: { readonly __typename?: 'CaseStudies', readonly docs: ReadonlyArray<{ readonly __typename?: 'CaseStudy', readonly tags?: ReadonlyArray<{ readonly __typename?: 'CaseStudy_Tags', readonly tag?: string | null }> | null }> } | null };
+
+export type GetCaseStudiesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetCaseStudiesQuery = { readonly __typename?: 'Query', readonly CaseStudies?: { readonly __typename?: 'CaseStudies', readonly offset?: number | null, readonly totalDocs: number, readonly pagingCounter: number, readonly docs: ReadonlyArray<{ readonly __typename?: 'CaseStudy', readonly id: number, readonly slug?: string | null, readonly title: string, readonly updatedAt?: any | null, readonly tags?: ReadonlyArray<{ readonly __typename?: 'CaseStudy_Tags', readonly tag?: string | null }> | null, readonly illustration?: { readonly __typename?: 'Media', readonly url?: string | null, readonly alt: string } | null, readonly experience: { readonly __typename?: 'Experience', readonly role?: string | null, readonly title: string, readonly slug?: string | null } }> } | null, readonly Journal?: { readonly __typename?: 'Journal', readonly title: string, readonly subtitle?: string | null, readonly description: string } | null };
+
 export type GetCaseStudyBySlugQueryVariables = Exact<{
   slug: Scalars['String']['input'];
 }>;
@@ -9198,6 +9833,11 @@ export type GetHeroMetaQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetHeroMetaQuery = { readonly __typename?: 'Query', readonly Hero?: { readonly __typename?: 'Hero', readonly meta?: { readonly __typename?: 'Hero_Meta', readonly title?: string | null, readonly description?: string | null, readonly image?: { readonly __typename?: 'Media', readonly url?: string | null } | null } | null } | null };
 
+export type GetJournalMetaQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetJournalMetaQuery = { readonly __typename?: 'Query', readonly Journal?: { readonly __typename?: 'Journal', readonly meta?: { readonly __typename?: 'Journal_Meta', readonly title?: string | null, readonly description?: string | null, readonly image?: { readonly __typename?: 'Media', readonly alt: string, readonly url?: string | null } | null } | null } | null };
+
 
 export const CreateContactFormDocument = gql`
     mutation CreateContactForm($name: String!, $email: String!, $subject: String!, $message: String!) {
@@ -9242,6 +9882,113 @@ export function useCreateContactFormMutation(baseOptions?: Apollo.MutationHookOp
 export type CreateContactFormMutationHookResult = ReturnType<typeof useCreateContactFormMutation>;
 export type CreateContactFormMutationResult = Apollo.MutationResult<CreateContactFormMutation>;
 export type CreateContactFormMutationOptions = Apollo.BaseMutationOptions<CreateContactFormMutation, CreateContactFormMutationVariables>;
+export const GetAllTagsDocument = gql`
+    query GetAllTags {
+  CaseStudies {
+    docs {
+      tags {
+        tag
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetAllTagsQuery__
+ *
+ * To run a query within a React component, call `useGetAllTagsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetAllTagsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetAllTagsQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetAllTagsQuery(baseOptions?: Apollo.QueryHookOptions<GetAllTagsQuery, GetAllTagsQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetAllTagsQuery, GetAllTagsQueryVariables>(GetAllTagsDocument, options);
+      }
+export function useGetAllTagsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetAllTagsQuery, GetAllTagsQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetAllTagsQuery, GetAllTagsQueryVariables>(GetAllTagsDocument, options);
+        }
+export function useGetAllTagsSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetAllTagsQuery, GetAllTagsQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetAllTagsQuery, GetAllTagsQueryVariables>(GetAllTagsDocument, options);
+        }
+export type GetAllTagsQueryHookResult = ReturnType<typeof useGetAllTagsQuery>;
+export type GetAllTagsLazyQueryHookResult = ReturnType<typeof useGetAllTagsLazyQuery>;
+export type GetAllTagsSuspenseQueryHookResult = ReturnType<typeof useGetAllTagsSuspenseQuery>;
+export type GetAllTagsQueryResult = Apollo.QueryResult<GetAllTagsQuery, GetAllTagsQueryVariables>;
+export const GetCaseStudiesDocument = gql`
+    query GetCaseStudies {
+  CaseStudies(limit: 5, page: 1, sort: "-updatedAt") {
+    offset
+    totalDocs
+    docs {
+      id
+      slug
+      title
+      tags {
+        tag
+      }
+      updatedAt
+      illustration {
+        url
+        alt
+      }
+      experience {
+        role
+        title
+        slug
+      }
+    }
+    pagingCounter
+  }
+  Journal {
+    title
+    subtitle
+    description
+  }
+}
+    `;
+
+/**
+ * __useGetCaseStudiesQuery__
+ *
+ * To run a query within a React component, call `useGetCaseStudiesQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetCaseStudiesQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetCaseStudiesQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetCaseStudiesQuery(baseOptions?: Apollo.QueryHookOptions<GetCaseStudiesQuery, GetCaseStudiesQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetCaseStudiesQuery, GetCaseStudiesQueryVariables>(GetCaseStudiesDocument, options);
+      }
+export function useGetCaseStudiesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetCaseStudiesQuery, GetCaseStudiesQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetCaseStudiesQuery, GetCaseStudiesQueryVariables>(GetCaseStudiesDocument, options);
+        }
+export function useGetCaseStudiesSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetCaseStudiesQuery, GetCaseStudiesQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetCaseStudiesQuery, GetCaseStudiesQueryVariables>(GetCaseStudiesDocument, options);
+        }
+export type GetCaseStudiesQueryHookResult = ReturnType<typeof useGetCaseStudiesQuery>;
+export type GetCaseStudiesLazyQueryHookResult = ReturnType<typeof useGetCaseStudiesLazyQuery>;
+export type GetCaseStudiesSuspenseQueryHookResult = ReturnType<typeof useGetCaseStudiesSuspenseQuery>;
+export type GetCaseStudiesQueryResult = Apollo.QueryResult<GetCaseStudiesQuery, GetCaseStudiesQueryVariables>;
 export const GetCaseStudyBySlugDocument = gql`
     query GetCaseStudyBySlug($slug: String!) {
   CaseStudies(where: {slug: {equals: $slug}}) {
@@ -9668,3 +10415,49 @@ export type GetHeroMetaQueryHookResult = ReturnType<typeof useGetHeroMetaQuery>;
 export type GetHeroMetaLazyQueryHookResult = ReturnType<typeof useGetHeroMetaLazyQuery>;
 export type GetHeroMetaSuspenseQueryHookResult = ReturnType<typeof useGetHeroMetaSuspenseQuery>;
 export type GetHeroMetaQueryResult = Apollo.QueryResult<GetHeroMetaQuery, GetHeroMetaQueryVariables>;
+export const GetJournalMetaDocument = gql`
+    query GetJournalMeta {
+  Journal {
+    meta {
+      title
+      description
+      image {
+        alt
+        url
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetJournalMetaQuery__
+ *
+ * To run a query within a React component, call `useGetJournalMetaQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetJournalMetaQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetJournalMetaQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetJournalMetaQuery(baseOptions?: Apollo.QueryHookOptions<GetJournalMetaQuery, GetJournalMetaQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetJournalMetaQuery, GetJournalMetaQueryVariables>(GetJournalMetaDocument, options);
+      }
+export function useGetJournalMetaLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetJournalMetaQuery, GetJournalMetaQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetJournalMetaQuery, GetJournalMetaQueryVariables>(GetJournalMetaDocument, options);
+        }
+export function useGetJournalMetaSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetJournalMetaQuery, GetJournalMetaQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetJournalMetaQuery, GetJournalMetaQueryVariables>(GetJournalMetaDocument, options);
+        }
+export type GetJournalMetaQueryHookResult = ReturnType<typeof useGetJournalMetaQuery>;
+export type GetJournalMetaLazyQueryHookResult = ReturnType<typeof useGetJournalMetaLazyQuery>;
+export type GetJournalMetaSuspenseQueryHookResult = ReturnType<typeof useGetJournalMetaSuspenseQuery>;
+export type GetJournalMetaQueryResult = Apollo.QueryResult<GetJournalMetaQuery, GetJournalMetaQueryVariables>;

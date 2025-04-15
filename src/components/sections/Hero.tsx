@@ -47,7 +47,7 @@ export const Hero = () => {
         </div>
         <span className="flex-1" />
         <motion.div
-          className="gap-2 md:mt-10 md:gap-10"
+          className="gap-2 md:gap-10"
           variants={paragraphVariants}
           initial="hidden"
           animate="visible"
@@ -60,7 +60,7 @@ export const Hero = () => {
         </motion.div>
         <span className="flex-1" />
         <motion.div
-          className="mt-3 flex flex-row flex-wrap justify-between gap-3 md:mt-32 md:gap-0"
+          className="flex flex-row flex-wrap justify-between gap-3 md:gap-0"
           variants={containerVariants}
         >
           <ContactForm>

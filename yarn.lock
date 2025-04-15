@@ -2333,6 +2333,11 @@
   resolved "https://registry.yarnpkg.com/@graphql-typed-document-node/core/-/core-3.2.0.tgz#5f3d96ec6b2354ad6d8a28bf216a1d97b5426861"
   integrity sha512-mB9oAsNCm9aM3/SOv4YtBMqZbYj10R7dkq8byBqxGY/ncFwhf2oQzMV+LCRlWoDSEBJ3COiR1yeDvMtsoOsuFQ==
 
+"@graphql-yoga/render-graphiql@^5.13.3":
+  version "5.13.3"
+  resolved "https://registry.yarnpkg.com/@graphql-yoga/render-graphiql/-/render-graphiql-5.13.3.tgz#e1119fda9bd18f7425846cdf05e191b94e7e499c"
+  integrity sha512-UGJ4T6MUciXaox1Nhjr6qIUIFCSEtESsJHXPnqJDCesZxxcWCUfIzo1KoZ+9N4wuEYb+qkcc2cG97RKYuSqoiA==
+
 "@img/sharp-darwin-arm64@0.33.5":
   version "0.33.5"
   resolved "https://registry.yarnpkg.com/@img/sharp-darwin-arm64/-/sharp-darwin-arm64-0.33.5.tgz#ef5b5a07862805f1e8145a377c8ba6e98813ca08"

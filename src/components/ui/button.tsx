@@ -10,8 +10,8 @@ const buttonVariants = cva(
       variant: {
         contained: 'shadow-xs',
         outlined: 'border bg-none shadow-xs rounded-full',
-        text: '',
-        link: 'underline-offset-8 underline',
+        text: 'hover:!bg-[transparent]',
+        link: 'underline-offset-8 underline hover:!bg-[transparent]',
       },
       color: {
         primary:

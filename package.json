@@ -19,6 +19,7 @@
     "@apollo/client": "^3.13.6",
     "@apollo/client-integration-nextjs": "^0.12.1",
     "@bprogress/next": "^3.2.11",
+    "@graphql-yoga/render-graphiql": "^5.13.3",
     "@payloadcms/db-vercel-postgres": "^3.33.0",
     "@payloadcms/next": "^3.33.0",
     "@payloadcms/payload-cloud": "^3.33.0",
