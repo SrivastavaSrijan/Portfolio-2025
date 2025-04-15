@@ -13,18 +13,11 @@ interface CaseStudyCardProps extends CaseStudyBySlugData {
   grid?: boolean;
 }
 
-export const CaseStudyCard = ({
-  title,
-  tags,
-  slug,
-  illustration,
-  grid = false,
-}: CaseStudyCardProps) => {
+export const CaseStudyCard = ({ title, tags, slug, illustration }: CaseStudyCardProps) => {
   return (
     <div
       className={cn(
-        !grid && 'max-w-256 md:rounded-[42px]',
-        'relative mx-auto flex w-full flex-col items-center justify-center overflow-hidden'
+        'relative mx-auto flex w-full max-w-256 flex-col items-center justify-center overflow-hidden md:rounded-[42px]'
       )}
     >
       <div className="relative h-40 w-full md:h-208">
@@ -33,28 +26,24 @@ export const CaseStudyCard = ({
             fill
             src={illustration?.url}
             alt={title}
-            className={cn(
-              !grid && 'rounded-4xl',
-              'relative h-full w-full object-cover md:rounded-none'
-            )}
+            className={cn('relative h-full w-full rounded-4xl object-cover md:rounded-none')}
           />
         )}
       </div>
       <Card
         className={cn(
-          !grid && 'md:bottom-4 md:w-[calc(100%-48px)] md:rounded-4xl',
-          'bottom-0 w-full rounded-none bg-white md:absolute'
+          'bottom-0 w-full rounded-none bg-white shadow-md md:absolute md:bottom-4 md:w-[calc(100%-48px)] md:rounded-4xl'
         )}
       >
         <CardContent className="flex items-center justify-between gap-3">
           <CardDescription className="flex flex-col gap-2">
             <h3 className="font-medium text-accent text-xl md:text-2xl">{title}</h3>
-            <div className="flex flex-row gap-3">
+            <div className="flex flex-row flex-wrap gap-3">
               {(tags ?? []).map((tag) => (
                 <span
                   key={tag.tag}
                   className={cn(
-                    'rounded-full border-1 border-accent px-2 py-1 text-accent text-xs'
+                    'line-clamp-1 rounded-full border-1 border-accent px-2 py-1 text-accent text-xs'
                   )}
                 >
                   {tag.tag}

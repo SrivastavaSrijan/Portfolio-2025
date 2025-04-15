@@ -4,6 +4,7 @@ import { useGetAllTagsSuspenseQuery } from '@/lib/graphql/__generated__/hooks';
 import { Button } from '../ui';
 import { useRouter } from 'next/navigation';
 import { Routes } from '@/lib/config/config/routes';
+import { cn } from '@/lib/utils';
 
 export const CaseStudyFilter = () => {
   const router = useRouter();
@@ -32,12 +33,19 @@ export const CaseStudyFilter = () => {
       {paginatedByThree.map((tags, index) => (
         <div className="flex flex-col gap-1" key={index}>
           <div className="grid grid-cols-3 gap-2">
-            {tags.map((tag) => (
+            {tags.map((tag, index) => (
               <Button
                 variant="text"
                 color="brand"
                 key={tag}
-                className="justify-start px-0 text-base"
+                className={cn(
+                  {
+                    'justify-start': index === 0,
+                    'justify-center': index === 1,
+                    'justify-end': index === 2,
+                  },
+                  'px-0 font-normal text-base text-sm'
+                )}
                 onClick={() => handleClick(tag)}
               >
                 {tag}

@@ -18,7 +18,7 @@ export const Journal = () => {
         <CaseStudyFilter />
       </div>
       {caseStudies && caseStudies.length > 0 && (
-        <div className="grid grid-cols-1 gap-6 bg-white md:grid-cols-2 md:gap-10">
+        <div className="grid grid-cols-1 gap-5 bg-white px-4 py-5 md:grid-cols-2 md:gap-10 md:px-8 md:py-10">
           {caseStudies.map((caseStudy) => (
             <CaseStudyCard key={caseStudy.slug} {...caseStudy} grid />
           ))}

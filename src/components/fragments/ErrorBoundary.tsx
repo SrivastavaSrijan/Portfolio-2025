@@ -33,7 +33,3 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
     return this.props.children;
   }
 }
-
-// Add index.ts file to export the component
-// filepath: /Users/srijansrivastava/Documents/Personal/portfolio/src/components/error/index.ts
-export * from './ErrorBoundary';
