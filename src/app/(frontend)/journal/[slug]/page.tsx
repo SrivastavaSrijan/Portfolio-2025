@@ -9,9 +9,9 @@ import { createMetadata } from '@/lib/config/metadata';
 import type { GetServerSideProps, Metadata } from 'next';
 import { CaseStudy, NotFound } from '@/components/fragments';
 
-export const dynamic = 'auto';
-export const revalidate = 60;
-export const fetchCache = 'force-no-store';
+export const dynamic = 'force-dynamic';
+// export const revalidate = 60;
+// export const fetchCache = 'force-no-store';
 
 interface CaseStudyBySlugProps extends GetServerSideProps {
   params: Promise<{
