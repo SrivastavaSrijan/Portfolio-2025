@@ -6,6 +6,9 @@ import { createMetadata } from '@/lib/config/metadata';
 import { query } from '@/lib/apollo/apolloClient';
 import { GetHeroMetaDocument, type GetHeroMetaQuery } from '@/lib/graphql/__generated__/hooks';
 
+export const dynamic = 'auto';
+export const revalidate = 60;
+
 export async function generateMetadata(): Promise<Metadata> {
   const { data } = await query<GetHeroMetaQuery>({
     query: GetHeroMetaDocument,

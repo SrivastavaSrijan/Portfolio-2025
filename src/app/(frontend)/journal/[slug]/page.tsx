@@ -9,6 +9,9 @@ import { createMetadata } from '@/lib/config/metadata';
 import type { GetServerSideProps, Metadata } from 'next';
 import { CaseStudy, NotFound } from '@/components/fragments';
 
+export const dynamic = 'auto';
+export const revalidate = 60;
+
 interface CaseStudyBySlugProps extends GetServerSideProps {
   params: Promise<{
     slug: string;
