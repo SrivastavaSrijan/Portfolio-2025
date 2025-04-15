@@ -8,6 +8,7 @@ import { GetHeroMetaDocument, type GetHeroMetaQuery } from '@/lib/graphql/__gene
 
 export const dynamic = 'auto';
 export const revalidate = 60;
+export const fetchCache = 'force-no-store';
 
 export async function generateMetadata(): Promise<Metadata> {
   const { data } = await query<GetHeroMetaQuery>({

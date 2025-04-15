@@ -2,7 +2,7 @@ import './tailwind.css';
 import { ApolloWrapper, ProgressProviderClient } from '@/components/context';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Toaster } from '@/components/ui';
-import { Navbar } from '@/components/fragments';
+import { ErrorBoundary, Navbar } from '@/components/fragments';
 import { Footer } from '@/components/sections';
 import { createMetadata, defaultMetadata } from '@/lib/config/metadata';
 
@@ -15,7 +15,18 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
         <ProgressProviderClient>
           <ApolloWrapper>
             <Navbar />
-            <main>{children}</main>
+            <main>
+              <ErrorBoundary
+                fallback={
+                  <div className="min-h-screen p-8">
+                    <h1 className="font-bold text-3xl">Loading Content</h1>
+                    <p>Please wait while we fetch the latest data...</p>
+                  </div>
+                }
+              >
+                {children}
+              </ErrorBoundary>
+            </main>
             <Footer />
             <SpeedInsights />
             <Toaster position="top-right" />

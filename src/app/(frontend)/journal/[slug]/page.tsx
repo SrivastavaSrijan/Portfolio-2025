@@ -11,6 +11,7 @@ import { CaseStudy, NotFound } from '@/components/fragments';
 
 export const dynamic = 'auto';
 export const revalidate = 60;
+export const fetchCache = 'force-no-store';
 
 interface CaseStudyBySlugProps extends GetServerSideProps {
   params: Promise<{

@@ -9,6 +9,7 @@ import type { Metadata } from 'next';
 
 export const dynamic = 'auto';
 export const revalidate = 60;
+export const fetchCache = 'force-no-store';
 
 export async function generateMetadata(): Promise<Metadata> {
   const { data } = await query<GetJournalMetaQuery>({
