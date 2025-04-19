@@ -5,9 +5,97 @@ import type {
   SerializedHorizontalRuleNode,
   SerializedTextNode,
 } from '@payloadcms/richtext-lexical';
+import type { SerializedLexicalNode } from '@payloadcms/richtext-lexical/lexical';
+import type { ReactNode } from 'react';
+
+// Helper function to handle text node formatting that can be reused
+export const formatTextNode = (
+  textNode: SerializedTextNode & { format?: number },
+  index: number
+) => {
+  const format = textNode.format || 0;
+
+  switch (format) {
+    // Inline code (format 16)
+    case 16:
+      return (
+        <code
+          key={index}
+          className="whitespace-nowrap bg-black-700 px-1.5 py-0.5 font-mono text-orange-300 text-xs"
+        >
+          {textNode.text}
+        </code>
+      );
+
+    // Bold (format 2)
+    case 2:
+      return <strong key={index}>{textNode.text}</strong>;
+
+    // Italic (format 1)
+    case 1:
+      return <em key={index}>{textNode.text}</em>;
+
+    // Bold and italic (format 3)
+    case 3:
+      return (
+        <strong key={index}>
+          <em>{textNode.text}</em>
+        </strong>
+      );
+
+    // Underline (format 4)
+    case 4:
+      return <u key={index}>{textNode.text}</u>;
+
+    // Strikethrough (format 8)
+    case 8:
+      return <s key={index}>{textNode.text}</s>;
+
+    // Subscript (format 32)
+    case 32:
+      return <sub key={index}>{textNode.text}</sub>;
+
+    // Superscript (format 64)
+    case 64:
+      return <sup key={index}>{textNode.text}</sup>;
+
+    // Default - regular text
+    default:
+      return <span key={index}>{textNode.text}</span>;
+  }
+};
+
+// Helper to render children nodes with appropriate formatting
+export const renderFormattedChildren = (
+  children: SerializedLexicalNode[],
+  nodesToJSX: (args: { nodes: SerializedLexicalNode[] }) => ReactNode
+) => {
+  return children.map((child, index) => {
+    // Special handling for code blocks
+    if ('type' in child && child.type === 'code') {
+      return (
+        <code
+          // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+          key={index}
+          className="whitespace-nowrap bg-black-700 px-1.5 py-0.5 font-mono text-orange-300 text-xs"
+        >
+          {nodesToJSX({ nodes: (child as SerializedParagraphNode).children })}
+        </code>
+      );
+    }
+
+    // Handle text nodes with different formats
+    if ('text' in child && 'format' in child) {
+      return formatTextNode(child as SerializedTextNode & { format: number }, index);
+    }
+
+    // Use default rendering for other node types
+    return nodesToJSX({ nodes: [child] });
+  });
+};
 
 export const ParagraphConverter: JSXConverters<
-  SerializedParagraphNode | SerializedQuoteNode | SerializedHorizontalRuleNode
+  SerializedParagraphNode | SerializedQuoteNode | SerializedHorizontalRuleNode | SerializedTextNode
 > = {
   code: ({ node, nodesToJSX }) => {
     // This will apply to standalone code blocks
@@ -41,91 +129,21 @@ export const ParagraphConverter: JSXConverters<
       return null;
     }
 
-    // Custom rendering for child nodes to handle text formatting
-    const renderChildren = () => {
-      return node.children.map((child, index) => {
-        // Special handling for code blocks within paragraphs
-        if ('type' in child && child.type === 'code') {
-          return (
-            <code
-              // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-              key={index}
-              className="whitespace-nowrap bg-black-700 px-1.5 py-0.5 font-mono text-orange-300 text-xs"
-            >
-              {nodesToJSX({ nodes: (child as SerializedParagraphNode).children })}
-            </code>
-          );
-        }
+    // Use the shared helper function for rendering formatted text
+    const formattedChildren = renderFormattedChildren(node.children, nodesToJSX);
 
-        // Handle text nodes with different formats based on the format property
-        if ('text' in child && 'format' in child) {
-          const textNode = child as SerializedTextNode & { format: number };
-          const format = textNode.format;
+    return <p className="my-4 leading-relaxed">{formattedChildren}</p>;
+  },
 
-          switch (format) {
-            // Inline code (format 16)
-            case 16:
-              return (
-                <code
-                  // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-                  key={index}
-                  className="whitespace-nowrap bg-black-700 px-1.5 py-0.5 font-mono text-orange-300 text-xs"
-                >
-                  {textNode.text}
-                </code>
-              );
-
-            // Bold (format 2)
-            case 2:
-              // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-              return <strong key={index}>{textNode.text}</strong>;
-
-            // Italic (format 1)
-            case 1:
-              // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-              return <em key={index}>{textNode.text}</em>;
-
-            // Bold and italic (format 3)
-            case 3:
-              return (
-                // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-                <strong key={index}>
-                  <em>{textNode.text}</em>
-                </strong>
-              );
-
-            // Underline (format 4)
-            case 4:
-              // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-              return <u key={index}>{textNode.text}</u>;
-
-            // Strikethrough (format 8)
-            case 8:
-              // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-              return <s key={index}>{textNode.text}</s>;
-
-            // Subscript (format 32)
-            case 32:
-              // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-              return <sub key={index}>{textNode.text}</sub>;
-
-            // Superscript (format 64)
-            case 64:
-              // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-              return <sup key={index}>{textNode.text}</sup>;
-
-            // Default - regular text
-            default:
-              // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-              return <span key={index}>{textNode.text}</span>;
-          }
-        }
-
-        // Use default rendering for other node types
-        return nodesToJSX({ nodes: [child] });
-      });
-    };
-
-    return <p className="my-4 leading-relaxed">{renderChildren()}</p>;
+  // Add a text node handler (this won't typically be used directly in the paragraph converter,
+  // but we export it for use in the list converter)
+  text: ({ node }) => {
+    // This will be used to handle standalone text nodes
+    if ('text' in node && node.text) {
+      if ('format' in node) {
+        return formatTextNode(node as SerializedTextNode & { format: number }, 0);
+      }
+    }
+    return <span>{node.text}</span>;
   },
 };
