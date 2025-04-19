@@ -1,8 +1,8 @@
 import type React from 'react';
 import { RichText as RichTextConverter } from '@payloadcms/richtext-lexical/react';
 import type { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical';
-import { jsxConverter } from '@/lib/payload/coverters';
 import { cn } from '@/lib/utils'; // Assuming you have this utility from shadcn/ui
+import { JSXConverter } from '@/lib/payload/converters';
 
 type Props = {
   data: SerializedEditorState;
@@ -21,7 +21,7 @@ export function RichText({ data, className, containerClassName, ...rest }: Props
         {...rest}
         data={data}
         className={cn('prose dark:prose-invert max-w-none', className)}
-        converters={jsxConverter}
+        converters={JSXConverter}
       />
     </div>
   );

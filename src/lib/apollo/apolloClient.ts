@@ -13,7 +13,9 @@ export const { getClient, query, PreloadQuery } = registerApolloClient(() => {
     cache: new InMemoryCache(),
     link: new HttpLink({
       uri: API_URL,
-      fetchOptions: {},
+      fetchOptions: {
+        cache: 'force-cache', // Default caching strategy
+      },
     }),
   });
 });

@@ -1,15 +1,23 @@
 import type { JSXConverters } from '@payloadcms/richtext-lexical/react';
 import type { SerializedListItemNode, SerializedListNode } from '@payloadcms/richtext-lexical';
 
-export const listConverter: JSXConverters<SerializedListNode | SerializedListItemNode> = {
+export const ListConverter: JSXConverters<SerializedListNode | SerializedListItemNode> = {
   list: ({ node, nodesToJSX }) => {
     const ListTag = node.listType === 'number' ? 'ol' : 'ul';
-    const className =
-      node.listType === 'number'
-        ? 'list-decimal mt-2 mb-6 pl-4 space-y-1 marker:text-brand dark:marker:text-accent'
-        : node.listType === 'check'
-          ? 'mb-6 pl-3 space-y-3 '
-          : 'list-disc mb-6 mt-2 pl-4 space-y-1   marker:text-brand dark:marker:text-accent';
+    let className = '';
+    switch (node.listType) {
+      case 'number':
+        className =
+          'list-decimal mt-2 mb-6 pl-4 space-y-1 marker:text-brand dark:marker:text-accent';
+        break;
+      case 'check':
+        className = 'mb-6 pl-3 space-y-3';
+        break;
+      default:
+        className =
+          'list-disc mb-6 mt-2 pl-4 md:space-y-1 space-y-0.5 marker:text-brand dark:marker:text-accent';
+        break;
+    }
 
     return <ListTag className={className}>{nodesToJSX({ nodes: node.children })}</ListTag>;
   },

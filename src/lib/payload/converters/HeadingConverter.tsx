@@ -1,8 +1,8 @@
 import type { JSXConverters } from '@payloadcms/richtext-lexical/react';
 import type { SerializedHeadingNode } from '@payloadcms/richtext-lexical';
-import { cn } from '../utils';
+import { cn } from '../../utils';
 
-export const headingConverter: JSXConverters<SerializedHeadingNode> = {
+export const HeadingConverter: JSXConverters<SerializedHeadingNode> = {
   heading: ({ node, nodesToJSX }) => {
     // Extract text content for ID generation
     const textContent = nodesToJSX({ nodes: node.children }).join('');
