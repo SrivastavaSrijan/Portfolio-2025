@@ -1,29 +1,71 @@
 import type { JSXConverters } from '@payloadcms/richtext-lexical/react';
 import type { SerializedListItemNode, SerializedListNode } from '@payloadcms/richtext-lexical';
+import type { OlHTMLAttributes } from 'react';
 
 export const ListConverter: JSXConverters<SerializedListNode | SerializedListItemNode> = {
-  list: ({ node, nodesToJSX }) => {
+  list: ({ node, nodesToJSX, parent }) => {
     const ListTag = node.listType === 'number' ? 'ol' : 'ul';
-    let className = '';
-    switch (node.listType) {
-      case 'number':
-        className =
-          'list-decimal mt-2 mb-6 pl-4 space-y-1 marker:text-brand dark:marker:text-accent';
+
+    // Calculate nesting level by counting parent lists
+    let nestingLevel = 0;
+    let currentParent = parent;
+    while (currentParent) {
+      if ('type' in currentParent && currentParent.type === 'list') {
+        nestingLevel++;
+      }
+      if (currentParent.parent) {
+        currentParent = currentParent.parent;
+      } else {
         break;
-      case 'check':
-        className = 'mb-6 pl-3 space-y-3';
-        break;
-      default:
-        className =
-          'list-disc mb-6 mt-2 pl-4 md:space-y-1 space-y-0.5 marker:text-brand dark:marker:text-accent';
-        break;
+      }
     }
 
-    return <ListTag className={className}>{nodesToJSX({ nodes: node.children })}</ListTag>;
+    // Define marker styles for each level
+    const orderedStyles: { type: OlHTMLAttributes<string>['type']; style: string }[] = [
+      { type: '1', style: 'list-decimal' }, // Level 1: 1, 2, 3...
+      { type: 'a', style: 'list-[lower-alpha]' }, // Level 2: a, b, c...
+      { type: 'i', style: 'list-[lower-roman]' }, // Level 3: i, ii, iii...
+    ];
+
+    const unorderedStyles = [
+      'list-disc', // Level 1: filled circles
+      'list-[circle]', // Level 2: hollow circles
+      'list-[square]', // Level 3: squares
+    ];
+
+    // Use modulo to cycle through styles for deeper nesting
+    let markerStyle = '';
+    let listType: OlHTMLAttributes<string>['type'];
+
+    if (node.listType === 'number') {
+      const styleIndex = nestingLevel % orderedStyles.length;
+      listType = orderedStyles[styleIndex].type;
+      markerStyle = orderedStyles[styleIndex].style;
+    } else {
+      markerStyle = unorderedStyles[nestingLevel % unorderedStyles.length];
+    }
+
+    // Adjust spacing based on nesting
+    const isNested = nestingLevel > 0;
+    const className = isNested
+      ? `${markerStyle} px-4 md:px-8 mt-1 mb-1 space-y-0.5 marker:text-brand dark:marker:text-accent`
+      : `${markerStyle} px-4 md:px-8 mt-2 mb-6 space-y-1 marker:text-brand dark:marker:text-accent`;
+
+    return (
+      <ListTag type={listType} className={className}>
+        {nodesToJSX({ nodes: node.children })}
+      </ListTag>
+    );
   },
+
   listitem: ({ node, nodesToJSX }) => {
-    // Instead of using parent, we'll check the checkable property
     const isCheckList = node.checked !== undefined;
+
+    // Check if this list item contains a nested list
+    const hasNestedList = node.children.some((child) => 'type' in child && child.type === 'list');
+
+    // For list items that contain a nested list, remove the marker
+    const markerClass = hasNestedList ? 'list-none' : '';
 
     if (isCheckList) {
       return (
@@ -33,11 +75,13 @@ export const ListConverter: JSXConverters<SerializedListNode | SerializedListIte
           >
             {node.checked && <span className="text-white">✓</span>}
           </span>
-          <span className="">{nodesToJSX({ nodes: node.children })}</span>
+          <span className="w-full">{nodesToJSX({ nodes: node.children })}</span>
         </li>
       );
     }
 
-    return <li className="pl-0.5 md:pl-1">{nodesToJSX({ nodes: node.children })}</li>;
+    return (
+      <li className={`pl-0.5 md:pl-1 ${markerClass}`}>{nodesToJSX({ nodes: node.children })}</li>
+    );
   },
 };
