@@ -86,6 +86,11 @@ const buttonVariants = cva(
         size: 'lg',
         class: 'rounded-full',
       },
+      {
+        variant: 'link',
+        color: 'accent',
+        class: 'text-accent hover:bg-accent/10 dark:text-accent',
+      },
     ],
   }
 );

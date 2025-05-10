@@ -10232,7 +10232,7 @@ export type GetFeaturedCaseStudiesQuery = { readonly __typename?: 'Query', reado
 export type GetFeaturedExperiencesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetFeaturedExperiencesQuery = { readonly __typename?: 'Query', readonly FeaturedExperience?: { readonly __typename?: 'FeaturedExperience', readonly description?: string | null, readonly title: string, readonly subtitle: string, readonly experiences: ReadonlyArray<{ readonly __typename?: 'Experience', readonly id: number, readonly title: string, readonly slug?: string | null, readonly summary: any, readonly endDate?: any | null, readonly startDate?: any | null, readonly role?: string | null, readonly thumbnailImage?: { readonly __typename?: 'Media', readonly url?: string | null } | null }> } | null };
+export type GetFeaturedExperiencesQuery = { readonly __typename?: 'Query', readonly FeaturedExperience?: { readonly __typename?: 'FeaturedExperience', readonly description?: string | null, readonly title: string, readonly subtitle: string, readonly experiences: ReadonlyArray<{ readonly __typename?: 'Experience', readonly id: number, readonly title: string, readonly slug?: string | null, readonly endDate?: any | null, readonly startDate?: any | null, readonly role?: string | null, readonly thumbnailImage?: { readonly __typename?: 'Media', readonly url?: string | null } | null }> } | null };
 
 export type GetFooterQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -10589,7 +10589,6 @@ export const GetFeaturedExperiencesDocument = gql`
       id
       title
       slug
-      summary
       endDate
       startDate
       thumbnailImage {
