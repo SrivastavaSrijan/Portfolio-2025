@@ -50,7 +50,7 @@ export const FeaturedExperiences = () => {
         </motion.div>
 
         <motion.div
-          className="flex flex-2/3 flex-col gap-7 pt-3 md:gap-7 md:pt-0"
+          className="flex flex-2/3 flex-col gap-2 pt-3 md:gap-7 md:pt-0"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -78,10 +78,10 @@ export const FeaturedExperiences = () => {
             return (
               <motion.div
                 key={id}
-                className="flex w-full flex-col gap-2 rounded-lg p-3 transition-colors hover:bg-white/5 md:flex-row md:items-center md:gap-10"
+                className="flex w-full flex-col gap-1 rounded-lg p-3 transition-colors hover:bg-white/5 md:flex-row md:items-center md:gap-10"
                 variants={itemVariants}
               >
-                <div className="group relative flex h-[60px] w-[200px] items-start overflow-hidden rounded-md bg-white/10 transition-transform hover:scale-[1.03]">
+                <div className="group relative flex h-[60px] w-[156px] items-start overflow-hidden rounded-md bg-white/10 transition-transform hover:scale-[1.03] md:w-[200px]">
                   <Image
                     alt={experienceTitle}
                     fill
@@ -91,7 +91,7 @@ export const FeaturedExperiences = () => {
                 </div>
                 <div className="flex flex-row items-center justify-center gap-5">
                   <div className="flex flex-1 flex-col gap-1">
-                    <h3 className="font-medium text-accent text-lg md:text-xl">{role}</h3>
+                    <h3 className="font-medium text-accent text-base md:text-xl">{role}</h3>
                     <p className="text-black/70 text-xs md:text-sm">{getDateRange()}</p>
                   </div>
                   <Link
