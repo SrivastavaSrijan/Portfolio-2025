@@ -2,9 +2,34 @@
 import { useGetFeaturedExperiencesSuspenseQuery } from '@/lib/graphql/__generated__/hooks';
 import Image from 'next/image';
 import dayjs from 'dayjs';
-import { Routes } from '@/lib/config/config/routes';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { Button } from '../ui';
+import { ArrowUpRight } from 'lucide-react';
+import Link from 'next/link';
+import { Routes } from '@/lib/config/config/routes';
+
+// Simplified animation variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 15 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.4,
+    },
+  },
+};
 
 export const FeaturedExperiences = () => {
   const { data } = useGetFeaturedExperiencesSuspenseQuery();
@@ -12,14 +37,24 @@ export const FeaturedExperiences = () => {
 
   return (
     <div className="bg-white p-4 md:p-20">
-      <div className="flex flex-col gap-5 rounded-r-2xl rounded-l-2xl border-1 border-black-500 bg-blue-black-50 px-6 py-12 md:flex-row md:gap-15 md:px-16 md:py-16">
-        <div className="flex flex-1/3 flex-col gap-1 border-black-500 border-b-1 pr-5 pb-2 md:border-r-1 md:border-b-0 md:pr-10">
-          <h3 className="text-left text-accent text-lg">{title}</h3>
+      <div className="flex flex-col gap-5 rounded-2xl border-1 border-black-500 bg-blue-black-50 px-6 py-12 shadow-sm md:flex-row md:gap-15 md:px-16 md:py-16">
+        <motion.div
+          className="flex flex-1/3 flex-col gap-2 border-black-500 border-b-1 pr-5 pb-4 md:border-r-1 md:border-b-0 md:pr-10"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <h3 className="text-left font-semibold text-accent text-base">{title}</h3>
           <h2 className="text-left font-semibold text-2xl text-accent md:text-4xl">{subtitle}</h2>
-          <p className="mt-2 text-center text-sm text-white md:mt-3 md:text-base">{description}</p>
-        </div>
+          <p className="mt-2 text-left text-sm text-white/90 md:mt-3 md:text-base">{description}</p>
+        </motion.div>
 
-        <div className="flex flex-2/3 flex-col gap-4 md:gap-6">
+        <motion.div
+          className="flex flex-2/3 flex-col gap-7 pt-3 md:gap-7 md:pt-0"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
           {experiences?.map((experience) => {
             const {
               id,
@@ -41,39 +76,37 @@ export const FeaturedExperiences = () => {
             };
 
             return (
-              <div key={id} className="flex w-full flex-row gap-20">
-                <motion.div
-                  className="relative flex h-[64px] w-[256px] items-start overflow-hidden rounded-md"
-                  whileHover={{
-                    transition: { type: 'spring' },
-                    filter: 'brightness(0.8) grayscale(0)',
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1, filter: 'brightness(0.8) grayscale(1)' }}
-                  exit={{ opacity: 0 }}
-                  layoutId={id?.toString()}
-                  layout
-                  transition={{ duration: 0.2 }}
-                >
-                  <Link href={`${Routes.Experiences}/${slug}`}>
-                    <Image
-                      alt={experienceTitle}
-                      fill
-                      className="object-contain"
-                      src={thumbnailImage?.url ?? ''}
-                    />
-                  </Link>
-                </motion.div>
-                <div className="flex flex-1 flex-col gap-1">
-                  <h3 className="font-medium text-accent text-xl">{role}</h3>
-                  <h4 className="text-accent text-lg">{title}</h4>
-                  <p className=" text-black/80 text-sm">{getDateRange()}</p>
+              <motion.div
+                key={id}
+                className="flex w-full flex-col gap-2 rounded-lg p-3 transition-colors hover:bg-white/5 md:flex-row md:items-center md:gap-10"
+                variants={itemVariants}
+              >
+                <div className="group relative flex h-[60px] w-[200px] items-start overflow-hidden rounded-md bg-white/10 transition-transform hover:scale-[1.03]">
+                  <Image
+                    alt={experienceTitle}
+                    fill
+                    className="object-contain brightness-90 grayscale-[80%] transition-all duration-300 group-hover:brightness-100 group-hover:grayscale-0"
+                    src={thumbnailImage?.url ?? ''}
+                  />
                 </div>
-              </div>
+                <div className="flex flex-row items-center justify-center gap-5">
+                  <div className="flex flex-1 flex-col gap-1">
+                    <h3 className="font-medium text-accent text-lg md:text-xl">{role}</h3>
+                    <p className="text-black/70 text-xs md:text-sm">{getDateRange()}</p>
+                  </div>
+                  <Link
+                    href={`${Routes.Experiences}/${slug}`}
+                    className="transition-transform hover:scale-105 active:scale-95"
+                  >
+                    <Button variant="link" color="accent" size="icon">
+                      <ArrowUpRight />
+                    </Button>
+                  </Link>
+                </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </div>
   );
