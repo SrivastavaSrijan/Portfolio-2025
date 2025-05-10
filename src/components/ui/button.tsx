@@ -81,6 +81,11 @@ const buttonVariants = cva(
         color: 'destructive',
         class: 'text-destructive hover:bg-destructive/10',
       },
+      {
+        variant: 'outlined',
+        size: 'lg',
+        class: 'rounded-full',
+      },
     ],
   }
 );

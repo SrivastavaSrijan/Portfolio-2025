@@ -2,6 +2,10 @@
 
 import { useGetFeaturedCaseStudiesSuspenseQuery } from '@/lib/graphql/__generated__/hooks';
 import { CaseStudyCard } from '../fragments';
+import { Button } from '../ui';
+import { ArrowUpRightIcon } from 'lucide-react';
+import { Routes } from '@/lib/config/config/routes';
+import Link from 'next/link';
 
 export const FeaturedCaseStudies = () => {
   const { data } = useGetFeaturedCaseStudiesSuspenseQuery();
@@ -11,7 +15,7 @@ export const FeaturedCaseStudies = () => {
       <div className="flex flex-col gap-1 md:gap-2">
         <h3 className="text-center text-accent text-lg">{subtitle}</h3>
         <h2 className="text-center font-semibold text-4xl text-accent md:text-6xl">{title}</h2>
-        <p className="mt-2 text-center text-blue-black text-sm md:mt-3 md:text-base">
+        <p className="mt-2 text-center text-blue-black-500 text-sm md:mt-3 md:text-base">
           {description}
         </p>
       </div>
@@ -22,6 +26,12 @@ export const FeaturedCaseStudies = () => {
           ))}
         </div>
       )}
+      <Link href={Routes.CaseStudies} className="contents">
+        <Button variant="outlined" color="accent" className="mx-auto w-fit">
+          All case studies
+          <ArrowUpRightIcon />
+        </Button>
+      </Link>
     </div>
   );
 };

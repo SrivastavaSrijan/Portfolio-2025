@@ -48,17 +48,13 @@ export function ContactForm({ children }: ContactFormProps) {
 
   return (
     <Dialog>
-      <DialogTrigger asChild className="p-0">
-        {children}
-      </DialogTrigger>
+      <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent>
         <DialogHeader>
           <DialogTitle>
-            <p className="font-bold text-3xl">get in touch</p>
+            <p className="font-bold text-3xl">Let's Talk!</p>
           </DialogTitle>
-          <DialogDescription>
-            if you'd like speak, please hmu and i'll get back to you as soon as possible.
-          </DialogDescription>
+          <DialogDescription>If you'd like speak, please hmu!</DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">

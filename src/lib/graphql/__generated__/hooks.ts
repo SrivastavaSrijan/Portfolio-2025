@@ -28,6 +28,7 @@ export type Access = {
   readonly contact_forms?: Maybe<Contact_FormsAccess>;
   readonly experiences?: Maybe<ExperiencesAccess>;
   readonly featured_case_studies?: Maybe<Featured_Case_StudiesAccess>;
+  readonly featured_experiences?: Maybe<Featured_ExperiencesAccess>;
   readonly footer?: Maybe<FooterAccess>;
   readonly hero?: Maybe<HeroAccess>;
   readonly journal?: Maybe<JournalAccess>;
@@ -3507,6 +3508,396 @@ export type FeaturedCaseStudy = {
   readonly updatedAt?: Maybe<Scalars['DateTime']['output']>;
 };
 
+export type FeaturedExperience = {
+  readonly __typename?: 'FeaturedExperience';
+  readonly createdAt?: Maybe<Scalars['DateTime']['output']>;
+  readonly description?: Maybe<Scalars['String']['output']>;
+  readonly experiences: ReadonlyArray<Experience>;
+  readonly subtitle: Scalars['String']['output'];
+  readonly title: Scalars['String']['output'];
+  readonly updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type FeaturedExperiencesDocAccessFields = {
+  readonly __typename?: 'FeaturedExperiencesDocAccessFields';
+  readonly createdAt?: Maybe<FeaturedExperiencesDocAccessFields_CreatedAt>;
+  readonly description?: Maybe<FeaturedExperiencesDocAccessFields_Description>;
+  readonly experiences?: Maybe<FeaturedExperiencesDocAccessFields_Experiences>;
+  readonly subtitle?: Maybe<FeaturedExperiencesDocAccessFields_Subtitle>;
+  readonly title?: Maybe<FeaturedExperiencesDocAccessFields_Title>;
+  readonly updatedAt?: Maybe<FeaturedExperiencesDocAccessFields_UpdatedAt>;
+};
+
+export type FeaturedExperiencesDocAccessFields_CreatedAt = {
+  readonly __typename?: 'FeaturedExperiencesDocAccessFields_createdAt';
+  readonly create?: Maybe<FeaturedExperiencesDocAccessFields_CreatedAt_Create>;
+  readonly delete?: Maybe<FeaturedExperiencesDocAccessFields_CreatedAt_Delete>;
+  readonly read?: Maybe<FeaturedExperiencesDocAccessFields_CreatedAt_Read>;
+  readonly update?: Maybe<FeaturedExperiencesDocAccessFields_CreatedAt_Update>;
+};
+
+export type FeaturedExperiencesDocAccessFields_CreatedAt_Create = {
+  readonly __typename?: 'FeaturedExperiencesDocAccessFields_createdAt_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesDocAccessFields_CreatedAt_Delete = {
+  readonly __typename?: 'FeaturedExperiencesDocAccessFields_createdAt_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesDocAccessFields_CreatedAt_Read = {
+  readonly __typename?: 'FeaturedExperiencesDocAccessFields_createdAt_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesDocAccessFields_CreatedAt_Update = {
+  readonly __typename?: 'FeaturedExperiencesDocAccessFields_createdAt_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesDocAccessFields_Description = {
+  readonly __typename?: 'FeaturedExperiencesDocAccessFields_description';
+  readonly create?: Maybe<FeaturedExperiencesDocAccessFields_Description_Create>;
+  readonly delete?: Maybe<FeaturedExperiencesDocAccessFields_Description_Delete>;
+  readonly read?: Maybe<FeaturedExperiencesDocAccessFields_Description_Read>;
+  readonly update?: Maybe<FeaturedExperiencesDocAccessFields_Description_Update>;
+};
+
+export type FeaturedExperiencesDocAccessFields_Description_Create = {
+  readonly __typename?: 'FeaturedExperiencesDocAccessFields_description_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesDocAccessFields_Description_Delete = {
+  readonly __typename?: 'FeaturedExperiencesDocAccessFields_description_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesDocAccessFields_Description_Read = {
+  readonly __typename?: 'FeaturedExperiencesDocAccessFields_description_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesDocAccessFields_Description_Update = {
+  readonly __typename?: 'FeaturedExperiencesDocAccessFields_description_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesDocAccessFields_Experiences = {
+  readonly __typename?: 'FeaturedExperiencesDocAccessFields_experiences';
+  readonly create?: Maybe<FeaturedExperiencesDocAccessFields_Experiences_Create>;
+  readonly delete?: Maybe<FeaturedExperiencesDocAccessFields_Experiences_Delete>;
+  readonly read?: Maybe<FeaturedExperiencesDocAccessFields_Experiences_Read>;
+  readonly update?: Maybe<FeaturedExperiencesDocAccessFields_Experiences_Update>;
+};
+
+export type FeaturedExperiencesDocAccessFields_Experiences_Create = {
+  readonly __typename?: 'FeaturedExperiencesDocAccessFields_experiences_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesDocAccessFields_Experiences_Delete = {
+  readonly __typename?: 'FeaturedExperiencesDocAccessFields_experiences_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesDocAccessFields_Experiences_Read = {
+  readonly __typename?: 'FeaturedExperiencesDocAccessFields_experiences_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesDocAccessFields_Experiences_Update = {
+  readonly __typename?: 'FeaturedExperiencesDocAccessFields_experiences_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesDocAccessFields_Subtitle = {
+  readonly __typename?: 'FeaturedExperiencesDocAccessFields_subtitle';
+  readonly create?: Maybe<FeaturedExperiencesDocAccessFields_Subtitle_Create>;
+  readonly delete?: Maybe<FeaturedExperiencesDocAccessFields_Subtitle_Delete>;
+  readonly read?: Maybe<FeaturedExperiencesDocAccessFields_Subtitle_Read>;
+  readonly update?: Maybe<FeaturedExperiencesDocAccessFields_Subtitle_Update>;
+};
+
+export type FeaturedExperiencesDocAccessFields_Subtitle_Create = {
+  readonly __typename?: 'FeaturedExperiencesDocAccessFields_subtitle_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesDocAccessFields_Subtitle_Delete = {
+  readonly __typename?: 'FeaturedExperiencesDocAccessFields_subtitle_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesDocAccessFields_Subtitle_Read = {
+  readonly __typename?: 'FeaturedExperiencesDocAccessFields_subtitle_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesDocAccessFields_Subtitle_Update = {
+  readonly __typename?: 'FeaturedExperiencesDocAccessFields_subtitle_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesDocAccessFields_Title = {
+  readonly __typename?: 'FeaturedExperiencesDocAccessFields_title';
+  readonly create?: Maybe<FeaturedExperiencesDocAccessFields_Title_Create>;
+  readonly delete?: Maybe<FeaturedExperiencesDocAccessFields_Title_Delete>;
+  readonly read?: Maybe<FeaturedExperiencesDocAccessFields_Title_Read>;
+  readonly update?: Maybe<FeaturedExperiencesDocAccessFields_Title_Update>;
+};
+
+export type FeaturedExperiencesDocAccessFields_Title_Create = {
+  readonly __typename?: 'FeaturedExperiencesDocAccessFields_title_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesDocAccessFields_Title_Delete = {
+  readonly __typename?: 'FeaturedExperiencesDocAccessFields_title_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesDocAccessFields_Title_Read = {
+  readonly __typename?: 'FeaturedExperiencesDocAccessFields_title_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesDocAccessFields_Title_Update = {
+  readonly __typename?: 'FeaturedExperiencesDocAccessFields_title_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesDocAccessFields_UpdatedAt = {
+  readonly __typename?: 'FeaturedExperiencesDocAccessFields_updatedAt';
+  readonly create?: Maybe<FeaturedExperiencesDocAccessFields_UpdatedAt_Create>;
+  readonly delete?: Maybe<FeaturedExperiencesDocAccessFields_UpdatedAt_Delete>;
+  readonly read?: Maybe<FeaturedExperiencesDocAccessFields_UpdatedAt_Read>;
+  readonly update?: Maybe<FeaturedExperiencesDocAccessFields_UpdatedAt_Update>;
+};
+
+export type FeaturedExperiencesDocAccessFields_UpdatedAt_Create = {
+  readonly __typename?: 'FeaturedExperiencesDocAccessFields_updatedAt_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesDocAccessFields_UpdatedAt_Delete = {
+  readonly __typename?: 'FeaturedExperiencesDocAccessFields_updatedAt_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesDocAccessFields_UpdatedAt_Read = {
+  readonly __typename?: 'FeaturedExperiencesDocAccessFields_updatedAt_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesDocAccessFields_UpdatedAt_Update = {
+  readonly __typename?: 'FeaturedExperiencesDocAccessFields_updatedAt_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesFields = {
+  readonly __typename?: 'FeaturedExperiencesFields';
+  readonly createdAt?: Maybe<FeaturedExperiencesFields_CreatedAt>;
+  readonly description?: Maybe<FeaturedExperiencesFields_Description>;
+  readonly experiences?: Maybe<FeaturedExperiencesFields_Experiences>;
+  readonly subtitle?: Maybe<FeaturedExperiencesFields_Subtitle>;
+  readonly title?: Maybe<FeaturedExperiencesFields_Title>;
+  readonly updatedAt?: Maybe<FeaturedExperiencesFields_UpdatedAt>;
+};
+
+export type FeaturedExperiencesFields_CreatedAt = {
+  readonly __typename?: 'FeaturedExperiencesFields_createdAt';
+  readonly create?: Maybe<FeaturedExperiencesFields_CreatedAt_Create>;
+  readonly delete?: Maybe<FeaturedExperiencesFields_CreatedAt_Delete>;
+  readonly read?: Maybe<FeaturedExperiencesFields_CreatedAt_Read>;
+  readonly update?: Maybe<FeaturedExperiencesFields_CreatedAt_Update>;
+};
+
+export type FeaturedExperiencesFields_CreatedAt_Create = {
+  readonly __typename?: 'FeaturedExperiencesFields_createdAt_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesFields_CreatedAt_Delete = {
+  readonly __typename?: 'FeaturedExperiencesFields_createdAt_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesFields_CreatedAt_Read = {
+  readonly __typename?: 'FeaturedExperiencesFields_createdAt_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesFields_CreatedAt_Update = {
+  readonly __typename?: 'FeaturedExperiencesFields_createdAt_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesFields_Description = {
+  readonly __typename?: 'FeaturedExperiencesFields_description';
+  readonly create?: Maybe<FeaturedExperiencesFields_Description_Create>;
+  readonly delete?: Maybe<FeaturedExperiencesFields_Description_Delete>;
+  readonly read?: Maybe<FeaturedExperiencesFields_Description_Read>;
+  readonly update?: Maybe<FeaturedExperiencesFields_Description_Update>;
+};
+
+export type FeaturedExperiencesFields_Description_Create = {
+  readonly __typename?: 'FeaturedExperiencesFields_description_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesFields_Description_Delete = {
+  readonly __typename?: 'FeaturedExperiencesFields_description_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesFields_Description_Read = {
+  readonly __typename?: 'FeaturedExperiencesFields_description_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesFields_Description_Update = {
+  readonly __typename?: 'FeaturedExperiencesFields_description_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesFields_Experiences = {
+  readonly __typename?: 'FeaturedExperiencesFields_experiences';
+  readonly create?: Maybe<FeaturedExperiencesFields_Experiences_Create>;
+  readonly delete?: Maybe<FeaturedExperiencesFields_Experiences_Delete>;
+  readonly read?: Maybe<FeaturedExperiencesFields_Experiences_Read>;
+  readonly update?: Maybe<FeaturedExperiencesFields_Experiences_Update>;
+};
+
+export type FeaturedExperiencesFields_Experiences_Create = {
+  readonly __typename?: 'FeaturedExperiencesFields_experiences_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesFields_Experiences_Delete = {
+  readonly __typename?: 'FeaturedExperiencesFields_experiences_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesFields_Experiences_Read = {
+  readonly __typename?: 'FeaturedExperiencesFields_experiences_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesFields_Experiences_Update = {
+  readonly __typename?: 'FeaturedExperiencesFields_experiences_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesFields_Subtitle = {
+  readonly __typename?: 'FeaturedExperiencesFields_subtitle';
+  readonly create?: Maybe<FeaturedExperiencesFields_Subtitle_Create>;
+  readonly delete?: Maybe<FeaturedExperiencesFields_Subtitle_Delete>;
+  readonly read?: Maybe<FeaturedExperiencesFields_Subtitle_Read>;
+  readonly update?: Maybe<FeaturedExperiencesFields_Subtitle_Update>;
+};
+
+export type FeaturedExperiencesFields_Subtitle_Create = {
+  readonly __typename?: 'FeaturedExperiencesFields_subtitle_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesFields_Subtitle_Delete = {
+  readonly __typename?: 'FeaturedExperiencesFields_subtitle_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesFields_Subtitle_Read = {
+  readonly __typename?: 'FeaturedExperiencesFields_subtitle_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesFields_Subtitle_Update = {
+  readonly __typename?: 'FeaturedExperiencesFields_subtitle_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesFields_Title = {
+  readonly __typename?: 'FeaturedExperiencesFields_title';
+  readonly create?: Maybe<FeaturedExperiencesFields_Title_Create>;
+  readonly delete?: Maybe<FeaturedExperiencesFields_Title_Delete>;
+  readonly read?: Maybe<FeaturedExperiencesFields_Title_Read>;
+  readonly update?: Maybe<FeaturedExperiencesFields_Title_Update>;
+};
+
+export type FeaturedExperiencesFields_Title_Create = {
+  readonly __typename?: 'FeaturedExperiencesFields_title_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesFields_Title_Delete = {
+  readonly __typename?: 'FeaturedExperiencesFields_title_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesFields_Title_Read = {
+  readonly __typename?: 'FeaturedExperiencesFields_title_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesFields_Title_Update = {
+  readonly __typename?: 'FeaturedExperiencesFields_title_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesFields_UpdatedAt = {
+  readonly __typename?: 'FeaturedExperiencesFields_updatedAt';
+  readonly create?: Maybe<FeaturedExperiencesFields_UpdatedAt_Create>;
+  readonly delete?: Maybe<FeaturedExperiencesFields_UpdatedAt_Delete>;
+  readonly read?: Maybe<FeaturedExperiencesFields_UpdatedAt_Read>;
+  readonly update?: Maybe<FeaturedExperiencesFields_UpdatedAt_Update>;
+};
+
+export type FeaturedExperiencesFields_UpdatedAt_Create = {
+  readonly __typename?: 'FeaturedExperiencesFields_updatedAt_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesFields_UpdatedAt_Delete = {
+  readonly __typename?: 'FeaturedExperiencesFields_updatedAt_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesFields_UpdatedAt_Read = {
+  readonly __typename?: 'FeaturedExperiencesFields_updatedAt_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesFields_UpdatedAt_Update = {
+  readonly __typename?: 'FeaturedExperiencesFields_updatedAt_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type FeaturedExperiencesReadAccess = {
+  readonly __typename?: 'FeaturedExperiencesReadAccess';
+  readonly permission: Scalars['Boolean']['output'];
+  readonly where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type FeaturedExperiencesReadDocAccess = {
+  readonly __typename?: 'FeaturedExperiencesReadDocAccess';
+  readonly permission: Scalars['Boolean']['output'];
+  readonly where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type FeaturedExperiencesUpdateAccess = {
+  readonly __typename?: 'FeaturedExperiencesUpdateAccess';
+  readonly permission: Scalars['Boolean']['output'];
+  readonly where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type FeaturedExperiencesUpdateDocAccess = {
+  readonly __typename?: 'FeaturedExperiencesUpdateDocAccess';
+  readonly permission: Scalars['Boolean']['output'];
+  readonly where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
 export type Footer = {
   readonly __typename?: 'Footer';
   readonly bottomText: Scalars['String']['output'];
@@ -6305,6 +6696,7 @@ export type Mutation = {
   readonly updateContactForm?: Maybe<ContactForm>;
   readonly updateExperience?: Maybe<Experience>;
   readonly updateFeaturedCaseStudy?: Maybe<FeaturedCaseStudy>;
+  readonly updateFeaturedExperience?: Maybe<FeaturedExperience>;
   readonly updateFooter?: Maybe<Footer>;
   readonly updateHero?: Maybe<Hero>;
   readonly updateJournal?: Maybe<Journal>;
@@ -6481,6 +6873,12 @@ export type MutationUpdateExperienceArgs = {
 
 export type MutationUpdateFeaturedCaseStudyArgs = {
   data: MutationFeaturedCaseStudyInput;
+  draft?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type MutationUpdateFeaturedExperienceArgs = {
+  data: MutationFeaturedExperienceInput;
   draft?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
@@ -7598,6 +7996,7 @@ export type Query = {
   readonly Experience?: Maybe<Experience>;
   readonly Experiences?: Maybe<Experiences>;
   readonly FeaturedCaseStudy?: Maybe<FeaturedCaseStudy>;
+  readonly FeaturedExperience?: Maybe<FeaturedExperience>;
   readonly Footer?: Maybe<Footer>;
   readonly Hero?: Maybe<Hero>;
   readonly Journal?: Maybe<Journal>;
@@ -7622,6 +8021,7 @@ export type Query = {
   readonly docAccessContactForm?: Maybe<Contact_FormsDocAccess>;
   readonly docAccessExperience?: Maybe<ExperiencesDocAccess>;
   readonly docAccessFeaturedCaseStudy?: Maybe<Featured_Case_StudiesDocAccess>;
+  readonly docAccessFeaturedExperience?: Maybe<Featured_ExperiencesDocAccess>;
   readonly docAccessFooter?: Maybe<FooterDocAccess>;
   readonly docAccessHero?: Maybe<HeroDocAccess>;
   readonly docAccessJournal?: Maybe<JournalDocAccess>;
@@ -7685,6 +8085,11 @@ export type QueryExperiencesArgs = {
 
 
 export type QueryFeaturedCaseStudyArgs = {
+  draft?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryFeaturedExperienceArgs = {
   draft?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
@@ -9302,6 +9707,20 @@ export type Featured_Case_StudiesDocAccess = {
   readonly update?: Maybe<FeaturedCaseStudiesUpdateDocAccess>;
 };
 
+export type Featured_ExperiencesAccess = {
+  readonly __typename?: 'featured_experiencesAccess';
+  readonly fields?: Maybe<FeaturedExperiencesFields>;
+  readonly read?: Maybe<FeaturedExperiencesReadAccess>;
+  readonly update?: Maybe<FeaturedExperiencesUpdateAccess>;
+};
+
+export type Featured_ExperiencesDocAccess = {
+  readonly __typename?: 'featured_experiencesDocAccess';
+  readonly fields?: Maybe<FeaturedExperiencesDocAccessFields>;
+  readonly read?: Maybe<FeaturedExperiencesReadDocAccess>;
+  readonly update?: Maybe<FeaturedExperiencesUpdateDocAccess>;
+};
+
 export type FooterAccess = {
   readonly __typename?: 'footerAccess';
   readonly fields?: Maybe<FooterFields>;
@@ -9479,6 +9898,15 @@ export type MutationFeaturedCaseStudyInput = {
   readonly createdAt?: InputMaybe<Scalars['String']['input']>;
   readonly description: Scalars['String']['input'];
   readonly subtitle?: InputMaybe<Scalars['String']['input']>;
+  readonly title: Scalars['String']['input'];
+  readonly updatedAt?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MutationFeaturedExperienceInput = {
+  readonly createdAt?: InputMaybe<Scalars['String']['input']>;
+  readonly description?: InputMaybe<Scalars['String']['input']>;
+  readonly experiences?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['Int']['input']>>>;
+  readonly subtitle: Scalars['String']['input'];
   readonly title: Scalars['String']['input'];
   readonly updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
@@ -9800,6 +10228,11 @@ export type GetFeaturedCaseStudiesQueryVariables = Exact<{ [key: string]: never;
 
 
 export type GetFeaturedCaseStudiesQuery = { readonly __typename?: 'Query', readonly FeaturedCaseStudy?: { readonly __typename?: 'FeaturedCaseStudy', readonly title: string, readonly subtitle?: string | null, readonly description: string, readonly caseStudies: ReadonlyArray<{ readonly __typename?: 'CaseStudy', readonly title: string, readonly slug?: string | null, readonly illustration?: { readonly __typename?: 'Media', readonly url?: string | null, readonly alt: string } | null, readonly tags?: ReadonlyArray<{ readonly __typename?: 'CaseStudy_Tags', readonly tag?: string | null }> | null }> } | null };
+
+export type GetFeaturedExperiencesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetFeaturedExperiencesQuery = { readonly __typename?: 'Query', readonly FeaturedExperience?: { readonly __typename?: 'FeaturedExperience', readonly description?: string | null, readonly title: string, readonly subtitle: string, readonly experiences: ReadonlyArray<{ readonly __typename?: 'Experience', readonly id: number, readonly title: string, readonly slug?: string | null, readonly summary: any, readonly endDate?: any | null, readonly startDate?: any | null, readonly role?: string | null, readonly thumbnailImage?: { readonly __typename?: 'Media', readonly url?: string | null } | null }> } | null };
 
 export type GetFooterQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -10149,6 +10582,59 @@ export type GetFeaturedCaseStudiesQueryHookResult = ReturnType<typeof useGetFeat
 export type GetFeaturedCaseStudiesLazyQueryHookResult = ReturnType<typeof useGetFeaturedCaseStudiesLazyQuery>;
 export type GetFeaturedCaseStudiesSuspenseQueryHookResult = ReturnType<typeof useGetFeaturedCaseStudiesSuspenseQuery>;
 export type GetFeaturedCaseStudiesQueryResult = Apollo.QueryResult<GetFeaturedCaseStudiesQuery, GetFeaturedCaseStudiesQueryVariables>;
+export const GetFeaturedExperiencesDocument = gql`
+    query GetFeaturedExperiences {
+  FeaturedExperience {
+    experiences {
+      id
+      title
+      slug
+      summary
+      endDate
+      startDate
+      thumbnailImage {
+        url
+      }
+      role
+    }
+    description
+    title
+    subtitle
+  }
+}
+    `;
+
+/**
+ * __useGetFeaturedExperiencesQuery__
+ *
+ * To run a query within a React component, call `useGetFeaturedExperiencesQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetFeaturedExperiencesQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetFeaturedExperiencesQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetFeaturedExperiencesQuery(baseOptions?: Apollo.QueryHookOptions<GetFeaturedExperiencesQuery, GetFeaturedExperiencesQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetFeaturedExperiencesQuery, GetFeaturedExperiencesQueryVariables>(GetFeaturedExperiencesDocument, options);
+      }
+export function useGetFeaturedExperiencesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetFeaturedExperiencesQuery, GetFeaturedExperiencesQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetFeaturedExperiencesQuery, GetFeaturedExperiencesQueryVariables>(GetFeaturedExperiencesDocument, options);
+        }
+export function useGetFeaturedExperiencesSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetFeaturedExperiencesQuery, GetFeaturedExperiencesQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetFeaturedExperiencesQuery, GetFeaturedExperiencesQueryVariables>(GetFeaturedExperiencesDocument, options);
+        }
+export type GetFeaturedExperiencesQueryHookResult = ReturnType<typeof useGetFeaturedExperiencesQuery>;
+export type GetFeaturedExperiencesLazyQueryHookResult = ReturnType<typeof useGetFeaturedExperiencesLazyQuery>;
+export type GetFeaturedExperiencesSuspenseQueryHookResult = ReturnType<typeof useGetFeaturedExperiencesSuspenseQuery>;
+export type GetFeaturedExperiencesQueryResult = Apollo.QueryResult<GetFeaturedExperiencesQuery, GetFeaturedExperiencesQueryVariables>;
 export const GetFooterDocument = gql`
     query GetFooter {
   Footer {

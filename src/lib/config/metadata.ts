@@ -25,6 +25,7 @@ export const createMetadata = (data: MetadataPayload) => {
   const image = remoteImage?.url ?? defaultMetadata.image.url;
 
   const metadata = {
+    metadataBase: new URL('https://www.srijansrivastava.com'),
     icons: {
       icon: [
         {

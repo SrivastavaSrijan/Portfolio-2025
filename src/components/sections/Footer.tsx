@@ -2,6 +2,7 @@
 import { useGetFooterSuspenseQuery } from '@/lib/graphql/__generated__/hooks';
 import { ProfileToggle, WorkButtons } from '../fragments';
 import { Button } from '../ui';
+import { ContactForm } from '../fragments/ContactForm';
 
 export const Footer = () => {
   const { data } = useGetFooterSuspenseQuery();
@@ -16,9 +17,12 @@ export const Footer = () => {
             <ProfileToggle initialAnimComplete /> {title2}
           </h2>
           <p className="tex-medium text-center text-lg md:text-2xl">{description} </p>
-          <Button variant="contained" size="lg" color="brand">
-            {buttonText}
-          </Button>
+
+          <ContactForm>
+            <Button variant="contained" size="lg" color="brand">
+              {buttonText}
+            </Button>
+          </ContactForm>
         </div>
       </div>
       <div className="bg-primary">

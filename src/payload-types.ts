@@ -99,6 +99,7 @@ export interface Config {
     'featured-case-studies': FeaturedCaseStudy;
     footer: Footer;
     journal: Journal;
+    'featured-experiences': FeaturedExperience;
   };
   globalsSelect: {
     hero: HeroSelect<false> | HeroSelect<true>;
@@ -107,6 +108,7 @@ export interface Config {
     'featured-case-studies': FeaturedCaseStudiesSelect<false> | FeaturedCaseStudiesSelect<true>;
     footer: FooterSelect<false> | FooterSelect<true>;
     journal: JournalSelect<false> | JournalSelect<true>;
+    'featured-experiences': FeaturedExperiencesSelect<false> | FeaturedExperiencesSelect<true>;
   };
   locale: null;
   user: User & {
@@ -616,6 +618,19 @@ export interface Journal {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "featured-experiences".
+ */
+export interface FeaturedExperience {
+  id: number;
+  title: string;
+  subtitle: string;
+  description?: string | null;
+  experiences: (number | Experience)[];
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "hero_select".
  */
 export interface HeroSelect<T extends boolean = true> {
@@ -716,6 +731,19 @@ export interface JournalSelect<T extends boolean = true> {
         description?: T;
         image?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "featured-experiences_select".
+ */
+export interface FeaturedExperiencesSelect<T extends boolean = true> {
+  title?: T;
+  subtitle?: T;
+  description?: T;
+  experiences?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

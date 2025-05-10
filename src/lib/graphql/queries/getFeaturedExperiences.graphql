@@ -1,0 +1,19 @@
+query GetFeaturedExperiences {
+  FeaturedExperience {
+    experiences {
+      id
+      title
+      slug
+      summary
+      endDate
+      startDate
+      thumbnailImage {
+        url
+      }
+      role
+    }
+    description
+    title
+    subtitle
+  }
+}

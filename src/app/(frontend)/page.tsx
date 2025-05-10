@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { FeaturedCaseStudies, Hero, Skills } from '@/components/sections';
+import { FeaturedCaseStudies, Hero, Skills, FeaturedExperiences } from '@/components/sections';
 import { Skeleton } from '@/components/ui';
 import type { Metadata } from 'next';
 import { createMetadata } from '@/lib/config/metadata';
@@ -25,6 +25,7 @@ export default function HomePage() {
         <Hero />
         <Skills />
         <FeaturedCaseStudies />
+        <FeaturedExperiences />
       </Suspense>
     </div>
   );
