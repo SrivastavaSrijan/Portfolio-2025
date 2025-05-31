@@ -28,7 +28,7 @@ export const Skills = () => {
                 </div>
               </AccordionTrigger>
               <AccordionContent>
-                <div className="-mx-1 md:-mx-1.5 text-xs md:text-base">
+                <div className="text-xs md:text-base">
                   <RichText data={description} />
                 </div>
               </AccordionContent>

@@ -132,7 +132,7 @@ export const ParagraphConverter: JSXConverters<
     // Use the shared helper function for rendering formatted text
     const formattedChildren = renderFormattedChildren(node.children, nodesToJSX);
 
-    return <p className="px-2 leading-relaxed md:px-4">{formattedChildren}</p>;
+    return <p className="leading-relaxed">{formattedChildren}</p>;
   },
 
   // Add a text node handler (this won't typically be used directly in the paragraph converter,

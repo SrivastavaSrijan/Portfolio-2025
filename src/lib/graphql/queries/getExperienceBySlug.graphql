@@ -1,0 +1,25 @@
+query GetExperienceBySlug($slug: String!) {
+  Experiences(where: { slug: { equals: $slug } }) {
+    docs {
+      id
+      role
+      slug
+      startDate
+      summary
+      title
+      endDate
+      coverImage {
+        url
+      }
+      caseStudies {
+        title
+        summary
+        createdAt
+        tags {
+          id
+          name
+        }
+      }
+    }
+  }
+}

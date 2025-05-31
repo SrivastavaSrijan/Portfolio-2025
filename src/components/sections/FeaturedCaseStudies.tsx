@@ -21,8 +21,8 @@ export const FeaturedCaseStudies = () => {
       </div>
       {caseStudies && caseStudies.length > 0 && (
         <div className="flex flex-col gap-6 md:gap-10">
-          {caseStudies.map((caseStudy) => (
-            <CaseStudyCard key={caseStudy.slug} {...caseStudy} />
+          {caseStudies.map((caseStudy, index) => (
+            <CaseStudyCard key={caseStudy.slug} index={index} {...caseStudy} />
           ))}
         </div>
       )}

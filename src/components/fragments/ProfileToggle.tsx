@@ -44,7 +44,11 @@ export const ProfileToggle = ({ initialAnimComplete }: ProfileToggleProps) => {
       className="relative h-20 w-60 cursor-pointer overflow-hidden rounded-r-full rounded-l-full shadow-md md:h-30 md:w-72"
       variants={toggleContainerVariants}
       initial="hidden"
-      animate="visible"
+      whileInView="visible"
+      transition={{
+        delay: 0.5,
+      }}
+      viewport={{ once: true, amount: 0.2 }}
       style={{ backgroundColor }}
       onClick={handleToggle}
       role="switch"

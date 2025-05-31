@@ -51,5 +51,17 @@ export const Experiences: CollectionConfig = {
       type: 'upload',
       relationTo: 'media',
     },
+    {
+      name: 'coverImage',
+      type: 'upload',
+      relationTo: 'media',
+    },
+    {
+      name: 'tags',
+      type: 'relationship',
+      relationTo: 'tags',
+      hasMany: true,
+      required: true,
+    },
   ],
 };

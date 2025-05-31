@@ -5,6 +5,7 @@ export * from './404';
 export * from './CaseStudy';
 export * from './RichText';
 export * from './ProfileToggle';
+export * from './Experience';
 export * from './ErrorBoundary';
 export * from './CaseStudyCard';
 export * from './CaseStudyFilter';

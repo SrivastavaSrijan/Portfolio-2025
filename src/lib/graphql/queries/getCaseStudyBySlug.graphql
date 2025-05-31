@@ -12,7 +12,7 @@ query GetCaseStudyBySlug($slug: String!) {
         id
       }
       tags {
-        tag
+        name
       }
       content
       summary

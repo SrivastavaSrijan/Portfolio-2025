@@ -11,7 +11,8 @@ query GetFeaturedCaseStudies {
         alt
       }
       tags {
-        tag
+        name
+        id
       }
     }
   }

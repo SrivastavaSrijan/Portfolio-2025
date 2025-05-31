@@ -58,7 +58,7 @@ export const CaseStudy = ({ slug }: CaseStudyProps) => {
         />
       )}
       <div className="bg-white">
-        <div className="mx-auto flex flex-col gap-5 px-4 py-10 text-accent text-sm md:max-w-205 md:px-4 md:py-20 md:text-base">
+        <div className="mx-auto flex flex-col gap-5 px-4 py-10 text-accent text-sm md:max-w-205 md:px-4 md:py-20 md:text-base [&_p]:px-2 md:[&_p]:px-4 ">
           <RichText data={content} />
         </div>
       </div>

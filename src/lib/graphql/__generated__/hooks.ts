@@ -36,6 +36,7 @@ export type Access = {
   readonly payload_locked_documents?: Maybe<Payload_Locked_DocumentsAccess>;
   readonly payload_preferences?: Maybe<Payload_PreferencesAccess>;
   readonly skills?: Maybe<SkillsAccess>;
+  readonly tags?: Maybe<TagsAccess>;
   readonly users?: Maybe<UsersAccess>;
   readonly work_buttons?: Maybe<Work_ButtonsAccess>;
 };
@@ -443,7 +444,6 @@ export type CaseStudiesDocAccessFields_Tags = {
   readonly __typename?: 'CaseStudiesDocAccessFields_tags';
   readonly create?: Maybe<CaseStudiesDocAccessFields_Tags_Create>;
   readonly delete?: Maybe<CaseStudiesDocAccessFields_Tags_Delete>;
-  readonly fields?: Maybe<CaseStudiesDocAccessFields_Tags_Fields>;
   readonly read?: Maybe<CaseStudiesDocAccessFields_Tags_Read>;
   readonly update?: Maybe<CaseStudiesDocAccessFields_Tags_Update>;
 };
@@ -458,12 +458,6 @@ export type CaseStudiesDocAccessFields_Tags_Delete = {
   readonly permission: Scalars['Boolean']['output'];
 };
 
-export type CaseStudiesDocAccessFields_Tags_Fields = {
-  readonly __typename?: 'CaseStudiesDocAccessFields_tags_Fields';
-  readonly id?: Maybe<CaseStudiesDocAccessFields_Tags_Id>;
-  readonly tag?: Maybe<CaseStudiesDocAccessFields_Tags_Tag>;
-};
-
 export type CaseStudiesDocAccessFields_Tags_Read = {
   readonly __typename?: 'CaseStudiesDocAccessFields_tags_Read';
   readonly permission: Scalars['Boolean']['output'];
@@ -471,62 +465,6 @@ export type CaseStudiesDocAccessFields_Tags_Read = {
 
 export type CaseStudiesDocAccessFields_Tags_Update = {
   readonly __typename?: 'CaseStudiesDocAccessFields_tags_Update';
-  readonly permission: Scalars['Boolean']['output'];
-};
-
-export type CaseStudiesDocAccessFields_Tags_Id = {
-  readonly __typename?: 'CaseStudiesDocAccessFields_tags_id';
-  readonly create?: Maybe<CaseStudiesDocAccessFields_Tags_Id_Create>;
-  readonly delete?: Maybe<CaseStudiesDocAccessFields_Tags_Id_Delete>;
-  readonly read?: Maybe<CaseStudiesDocAccessFields_Tags_Id_Read>;
-  readonly update?: Maybe<CaseStudiesDocAccessFields_Tags_Id_Update>;
-};
-
-export type CaseStudiesDocAccessFields_Tags_Id_Create = {
-  readonly __typename?: 'CaseStudiesDocAccessFields_tags_id_Create';
-  readonly permission: Scalars['Boolean']['output'];
-};
-
-export type CaseStudiesDocAccessFields_Tags_Id_Delete = {
-  readonly __typename?: 'CaseStudiesDocAccessFields_tags_id_Delete';
-  readonly permission: Scalars['Boolean']['output'];
-};
-
-export type CaseStudiesDocAccessFields_Tags_Id_Read = {
-  readonly __typename?: 'CaseStudiesDocAccessFields_tags_id_Read';
-  readonly permission: Scalars['Boolean']['output'];
-};
-
-export type CaseStudiesDocAccessFields_Tags_Id_Update = {
-  readonly __typename?: 'CaseStudiesDocAccessFields_tags_id_Update';
-  readonly permission: Scalars['Boolean']['output'];
-};
-
-export type CaseStudiesDocAccessFields_Tags_Tag = {
-  readonly __typename?: 'CaseStudiesDocAccessFields_tags_tag';
-  readonly create?: Maybe<CaseStudiesDocAccessFields_Tags_Tag_Create>;
-  readonly delete?: Maybe<CaseStudiesDocAccessFields_Tags_Tag_Delete>;
-  readonly read?: Maybe<CaseStudiesDocAccessFields_Tags_Tag_Read>;
-  readonly update?: Maybe<CaseStudiesDocAccessFields_Tags_Tag_Update>;
-};
-
-export type CaseStudiesDocAccessFields_Tags_Tag_Create = {
-  readonly __typename?: 'CaseStudiesDocAccessFields_tags_tag_Create';
-  readonly permission: Scalars['Boolean']['output'];
-};
-
-export type CaseStudiesDocAccessFields_Tags_Tag_Delete = {
-  readonly __typename?: 'CaseStudiesDocAccessFields_tags_tag_Delete';
-  readonly permission: Scalars['Boolean']['output'];
-};
-
-export type CaseStudiesDocAccessFields_Tags_Tag_Read = {
-  readonly __typename?: 'CaseStudiesDocAccessFields_tags_tag_Read';
-  readonly permission: Scalars['Boolean']['output'];
-};
-
-export type CaseStudiesDocAccessFields_Tags_Tag_Update = {
-  readonly __typename?: 'CaseStudiesDocAccessFields_tags_tag_Update';
   readonly permission: Scalars['Boolean']['output'];
 };
 
@@ -950,7 +888,6 @@ export type CaseStudiesFields_Tags = {
   readonly __typename?: 'CaseStudiesFields_tags';
   readonly create?: Maybe<CaseStudiesFields_Tags_Create>;
   readonly delete?: Maybe<CaseStudiesFields_Tags_Delete>;
-  readonly fields?: Maybe<CaseStudiesFields_Tags_Fields>;
   readonly read?: Maybe<CaseStudiesFields_Tags_Read>;
   readonly update?: Maybe<CaseStudiesFields_Tags_Update>;
 };
@@ -965,12 +902,6 @@ export type CaseStudiesFields_Tags_Delete = {
   readonly permission: Scalars['Boolean']['output'];
 };
 
-export type CaseStudiesFields_Tags_Fields = {
-  readonly __typename?: 'CaseStudiesFields_tags_Fields';
-  readonly id?: Maybe<CaseStudiesFields_Tags_Id>;
-  readonly tag?: Maybe<CaseStudiesFields_Tags_Tag>;
-};
-
 export type CaseStudiesFields_Tags_Read = {
   readonly __typename?: 'CaseStudiesFields_tags_Read';
   readonly permission: Scalars['Boolean']['output'];
@@ -978,62 +909,6 @@ export type CaseStudiesFields_Tags_Read = {
 
 export type CaseStudiesFields_Tags_Update = {
   readonly __typename?: 'CaseStudiesFields_tags_Update';
-  readonly permission: Scalars['Boolean']['output'];
-};
-
-export type CaseStudiesFields_Tags_Id = {
-  readonly __typename?: 'CaseStudiesFields_tags_id';
-  readonly create?: Maybe<CaseStudiesFields_Tags_Id_Create>;
-  readonly delete?: Maybe<CaseStudiesFields_Tags_Id_Delete>;
-  readonly read?: Maybe<CaseStudiesFields_Tags_Id_Read>;
-  readonly update?: Maybe<CaseStudiesFields_Tags_Id_Update>;
-};
-
-export type CaseStudiesFields_Tags_Id_Create = {
-  readonly __typename?: 'CaseStudiesFields_tags_id_Create';
-  readonly permission: Scalars['Boolean']['output'];
-};
-
-export type CaseStudiesFields_Tags_Id_Delete = {
-  readonly __typename?: 'CaseStudiesFields_tags_id_Delete';
-  readonly permission: Scalars['Boolean']['output'];
-};
-
-export type CaseStudiesFields_Tags_Id_Read = {
-  readonly __typename?: 'CaseStudiesFields_tags_id_Read';
-  readonly permission: Scalars['Boolean']['output'];
-};
-
-export type CaseStudiesFields_Tags_Id_Update = {
-  readonly __typename?: 'CaseStudiesFields_tags_id_Update';
-  readonly permission: Scalars['Boolean']['output'];
-};
-
-export type CaseStudiesFields_Tags_Tag = {
-  readonly __typename?: 'CaseStudiesFields_tags_tag';
-  readonly create?: Maybe<CaseStudiesFields_Tags_Tag_Create>;
-  readonly delete?: Maybe<CaseStudiesFields_Tags_Tag_Delete>;
-  readonly read?: Maybe<CaseStudiesFields_Tags_Tag_Read>;
-  readonly update?: Maybe<CaseStudiesFields_Tags_Tag_Update>;
-};
-
-export type CaseStudiesFields_Tags_Tag_Create = {
-  readonly __typename?: 'CaseStudiesFields_tags_tag_Create';
-  readonly permission: Scalars['Boolean']['output'];
-};
-
-export type CaseStudiesFields_Tags_Tag_Delete = {
-  readonly __typename?: 'CaseStudiesFields_tags_tag_Delete';
-  readonly permission: Scalars['Boolean']['output'];
-};
-
-export type CaseStudiesFields_Tags_Tag_Read = {
-  readonly __typename?: 'CaseStudiesFields_tags_tag_Read';
-  readonly permission: Scalars['Boolean']['output'];
-};
-
-export type CaseStudiesFields_Tags_Tag_Update = {
-  readonly __typename?: 'CaseStudiesFields_tags_tag_Update';
   readonly permission: Scalars['Boolean']['output'];
 };
 
@@ -1129,7 +1004,7 @@ export type CaseStudy = {
   readonly publishedAt?: Maybe<Scalars['DateTime']['output']>;
   readonly slug?: Maybe<Scalars['String']['output']>;
   readonly summary: Scalars['JSON']['output'];
-  readonly tags?: Maybe<ReadonlyArray<CaseStudy_Tags>>;
+  readonly tags: ReadonlyArray<Tag>;
   readonly title: Scalars['String']['output'];
   readonly updatedAt?: Maybe<Scalars['DateTime']['output']>;
 };
@@ -1149,12 +1024,6 @@ export type CaseStudy_Meta = {
   readonly description?: Maybe<Scalars['String']['output']>;
   readonly image?: Maybe<Media>;
   readonly title?: Maybe<Scalars['String']['output']>;
-};
-
-export type CaseStudy_Tags = {
-  readonly __typename?: 'CaseStudy_Tags';
-  readonly id?: Maybe<Scalars['String']['output']>;
-  readonly tag?: Maybe<Scalars['String']['output']>;
 };
 
 export type CaseStudy_Content_Operator = {
@@ -1265,26 +1134,12 @@ export type CaseStudy_Summary_Operator = {
   readonly not_equals?: InputMaybe<Scalars['JSON']['input']>;
 };
 
-export type CaseStudy_Tags__Id_Operator = {
-  readonly all?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['String']['input']>>>;
-  readonly contains?: InputMaybe<Scalars['String']['input']>;
-  readonly equals?: InputMaybe<Scalars['String']['input']>;
-  readonly exists?: InputMaybe<Scalars['Boolean']['input']>;
-  readonly in?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['String']['input']>>>;
-  readonly like?: InputMaybe<Scalars['String']['input']>;
-  readonly not_equals?: InputMaybe<Scalars['String']['input']>;
-  readonly not_in?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['String']['input']>>>;
-};
-
-export type CaseStudy_Tags__Tag_Operator = {
-  readonly all?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['String']['input']>>>;
-  readonly contains?: InputMaybe<Scalars['String']['input']>;
-  readonly equals?: InputMaybe<Scalars['String']['input']>;
-  readonly exists?: InputMaybe<Scalars['Boolean']['input']>;
-  readonly in?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['String']['input']>>>;
-  readonly like?: InputMaybe<Scalars['String']['input']>;
-  readonly not_equals?: InputMaybe<Scalars['String']['input']>;
-  readonly not_in?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['String']['input']>>>;
+export type CaseStudy_Tags_Operator = {
+  readonly all?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['JSON']['input']>>>;
+  readonly equals?: InputMaybe<Scalars['JSON']['input']>;
+  readonly in?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['JSON']['input']>>>;
+  readonly not_equals?: InputMaybe<Scalars['JSON']['input']>;
+  readonly not_in?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['JSON']['input']>>>;
 };
 
 export type CaseStudy_Title_Operator = {
@@ -1323,8 +1178,7 @@ export type CaseStudy_Where = {
   readonly publishedAt?: InputMaybe<CaseStudy_PublishedAt_Operator>;
   readonly slug?: InputMaybe<CaseStudy_Slug_Operator>;
   readonly summary?: InputMaybe<CaseStudy_Summary_Operator>;
-  readonly tags__id?: InputMaybe<CaseStudy_Tags__Id_Operator>;
-  readonly tags__tag?: InputMaybe<CaseStudy_Tags__Tag_Operator>;
+  readonly tags?: InputMaybe<CaseStudy_Tags_Operator>;
   readonly title?: InputMaybe<CaseStudy_Title_Operator>;
   readonly updatedAt?: InputMaybe<CaseStudy_UpdatedAt_Operator>;
 };
@@ -1344,8 +1198,7 @@ export type CaseStudy_Where_And = {
   readonly publishedAt?: InputMaybe<CaseStudy_PublishedAt_Operator>;
   readonly slug?: InputMaybe<CaseStudy_Slug_Operator>;
   readonly summary?: InputMaybe<CaseStudy_Summary_Operator>;
-  readonly tags__id?: InputMaybe<CaseStudy_Tags__Id_Operator>;
-  readonly tags__tag?: InputMaybe<CaseStudy_Tags__Tag_Operator>;
+  readonly tags?: InputMaybe<CaseStudy_Tags_Operator>;
   readonly title?: InputMaybe<CaseStudy_Title_Operator>;
   readonly updatedAt?: InputMaybe<CaseStudy_UpdatedAt_Operator>;
 };
@@ -1365,8 +1218,7 @@ export type CaseStudy_Where_Or = {
   readonly publishedAt?: InputMaybe<CaseStudy_PublishedAt_Operator>;
   readonly slug?: InputMaybe<CaseStudy_Slug_Operator>;
   readonly summary?: InputMaybe<CaseStudy_Summary_Operator>;
-  readonly tags__id?: InputMaybe<CaseStudy_Tags__Id_Operator>;
-  readonly tags__tag?: InputMaybe<CaseStudy_Tags__Tag_Operator>;
+  readonly tags?: InputMaybe<CaseStudy_Tags_Operator>;
   readonly title?: InputMaybe<CaseStudy_Title_Operator>;
   readonly updatedAt?: InputMaybe<CaseStudy_UpdatedAt_Operator>;
 };
@@ -2004,6 +1856,7 @@ export type ContactFormsUpdateDocAccess = {
 export type Experience = {
   readonly __typename?: 'Experience';
   readonly caseStudies?: Maybe<ReadonlyArray<CaseStudy>>;
+  readonly coverImage?: Maybe<Media>;
   readonly createdAt?: Maybe<Scalars['DateTime']['output']>;
   readonly endDate?: Maybe<Scalars['DateTime']['output']>;
   readonly id: Scalars['Int']['output'];
@@ -2012,6 +1865,7 @@ export type Experience = {
   readonly slug?: Maybe<Scalars['String']['output']>;
   readonly startDate?: Maybe<Scalars['DateTime']['output']>;
   readonly summary: Scalars['JSON']['output'];
+  readonly tags: ReadonlyArray<Tag>;
   readonly thumbnailImage?: Maybe<Media>;
   readonly title: Scalars['String']['output'];
   readonly updatedAt?: Maybe<Scalars['DateTime']['output']>;
@@ -2030,6 +1884,15 @@ export type Experience_Meta = {
 };
 
 export type Experience_CaseStudies_Operator = {
+  readonly all?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['JSON']['input']>>>;
+  readonly equals?: InputMaybe<Scalars['JSON']['input']>;
+  readonly exists?: InputMaybe<Scalars['Boolean']['input']>;
+  readonly in?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['JSON']['input']>>>;
+  readonly not_equals?: InputMaybe<Scalars['JSON']['input']>;
+  readonly not_in?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['JSON']['input']>>>;
+};
+
+export type Experience_CoverImage_Operator = {
   readonly all?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['JSON']['input']>>>;
   readonly equals?: InputMaybe<Scalars['JSON']['input']>;
   readonly exists?: InputMaybe<Scalars['Boolean']['input']>;
@@ -2138,6 +2001,14 @@ export type Experience_Summary_Operator = {
   readonly not_equals?: InputMaybe<Scalars['JSON']['input']>;
 };
 
+export type Experience_Tags_Operator = {
+  readonly all?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['JSON']['input']>>>;
+  readonly equals?: InputMaybe<Scalars['JSON']['input']>;
+  readonly in?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['JSON']['input']>>>;
+  readonly not_equals?: InputMaybe<Scalars['JSON']['input']>;
+  readonly not_in?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['JSON']['input']>>>;
+};
+
 export type Experience_ThumbnailImage_Operator = {
   readonly all?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['JSON']['input']>>>;
   readonly equals?: InputMaybe<Scalars['JSON']['input']>;
@@ -2172,6 +2043,7 @@ export type Experience_Where = {
   readonly AND?: InputMaybe<ReadonlyArray<InputMaybe<Experience_Where_And>>>;
   readonly OR?: InputMaybe<ReadonlyArray<InputMaybe<Experience_Where_Or>>>;
   readonly caseStudies?: InputMaybe<Experience_CaseStudies_Operator>;
+  readonly coverImage?: InputMaybe<Experience_CoverImage_Operator>;
   readonly createdAt?: InputMaybe<Experience_CreatedAt_Operator>;
   readonly endDate?: InputMaybe<Experience_EndDate_Operator>;
   readonly id?: InputMaybe<Experience_Id_Operator>;
@@ -2182,6 +2054,7 @@ export type Experience_Where = {
   readonly slug?: InputMaybe<Experience_Slug_Operator>;
   readonly startDate?: InputMaybe<Experience_StartDate_Operator>;
   readonly summary?: InputMaybe<Experience_Summary_Operator>;
+  readonly tags?: InputMaybe<Experience_Tags_Operator>;
   readonly thumbnailImage?: InputMaybe<Experience_ThumbnailImage_Operator>;
   readonly title?: InputMaybe<Experience_Title_Operator>;
   readonly updatedAt?: InputMaybe<Experience_UpdatedAt_Operator>;
@@ -2191,6 +2064,7 @@ export type Experience_Where_And = {
   readonly AND?: InputMaybe<ReadonlyArray<InputMaybe<Experience_Where_And>>>;
   readonly OR?: InputMaybe<ReadonlyArray<InputMaybe<Experience_Where_Or>>>;
   readonly caseStudies?: InputMaybe<Experience_CaseStudies_Operator>;
+  readonly coverImage?: InputMaybe<Experience_CoverImage_Operator>;
   readonly createdAt?: InputMaybe<Experience_CreatedAt_Operator>;
   readonly endDate?: InputMaybe<Experience_EndDate_Operator>;
   readonly id?: InputMaybe<Experience_Id_Operator>;
@@ -2201,6 +2075,7 @@ export type Experience_Where_And = {
   readonly slug?: InputMaybe<Experience_Slug_Operator>;
   readonly startDate?: InputMaybe<Experience_StartDate_Operator>;
   readonly summary?: InputMaybe<Experience_Summary_Operator>;
+  readonly tags?: InputMaybe<Experience_Tags_Operator>;
   readonly thumbnailImage?: InputMaybe<Experience_ThumbnailImage_Operator>;
   readonly title?: InputMaybe<Experience_Title_Operator>;
   readonly updatedAt?: InputMaybe<Experience_UpdatedAt_Operator>;
@@ -2210,6 +2085,7 @@ export type Experience_Where_Or = {
   readonly AND?: InputMaybe<ReadonlyArray<InputMaybe<Experience_Where_And>>>;
   readonly OR?: InputMaybe<ReadonlyArray<InputMaybe<Experience_Where_Or>>>;
   readonly caseStudies?: InputMaybe<Experience_CaseStudies_Operator>;
+  readonly coverImage?: InputMaybe<Experience_CoverImage_Operator>;
   readonly createdAt?: InputMaybe<Experience_CreatedAt_Operator>;
   readonly endDate?: InputMaybe<Experience_EndDate_Operator>;
   readonly id?: InputMaybe<Experience_Id_Operator>;
@@ -2220,6 +2096,7 @@ export type Experience_Where_Or = {
   readonly slug?: InputMaybe<Experience_Slug_Operator>;
   readonly startDate?: InputMaybe<Experience_StartDate_Operator>;
   readonly summary?: InputMaybe<Experience_Summary_Operator>;
+  readonly tags?: InputMaybe<Experience_Tags_Operator>;
   readonly thumbnailImage?: InputMaybe<Experience_ThumbnailImage_Operator>;
   readonly title?: InputMaybe<Experience_Title_Operator>;
   readonly updatedAt?: InputMaybe<Experience_UpdatedAt_Operator>;
@@ -2267,6 +2144,7 @@ export type ExperiencesDeleteDocAccess = {
 export type ExperiencesDocAccessFields = {
   readonly __typename?: 'ExperiencesDocAccessFields';
   readonly caseStudies?: Maybe<ExperiencesDocAccessFields_CaseStudies>;
+  readonly coverImage?: Maybe<ExperiencesDocAccessFields_CoverImage>;
   readonly createdAt?: Maybe<ExperiencesDocAccessFields_CreatedAt>;
   readonly endDate?: Maybe<ExperiencesDocAccessFields_EndDate>;
   readonly meta?: Maybe<ExperiencesDocAccessFields_Meta>;
@@ -2274,6 +2152,7 @@ export type ExperiencesDocAccessFields = {
   readonly slug?: Maybe<ExperiencesDocAccessFields_Slug>;
   readonly startDate?: Maybe<ExperiencesDocAccessFields_StartDate>;
   readonly summary?: Maybe<ExperiencesDocAccessFields_Summary>;
+  readonly tags?: Maybe<ExperiencesDocAccessFields_Tags>;
   readonly thumbnailImage?: Maybe<ExperiencesDocAccessFields_ThumbnailImage>;
   readonly title?: Maybe<ExperiencesDocAccessFields_Title>;
   readonly updatedAt?: Maybe<ExperiencesDocAccessFields_UpdatedAt>;
@@ -2304,6 +2183,34 @@ export type ExperiencesDocAccessFields_CaseStudies_Read = {
 
 export type ExperiencesDocAccessFields_CaseStudies_Update = {
   readonly __typename?: 'ExperiencesDocAccessFields_caseStudies_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_CoverImage = {
+  readonly __typename?: 'ExperiencesDocAccessFields_coverImage';
+  readonly create?: Maybe<ExperiencesDocAccessFields_CoverImage_Create>;
+  readonly delete?: Maybe<ExperiencesDocAccessFields_CoverImage_Delete>;
+  readonly read?: Maybe<ExperiencesDocAccessFields_CoverImage_Read>;
+  readonly update?: Maybe<ExperiencesDocAccessFields_CoverImage_Update>;
+};
+
+export type ExperiencesDocAccessFields_CoverImage_Create = {
+  readonly __typename?: 'ExperiencesDocAccessFields_coverImage_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_CoverImage_Delete = {
+  readonly __typename?: 'ExperiencesDocAccessFields_coverImage_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_CoverImage_Read = {
+  readonly __typename?: 'ExperiencesDocAccessFields_coverImage_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_CoverImage_Update = {
+  readonly __typename?: 'ExperiencesDocAccessFields_coverImage_Update';
   readonly permission: Scalars['Boolean']['output'];
 };
 
@@ -2595,6 +2502,34 @@ export type ExperiencesDocAccessFields_Summary_Update = {
   readonly permission: Scalars['Boolean']['output'];
 };
 
+export type ExperiencesDocAccessFields_Tags = {
+  readonly __typename?: 'ExperiencesDocAccessFields_tags';
+  readonly create?: Maybe<ExperiencesDocAccessFields_Tags_Create>;
+  readonly delete?: Maybe<ExperiencesDocAccessFields_Tags_Delete>;
+  readonly read?: Maybe<ExperiencesDocAccessFields_Tags_Read>;
+  readonly update?: Maybe<ExperiencesDocAccessFields_Tags_Update>;
+};
+
+export type ExperiencesDocAccessFields_Tags_Create = {
+  readonly __typename?: 'ExperiencesDocAccessFields_tags_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_Tags_Delete = {
+  readonly __typename?: 'ExperiencesDocAccessFields_tags_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_Tags_Read = {
+  readonly __typename?: 'ExperiencesDocAccessFields_tags_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_Tags_Update = {
+  readonly __typename?: 'ExperiencesDocAccessFields_tags_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
 export type ExperiencesDocAccessFields_ThumbnailImage = {
   readonly __typename?: 'ExperiencesDocAccessFields_thumbnailImage';
   readonly create?: Maybe<ExperiencesDocAccessFields_ThumbnailImage_Create>;
@@ -2682,6 +2617,7 @@ export type ExperiencesDocAccessFields_UpdatedAt_Update = {
 export type ExperiencesFields = {
   readonly __typename?: 'ExperiencesFields';
   readonly caseStudies?: Maybe<ExperiencesFields_CaseStudies>;
+  readonly coverImage?: Maybe<ExperiencesFields_CoverImage>;
   readonly createdAt?: Maybe<ExperiencesFields_CreatedAt>;
   readonly endDate?: Maybe<ExperiencesFields_EndDate>;
   readonly meta?: Maybe<ExperiencesFields_Meta>;
@@ -2689,6 +2625,7 @@ export type ExperiencesFields = {
   readonly slug?: Maybe<ExperiencesFields_Slug>;
   readonly startDate?: Maybe<ExperiencesFields_StartDate>;
   readonly summary?: Maybe<ExperiencesFields_Summary>;
+  readonly tags?: Maybe<ExperiencesFields_Tags>;
   readonly thumbnailImage?: Maybe<ExperiencesFields_ThumbnailImage>;
   readonly title?: Maybe<ExperiencesFields_Title>;
   readonly updatedAt?: Maybe<ExperiencesFields_UpdatedAt>;
@@ -2719,6 +2656,34 @@ export type ExperiencesFields_CaseStudies_Read = {
 
 export type ExperiencesFields_CaseStudies_Update = {
   readonly __typename?: 'ExperiencesFields_caseStudies_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_CoverImage = {
+  readonly __typename?: 'ExperiencesFields_coverImage';
+  readonly create?: Maybe<ExperiencesFields_CoverImage_Create>;
+  readonly delete?: Maybe<ExperiencesFields_CoverImage_Delete>;
+  readonly read?: Maybe<ExperiencesFields_CoverImage_Read>;
+  readonly update?: Maybe<ExperiencesFields_CoverImage_Update>;
+};
+
+export type ExperiencesFields_CoverImage_Create = {
+  readonly __typename?: 'ExperiencesFields_coverImage_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_CoverImage_Delete = {
+  readonly __typename?: 'ExperiencesFields_coverImage_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_CoverImage_Read = {
+  readonly __typename?: 'ExperiencesFields_coverImage_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_CoverImage_Update = {
+  readonly __typename?: 'ExperiencesFields_coverImage_Update';
   readonly permission: Scalars['Boolean']['output'];
 };
 
@@ -3007,6 +2972,34 @@ export type ExperiencesFields_Summary_Read = {
 
 export type ExperiencesFields_Summary_Update = {
   readonly __typename?: 'ExperiencesFields_summary_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_Tags = {
+  readonly __typename?: 'ExperiencesFields_tags';
+  readonly create?: Maybe<ExperiencesFields_Tags_Create>;
+  readonly delete?: Maybe<ExperiencesFields_Tags_Delete>;
+  readonly read?: Maybe<ExperiencesFields_Tags_Read>;
+  readonly update?: Maybe<ExperiencesFields_Tags_Update>;
+};
+
+export type ExperiencesFields_Tags_Create = {
+  readonly __typename?: 'ExperiencesFields_tags_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_Tags_Delete = {
+  readonly __typename?: 'ExperiencesFields_tags_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_Tags_Read = {
+  readonly __typename?: 'ExperiencesFields_tags_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_Tags_Update = {
+  readonly __typename?: 'ExperiencesFields_tags_Update';
   readonly permission: Scalars['Boolean']['output'];
 };
 
@@ -6672,6 +6665,7 @@ export type Mutation = {
   readonly createMedia?: Maybe<Media>;
   readonly createPayloadLockedDocument?: Maybe<PayloadLockedDocument>;
   readonly createPayloadPreference?: Maybe<PayloadPreference>;
+  readonly createTag?: Maybe<Tag>;
   readonly createUser?: Maybe<User>;
   readonly deleteCaseStudy?: Maybe<CaseStudy>;
   readonly deleteContactForm?: Maybe<ContactForm>;
@@ -6679,6 +6673,7 @@ export type Mutation = {
   readonly deleteMedia?: Maybe<Media>;
   readonly deletePayloadLockedDocument?: Maybe<PayloadLockedDocument>;
   readonly deletePayloadPreference?: Maybe<PayloadPreference>;
+  readonly deleteTag?: Maybe<Tag>;
   readonly deleteUser?: Maybe<User>;
   readonly duplicateCaseStudy?: Maybe<CaseStudy>;
   readonly duplicateContactForm?: Maybe<ContactForm>;
@@ -6686,6 +6681,7 @@ export type Mutation = {
   readonly duplicateMedia?: Maybe<Media>;
   readonly duplicatePayloadLockedDocument?: Maybe<PayloadLockedDocument>;
   readonly duplicatePayloadPreference?: Maybe<PayloadPreference>;
+  readonly duplicateTag?: Maybe<Tag>;
   readonly forgotPasswordUser: Scalars['Boolean']['output'];
   readonly loginUser?: Maybe<UsersLoginResult>;
   readonly logoutUser?: Maybe<Scalars['String']['output']>;
@@ -6704,6 +6700,7 @@ export type Mutation = {
   readonly updatePayloadLockedDocument?: Maybe<PayloadLockedDocument>;
   readonly updatePayloadPreference?: Maybe<PayloadPreference>;
   readonly updateSkill?: Maybe<Skill>;
+  readonly updateTag?: Maybe<Tag>;
   readonly updateUser?: Maybe<User>;
   readonly updateWorkButton?: Maybe<WorkButton>;
   readonly verifyEmailUser?: Maybe<Scalars['Boolean']['output']>;
@@ -6746,6 +6743,12 @@ export type MutationCreatePayloadPreferenceArgs = {
 };
 
 
+export type MutationCreateTagArgs = {
+  data: MutationTagInput;
+  draft?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
 export type MutationCreateUserArgs = {
   data: MutationUserInput;
   draft?: InputMaybe<Scalars['Boolean']['input']>;
@@ -6778,6 +6781,11 @@ export type MutationDeletePayloadLockedDocumentArgs = {
 
 
 export type MutationDeletePayloadPreferenceArgs = {
+  id: Scalars['Int']['input'];
+};
+
+
+export type MutationDeleteTagArgs = {
   id: Scalars['Int']['input'];
 };
 
@@ -6819,6 +6827,12 @@ export type MutationDuplicatePayloadLockedDocumentArgs = {
 
 export type MutationDuplicatePayloadPreferenceArgs = {
   data: MutationPayloadPreferenceInput;
+  id: Scalars['Int']['input'];
+};
+
+
+export type MutationDuplicateTagArgs = {
+  data: MutationTagInput;
   id: Scalars['Int']['input'];
 };
 
@@ -6931,6 +6945,14 @@ export type MutationUpdateSkillArgs = {
 };
 
 
+export type MutationUpdateTagArgs = {
+  autosave?: InputMaybe<Scalars['Boolean']['input']>;
+  data: MutationTagUpdateInput;
+  draft?: InputMaybe<Scalars['Boolean']['input']>;
+  id: Scalars['Int']['input'];
+};
+
+
 export type MutationUpdateUserArgs = {
   autosave?: InputMaybe<Scalars['Boolean']['input']>;
   data: MutationUserUpdateInput;
@@ -6969,6 +6991,7 @@ export enum PayloadLockedDocumentUpdate_DocumentRelationshipInputRelationTo {
   ContactForms = 'contact_forms',
   Experiences = 'experiences',
   Media = 'media',
+  Tags = 'tags',
   Users = 'users'
 }
 
@@ -6981,7 +7004,7 @@ export enum PayloadLockedDocumentUpdate_UserRelationshipInputRelationTo {
   Users = 'users'
 }
 
-export type PayloadLockedDocument_Document = CaseStudy | ContactForm | Experience | Media | User;
+export type PayloadLockedDocument_Document = CaseStudy | ContactForm | Experience | Media | Tag | User;
 
 export type PayloadLockedDocument_DocumentRelationshipInput = {
   readonly relationTo?: InputMaybe<PayloadLockedDocument_DocumentRelationshipInputRelationTo>;
@@ -6993,6 +7016,7 @@ export enum PayloadLockedDocument_DocumentRelationshipInputRelationTo {
   ContactForms = 'contact_forms',
   Experiences = 'experiences',
   Media = 'media',
+  Tags = 'tags',
   Users = 'users'
 }
 
@@ -7001,6 +7025,7 @@ export enum PayloadLockedDocument_Document_RelationTo {
   ContactForms = 'contact_forms',
   Experiences = 'experiences',
   Media = 'media',
+  Tags = 'tags',
   Users = 'users'
 }
 
@@ -7052,6 +7077,7 @@ export enum PayloadLockedDocument_Document_Relation_RelationTo {
   ContactForms = 'contact_forms',
   Experiences = 'experiences',
   Media = 'media',
+  Tags = 'tags',
   Users = 'users'
 }
 
@@ -8006,6 +8032,8 @@ export type Query = {
   readonly PayloadPreference?: Maybe<PayloadPreference>;
   readonly PayloadPreferences?: Maybe<PayloadPreferences>;
   readonly Skill?: Maybe<Skill>;
+  readonly Tag?: Maybe<Tag>;
+  readonly Tags?: Maybe<Tags>;
   readonly User?: Maybe<User>;
   readonly Users?: Maybe<Users>;
   readonly WorkButton?: Maybe<WorkButton>;
@@ -8015,6 +8043,7 @@ export type Query = {
   readonly countExperiences?: Maybe<CountExperiences>;
   readonly countPayloadLockedDocuments?: Maybe<CountPayloadLockedDocuments>;
   readonly countPayloadPreferences?: Maybe<CountPayloadPreferences>;
+  readonly countTags?: Maybe<CountTags>;
   readonly countUsers?: Maybe<CountUsers>;
   readonly countallMedia?: Maybe<CountallMedia>;
   readonly docAccessCaseStudy?: Maybe<Case_StudiesDocAccess>;
@@ -8029,6 +8058,7 @@ export type Query = {
   readonly docAccessPayloadLockedDocument?: Maybe<Payload_Locked_DocumentsDocAccess>;
   readonly docAccessPayloadPreference?: Maybe<Payload_PreferencesDocAccess>;
   readonly docAccessSkill?: Maybe<SkillsDocAccess>;
+  readonly docAccessTag?: Maybe<TagsDocAccess>;
   readonly docAccessUser?: Maybe<UsersDocAccess>;
   readonly docAccessWorkButton?: Maybe<Work_ButtonsDocAccess>;
   readonly initializedUser?: Maybe<Scalars['Boolean']['output']>;
@@ -8152,6 +8182,22 @@ export type QuerySkillArgs = {
 };
 
 
+export type QueryTagArgs = {
+  draft?: InputMaybe<Scalars['Boolean']['input']>;
+  id: Scalars['Int']['input'];
+};
+
+
+export type QueryTagsArgs = {
+  draft?: InputMaybe<Scalars['Boolean']['input']>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  page?: InputMaybe<Scalars['Int']['input']>;
+  pagination?: InputMaybe<Scalars['Boolean']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  where?: InputMaybe<Tag_Where>;
+};
+
+
 export type QueryUserArgs = {
   draft?: InputMaybe<Scalars['Boolean']['input']>;
   id: Scalars['Int']['input'];
@@ -8213,6 +8259,12 @@ export type QueryCountPayloadPreferencesArgs = {
 };
 
 
+export type QueryCountTagsArgs = {
+  draft?: InputMaybe<Scalars['Boolean']['input']>;
+  where?: InputMaybe<Tag_Where>;
+};
+
+
 export type QueryCountUsersArgs = {
   draft?: InputMaybe<Scalars['Boolean']['input']>;
   where?: InputMaybe<User_Where>;
@@ -8251,6 +8303,11 @@ export type QueryDocAccessPayloadLockedDocumentArgs = {
 
 
 export type QueryDocAccessPayloadPreferenceArgs = {
+  id: Scalars['Int']['input'];
+};
+
+
+export type QueryDocAccessTagArgs = {
   id: Scalars['Int']['input'];
 };
 
@@ -8841,6 +8898,470 @@ export type SkillsUpdateAccess = {
 
 export type SkillsUpdateDocAccess = {
   readonly __typename?: 'SkillsUpdateDocAccess';
+  readonly permission: Scalars['Boolean']['output'];
+  readonly where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type Tag = {
+  readonly __typename?: 'Tag';
+  readonly createdAt?: Maybe<Scalars['DateTime']['output']>;
+  readonly description?: Maybe<Scalars['String']['output']>;
+  readonly id: Scalars['Int']['output'];
+  readonly name: Scalars['String']['output'];
+  readonly slug: Scalars['String']['output'];
+  readonly updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type Tag_CreatedAt_Operator = {
+  readonly equals?: InputMaybe<Scalars['DateTime']['input']>;
+  readonly exists?: InputMaybe<Scalars['Boolean']['input']>;
+  readonly greater_than?: InputMaybe<Scalars['DateTime']['input']>;
+  readonly greater_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+  readonly less_than?: InputMaybe<Scalars['DateTime']['input']>;
+  readonly less_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+  readonly like?: InputMaybe<Scalars['DateTime']['input']>;
+  readonly not_equals?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+export type Tag_Description_Operator = {
+  readonly contains?: InputMaybe<Scalars['String']['input']>;
+  readonly equals?: InputMaybe<Scalars['String']['input']>;
+  readonly exists?: InputMaybe<Scalars['Boolean']['input']>;
+  readonly like?: InputMaybe<Scalars['String']['input']>;
+  readonly not_equals?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type Tag_Id_Operator = {
+  readonly equals?: InputMaybe<Scalars['Int']['input']>;
+  readonly exists?: InputMaybe<Scalars['Boolean']['input']>;
+  readonly greater_than?: InputMaybe<Scalars['Int']['input']>;
+  readonly greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  readonly less_than?: InputMaybe<Scalars['Int']['input']>;
+  readonly less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  readonly not_equals?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export type Tag_Name_Operator = {
+  readonly all?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['String']['input']>>>;
+  readonly contains?: InputMaybe<Scalars['String']['input']>;
+  readonly equals?: InputMaybe<Scalars['String']['input']>;
+  readonly in?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['String']['input']>>>;
+  readonly like?: InputMaybe<Scalars['String']['input']>;
+  readonly not_equals?: InputMaybe<Scalars['String']['input']>;
+  readonly not_in?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Tag_Slug_Operator = {
+  readonly all?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['String']['input']>>>;
+  readonly contains?: InputMaybe<Scalars['String']['input']>;
+  readonly equals?: InputMaybe<Scalars['String']['input']>;
+  readonly in?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['String']['input']>>>;
+  readonly like?: InputMaybe<Scalars['String']['input']>;
+  readonly not_equals?: InputMaybe<Scalars['String']['input']>;
+  readonly not_in?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Tag_UpdatedAt_Operator = {
+  readonly equals?: InputMaybe<Scalars['DateTime']['input']>;
+  readonly exists?: InputMaybe<Scalars['Boolean']['input']>;
+  readonly greater_than?: InputMaybe<Scalars['DateTime']['input']>;
+  readonly greater_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+  readonly less_than?: InputMaybe<Scalars['DateTime']['input']>;
+  readonly less_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+  readonly like?: InputMaybe<Scalars['DateTime']['input']>;
+  readonly not_equals?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+export type Tag_Where = {
+  readonly AND?: InputMaybe<ReadonlyArray<InputMaybe<Tag_Where_And>>>;
+  readonly OR?: InputMaybe<ReadonlyArray<InputMaybe<Tag_Where_Or>>>;
+  readonly createdAt?: InputMaybe<Tag_CreatedAt_Operator>;
+  readonly description?: InputMaybe<Tag_Description_Operator>;
+  readonly id?: InputMaybe<Tag_Id_Operator>;
+  readonly name?: InputMaybe<Tag_Name_Operator>;
+  readonly slug?: InputMaybe<Tag_Slug_Operator>;
+  readonly updatedAt?: InputMaybe<Tag_UpdatedAt_Operator>;
+};
+
+export type Tag_Where_And = {
+  readonly AND?: InputMaybe<ReadonlyArray<InputMaybe<Tag_Where_And>>>;
+  readonly OR?: InputMaybe<ReadonlyArray<InputMaybe<Tag_Where_Or>>>;
+  readonly createdAt?: InputMaybe<Tag_CreatedAt_Operator>;
+  readonly description?: InputMaybe<Tag_Description_Operator>;
+  readonly id?: InputMaybe<Tag_Id_Operator>;
+  readonly name?: InputMaybe<Tag_Name_Operator>;
+  readonly slug?: InputMaybe<Tag_Slug_Operator>;
+  readonly updatedAt?: InputMaybe<Tag_UpdatedAt_Operator>;
+};
+
+export type Tag_Where_Or = {
+  readonly AND?: InputMaybe<ReadonlyArray<InputMaybe<Tag_Where_And>>>;
+  readonly OR?: InputMaybe<ReadonlyArray<InputMaybe<Tag_Where_Or>>>;
+  readonly createdAt?: InputMaybe<Tag_CreatedAt_Operator>;
+  readonly description?: InputMaybe<Tag_Description_Operator>;
+  readonly id?: InputMaybe<Tag_Id_Operator>;
+  readonly name?: InputMaybe<Tag_Name_Operator>;
+  readonly slug?: InputMaybe<Tag_Slug_Operator>;
+  readonly updatedAt?: InputMaybe<Tag_UpdatedAt_Operator>;
+};
+
+export type Tags = {
+  readonly __typename?: 'Tags';
+  readonly docs: ReadonlyArray<Tag>;
+  readonly hasNextPage: Scalars['Boolean']['output'];
+  readonly hasPrevPage: Scalars['Boolean']['output'];
+  readonly limit: Scalars['Int']['output'];
+  readonly nextPage: Scalars['Int']['output'];
+  readonly offset?: Maybe<Scalars['Int']['output']>;
+  readonly page: Scalars['Int']['output'];
+  readonly pagingCounter: Scalars['Int']['output'];
+  readonly prevPage: Scalars['Int']['output'];
+  readonly totalDocs: Scalars['Int']['output'];
+  readonly totalPages: Scalars['Int']['output'];
+};
+
+export type TagsCreateAccess = {
+  readonly __typename?: 'TagsCreateAccess';
+  readonly permission: Scalars['Boolean']['output'];
+  readonly where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type TagsCreateDocAccess = {
+  readonly __typename?: 'TagsCreateDocAccess';
+  readonly permission: Scalars['Boolean']['output'];
+  readonly where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type TagsDeleteAccess = {
+  readonly __typename?: 'TagsDeleteAccess';
+  readonly permission: Scalars['Boolean']['output'];
+  readonly where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type TagsDeleteDocAccess = {
+  readonly __typename?: 'TagsDeleteDocAccess';
+  readonly permission: Scalars['Boolean']['output'];
+  readonly where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type TagsDocAccessFields = {
+  readonly __typename?: 'TagsDocAccessFields';
+  readonly createdAt?: Maybe<TagsDocAccessFields_CreatedAt>;
+  readonly description?: Maybe<TagsDocAccessFields_Description>;
+  readonly name?: Maybe<TagsDocAccessFields_Name>;
+  readonly slug?: Maybe<TagsDocAccessFields_Slug>;
+  readonly updatedAt?: Maybe<TagsDocAccessFields_UpdatedAt>;
+};
+
+export type TagsDocAccessFields_CreatedAt = {
+  readonly __typename?: 'TagsDocAccessFields_createdAt';
+  readonly create?: Maybe<TagsDocAccessFields_CreatedAt_Create>;
+  readonly delete?: Maybe<TagsDocAccessFields_CreatedAt_Delete>;
+  readonly read?: Maybe<TagsDocAccessFields_CreatedAt_Read>;
+  readonly update?: Maybe<TagsDocAccessFields_CreatedAt_Update>;
+};
+
+export type TagsDocAccessFields_CreatedAt_Create = {
+  readonly __typename?: 'TagsDocAccessFields_createdAt_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_CreatedAt_Delete = {
+  readonly __typename?: 'TagsDocAccessFields_createdAt_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_CreatedAt_Read = {
+  readonly __typename?: 'TagsDocAccessFields_createdAt_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_CreatedAt_Update = {
+  readonly __typename?: 'TagsDocAccessFields_createdAt_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_Description = {
+  readonly __typename?: 'TagsDocAccessFields_description';
+  readonly create?: Maybe<TagsDocAccessFields_Description_Create>;
+  readonly delete?: Maybe<TagsDocAccessFields_Description_Delete>;
+  readonly read?: Maybe<TagsDocAccessFields_Description_Read>;
+  readonly update?: Maybe<TagsDocAccessFields_Description_Update>;
+};
+
+export type TagsDocAccessFields_Description_Create = {
+  readonly __typename?: 'TagsDocAccessFields_description_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_Description_Delete = {
+  readonly __typename?: 'TagsDocAccessFields_description_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_Description_Read = {
+  readonly __typename?: 'TagsDocAccessFields_description_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_Description_Update = {
+  readonly __typename?: 'TagsDocAccessFields_description_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_Name = {
+  readonly __typename?: 'TagsDocAccessFields_name';
+  readonly create?: Maybe<TagsDocAccessFields_Name_Create>;
+  readonly delete?: Maybe<TagsDocAccessFields_Name_Delete>;
+  readonly read?: Maybe<TagsDocAccessFields_Name_Read>;
+  readonly update?: Maybe<TagsDocAccessFields_Name_Update>;
+};
+
+export type TagsDocAccessFields_Name_Create = {
+  readonly __typename?: 'TagsDocAccessFields_name_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_Name_Delete = {
+  readonly __typename?: 'TagsDocAccessFields_name_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_Name_Read = {
+  readonly __typename?: 'TagsDocAccessFields_name_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_Name_Update = {
+  readonly __typename?: 'TagsDocAccessFields_name_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_Slug = {
+  readonly __typename?: 'TagsDocAccessFields_slug';
+  readonly create?: Maybe<TagsDocAccessFields_Slug_Create>;
+  readonly delete?: Maybe<TagsDocAccessFields_Slug_Delete>;
+  readonly read?: Maybe<TagsDocAccessFields_Slug_Read>;
+  readonly update?: Maybe<TagsDocAccessFields_Slug_Update>;
+};
+
+export type TagsDocAccessFields_Slug_Create = {
+  readonly __typename?: 'TagsDocAccessFields_slug_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_Slug_Delete = {
+  readonly __typename?: 'TagsDocAccessFields_slug_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_Slug_Read = {
+  readonly __typename?: 'TagsDocAccessFields_slug_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_Slug_Update = {
+  readonly __typename?: 'TagsDocAccessFields_slug_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_UpdatedAt = {
+  readonly __typename?: 'TagsDocAccessFields_updatedAt';
+  readonly create?: Maybe<TagsDocAccessFields_UpdatedAt_Create>;
+  readonly delete?: Maybe<TagsDocAccessFields_UpdatedAt_Delete>;
+  readonly read?: Maybe<TagsDocAccessFields_UpdatedAt_Read>;
+  readonly update?: Maybe<TagsDocAccessFields_UpdatedAt_Update>;
+};
+
+export type TagsDocAccessFields_UpdatedAt_Create = {
+  readonly __typename?: 'TagsDocAccessFields_updatedAt_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_UpdatedAt_Delete = {
+  readonly __typename?: 'TagsDocAccessFields_updatedAt_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_UpdatedAt_Read = {
+  readonly __typename?: 'TagsDocAccessFields_updatedAt_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_UpdatedAt_Update = {
+  readonly __typename?: 'TagsDocAccessFields_updatedAt_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields = {
+  readonly __typename?: 'TagsFields';
+  readonly createdAt?: Maybe<TagsFields_CreatedAt>;
+  readonly description?: Maybe<TagsFields_Description>;
+  readonly name?: Maybe<TagsFields_Name>;
+  readonly slug?: Maybe<TagsFields_Slug>;
+  readonly updatedAt?: Maybe<TagsFields_UpdatedAt>;
+};
+
+export type TagsFields_CreatedAt = {
+  readonly __typename?: 'TagsFields_createdAt';
+  readonly create?: Maybe<TagsFields_CreatedAt_Create>;
+  readonly delete?: Maybe<TagsFields_CreatedAt_Delete>;
+  readonly read?: Maybe<TagsFields_CreatedAt_Read>;
+  readonly update?: Maybe<TagsFields_CreatedAt_Update>;
+};
+
+export type TagsFields_CreatedAt_Create = {
+  readonly __typename?: 'TagsFields_createdAt_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_CreatedAt_Delete = {
+  readonly __typename?: 'TagsFields_createdAt_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_CreatedAt_Read = {
+  readonly __typename?: 'TagsFields_createdAt_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_CreatedAt_Update = {
+  readonly __typename?: 'TagsFields_createdAt_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_Description = {
+  readonly __typename?: 'TagsFields_description';
+  readonly create?: Maybe<TagsFields_Description_Create>;
+  readonly delete?: Maybe<TagsFields_Description_Delete>;
+  readonly read?: Maybe<TagsFields_Description_Read>;
+  readonly update?: Maybe<TagsFields_Description_Update>;
+};
+
+export type TagsFields_Description_Create = {
+  readonly __typename?: 'TagsFields_description_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_Description_Delete = {
+  readonly __typename?: 'TagsFields_description_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_Description_Read = {
+  readonly __typename?: 'TagsFields_description_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_Description_Update = {
+  readonly __typename?: 'TagsFields_description_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_Name = {
+  readonly __typename?: 'TagsFields_name';
+  readonly create?: Maybe<TagsFields_Name_Create>;
+  readonly delete?: Maybe<TagsFields_Name_Delete>;
+  readonly read?: Maybe<TagsFields_Name_Read>;
+  readonly update?: Maybe<TagsFields_Name_Update>;
+};
+
+export type TagsFields_Name_Create = {
+  readonly __typename?: 'TagsFields_name_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_Name_Delete = {
+  readonly __typename?: 'TagsFields_name_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_Name_Read = {
+  readonly __typename?: 'TagsFields_name_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_Name_Update = {
+  readonly __typename?: 'TagsFields_name_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_Slug = {
+  readonly __typename?: 'TagsFields_slug';
+  readonly create?: Maybe<TagsFields_Slug_Create>;
+  readonly delete?: Maybe<TagsFields_Slug_Delete>;
+  readonly read?: Maybe<TagsFields_Slug_Read>;
+  readonly update?: Maybe<TagsFields_Slug_Update>;
+};
+
+export type TagsFields_Slug_Create = {
+  readonly __typename?: 'TagsFields_slug_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_Slug_Delete = {
+  readonly __typename?: 'TagsFields_slug_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_Slug_Read = {
+  readonly __typename?: 'TagsFields_slug_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_Slug_Update = {
+  readonly __typename?: 'TagsFields_slug_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_UpdatedAt = {
+  readonly __typename?: 'TagsFields_updatedAt';
+  readonly create?: Maybe<TagsFields_UpdatedAt_Create>;
+  readonly delete?: Maybe<TagsFields_UpdatedAt_Delete>;
+  readonly read?: Maybe<TagsFields_UpdatedAt_Read>;
+  readonly update?: Maybe<TagsFields_UpdatedAt_Update>;
+};
+
+export type TagsFields_UpdatedAt_Create = {
+  readonly __typename?: 'TagsFields_updatedAt_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_UpdatedAt_Delete = {
+  readonly __typename?: 'TagsFields_updatedAt_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_UpdatedAt_Read = {
+  readonly __typename?: 'TagsFields_updatedAt_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_UpdatedAt_Update = {
+  readonly __typename?: 'TagsFields_updatedAt_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type TagsReadAccess = {
+  readonly __typename?: 'TagsReadAccess';
+  readonly permission: Scalars['Boolean']['output'];
+  readonly where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type TagsReadDocAccess = {
+  readonly __typename?: 'TagsReadDocAccess';
+  readonly permission: Scalars['Boolean']['output'];
+  readonly where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type TagsUpdateAccess = {
+  readonly __typename?: 'TagsUpdateAccess';
+  readonly permission: Scalars['Boolean']['output'];
+  readonly where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type TagsUpdateDocAccess = {
+  readonly __typename?: 'TagsUpdateDocAccess';
   readonly permission: Scalars['Boolean']['output'];
   readonly where?: Maybe<Scalars['JSONObject']['output']>;
 };
@@ -9665,6 +10186,11 @@ export type CountPayloadPreferences = {
   readonly totalDocs?: Maybe<Scalars['Int']['output']>;
 };
 
+export type CountTags = {
+  readonly __typename?: 'countTags';
+  readonly totalDocs?: Maybe<Scalars['Int']['output']>;
+};
+
 export type CountUsers = {
   readonly __typename?: 'countUsers';
   readonly totalDocs?: Maybe<Scalars['Int']['output']>;
@@ -9791,7 +10317,7 @@ export type MutationCaseStudyInput = {
   readonly publishedAt?: InputMaybe<Scalars['String']['input']>;
   readonly slug?: InputMaybe<Scalars['String']['input']>;
   readonly summary: Scalars['JSON']['input'];
-  readonly tags?: InputMaybe<ReadonlyArray<InputMaybe<MutationCaseStudy_TagsInput>>>;
+  readonly tags?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['Int']['input']>>>;
   readonly title: Scalars['String']['input'];
   readonly updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
@@ -9806,7 +10332,7 @@ export type MutationCaseStudyUpdateInput = {
   readonly publishedAt?: InputMaybe<Scalars['String']['input']>;
   readonly slug?: InputMaybe<Scalars['String']['input']>;
   readonly summary?: InputMaybe<Scalars['JSON']['input']>;
-  readonly tags?: InputMaybe<ReadonlyArray<InputMaybe<MutationCaseStudyUpdate_TagsInput>>>;
+  readonly tags?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['Int']['input']>>>;
   readonly title?: InputMaybe<Scalars['String']['input']>;
   readonly updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
@@ -9817,20 +10343,10 @@ export type MutationCaseStudyUpdate_MetaInput = {
   readonly title?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type MutationCaseStudyUpdate_TagsInput = {
-  readonly id?: InputMaybe<Scalars['String']['input']>;
-  readonly tag?: InputMaybe<Scalars['String']['input']>;
-};
-
 export type MutationCaseStudy_MetaInput = {
   readonly description?: InputMaybe<Scalars['String']['input']>;
   readonly image?: InputMaybe<Scalars['Int']['input']>;
   readonly title?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type MutationCaseStudy_TagsInput = {
-  readonly id?: InputMaybe<Scalars['String']['input']>;
-  readonly tag?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type MutationContactFormInput = {
@@ -9855,6 +10371,7 @@ export type MutationContactFormUpdateInput = {
 
 export type MutationExperienceInput = {
   readonly caseStudies?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['Int']['input']>>>;
+  readonly coverImage?: InputMaybe<Scalars['Int']['input']>;
   readonly createdAt?: InputMaybe<Scalars['String']['input']>;
   readonly endDate?: InputMaybe<Scalars['String']['input']>;
   readonly meta?: InputMaybe<MutationExperience_MetaInput>;
@@ -9862,6 +10379,7 @@ export type MutationExperienceInput = {
   readonly slug?: InputMaybe<Scalars['String']['input']>;
   readonly startDate?: InputMaybe<Scalars['String']['input']>;
   readonly summary: Scalars['JSON']['input'];
+  readonly tags?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['Int']['input']>>>;
   readonly thumbnailImage?: InputMaybe<Scalars['Int']['input']>;
   readonly title: Scalars['String']['input'];
   readonly updatedAt?: InputMaybe<Scalars['String']['input']>;
@@ -9869,6 +10387,7 @@ export type MutationExperienceInput = {
 
 export type MutationExperienceUpdateInput = {
   readonly caseStudies?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['Int']['input']>>>;
+  readonly coverImage?: InputMaybe<Scalars['Int']['input']>;
   readonly createdAt?: InputMaybe<Scalars['String']['input']>;
   readonly endDate?: InputMaybe<Scalars['String']['input']>;
   readonly meta?: InputMaybe<MutationExperienceUpdate_MetaInput>;
@@ -9876,6 +10395,7 @@ export type MutationExperienceUpdateInput = {
   readonly slug?: InputMaybe<Scalars['String']['input']>;
   readonly startDate?: InputMaybe<Scalars['String']['input']>;
   readonly summary?: InputMaybe<Scalars['JSON']['input']>;
+  readonly tags?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['Int']['input']>>>;
   readonly thumbnailImage?: InputMaybe<Scalars['Int']['input']>;
   readonly title?: InputMaybe<Scalars['String']['input']>;
   readonly updatedAt?: InputMaybe<Scalars['String']['input']>;
@@ -10034,6 +10554,22 @@ export type MutationSkill_SkillsInput = {
   readonly subtitle: Scalars['String']['input'];
 };
 
+export type MutationTagInput = {
+  readonly createdAt?: InputMaybe<Scalars['String']['input']>;
+  readonly description?: InputMaybe<Scalars['String']['input']>;
+  readonly name: Scalars['String']['input'];
+  readonly slug: Scalars['String']['input'];
+  readonly updatedAt?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MutationTagUpdateInput = {
+  readonly createdAt?: InputMaybe<Scalars['String']['input']>;
+  readonly description?: InputMaybe<Scalars['String']['input']>;
+  readonly name?: InputMaybe<Scalars['String']['input']>;
+  readonly slug?: InputMaybe<Scalars['String']['input']>;
+  readonly updatedAt?: InputMaybe<Scalars['String']['input']>;
+};
+
 export type MutationUserInput = {
   readonly createdAt?: InputMaybe<Scalars['String']['input']>;
   readonly email: Scalars['String']['input'];
@@ -10122,6 +10658,24 @@ export type SkillsDocAccess = {
   readonly update?: Maybe<SkillsUpdateDocAccess>;
 };
 
+export type TagsAccess = {
+  readonly __typename?: 'tagsAccess';
+  readonly create?: Maybe<TagsCreateAccess>;
+  readonly delete?: Maybe<TagsDeleteAccess>;
+  readonly fields?: Maybe<TagsFields>;
+  readonly read?: Maybe<TagsReadAccess>;
+  readonly update?: Maybe<TagsUpdateAccess>;
+};
+
+export type TagsDocAccess = {
+  readonly __typename?: 'tagsDocAccess';
+  readonly create?: Maybe<TagsCreateDocAccess>;
+  readonly delete?: Maybe<TagsDeleteDocAccess>;
+  readonly fields?: Maybe<TagsDocAccessFields>;
+  readonly read?: Maybe<TagsReadDocAccess>;
+  readonly update?: Maybe<TagsUpdateDocAccess>;
+};
+
 export type UsersAccess = {
   readonly __typename?: 'usersAccess';
   readonly create?: Maybe<UsersCreateAccess>;
@@ -10205,29 +10759,38 @@ export type CreateContactFormMutation = { readonly __typename?: 'Mutation', read
 export type GetAllTagsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetAllTagsQuery = { readonly __typename?: 'Query', readonly CaseStudies?: { readonly __typename?: 'CaseStudies', readonly docs: ReadonlyArray<{ readonly __typename?: 'CaseStudy', readonly tags?: ReadonlyArray<{ readonly __typename?: 'CaseStudy_Tags', readonly tag?: string | null }> | null }> } | null };
+export type GetAllTagsQuery = { readonly __typename?: 'Query', readonly CaseStudies?: { readonly __typename?: 'CaseStudies', readonly docs: ReadonlyArray<{ readonly __typename?: 'CaseStudy', readonly tags: ReadonlyArray<{ readonly __typename?: 'Tag', readonly name: string, readonly id: number }> }> } | null };
 
-export type GetCaseStudiesQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetCaseStudiesByOptionalTagsQueryVariables = Exact<{
+  tagIds?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['JSON']['input']>> | InputMaybe<Scalars['JSON']['input']>>;
+}>;
 
 
-export type GetCaseStudiesQuery = { readonly __typename?: 'Query', readonly CaseStudies?: { readonly __typename?: 'CaseStudies', readonly offset?: number | null, readonly totalDocs: number, readonly pagingCounter: number, readonly docs: ReadonlyArray<{ readonly __typename?: 'CaseStudy', readonly id: number, readonly slug?: string | null, readonly title: string, readonly updatedAt?: any | null, readonly tags?: ReadonlyArray<{ readonly __typename?: 'CaseStudy_Tags', readonly tag?: string | null }> | null, readonly illustration?: { readonly __typename?: 'Media', readonly url?: string | null, readonly alt: string } | null, readonly experience: { readonly __typename?: 'Experience', readonly role?: string | null, readonly title: string, readonly slug?: string | null } }> } | null, readonly Journal?: { readonly __typename?: 'Journal', readonly title: string, readonly subtitle?: string | null, readonly description: string } | null };
+export type GetCaseStudiesByOptionalTagsQuery = { readonly __typename?: 'Query', readonly CaseStudies?: { readonly __typename?: 'CaseStudies', readonly offset?: number | null, readonly totalDocs: number, readonly pagingCounter: number, readonly docs: ReadonlyArray<{ readonly __typename?: 'CaseStudy', readonly id: number, readonly slug?: string | null, readonly title: string, readonly updatedAt?: any | null, readonly tags: ReadonlyArray<{ readonly __typename?: 'Tag', readonly name: string, readonly id: number }>, readonly illustration?: { readonly __typename?: 'Media', readonly url?: string | null, readonly alt: string } | null, readonly experience: { readonly __typename?: 'Experience', readonly role?: string | null, readonly title: string, readonly slug?: string | null } }> } | null, readonly Journal?: { readonly __typename?: 'Journal', readonly title: string, readonly subtitle?: string | null, readonly description: string } | null };
 
 export type GetCaseStudyBySlugQueryVariables = Exact<{
   slug: Scalars['String']['input'];
 }>;
 
 
-export type GetCaseStudyBySlugQuery = { readonly __typename?: 'Query', readonly CaseStudies?: { readonly __typename?: 'CaseStudies', readonly docs: ReadonlyArray<{ readonly __typename?: 'CaseStudy', readonly title: string, readonly content: any, readonly summary: any, readonly updatedAt?: any | null, readonly experience: { readonly __typename?: 'Experience', readonly title: string, readonly role?: string | null, readonly startDate?: any | null, readonly endDate?: any | null, readonly id: number }, readonly tags?: ReadonlyArray<{ readonly __typename?: 'CaseStudy_Tags', readonly tag?: string | null }> | null, readonly illustration?: { readonly __typename?: 'Media', readonly url?: string | null } | null }> } | null };
+export type GetCaseStudyBySlugQuery = { readonly __typename?: 'Query', readonly CaseStudies?: { readonly __typename?: 'CaseStudies', readonly docs: ReadonlyArray<{ readonly __typename?: 'CaseStudy', readonly title: string, readonly content: any, readonly summary: any, readonly updatedAt?: any | null, readonly experience: { readonly __typename?: 'Experience', readonly title: string, readonly role?: string | null, readonly startDate?: any | null, readonly endDate?: any | null, readonly id: number }, readonly tags: ReadonlyArray<{ readonly __typename?: 'Tag', readonly name: string }>, readonly illustration?: { readonly __typename?: 'Media', readonly url?: string | null } | null }> } | null };
 
 export type GetContactFormsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetContactFormsQuery = { readonly __typename?: 'Query', readonly ContactForms?: { readonly __typename?: 'ContactForms', readonly totalDocs: number, readonly page: number, readonly totalPages: number, readonly docs: ReadonlyArray<{ readonly __typename?: 'ContactForm', readonly id: number, readonly name: string, readonly email: any, readonly subject: string, readonly message: string, readonly status?: ContactForm_Status | null, readonly createdAt?: any | null }> } | null };
 
+export type GetExperienceBySlugQueryVariables = Exact<{
+  slug: Scalars['String']['input'];
+}>;
+
+
+export type GetExperienceBySlugQuery = { readonly __typename?: 'Query', readonly Experiences?: { readonly __typename?: 'Experiences', readonly docs: ReadonlyArray<{ readonly __typename?: 'Experience', readonly id: number, readonly role?: string | null, readonly slug?: string | null, readonly startDate?: any | null, readonly summary: any, readonly title: string, readonly endDate?: any | null, readonly coverImage?: { readonly __typename?: 'Media', readonly url?: string | null } | null, readonly caseStudies?: ReadonlyArray<{ readonly __typename?: 'CaseStudy', readonly title: string, readonly summary: any, readonly createdAt?: any | null, readonly tags: ReadonlyArray<{ readonly __typename?: 'Tag', readonly id: number, readonly name: string }> }> | null }> } | null };
+
 export type GetFeaturedCaseStudiesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetFeaturedCaseStudiesQuery = { readonly __typename?: 'Query', readonly FeaturedCaseStudy?: { readonly __typename?: 'FeaturedCaseStudy', readonly title: string, readonly subtitle?: string | null, readonly description: string, readonly caseStudies: ReadonlyArray<{ readonly __typename?: 'CaseStudy', readonly title: string, readonly slug?: string | null, readonly illustration?: { readonly __typename?: 'Media', readonly url?: string | null, readonly alt: string } | null, readonly tags?: ReadonlyArray<{ readonly __typename?: 'CaseStudy_Tags', readonly tag?: string | null }> | null }> } | null };
+export type GetFeaturedCaseStudiesQuery = { readonly __typename?: 'Query', readonly FeaturedCaseStudy?: { readonly __typename?: 'FeaturedCaseStudy', readonly title: string, readonly subtitle?: string | null, readonly description: string, readonly caseStudies: ReadonlyArray<{ readonly __typename?: 'CaseStudy', readonly title: string, readonly slug?: string | null, readonly illustration?: { readonly __typename?: 'Media', readonly url?: string | null, readonly alt: string } | null, readonly tags: ReadonlyArray<{ readonly __typename?: 'Tag', readonly name: string, readonly id: number }> }> } | null };
 
 export type GetFeaturedExperiencesQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -10260,6 +10823,13 @@ export type GetCaseStudyBySlugMetaQueryVariables = Exact<{
 
 
 export type GetCaseStudyBySlugMetaQuery = { readonly __typename?: 'Query', readonly CaseStudies?: { readonly __typename?: 'CaseStudies', readonly docs: ReadonlyArray<{ readonly __typename?: 'CaseStudy', readonly meta?: { readonly __typename?: 'CaseStudy_Meta', readonly title?: string | null, readonly description?: string | null, readonly image?: { readonly __typename?: 'Media', readonly url?: string | null } | null } | null }> } | null };
+
+export type GetExperienceBySlugMetaQueryVariables = Exact<{
+  slug: Scalars['String']['input'];
+}>;
+
+
+export type GetExperienceBySlugMetaQuery = { readonly __typename?: 'Query', readonly Experiences?: { readonly __typename?: 'Experiences', readonly docs: ReadonlyArray<{ readonly __typename?: 'Experience', readonly meta?: { readonly __typename?: 'Experience_Meta', readonly title?: string | null, readonly description?: string | null, readonly image?: { readonly __typename?: 'Media', readonly url?: string | null } | null } | null }> } | null };
 
 export type GetHeroMetaQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -10320,7 +10890,8 @@ export const GetAllTagsDocument = gql`
   CaseStudies {
     docs {
       tags {
-        tag
+        name
+        id
       }
     }
   }
@@ -10358,9 +10929,9 @@ export type GetAllTagsQueryHookResult = ReturnType<typeof useGetAllTagsQuery>;
 export type GetAllTagsLazyQueryHookResult = ReturnType<typeof useGetAllTagsLazyQuery>;
 export type GetAllTagsSuspenseQueryHookResult = ReturnType<typeof useGetAllTagsSuspenseQuery>;
 export type GetAllTagsQueryResult = Apollo.QueryResult<GetAllTagsQuery, GetAllTagsQueryVariables>;
-export const GetCaseStudiesDocument = gql`
-    query GetCaseStudies {
-  CaseStudies(limit: 5, page: 1, sort: "-updatedAt") {
+export const GetCaseStudiesByOptionalTagsDocument = gql`
+    query GetCaseStudiesByOptionalTags($tagIds: [JSON]) {
+  CaseStudies(where: {tags: {in: $tagIds}}) {
     offset
     totalDocs
     docs {
@@ -10368,7 +10939,8 @@ export const GetCaseStudiesDocument = gql`
       slug
       title
       tags {
-        tag
+        name
+        id
       }
       updatedAt
       illustration {
@@ -10392,36 +10964,37 @@ export const GetCaseStudiesDocument = gql`
     `;
 
 /**
- * __useGetCaseStudiesQuery__
+ * __useGetCaseStudiesByOptionalTagsQuery__
  *
- * To run a query within a React component, call `useGetCaseStudiesQuery` and pass it any options that fit your needs.
- * When your component renders, `useGetCaseStudiesQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * To run a query within a React component, call `useGetCaseStudiesByOptionalTagsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetCaseStudiesByOptionalTagsQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
  *
  * @example
- * const { data, loading, error } = useGetCaseStudiesQuery({
+ * const { data, loading, error } = useGetCaseStudiesByOptionalTagsQuery({
  *   variables: {
+ *      tagIds: // value for 'tagIds'
  *   },
  * });
  */
-export function useGetCaseStudiesQuery(baseOptions?: Apollo.QueryHookOptions<GetCaseStudiesQuery, GetCaseStudiesQueryVariables>) {
+export function useGetCaseStudiesByOptionalTagsQuery(baseOptions?: Apollo.QueryHookOptions<GetCaseStudiesByOptionalTagsQuery, GetCaseStudiesByOptionalTagsQueryVariables>) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetCaseStudiesQuery, GetCaseStudiesQueryVariables>(GetCaseStudiesDocument, options);
+        return Apollo.useQuery<GetCaseStudiesByOptionalTagsQuery, GetCaseStudiesByOptionalTagsQueryVariables>(GetCaseStudiesByOptionalTagsDocument, options);
       }
-export function useGetCaseStudiesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetCaseStudiesQuery, GetCaseStudiesQueryVariables>) {
+export function useGetCaseStudiesByOptionalTagsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetCaseStudiesByOptionalTagsQuery, GetCaseStudiesByOptionalTagsQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetCaseStudiesQuery, GetCaseStudiesQueryVariables>(GetCaseStudiesDocument, options);
+          return Apollo.useLazyQuery<GetCaseStudiesByOptionalTagsQuery, GetCaseStudiesByOptionalTagsQueryVariables>(GetCaseStudiesByOptionalTagsDocument, options);
         }
-export function useGetCaseStudiesSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetCaseStudiesQuery, GetCaseStudiesQueryVariables>) {
+export function useGetCaseStudiesByOptionalTagsSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetCaseStudiesByOptionalTagsQuery, GetCaseStudiesByOptionalTagsQueryVariables>) {
           const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return Apollo.useSuspenseQuery<GetCaseStudiesQuery, GetCaseStudiesQueryVariables>(GetCaseStudiesDocument, options);
+          return Apollo.useSuspenseQuery<GetCaseStudiesByOptionalTagsQuery, GetCaseStudiesByOptionalTagsQueryVariables>(GetCaseStudiesByOptionalTagsDocument, options);
         }
-export type GetCaseStudiesQueryHookResult = ReturnType<typeof useGetCaseStudiesQuery>;
-export type GetCaseStudiesLazyQueryHookResult = ReturnType<typeof useGetCaseStudiesLazyQuery>;
-export type GetCaseStudiesSuspenseQueryHookResult = ReturnType<typeof useGetCaseStudiesSuspenseQuery>;
-export type GetCaseStudiesQueryResult = Apollo.QueryResult<GetCaseStudiesQuery, GetCaseStudiesQueryVariables>;
+export type GetCaseStudiesByOptionalTagsQueryHookResult = ReturnType<typeof useGetCaseStudiesByOptionalTagsQuery>;
+export type GetCaseStudiesByOptionalTagsLazyQueryHookResult = ReturnType<typeof useGetCaseStudiesByOptionalTagsLazyQuery>;
+export type GetCaseStudiesByOptionalTagsSuspenseQueryHookResult = ReturnType<typeof useGetCaseStudiesByOptionalTagsSuspenseQuery>;
+export type GetCaseStudiesByOptionalTagsQueryResult = Apollo.QueryResult<GetCaseStudiesByOptionalTagsQuery, GetCaseStudiesByOptionalTagsQueryVariables>;
 export const GetCaseStudyBySlugDocument = gql`
     query GetCaseStudyBySlug($slug: String!) {
   CaseStudies(where: {slug: {equals: $slug}}) {
@@ -10435,7 +11008,7 @@ export const GetCaseStudyBySlugDocument = gql`
         id
       }
       tags {
-        tag
+        name
       }
       content
       summary
@@ -10530,6 +11103,66 @@ export type GetContactFormsQueryHookResult = ReturnType<typeof useGetContactForm
 export type GetContactFormsLazyQueryHookResult = ReturnType<typeof useGetContactFormsLazyQuery>;
 export type GetContactFormsSuspenseQueryHookResult = ReturnType<typeof useGetContactFormsSuspenseQuery>;
 export type GetContactFormsQueryResult = Apollo.QueryResult<GetContactFormsQuery, GetContactFormsQueryVariables>;
+export const GetExperienceBySlugDocument = gql`
+    query GetExperienceBySlug($slug: String!) {
+  Experiences(where: {slug: {equals: $slug}}) {
+    docs {
+      id
+      role
+      slug
+      startDate
+      summary
+      title
+      endDate
+      coverImage {
+        url
+      }
+      caseStudies {
+        title
+        summary
+        createdAt
+        tags {
+          id
+          name
+        }
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetExperienceBySlugQuery__
+ *
+ * To run a query within a React component, call `useGetExperienceBySlugQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetExperienceBySlugQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetExperienceBySlugQuery({
+ *   variables: {
+ *      slug: // value for 'slug'
+ *   },
+ * });
+ */
+export function useGetExperienceBySlugQuery(baseOptions: Apollo.QueryHookOptions<GetExperienceBySlugQuery, GetExperienceBySlugQueryVariables> & ({ variables: GetExperienceBySlugQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetExperienceBySlugQuery, GetExperienceBySlugQueryVariables>(GetExperienceBySlugDocument, options);
+      }
+export function useGetExperienceBySlugLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetExperienceBySlugQuery, GetExperienceBySlugQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetExperienceBySlugQuery, GetExperienceBySlugQueryVariables>(GetExperienceBySlugDocument, options);
+        }
+export function useGetExperienceBySlugSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetExperienceBySlugQuery, GetExperienceBySlugQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetExperienceBySlugQuery, GetExperienceBySlugQueryVariables>(GetExperienceBySlugDocument, options);
+        }
+export type GetExperienceBySlugQueryHookResult = ReturnType<typeof useGetExperienceBySlugQuery>;
+export type GetExperienceBySlugLazyQueryHookResult = ReturnType<typeof useGetExperienceBySlugLazyQuery>;
+export type GetExperienceBySlugSuspenseQueryHookResult = ReturnType<typeof useGetExperienceBySlugSuspenseQuery>;
+export type GetExperienceBySlugQueryResult = Apollo.QueryResult<GetExperienceBySlugQuery, GetExperienceBySlugQueryVariables>;
 export const GetFeaturedCaseStudiesDocument = gql`
     query GetFeaturedCaseStudies {
   FeaturedCaseStudy {
@@ -10544,7 +11177,8 @@ export const GetFeaturedCaseStudiesDocument = gql`
         alt
       }
       tags {
-        tag
+        name
+        id
       }
     }
   }
@@ -10855,6 +11489,54 @@ export type GetCaseStudyBySlugMetaQueryHookResult = ReturnType<typeof useGetCase
 export type GetCaseStudyBySlugMetaLazyQueryHookResult = ReturnType<typeof useGetCaseStudyBySlugMetaLazyQuery>;
 export type GetCaseStudyBySlugMetaSuspenseQueryHookResult = ReturnType<typeof useGetCaseStudyBySlugMetaSuspenseQuery>;
 export type GetCaseStudyBySlugMetaQueryResult = Apollo.QueryResult<GetCaseStudyBySlugMetaQuery, GetCaseStudyBySlugMetaQueryVariables>;
+export const GetExperienceBySlugMetaDocument = gql`
+    query GetExperienceBySlugMeta($slug: String!) {
+  Experiences(where: {slug: {equals: $slug}}) {
+    docs {
+      meta {
+        title
+        description
+        image {
+          url
+        }
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetExperienceBySlugMetaQuery__
+ *
+ * To run a query within a React component, call `useGetExperienceBySlugMetaQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetExperienceBySlugMetaQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetExperienceBySlugMetaQuery({
+ *   variables: {
+ *      slug: // value for 'slug'
+ *   },
+ * });
+ */
+export function useGetExperienceBySlugMetaQuery(baseOptions: Apollo.QueryHookOptions<GetExperienceBySlugMetaQuery, GetExperienceBySlugMetaQueryVariables> & ({ variables: GetExperienceBySlugMetaQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetExperienceBySlugMetaQuery, GetExperienceBySlugMetaQueryVariables>(GetExperienceBySlugMetaDocument, options);
+      }
+export function useGetExperienceBySlugMetaLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetExperienceBySlugMetaQuery, GetExperienceBySlugMetaQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetExperienceBySlugMetaQuery, GetExperienceBySlugMetaQueryVariables>(GetExperienceBySlugMetaDocument, options);
+        }
+export function useGetExperienceBySlugMetaSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetExperienceBySlugMetaQuery, GetExperienceBySlugMetaQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetExperienceBySlugMetaQuery, GetExperienceBySlugMetaQueryVariables>(GetExperienceBySlugMetaDocument, options);
+        }
+export type GetExperienceBySlugMetaQueryHookResult = ReturnType<typeof useGetExperienceBySlugMetaQuery>;
+export type GetExperienceBySlugMetaLazyQueryHookResult = ReturnType<typeof useGetExperienceBySlugMetaLazyQuery>;
+export type GetExperienceBySlugMetaSuspenseQueryHookResult = ReturnType<typeof useGetExperienceBySlugMetaSuspenseQuery>;
+export type GetExperienceBySlugMetaQueryResult = Apollo.QueryResult<GetExperienceBySlugMetaQuery, GetExperienceBySlugMetaQueryVariables>;
 export const GetHeroMetaDocument = gql`
     query GetHeroMeta {
   Hero {

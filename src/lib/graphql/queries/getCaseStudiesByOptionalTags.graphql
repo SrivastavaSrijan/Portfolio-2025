@@ -1,5 +1,5 @@
-query GetCaseStudies {
-  CaseStudies(limit: 5, page: 1, sort: "-updatedAt") {
+query GetCaseStudiesByOptionalTags($tagIds: [JSON]) {
+  CaseStudies(where: { tags: { in: $tagIds } }) {
     offset
     totalDocs
     docs {
@@ -7,7 +7,8 @@ query GetCaseStudies {
       slug
       title
       tags {
-        tag
+        name
+        id
       }
       updatedAt
       illustration {

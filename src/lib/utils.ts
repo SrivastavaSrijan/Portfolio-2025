@@ -1,4 +1,5 @@
 import { clsx, type ClassValue } from 'clsx';
+import { isString } from 'lodash';
 import { twMerge } from 'tailwind-merge';
 
 export function cn(...inputs: ClassValue[]) {
@@ -18,7 +19,11 @@ export type DeepNonNullable<T> = {
 export type DeepWriteable<T> = { -readonly [P in keyof T]: DeepWriteable<T[P]> };
 
 export const isStringParam = (param: unknown): param is string => {
-  return typeof param === 'string';
+  return isString(param);
+};
+
+export const isStringArrayParam = (param: unknown): param is string[] => {
+  return Array.isArray(param) && param.every((item) => isString(item));
 };
 // Utility type to modify the __typename field to accept any string
 export type WithFlexibleTypename<T> = {

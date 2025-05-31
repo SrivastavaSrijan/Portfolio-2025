@@ -2,7 +2,7 @@
 import { useGetFeaturedExperiencesSuspenseQuery } from '@/lib/graphql/__generated__/hooks';
 import Image from 'next/image';
 import dayjs from 'dayjs';
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { Button } from '../ui';
 import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
@@ -20,15 +20,17 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 15 },
-  visible: {
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i: number) => ({
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.4,
+      duration: 0.5,
+      ease: [0.22, 1, 0.36, 1],
+      delay: i * 0.1,
     },
-  },
+  }),
 };
 
 export const FeaturedExperiences = () => {
@@ -55,7 +57,7 @@ export const FeaturedExperiences = () => {
           initial="hidden"
           animate="visible"
         >
-          {experiences?.map((experience) => {
+          {experiences?.map((experience, index) => {
             const {
               id,
               title: experienceTitle,
@@ -80,6 +82,10 @@ export const FeaturedExperiences = () => {
                 key={id}
                 className="flex w-full flex-col gap-1 rounded-lg p-3 transition-colors hover:bg-white/5 md:flex-row md:items-center md:gap-10"
                 variants={itemVariants}
+                custom={index}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
               >
                 <div className="group relative flex h-[60px] w-[156px] items-start overflow-hidden rounded-md bg-white/10 transition-transform hover:scale-[1.03] md:w-[200px]">
                   <Image

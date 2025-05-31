@@ -1,0 +1,13 @@
+query GetExperienceBySlugMeta($slug: String!) {
+  Experiences(where: { slug: { equals: $slug } }) {
+    docs {
+      meta {
+        title
+        description
+        image {
+          url
+        }
+      }
+    }
+  }
+}

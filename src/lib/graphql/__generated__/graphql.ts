@@ -39,6 +39,7 @@ export type Access = {
   payload_locked_documents?: Maybe<Payload_Locked_DocumentsAccess>;
   payload_preferences?: Maybe<Payload_PreferencesAccess>;
   skills?: Maybe<SkillsAccess>;
+  tags?: Maybe<TagsAccess>;
   users?: Maybe<UsersAccess>;
   work_buttons?: Maybe<Work_ButtonsAccess>;
 };
@@ -446,7 +447,6 @@ export type CaseStudiesDocAccessFields_Tags = {
   __typename?: 'CaseStudiesDocAccessFields_tags';
   create?: Maybe<CaseStudiesDocAccessFields_Tags_Create>;
   delete?: Maybe<CaseStudiesDocAccessFields_Tags_Delete>;
-  fields?: Maybe<CaseStudiesDocAccessFields_Tags_Fields>;
   read?: Maybe<CaseStudiesDocAccessFields_Tags_Read>;
   update?: Maybe<CaseStudiesDocAccessFields_Tags_Update>;
 };
@@ -461,12 +461,6 @@ export type CaseStudiesDocAccessFields_Tags_Delete = {
   permission: Scalars['Boolean']['output'];
 };
 
-export type CaseStudiesDocAccessFields_Tags_Fields = {
-  __typename?: 'CaseStudiesDocAccessFields_tags_Fields';
-  id?: Maybe<CaseStudiesDocAccessFields_Tags_Id>;
-  tag?: Maybe<CaseStudiesDocAccessFields_Tags_Tag>;
-};
-
 export type CaseStudiesDocAccessFields_Tags_Read = {
   __typename?: 'CaseStudiesDocAccessFields_tags_Read';
   permission: Scalars['Boolean']['output'];
@@ -474,62 +468,6 @@ export type CaseStudiesDocAccessFields_Tags_Read = {
 
 export type CaseStudiesDocAccessFields_Tags_Update = {
   __typename?: 'CaseStudiesDocAccessFields_tags_Update';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type CaseStudiesDocAccessFields_Tags_Id = {
-  __typename?: 'CaseStudiesDocAccessFields_tags_id';
-  create?: Maybe<CaseStudiesDocAccessFields_Tags_Id_Create>;
-  delete?: Maybe<CaseStudiesDocAccessFields_Tags_Id_Delete>;
-  read?: Maybe<CaseStudiesDocAccessFields_Tags_Id_Read>;
-  update?: Maybe<CaseStudiesDocAccessFields_Tags_Id_Update>;
-};
-
-export type CaseStudiesDocAccessFields_Tags_Id_Create = {
-  __typename?: 'CaseStudiesDocAccessFields_tags_id_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type CaseStudiesDocAccessFields_Tags_Id_Delete = {
-  __typename?: 'CaseStudiesDocAccessFields_tags_id_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type CaseStudiesDocAccessFields_Tags_Id_Read = {
-  __typename?: 'CaseStudiesDocAccessFields_tags_id_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type CaseStudiesDocAccessFields_Tags_Id_Update = {
-  __typename?: 'CaseStudiesDocAccessFields_tags_id_Update';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type CaseStudiesDocAccessFields_Tags_Tag = {
-  __typename?: 'CaseStudiesDocAccessFields_tags_tag';
-  create?: Maybe<CaseStudiesDocAccessFields_Tags_Tag_Create>;
-  delete?: Maybe<CaseStudiesDocAccessFields_Tags_Tag_Delete>;
-  read?: Maybe<CaseStudiesDocAccessFields_Tags_Tag_Read>;
-  update?: Maybe<CaseStudiesDocAccessFields_Tags_Tag_Update>;
-};
-
-export type CaseStudiesDocAccessFields_Tags_Tag_Create = {
-  __typename?: 'CaseStudiesDocAccessFields_tags_tag_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type CaseStudiesDocAccessFields_Tags_Tag_Delete = {
-  __typename?: 'CaseStudiesDocAccessFields_tags_tag_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type CaseStudiesDocAccessFields_Tags_Tag_Read = {
-  __typename?: 'CaseStudiesDocAccessFields_tags_tag_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type CaseStudiesDocAccessFields_Tags_Tag_Update = {
-  __typename?: 'CaseStudiesDocAccessFields_tags_tag_Update';
   permission: Scalars['Boolean']['output'];
 };
 
@@ -953,7 +891,6 @@ export type CaseStudiesFields_Tags = {
   __typename?: 'CaseStudiesFields_tags';
   create?: Maybe<CaseStudiesFields_Tags_Create>;
   delete?: Maybe<CaseStudiesFields_Tags_Delete>;
-  fields?: Maybe<CaseStudiesFields_Tags_Fields>;
   read?: Maybe<CaseStudiesFields_Tags_Read>;
   update?: Maybe<CaseStudiesFields_Tags_Update>;
 };
@@ -968,12 +905,6 @@ export type CaseStudiesFields_Tags_Delete = {
   permission: Scalars['Boolean']['output'];
 };
 
-export type CaseStudiesFields_Tags_Fields = {
-  __typename?: 'CaseStudiesFields_tags_Fields';
-  id?: Maybe<CaseStudiesFields_Tags_Id>;
-  tag?: Maybe<CaseStudiesFields_Tags_Tag>;
-};
-
 export type CaseStudiesFields_Tags_Read = {
   __typename?: 'CaseStudiesFields_tags_Read';
   permission: Scalars['Boolean']['output'];
@@ -981,62 +912,6 @@ export type CaseStudiesFields_Tags_Read = {
 
 export type CaseStudiesFields_Tags_Update = {
   __typename?: 'CaseStudiesFields_tags_Update';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type CaseStudiesFields_Tags_Id = {
-  __typename?: 'CaseStudiesFields_tags_id';
-  create?: Maybe<CaseStudiesFields_Tags_Id_Create>;
-  delete?: Maybe<CaseStudiesFields_Tags_Id_Delete>;
-  read?: Maybe<CaseStudiesFields_Tags_Id_Read>;
-  update?: Maybe<CaseStudiesFields_Tags_Id_Update>;
-};
-
-export type CaseStudiesFields_Tags_Id_Create = {
-  __typename?: 'CaseStudiesFields_tags_id_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type CaseStudiesFields_Tags_Id_Delete = {
-  __typename?: 'CaseStudiesFields_tags_id_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type CaseStudiesFields_Tags_Id_Read = {
-  __typename?: 'CaseStudiesFields_tags_id_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type CaseStudiesFields_Tags_Id_Update = {
-  __typename?: 'CaseStudiesFields_tags_id_Update';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type CaseStudiesFields_Tags_Tag = {
-  __typename?: 'CaseStudiesFields_tags_tag';
-  create?: Maybe<CaseStudiesFields_Tags_Tag_Create>;
-  delete?: Maybe<CaseStudiesFields_Tags_Tag_Delete>;
-  read?: Maybe<CaseStudiesFields_Tags_Tag_Read>;
-  update?: Maybe<CaseStudiesFields_Tags_Tag_Update>;
-};
-
-export type CaseStudiesFields_Tags_Tag_Create = {
-  __typename?: 'CaseStudiesFields_tags_tag_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type CaseStudiesFields_Tags_Tag_Delete = {
-  __typename?: 'CaseStudiesFields_tags_tag_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type CaseStudiesFields_Tags_Tag_Read = {
-  __typename?: 'CaseStudiesFields_tags_tag_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type CaseStudiesFields_Tags_Tag_Update = {
-  __typename?: 'CaseStudiesFields_tags_tag_Update';
   permission: Scalars['Boolean']['output'];
 };
 
@@ -1132,7 +1007,7 @@ export type CaseStudy = {
   publishedAt?: Maybe<Scalars['DateTime']['output']>;
   slug?: Maybe<Scalars['String']['output']>;
   summary: Scalars['JSON']['output'];
-  tags?: Maybe<Array<CaseStudy_Tags>>;
+  tags: Array<Tag>;
   title: Scalars['String']['output'];
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
 };
@@ -1152,12 +1027,6 @@ export type CaseStudy_Meta = {
   description?: Maybe<Scalars['String']['output']>;
   image?: Maybe<Media>;
   title?: Maybe<Scalars['String']['output']>;
-};
-
-export type CaseStudy_Tags = {
-  __typename?: 'CaseStudy_Tags';
-  id?: Maybe<Scalars['String']['output']>;
-  tag?: Maybe<Scalars['String']['output']>;
 };
 
 export type CaseStudy_Content_Operator = {
@@ -1268,26 +1137,12 @@ export type CaseStudy_Summary_Operator = {
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
 };
 
-export type CaseStudy_Tags__Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  contains?: InputMaybe<Scalars['String']['input']>;
-  equals?: InputMaybe<Scalars['String']['input']>;
-  exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  like?: InputMaybe<Scalars['String']['input']>;
-  not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-export type CaseStudy_Tags__Tag_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  contains?: InputMaybe<Scalars['String']['input']>;
-  equals?: InputMaybe<Scalars['String']['input']>;
-  exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  like?: InputMaybe<Scalars['String']['input']>;
-  not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+export type CaseStudy_Tags_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  equals?: InputMaybe<Scalars['JSON']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_equals?: InputMaybe<Scalars['JSON']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
 };
 
 export type CaseStudy_Title_Operator = {
@@ -1326,8 +1181,7 @@ export type CaseStudy_Where = {
   publishedAt?: InputMaybe<CaseStudy_PublishedAt_Operator>;
   slug?: InputMaybe<CaseStudy_Slug_Operator>;
   summary?: InputMaybe<CaseStudy_Summary_Operator>;
-  tags__id?: InputMaybe<CaseStudy_Tags__Id_Operator>;
-  tags__tag?: InputMaybe<CaseStudy_Tags__Tag_Operator>;
+  tags?: InputMaybe<CaseStudy_Tags_Operator>;
   title?: InputMaybe<CaseStudy_Title_Operator>;
   updatedAt?: InputMaybe<CaseStudy_UpdatedAt_Operator>;
 };
@@ -1347,8 +1201,7 @@ export type CaseStudy_Where_And = {
   publishedAt?: InputMaybe<CaseStudy_PublishedAt_Operator>;
   slug?: InputMaybe<CaseStudy_Slug_Operator>;
   summary?: InputMaybe<CaseStudy_Summary_Operator>;
-  tags__id?: InputMaybe<CaseStudy_Tags__Id_Operator>;
-  tags__tag?: InputMaybe<CaseStudy_Tags__Tag_Operator>;
+  tags?: InputMaybe<CaseStudy_Tags_Operator>;
   title?: InputMaybe<CaseStudy_Title_Operator>;
   updatedAt?: InputMaybe<CaseStudy_UpdatedAt_Operator>;
 };
@@ -1368,8 +1221,7 @@ export type CaseStudy_Where_Or = {
   publishedAt?: InputMaybe<CaseStudy_PublishedAt_Operator>;
   slug?: InputMaybe<CaseStudy_Slug_Operator>;
   summary?: InputMaybe<CaseStudy_Summary_Operator>;
-  tags__id?: InputMaybe<CaseStudy_Tags__Id_Operator>;
-  tags__tag?: InputMaybe<CaseStudy_Tags__Tag_Operator>;
+  tags?: InputMaybe<CaseStudy_Tags_Operator>;
   title?: InputMaybe<CaseStudy_Title_Operator>;
   updatedAt?: InputMaybe<CaseStudy_UpdatedAt_Operator>;
 };
@@ -2007,6 +1859,7 @@ export type ContactFormsUpdateDocAccess = {
 export type Experience = {
   __typename?: 'Experience';
   caseStudies?: Maybe<Array<CaseStudy>>;
+  coverImage?: Maybe<Media>;
   createdAt?: Maybe<Scalars['DateTime']['output']>;
   endDate?: Maybe<Scalars['DateTime']['output']>;
   id: Scalars['Int']['output'];
@@ -2015,6 +1868,7 @@ export type Experience = {
   slug?: Maybe<Scalars['String']['output']>;
   startDate?: Maybe<Scalars['DateTime']['output']>;
   summary: Scalars['JSON']['output'];
+  tags: Array<Tag>;
   thumbnailImage?: Maybe<Media>;
   title: Scalars['String']['output'];
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
@@ -2033,6 +1887,15 @@ export type Experience_Meta = {
 };
 
 export type Experience_CaseStudies_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  equals?: InputMaybe<Scalars['JSON']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_equals?: InputMaybe<Scalars['JSON']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+};
+
+export type Experience_CoverImage_Operator = {
   all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
@@ -2141,6 +2004,14 @@ export type Experience_Summary_Operator = {
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
 };
 
+export type Experience_Tags_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  equals?: InputMaybe<Scalars['JSON']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_equals?: InputMaybe<Scalars['JSON']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+};
+
 export type Experience_ThumbnailImage_Operator = {
   all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
@@ -2175,6 +2046,7 @@ export type Experience_Where = {
   AND?: InputMaybe<Array<InputMaybe<Experience_Where_And>>>;
   OR?: InputMaybe<Array<InputMaybe<Experience_Where_Or>>>;
   caseStudies?: InputMaybe<Experience_CaseStudies_Operator>;
+  coverImage?: InputMaybe<Experience_CoverImage_Operator>;
   createdAt?: InputMaybe<Experience_CreatedAt_Operator>;
   endDate?: InputMaybe<Experience_EndDate_Operator>;
   id?: InputMaybe<Experience_Id_Operator>;
@@ -2185,6 +2057,7 @@ export type Experience_Where = {
   slug?: InputMaybe<Experience_Slug_Operator>;
   startDate?: InputMaybe<Experience_StartDate_Operator>;
   summary?: InputMaybe<Experience_Summary_Operator>;
+  tags?: InputMaybe<Experience_Tags_Operator>;
   thumbnailImage?: InputMaybe<Experience_ThumbnailImage_Operator>;
   title?: InputMaybe<Experience_Title_Operator>;
   updatedAt?: InputMaybe<Experience_UpdatedAt_Operator>;
@@ -2194,6 +2067,7 @@ export type Experience_Where_And = {
   AND?: InputMaybe<Array<InputMaybe<Experience_Where_And>>>;
   OR?: InputMaybe<Array<InputMaybe<Experience_Where_Or>>>;
   caseStudies?: InputMaybe<Experience_CaseStudies_Operator>;
+  coverImage?: InputMaybe<Experience_CoverImage_Operator>;
   createdAt?: InputMaybe<Experience_CreatedAt_Operator>;
   endDate?: InputMaybe<Experience_EndDate_Operator>;
   id?: InputMaybe<Experience_Id_Operator>;
@@ -2204,6 +2078,7 @@ export type Experience_Where_And = {
   slug?: InputMaybe<Experience_Slug_Operator>;
   startDate?: InputMaybe<Experience_StartDate_Operator>;
   summary?: InputMaybe<Experience_Summary_Operator>;
+  tags?: InputMaybe<Experience_Tags_Operator>;
   thumbnailImage?: InputMaybe<Experience_ThumbnailImage_Operator>;
   title?: InputMaybe<Experience_Title_Operator>;
   updatedAt?: InputMaybe<Experience_UpdatedAt_Operator>;
@@ -2213,6 +2088,7 @@ export type Experience_Where_Or = {
   AND?: InputMaybe<Array<InputMaybe<Experience_Where_And>>>;
   OR?: InputMaybe<Array<InputMaybe<Experience_Where_Or>>>;
   caseStudies?: InputMaybe<Experience_CaseStudies_Operator>;
+  coverImage?: InputMaybe<Experience_CoverImage_Operator>;
   createdAt?: InputMaybe<Experience_CreatedAt_Operator>;
   endDate?: InputMaybe<Experience_EndDate_Operator>;
   id?: InputMaybe<Experience_Id_Operator>;
@@ -2223,6 +2099,7 @@ export type Experience_Where_Or = {
   slug?: InputMaybe<Experience_Slug_Operator>;
   startDate?: InputMaybe<Experience_StartDate_Operator>;
   summary?: InputMaybe<Experience_Summary_Operator>;
+  tags?: InputMaybe<Experience_Tags_Operator>;
   thumbnailImage?: InputMaybe<Experience_ThumbnailImage_Operator>;
   title?: InputMaybe<Experience_Title_Operator>;
   updatedAt?: InputMaybe<Experience_UpdatedAt_Operator>;
@@ -2270,6 +2147,7 @@ export type ExperiencesDeleteDocAccess = {
 export type ExperiencesDocAccessFields = {
   __typename?: 'ExperiencesDocAccessFields';
   caseStudies?: Maybe<ExperiencesDocAccessFields_CaseStudies>;
+  coverImage?: Maybe<ExperiencesDocAccessFields_CoverImage>;
   createdAt?: Maybe<ExperiencesDocAccessFields_CreatedAt>;
   endDate?: Maybe<ExperiencesDocAccessFields_EndDate>;
   meta?: Maybe<ExperiencesDocAccessFields_Meta>;
@@ -2277,6 +2155,7 @@ export type ExperiencesDocAccessFields = {
   slug?: Maybe<ExperiencesDocAccessFields_Slug>;
   startDate?: Maybe<ExperiencesDocAccessFields_StartDate>;
   summary?: Maybe<ExperiencesDocAccessFields_Summary>;
+  tags?: Maybe<ExperiencesDocAccessFields_Tags>;
   thumbnailImage?: Maybe<ExperiencesDocAccessFields_ThumbnailImage>;
   title?: Maybe<ExperiencesDocAccessFields_Title>;
   updatedAt?: Maybe<ExperiencesDocAccessFields_UpdatedAt>;
@@ -2307,6 +2186,34 @@ export type ExperiencesDocAccessFields_CaseStudies_Read = {
 
 export type ExperiencesDocAccessFields_CaseStudies_Update = {
   __typename?: 'ExperiencesDocAccessFields_caseStudies_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_CoverImage = {
+  __typename?: 'ExperiencesDocAccessFields_coverImage';
+  create?: Maybe<ExperiencesDocAccessFields_CoverImage_Create>;
+  delete?: Maybe<ExperiencesDocAccessFields_CoverImage_Delete>;
+  read?: Maybe<ExperiencesDocAccessFields_CoverImage_Read>;
+  update?: Maybe<ExperiencesDocAccessFields_CoverImage_Update>;
+};
+
+export type ExperiencesDocAccessFields_CoverImage_Create = {
+  __typename?: 'ExperiencesDocAccessFields_coverImage_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_CoverImage_Delete = {
+  __typename?: 'ExperiencesDocAccessFields_coverImage_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_CoverImage_Read = {
+  __typename?: 'ExperiencesDocAccessFields_coverImage_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_CoverImage_Update = {
+  __typename?: 'ExperiencesDocAccessFields_coverImage_Update';
   permission: Scalars['Boolean']['output'];
 };
 
@@ -2598,6 +2505,34 @@ export type ExperiencesDocAccessFields_Summary_Update = {
   permission: Scalars['Boolean']['output'];
 };
 
+export type ExperiencesDocAccessFields_Tags = {
+  __typename?: 'ExperiencesDocAccessFields_tags';
+  create?: Maybe<ExperiencesDocAccessFields_Tags_Create>;
+  delete?: Maybe<ExperiencesDocAccessFields_Tags_Delete>;
+  read?: Maybe<ExperiencesDocAccessFields_Tags_Read>;
+  update?: Maybe<ExperiencesDocAccessFields_Tags_Update>;
+};
+
+export type ExperiencesDocAccessFields_Tags_Create = {
+  __typename?: 'ExperiencesDocAccessFields_tags_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_Tags_Delete = {
+  __typename?: 'ExperiencesDocAccessFields_tags_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_Tags_Read = {
+  __typename?: 'ExperiencesDocAccessFields_tags_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesDocAccessFields_Tags_Update = {
+  __typename?: 'ExperiencesDocAccessFields_tags_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
 export type ExperiencesDocAccessFields_ThumbnailImage = {
   __typename?: 'ExperiencesDocAccessFields_thumbnailImage';
   create?: Maybe<ExperiencesDocAccessFields_ThumbnailImage_Create>;
@@ -2685,6 +2620,7 @@ export type ExperiencesDocAccessFields_UpdatedAt_Update = {
 export type ExperiencesFields = {
   __typename?: 'ExperiencesFields';
   caseStudies?: Maybe<ExperiencesFields_CaseStudies>;
+  coverImage?: Maybe<ExperiencesFields_CoverImage>;
   createdAt?: Maybe<ExperiencesFields_CreatedAt>;
   endDate?: Maybe<ExperiencesFields_EndDate>;
   meta?: Maybe<ExperiencesFields_Meta>;
@@ -2692,6 +2628,7 @@ export type ExperiencesFields = {
   slug?: Maybe<ExperiencesFields_Slug>;
   startDate?: Maybe<ExperiencesFields_StartDate>;
   summary?: Maybe<ExperiencesFields_Summary>;
+  tags?: Maybe<ExperiencesFields_Tags>;
   thumbnailImage?: Maybe<ExperiencesFields_ThumbnailImage>;
   title?: Maybe<ExperiencesFields_Title>;
   updatedAt?: Maybe<ExperiencesFields_UpdatedAt>;
@@ -2722,6 +2659,34 @@ export type ExperiencesFields_CaseStudies_Read = {
 
 export type ExperiencesFields_CaseStudies_Update = {
   __typename?: 'ExperiencesFields_caseStudies_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_CoverImage = {
+  __typename?: 'ExperiencesFields_coverImage';
+  create?: Maybe<ExperiencesFields_CoverImage_Create>;
+  delete?: Maybe<ExperiencesFields_CoverImage_Delete>;
+  read?: Maybe<ExperiencesFields_CoverImage_Read>;
+  update?: Maybe<ExperiencesFields_CoverImage_Update>;
+};
+
+export type ExperiencesFields_CoverImage_Create = {
+  __typename?: 'ExperiencesFields_coverImage_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_CoverImage_Delete = {
+  __typename?: 'ExperiencesFields_coverImage_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_CoverImage_Read = {
+  __typename?: 'ExperiencesFields_coverImage_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_CoverImage_Update = {
+  __typename?: 'ExperiencesFields_coverImage_Update';
   permission: Scalars['Boolean']['output'];
 };
 
@@ -3010,6 +2975,34 @@ export type ExperiencesFields_Summary_Read = {
 
 export type ExperiencesFields_Summary_Update = {
   __typename?: 'ExperiencesFields_summary_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_Tags = {
+  __typename?: 'ExperiencesFields_tags';
+  create?: Maybe<ExperiencesFields_Tags_Create>;
+  delete?: Maybe<ExperiencesFields_Tags_Delete>;
+  read?: Maybe<ExperiencesFields_Tags_Read>;
+  update?: Maybe<ExperiencesFields_Tags_Update>;
+};
+
+export type ExperiencesFields_Tags_Create = {
+  __typename?: 'ExperiencesFields_tags_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_Tags_Delete = {
+  __typename?: 'ExperiencesFields_tags_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_Tags_Read = {
+  __typename?: 'ExperiencesFields_tags_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type ExperiencesFields_Tags_Update = {
+  __typename?: 'ExperiencesFields_tags_Update';
   permission: Scalars['Boolean']['output'];
 };
 
@@ -6675,6 +6668,7 @@ export type Mutation = {
   createMedia?: Maybe<Media>;
   createPayloadLockedDocument?: Maybe<PayloadLockedDocument>;
   createPayloadPreference?: Maybe<PayloadPreference>;
+  createTag?: Maybe<Tag>;
   createUser?: Maybe<User>;
   deleteCaseStudy?: Maybe<CaseStudy>;
   deleteContactForm?: Maybe<ContactForm>;
@@ -6682,6 +6676,7 @@ export type Mutation = {
   deleteMedia?: Maybe<Media>;
   deletePayloadLockedDocument?: Maybe<PayloadLockedDocument>;
   deletePayloadPreference?: Maybe<PayloadPreference>;
+  deleteTag?: Maybe<Tag>;
   deleteUser?: Maybe<User>;
   duplicateCaseStudy?: Maybe<CaseStudy>;
   duplicateContactForm?: Maybe<ContactForm>;
@@ -6689,6 +6684,7 @@ export type Mutation = {
   duplicateMedia?: Maybe<Media>;
   duplicatePayloadLockedDocument?: Maybe<PayloadLockedDocument>;
   duplicatePayloadPreference?: Maybe<PayloadPreference>;
+  duplicateTag?: Maybe<Tag>;
   forgotPasswordUser: Scalars['Boolean']['output'];
   loginUser?: Maybe<UsersLoginResult>;
   logoutUser?: Maybe<Scalars['String']['output']>;
@@ -6707,6 +6703,7 @@ export type Mutation = {
   updatePayloadLockedDocument?: Maybe<PayloadLockedDocument>;
   updatePayloadPreference?: Maybe<PayloadPreference>;
   updateSkill?: Maybe<Skill>;
+  updateTag?: Maybe<Tag>;
   updateUser?: Maybe<User>;
   updateWorkButton?: Maybe<WorkButton>;
   verifyEmailUser?: Maybe<Scalars['Boolean']['output']>;
@@ -6749,6 +6746,12 @@ export type MutationCreatePayloadPreferenceArgs = {
 };
 
 
+export type MutationCreateTagArgs = {
+  data: MutationTagInput;
+  draft?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
 export type MutationCreateUserArgs = {
   data: MutationUserInput;
   draft?: InputMaybe<Scalars['Boolean']['input']>;
@@ -6781,6 +6784,11 @@ export type MutationDeletePayloadLockedDocumentArgs = {
 
 
 export type MutationDeletePayloadPreferenceArgs = {
+  id: Scalars['Int']['input'];
+};
+
+
+export type MutationDeleteTagArgs = {
   id: Scalars['Int']['input'];
 };
 
@@ -6822,6 +6830,12 @@ export type MutationDuplicatePayloadLockedDocumentArgs = {
 
 export type MutationDuplicatePayloadPreferenceArgs = {
   data: MutationPayloadPreferenceInput;
+  id: Scalars['Int']['input'];
+};
+
+
+export type MutationDuplicateTagArgs = {
+  data: MutationTagInput;
   id: Scalars['Int']['input'];
 };
 
@@ -6934,6 +6948,14 @@ export type MutationUpdateSkillArgs = {
 };
 
 
+export type MutationUpdateTagArgs = {
+  autosave?: InputMaybe<Scalars['Boolean']['input']>;
+  data: MutationTagUpdateInput;
+  draft?: InputMaybe<Scalars['Boolean']['input']>;
+  id: Scalars['Int']['input'];
+};
+
+
 export type MutationUpdateUserArgs = {
   autosave?: InputMaybe<Scalars['Boolean']['input']>;
   data: MutationUserUpdateInput;
@@ -6972,6 +6994,7 @@ export enum PayloadLockedDocumentUpdate_DocumentRelationshipInputRelationTo {
   ContactForms = 'contact_forms',
   Experiences = 'experiences',
   Media = 'media',
+  Tags = 'tags',
   Users = 'users'
 }
 
@@ -6984,7 +7007,7 @@ export enum PayloadLockedDocumentUpdate_UserRelationshipInputRelationTo {
   Users = 'users'
 }
 
-export type PayloadLockedDocument_Document = CaseStudy | ContactForm | Experience | Media | User;
+export type PayloadLockedDocument_Document = CaseStudy | ContactForm | Experience | Media | Tag | User;
 
 export type PayloadLockedDocument_DocumentRelationshipInput = {
   relationTo?: InputMaybe<PayloadLockedDocument_DocumentRelationshipInputRelationTo>;
@@ -6996,6 +7019,7 @@ export enum PayloadLockedDocument_DocumentRelationshipInputRelationTo {
   ContactForms = 'contact_forms',
   Experiences = 'experiences',
   Media = 'media',
+  Tags = 'tags',
   Users = 'users'
 }
 
@@ -7004,6 +7028,7 @@ export enum PayloadLockedDocument_Document_RelationTo {
   ContactForms = 'contact_forms',
   Experiences = 'experiences',
   Media = 'media',
+  Tags = 'tags',
   Users = 'users'
 }
 
@@ -7055,6 +7080,7 @@ export enum PayloadLockedDocument_Document_Relation_RelationTo {
   ContactForms = 'contact_forms',
   Experiences = 'experiences',
   Media = 'media',
+  Tags = 'tags',
   Users = 'users'
 }
 
@@ -8009,6 +8035,8 @@ export type Query = {
   PayloadPreference?: Maybe<PayloadPreference>;
   PayloadPreferences?: Maybe<PayloadPreferences>;
   Skill?: Maybe<Skill>;
+  Tag?: Maybe<Tag>;
+  Tags?: Maybe<Tags>;
   User?: Maybe<User>;
   Users?: Maybe<Users>;
   WorkButton?: Maybe<WorkButton>;
@@ -8018,6 +8046,7 @@ export type Query = {
   countExperiences?: Maybe<CountExperiences>;
   countPayloadLockedDocuments?: Maybe<CountPayloadLockedDocuments>;
   countPayloadPreferences?: Maybe<CountPayloadPreferences>;
+  countTags?: Maybe<CountTags>;
   countUsers?: Maybe<CountUsers>;
   countallMedia?: Maybe<CountallMedia>;
   docAccessCaseStudy?: Maybe<Case_StudiesDocAccess>;
@@ -8032,6 +8061,7 @@ export type Query = {
   docAccessPayloadLockedDocument?: Maybe<Payload_Locked_DocumentsDocAccess>;
   docAccessPayloadPreference?: Maybe<Payload_PreferencesDocAccess>;
   docAccessSkill?: Maybe<SkillsDocAccess>;
+  docAccessTag?: Maybe<TagsDocAccess>;
   docAccessUser?: Maybe<UsersDocAccess>;
   docAccessWorkButton?: Maybe<Work_ButtonsDocAccess>;
   initializedUser?: Maybe<Scalars['Boolean']['output']>;
@@ -8155,6 +8185,22 @@ export type QuerySkillArgs = {
 };
 
 
+export type QueryTagArgs = {
+  draft?: InputMaybe<Scalars['Boolean']['input']>;
+  id: Scalars['Int']['input'];
+};
+
+
+export type QueryTagsArgs = {
+  draft?: InputMaybe<Scalars['Boolean']['input']>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  page?: InputMaybe<Scalars['Int']['input']>;
+  pagination?: InputMaybe<Scalars['Boolean']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  where?: InputMaybe<Tag_Where>;
+};
+
+
 export type QueryUserArgs = {
   draft?: InputMaybe<Scalars['Boolean']['input']>;
   id: Scalars['Int']['input'];
@@ -8216,6 +8262,12 @@ export type QueryCountPayloadPreferencesArgs = {
 };
 
 
+export type QueryCountTagsArgs = {
+  draft?: InputMaybe<Scalars['Boolean']['input']>;
+  where?: InputMaybe<Tag_Where>;
+};
+
+
 export type QueryCountUsersArgs = {
   draft?: InputMaybe<Scalars['Boolean']['input']>;
   where?: InputMaybe<User_Where>;
@@ -8254,6 +8306,11 @@ export type QueryDocAccessPayloadLockedDocumentArgs = {
 
 
 export type QueryDocAccessPayloadPreferenceArgs = {
+  id: Scalars['Int']['input'];
+};
+
+
+export type QueryDocAccessTagArgs = {
   id: Scalars['Int']['input'];
 };
 
@@ -8844,6 +8901,470 @@ export type SkillsUpdateAccess = {
 
 export type SkillsUpdateDocAccess = {
   __typename?: 'SkillsUpdateDocAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type Tag = {
+  __typename?: 'Tag';
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  id: Scalars['Int']['output'];
+  name: Scalars['String']['output'];
+  slug: Scalars['String']['output'];
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type Tag_CreatedAt_Operator = {
+  equals?: InputMaybe<Scalars['DateTime']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  greater_than?: InputMaybe<Scalars['DateTime']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+  less_than?: InputMaybe<Scalars['DateTime']['input']>;
+  less_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+  like?: InputMaybe<Scalars['DateTime']['input']>;
+  not_equals?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+export type Tag_Description_Operator = {
+  contains?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  not_equals?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type Tag_Id_Operator = {
+  equals?: InputMaybe<Scalars['Int']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export type Tag_Name_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Tag_Slug_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Tag_UpdatedAt_Operator = {
+  equals?: InputMaybe<Scalars['DateTime']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  greater_than?: InputMaybe<Scalars['DateTime']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+  less_than?: InputMaybe<Scalars['DateTime']['input']>;
+  less_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+  like?: InputMaybe<Scalars['DateTime']['input']>;
+  not_equals?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+export type Tag_Where = {
+  AND?: InputMaybe<Array<InputMaybe<Tag_Where_And>>>;
+  OR?: InputMaybe<Array<InputMaybe<Tag_Where_Or>>>;
+  createdAt?: InputMaybe<Tag_CreatedAt_Operator>;
+  description?: InputMaybe<Tag_Description_Operator>;
+  id?: InputMaybe<Tag_Id_Operator>;
+  name?: InputMaybe<Tag_Name_Operator>;
+  slug?: InputMaybe<Tag_Slug_Operator>;
+  updatedAt?: InputMaybe<Tag_UpdatedAt_Operator>;
+};
+
+export type Tag_Where_And = {
+  AND?: InputMaybe<Array<InputMaybe<Tag_Where_And>>>;
+  OR?: InputMaybe<Array<InputMaybe<Tag_Where_Or>>>;
+  createdAt?: InputMaybe<Tag_CreatedAt_Operator>;
+  description?: InputMaybe<Tag_Description_Operator>;
+  id?: InputMaybe<Tag_Id_Operator>;
+  name?: InputMaybe<Tag_Name_Operator>;
+  slug?: InputMaybe<Tag_Slug_Operator>;
+  updatedAt?: InputMaybe<Tag_UpdatedAt_Operator>;
+};
+
+export type Tag_Where_Or = {
+  AND?: InputMaybe<Array<InputMaybe<Tag_Where_And>>>;
+  OR?: InputMaybe<Array<InputMaybe<Tag_Where_Or>>>;
+  createdAt?: InputMaybe<Tag_CreatedAt_Operator>;
+  description?: InputMaybe<Tag_Description_Operator>;
+  id?: InputMaybe<Tag_Id_Operator>;
+  name?: InputMaybe<Tag_Name_Operator>;
+  slug?: InputMaybe<Tag_Slug_Operator>;
+  updatedAt?: InputMaybe<Tag_UpdatedAt_Operator>;
+};
+
+export type Tags = {
+  __typename?: 'Tags';
+  docs: Array<Tag>;
+  hasNextPage: Scalars['Boolean']['output'];
+  hasPrevPage: Scalars['Boolean']['output'];
+  limit: Scalars['Int']['output'];
+  nextPage: Scalars['Int']['output'];
+  offset?: Maybe<Scalars['Int']['output']>;
+  page: Scalars['Int']['output'];
+  pagingCounter: Scalars['Int']['output'];
+  prevPage: Scalars['Int']['output'];
+  totalDocs: Scalars['Int']['output'];
+  totalPages: Scalars['Int']['output'];
+};
+
+export type TagsCreateAccess = {
+  __typename?: 'TagsCreateAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type TagsCreateDocAccess = {
+  __typename?: 'TagsCreateDocAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type TagsDeleteAccess = {
+  __typename?: 'TagsDeleteAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type TagsDeleteDocAccess = {
+  __typename?: 'TagsDeleteDocAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type TagsDocAccessFields = {
+  __typename?: 'TagsDocAccessFields';
+  createdAt?: Maybe<TagsDocAccessFields_CreatedAt>;
+  description?: Maybe<TagsDocAccessFields_Description>;
+  name?: Maybe<TagsDocAccessFields_Name>;
+  slug?: Maybe<TagsDocAccessFields_Slug>;
+  updatedAt?: Maybe<TagsDocAccessFields_UpdatedAt>;
+};
+
+export type TagsDocAccessFields_CreatedAt = {
+  __typename?: 'TagsDocAccessFields_createdAt';
+  create?: Maybe<TagsDocAccessFields_CreatedAt_Create>;
+  delete?: Maybe<TagsDocAccessFields_CreatedAt_Delete>;
+  read?: Maybe<TagsDocAccessFields_CreatedAt_Read>;
+  update?: Maybe<TagsDocAccessFields_CreatedAt_Update>;
+};
+
+export type TagsDocAccessFields_CreatedAt_Create = {
+  __typename?: 'TagsDocAccessFields_createdAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_CreatedAt_Delete = {
+  __typename?: 'TagsDocAccessFields_createdAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_CreatedAt_Read = {
+  __typename?: 'TagsDocAccessFields_createdAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_CreatedAt_Update = {
+  __typename?: 'TagsDocAccessFields_createdAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_Description = {
+  __typename?: 'TagsDocAccessFields_description';
+  create?: Maybe<TagsDocAccessFields_Description_Create>;
+  delete?: Maybe<TagsDocAccessFields_Description_Delete>;
+  read?: Maybe<TagsDocAccessFields_Description_Read>;
+  update?: Maybe<TagsDocAccessFields_Description_Update>;
+};
+
+export type TagsDocAccessFields_Description_Create = {
+  __typename?: 'TagsDocAccessFields_description_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_Description_Delete = {
+  __typename?: 'TagsDocAccessFields_description_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_Description_Read = {
+  __typename?: 'TagsDocAccessFields_description_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_Description_Update = {
+  __typename?: 'TagsDocAccessFields_description_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_Name = {
+  __typename?: 'TagsDocAccessFields_name';
+  create?: Maybe<TagsDocAccessFields_Name_Create>;
+  delete?: Maybe<TagsDocAccessFields_Name_Delete>;
+  read?: Maybe<TagsDocAccessFields_Name_Read>;
+  update?: Maybe<TagsDocAccessFields_Name_Update>;
+};
+
+export type TagsDocAccessFields_Name_Create = {
+  __typename?: 'TagsDocAccessFields_name_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_Name_Delete = {
+  __typename?: 'TagsDocAccessFields_name_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_Name_Read = {
+  __typename?: 'TagsDocAccessFields_name_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_Name_Update = {
+  __typename?: 'TagsDocAccessFields_name_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_Slug = {
+  __typename?: 'TagsDocAccessFields_slug';
+  create?: Maybe<TagsDocAccessFields_Slug_Create>;
+  delete?: Maybe<TagsDocAccessFields_Slug_Delete>;
+  read?: Maybe<TagsDocAccessFields_Slug_Read>;
+  update?: Maybe<TagsDocAccessFields_Slug_Update>;
+};
+
+export type TagsDocAccessFields_Slug_Create = {
+  __typename?: 'TagsDocAccessFields_slug_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_Slug_Delete = {
+  __typename?: 'TagsDocAccessFields_slug_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_Slug_Read = {
+  __typename?: 'TagsDocAccessFields_slug_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_Slug_Update = {
+  __typename?: 'TagsDocAccessFields_slug_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_UpdatedAt = {
+  __typename?: 'TagsDocAccessFields_updatedAt';
+  create?: Maybe<TagsDocAccessFields_UpdatedAt_Create>;
+  delete?: Maybe<TagsDocAccessFields_UpdatedAt_Delete>;
+  read?: Maybe<TagsDocAccessFields_UpdatedAt_Read>;
+  update?: Maybe<TagsDocAccessFields_UpdatedAt_Update>;
+};
+
+export type TagsDocAccessFields_UpdatedAt_Create = {
+  __typename?: 'TagsDocAccessFields_updatedAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_UpdatedAt_Delete = {
+  __typename?: 'TagsDocAccessFields_updatedAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_UpdatedAt_Read = {
+  __typename?: 'TagsDocAccessFields_updatedAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsDocAccessFields_UpdatedAt_Update = {
+  __typename?: 'TagsDocAccessFields_updatedAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields = {
+  __typename?: 'TagsFields';
+  createdAt?: Maybe<TagsFields_CreatedAt>;
+  description?: Maybe<TagsFields_Description>;
+  name?: Maybe<TagsFields_Name>;
+  slug?: Maybe<TagsFields_Slug>;
+  updatedAt?: Maybe<TagsFields_UpdatedAt>;
+};
+
+export type TagsFields_CreatedAt = {
+  __typename?: 'TagsFields_createdAt';
+  create?: Maybe<TagsFields_CreatedAt_Create>;
+  delete?: Maybe<TagsFields_CreatedAt_Delete>;
+  read?: Maybe<TagsFields_CreatedAt_Read>;
+  update?: Maybe<TagsFields_CreatedAt_Update>;
+};
+
+export type TagsFields_CreatedAt_Create = {
+  __typename?: 'TagsFields_createdAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_CreatedAt_Delete = {
+  __typename?: 'TagsFields_createdAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_CreatedAt_Read = {
+  __typename?: 'TagsFields_createdAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_CreatedAt_Update = {
+  __typename?: 'TagsFields_createdAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_Description = {
+  __typename?: 'TagsFields_description';
+  create?: Maybe<TagsFields_Description_Create>;
+  delete?: Maybe<TagsFields_Description_Delete>;
+  read?: Maybe<TagsFields_Description_Read>;
+  update?: Maybe<TagsFields_Description_Update>;
+};
+
+export type TagsFields_Description_Create = {
+  __typename?: 'TagsFields_description_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_Description_Delete = {
+  __typename?: 'TagsFields_description_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_Description_Read = {
+  __typename?: 'TagsFields_description_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_Description_Update = {
+  __typename?: 'TagsFields_description_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_Name = {
+  __typename?: 'TagsFields_name';
+  create?: Maybe<TagsFields_Name_Create>;
+  delete?: Maybe<TagsFields_Name_Delete>;
+  read?: Maybe<TagsFields_Name_Read>;
+  update?: Maybe<TagsFields_Name_Update>;
+};
+
+export type TagsFields_Name_Create = {
+  __typename?: 'TagsFields_name_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_Name_Delete = {
+  __typename?: 'TagsFields_name_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_Name_Read = {
+  __typename?: 'TagsFields_name_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_Name_Update = {
+  __typename?: 'TagsFields_name_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_Slug = {
+  __typename?: 'TagsFields_slug';
+  create?: Maybe<TagsFields_Slug_Create>;
+  delete?: Maybe<TagsFields_Slug_Delete>;
+  read?: Maybe<TagsFields_Slug_Read>;
+  update?: Maybe<TagsFields_Slug_Update>;
+};
+
+export type TagsFields_Slug_Create = {
+  __typename?: 'TagsFields_slug_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_Slug_Delete = {
+  __typename?: 'TagsFields_slug_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_Slug_Read = {
+  __typename?: 'TagsFields_slug_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_Slug_Update = {
+  __typename?: 'TagsFields_slug_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_UpdatedAt = {
+  __typename?: 'TagsFields_updatedAt';
+  create?: Maybe<TagsFields_UpdatedAt_Create>;
+  delete?: Maybe<TagsFields_UpdatedAt_Delete>;
+  read?: Maybe<TagsFields_UpdatedAt_Read>;
+  update?: Maybe<TagsFields_UpdatedAt_Update>;
+};
+
+export type TagsFields_UpdatedAt_Create = {
+  __typename?: 'TagsFields_updatedAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_UpdatedAt_Delete = {
+  __typename?: 'TagsFields_updatedAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_UpdatedAt_Read = {
+  __typename?: 'TagsFields_updatedAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsFields_UpdatedAt_Update = {
+  __typename?: 'TagsFields_updatedAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TagsReadAccess = {
+  __typename?: 'TagsReadAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type TagsReadDocAccess = {
+  __typename?: 'TagsReadDocAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type TagsUpdateAccess = {
+  __typename?: 'TagsUpdateAccess';
+  permission: Scalars['Boolean']['output'];
+  where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type TagsUpdateDocAccess = {
+  __typename?: 'TagsUpdateDocAccess';
   permission: Scalars['Boolean']['output'];
   where?: Maybe<Scalars['JSONObject']['output']>;
 };
@@ -9668,6 +10189,11 @@ export type CountPayloadPreferences = {
   totalDocs?: Maybe<Scalars['Int']['output']>;
 };
 
+export type CountTags = {
+  __typename?: 'countTags';
+  totalDocs?: Maybe<Scalars['Int']['output']>;
+};
+
 export type CountUsers = {
   __typename?: 'countUsers';
   totalDocs?: Maybe<Scalars['Int']['output']>;
@@ -9794,7 +10320,7 @@ export type MutationCaseStudyInput = {
   publishedAt?: InputMaybe<Scalars['String']['input']>;
   slug?: InputMaybe<Scalars['String']['input']>;
   summary: Scalars['JSON']['input'];
-  tags?: InputMaybe<Array<InputMaybe<MutationCaseStudy_TagsInput>>>;
+  tags?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
   title: Scalars['String']['input'];
   updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
@@ -9809,7 +10335,7 @@ export type MutationCaseStudyUpdateInput = {
   publishedAt?: InputMaybe<Scalars['String']['input']>;
   slug?: InputMaybe<Scalars['String']['input']>;
   summary?: InputMaybe<Scalars['JSON']['input']>;
-  tags?: InputMaybe<Array<InputMaybe<MutationCaseStudyUpdate_TagsInput>>>;
+  tags?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
   title?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
@@ -9820,20 +10346,10 @@ export type MutationCaseStudyUpdate_MetaInput = {
   title?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type MutationCaseStudyUpdate_TagsInput = {
-  id?: InputMaybe<Scalars['String']['input']>;
-  tag?: InputMaybe<Scalars['String']['input']>;
-};
-
 export type MutationCaseStudy_MetaInput = {
   description?: InputMaybe<Scalars['String']['input']>;
   image?: InputMaybe<Scalars['Int']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type MutationCaseStudy_TagsInput = {
-  id?: InputMaybe<Scalars['String']['input']>;
-  tag?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type MutationContactFormInput = {
@@ -9858,6 +10374,7 @@ export type MutationContactFormUpdateInput = {
 
 export type MutationExperienceInput = {
   caseStudies?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+  coverImage?: InputMaybe<Scalars['Int']['input']>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   endDate?: InputMaybe<Scalars['String']['input']>;
   meta?: InputMaybe<MutationExperience_MetaInput>;
@@ -9865,6 +10382,7 @@ export type MutationExperienceInput = {
   slug?: InputMaybe<Scalars['String']['input']>;
   startDate?: InputMaybe<Scalars['String']['input']>;
   summary: Scalars['JSON']['input'];
+  tags?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
   thumbnailImage?: InputMaybe<Scalars['Int']['input']>;
   title: Scalars['String']['input'];
   updatedAt?: InputMaybe<Scalars['String']['input']>;
@@ -9872,6 +10390,7 @@ export type MutationExperienceInput = {
 
 export type MutationExperienceUpdateInput = {
   caseStudies?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+  coverImage?: InputMaybe<Scalars['Int']['input']>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   endDate?: InputMaybe<Scalars['String']['input']>;
   meta?: InputMaybe<MutationExperienceUpdate_MetaInput>;
@@ -9879,6 +10398,7 @@ export type MutationExperienceUpdateInput = {
   slug?: InputMaybe<Scalars['String']['input']>;
   startDate?: InputMaybe<Scalars['String']['input']>;
   summary?: InputMaybe<Scalars['JSON']['input']>;
+  tags?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
   thumbnailImage?: InputMaybe<Scalars['Int']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['String']['input']>;
@@ -10037,6 +10557,22 @@ export type MutationSkill_SkillsInput = {
   subtitle: Scalars['String']['input'];
 };
 
+export type MutationTagInput = {
+  createdAt?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  name: Scalars['String']['input'];
+  slug: Scalars['String']['input'];
+  updatedAt?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MutationTagUpdateInput = {
+  createdAt?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  slug?: InputMaybe<Scalars['String']['input']>;
+  updatedAt?: InputMaybe<Scalars['String']['input']>;
+};
+
 export type MutationUserInput = {
   createdAt?: InputMaybe<Scalars['String']['input']>;
   email: Scalars['String']['input'];
@@ -10125,6 +10661,24 @@ export type SkillsDocAccess = {
   update?: Maybe<SkillsUpdateDocAccess>;
 };
 
+export type TagsAccess = {
+  __typename?: 'tagsAccess';
+  create?: Maybe<TagsCreateAccess>;
+  delete?: Maybe<TagsDeleteAccess>;
+  fields?: Maybe<TagsFields>;
+  read?: Maybe<TagsReadAccess>;
+  update?: Maybe<TagsUpdateAccess>;
+};
+
+export type TagsDocAccess = {
+  __typename?: 'tagsDocAccess';
+  create?: Maybe<TagsCreateDocAccess>;
+  delete?: Maybe<TagsDeleteDocAccess>;
+  fields?: Maybe<TagsDocAccessFields>;
+  read?: Maybe<TagsReadDocAccess>;
+  update?: Maybe<TagsUpdateDocAccess>;
+};
+
 export type UsersAccess = {
   __typename?: 'usersAccess';
   create?: Maybe<UsersCreateAccess>;
@@ -10208,29 +10762,38 @@ export type CreateContactFormMutation = { __typename?: 'Mutation', createContact
 export type GetAllTagsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetAllTagsQuery = { __typename?: 'Query', CaseStudies?: { __typename?: 'CaseStudies', docs: Array<{ __typename?: 'CaseStudy', tags?: Array<{ __typename?: 'CaseStudy_Tags', tag?: string | null }> | null }> } | null };
+export type GetAllTagsQuery = { __typename?: 'Query', CaseStudies?: { __typename?: 'CaseStudies', docs: Array<{ __typename?: 'CaseStudy', tags: Array<{ __typename?: 'Tag', name: string, id: number }> }> } | null };
 
-export type GetCaseStudiesQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetCaseStudiesByOptionalTagsQueryVariables = Exact<{
+  tagIds?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>> | InputMaybe<Scalars['JSON']['input']>>;
+}>;
 
 
-export type GetCaseStudiesQuery = { __typename?: 'Query', CaseStudies?: { __typename?: 'CaseStudies', offset?: number | null, totalDocs: number, pagingCounter: number, docs: Array<{ __typename?: 'CaseStudy', id: number, slug?: string | null, title: string, updatedAt?: any | null, tags?: Array<{ __typename?: 'CaseStudy_Tags', tag?: string | null }> | null, illustration?: { __typename?: 'Media', url?: string | null, alt: string } | null, experience: { __typename?: 'Experience', role?: string | null, title: string, slug?: string | null } }> } | null, Journal?: { __typename?: 'Journal', title: string, subtitle?: string | null, description: string } | null };
+export type GetCaseStudiesByOptionalTagsQuery = { __typename?: 'Query', CaseStudies?: { __typename?: 'CaseStudies', offset?: number | null, totalDocs: number, pagingCounter: number, docs: Array<{ __typename?: 'CaseStudy', id: number, slug?: string | null, title: string, updatedAt?: any | null, tags: Array<{ __typename?: 'Tag', name: string, id: number }>, illustration?: { __typename?: 'Media', url?: string | null, alt: string } | null, experience: { __typename?: 'Experience', role?: string | null, title: string, slug?: string | null } }> } | null, Journal?: { __typename?: 'Journal', title: string, subtitle?: string | null, description: string } | null };
 
 export type GetCaseStudyBySlugQueryVariables = Exact<{
   slug: Scalars['String']['input'];
 }>;
 
 
-export type GetCaseStudyBySlugQuery = { __typename?: 'Query', CaseStudies?: { __typename?: 'CaseStudies', docs: Array<{ __typename?: 'CaseStudy', title: string, content: any, summary: any, updatedAt?: any | null, experience: { __typename?: 'Experience', title: string, role?: string | null, startDate?: any | null, endDate?: any | null, id: number }, tags?: Array<{ __typename?: 'CaseStudy_Tags', tag?: string | null }> | null, illustration?: { __typename?: 'Media', url?: string | null } | null }> } | null };
+export type GetCaseStudyBySlugQuery = { __typename?: 'Query', CaseStudies?: { __typename?: 'CaseStudies', docs: Array<{ __typename?: 'CaseStudy', title: string, content: any, summary: any, updatedAt?: any | null, experience: { __typename?: 'Experience', title: string, role?: string | null, startDate?: any | null, endDate?: any | null, id: number }, tags: Array<{ __typename?: 'Tag', name: string }>, illustration?: { __typename?: 'Media', url?: string | null } | null }> } | null };
 
 export type GetContactFormsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetContactFormsQuery = { __typename?: 'Query', ContactForms?: { __typename?: 'ContactForms', totalDocs: number, page: number, totalPages: number, docs: Array<{ __typename?: 'ContactForm', id: number, name: string, email: any, subject: string, message: string, status?: ContactForm_Status | null, createdAt?: any | null }> } | null };
 
+export type GetExperienceBySlugQueryVariables = Exact<{
+  slug: Scalars['String']['input'];
+}>;
+
+
+export type GetExperienceBySlugQuery = { __typename?: 'Query', Experiences?: { __typename?: 'Experiences', docs: Array<{ __typename?: 'Experience', id: number, role?: string | null, slug?: string | null, startDate?: any | null, summary: any, title: string, endDate?: any | null, coverImage?: { __typename?: 'Media', url?: string | null } | null, caseStudies?: Array<{ __typename?: 'CaseStudy', title: string, summary: any, createdAt?: any | null, tags: Array<{ __typename?: 'Tag', id: number, name: string }> }> | null }> } | null };
+
 export type GetFeaturedCaseStudiesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetFeaturedCaseStudiesQuery = { __typename?: 'Query', FeaturedCaseStudy?: { __typename?: 'FeaturedCaseStudy', title: string, subtitle?: string | null, description: string, caseStudies: Array<{ __typename?: 'CaseStudy', title: string, slug?: string | null, illustration?: { __typename?: 'Media', url?: string | null, alt: string } | null, tags?: Array<{ __typename?: 'CaseStudy_Tags', tag?: string | null }> | null }> } | null };
+export type GetFeaturedCaseStudiesQuery = { __typename?: 'Query', FeaturedCaseStudy?: { __typename?: 'FeaturedCaseStudy', title: string, subtitle?: string | null, description: string, caseStudies: Array<{ __typename?: 'CaseStudy', title: string, slug?: string | null, illustration?: { __typename?: 'Media', url?: string | null, alt: string } | null, tags: Array<{ __typename?: 'Tag', name: string, id: number }> }> } | null };
 
 export type GetFeaturedExperiencesQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -10264,6 +10827,13 @@ export type GetCaseStudyBySlugMetaQueryVariables = Exact<{
 
 export type GetCaseStudyBySlugMetaQuery = { __typename?: 'Query', CaseStudies?: { __typename?: 'CaseStudies', docs: Array<{ __typename?: 'CaseStudy', meta?: { __typename?: 'CaseStudy_Meta', title?: string | null, description?: string | null, image?: { __typename?: 'Media', url?: string | null } | null } | null }> } | null };
 
+export type GetExperienceBySlugMetaQueryVariables = Exact<{
+  slug: Scalars['String']['input'];
+}>;
+
+
+export type GetExperienceBySlugMetaQuery = { __typename?: 'Query', Experiences?: { __typename?: 'Experiences', docs: Array<{ __typename?: 'Experience', meta?: { __typename?: 'Experience_Meta', title?: string | null, description?: string | null, image?: { __typename?: 'Media', url?: string | null } | null } | null }> } | null };
+
 export type GetHeroMetaQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -10276,16 +10846,18 @@ export type GetJournalMetaQuery = { __typename?: 'Query', Journal?: { __typename
 
 
 export const CreateContactFormDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"CreateContactForm"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"name"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"email"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"subject"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"message"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"createContactForm"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"data"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"name"},"value":{"kind":"Variable","name":{"kind":"Name","value":"name"}}},{"kind":"ObjectField","name":{"kind":"Name","value":"email"},"value":{"kind":"Variable","name":{"kind":"Name","value":"email"}}},{"kind":"ObjectField","name":{"kind":"Name","value":"subject"},"value":{"kind":"Variable","name":{"kind":"Name","value":"subject"}}},{"kind":"ObjectField","name":{"kind":"Name","value":"message"},"value":{"kind":"Variable","name":{"kind":"Name","value":"message"}}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"email"}},{"kind":"Field","name":{"kind":"Name","value":"subject"}},{"kind":"Field","name":{"kind":"Name","value":"message"}},{"kind":"Field","name":{"kind":"Name","value":"status"}}]}}]}}]} as unknown as DocumentNode<CreateContactFormMutation, CreateContactFormMutationVariables>;
-export const GetAllTagsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetAllTags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"CaseStudies"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"tags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"tag"}}]}}]}}]}}]}}]} as unknown as DocumentNode<GetAllTagsQuery, GetAllTagsQueryVariables>;
-export const GetCaseStudiesDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetCaseStudies"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"CaseStudies"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"limit"},"value":{"kind":"IntValue","value":"5"}},{"kind":"Argument","name":{"kind":"Name","value":"page"},"value":{"kind":"IntValue","value":"1"}},{"kind":"Argument","name":{"kind":"Name","value":"sort"},"value":{"kind":"StringValue","value":"-updatedAt","block":false}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"offset"}},{"kind":"Field","name":{"kind":"Name","value":"totalDocs"}},{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"tags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"tag"}}]}},{"kind":"Field","name":{"kind":"Name","value":"updatedAt"}},{"kind":"Field","name":{"kind":"Name","value":"illustration"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}}]}},{"kind":"Field","name":{"kind":"Name","value":"experience"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"role"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"pagingCounter"}}]}},{"kind":"Field","name":{"kind":"Name","value":"Journal"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}},{"kind":"Field","name":{"kind":"Name","value":"description"}}]}}]}}]} as unknown as DocumentNode<GetCaseStudiesQuery, GetCaseStudiesQueryVariables>;
-export const GetCaseStudyBySlugDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetCaseStudyBySlug"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"slug"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"CaseStudies"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"equals"},"value":{"kind":"Variable","name":{"kind":"Name","value":"slug"}}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"experience"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"role"}},{"kind":"Field","name":{"kind":"Name","value":"startDate"}},{"kind":"Field","name":{"kind":"Name","value":"endDate"}},{"kind":"Field","name":{"kind":"Name","value":"id"}}]}},{"kind":"Field","name":{"kind":"Name","value":"tags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"tag"}}]}},{"kind":"Field","name":{"kind":"Name","value":"content"}},{"kind":"Field","name":{"kind":"Name","value":"summary"}},{"kind":"Field","name":{"kind":"Name","value":"illustration"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"updatedAt"}}]}}]}}]}}]} as unknown as DocumentNode<GetCaseStudyBySlugQuery, GetCaseStudyBySlugQueryVariables>;
+export const GetAllTagsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetAllTags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"CaseStudies"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"tags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"id"}}]}}]}}]}}]}}]} as unknown as DocumentNode<GetAllTagsQuery, GetAllTagsQueryVariables>;
+export const GetCaseStudiesByOptionalTagsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetCaseStudiesByOptionalTags"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"tagIds"}},"type":{"kind":"ListType","type":{"kind":"NamedType","name":{"kind":"Name","value":"JSON"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"CaseStudies"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"tags"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"in"},"value":{"kind":"Variable","name":{"kind":"Name","value":"tagIds"}}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"offset"}},{"kind":"Field","name":{"kind":"Name","value":"totalDocs"}},{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"tags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"id"}}]}},{"kind":"Field","name":{"kind":"Name","value":"updatedAt"}},{"kind":"Field","name":{"kind":"Name","value":"illustration"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}}]}},{"kind":"Field","name":{"kind":"Name","value":"experience"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"role"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"pagingCounter"}}]}},{"kind":"Field","name":{"kind":"Name","value":"Journal"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}},{"kind":"Field","name":{"kind":"Name","value":"description"}}]}}]}}]} as unknown as DocumentNode<GetCaseStudiesByOptionalTagsQuery, GetCaseStudiesByOptionalTagsQueryVariables>;
+export const GetCaseStudyBySlugDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetCaseStudyBySlug"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"slug"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"CaseStudies"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"equals"},"value":{"kind":"Variable","name":{"kind":"Name","value":"slug"}}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"experience"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"role"}},{"kind":"Field","name":{"kind":"Name","value":"startDate"}},{"kind":"Field","name":{"kind":"Name","value":"endDate"}},{"kind":"Field","name":{"kind":"Name","value":"id"}}]}},{"kind":"Field","name":{"kind":"Name","value":"tags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}}]}},{"kind":"Field","name":{"kind":"Name","value":"content"}},{"kind":"Field","name":{"kind":"Name","value":"summary"}},{"kind":"Field","name":{"kind":"Name","value":"illustration"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"updatedAt"}}]}}]}}]}}]} as unknown as DocumentNode<GetCaseStudyBySlugQuery, GetCaseStudyBySlugQueryVariables>;
 export const GetContactFormsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetContactForms"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"ContactForms"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"limit"},"value":{"kind":"IntValue","value":"100"}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"email"}},{"kind":"Field","name":{"kind":"Name","value":"subject"}},{"kind":"Field","name":{"kind":"Name","value":"message"}},{"kind":"Field","name":{"kind":"Name","value":"status"}},{"kind":"Field","name":{"kind":"Name","value":"createdAt"}}]}},{"kind":"Field","name":{"kind":"Name","value":"totalDocs"}},{"kind":"Field","name":{"kind":"Name","value":"page"}},{"kind":"Field","name":{"kind":"Name","value":"totalPages"}}]}}]}}]} as unknown as DocumentNode<GetContactFormsQuery, GetContactFormsQueryVariables>;
-export const GetFeaturedCaseStudiesDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetFeaturedCaseStudies"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"FeaturedCaseStudy"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"caseStudies"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"illustration"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}}]}},{"kind":"Field","name":{"kind":"Name","value":"tags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"tag"}}]}}]}}]}}]}}]} as unknown as DocumentNode<GetFeaturedCaseStudiesQuery, GetFeaturedCaseStudiesQueryVariables>;
+export const GetExperienceBySlugDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetExperienceBySlug"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"slug"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Experiences"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"equals"},"value":{"kind":"Variable","name":{"kind":"Name","value":"slug"}}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"role"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"startDate"}},{"kind":"Field","name":{"kind":"Name","value":"summary"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"endDate"}},{"kind":"Field","name":{"kind":"Name","value":"coverImage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"caseStudies"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"summary"}},{"kind":"Field","name":{"kind":"Name","value":"createdAt"}},{"kind":"Field","name":{"kind":"Name","value":"tags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}}]}}]}}]}}]}}]}}]} as unknown as DocumentNode<GetExperienceBySlugQuery, GetExperienceBySlugQueryVariables>;
+export const GetFeaturedCaseStudiesDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetFeaturedCaseStudies"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"FeaturedCaseStudy"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"caseStudies"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"illustration"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}}]}},{"kind":"Field","name":{"kind":"Name","value":"tags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"id"}}]}}]}}]}}]}}]} as unknown as DocumentNode<GetFeaturedCaseStudiesQuery, GetFeaturedCaseStudiesQueryVariables>;
 export const GetFeaturedExperiencesDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetFeaturedExperiences"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"FeaturedExperience"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"experiences"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"endDate"}},{"kind":"Field","name":{"kind":"Name","value":"startDate"}},{"kind":"Field","name":{"kind":"Name","value":"thumbnailImage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"role"}}]}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}}]}}]}}]} as unknown as DocumentNode<GetFeaturedExperiencesQuery, GetFeaturedExperiencesQueryVariables>;
 export const GetFooterDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetFooter"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Footer"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title1"}},{"kind":"Field","name":{"kind":"Name","value":"title2"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"buttonText"}},{"kind":"Field","name":{"kind":"Name","value":"bottomText"}}]}}]}}]} as unknown as DocumentNode<GetFooterQuery, GetFooterQueryVariables>;
 export const GetHeroDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetHero"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Hero"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"taglines"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"text"}}]}},{"kind":"Field","name":{"kind":"Name","value":"description"}}]}}]}}]} as unknown as DocumentNode<GetHeroQuery, GetHeroQueryVariables>;
 export const GetSkillsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetSkills"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Skill"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}},{"kind":"Field","name":{"kind":"Name","value":"skills"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"description"}}]}}]}}]}}]} as unknown as DocumentNode<GetSkillsQuery, GetSkillsQueryVariables>;
 export const GetWorkButtonsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetWorkButtons"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"WorkButton"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"buttons"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"text"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]} as unknown as DocumentNode<GetWorkButtonsQuery, GetWorkButtonsQueryVariables>;
 export const GetCaseStudyBySlugMetaDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetCaseStudyBySlugMeta"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"slug"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"CaseStudies"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"equals"},"value":{"kind":"Variable","name":{"kind":"Name","value":"slug"}}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"meta"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]}}]}}]} as unknown as DocumentNode<GetCaseStudyBySlugMetaQuery, GetCaseStudyBySlugMetaQueryVariables>;
+export const GetExperienceBySlugMetaDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetExperienceBySlugMeta"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"slug"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Experiences"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"equals"},"value":{"kind":"Variable","name":{"kind":"Name","value":"slug"}}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"meta"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]}}]}}]} as unknown as DocumentNode<GetExperienceBySlugMetaQuery, GetExperienceBySlugMetaQueryVariables>;
 export const GetHeroMetaDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetHeroMeta"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Hero"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"meta"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]}}]} as unknown as DocumentNode<GetHeroMetaQuery, GetHeroMetaQueryVariables>;
 export const GetJournalMetaDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetJournalMeta"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Journal"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"meta"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]}}]} as unknown as DocumentNode<GetJournalMetaQuery, GetJournalMetaQueryVariables>;

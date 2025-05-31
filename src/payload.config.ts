@@ -7,7 +7,14 @@ import path from 'node:path';
 import { buildConfig } from 'payload';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
-import { ContactForms, Media, Users, CaseStudies, Experiences } from './lib/payload/collections';
+import {
+  ContactForms,
+  Media,
+  Users,
+  CaseStudies,
+  Experiences,
+  Tags,
+} from './lib/payload/collections';
 import {
   FeaturedCaseStudies,
   FeaturedExperiences,
@@ -29,7 +36,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, ContactForms, CaseStudies, Experiences],
+  collections: [Users, Media, ContactForms, CaseStudies, Experiences, Tags],
   globals: [Hero, Skills, WorkButtons, FeaturedCaseStudies, Footer, Journal, FeaturedExperiences],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',

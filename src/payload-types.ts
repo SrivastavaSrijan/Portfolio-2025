@@ -72,6 +72,7 @@ export interface Config {
     'contact-forms': ContactForm;
     'case-studies': CaseStudy;
     experiences: Experience;
+    tags: Tag;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -83,6 +84,7 @@ export interface Config {
     'contact-forms': ContactFormsSelect<false> | ContactFormsSelect<true>;
     'case-studies': CaseStudiesSelect<false> | CaseStudiesSelect<true>;
     experiences: ExperiencesSelect<false> | ExperiencesSelect<true>;
+    tags: TagsSelect<false> | TagsSelect<true>;
     'payload-locked-documents':
       | PayloadLockedDocumentsSelect<false>
       | PayloadLockedDocumentsSelect<true>;
@@ -197,12 +199,7 @@ export interface CaseStudy {
   id: number;
   title: string;
   experience: number | Experience;
-  tags?:
-    | {
-        tag?: string | null;
-        id?: string | null;
-      }[]
-    | null;
+  tags: (number | Tag)[];
   summary: {
     root: {
       type: string;
@@ -276,6 +273,8 @@ export interface Experience {
   caseStudies?: (number | CaseStudy)[] | null;
   slug?: string | null;
   thumbnailImage?: (number | null) | Media;
+  coverImage?: (number | null) | Media;
+  tags: (number | Tag)[];
   meta?: {
     title?: string | null;
     description?: string | null;
@@ -284,6 +283,18 @@ export interface Experience {
      */
     image?: (number | null) | Media;
   };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tags".
+ */
+export interface Tag {
+  id: number;
+  name: string;
+  slug: string;
+  description?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -313,6 +324,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'experiences';
         value: number | Experience;
+      } | null)
+    | ({
+        relationTo: 'tags';
+        value: number | Tag;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -409,12 +424,7 @@ export interface ContactFormsSelect<T extends boolean = true> {
 export interface CaseStudiesSelect<T extends boolean = true> {
   title?: T;
   experience?: T;
-  tags?:
-    | T
-    | {
-        tag?: T;
-        id?: T;
-      };
+  tags?: T;
   summary?: T;
   content?: T;
   illustration?: T;
@@ -444,6 +454,8 @@ export interface ExperiencesSelect<T extends boolean = true> {
   caseStudies?: T;
   slug?: T;
   thumbnailImage?: T;
+  coverImage?: T;
+  tags?: T;
   meta?:
     | T
     | {
@@ -451,6 +463,17 @@ export interface ExperiencesSelect<T extends boolean = true> {
         description?: T;
         image?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tags_select".
+ */
+export interface TagsSelect<T extends boolean = true> {
+  name?: T;
+  slug?: T;
+  description?: T;
   updatedAt?: T;
   createdAt?: T;
 }
