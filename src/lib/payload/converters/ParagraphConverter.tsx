@@ -27,13 +27,13 @@ export const formatTextNode = (
         </code>
       );
 
-    // Bold (format 2)
+    // Italic (format 2)
     case 2:
-      return <strong key={index}>{textNode.text}</strong>;
-
-    // Italic (format 1)
-    case 1:
       return <em key={index}>{textNode.text}</em>;
+
+    // Bold (format 1)
+    case 1:
+      return <strong key={index}>{textNode.text}</strong>;
 
     // Bold and italic (format 3)
     case 3:

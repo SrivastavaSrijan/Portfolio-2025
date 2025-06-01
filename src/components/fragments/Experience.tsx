@@ -6,6 +6,7 @@ import Image from 'next/image';
 import dayjs from 'dayjs';
 import { RichText } from './RichText';
 import { cn } from '@/lib/utils';
+import { CaseStudyCard } from './CaseStudyCard';
 
 interface ExperienceProps {
   slug: string;
@@ -18,7 +19,7 @@ export const Experience = ({ slug }: ExperienceProps) => {
   if (!docs || docs.length === 0) {
     return <NotFound />;
   }
-  const { id, summary, coverImage, caseStudies, tags, title, endDate, role, startDate } = docs[0];
+  const { summary, coverImage, caseStudies, tags, title, endDate, role, startDate } = docs[0];
   const duration = (endDate ? dayjs(endDate) : dayjs()).diff(dayjs(startDate), 'months');
   const startDateFormatted = dayjs(startDate).format('MMM YYYY');
   const endDateFormatted = endDate ? dayjs(endDate).format('MMM YYYY') : 'Present';
@@ -70,6 +71,17 @@ export const Experience = ({ slug }: ExperienceProps) => {
       <div className="bg-white px-4 py-5 md:px-8 md:py-10">
         <div className="mx-auto md:max-w-3xl">
           <RichText className="text-accent" data={summary} />
+          <hr className="my-8 border-accent/20" />
+        </div>
+        <div className="flex flex-col gap-5 bg-white px-4 py-5 md:gap-10 md:px-8 md:py-10">
+          <h2 className="text-4xl text-accent md:text-5xl">Related Case Studies</h2>
+          {caseStudies && caseStudies.length > 0 && (
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-10">
+              {caseStudies.map((caseStudy, index) => (
+                <CaseStudyCard key={caseStudy.slug} {...caseStudy} grid index={index} />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -4,13 +4,13 @@ import {
   useGetCaseStudiesByOptionalTagsSuspenseQuery,
   useGetAllTagsSuspenseQuery,
 } from '../../graphql/__generated__/hooks';
-import { chunk, intersectionBy } from 'lodash';
+import { chunk, intersectionBy, uniqBy } from 'lodash';
 import { isStringArrayParam } from '@/lib/utils';
 
 export const useGetJournalData = () => {
   const { data: tagsData } = useGetAllTagsSuspenseQuery();
   const { docs = [] } = tagsData?.CaseStudies ?? {};
-  const allTags = docs.flatMap((doc) => doc.tags).filter(Boolean);
+  const allTags = uniqBy(docs.flatMap((doc) => doc.tags).filter(Boolean), 'id');
 
   const router = useRouter();
   const searchParams = useSearchParams();

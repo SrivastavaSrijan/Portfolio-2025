@@ -1,5 +1,4 @@
 import { AssetsMap } from '@/lib/assets';
-import { Menu } from 'lucide-react';
 import Link from 'next/link';
 
 export const Navbar = () => {
@@ -8,7 +7,6 @@ export const Navbar = () => {
       <Link href="/">
         <img src={AssetsMap.SVG.Logo} alt="Logo" className="h-6 md:h-7.5" />
       </Link>
-      <Menu className="h-5 cursor-pointer md:h-7.5" />
     </nav>
   );
 };

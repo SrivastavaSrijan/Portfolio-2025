@@ -17,11 +17,14 @@ query GetExperienceBySlug($slug: String!) {
       }
       caseStudies {
         title
-        summary
-        createdAt
+        slug
+        illustration {
+          url
+          alt
+        }
         tags {
-          id
           name
+          id
         }
       }
     }

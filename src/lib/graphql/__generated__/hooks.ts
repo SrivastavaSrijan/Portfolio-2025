@@ -10785,7 +10785,7 @@ export type GetExperienceBySlugQueryVariables = Exact<{
 }>;
 
 
-export type GetExperienceBySlugQuery = { readonly __typename?: 'Query', readonly Experiences?: { readonly __typename?: 'Experiences', readonly docs: ReadonlyArray<{ readonly __typename?: 'Experience', readonly id: number, readonly role?: string | null, readonly slug?: string | null, readonly startDate?: any | null, readonly summary: any, readonly title: string, readonly endDate?: any | null, readonly coverImage?: { readonly __typename?: 'Media', readonly url?: string | null } | null, readonly tags: ReadonlyArray<{ readonly __typename?: 'Tag', readonly id: number, readonly name: string }>, readonly caseStudies?: ReadonlyArray<{ readonly __typename?: 'CaseStudy', readonly title: string, readonly summary: any, readonly createdAt?: any | null, readonly tags: ReadonlyArray<{ readonly __typename?: 'Tag', readonly id: number, readonly name: string }> }> | null }> } | null };
+export type GetExperienceBySlugQuery = { readonly __typename?: 'Query', readonly Experiences?: { readonly __typename?: 'Experiences', readonly docs: ReadonlyArray<{ readonly __typename?: 'Experience', readonly id: number, readonly role?: string | null, readonly slug?: string | null, readonly startDate?: any | null, readonly summary: any, readonly title: string, readonly endDate?: any | null, readonly coverImage?: { readonly __typename?: 'Media', readonly url?: string | null } | null, readonly tags: ReadonlyArray<{ readonly __typename?: 'Tag', readonly id: number, readonly name: string }>, readonly caseStudies?: ReadonlyArray<{ readonly __typename?: 'CaseStudy', readonly title: string, readonly slug?: string | null, readonly illustration?: { readonly __typename?: 'Media', readonly url?: string | null, readonly alt: string } | null, readonly tags: ReadonlyArray<{ readonly __typename?: 'Tag', readonly name: string, readonly id: number }> }> | null }> } | null };
 
 export type GetFeaturedCaseStudiesQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -11123,11 +11123,14 @@ export const GetExperienceBySlugDocument = gql`
       }
       caseStudies {
         title
-        summary
-        createdAt
+        slug
+        illustration {
+          url
+          alt
+        }
         tags {
-          id
           name
+          id
         }
       }
     }
