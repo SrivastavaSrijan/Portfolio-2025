@@ -1855,7 +1855,6 @@ export type ContactFormsUpdateDocAccess = {
 
 export type Experience = {
   readonly __typename?: 'Experience';
-  readonly caseStudies?: Maybe<ReadonlyArray<CaseStudy>>;
   readonly coverImage?: Maybe<Media>;
   readonly createdAt?: Maybe<Scalars['DateTime']['output']>;
   readonly endDate?: Maybe<Scalars['DateTime']['output']>;
@@ -1881,15 +1880,6 @@ export type Experience_Meta = {
   readonly description?: Maybe<Scalars['String']['output']>;
   readonly image?: Maybe<Media>;
   readonly title?: Maybe<Scalars['String']['output']>;
-};
-
-export type Experience_CaseStudies_Operator = {
-  readonly all?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['JSON']['input']>>>;
-  readonly equals?: InputMaybe<Scalars['JSON']['input']>;
-  readonly exists?: InputMaybe<Scalars['Boolean']['input']>;
-  readonly in?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['JSON']['input']>>>;
-  readonly not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  readonly not_in?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['JSON']['input']>>>;
 };
 
 export type Experience_CoverImage_Operator = {
@@ -2042,7 +2032,6 @@ export type Experience_UpdatedAt_Operator = {
 export type Experience_Where = {
   readonly AND?: InputMaybe<ReadonlyArray<InputMaybe<Experience_Where_And>>>;
   readonly OR?: InputMaybe<ReadonlyArray<InputMaybe<Experience_Where_Or>>>;
-  readonly caseStudies?: InputMaybe<Experience_CaseStudies_Operator>;
   readonly coverImage?: InputMaybe<Experience_CoverImage_Operator>;
   readonly createdAt?: InputMaybe<Experience_CreatedAt_Operator>;
   readonly endDate?: InputMaybe<Experience_EndDate_Operator>;
@@ -2063,7 +2052,6 @@ export type Experience_Where = {
 export type Experience_Where_And = {
   readonly AND?: InputMaybe<ReadonlyArray<InputMaybe<Experience_Where_And>>>;
   readonly OR?: InputMaybe<ReadonlyArray<InputMaybe<Experience_Where_Or>>>;
-  readonly caseStudies?: InputMaybe<Experience_CaseStudies_Operator>;
   readonly coverImage?: InputMaybe<Experience_CoverImage_Operator>;
   readonly createdAt?: InputMaybe<Experience_CreatedAt_Operator>;
   readonly endDate?: InputMaybe<Experience_EndDate_Operator>;
@@ -2084,7 +2072,6 @@ export type Experience_Where_And = {
 export type Experience_Where_Or = {
   readonly AND?: InputMaybe<ReadonlyArray<InputMaybe<Experience_Where_And>>>;
   readonly OR?: InputMaybe<ReadonlyArray<InputMaybe<Experience_Where_Or>>>;
-  readonly caseStudies?: InputMaybe<Experience_CaseStudies_Operator>;
   readonly coverImage?: InputMaybe<Experience_CoverImage_Operator>;
   readonly createdAt?: InputMaybe<Experience_CreatedAt_Operator>;
   readonly endDate?: InputMaybe<Experience_EndDate_Operator>;
@@ -2143,7 +2130,6 @@ export type ExperiencesDeleteDocAccess = {
 
 export type ExperiencesDocAccessFields = {
   readonly __typename?: 'ExperiencesDocAccessFields';
-  readonly caseStudies?: Maybe<ExperiencesDocAccessFields_CaseStudies>;
   readonly coverImage?: Maybe<ExperiencesDocAccessFields_CoverImage>;
   readonly createdAt?: Maybe<ExperiencesDocAccessFields_CreatedAt>;
   readonly endDate?: Maybe<ExperiencesDocAccessFields_EndDate>;
@@ -2156,34 +2142,6 @@ export type ExperiencesDocAccessFields = {
   readonly thumbnailImage?: Maybe<ExperiencesDocAccessFields_ThumbnailImage>;
   readonly title?: Maybe<ExperiencesDocAccessFields_Title>;
   readonly updatedAt?: Maybe<ExperiencesDocAccessFields_UpdatedAt>;
-};
-
-export type ExperiencesDocAccessFields_CaseStudies = {
-  readonly __typename?: 'ExperiencesDocAccessFields_caseStudies';
-  readonly create?: Maybe<ExperiencesDocAccessFields_CaseStudies_Create>;
-  readonly delete?: Maybe<ExperiencesDocAccessFields_CaseStudies_Delete>;
-  readonly read?: Maybe<ExperiencesDocAccessFields_CaseStudies_Read>;
-  readonly update?: Maybe<ExperiencesDocAccessFields_CaseStudies_Update>;
-};
-
-export type ExperiencesDocAccessFields_CaseStudies_Create = {
-  readonly __typename?: 'ExperiencesDocAccessFields_caseStudies_Create';
-  readonly permission: Scalars['Boolean']['output'];
-};
-
-export type ExperiencesDocAccessFields_CaseStudies_Delete = {
-  readonly __typename?: 'ExperiencesDocAccessFields_caseStudies_Delete';
-  readonly permission: Scalars['Boolean']['output'];
-};
-
-export type ExperiencesDocAccessFields_CaseStudies_Read = {
-  readonly __typename?: 'ExperiencesDocAccessFields_caseStudies_Read';
-  readonly permission: Scalars['Boolean']['output'];
-};
-
-export type ExperiencesDocAccessFields_CaseStudies_Update = {
-  readonly __typename?: 'ExperiencesDocAccessFields_caseStudies_Update';
-  readonly permission: Scalars['Boolean']['output'];
 };
 
 export type ExperiencesDocAccessFields_CoverImage = {
@@ -2616,7 +2574,6 @@ export type ExperiencesDocAccessFields_UpdatedAt_Update = {
 
 export type ExperiencesFields = {
   readonly __typename?: 'ExperiencesFields';
-  readonly caseStudies?: Maybe<ExperiencesFields_CaseStudies>;
   readonly coverImage?: Maybe<ExperiencesFields_CoverImage>;
   readonly createdAt?: Maybe<ExperiencesFields_CreatedAt>;
   readonly endDate?: Maybe<ExperiencesFields_EndDate>;
@@ -2629,34 +2586,6 @@ export type ExperiencesFields = {
   readonly thumbnailImage?: Maybe<ExperiencesFields_ThumbnailImage>;
   readonly title?: Maybe<ExperiencesFields_Title>;
   readonly updatedAt?: Maybe<ExperiencesFields_UpdatedAt>;
-};
-
-export type ExperiencesFields_CaseStudies = {
-  readonly __typename?: 'ExperiencesFields_caseStudies';
-  readonly create?: Maybe<ExperiencesFields_CaseStudies_Create>;
-  readonly delete?: Maybe<ExperiencesFields_CaseStudies_Delete>;
-  readonly read?: Maybe<ExperiencesFields_CaseStudies_Read>;
-  readonly update?: Maybe<ExperiencesFields_CaseStudies_Update>;
-};
-
-export type ExperiencesFields_CaseStudies_Create = {
-  readonly __typename?: 'ExperiencesFields_caseStudies_Create';
-  readonly permission: Scalars['Boolean']['output'];
-};
-
-export type ExperiencesFields_CaseStudies_Delete = {
-  readonly __typename?: 'ExperiencesFields_caseStudies_Delete';
-  readonly permission: Scalars['Boolean']['output'];
-};
-
-export type ExperiencesFields_CaseStudies_Read = {
-  readonly __typename?: 'ExperiencesFields_caseStudies_Read';
-  readonly permission: Scalars['Boolean']['output'];
-};
-
-export type ExperiencesFields_CaseStudies_Update = {
-  readonly __typename?: 'ExperiencesFields_caseStudies_Update';
-  readonly permission: Scalars['Boolean']['output'];
 };
 
 export type ExperiencesFields_CoverImage = {
@@ -10370,7 +10299,6 @@ export type MutationContactFormUpdateInput = {
 };
 
 export type MutationExperienceInput = {
-  readonly caseStudies?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['Int']['input']>>>;
   readonly coverImage?: InputMaybe<Scalars['Int']['input']>;
   readonly createdAt?: InputMaybe<Scalars['String']['input']>;
   readonly endDate?: InputMaybe<Scalars['String']['input']>;
@@ -10386,7 +10314,6 @@ export type MutationExperienceInput = {
 };
 
 export type MutationExperienceUpdateInput = {
-  readonly caseStudies?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['Int']['input']>>>;
   readonly coverImage?: InputMaybe<Scalars['Int']['input']>;
   readonly createdAt?: InputMaybe<Scalars['String']['input']>;
   readonly endDate?: InputMaybe<Scalars['String']['input']>;
@@ -10761,19 +10688,20 @@ export type GetAllTagsQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetAllTagsQuery = { readonly __typename?: 'Query', readonly CaseStudies?: { readonly __typename?: 'CaseStudies', readonly docs: ReadonlyArray<{ readonly __typename?: 'CaseStudy', readonly tags: ReadonlyArray<{ readonly __typename?: 'Tag', readonly name: string, readonly id: number }> }> } | null };
 
-export type GetCaseStudiesByOptionalTagsQueryVariables = Exact<{
+export type GetCaseStudiesByParamsQueryVariables = Exact<{
   tagIds?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['JSON']['input']>> | InputMaybe<Scalars['JSON']['input']>>;
+  experience?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['JSON']['input']>> | InputMaybe<Scalars['JSON']['input']>>;
 }>;
 
 
-export type GetCaseStudiesByOptionalTagsQuery = { readonly __typename?: 'Query', readonly CaseStudies?: { readonly __typename?: 'CaseStudies', readonly offset?: number | null, readonly totalDocs: number, readonly pagingCounter: number, readonly docs: ReadonlyArray<{ readonly __typename?: 'CaseStudy', readonly id: number, readonly slug?: string | null, readonly title: string, readonly updatedAt?: any | null, readonly tags: ReadonlyArray<{ readonly __typename?: 'Tag', readonly name: string, readonly id: number }>, readonly illustration?: { readonly __typename?: 'Media', readonly url?: string | null, readonly alt: string } | null, readonly experience: { readonly __typename?: 'Experience', readonly role?: string | null, readonly title: string, readonly slug?: string | null } }> } | null, readonly Journal?: { readonly __typename?: 'Journal', readonly title: string, readonly subtitle?: string | null, readonly description: string } | null };
+export type GetCaseStudiesByParamsQuery = { readonly __typename?: 'Query', readonly CaseStudies?: { readonly __typename?: 'CaseStudies', readonly offset?: number | null, readonly totalDocs: number, readonly pagingCounter: number, readonly docs: ReadonlyArray<{ readonly __typename?: 'CaseStudy', readonly id: number, readonly slug?: string | null, readonly title: string, readonly summary: any, readonly updatedAt?: any | null, readonly tags: ReadonlyArray<{ readonly __typename?: 'Tag', readonly name: string, readonly id: number }>, readonly illustration?: { readonly __typename?: 'Media', readonly url?: string | null, readonly alt: string } | null, readonly experience: { readonly __typename?: 'Experience', readonly role?: string | null, readonly title: string, readonly slug?: string | null } }> } | null, readonly Journal?: { readonly __typename?: 'Journal', readonly title: string, readonly subtitle?: string | null, readonly description: string } | null };
 
 export type GetCaseStudyBySlugQueryVariables = Exact<{
   slug: Scalars['String']['input'];
 }>;
 
 
-export type GetCaseStudyBySlugQuery = { readonly __typename?: 'Query', readonly CaseStudies?: { readonly __typename?: 'CaseStudies', readonly docs: ReadonlyArray<{ readonly __typename?: 'CaseStudy', readonly title: string, readonly content: any, readonly summary: any, readonly updatedAt?: any | null, readonly experience: { readonly __typename?: 'Experience', readonly title: string, readonly role?: string | null, readonly startDate?: any | null, readonly endDate?: any | null, readonly id: number }, readonly tags: ReadonlyArray<{ readonly __typename?: 'Tag', readonly name: string }>, readonly illustration?: { readonly __typename?: 'Media', readonly url?: string | null } | null }> } | null };
+export type GetCaseStudyBySlugQuery = { readonly __typename?: 'Query', readonly CaseStudies?: { readonly __typename?: 'CaseStudies', readonly docs: ReadonlyArray<{ readonly __typename?: 'CaseStudy', readonly title: string, readonly content: any, readonly updatedAt?: any | null, readonly experience: { readonly __typename?: 'Experience', readonly title: string, readonly role?: string | null, readonly startDate?: any | null, readonly endDate?: any | null, readonly id: number }, readonly tags: ReadonlyArray<{ readonly __typename?: 'Tag', readonly name: string }>, readonly illustration?: { readonly __typename?: 'Media', readonly url?: string | null } | null }> } | null };
 
 export type GetContactFormsQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -10785,12 +10713,12 @@ export type GetExperienceBySlugQueryVariables = Exact<{
 }>;
 
 
-export type GetExperienceBySlugQuery = { readonly __typename?: 'Query', readonly Experiences?: { readonly __typename?: 'Experiences', readonly docs: ReadonlyArray<{ readonly __typename?: 'Experience', readonly id: number, readonly role?: string | null, readonly slug?: string | null, readonly startDate?: any | null, readonly summary: any, readonly title: string, readonly endDate?: any | null, readonly coverImage?: { readonly __typename?: 'Media', readonly url?: string | null } | null, readonly tags: ReadonlyArray<{ readonly __typename?: 'Tag', readonly id: number, readonly name: string }>, readonly caseStudies?: ReadonlyArray<{ readonly __typename?: 'CaseStudy', readonly title: string, readonly slug?: string | null, readonly illustration?: { readonly __typename?: 'Media', readonly url?: string | null, readonly alt: string } | null, readonly tags: ReadonlyArray<{ readonly __typename?: 'Tag', readonly name: string, readonly id: number }> }> | null }> } | null };
+export type GetExperienceBySlugQuery = { readonly __typename?: 'Query', readonly Experiences?: { readonly __typename?: 'Experiences', readonly docs: ReadonlyArray<{ readonly __typename?: 'Experience', readonly id: number, readonly role?: string | null, readonly slug?: string | null, readonly startDate?: any | null, readonly summary: any, readonly title: string, readonly endDate?: any | null, readonly coverImage?: { readonly __typename?: 'Media', readonly url?: string | null } | null, readonly tags: ReadonlyArray<{ readonly __typename?: 'Tag', readonly id: number, readonly name: string }> }> } | null };
 
 export type GetFeaturedCaseStudiesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetFeaturedCaseStudiesQuery = { readonly __typename?: 'Query', readonly FeaturedCaseStudy?: { readonly __typename?: 'FeaturedCaseStudy', readonly title: string, readonly subtitle?: string | null, readonly description: string, readonly caseStudies: ReadonlyArray<{ readonly __typename?: 'CaseStudy', readonly title: string, readonly slug?: string | null, readonly illustration?: { readonly __typename?: 'Media', readonly url?: string | null, readonly alt: string } | null, readonly tags: ReadonlyArray<{ readonly __typename?: 'Tag', readonly name: string, readonly id: number }> }> } | null };
+export type GetFeaturedCaseStudiesQuery = { readonly __typename?: 'Query', readonly FeaturedCaseStudy?: { readonly __typename?: 'FeaturedCaseStudy', readonly title: string, readonly subtitle?: string | null, readonly description: string, readonly caseStudies: ReadonlyArray<{ readonly __typename?: 'CaseStudy', readonly title: string, readonly slug?: string | null, readonly summary: any, readonly illustration?: { readonly __typename?: 'Media', readonly url?: string | null, readonly alt: string } | null, readonly tags: ReadonlyArray<{ readonly __typename?: 'Tag', readonly name: string, readonly id: number }> }> } | null };
 
 export type GetFeaturedExperiencesQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -10929,15 +10857,16 @@ export type GetAllTagsQueryHookResult = ReturnType<typeof useGetAllTagsQuery>;
 export type GetAllTagsLazyQueryHookResult = ReturnType<typeof useGetAllTagsLazyQuery>;
 export type GetAllTagsSuspenseQueryHookResult = ReturnType<typeof useGetAllTagsSuspenseQuery>;
 export type GetAllTagsQueryResult = Apollo.QueryResult<GetAllTagsQuery, GetAllTagsQueryVariables>;
-export const GetCaseStudiesByOptionalTagsDocument = gql`
-    query GetCaseStudiesByOptionalTags($tagIds: [JSON]) {
-  CaseStudies(where: {tags: {in: $tagIds}}) {
+export const GetCaseStudiesByParamsDocument = gql`
+    query GetCaseStudiesByParams($tagIds: [JSON], $experience: [JSON]) {
+  CaseStudies(where: {tags: {in: $tagIds}, experience: {in: $experience}}) {
     offset
     totalDocs
     docs {
       id
       slug
       title
+      summary
       tags {
         name
         id
@@ -10964,37 +10893,38 @@ export const GetCaseStudiesByOptionalTagsDocument = gql`
     `;
 
 /**
- * __useGetCaseStudiesByOptionalTagsQuery__
+ * __useGetCaseStudiesByParamsQuery__
  *
- * To run a query within a React component, call `useGetCaseStudiesByOptionalTagsQuery` and pass it any options that fit your needs.
- * When your component renders, `useGetCaseStudiesByOptionalTagsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * To run a query within a React component, call `useGetCaseStudiesByParamsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetCaseStudiesByParamsQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
  *
  * @example
- * const { data, loading, error } = useGetCaseStudiesByOptionalTagsQuery({
+ * const { data, loading, error } = useGetCaseStudiesByParamsQuery({
  *   variables: {
  *      tagIds: // value for 'tagIds'
+ *      experience: // value for 'experience'
  *   },
  * });
  */
-export function useGetCaseStudiesByOptionalTagsQuery(baseOptions?: Apollo.QueryHookOptions<GetCaseStudiesByOptionalTagsQuery, GetCaseStudiesByOptionalTagsQueryVariables>) {
+export function useGetCaseStudiesByParamsQuery(baseOptions?: Apollo.QueryHookOptions<GetCaseStudiesByParamsQuery, GetCaseStudiesByParamsQueryVariables>) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetCaseStudiesByOptionalTagsQuery, GetCaseStudiesByOptionalTagsQueryVariables>(GetCaseStudiesByOptionalTagsDocument, options);
+        return Apollo.useQuery<GetCaseStudiesByParamsQuery, GetCaseStudiesByParamsQueryVariables>(GetCaseStudiesByParamsDocument, options);
       }
-export function useGetCaseStudiesByOptionalTagsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetCaseStudiesByOptionalTagsQuery, GetCaseStudiesByOptionalTagsQueryVariables>) {
+export function useGetCaseStudiesByParamsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetCaseStudiesByParamsQuery, GetCaseStudiesByParamsQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetCaseStudiesByOptionalTagsQuery, GetCaseStudiesByOptionalTagsQueryVariables>(GetCaseStudiesByOptionalTagsDocument, options);
+          return Apollo.useLazyQuery<GetCaseStudiesByParamsQuery, GetCaseStudiesByParamsQueryVariables>(GetCaseStudiesByParamsDocument, options);
         }
-export function useGetCaseStudiesByOptionalTagsSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetCaseStudiesByOptionalTagsQuery, GetCaseStudiesByOptionalTagsQueryVariables>) {
+export function useGetCaseStudiesByParamsSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetCaseStudiesByParamsQuery, GetCaseStudiesByParamsQueryVariables>) {
           const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return Apollo.useSuspenseQuery<GetCaseStudiesByOptionalTagsQuery, GetCaseStudiesByOptionalTagsQueryVariables>(GetCaseStudiesByOptionalTagsDocument, options);
+          return Apollo.useSuspenseQuery<GetCaseStudiesByParamsQuery, GetCaseStudiesByParamsQueryVariables>(GetCaseStudiesByParamsDocument, options);
         }
-export type GetCaseStudiesByOptionalTagsQueryHookResult = ReturnType<typeof useGetCaseStudiesByOptionalTagsQuery>;
-export type GetCaseStudiesByOptionalTagsLazyQueryHookResult = ReturnType<typeof useGetCaseStudiesByOptionalTagsLazyQuery>;
-export type GetCaseStudiesByOptionalTagsSuspenseQueryHookResult = ReturnType<typeof useGetCaseStudiesByOptionalTagsSuspenseQuery>;
-export type GetCaseStudiesByOptionalTagsQueryResult = Apollo.QueryResult<GetCaseStudiesByOptionalTagsQuery, GetCaseStudiesByOptionalTagsQueryVariables>;
+export type GetCaseStudiesByParamsQueryHookResult = ReturnType<typeof useGetCaseStudiesByParamsQuery>;
+export type GetCaseStudiesByParamsLazyQueryHookResult = ReturnType<typeof useGetCaseStudiesByParamsLazyQuery>;
+export type GetCaseStudiesByParamsSuspenseQueryHookResult = ReturnType<typeof useGetCaseStudiesByParamsSuspenseQuery>;
+export type GetCaseStudiesByParamsQueryResult = Apollo.QueryResult<GetCaseStudiesByParamsQuery, GetCaseStudiesByParamsQueryVariables>;
 export const GetCaseStudyBySlugDocument = gql`
     query GetCaseStudyBySlug($slug: String!) {
   CaseStudies(where: {slug: {equals: $slug}}) {
@@ -11011,7 +10941,6 @@ export const GetCaseStudyBySlugDocument = gql`
         name
       }
       content
-      summary
       illustration {
         url
       }
@@ -11121,18 +11050,6 @@ export const GetExperienceBySlugDocument = gql`
         id
         name
       }
-      caseStudies {
-        title
-        slug
-        illustration {
-          url
-          alt
-        }
-        tags {
-          name
-          id
-        }
-      }
     }
   }
 }
@@ -11183,6 +11100,7 @@ export const GetFeaturedCaseStudiesDocument = gql`
         url
         alt
       }
+      summary
       tags {
         name
         id

@@ -35,12 +35,7 @@ export const Experiences: CollectionConfig = {
       type: 'richText',
       required: true,
     },
-    {
-      name: 'caseStudies',
-      type: 'relationship',
-      relationTo: 'case-studies',
-      hasMany: true,
-    },
+
     {
       name: 'slug',
       type: 'text',

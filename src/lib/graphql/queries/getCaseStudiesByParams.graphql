@@ -1,11 +1,12 @@
-query GetCaseStudiesByOptionalTags($tagIds: [JSON]) {
-  CaseStudies(where: { tags: { in: $tagIds } }) {
+query GetCaseStudiesByParams($tagIds: [JSON], $experience: [JSON]) {
+  CaseStudies(where: { tags: { in: $tagIds }, experience: { in: $experience } }) {
     offset
     totalDocs
     docs {
       id
       slug
       title
+      summary
       tags {
         name
         id

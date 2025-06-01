@@ -10,6 +10,7 @@ query GetFeaturedCaseStudies {
         url
         alt
       }
+      summary
       tags {
         name
         id

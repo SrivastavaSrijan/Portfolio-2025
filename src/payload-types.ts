@@ -270,7 +270,6 @@ export interface Experience {
     };
     [k: string]: unknown;
   };
-  caseStudies?: (number | CaseStudy)[] | null;
   slug?: string | null;
   thumbnailImage?: (number | null) | Media;
   coverImage?: (number | null) | Media;
@@ -451,7 +450,6 @@ export interface ExperiencesSelect<T extends boolean = true> {
   startDate?: T;
   endDate?: T;
   summary?: T;
-  caseStudies?: T;
   slug?: T;
   thumbnailImage?: T;
   coverImage?: T;

@@ -15,7 +15,6 @@ query GetCaseStudyBySlug($slug: String!) {
         name
       }
       content
-      summary
       illustration {
         url
       }

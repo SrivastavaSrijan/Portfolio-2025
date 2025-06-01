@@ -8,6 +8,7 @@ import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { motion, type Variants } from 'framer-motion';
 import { useRef } from 'react';
+import { RichText } from './RichText';
 
 type CaseStudyBySlugData = NonNullable<
   GetFeaturedCaseStudiesQuery['FeaturedCaseStudy']
@@ -30,7 +31,7 @@ const cardVariants: Variants = {
   }),
 };
 
-export const CaseStudyCard = ({ title, tags, slug, illustration }: CaseStudyCardProps) => {
+export const CaseStudyCard = ({ title, tags, slug, illustration, summary }: CaseStudyCardProps) => {
   const ref = useRef(null);
 
   return (
@@ -66,10 +67,13 @@ export const CaseStudyCard = ({ title, tags, slug, illustration }: CaseStudyCard
         )}
       >
         <Card>
-          <CardContent className="flex items-center justify-between gap-3">
-            <CardDescription className="flex flex-col gap-2">
-              <h3 className="font-medium text-accent text-xl md:text-2xl">{title}</h3>
-              <div className="flex flex-row flex-wrap gap-3">
+          <CardContent className="flex items-center justify-between gap-3 px-2">
+            <CardDescription className="flex flex-col gap-4 md:gap-6">
+              <div className="flex flex-col gap-2">
+                <h3 className="font-medium text-accent text-xl md:text-2xl">{title}</h3>
+                <RichText data={summary} className="text-accent text-xs md:text-sm" />
+              </div>
+              <div className="flex flex-row flex-wrap gap-2 md:gap-3">
                 {(tags ?? []).map((tag) => (
                   <span
                     key={tag.id}

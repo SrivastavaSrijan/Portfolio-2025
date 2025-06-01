@@ -1,6 +1,9 @@
 'use client';
 
-import { useGetExperienceBySlugSuspenseQuery } from '@/lib/graphql/__generated__/hooks';
+import {
+  useGetCaseStudiesByParamsSuspenseQuery,
+  useGetExperienceBySlugSuspenseQuery,
+} from '@/lib/graphql/__generated__/hooks';
 import { NotFound } from './404';
 import Image from 'next/image';
 import dayjs from 'dayjs';
@@ -15,11 +18,20 @@ export const Experience = ({ slug }: ExperienceProps) => {
   const { data } = useGetExperienceBySlugSuspenseQuery({
     variables: { slug },
   });
+
   const { docs = [] } = data?.Experiences ?? {};
   if (!docs || docs.length === 0) {
     return <NotFound />;
   }
-  const { summary, coverImage, caseStudies, tags, title, endDate, role, startDate } = docs[0];
+  const { id, summary, coverImage, tags, title, endDate, role, startDate } = docs[0];
+
+  const { data: caseStudiesData } = useGetCaseStudiesByParamsSuspenseQuery({
+    variables: {
+      experience: [id],
+    },
+  });
+  const caseStudies = caseStudiesData?.CaseStudies?.docs ?? [];
+
   const duration = (endDate ? dayjs(endDate) : dayjs()).diff(dayjs(startDate), 'months');
   const startDateFormatted = dayjs(startDate).format('MMM YYYY');
   const endDateFormatted = endDate ? dayjs(endDate).format('MMM YYYY') : 'Present';
@@ -40,7 +52,7 @@ export const Experience = ({ slug }: ExperienceProps) => {
                     {
                       label: 'Technologies',
                       value: (
-                        <div className="flex flex-row gap-2">
+                        <div className="flex flex-row flex-wrap justify-end gap-2">
                           {(tags ?? []).map(({ name: tagName, id: tagId }) => (
                             <span
                               key={tagId}
@@ -71,18 +83,19 @@ export const Experience = ({ slug }: ExperienceProps) => {
       <div className="bg-white px-4 py-5 md:px-8 md:py-10">
         <div className="mx-auto md:max-w-3xl">
           <RichText className="text-accent" data={summary} />
-          <hr className="my-8 border-accent/20" />
+          <hr className="mt-5 border-accent/20" />
         </div>
-        <div className="flex flex-col gap-5 bg-white px-4 py-5 md:gap-10 md:px-8 md:py-10">
-          <h2 className="text-4xl text-accent md:text-5xl">Related Case Studies</h2>
-          {caseStudies && caseStudies.length > 0 && (
-            <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-10">
-              {caseStudies.map((caseStudy, index) => (
-                <CaseStudyCard key={caseStudy.slug} {...caseStudy} grid index={index} />
-              ))}
-            </div>
-          )}
-        </div>
+      </div>
+
+      <div className="flex flex-col gap-5 bg-white px-4 py-5 md:gap-10 md:px-20 md:py-10">
+        <h2 className="text-4xl text-accent md:text-5xl">Related Case Studies</h2>
+        {caseStudies && caseStudies.length > 0 && (
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-10">
+            {caseStudies.map((caseStudy, index) => (
+              <CaseStudyCard key={caseStudy.slug} {...caseStudy} grid index={index} />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

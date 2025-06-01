@@ -15,18 +15,6 @@ query GetExperienceBySlug($slug: String!) {
         id
         name
       }
-      caseStudies {
-        title
-        slug
-        illustration {
-          url
-          alt
-        }
-        tags {
-          name
-          id
-        }
-      }
     }
   }
 }

@@ -1,7 +1,7 @@
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Routes } from '../../config/config/routes';
 import {
-  useGetCaseStudiesByOptionalTagsSuspenseQuery,
+  useGetCaseStudiesByParamsSuspenseQuery,
   useGetAllTagsSuspenseQuery,
 } from '../../graphql/__generated__/hooks';
 import { chunk, intersectionBy, uniqBy } from 'lodash';
@@ -24,7 +24,7 @@ export const useGetJournalData = () => {
   const matchingTags = intersectionBy(allTags, tagNamesAsObjects, 'name');
   const tagIds = matchingTags.map(({ id }) => id);
 
-  const { data } = useGetCaseStudiesByOptionalTagsSuspenseQuery({
+  const { data } = useGetCaseStudiesByParamsSuspenseQuery({
     ...(!!tagIds.length && {
       variables: {
         tagIds,
