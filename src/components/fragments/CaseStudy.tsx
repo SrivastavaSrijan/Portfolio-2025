@@ -32,8 +32,9 @@ export const CaseStudy = ({ slug }: CaseStudyProps) => {
               <Button
                 type="button"
                 variant="link"
-                color="accent"
-                className="cursor-pointer text-xs "
+                color="brand"
+                size="sm"
+                className="cursor-pointertext-xs"
               >
                 Back to blog
               </Button>

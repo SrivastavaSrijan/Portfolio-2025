@@ -21,7 +21,7 @@ export const formatTextNode = (
       return (
         <code
           key={index}
-          className="whitespace-nowrap bg-black-700 px-1.5 py-0.5 font-mono text-orange-300 text-xs"
+          className="whitespace-pre bg-black-700 px-1.5 py-0.5 font-mono text-orange-300 text-xs"
         >
           {textNode.text}
         </code>
@@ -77,7 +77,7 @@ export const renderFormattedChildren = (
         <code
           // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
           key={index}
-          className="whitespace-nowrap bg-black-700 px-1.5 py-0.5 font-mono text-orange-300 text-xs"
+          className="whitespace-pre bg-black-700 px-1.5 py-0.5 font-mono text-orange-300 text-xs"
         >
           {nodesToJSX({ nodes: (child as SerializedParagraphNode).children })}
         </code>
@@ -94,19 +94,27 @@ export const renderFormattedChildren = (
   });
 };
 
+const Code = ({
+  node,
+  nodesToJSX,
+}: {
+  node: SerializedParagraphNode | SerializedQuoteNode;
+  nodesToJSX: (args: { nodes: SerializedLexicalNode[] }) => ReactNode;
+}) => {
+  // Render the code block with its children
+  return (
+    <pre className="my-4 overflow-x-auto rounded-lg bg-black-700 p-4">
+      <code className="block font-mono text-orange-300 text-xs leading-relaxed">
+        {nodesToJSX({ nodes: node.children })}
+      </code>
+    </pre>
+  );
+};
+
 export const ParagraphConverter: JSXConverters<
   SerializedParagraphNode | SerializedQuoteNode | SerializedHorizontalRuleNode | SerializedTextNode
 > = {
-  code: ({ node, nodesToJSX }) => {
-    // This will apply to standalone code blocks
-    return (
-      <pre className="my-4 overflow-x-auto rounded-lg bg-black-700 p-4">
-        <code className="block font-mono text-orange-300 text-xs leading-relaxed">
-          {nodesToJSX({ nodes: node.children })}
-        </code>
-      </pre>
-    );
-  },
+  code: Code,
 
   horizontalrule: () => {
     return <hr className="my-8 border-black-200 border-t dark:border-black-200" />;
@@ -114,8 +122,9 @@ export const ParagraphConverter: JSXConverters<
 
   quote: ({ node, nodesToJSX }) => {
     return (
+      // we use blockquotes for code blocks cuz payload doesn't support code blocks
       <blockquote className="my-6 border-primary border-l-4 pl-6 text-black-600 italic dark:text-black-300">
-        {nodesToJSX({ nodes: node.children })}
+        <Code node={node as SerializedQuoteNode} nodesToJSX={nodesToJSX} />
       </blockquote>
     );
   },

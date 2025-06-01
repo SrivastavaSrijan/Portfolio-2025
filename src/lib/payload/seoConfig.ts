@@ -18,10 +18,7 @@ const Config = {
     description: 147,
     title: 47,
   },
-  generateTitle: (title: string) =>
-    title.length > Config.MaxLengths.title
-      ? `${title.slice(0, Config.MaxLengths.title - Config.defaults.suffix.length)}...${Config.defaults.suffix}`
-      : `${title}${Config.defaults.suffix}`,
+  generateTitle: (title: string) => title,
   generateDescription: (description: string) =>
     description.length > Config.MaxLengths.description
       ? `${description.slice(0, Config.MaxLengths.description)}...`

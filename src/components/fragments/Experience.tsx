@@ -5,6 +5,7 @@ import { NotFound } from './404';
 import Image from 'next/image';
 import dayjs from 'dayjs';
 import { RichText } from './RichText';
+import { cn } from '@/lib/utils';
 
 interface ExperienceProps {
   slug: string;
@@ -17,7 +18,7 @@ export const Experience = ({ slug }: ExperienceProps) => {
   if (!docs || docs.length === 0) {
     return <NotFound />;
   }
-  const { id, summary, coverImage, caseStudies, title, endDate, role, startDate } = docs[0];
+  const { id, summary, coverImage, caseStudies, tags, title, endDate, role, startDate } = docs[0];
   const duration = (endDate ? dayjs(endDate) : dayjs()).diff(dayjs(startDate), 'months');
   const startDateFormatted = dayjs(startDate).format('MMM YYYY');
   const endDateFormatted = endDate ? dayjs(endDate).format('MMM YYYY') : 'Present';
@@ -33,10 +34,31 @@ export const Experience = ({ slug }: ExperienceProps) => {
               { label: 'Duration', value: `${duration} months` },
               { label: 'Start Date', value: startDateFormatted },
               { label: 'End Date', value: endDateFormatted },
+              ...(tags?.length > 0
+                ? [
+                    {
+                      label: 'Technologies',
+                      value: (
+                        <div className="flex flex-row gap-2">
+                          {(tags ?? []).map(({ name: tagName, id: tagId }) => (
+                            <span
+                              key={tagId}
+                              className={cn(
+                                'line-clamp-1 rounded-full border-1 border-brand px-2 py-1 text-brand text-xs'
+                              )}
+                            >
+                              {tagName}
+                            </span>
+                          ))}
+                        </div>
+                      ),
+                    },
+                  ]
+                : []),
             ].map(({ label, value }) => (
               <div key={label} className="flex justify-between border-brand border-b-1 pb-2">
                 <span className="font-semibold">{label}</span>
-                <span className="">{value}</span>
+                {value}
               </div>
             ))}
           </div>

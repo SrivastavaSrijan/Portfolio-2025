@@ -11,6 +11,10 @@ query GetExperienceBySlug($slug: String!) {
       coverImage {
         url
       }
+      tags {
+        id
+        name
+      }
       caseStudies {
         title
         summary
