@@ -7,7 +7,7 @@ import type {
 } from '@payloadcms/plugin-seo/types';
 import type { CaseStudy, Experience } from '../../payload-types';
 import { Hero } from './globals/Hero';
-import { FullURLs } from '../config/config/routes';
+import { FullURLs } from '../config/routes';
 import { AssetsMap } from '../assets';
 import { Media, CaseStudies, Experiences } from './collections';
 import { defaultMetadata } from '../config/metadata';

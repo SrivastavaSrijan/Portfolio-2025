@@ -1,12 +1,8 @@
-'use client';
-import { useGetSkillsSuspenseQuery } from '@/lib/graphql/__generated__/hooks';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui';
-import { RichText } from '../fragments/RichText';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../../ui';
+import { RichText } from '../../fragments/RichText';
+import type { SkillsUIProps } from './Skills.utils';
 
-export const Skills = () => {
-  const { data } = useGetSkillsSuspenseQuery();
-  const { skills = [], title, subtitle } = data?.Skill ?? {};
-
+export function SkillsUI({ title, subtitle, skills }: SkillsUIProps) {
   return (
     <div className="bg-primary">
       <div className="mx-auto flex max-w-[1440px] flex-col gap-4 px-5 py-5 md:gap-8 md:px-96 md:py-20">
@@ -29,7 +25,7 @@ export const Skills = () => {
               </AccordionTrigger>
               <AccordionContent>
                 <div className="text-xs md:text-base">
-                  <RichText data={description} />
+                  {description && <RichText data={description} />}
                 </div>
               </AccordionContent>
             </AccordionItem>
@@ -38,4 +34,4 @@ export const Skills = () => {
       </div>
     </div>
   );
-};
+}

@@ -14,7 +14,11 @@ export const { getClient, query, PreloadQuery } = registerApolloClient(() => {
     link: new HttpLink({
       uri: API_URL,
       fetchOptions: {
-        cache: 'force-cache', // Default caching strategy
+        // Use Next.js cache for better performance
+        next: {
+          revalidate: 3600, // Cache for 1 hour
+          tags: ['graphql'], // Add cache tags for revalidation
+        },
       },
     }),
   });

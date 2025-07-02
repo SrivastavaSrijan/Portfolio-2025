@@ -1,5 +1,5 @@
 import { useRouter, useSearchParams } from 'next/navigation';
-import { Routes } from '../../config/config/routes';
+import { Routes } from '../../config/routes';
 import {
   useGetCaseStudiesByParamsSuspenseQuery,
   useGetAllTagsSuspenseQuery,

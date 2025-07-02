@@ -7,7 +7,7 @@ import { NotFound } from './404';
 import { Undo2, Clock } from 'lucide-react';
 import { RichText } from './RichText';
 import Link from 'next/link';
-import { Routes } from '@/lib/config/config/routes';
+import { Routes } from '@/lib/config/routes';
 import { Button } from '../ui';
 dayjs.extend(relativeTime);
 

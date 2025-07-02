@@ -1,9 +1,14 @@
+import { revalidateComponent } from '@/lib/actions/revalidation';
+import { ServerActionComponents } from '@/lib/config/server';
 import type { GlobalConfig } from 'payload';
 
 export const Skills: GlobalConfig = {
   slug: 'skills',
   access: {
     read: () => true,
+  },
+  hooks: {
+    afterChange: [() => revalidateComponent(ServerActionComponents.Skills)],
   },
   fields: [
     {

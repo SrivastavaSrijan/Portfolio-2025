@@ -1,9 +1,15 @@
 import type { GlobalConfig } from 'payload';
 
+import { ServerActionComponents } from '@/lib/config/server';
+import { revalidateComponent } from '@/lib/actions/revalidation';
+
 export const FeaturedCaseStudies: GlobalConfig = {
   slug: 'featured-case-studies',
   access: {
     read: () => true,
+  },
+  hooks: {
+    afterChange: [() => revalidateComponent(ServerActionComponents.FeaturedCaseStudies)],
   },
   fields: [
     {

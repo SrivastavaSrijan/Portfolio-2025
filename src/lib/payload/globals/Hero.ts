@@ -1,9 +1,14 @@
 import type { GlobalConfig } from 'payload';
+import { revalidateComponent } from '@/lib/actions/revalidation';
+import { ServerActionComponents } from '@/lib/config/server';
 
 export const Hero: GlobalConfig = {
   slug: 'hero',
   access: {
     read: () => true,
+  },
+  hooks: {
+    afterChange: [() => revalidateComponent(ServerActionComponents.Hero)],
   },
   fields: [
     {

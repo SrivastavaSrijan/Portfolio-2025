@@ -3,10 +3,10 @@ import type { GetFeaturedCaseStudiesQuery } from '@/lib/graphql/__generated__/ho
 import { Button, Card, CardAction, CardContent, CardDescription } from '../ui';
 import { ArrowUpRightIcon } from 'lucide-react';
 import Link from 'next/link';
-import { Routes } from '@/lib/config/config/routes';
+import { Routes } from '@/lib/config/routes';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
-import { motion, type Variants } from 'framer-motion';
+import { motion, type Variants } from 'motion/react';
 import { useRef } from 'react';
 import { RichText } from './RichText';
 

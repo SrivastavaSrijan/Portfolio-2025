@@ -1,9 +1,14 @@
 import type { GlobalConfig } from 'payload';
+import { ServerActionComponents } from '@/lib/config/server';
+import { revalidateComponent } from '@/lib/actions/revalidation';
 
 export const Footer: GlobalConfig = {
   slug: 'footer',
   access: {
     read: () => true,
+  },
+  hooks: {
+    afterChange: [() => revalidateComponent(ServerActionComponents.Footer)],
   },
   fields: [
     {

@@ -1,5 +1,6 @@
+'use client';
 import { useState, useEffect } from 'react';
-import { useAnimation } from 'framer-motion';
+import { useAnimation } from 'motion/react';
 
 interface AnimationSequenceOptions {
   /**

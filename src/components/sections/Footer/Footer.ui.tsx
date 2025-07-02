@@ -1,13 +1,10 @@
 'use client';
-import { useGetFooterSuspenseQuery } from '@/lib/graphql/__generated__/hooks';
-import { ProfileToggle, WorkButtons } from '../fragments';
-import { Button } from '../ui';
-import { ContactForm } from '../fragments/ContactForm';
+import { ProfileToggle, WorkButtons } from '../../fragments';
+import { Button } from '../../ui';
+import { ContactForm } from '../../fragments/ContactForm';
+import type { FooterUIProps } from './Footer.utils';
 
-export const Footer = () => {
-  const { data } = useGetFooterSuspenseQuery();
-  const { bottomText, buttonText, description, title1, title2 } = data?.Footer ?? {};
-
+export function FooterUI({ bottomText, buttonText, description, title1, title2 }: FooterUIProps) {
   return (
     <footer>
       <div className="bg-accent">
@@ -33,4 +30,4 @@ export const Footer = () => {
       </div>
     </footer>
   );
-};
+}

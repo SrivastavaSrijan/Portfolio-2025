@@ -1,5 +1,5 @@
 'use client';
-import { motion, useAnimation } from 'framer-motion';
+import { motion, useAnimation } from 'motion/react';
 import { useTaglineAnimation } from '@/lib/animations';
 import { useEffect, useState, useRef } from 'react';
 import { useGetHeroSuspenseQuery } from '@/lib/graphql/__generated__/hooks';

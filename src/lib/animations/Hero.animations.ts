@@ -1,5 +1,6 @@
-import type { Variants } from 'framer-motion';
-import { useMotionValue, useSpring, animate, type AnimationPlaybackControls } from 'framer-motion';
+'use client';
+import type { Variants } from 'motion/react';
+import { useMotionValue, useSpring, animate, type AnimationPlaybackControls } from 'motion/react';
 import { useEffect } from 'react';
 
 // Page section animation variants
