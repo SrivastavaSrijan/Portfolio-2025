@@ -3,8 +3,7 @@ import {
   type GetExperienceBySlugMetaQuery,
 } from '@/lib/graphql/__generated__/hooks';
 import { isStringParam } from '@/lib/utils';
-
-import { query } from '@/lib/apollo/apolloClient';
+import client from '@/lib/apollo';
 import { createMetadata } from '@/lib/config/metadata';
 import type { Metadata } from 'next';
 import { NotFound } from '@/components/fragments';
@@ -18,7 +17,7 @@ interface ExperienceBySlugProps {
 }
 export async function generateMetadata({ params }: ExperienceBySlugProps): Promise<Metadata> {
   const { slug } = await params;
-  const { data } = await query<GetExperienceBySlugMetaQuery>({
+  const { data } = await client.query<GetExperienceBySlugMetaQuery>({
     query: GetExperienceBySlugMetaDocument,
     variables: {
       slug,

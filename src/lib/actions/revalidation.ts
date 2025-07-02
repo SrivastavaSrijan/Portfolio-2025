@@ -1,7 +1,6 @@
 'use server';
 
 import { revalidateTag } from 'next/cache';
-import { query } from '@/lib/apollo/apolloClient';
 import {
   GetHeroDocument,
   GetSkillsDocument,
@@ -23,6 +22,7 @@ import {
   type GetAllTagsQuery,
 } from '@/lib/graphql/__generated__/hooks';
 import { ServerActionComponents, ServerConfig } from '../config/server';
+import client from '../apollo';
 
 /**
  * Revalidate a component by tag
@@ -32,6 +32,7 @@ export async function revalidateComponent(component: ServerActionComponents) {
   return { success: true, tag: component, timestamp: new Date().toISOString() };
 }
 
+const { query } = client;
 /**
  * Fetch data for Hero component with proper typing
  */

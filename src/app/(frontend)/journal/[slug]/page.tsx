@@ -4,14 +4,13 @@ import {
 } from '@/lib/graphql/__generated__/hooks';
 import { isStringParam } from '@/lib/utils';
 
-import { query } from '@/lib/apollo/apolloClient';
+import client from '@/lib/apollo';
 import { createMetadata } from '@/lib/config/metadata';
 import type { Metadata } from 'next';
 import { NotFound } from '@/components/fragments';
 import { CaseStudy } from '@/components/sections';
 
 export const revalidate = 3600;
-
 interface CaseStudyBySlugProps {
   params: Promise<{
     slug: string;
@@ -19,7 +18,7 @@ interface CaseStudyBySlugProps {
 }
 export async function generateMetadata({ params }: CaseStudyBySlugProps): Promise<Metadata> {
   const { slug } = await params;
-  const { data } = await query<GetCaseStudyBySlugMetaQuery>({
+  const { data } = await client.query<GetCaseStudyBySlugMetaQuery>({
     query: GetCaseStudyBySlugMetaDocument,
     variables: {
       slug,
@@ -28,7 +27,7 @@ export async function generateMetadata({ params }: CaseStudyBySlugProps): Promis
       fetchOptions: {
         next: {
           revalidate: 3600,
-          tags: ['hero-meta'],
+          tags: ['journal-slug-meta'],
         },
       },
     },

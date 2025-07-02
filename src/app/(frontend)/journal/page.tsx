@@ -1,5 +1,5 @@
 import { Journal } from '@/components/sections';
-import { query } from '@/lib/apollo/apolloClient';
+import client from '@/lib/apollo';
 import { createMetadata } from '@/lib/config/metadata';
 import {
   GetJournalMetaDocument,
@@ -16,7 +16,7 @@ interface CaseStudiesPageProps extends GetServerSideProps {
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { data } = await query<GetJournalMetaQuery>({
+  const { data } = await client.query<GetJournalMetaQuery>({
     query: GetJournalMetaDocument,
     context: {
       fetchOptions: {
