@@ -13,4 +13,7 @@ export enum ServerActionComponents {
   Footer = 'footer',
   WorkButtons = 'work-buttons',
   Journal = 'journal',
+  CaseStudy = 'case-studies',
+  Experience = 'experiences',
+  CaseStudiesByParams = 'case-studies-by-params',
 }

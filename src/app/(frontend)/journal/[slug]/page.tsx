@@ -7,11 +7,11 @@ import { isStringParam } from '@/lib/utils';
 import { query } from '@/lib/apollo/apolloClient';
 import { createMetadata } from '@/lib/config/metadata';
 import type { GetServerSideProps, Metadata } from 'next';
-import { CaseStudy, NotFound } from '@/components/fragments';
+import { NotFound } from '@/components/fragments';
+import { CaseStudy } from '@/components/sections/CaseStudy';
+import { ServerConfig } from '@/lib/config/server';
 
-export const dynamic = 'force-dynamic';
-// export const revalidate = 60;
-// export const fetchCache = 'force-no-store';
+export const revalidate = ServerConfig.RevalidationTime;
 
 interface CaseStudyBySlugProps extends GetServerSideProps {
   params: Promise<{

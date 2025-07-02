@@ -8,11 +8,17 @@ import {
   GetFeaturedCaseStudiesDocument,
   GetFeaturedExperiencesDocument,
   GetFooterDocument,
+  GetCaseStudyBySlugDocument,
+  GetExperienceBySlugDocument,
+  GetCaseStudiesByParamsDocument,
   type GetHeroQuery,
   type GetSkillsQuery,
   type GetFeaturedCaseStudiesQuery,
   type GetFeaturedExperiencesQuery,
   type GetFooterQuery,
+  type GetCaseStudyBySlugQuery,
+  type GetExperienceBySlugQuery,
+  type GetCaseStudiesByParamsQuery,
 } from '@/lib/graphql/__generated__/hooks';
 import { ServerActionComponents, ServerConfig } from '../config/server';
 
@@ -117,4 +123,71 @@ export async function fetchFooterData() {
   });
   if (!data?.Footer) throw new Error('Footer data not found');
   return data.Footer;
+}
+
+/**
+ * Fetch data for a single Case Study by slug with proper typing
+ */
+export async function fetchCaseStudyData(slug: string) {
+  const { data } = await query<GetCaseStudyBySlugQuery>({
+    query: GetCaseStudyBySlugDocument,
+    variables: { slug },
+    context: {
+      fetchOptions: {
+        next: {
+          revalidate: ServerConfig.RevalidationTime,
+          tags: [ServerActionComponents.CaseStudy, `slug:${slug}`],
+        },
+      },
+    },
+  });
+  if (!data?.CaseStudies?.docs?.length)
+    throw new Error(`Case Study data not found for slug: ${slug}`);
+  return data.CaseStudies.docs[0];
+}
+
+/**
+ * Fetch data for a single Experience by slug with proper typing
+ */
+export async function fetchExperienceData(slug: string) {
+  const { data } = await query<GetExperienceBySlugQuery>({
+    query: GetExperienceBySlugDocument,
+    variables: { slug },
+    context: {
+      fetchOptions: {
+        next: {
+          revalidate: ServerConfig.RevalidationTime,
+          tags: [ServerActionComponents.Experience, `slug:${slug}`],
+        },
+      },
+    },
+  });
+  if (!data?.Experiences?.docs?.length)
+    throw new Error(`Experience data not found for slug: ${slug}`);
+  return data.Experiences.docs[0];
+}
+
+/**
+ * Fetch data for Case Studies by parameters with proper typing
+ */
+export async function fetchCaseStudiesByParams(params: {
+  tagIds?: unknown[];
+  experience?: unknown[];
+}) {
+  const { data } = await query<GetCaseStudiesByParamsQuery>({
+    query: GetCaseStudiesByParamsDocument,
+    variables: params,
+    context: {
+      fetchOptions: {
+        next: {
+          revalidate: ServerConfig.RevalidationTime,
+          tags: [ServerActionComponents.CaseStudiesByParams, JSON.stringify(params)],
+        },
+      },
+    },
+  });
+  return {
+    caseStudies: data?.CaseStudies?.docs ?? [],
+    journal: data?.Journal,
+  };
 }

@@ -1,27 +1,21 @@
 'use client';
-import { useGetCaseStudyBySlugSuspenseQuery } from '@/lib/graphql/__generated__/hooks';
 import Image from 'next/image';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import { NotFound } from './404';
 import { Undo2, Clock } from 'lucide-react';
-import { RichText } from './RichText';
+import { RichText } from '../../fragments/RichText';
 import Link from 'next/link';
 import { Routes } from '@/lib/config/routes';
-import { Button } from '../ui';
+import { Button } from '../../ui';
+import type { CaseStudyUIProps } from './CaseStudy.utils';
+
 dayjs.extend(relativeTime);
 
-interface CaseStudyProps {
-  slug: string;
-}
-export const CaseStudy = ({ slug }: CaseStudyProps) => {
-  const { data } = useGetCaseStudyBySlugSuspenseQuery({ variables: { slug } });
-  const { docs = [] } = data?.CaseStudies ?? {};
-  if (!docs || docs.length === 0) {
-    return <NotFound />;
-  }
-  const { title, content, updatedAt, illustration } = docs[0];
-
+/**
+ * CaseStudy UI Component - Pure UI component that receives typed GraphQL data
+ * This component handles all the visual rendering and animations
+ */
+export function CaseStudyUI({ title, content, updatedAt, illustration }: CaseStudyUIProps) {
   return (
     <div className="flex flex-col">
       <div className="bg-accent px-4 py-4 md:px-20 md:pb-20">
@@ -65,4 +59,4 @@ export const CaseStudy = ({ slug }: CaseStudyProps) => {
       </div>
     </div>
   );
-};
+}

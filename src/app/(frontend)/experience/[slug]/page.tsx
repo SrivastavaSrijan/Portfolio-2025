@@ -7,12 +7,11 @@ import { isStringParam } from '@/lib/utils';
 import { query } from '@/lib/apollo/apolloClient';
 import { createMetadata } from '@/lib/config/metadata';
 import type { GetServerSideProps, Metadata } from 'next';
-import { Experience, NotFound } from '@/components/fragments';
+import { NotFound } from '@/components/fragments';
+import { Experience } from '@/components/sections/Experience';
+import { ServerConfig } from '@/lib/config/server';
 
-export const dynamic = 'force-dynamic';
-// export const revalidate = 60;
-// export const fetchCache = 'force-no-store';
-
+export const revalidate = ServerConfig.RevalidationTime;
 interface ExperienceBySlugProps extends GetServerSideProps {
   params: Promise<{
     slug: string;
