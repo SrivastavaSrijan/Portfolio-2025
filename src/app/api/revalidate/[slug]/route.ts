@@ -22,14 +22,17 @@ function isAuthorized(request: NextRequest): boolean {
   return token === secret;
 }
 
-export async function POST(request: NextRequest, { params }: { params: { slug: string } }) {
+export async function POST(
+  request: NextRequest,
+  { params }: { params: Promise<{ slug: string }> }
+) {
   try {
     // Check authorization
     if (!isAuthorized(request)) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    const { slug } = params;
+    const { slug } = await params;
 
     if (!slug) {
       return NextResponse.json({ error: 'Slug is required' }, { status: 400 });
