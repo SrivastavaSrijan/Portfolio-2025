@@ -7,4 +7,3 @@ export * from './ProfileToggle';
 export * from './ErrorBoundary';
 export * from './CaseStudyCard';
 export * from './CaseStudyFilter';
-export * from './Journal';

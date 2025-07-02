@@ -6,13 +6,12 @@ import { isStringParam } from '@/lib/utils';
 
 import { query } from '@/lib/apollo/apolloClient';
 import { createMetadata } from '@/lib/config/metadata';
-import type { GetServerSideProps, Metadata } from 'next';
+import type { Metadata } from 'next';
 import { NotFound } from '@/components/fragments';
-import { Experience } from '@/components/sections/Experience';
-import { ServerConfig } from '@/lib/config/server';
+import { Experience } from '@/components/sections';
 
-export const revalidate = ServerConfig.RevalidationTime;
-interface ExperienceBySlugProps extends GetServerSideProps {
+export const revalidate = 3600;
+interface ExperienceBySlugProps {
   params: Promise<{
     slug: string;
   }>;
@@ -23,6 +22,14 @@ export async function generateMetadata({ params }: ExperienceBySlugProps): Promi
     query: GetExperienceBySlugMetaDocument,
     variables: {
       slug,
+    },
+    context: {
+      fetchOptions: {
+        next: {
+          revalidate: 3600,
+          tags: ['hero-meta'],
+        },
+      },
     },
   });
   const remoteMetadata = data?.Experiences?.docs?.[0]?.meta ?? {};

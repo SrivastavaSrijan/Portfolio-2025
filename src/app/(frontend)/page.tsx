@@ -3,9 +3,8 @@ import type { Metadata } from 'next';
 import { createMetadata } from '@/lib/config/metadata';
 import { query } from '@/lib/apollo/apolloClient';
 import { GetHeroMetaDocument, type GetHeroMetaQuery } from '@/lib/graphql/__generated__/hooks';
-import { ServerConfig } from '@/lib/config/server';
 
-export const revalidate = ServerConfig.RevalidationTime;
+export const revalidate = 3600;
 
 export async function generateMetadata(): Promise<Metadata> {
   const { data } = await query<GetHeroMetaQuery>({

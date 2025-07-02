@@ -11,6 +11,7 @@ import {
   GetCaseStudyBySlugDocument,
   GetExperienceBySlugDocument,
   GetCaseStudiesByParamsDocument,
+  GetAllTagsDocument,
   type GetHeroQuery,
   type GetSkillsQuery,
   type GetFeaturedCaseStudiesQuery,
@@ -19,6 +20,7 @@ import {
   type GetCaseStudyBySlugQuery,
   type GetExperienceBySlugQuery,
   type GetCaseStudiesByParamsQuery,
+  type GetAllTagsQuery,
 } from '@/lib/graphql/__generated__/hooks';
 import { ServerActionComponents, ServerConfig } from '../config/server';
 
@@ -190,4 +192,23 @@ export async function fetchCaseStudiesByParams(params: {
     caseStudies: data?.CaseStudies?.docs ?? [],
     journal: data?.Journal,
   };
+}
+
+/**
+ * Fetch data for all tags with proper typing
+ */
+export async function fetchAllTagsData() {
+  const { data } = await query<GetAllTagsQuery>({
+    query: GetAllTagsDocument,
+    context: {
+      fetchOptions: {
+        next: {
+          revalidate: ServerConfig.RevalidationTime,
+          tags: [ServerActionComponents.AllTags],
+        },
+      },
+    },
+  });
+  if (!data?.CaseStudies?.docs) throw new Error('Tags data not found');
+  return data.CaseStudies.docs;
 }

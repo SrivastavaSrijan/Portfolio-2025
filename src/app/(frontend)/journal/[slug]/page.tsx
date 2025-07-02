@@ -6,14 +6,13 @@ import { isStringParam } from '@/lib/utils';
 
 import { query } from '@/lib/apollo/apolloClient';
 import { createMetadata } from '@/lib/config/metadata';
-import type { GetServerSideProps, Metadata } from 'next';
+import type { Metadata } from 'next';
 import { NotFound } from '@/components/fragments';
-import { CaseStudy } from '@/components/sections/CaseStudy';
-import { ServerConfig } from '@/lib/config/server';
+import { CaseStudy } from '@/components/sections';
 
-export const revalidate = ServerConfig.RevalidationTime;
+export const revalidate = 3600;
 
-interface CaseStudyBySlugProps extends GetServerSideProps {
+interface CaseStudyBySlugProps {
   params: Promise<{
     slug: string;
   }>;
@@ -24,6 +23,14 @@ export async function generateMetadata({ params }: CaseStudyBySlugProps): Promis
     query: GetCaseStudyBySlugMetaDocument,
     variables: {
       slug,
+    },
+    context: {
+      fetchOptions: {
+        next: {
+          revalidate: 3600,
+          tags: ['hero-meta'],
+        },
+      },
     },
   });
   const remoteMetadata = data?.CaseStudies?.docs?.[0]?.meta ?? {};

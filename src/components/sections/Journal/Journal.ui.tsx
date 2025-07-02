@@ -1,10 +1,33 @@
 'use client';
-import { useGetJournalData } from '@/lib/hooks/data/useGetJournalData';
-import { CaseStudyCard, CaseStudyFilter } from '.';
+import { CaseStudyCard, CaseStudyFilter } from '../../fragments';
+import { useRouter } from 'next/navigation';
+import { Routes } from '@/lib/config/routes';
+import type { JournalUIProps } from './Journal.utils';
 
-export const Journal = () => {
-  const { title, caseStudies, description, subtitle, paginatedTags, handleTagClick, selectedTag } =
-    useGetJournalData();
+/**
+ * Journal UI Component - Pure UI component that receives typed data
+ * This component handles all the visual rendering and client-side interactions
+ */
+export function JournalUI({
+  title,
+  subtitle,
+  description,
+  caseStudies,
+  paginatedTags,
+  selectedTag,
+}: JournalUIProps) {
+  const router = useRouter();
+
+  const handleTagClick = (selectedTagName: string) => {
+    if (selectedTagName === selectedTag) {
+      // If the selected tag is already active, remove it from the URL
+      router.push(Routes.CaseStudies);
+      return;
+    }
+    // If a tag is selected, update the URL with the new tag
+    router.push(`${Routes.CaseStudies}?tags=${selectedTagName}`);
+  };
+
   return (
     <div className="flex flex-col">
       <div className="flex flex-col justify-between gap-8 bg-accent px-4 py-4 md:flex-row md:gap-6 md:px-20 md:pb-20">
@@ -24,4 +47,4 @@ export const Journal = () => {
       )}
     </div>
   );
-};
+}
