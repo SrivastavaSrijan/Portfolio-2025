@@ -10,9 +10,9 @@ export function SkillsSkeleton() {
         </div>
         <div className="flex flex-col gap-2 md:gap-2">
           {[1, 2, 3, 4].map((id) => (
-            <div key={`skill-skeleton-${id}`} className="rounded-md border border-accent">
+            <div key={`skill-skeleton-${id}`} className="border-b border-b-accent">
               <div className="p-4">
-                <Skeleton className="h-5 w-32 md:h-7 md:w-48" />
+                <Skeleton className="h-5 w-32 md:h-7 md:w-128" />
               </div>
             </div>
           ))}

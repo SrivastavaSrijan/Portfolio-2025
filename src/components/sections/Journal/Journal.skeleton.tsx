@@ -19,7 +19,6 @@ export function JournalSkeleton() {
         <div className="flex flex-1/3 flex-col gap-2">
           <div className="flex flex-col gap-1">
             <Skeleton className="h-4 w-20" variant="brand" />
-            <Skeleton className="h-px w-full" variant="brand" />
           </div>
           {filterGroups.map((group) => (
             <div key={group} className="flex flex-col gap-1">
@@ -28,7 +27,6 @@ export function JournalSkeleton() {
                   <Skeleton key={`${group}-${tag}`} className="h-6 w-full" variant="brand" />
                 ))}
               </div>
-              <Skeleton className="h-px w-full" variant="brand" />
             </div>
           ))}
         </div>

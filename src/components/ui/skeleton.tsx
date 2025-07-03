@@ -7,6 +7,7 @@ const skeletonVariants = cva('animate-pulse rounded-md', {
       primary: 'bg-primary/40',
       secondary: 'bg-secondary/40',
       brand: 'bg-brand',
+      tertiary: 'bg-tertiary/40',
     },
   },
   defaultVariants: {

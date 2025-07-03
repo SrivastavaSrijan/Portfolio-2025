@@ -10,11 +10,11 @@ export function FeaturedCaseStudiesSkeleton() {
       </div>
       <div className="flex flex-col gap-6 md:gap-10">
         {['case-study-skeleton-1', 'case-study-skeleton-2', 'case-study-skeleton-3'].map((key) => (
-          <div key={key} className="flex flex-col gap-4 md:gap-6">
-            <Skeleton className="h-64 w-full md:h-80" />
-            <Skeleton className="h-8 w-3/4" />
-            <Skeleton className="h-4 w-full" />
-            <Skeleton className="h-4 w-5/6" />
+          <div
+            key={key}
+            className="mx-auto flex w-full max-w-196 flex-col gap-4 rounded-4xl md:gap-6"
+          >
+            <Skeleton className="h-64 w-full rounded-4xl! md:h-128" />
           </div>
         ))}
       </div>

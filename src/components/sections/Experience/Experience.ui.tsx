@@ -1,8 +1,8 @@
-import Image from 'next/image';
 import dayjs from 'dayjs';
 import { RichText } from '../../fragments/RichText';
 import { cn } from '@/lib/utils';
 import { CaseStudyCard } from '../../fragments/CaseStudyCard';
+import { ImageWithShimmer } from '../../ui/ImageWithShimmer';
 import type { ExperienceUIProps } from './Experience.utils';
 
 /**
@@ -57,13 +57,19 @@ export function ExperienceUI({ experience, caseStudies }: ExperienceUIProps) {
           </div>
         </div>
       </div>
-      <div className="relative h-60 w-full object-cover">
-        {coverImage?.url && <Image src={coverImage.url} alt={title} fill objectFit="cover" />}
-      </div>
+      {coverImage?.url && (
+        <ImageWithShimmer
+          src={coverImage.url}
+          alt={title}
+          fill
+          className="object-cover"
+          wrapperClassName="relative h-60 w-full"
+        />
+      )}
       <div className="bg-white px-4 py-5 md:px-8 md:py-10">
         <div className="mx-auto md:max-w-3xl">
           <RichText className="text-accent" data={summary} />
-          <hr className="mt-5 border-accent/20" />
+          <hr className="mt-5 sm:border-accent/20 md:border-0" />
         </div>
       </div>
 

@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { Undo2, Clock } from 'lucide-react';
@@ -6,6 +5,7 @@ import { RichText } from '../../fragments/RichText';
 import Link from 'next/link';
 import { Routes } from '@/lib/config/routes';
 import { Button } from '../../ui';
+import { ImageWithShimmer } from '../../ui/ImageWithShimmer';
 import type { CaseStudyUIProps } from './CaseStudy.utils';
 
 dayjs.extend(relativeTime);
@@ -41,7 +41,7 @@ export function CaseStudyUI({ title, content, updatedAt, illustration }: CaseStu
         </div>
       </div>
       {illustration?.url && (
-        <Image
+        <ImageWithShimmer
           priority
           quality={100}
           width={1440}

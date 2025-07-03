@@ -4,7 +4,7 @@ import { Button, Card, CardAction, CardContent, CardDescription } from '../ui';
 import { ArrowUpRightIcon } from 'lucide-react';
 import Link from 'next/link';
 import { Routes } from '@/lib/config/routes';
-import Image from 'next/image';
+import { ImageWithShimmer } from '../ui/ImageWithShimmer';
 import { cn } from '@/lib/utils';
 import { motion, type Variants } from 'motion/react';
 import { RichText } from './RichText';
@@ -44,16 +44,16 @@ export const CaseStudyCard = ({
         'relative mx-auto flex w-full max-w-256 flex-col items-center justify-center overflow-hidden md:rounded-[42px]'
       )}
     >
-      <div className="relative h-40 w-full md:h-208">
-        {illustration?.url && (
-          <Image
-            fill
-            src={illustration?.url}
-            alt={title}
-            className={cn('relative h-full w-full rounded-4xl object-cover md:rounded-none')}
-          />
-        )}
-      </div>
+      {illustration?.url && (
+        <ImageWithShimmer
+          fill
+          src={illustration?.url}
+          alt={title}
+          className={cn('relative h-full w-full rounded-4xl object-cover md:rounded-none')}
+          shimmerClassName="rounded-4xl md:rounded-none"
+          wrapperClassName="relative h-40 w-full md:h-208"
+        />
+      )}
       <motion.div
         variants={cardVariants}
         whileInView="visible"

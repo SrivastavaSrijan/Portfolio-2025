@@ -7,6 +7,11 @@ import type {
 } from '@payloadcms/richtext-lexical';
 import type { SerializedLexicalNode } from '@payloadcms/richtext-lexical/lexical';
 import type { ReactNode } from 'react';
+import Prism from 'prismjs';
+import 'prismjs/themes/prism-tomorrow.min.css';
+import 'prismjs/components/prism-javascript';
+import 'prismjs/components/prism-typescript';
+import 'prismjs/components/prism-jsx';
 
 // Helper function to handle text node formatting that can be reused
 export const formatTextNode = (
@@ -94,6 +99,17 @@ export const renderFormattedChildren = (
   });
 };
 
+// Helper to extract plain text from nodes
+const extractTextFromNodes = (nodes: SerializedLexicalNode[]): string => {
+  return nodes
+    .map((node) => {
+      if ('text' in node) return node.text;
+      if ('children' in node) return extractTextFromNodes(node.children as SerializedLexicalNode[]);
+      return '';
+    })
+    .join('');
+};
+
 const Code = ({
   node,
   nodesToJSX,
@@ -101,12 +117,15 @@ const Code = ({
   node: SerializedParagraphNode | SerializedQuoteNode;
   nodesToJSX: (args: { nodes: SerializedLexicalNode[] }) => ReactNode;
 }) => {
-  // Render the code block with its children
+  const codeText = extractTextFromNodes(node.children);
+  const highlightedCode = Prism.highlight(codeText, Prism.languages.javascript, 'javascript');
+
   return (
     <pre className="my-4 overflow-x-auto rounded-lg bg-black-700 p-4">
-      <code className="block font-mono text-orange-300 text-xs leading-relaxed">
-        {nodesToJSX({ nodes: node.children })}
-      </code>
+      <code
+        className="block font-mono text-sm leading-relaxed"
+        dangerouslySetInnerHTML={{ __html: highlightedCode }}
+      />
     </pre>
   );
 };
@@ -123,7 +142,7 @@ export const ParagraphConverter: JSXConverters<
   quote: ({ node, nodesToJSX }) => {
     return (
       // we use blockquotes for code blocks cuz payload doesn't support code blocks
-      <blockquote className="my-6 border-primary border-l-4 pl-6 text-black-600 italic dark:text-black-300">
+      <blockquote className="my-6 border-primary border-l-4 pl-6 text-black-600 dark:text-black-300">
         <Code node={node as SerializedQuoteNode} nodesToJSX={nodesToJSX} />
       </blockquote>
     );

@@ -1,10 +1,10 @@
 'use client';
-import Image from 'next/image';
 import Link from 'next/link';
 import dayjs from 'dayjs';
 import { motion, type Variants } from 'motion/react';
 import { ArrowUpRight } from 'lucide-react';
 import { Button } from '../../ui';
+import { ImageWithShimmer } from '../../ui/ImageWithShimmer';
 import { Routes } from '@/lib/config/routes';
 import type { FeaturedExperiencesUIProps } from './FeaturedExperiences.utils';
 
@@ -89,11 +89,12 @@ export function FeaturedExperiencesUI({
                 viewport={{ once: true, amount: 0.2 }}
               >
                 <div className="group relative flex h-[60px] w-[156px] items-start overflow-hidden rounded-md bg-white/10 transition-transform hover:scale-[1.03] md:w-[200px]">
-                  <Image
+                  <ImageWithShimmer
                     alt={experienceTitle}
                     fill
                     className="object-contain brightness-90 grayscale-[80%] transition-all duration-300 group-hover:brightness-100 group-hover:grayscale-0"
                     src={thumbnailImage?.url ?? ''}
+                    wrapperClassName="absolute inset-0"
                   />
                 </div>
                 <div className="flex flex-row items-center justify-center gap-5">
