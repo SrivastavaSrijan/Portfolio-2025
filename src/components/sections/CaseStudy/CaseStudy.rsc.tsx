@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
-import { fetchCaseStudyData } from '@/lib/graphql/server';
+import { api, PayloadEntity } from '@/lib/graphql/server';
+
 import { CaseStudyUI } from './CaseStudy.ui';
 import { CaseStudySkeleton } from './CaseStudy.skeleton';
 import { NotFound } from '../../fragments/404';
@@ -10,7 +11,10 @@ import type { CaseStudyWrapperProps } from './CaseStudy.utils';
  */
 async function CaseStudyServer({ slug }: CaseStudyWrapperProps) {
   try {
-    const data = await fetchCaseStudyData(slug);
+    const data = await api.get(PayloadEntity.CaseStudy, { slug });
+    if (!data) {
+      throw new Error('Internal Server Error', { cause: [PayloadEntity.CaseStudy] });
+    }
     return <CaseStudyUI {...data} />;
   } catch (error) {
     console.error('Error fetching case study:', error);

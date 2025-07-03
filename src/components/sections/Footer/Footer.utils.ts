@@ -1,7 +1,8 @@
-import type { GetFooterQuery, GetWorkButtonsQuery } from '@/lib/graphql/__generated__/hooks';
+import type { GetWorkButtonsQuery } from '@/lib/graphql/__generated__/hooks';
+import type { PayloadFetchTypeMap, PayloadEntity } from '@/lib/graphql/server/types';
 
-// Extract the exact Footer data type from the GraphQL query
-export type FooterData = NonNullable<GetFooterQuery['Footer']>;
+// Extract the exact Footer data type from the PayloadFetchTypeMap
+export type FooterData = PayloadFetchTypeMap[PayloadEntity.Footer]['result'];
 
 // The UI component receives the exact data shape from GraphQL plus WorkButtons
 export type FooterUIProps = FooterData & {

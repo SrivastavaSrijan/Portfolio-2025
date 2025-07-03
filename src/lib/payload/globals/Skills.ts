@@ -1,6 +1,5 @@
-import { revalidateComponent } from '@/lib/graphql/server';
-import { ServerActionComponents } from '@/lib/config/server';
 import type { GlobalConfig } from 'payload';
+import { api } from '@/lib/graphql/server/Api';
 
 export const Skills: GlobalConfig = {
   slug: 'skills',
@@ -8,7 +7,7 @@ export const Skills: GlobalConfig = {
     read: () => true,
   },
   hooks: {
-    afterChange: [() => revalidateComponent(ServerActionComponents.Skills)],
+    afterChange: [() => api.revalidateAll()],
   },
   fields: [
     {

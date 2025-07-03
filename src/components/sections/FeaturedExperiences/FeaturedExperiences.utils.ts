@@ -1,9 +1,8 @@
-import type { GetFeaturedExperiencesQuery } from '@/lib/graphql/__generated__/hooks';
+import type { PayloadFetchTypeMap, PayloadEntity } from '@/lib/graphql/server/types';
 
-// Extract the exact FeaturedExperiences data type from the GraphQL query
-export type FeaturedExperiencesData = NonNullable<
-  GetFeaturedExperiencesQuery['FeaturedExperience']
->;
+// Extract the exact FeaturedExperiences data type from the PayloadFetchTypeMap
+export type FeaturedExperiencesData =
+  PayloadFetchTypeMap[PayloadEntity.FeaturedExperiences]['result'];
 
 // The UI component receives the exact data shape from GraphQL
 export type FeaturedExperiencesUIProps = FeaturedExperiencesData;

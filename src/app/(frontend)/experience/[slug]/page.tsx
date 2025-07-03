@@ -1,6 +1,7 @@
 import { isStringParam } from '@/lib/utils';
 import { createMetadata } from '@/lib/config/metadata';
-import { fetchExperienceMetadata, fetchAllExperiencesData } from '@/lib/graphql/server';
+import { api, PayloadEntity } from '@/lib/graphql/server';
+
 import type { Metadata } from 'next';
 import { NotFound } from '@/components/fragments';
 import { Experience } from '@/components/sections';
@@ -11,7 +12,7 @@ export async function generateStaticParams() {
   // During build time, the Payload server might not be running
   // Return empty array to allow fallback to ISR
   try {
-    const experiences = await fetchAllExperiencesData();
+    const experiences = await api.get(PayloadEntity.AllExperiences);
     return experiences.map((experience) => ({
       slug: experience.slug,
     }));
@@ -28,7 +29,10 @@ interface ExperienceBySlugProps {
 }
 export async function generateMetadata({ params }: ExperienceBySlugProps): Promise<Metadata> {
   const { slug } = await params;
-  const remoteMetadata = await fetchExperienceMetadata(slug);
+  const remoteMetadata = await api.get(PayloadEntity.ExperienceMeta, { slug });
+  if (!remoteMetadata) {
+    throw new Error('Internal Server Error', { cause: [PayloadEntity.ExperienceMeta] });
+  }
   return createMetadata(remoteMetadata);
 }
 

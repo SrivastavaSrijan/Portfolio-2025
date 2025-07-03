@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
-import { fetchFeaturedCaseStudiesData } from '@/lib/graphql/server';
+import { api, PayloadEntity } from '@/lib/graphql/server';
+
 import { FeaturedCaseStudiesUI } from './FeaturedCaseStudies.ui';
 import { FeaturedCaseStudiesSkeleton } from './FeaturedCaseStudies.skeleton';
 import type { FeaturedCaseStudiesWrapperProps } from './FeaturedCaseStudies.utils';
@@ -8,7 +9,12 @@ import type { FeaturedCaseStudiesWrapperProps } from './FeaturedCaseStudies.util
  * FeaturedCaseStudies Server Component - Clean and simple
  */
 async function FeaturedCaseStudiesServer(_props: FeaturedCaseStudiesWrapperProps) {
-  const data = await fetchFeaturedCaseStudiesData();
+  const data = await api.get(PayloadEntity.FeaturedCaseStudies);
+  if (!data) {
+    throw new Error('Internal Server Error', {
+      cause: [PayloadEntity.FeaturedCaseStudies],
+    });
+  }
   return <FeaturedCaseStudiesUI {...data} />;
 }
 

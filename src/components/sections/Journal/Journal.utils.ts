@@ -1,12 +1,11 @@
-import type {
-  GetAllTagsQuery,
-  GetCaseStudiesByParamsQuery,
-} from '@/lib/graphql/__generated__/hooks';
+import type { PayloadFetchTypeMap, PayloadEntity } from '@/lib/graphql/server/types';
 
-// Extract the exact data types from the GraphQL queries
-export type AllTagsData = NonNullable<GetAllTagsQuery['CaseStudies']>['docs'];
-export type JournalCaseStudies = NonNullable<GetCaseStudiesByParamsQuery['CaseStudies']>['docs'];
-export type JournalData = NonNullable<GetCaseStudiesByParamsQuery['Journal']>;
+// Extract the exact data types from the PayloadFetchTypeMap
+export type AllTagsData = PayloadFetchTypeMap[PayloadEntity.AllTags]['result'];
+export type JournalCaseStudies =
+  PayloadFetchTypeMap[PayloadEntity.CaseStudiesByParams]['result']['caseStudies'];
+export type JournalData =
+  PayloadFetchTypeMap[PayloadEntity.CaseStudiesByParams]['result']['journal'];
 
 // The UI component receives the processed data
 export interface JournalUIProps {

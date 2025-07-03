@@ -1,13 +1,11 @@
-import type {
-  GetExperienceBySlugQuery,
-  GetCaseStudiesByParamsQuery,
-} from '@/lib/graphql/__generated__/hooks';
+import type { PayloadFetchTypeMap, PayloadEntity } from '@/lib/graphql/server/types';
 
-// Extract the exact Experience data type from the GraphQL query
-export type ExperienceData = NonNullable<GetExperienceBySlugQuery['Experiences']>['docs'][0];
+// Extract the exact Experience data type from the PayloadFetchTypeMap
+export type ExperienceData = PayloadFetchTypeMap[PayloadEntity.Experience]['result'];
 
-// Extract the case studies data type
-export type ExperienceCaseStudies = NonNullable<GetCaseStudiesByParamsQuery['CaseStudies']>['docs'];
+// Extract the case studies data type from the PayloadFetchTypeMap
+export type ExperienceCaseStudies =
+  PayloadFetchTypeMap[PayloadEntity.CaseStudiesByParams]['result']['caseStudies'];
 
 // The UI component receives the exact data shape from GraphQL
 export interface ExperienceUIProps {

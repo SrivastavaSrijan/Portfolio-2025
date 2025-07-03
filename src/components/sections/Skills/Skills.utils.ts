@@ -1,7 +1,7 @@
-import type { GetSkillsQuery } from '@/lib/graphql/__generated__/hooks';
+import type { PayloadFetchTypeMap, PayloadEntity } from '@/lib/graphql/server/types';
 
-// Extract the exact Skills data type from the GraphQL query
-export type SkillsData = NonNullable<GetSkillsQuery['Skill']>;
+// Extract the exact Skills data type from the PayloadFetchTypeMap
+export type SkillsData = PayloadFetchTypeMap[PayloadEntity.Skills]['result'];
 
 // The UI component receives the exact data shape from GraphQL
 export type SkillsUIProps = SkillsData;

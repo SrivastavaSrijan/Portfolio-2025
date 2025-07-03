@@ -1,7 +1,7 @@
-import type { GetCaseStudyBySlugQuery } from '@/lib/graphql/__generated__/hooks';
+import type { PayloadFetchTypeMap, PayloadEntity } from '@/lib/graphql/server/types';
 
-// Extract the exact CaseStudy data type from the GraphQL query
-export type CaseStudyData = NonNullable<GetCaseStudyBySlugQuery['CaseStudies']>['docs'][0];
+// Extract the exact CaseStudy data type from the PayloadFetchTypeMap
+export type CaseStudyData = PayloadFetchTypeMap[PayloadEntity.CaseStudy]['result'];
 
 // The UI component receives the exact data shape from GraphQL
 export type CaseStudyUIProps = CaseStudyData;

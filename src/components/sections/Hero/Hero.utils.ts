@@ -1,7 +1,8 @@
-import type { GetHeroQuery, GetWorkButtonsQuery } from '@/lib/graphql/__generated__/hooks';
+import type { GetWorkButtonsQuery } from '@/lib/graphql/__generated__/hooks';
+import type { PayloadFetchTypeMap, PayloadEntity } from '@/lib/graphql/server/types';
 
-// Extract the exact Hero data type from the GraphQL query
-export type HeroData = NonNullable<GetHeroQuery['Hero']>;
+// Extract the exact Hero data type from the PayloadFetchTypeMap
+export type HeroData = PayloadFetchTypeMap[PayloadEntity.Hero]['result'];
 
 // The UI component receives the exact data shape from GraphQL plus WorkButtons
 export type HeroUIProps = HeroData & {

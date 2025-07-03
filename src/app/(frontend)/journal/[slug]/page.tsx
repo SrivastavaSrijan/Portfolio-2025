@@ -1,6 +1,7 @@
 import { isStringParam } from '@/lib/utils';
 import { createMetadata } from '@/lib/config/metadata';
-import { fetchCaseStudyMetadata, fetchAllCaseStudiesData } from '@/lib/graphql/server';
+import { api, PayloadEntity } from '@/lib/graphql/server';
+
 import type { Metadata } from 'next';
 import { NotFound } from '@/components/fragments';
 import { CaseStudy } from '@/components/sections';
@@ -11,12 +12,14 @@ export async function generateStaticParams() {
   // During build time, the Payload server might not be running
   // Return empty array to allow fallback to ISR
   try {
-    const caseStudies = await fetchAllCaseStudiesData();
+    const caseStudies = await api.get(PayloadEntity.AllCaseStudies);
+    if (!caseStudies) {
+      throw new Error('Internal Server Error', { cause: [PayloadEntity.AllCaseStudies] });
+    }
     return caseStudies.map((caseStudy) => ({
       slug: caseStudy.slug,
     }));
   } catch {
-    // Error already logged in server action
     return [];
   }
 }
@@ -28,7 +31,12 @@ interface CaseStudyBySlugProps {
 }
 export async function generateMetadata({ params }: CaseStudyBySlugProps): Promise<Metadata> {
   const { slug } = await params;
-  const remoteMetadata = await fetchCaseStudyMetadata(slug);
+  const remoteMetadata = await api.get(PayloadEntity.CaseStudyMeta, {
+    slug,
+  });
+  if (!remoteMetadata) {
+    throw new Error('Internal Server Error', { cause: [PayloadEntity.CaseStudyMeta] });
+  }
   return createMetadata(remoteMetadata);
 }
 

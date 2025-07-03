@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
-import { fetchFooterData, fetchWorkButtonsData } from '@/lib/graphql/server';
+import { api, PayloadEntity } from '@/lib/graphql/server';
+
 import { FooterUI } from './Footer.ui';
 import { FooterSkeleton } from './Footer.skeleton';
 import type { FooterWrapperProps } from './Footer.utils';
@@ -9,10 +10,14 @@ import type { FooterWrapperProps } from './Footer.utils';
  */
 async function FooterServer(_props: FooterWrapperProps) {
   const [footerData, workButtonsData] = await Promise.all([
-    fetchFooterData(),
-    fetchWorkButtonsData(),
+    api.get(PayloadEntity.Footer),
+    api.get(PayloadEntity.WorkButtons),
   ]);
-
+  if (!footerData || !workButtonsData) {
+    throw new Error('Internal Server Error', {
+      cause: [PayloadEntity.Footer, PayloadEntity.WorkButtons],
+    });
+  }
   return <FooterUI {...footerData} workButtons={workButtonsData.buttons} />;
 }
 

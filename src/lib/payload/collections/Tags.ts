@@ -1,4 +1,5 @@
 import type { CollectionConfig } from 'payload';
+import { api } from '@/lib/graphql/server/Api';
 
 export const Tags: CollectionConfig = {
   slug: 'tags',
@@ -11,6 +12,10 @@ export const Tags: CollectionConfig = {
   },
   access: {
     read: () => true,
+  },
+  hooks: {
+    afterChange: [() => api.revalidateAll()],
+    afterDelete: [() => api.revalidateAll()],
   },
   fields: [
     {

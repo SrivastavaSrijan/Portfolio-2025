@@ -1,6 +1,5 @@
 import type { GlobalConfig } from 'payload';
-import { ServerActionComponents } from '@/lib/config/server';
-import { revalidateComponent } from '@/lib/graphql/server';
+import { api } from '@/lib/graphql/server/Api';
 
 export const Footer: GlobalConfig = {
   slug: 'footer',
@@ -8,7 +7,7 @@ export const Footer: GlobalConfig = {
     read: () => true,
   },
   hooks: {
-    afterChange: [() => revalidateComponent(ServerActionComponents.Footer)],
+    afterChange: [() => api.revalidateAll()],
   },
   fields: [
     {

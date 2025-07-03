@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
-import { fetchSkillsData } from '@/lib/graphql/server';
+import { api, PayloadEntity } from '@/lib/graphql/server';
+
 import { SkillsUI } from './Skills.ui';
 import { SkillsSkeleton } from './Skills.skeleton';
 import type { SkillsWrapperProps } from './Skills.utils';
@@ -8,7 +9,10 @@ import type { SkillsWrapperProps } from './Skills.utils';
  * Skills Server Component - Clean and simple
  */
 async function SkillsServer(_props: SkillsWrapperProps) {
-  const data = await fetchSkillsData();
+  const data = await api.get(PayloadEntity.Skills);
+  if (!data) {
+    throw new Error('Internal Server Error', { cause: [PayloadEntity.Skills] });
+  }
   return <SkillsUI {...data} />;
 }
 

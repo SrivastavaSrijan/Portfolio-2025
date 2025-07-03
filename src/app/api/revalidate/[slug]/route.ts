@@ -1,7 +1,6 @@
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
-import { revalidateComponent } from '@/lib/graphql/server';
-import { ServerActionComponents } from '@/lib/config/server';
+import { api, PayloadEntity } from '@/lib/graphql/server';
 
 // Security check for revalidation requests
 function isAuthorized(request: NextRequest): boolean {
@@ -38,20 +37,31 @@ export async function POST(
       return NextResponse.json({ error: 'Slug is required' }, { status: 400 });
     }
 
+    // Special case for revalidating everything
+    if (slug === 'all') {
+      const result = await api.revalidateAll();
+      return NextResponse.json(result);
+    }
+
     // Check if the slug is a valid server action component
-    const validTags = Object.values(ServerActionComponents);
-    if (!validTags.includes(slug as ServerActionComponents)) {
+    const validTags = Object.values(PayloadEntity);
+    if (!validTags.includes(slug as PayloadEntity)) {
       return NextResponse.json(
         {
           error: 'Invalid component tag',
-          availableTags: validTags,
+          availableTags: [...validTags, 'all'],
         },
         { status: 400 }
       );
     }
 
-    // Execute the revalidation
-    const result = await revalidateComponent(slug as ServerActionComponents);
+    // Execute specific revalidation
+    await api.revalidate(slug as PayloadEntity);
+    const result = {
+      success: true,
+      tag: slug,
+      timestamp: new Date().toISOString(),
+    };
 
     return NextResponse.json(result);
   } catch (error) {

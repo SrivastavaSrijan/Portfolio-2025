@@ -84,7 +84,7 @@ export function handleError(error: unknown, context: string): FetchError {
 /**
  * Logger for Server Action Errors
  */
-export function logServerActionError(error: FetchError, context: string): void {
+export function logError(error: FetchError, context: string): void {
   const logLevel = error.type === ServerErrorType.NOT_FOUND ? 'warn' : 'error';
 
   console[logLevel](`[Server Action Error] ${context}:`, {

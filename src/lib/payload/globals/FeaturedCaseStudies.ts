@@ -1,7 +1,5 @@
 import type { GlobalConfig } from 'payload';
-
-import { ServerActionComponents } from '@/lib/config/server';
-import { revalidateComponent } from '@/lib/graphql/server';
+import { api } from '@/lib/graphql/server/Api';
 
 export const FeaturedCaseStudies: GlobalConfig = {
   slug: 'featured-case-studies',
@@ -9,7 +7,7 @@ export const FeaturedCaseStudies: GlobalConfig = {
     read: () => true,
   },
   hooks: {
-    afterChange: [() => revalidateComponent(ServerActionComponents.FeaturedCaseStudies)],
+    afterChange: [() => api.revalidateAll()],
   },
   fields: [
     {

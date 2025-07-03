@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
-import { fetchAllTagsData, fetchCaseStudiesByParams } from '@/lib/graphql/server';
+import { api, PayloadEntity } from '@/lib/graphql/server';
+
 import { JournalUI } from './Journal.ui';
 import { JournalSkeleton } from './Journal.skeleton';
 import { chunk, intersectionBy, uniqBy } from 'lodash';
@@ -12,7 +13,10 @@ import type { JournalWrapperProps } from './Journal.utils';
 async function JournalServer({ searchParams }: JournalWrapperProps) {
   try {
     // Fetch all tags
-    const allTagsData = await fetchAllTagsData();
+    const allTagsData = await api.get(PayloadEntity.AllTags);
+    if (!allTagsData) {
+      throw new Error('Internal Server Error', { cause: [PayloadEntity.AllTags] });
+    }
     const allTags = uniqBy(allTagsData.flatMap((doc) => doc.tags).filter(Boolean), 'id');
 
     // Process search params
@@ -27,9 +31,14 @@ async function JournalServer({ searchParams }: JournalWrapperProps) {
     const tagIds = matchingTags.map(({ id }) => id);
 
     // Fetch case studies based on filters
-    const { caseStudies, journal } = await fetchCaseStudiesByParams({
+    const { caseStudies, journal } = await api.get(PayloadEntity.CaseStudiesByParams, {
       ...(!!tagIds.length && { tagIds }),
     });
+    if (!caseStudies || !journal) {
+      throw new Error('Internal Server Error', {
+        cause: [PayloadEntity.CaseStudiesByParams],
+      });
+    }
 
     return (
       <JournalUI
