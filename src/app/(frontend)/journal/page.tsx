@@ -1,11 +1,11 @@
 import { Journal } from '@/components/sections';
 import { createMetadata } from '@/lib/config/metadata';
 import { fetchJournalMetadata } from '@/lib/graphql/server';
-import type { GetServerSideProps, Metadata } from 'next';
+import type { Metadata } from 'next';
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 3600;
 
-interface CaseStudiesPageProps extends GetServerSideProps {
+interface CaseStudiesPageProps {
   searchParams: Promise<{
     tags?: string;
   }>;

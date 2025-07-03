@@ -17,4 +17,6 @@ export enum ServerActionComponents {
   Experience = 'experiences',
   CaseStudiesByParams = 'case-studies-by-params',
   AllTags = 'all-tags',
+  AllExperiences = 'all-experiences',
+  AllCaseStudies = 'all-case-studies',
 }

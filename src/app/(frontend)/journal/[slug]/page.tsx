@@ -1,11 +1,26 @@
 import { isStringParam } from '@/lib/utils';
 import { createMetadata } from '@/lib/config/metadata';
-import { fetchCaseStudyMetadata } from '@/lib/graphql/server';
+import { fetchCaseStudyMetadata, fetchAllCaseStudiesData } from '@/lib/graphql/server';
 import type { Metadata } from 'next';
 import { NotFound } from '@/components/fragments';
 import { CaseStudy } from '@/components/sections';
 
 export const revalidate = 3600;
+
+export async function generateStaticParams() {
+  // During build time, the Payload server might not be running
+  // Return empty array to allow fallback to ISR
+  try {
+    const caseStudies = await fetchAllCaseStudiesData();
+    return caseStudies.map((caseStudy) => ({
+      slug: caseStudy.slug,
+    }));
+  } catch {
+    // Error already logged in server action
+    return [];
+  }
+}
+
 interface CaseStudyBySlugProps {
   params: Promise<{
     slug: string;

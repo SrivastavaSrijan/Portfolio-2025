@@ -30,53 +30,53 @@ export function ExperienceUI({ experience, caseStudies }: ExperienceUIProps) {
               ...(tags?.length > 0
                 ? [
                     {
-                      label: 'Tags',
-                      value: tags.map((tag) => tag.name).join(', '),
+                      label: 'Technologies',
+                      value: (
+                        <div className="flex flex-row flex-wrap justify-end gap-2">
+                          {(tags ?? []).map(({ name: tagName, id: tagId }) => (
+                            <span
+                              key={tagId}
+                              className={cn(
+                                'line-clamp-1 rounded-full border-1 border-brand px-2 py-1 text-brand text-xs'
+                              )}
+                            >
+                              {tagName}
+                            </span>
+                          ))}
+                        </div>
+                      ),
                     },
                   ]
                 : []),
             ].map(({ label, value }) => (
-              <div key={label} className="flex flex-row items-center gap-2">
-                <p className="font-medium text-sm md:text-base">{label}:</p>
-                <p className="text-sm md:text-base">{value}</p>
+              <div key={label} className="flex justify-between border-brand border-b-1 pb-2">
+                <span className="font-semibold">{label}</span>
+                {value}
               </div>
             ))}
           </div>
         </div>
       </div>
-      {coverImage?.url && (
-        <Image
-          priority
-          quality={100}
-          width={1440}
-          height={576}
-          src={coverImage?.url}
-          alt="Cover Image"
-          className="h-40 w-full object-cover md:h-144"
-        />
-      )}
-      <div className="bg-white">
-        <div className="mx-auto flex flex-col gap-5 px-4 py-10 text-accent text-sm md:max-w-205 md:px-4 md:py-20 md:text-base md:[&_p]:px-2 ">
-          <RichText data={summary} />
+      <div className="relative h-60 w-full object-cover">
+        {coverImage?.url && <Image src={coverImage.url} alt={title} fill objectFit="cover" />}
+      </div>
+      <div className="bg-white px-4 py-5 md:px-8 md:py-10">
+        <div className="mx-auto md:max-w-3xl">
+          <RichText className="text-accent" data={summary} />
+          <hr className="mt-5 border-accent/20" />
         </div>
       </div>
-      {caseStudies.length > 0 && (
-        <div className="bg-white">
-          <div className="mx-auto flex flex-col gap-5 px-4 py-10 md:max-w-300 md:px-4 md:py-20">
-            <h2 className="font-semibold text-2xl text-accent md:text-4xl">Case Studies</h2>
-            <div
-              className={cn(
-                'grid gap-5 md:gap-10',
-                caseStudies.length === 1 ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-2'
-              )}
-            >
-              {caseStudies.map((caseStudy, index) => (
-                <CaseStudyCard key={caseStudy.slug} {...caseStudy} grid index={index} />
-              ))}
-            </div>
+
+      <div className="flex flex-col gap-5 bg-white px-4 py-5 md:gap-10 md:px-20 md:py-10">
+        <h2 className="text-4xl text-accent md:text-5xl">Related Case Studies</h2>
+        {caseStudies && caseStudies.length > 0 && (
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-10">
+            {caseStudies.map((caseStudy, index) => (
+              <CaseStudyCard key={caseStudy.slug} {...caseStudy} grid index={index} />
+            ))}
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }

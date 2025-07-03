@@ -15,6 +15,8 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  */
 type Documents = {
     "mutation CreateContactForm($name: String!, $email: String!, $subject: String!, $message: String!) {\n  createContactForm(\n    data: {name: $name, email: $email, subject: $subject, message: $message}\n  ) {\n    id\n    name\n    email\n    subject\n    message\n    status\n  }\n}": typeof types.CreateContactFormDocument,
+    "query GetAllCaseStudiesSlugs {\n  CaseStudies {\n    docs {\n      slug\n    }\n  }\n}": typeof types.GetAllCaseStudiesSlugsDocument,
+    "query GetAllExperiencesSlugs {\n  Experiences {\n    docs {\n      slug\n    }\n  }\n}": typeof types.GetAllExperiencesSlugsDocument,
     "query GetAllTags {\n  CaseStudies {\n    docs {\n      tags {\n        name\n        id\n      }\n    }\n  }\n}": typeof types.GetAllTagsDocument,
     "query GetCaseStudiesByParams($tagIds: [JSON], $experience: [JSON]) {\n  CaseStudies(where: {tags: {in: $tagIds}, experience: {in: $experience}}) {\n    offset\n    totalDocs\n    docs {\n      id\n      slug\n      title\n      summary\n      tags {\n        name\n        id\n      }\n      updatedAt\n      illustration {\n        url\n        alt\n      }\n      experience {\n        role\n        title\n        slug\n      }\n    }\n    pagingCounter\n  }\n  Journal {\n    title\n    subtitle\n    description\n  }\n}": typeof types.GetCaseStudiesByParamsDocument,
     "query GetCaseStudyBySlug($slug: String!) {\n  CaseStudies(where: {slug: {equals: $slug}}) {\n    docs {\n      title\n      experience {\n        title\n        role\n        startDate\n        endDate\n        id\n      }\n      tags {\n        name\n      }\n      content\n      illustration {\n        url\n      }\n      updatedAt\n    }\n  }\n}": typeof types.GetCaseStudyBySlugDocument,
@@ -33,6 +35,8 @@ type Documents = {
 };
 const documents: Documents = {
     "mutation CreateContactForm($name: String!, $email: String!, $subject: String!, $message: String!) {\n  createContactForm(\n    data: {name: $name, email: $email, subject: $subject, message: $message}\n  ) {\n    id\n    name\n    email\n    subject\n    message\n    status\n  }\n}": types.CreateContactFormDocument,
+    "query GetAllCaseStudiesSlugs {\n  CaseStudies {\n    docs {\n      slug\n    }\n  }\n}": types.GetAllCaseStudiesSlugsDocument,
+    "query GetAllExperiencesSlugs {\n  Experiences {\n    docs {\n      slug\n    }\n  }\n}": types.GetAllExperiencesSlugsDocument,
     "query GetAllTags {\n  CaseStudies {\n    docs {\n      tags {\n        name\n        id\n      }\n    }\n  }\n}": types.GetAllTagsDocument,
     "query GetCaseStudiesByParams($tagIds: [JSON], $experience: [JSON]) {\n  CaseStudies(where: {tags: {in: $tagIds}, experience: {in: $experience}}) {\n    offset\n    totalDocs\n    docs {\n      id\n      slug\n      title\n      summary\n      tags {\n        name\n        id\n      }\n      updatedAt\n      illustration {\n        url\n        alt\n      }\n      experience {\n        role\n        title\n        slug\n      }\n    }\n    pagingCounter\n  }\n  Journal {\n    title\n    subtitle\n    description\n  }\n}": types.GetCaseStudiesByParamsDocument,
     "query GetCaseStudyBySlug($slug: String!) {\n  CaseStudies(where: {slug: {equals: $slug}}) {\n    docs {\n      title\n      experience {\n        title\n        role\n        startDate\n        endDate\n        id\n      }\n      tags {\n        name\n      }\n      content\n      illustration {\n        url\n      }\n      updatedAt\n    }\n  }\n}": types.GetCaseStudyBySlugDocument,
@@ -68,6 +72,14 @@ export function gql(source: string): unknown;
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(source: "mutation CreateContactForm($name: String!, $email: String!, $subject: String!, $message: String!) {\n  createContactForm(\n    data: {name: $name, email: $email, subject: $subject, message: $message}\n  ) {\n    id\n    name\n    email\n    subject\n    message\n    status\n  }\n}"): (typeof documents)["mutation CreateContactForm($name: String!, $email: String!, $subject: String!, $message: String!) {\n  createContactForm(\n    data: {name: $name, email: $email, subject: $subject, message: $message}\n  ) {\n    id\n    name\n    email\n    subject\n    message\n    status\n  }\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "query GetAllCaseStudiesSlugs {\n  CaseStudies {\n    docs {\n      slug\n    }\n  }\n}"): (typeof documents)["query GetAllCaseStudiesSlugs {\n  CaseStudies {\n    docs {\n      slug\n    }\n  }\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "query GetAllExperiencesSlugs {\n  Experiences {\n    docs {\n      slug\n    }\n  }\n}"): (typeof documents)["query GetAllExperiencesSlugs {\n  Experiences {\n    docs {\n      slug\n    }\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
