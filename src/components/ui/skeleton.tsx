@@ -14,6 +14,7 @@ const skeletonVariants = cva('animate-pulse rounded-md', {
     variant: 'default',
   },
 });
+export type SkeletonVariants = VariantProps<typeof skeletonVariants>['variant'];
 
 interface SkeletonProps
   extends React.ComponentPropsWithoutRef<'div'>,

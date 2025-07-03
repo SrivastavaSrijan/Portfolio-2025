@@ -34,7 +34,6 @@ interface JournalTagPageProps {
 
 export async function generateMetadata({ params }: JournalTagPageProps): Promise<Metadata> {
   const { tag } = await params;
-
   const remoteMetadata = await api.get(PayloadEntity.JournalMeta);
   if (!remoteMetadata) {
     throw new Error('Internal Server Error', { cause: [PayloadEntity.JournalMeta] });
@@ -50,8 +49,8 @@ export async function generateMetadata({ params }: JournalTagPageProps): Promise
 }
 
 export default async function JournalTagPage({ params }: JournalTagPageProps) {
-  const { tag } = await params;
-
+  const { tag: encodedTag } = await params;
+  const tag = decodeURIComponent(encodedTag);
   // Verify the tag exists
   try {
     const allTagsData = await api.get(PayloadEntity.AllTags);
@@ -61,7 +60,6 @@ export default async function JournalTagPage({ params }: JournalTagPageProps) {
 
     const allTags = uniqBy(allTagsData.flatMap((doc) => doc.tags).filter(Boolean), 'id');
     const tagExists = allTags.some(({ name }) => name === tag);
-
     if (!tagExists) {
       notFound();
     }

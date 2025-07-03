@@ -20,11 +20,10 @@ export const CaseStudyFilter = ({ tags: tagsPage, selectedTag }: CaseStudyFilter
           <div className="grid grid-cols-3 gap-2">
             {tags.map((tag, index) => (
               <Link
-                href={
-                  selectedTag !== tag ? `${Routes.CaseStudies}?tags=${tag}` : Routes.CaseStudies
-                }
+                href={selectedTag !== tag ? Routes.CaseStudiesByTag(tag) : Routes.CaseStudies}
                 key={tag}
                 passHref
+                className="contents"
               >
                 <Button
                   variant="text"
@@ -38,7 +37,7 @@ export const CaseStudyFilter = ({ tags: tagsPage, selectedTag }: CaseStudyFilter
                       'justify-center': index === 1,
                       'justify-end': index === 2,
                     },
-                    'block overflow-hidden text-ellipsis whitespace-nowrap px-0 text-left font-normal',
+                    'line-clamp-1 block overflow-hidden truncate text-ellipsis whitespace-nowrap text-wrap px-0 text-left font-normal',
                     'underline decoration-2 decoration-transparent hover:decoration-brand',
                     selectedTag === tag ? 'underline decoration-brand' : ''
                   )}

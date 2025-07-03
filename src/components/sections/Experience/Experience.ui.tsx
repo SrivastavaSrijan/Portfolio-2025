@@ -64,6 +64,7 @@ export function ExperienceUI({ experience, caseStudies }: ExperienceUIProps) {
           fill
           className="object-cover"
           wrapperClassName="relative h-60 w-full"
+          variant="brand"
         />
       )}
       <div className="bg-white px-4 py-5 md:px-8 md:py-10">

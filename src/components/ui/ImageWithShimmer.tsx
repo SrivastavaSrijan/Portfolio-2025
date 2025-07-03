@@ -2,11 +2,12 @@
 import Image, { type ImageProps } from 'next/image';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
-import { Skeleton } from './skeleton';
+import { Skeleton, type SkeletonVariants } from './skeleton';
 
 interface ImageWithShimmerProps extends ImageProps {
   shimmerClassName?: string;
   wrapperClassName?: string;
+  variant?: SkeletonVariants;
 }
 
 export const ImageWithShimmer = ({
@@ -14,6 +15,7 @@ export const ImageWithShimmer = ({
   shimmerClassName,
   wrapperClassName,
   alt,
+  variant = 'default',
   ...props
 }: ImageWithShimmerProps) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -21,7 +23,12 @@ export const ImageWithShimmer = ({
 
   return (
     <div className={cn('relative overflow-hidden', wrapperClassName)}>
-      {isLoading && <Skeleton className={cn('absolute inset-0 h-full w-full', shimmerClassName)} />}
+      {isLoading && (
+        <Skeleton
+          className={cn('absolute inset-0 h-full w-full', shimmerClassName)}
+          variant={variant}
+        />
+      )}
       {!hasError && (
         <Image
           {...props}

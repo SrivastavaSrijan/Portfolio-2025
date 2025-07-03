@@ -49,6 +49,7 @@ export function CaseStudyUI({ title, content, updatedAt, illustration }: CaseStu
           src={illustration?.url}
           alt="Illustration"
           className="h-40 w-full object-cover md:h-144"
+          variant="brand"
         />
       )}
       <div className="bg-white">
