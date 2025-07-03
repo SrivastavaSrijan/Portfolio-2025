@@ -9,6 +9,7 @@ import type { JournalWrapperProps } from './Journal.utils';
 
 /**
  * Journal Server Component - Clean and simple
+ * Now supports static generation for known tag combinations
  */
 async function JournalServer({ searchParams }: JournalWrapperProps) {
   try {
@@ -19,16 +20,17 @@ async function JournalServer({ searchParams }: JournalWrapperProps) {
     }
     const allTags = uniqBy(allTagsData.flatMap((doc) => doc.tags).filter(Boolean), 'id');
 
-    // Process search params
+    // Process search params - handle static generation case
     const tags = searchParams?.tags;
-    const tagNames = isStringArrayParam(tags) ? tags : [tags];
+    const tagNames = tags ? (isStringArrayParam(tags) ? tags : [tags]) : [];
 
-    // Convert tag names to objects for intersectionBy
-    const tagNamesAsObjects = tagNames.map((name) => ({ name }));
-
-    // Use intersectionBy to find matching tags by 'name' property
-    const matchingTags = intersectionBy(allTags, tagNamesAsObjects, 'name');
-    const tagIds = matchingTags.map(({ id }) => id);
+    // Convert tag names to objects for intersectionBy only if we have tags
+    let tagIds: string[] = [];
+    if (tagNames.length > 0) {
+      const tagNamesAsObjects = tagNames.map((name) => ({ name }));
+      const matchingTags = intersectionBy(allTags, tagNamesAsObjects, 'name');
+      tagIds = matchingTags.map(({ id }) => String(id));
+    }
 
     // Fetch case studies based on filters
     const { caseStudies, journal } = await api.get(PayloadEntity.CaseStudiesByParams, {

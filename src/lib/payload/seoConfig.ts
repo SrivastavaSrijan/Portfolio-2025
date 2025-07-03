@@ -31,7 +31,7 @@ const Config = {
   },
 };
 
-// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+// biome-ignore lint/suspicious/noExplicitAny: Lexical editor nodes have dynamic structure that's hard to type
 const extractTextFromNodes = (root: { children?: any[] } | undefined): string => {
   if (!root || !root.children) return '';
 

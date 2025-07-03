@@ -151,7 +151,7 @@ type ConfigFor<T extends keyof PayloadFetchTypeMap> = {
   tags: string[];
 } & ('variables' extends keyof PayloadFetchTypeMap[T]
   ? { variables: PayloadFetchTypeMap[T]['variables'] }
-  : // biome-ignore lint/complexity/noBannedTypes: <explanation>
+  : // biome-ignore lint/complexity/noBannedTypes: Empty object type needed for conditional type
     {});
 
 /**

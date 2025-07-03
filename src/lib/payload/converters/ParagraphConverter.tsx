@@ -75,7 +75,7 @@ export const renderFormattedChildren = (
     if ('type' in child && child.type === 'code') {
       return (
         <code
-          // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+          // biome-ignore lint/suspicious/noArrayIndexKey: Index is stable in this context as nodes don't reorder
           key={index}
           className="whitespace-pre bg-black-700 px-1.5 py-0.5 font-mono text-orange-300 text-xs"
         >

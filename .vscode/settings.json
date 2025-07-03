@@ -4,7 +4,7 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": "always"
   },
-  "workbench.colorTheme": "One Dark Pro Darker",
+  "workbench.colorTheme": "SynthWave '84",
   "[css]": {
     "editor.defaultFormatter": "biomejs.biome"
   },

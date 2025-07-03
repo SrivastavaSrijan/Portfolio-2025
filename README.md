@@ -1,36 +1,392 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Website
 
-## Getting Started
+A modern, type-safe portfolio website built with Next.js, PayloadCMS, and GraphQL. Features a streamlined content management workflow with automatic type generation and React Server Components.
 
-First, run the development server:
+## 🚀 Quick Start
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+1. **Clone and install dependencies**
+   ```bash
+   yarn install
+   ```
+
+2. **Set up environment variables**
+   ```bash
+   cp .env.example .env.local
+   # Configure your database, Payload secret, and other environment variables
+   ```
+
+3. **Start development with codegen**
+   ```bash
+   yarn dev:codegen
+   ```
+   This runs both the Next.js development server and GraphQL codegen in watch mode.
+
+   Or start them separately:
+   ```bash
+   yarn dev          # Start Next.js dev server (port 3002)
+   yarn codegen:watch # Start GraphQL codegen watcher
+   ```
+
+4. **Access the application**
+   - Frontend: [http://localhost:3002](http://localhost:3002)
+   - Admin Panel: [http://localhost:3002/admin](http://localhost:3002/admin)
+   - GraphQL Playground: [http://localhost:3002/api/graphql-playground](http://localhost:3002/api/graphql-playground)
+
+## 🏗️ Architecture Overview
+
+This portfolio uses a modern, type-safe architecture:
+
+- **Next.js 15** with App Router and React Server Components
+- **PayloadCMS** for content management with GraphQL API
+- **Apollo Client** for GraphQL queries with server-side rendering
+- **TypeScript** with automatic type generation from GraphQL schema
+- **Tailwind CSS** with Radix UI components
+- **Vercel** deployment with PostgreSQL and Blob storage
+
+## 📝 Content Management Workflow
+
+### Adding New Content Types
+
+Follow this workflow to add new content to your portfolio:
+
+#### 1. Create PayloadCMS Collection or Global
+
+**For Collections** (e.g., Blog Posts, Projects):
+```typescript
+// src/lib/payload/collections/BlogPosts.ts
+import type { CollectionConfig } from 'payload';
+import { api } from '@/lib/graphql/server/Api';
+
+export const BlogPosts: CollectionConfig = {
+  slug: 'blog-posts',
+  labels: {
+    singular: 'Blog Post',
+    plural: 'Blog Posts',
+  },
+  admin: {
+    useAsTitle: 'title',
+  },
+  access: {
+    read: () => true,
+  },
+  hooks: {
+    afterChange: [() => api.revalidateAll()],
+    afterDelete: [() => api.revalidateAll()],
+  },
+  fields: [
+    {
+      name: 'title',
+      type: 'text',
+      required: true,
+    },
+    {
+      name: 'content',
+      type: 'richText',
+      required: true,
+    },
+    {
+      name: 'slug',
+      type: 'text',
+      unique: true,
+      required: true,
+    },
+    {
+      name: 'publishedAt',
+      type: 'date',
+    },
+  ],
+};
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**For Globals** (e.g., About Section, Contact Info):
+```typescript
+// src/lib/payload/globals/About.ts
+import type { GlobalConfig } from 'payload';
+import { api } from '@/lib/graphql/server/Api';
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+export const About: GlobalConfig = {
+  slug: 'about',
+  access: {
+    read: () => true,
+  },
+  hooks: {
+    afterChange: [() => api.revalidateAll()],
+  },
+  fields: [
+    {
+      name: 'title',
+      type: 'text',
+      required: true,
+    },
+    {
+      name: 'description',
+      type: 'richText',
+      required: true,
+    },
+  ],
+};
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+#### 2. Register in Payload Config
 
-## Learn More
+Add your new collection/global to `src/payload.config.ts`:
 
-To learn more about Next.js, take a look at the following resources:
+```typescript
+import { BlogPosts } from './lib/payload/collections';
+import { About } from './lib/payload/globals';
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+export default buildConfig({
+  collections: [
+    // ...existing collections
+    BlogPosts,
+  ],
+  globals: [
+    // ...existing globals
+    About,
+  ],
+  // ...rest of config
+});
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+#### 3. Create GraphQL Query
 
-## Deploy on Vercel
+Create a GraphQL query file:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```graphql
+# src/lib/graphql/queries/getBlogPosts.graphql
+query GetBlogPosts {
+  BlogPosts {
+    docs {
+      id
+      title
+      content
+      slug
+      publishedAt
+    }
+  }
+}
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# src/lib/graphql/queries/getAbout.graphql
+query GetAbout {
+  About {
+    title
+    description
+  }
+}
+```
+
+#### 4. Run CodeGen
+
+Generate TypeScript types from your GraphQL schema:
+
+```bash
+yarn codegen
+```
+
+This automatically generates:
+- TypeScript types in `src/lib/graphql/__generated__/`
+- Apollo hooks in `src/lib/graphql/__generated__/hooks.ts`
+
+#### 5. Add to PayloadEntity Enum
+
+Add your new entity to the enum in `src/lib/graphql/server/types.ts`:
+
+```typescript
+export enum PayloadEntity {
+  // ...existing entities
+  BlogPosts = 'blog-posts',
+  About = 'about',
+}
+```
+
+#### 6. Add Type Mappings and Extractors
+
+Add type mappings and data extractors:
+
+```typescript
+// In PayloadFetchTypeMap
+export type PayloadFetchTypeMap = {
+  // ...existing mappings
+  [PayloadEntity.BlogPosts]: {
+    query: GetBlogPostsQuery;
+    result: NonNullable<GetBlogPostsQuery['BlogPosts']>['docs'];
+  };
+  [PayloadEntity.About]: {
+    query: GetAboutQuery;
+    result: NonNullable<GetAboutQuery['About']>;
+  };
+};
+
+// In PayloadFetchConfig
+export const PayloadFetchConfig = {
+  // ...existing configs
+  [PayloadEntity.BlogPosts]: {
+    document: GetBlogPostsDocument,
+    extractData: (data: GetBlogPostsQuery) => {
+      if (!data.BlogPosts?.docs) {
+        throw new Error('BlogPosts data is null or undefined');
+      }
+      return data.BlogPosts.docs;
+    },
+    tags: [PayloadEntity.BlogPosts],
+  },
+  
+  [PayloadEntity.About]: {
+    document: GetAboutDocument,
+    extractData: (data: GetAboutQuery) => {
+      if (!data.About) {
+        throw new Error('About data is null or undefined');
+      }
+      return data.About;
+    },
+    tags: [PayloadEntity.About],
+  },
+};
+```
+
+#### 7. Create React Server Component
+
+Create a component that uses the new data:
+
+```typescript
+// src/components/sections/BlogPosts/BlogPosts.rsc.tsx
+import { Suspense } from 'react';
+import { api, PayloadEntity } from '@/lib/graphql/server';
+import { BlogPostsUI } from './BlogPosts.ui';
+import { BlogPostsSkeleton } from './BlogPosts.skeleton';
+
+async function BlogPostsServer() {
+  const blogPosts = await api.get(PayloadEntity.BlogPosts);
+  
+  if (!blogPosts) {
+    throw new Error('Blog posts data not found');
+  }
+  
+  return <BlogPostsUI posts={blogPosts} />;
+}
+
+export default function BlogPosts() {
+  return (
+    <Suspense fallback={<BlogPostsSkeleton />}>
+      <BlogPostsServer />
+    </Suspense>
+  );
+}
+```
+
+#### 8. Update Payload Types
+
+Generate updated Payload types:
+
+```bash
+yarn update
+```
+
+This runs:
+- `payload generate:types` - Generates TypeScript types for Payload
+- `payload generate:importmap` - Updates import maps
+
+### 🎯 That's it! Your new content type is ready.
+
+The system automatically handles:
+- ✅ Type safety across the entire stack
+- ✅ GraphQL schema generation
+- ✅ Cache invalidation when content changes
+- ✅ Server-side rendering with React Server Components
+- ✅ Loading states and error boundaries
+
+## 🛠️ Development Scripts
+
+```bash
+# Development
+yarn dev                 # Start Next.js development server
+yarn dev:codegen        # Start dev server + codegen watcher
+
+# Code Generation
+yarn codegen            # Generate GraphQL types once
+yarn codegen:watch      # Watch for GraphQL changes
+
+# Build & Deploy
+yarn build              # Build for production
+yarn start              # Start production server
+
+# Code Quality
+yarn format             # Format code with Biome
+yarn precommit          # Lint and type check
+
+# Payload CMS
+yarn update             # Generate Payload types and import maps
+```
+
+## 📁 Project Structure
+
+```
+src/
+├── app/                          # Next.js App Router
+│   ├── (frontend)/              # Frontend routes
+│   ├── (payload)/               # Payload CMS admin
+│   └── api/                     # API routes
+├── components/
+│   ├── sections/                # Page sections with RSC pattern
+│   │   └── [Component]/
+│   │       ├── Component.rsc.tsx    # Server Component
+│   │       ├── Component.ui.tsx     # Client Component (UI)
+│   │       ├── Component.skeleton.tsx # Loading skeleton
+│   │       └── Component.utils.ts   # Utilities & types
+│   ├── fragments/               # Reusable UI components
+│   └── ui/                      # Base UI components (Radix + Tailwind)
+├── lib/
+│   ├── graphql/
+│   │   ├── __generated__/       # Auto-generated GraphQL types
+│   │   ├── queries/             # GraphQL query files
+│   │   └── server/              # Server-side GraphQL utilities
+│   ├── payload/
+│   │   ├── collections/         # Payload collections
+│   │   ├── globals/             # Payload globals
+│   │   └── converters/          # Rich text converters
+│   ├── apollo/                  # Apollo Client setup
+│   └── config/                  # App configuration
+└── payload.config.ts            # Payload CMS configuration
+```
+
+## 🚀 Deployment
+
+This portfolio is optimized for Vercel deployment:
+
+1. **Connect your repository** to Vercel
+2. **Configure environment variables** in Vercel dashboard
+3. **Deploy** - Vercel automatically builds and deploys
+
+The app uses:
+- **Vercel Postgres** for the database
+- **Vercel Blob Storage** for media files
+- **ISR (Incremental Static Regeneration)** for optimal performance
+
+## 🔧 Environment Variables
+
+Create a `.env.local` file with:
+
+```env
+# Database
+POSTGRES_URL=your_postgres_connection_string
+
+# Payload CMS
+PAYLOAD_SECRET=your_payload_secret_key
+
+# Storage
+BLOB_READ_WRITE_TOKEN=your_vercel_blob_token
+
+# Optional
+NEXT_PUBLIC_VERCEL_URL=your_domain
+```
+
+## 🤝 Contributing
+
+1. Follow the content workflow above for new features
+2. Run `yarn precommit` before committing
+3. Use conventional commit messages
+4. Ensure all types are properly generated with `yarn codegen`
+
+---
+
+**Built with ❤️ using Next.js, PayloadCMS, and TypeScript**
