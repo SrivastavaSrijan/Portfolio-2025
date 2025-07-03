@@ -1,6 +1,6 @@
 import { isStringParam } from '@/lib/utils';
 import { createMetadata } from '@/lib/config/metadata';
-import { fetchExperienceMetadata } from '@/lib/actions/revalidation';
+import { fetchExperienceMetadata } from '@/lib/graphql/server';
 import type { Metadata } from 'next';
 import { NotFound } from '@/components/fragments';
 import { Experience } from '@/components/sections';

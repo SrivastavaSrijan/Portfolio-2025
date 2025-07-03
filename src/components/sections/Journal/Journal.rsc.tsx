@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { fetchAllTagsData, fetchCaseStudiesByParams } from '@/lib/actions/revalidation';
+import { fetchAllTagsData, fetchCaseStudiesByParams } from '@/lib/graphql/server';
 import { JournalUI } from './Journal.ui';
 import { JournalSkeleton } from './Journal.skeleton';
 import { chunk, intersectionBy, uniqBy } from 'lodash';

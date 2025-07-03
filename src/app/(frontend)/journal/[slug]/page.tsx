@@ -1,6 +1,6 @@
 import { isStringParam } from '@/lib/utils';
 import { createMetadata } from '@/lib/config/metadata';
-import { fetchCaseStudyMetadata } from '@/lib/actions/revalidation';
+import { fetchCaseStudyMetadata } from '@/lib/graphql/server';
 import type { Metadata } from 'next';
 import { NotFound } from '@/components/fragments';
 import { CaseStudy } from '@/components/sections';

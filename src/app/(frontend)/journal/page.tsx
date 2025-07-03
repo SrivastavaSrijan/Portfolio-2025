@@ -1,6 +1,6 @@
 import { Journal } from '@/components/sections';
 import { createMetadata } from '@/lib/config/metadata';
-import { fetchJournalMetadata } from '@/lib/actions/revalidation';
+import { fetchJournalMetadata } from '@/lib/graphql/server';
 import type { GetServerSideProps, Metadata } from 'next';
 
 export const dynamic = 'force-dynamic';

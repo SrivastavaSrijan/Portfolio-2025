@@ -1,5 +1,5 @@
 import type { GlobalConfig } from 'payload';
-import { revalidateComponent } from '@/lib/actions/revalidation';
+import { revalidateComponent } from '@/lib/graphql/server';
 import { ServerActionComponents } from '@/lib/config/server';
 
 export const Hero: GlobalConfig = {

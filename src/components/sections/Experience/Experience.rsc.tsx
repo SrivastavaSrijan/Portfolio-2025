@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { fetchExperienceData, fetchCaseStudiesByParams } from '@/lib/actions/revalidation';
+import { fetchExperienceData, fetchCaseStudiesByParams } from '@/lib/graphql/server';
 import { ExperienceUI } from './Experience.ui';
 import { ExperienceSkeleton } from './Experience.skeleton';
 import { NotFound } from '../../fragments/404';

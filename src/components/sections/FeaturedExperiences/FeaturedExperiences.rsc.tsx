@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { fetchFeaturedExperiencesData } from '@/lib/actions/revalidation';
+import { fetchFeaturedExperiencesData } from '@/lib/graphql/server';
 import { FeaturedExperiencesUI } from './FeaturedExperiences.ui';
 import { FeaturedExperiencesSkeleton } from './FeaturedExperiences.skeleton';
 import type { FeaturedExperiencesWrapperProps } from './FeaturedExperiences.utils';

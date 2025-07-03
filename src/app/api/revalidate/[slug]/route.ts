@@ -1,6 +1,6 @@
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
-import { revalidateComponent } from '@/lib/actions/revalidation';
+import { revalidateComponent } from '@/lib/graphql/server';
 import { ServerActionComponents } from '@/lib/config/server';
 
 // Security check for revalidation requests

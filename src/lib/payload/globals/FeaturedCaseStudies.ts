@@ -1,7 +1,7 @@
 import type { GlobalConfig } from 'payload';
 
 import { ServerActionComponents } from '@/lib/config/server';
-import { revalidateComponent } from '@/lib/actions/revalidation';
+import { revalidateComponent } from '@/lib/graphql/server';
 
 export const FeaturedCaseStudies: GlobalConfig = {
   slug: 'featured-case-studies',

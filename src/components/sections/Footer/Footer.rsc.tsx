@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { fetchFooterData } from '@/lib/actions/revalidation';
+import { fetchFooterData } from '@/lib/graphql/server';
 import { FooterUI } from './Footer.ui';
 import { FooterSkeleton } from './Footer.skeleton';
 import type { FooterWrapperProps } from './Footer.utils';

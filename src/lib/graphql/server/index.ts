@@ -29,8 +29,8 @@ import {
   type GetExperienceBySlugMetaQuery,
   type GetJournalMetaQuery,
 } from '@/lib/graphql/__generated__/hooks';
-import { ServerActionComponents, ServerConfig } from '../config/server';
-import { query } from '../apollo/server';
+import { ServerActionComponents, ServerConfig } from '../../config/server';
+import { query } from '../../apollo/server';
 
 /**
  * Revalidate a component by tag

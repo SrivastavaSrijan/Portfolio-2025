@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { fetchFeaturedCaseStudiesData } from '@/lib/actions/revalidation';
+import { fetchFeaturedCaseStudiesData } from '@/lib/graphql/server';
 import { FeaturedCaseStudiesUI } from './FeaturedCaseStudies.ui';
 import { FeaturedCaseStudiesSkeleton } from './FeaturedCaseStudies.skeleton';
 import type { FeaturedCaseStudiesWrapperProps } from './FeaturedCaseStudies.utils';

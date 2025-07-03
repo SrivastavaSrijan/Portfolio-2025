@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { fetchCaseStudyData } from '@/lib/actions/revalidation';
+import { fetchCaseStudyData } from '@/lib/graphql/server';
 import { CaseStudyUI } from './CaseStudy.ui';
 import { CaseStudySkeleton } from './CaseStudy.skeleton';
 import { NotFound } from '../../fragments/404';

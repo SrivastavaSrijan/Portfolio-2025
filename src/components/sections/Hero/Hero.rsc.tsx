@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { fetchHeroData } from '@/lib/actions/revalidation';
+import { fetchHeroData } from '@/lib/graphql/server';
 import { HeroUI } from './Hero.ui';
 import { HeroSkeleton } from './Hero.skeleton';
 import type { HeroWrapperProps } from './Hero.utils';

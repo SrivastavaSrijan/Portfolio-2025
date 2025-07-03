@@ -1,7 +1,7 @@
 import { FeaturedCaseStudies, Hero, Skills, FeaturedExperiences } from '@/components/sections';
 import type { Metadata } from 'next';
 import { createMetadata } from '@/lib/config/metadata';
-import { fetchHeroMetadata } from '@/lib/actions/revalidation';
+import { fetchHeroMetadata } from '@/lib/graphql/server';
 
 export const revalidate = 3600;
 

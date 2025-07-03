@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { fetchSkillsData } from '@/lib/actions/revalidation';
+import { fetchSkillsData } from '@/lib/graphql/server';
 import { SkillsUI } from './Skills.ui';
 import { SkillsSkeleton } from './Skills.skeleton';
 import type { SkillsWrapperProps } from './Skills.utils';

@@ -1,4 +1,4 @@
-import { revalidateComponent } from '@/lib/actions/revalidation';
+import { revalidateComponent } from '@/lib/graphql/server';
 import { ServerActionComponents } from '@/lib/config/server';
 import type { GlobalConfig } from 'payload';
 
