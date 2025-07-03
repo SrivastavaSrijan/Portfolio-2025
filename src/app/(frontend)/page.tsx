@@ -1,25 +1,12 @@
 import { FeaturedCaseStudies, Hero, Skills, FeaturedExperiences } from '@/components/sections';
 import type { Metadata } from 'next';
 import { createMetadata } from '@/lib/config/metadata';
-import client from '@/lib/apollo';
-import { GetHeroMetaDocument, type GetHeroMetaQuery } from '@/lib/graphql/__generated__/hooks';
+import { fetchHeroMetadata } from '@/lib/actions/revalidation';
 
 export const revalidate = 3600;
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { data } = await client.query<GetHeroMetaQuery>({
-    query: GetHeroMetaDocument,
-    context: {
-      fetchOptions: {
-        next: {
-          revalidate: 3600,
-          tags: ['hero-meta'],
-        },
-      },
-    },
-  });
-
-  const remoteMetadata = data?.Hero?.meta ?? {};
+  const remoteMetadata = await fetchHeroMetadata();
   return createMetadata(remoteMetadata);
 }
 

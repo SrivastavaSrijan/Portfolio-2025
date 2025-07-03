@@ -1,10 +1,6 @@
 import { Journal } from '@/components/sections';
-import client from '@/lib/apollo';
 import { createMetadata } from '@/lib/config/metadata';
-import {
-  GetJournalMetaDocument,
-  type GetJournalMetaQuery,
-} from '@/lib/graphql/__generated__/hooks';
+import { fetchJournalMetadata } from '@/lib/actions/revalidation';
 import type { GetServerSideProps, Metadata } from 'next';
 
 export const dynamic = 'force-dynamic';
@@ -16,19 +12,7 @@ interface CaseStudiesPageProps extends GetServerSideProps {
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { data } = await client.query<GetJournalMetaQuery>({
-    query: GetJournalMetaDocument,
-    context: {
-      fetchOptions: {
-        next: {
-          revalidate: 3600,
-          tags: ['hero-meta'],
-        },
-      },
-    },
-  });
-  const remoteMetadata = data?.Journal?.meta ?? {};
-
+  const remoteMetadata = await fetchJournalMetadata();
   return createMetadata(remoteMetadata);
 }
 

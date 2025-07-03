@@ -1,11 +1,6 @@
-import {
-  GetCaseStudyBySlugMetaDocument,
-  type GetCaseStudyBySlugMetaQuery,
-} from '@/lib/graphql/__generated__/hooks';
 import { isStringParam } from '@/lib/utils';
-
-import client from '@/lib/apollo';
 import { createMetadata } from '@/lib/config/metadata';
+import { fetchCaseStudyMetadata } from '@/lib/actions/revalidation';
 import type { Metadata } from 'next';
 import { NotFound } from '@/components/fragments';
 import { CaseStudy } from '@/components/sections';
@@ -18,21 +13,7 @@ interface CaseStudyBySlugProps {
 }
 export async function generateMetadata({ params }: CaseStudyBySlugProps): Promise<Metadata> {
   const { slug } = await params;
-  const { data } = await client.query<GetCaseStudyBySlugMetaQuery>({
-    query: GetCaseStudyBySlugMetaDocument,
-    variables: {
-      slug,
-    },
-    context: {
-      fetchOptions: {
-        next: {
-          revalidate: 3600,
-          tags: ['journal-slug-meta'],
-        },
-      },
-    },
-  });
-  const remoteMetadata = data?.CaseStudies?.docs?.[0]?.meta ?? {};
+  const remoteMetadata = await fetchCaseStudyMetadata(slug);
   return createMetadata(remoteMetadata);
 }
 

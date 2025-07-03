@@ -1,10 +1,6 @@
-import {
-  GetExperienceBySlugMetaDocument,
-  type GetExperienceBySlugMetaQuery,
-} from '@/lib/graphql/__generated__/hooks';
 import { isStringParam } from '@/lib/utils';
-import client from '@/lib/apollo';
 import { createMetadata } from '@/lib/config/metadata';
+import { fetchExperienceMetadata } from '@/lib/actions/revalidation';
 import type { Metadata } from 'next';
 import { NotFound } from '@/components/fragments';
 import { Experience } from '@/components/sections';
@@ -17,21 +13,7 @@ interface ExperienceBySlugProps {
 }
 export async function generateMetadata({ params }: ExperienceBySlugProps): Promise<Metadata> {
   const { slug } = await params;
-  const { data } = await client.query<GetExperienceBySlugMetaQuery>({
-    query: GetExperienceBySlugMetaDocument,
-    variables: {
-      slug,
-    },
-    context: {
-      fetchOptions: {
-        next: {
-          revalidate: 3600,
-          tags: ['hero-meta'],
-        },
-      },
-    },
-  });
-  const remoteMetadata = data?.Experiences?.docs?.[0]?.meta ?? {};
+  const remoteMetadata = await fetchExperienceMetadata(slug);
   return createMetadata(remoteMetadata);
 }
 

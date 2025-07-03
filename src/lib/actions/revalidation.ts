@@ -11,6 +11,10 @@ import {
   GetExperienceBySlugDocument,
   GetCaseStudiesByParamsDocument,
   GetAllTagsDocument,
+  GetHeroMetaDocument,
+  GetCaseStudyBySlugMetaDocument,
+  GetExperienceBySlugMetaDocument,
+  GetJournalMetaDocument,
   type GetHeroQuery,
   type GetSkillsQuery,
   type GetFeaturedCaseStudiesQuery,
@@ -20,9 +24,13 @@ import {
   type GetExperienceBySlugQuery,
   type GetCaseStudiesByParamsQuery,
   type GetAllTagsQuery,
+  type GetHeroMetaQuery,
+  type GetCaseStudyBySlugMetaQuery,
+  type GetExperienceBySlugMetaQuery,
+  type GetJournalMetaQuery,
 } from '@/lib/graphql/__generated__/hooks';
 import { ServerActionComponents, ServerConfig } from '../config/server';
-import client from '../apollo';
+import { query } from '../apollo/server';
 
 /**
  * Revalidate a component by tag
@@ -31,8 +39,6 @@ export async function revalidateComponent(component: ServerActionComponents) {
   revalidateTag(component);
   return { success: true, tag: component, timestamp: new Date().toISOString() };
 }
-
-const { query } = client;
 /**
  * Fetch data for Hero component with proper typing
  */
@@ -212,4 +218,91 @@ export async function fetchAllTagsData() {
   });
   if (!data?.CaseStudies?.docs) throw new Error('Tags data not found');
   return data.CaseStudies.docs;
+}
+
+/**
+ * METADATA FETCH FUNCTIONS
+ * These functions fetch metadata for generating Next.js metadata in RSC pages
+ */
+
+/**
+ * Fetch metadata for Hero/HomePage
+ */
+export async function fetchHeroMetadata() {
+  const { data } = await query<GetHeroMetaQuery>({
+    query: GetHeroMetaDocument,
+    context: {
+      fetchOptions: {
+        next: {
+          revalidate: ServerConfig.RevalidationTime,
+          tags: ['hero-meta'],
+        },
+      },
+    },
+  });
+  if (!data?.Hero?.meta) throw new Error('Hero metadata not found');
+  return data.Hero.meta;
+}
+
+/**
+ * Fetch metadata for Journal page
+ */
+export async function fetchJournalMetadata() {
+  const { data } = await query<GetJournalMetaQuery>({
+    query: GetJournalMetaDocument,
+    context: {
+      fetchOptions: {
+        next: {
+          revalidate: ServerConfig.RevalidationTime,
+          tags: ['journal-meta'],
+        },
+      },
+    },
+  });
+  if (!data?.Journal?.meta) throw new Error('Journal metadata not found');
+  return data.Journal.meta;
+}
+
+/**
+ * Fetch metadata for a single Case Study by slug
+ */
+export async function fetchCaseStudyMetadata(slug: string) {
+  const { data } = await query<GetCaseStudyBySlugMetaQuery>({
+    query: GetCaseStudyBySlugMetaDocument,
+    variables: { slug },
+    context: {
+      fetchOptions: {
+        next: {
+          revalidate: ServerConfig.RevalidationTime,
+          tags: ['case-study-meta', `slug:${slug}`],
+        },
+      },
+    },
+  });
+  if (!data?.CaseStudies?.docs?.length || !data.CaseStudies.docs[0]?.meta) {
+    throw new Error(`Case Study metadata not found for slug: ${slug}`);
+  }
+  return data.CaseStudies.docs[0].meta;
+}
+
+/**
+ * Fetch metadata for a single Experience by slug
+ */
+export async function fetchExperienceMetadata(slug: string) {
+  const { data } = await query<GetExperienceBySlugMetaQuery>({
+    query: GetExperienceBySlugMetaDocument,
+    variables: { slug },
+    context: {
+      fetchOptions: {
+        next: {
+          revalidate: ServerConfig.RevalidationTime,
+          tags: ['experience-meta', `slug:${slug}`],
+        },
+      },
+    },
+  });
+  if (!data?.Experiences?.docs?.length || !data.Experiences.docs[0]?.meta) {
+    throw new Error(`Experience metadata not found for slug: ${slug}`);
+  }
+  return data.Experiences.docs[0].meta;
 }

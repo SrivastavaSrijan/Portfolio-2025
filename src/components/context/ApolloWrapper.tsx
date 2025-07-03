@@ -1,6 +1,6 @@
 'use client';
 
-import { initializeApollo } from '@/lib/apollo';
+import { initializeApollo } from '@/lib/apollo/client';
 import { ApolloNextAppProvider } from '@apollo/client-integration-nextjs';
 
 function makeClient() {

@@ -43,7 +43,3 @@ export function useApollo(initialState: NormalizedCacheObject | null) {
   const store = useMemo(() => initializeApollo(initialState), [initialState]);
   return store;
 }
-
-// Default export for backward compatibility
-const client = createApolloClient();
-export default client;
