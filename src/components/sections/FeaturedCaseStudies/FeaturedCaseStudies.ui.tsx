@@ -1,15 +1,16 @@
-'use client';
-
-import { useGetFeaturedCaseStudiesSuspenseQuery } from '@/lib/graphql/__generated__/hooks';
-import { CaseStudyCard } from '../fragments';
-import { Button } from '../ui';
+import { CaseStudyCard } from '../../fragments/CaseStudyCard';
+import { Button } from '../../ui';
 import { ArrowUpRightIcon } from 'lucide-react';
-import { Routes } from '@/lib/config/config/routes';
+import { Routes } from '@/lib/config/routes';
 import Link from 'next/link';
+import type { FeaturedCaseStudiesUIProps } from './FeaturedCaseStudies.utils';
 
-export const FeaturedCaseStudies = () => {
-  const { data } = useGetFeaturedCaseStudiesSuspenseQuery();
-  const { title, subtitle, description, caseStudies } = data?.FeaturedCaseStudy ?? {};
+export function FeaturedCaseStudiesUI({
+  title,
+  subtitle,
+  description,
+  caseStudies,
+}: FeaturedCaseStudiesUIProps) {
   return (
     <div className="flex flex-col gap-10 bg-white px-4 py-10 md:gap-15 md:px-20 md:py-20">
       <div className="flex flex-col gap-1 md:gap-2">
@@ -34,4 +35,4 @@ export const FeaturedCaseStudies = () => {
       </Link>
     </div>
   );
-};
+}

@@ -1,12 +1,12 @@
 'use client';
-import { useGetFeaturedExperiencesSuspenseQuery } from '@/lib/graphql/__generated__/hooks';
 import Image from 'next/image';
-import dayjs from 'dayjs';
-import { motion, type Variants } from 'framer-motion';
-import { Button } from '../ui';
-import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
-import { Routes } from '@/lib/config/config/routes';
+import dayjs from 'dayjs';
+import { motion, type Variants } from 'motion/react';
+import { ArrowUpRight } from 'lucide-react';
+import { Button } from '../../ui';
+import { Routes } from '@/lib/config/routes';
+import type { FeaturedExperiencesUIProps } from './FeaturedExperiences.utils';
 
 // Simplified animation variants
 const containerVariants = {
@@ -20,23 +20,12 @@ const containerVariants = {
   },
 };
 
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: [0.22, 1, 0.36, 1],
-      delay: i * 0.1,
-    },
-  }),
-};
-
-export const FeaturedExperiences = () => {
-  const { data } = useGetFeaturedExperiencesSuspenseQuery();
-  const { experiences, subtitle, title, description } = data?.FeaturedExperience ?? {};
-
+export function FeaturedExperiencesUI({
+  experiences,
+  subtitle,
+  title,
+  description,
+}: FeaturedExperiencesUIProps) {
   return (
     <div className="bg-white p-4 md:p-20">
       <div className="flex flex-col gap-5 rounded-2xl border-1 border-black-500 bg-blue-black-50 px-6 py-12 shadow-sm md:flex-row md:gap-15 md:px-16 md:py-16">
@@ -57,7 +46,7 @@ export const FeaturedExperiences = () => {
           initial="hidden"
           animate="visible"
         >
-          {experiences?.map((experience, index) => {
+          {experiences.map((experience, index) => {
             const {
               id,
               title: experienceTitle,
@@ -75,6 +64,18 @@ export const FeaturedExperiences = () => {
                 return `${dayjs(startDate).format('MMM YYYY')} - ${dayjs(endDate).format('MMM YYYY')}`;
               }
               return `${dayjs(startDate).format('MMM YYYY')} - ${dayjs(endDate).format('MMM YYYY')}`;
+            };
+            const itemVariants: Variants = {
+              hidden: { opacity: 0, y: 20 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                  duration: 0.5,
+                  ease: [0.22, 1, 0.36, 1],
+                  delay: index * 0.1,
+                },
+              },
             };
 
             return (
@@ -116,4 +117,4 @@ export const FeaturedExperiences = () => {
       </div>
     </div>
   );
-};
+}

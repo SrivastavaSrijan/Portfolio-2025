@@ -1,32 +1,38 @@
-import {
-  GetExperienceBySlugMetaDocument,
-  type GetExperienceBySlugMetaQuery,
-} from '@/lib/graphql/__generated__/hooks';
 import { isStringParam } from '@/lib/utils';
-
-import { query } from '@/lib/apollo/apolloClient';
 import { createMetadata } from '@/lib/config/metadata';
-import type { GetServerSideProps, Metadata } from 'next';
-import { Experience, NotFound } from '@/components/fragments';
+import { api, PayloadEntity } from '@/lib/graphql/server';
 
-export const dynamic = 'force-dynamic';
-// export const revalidate = 60;
-// export const fetchCache = 'force-no-store';
+import type { Metadata } from 'next';
+import { NotFound } from '@/components/fragments';
+import { Experience } from '@/components/sections';
 
-interface ExperienceBySlugProps extends GetServerSideProps {
+export const revalidate = 3600;
+
+export async function generateStaticParams() {
+  // During build time, the Payload server might not be running
+  // Return empty array to allow fallback to ISR
+  try {
+    const experiences = await api.get(PayloadEntity.AllExperiences);
+    return experiences.map((experience) => ({
+      slug: experience.slug,
+    }));
+  } catch {
+    // Error already logged in server action
+    return [];
+  }
+}
+
+interface ExperienceBySlugProps {
   params: Promise<{
     slug: string;
   }>;
 }
 export async function generateMetadata({ params }: ExperienceBySlugProps): Promise<Metadata> {
   const { slug } = await params;
-  const { data } = await query<GetExperienceBySlugMetaQuery>({
-    query: GetExperienceBySlugMetaDocument,
-    variables: {
-      slug,
-    },
-  });
-  const remoteMetadata = data?.Experiences?.docs?.[0]?.meta ?? {};
+  const remoteMetadata = await api.get(PayloadEntity.ExperienceMeta, { slug });
+  if (!remoteMetadata) {
+    throw new Error('Internal Server Error', { cause: [PayloadEntity.ExperienceMeta] });
+  }
   return createMetadata(remoteMetadata);
 }
 

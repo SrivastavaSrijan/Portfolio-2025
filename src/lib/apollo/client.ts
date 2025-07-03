@@ -1,9 +1,5 @@
-import {
-  ApolloClient,
-  InMemoryCache,
-  type NormalizedCacheObject,
-  createHttpLink,
-} from '@apollo/client';
+import { createHttpLink, type NormalizedCacheObject } from '@apollo/client';
+import { InMemoryCache, ApolloClient } from '@apollo/client-integration-nextjs';
 import { useMemo } from 'react';
 
 // URI fallback for both client and server side
@@ -13,7 +9,6 @@ let apolloClient: ApolloClient<NormalizedCacheObject> | undefined;
 
 function createApolloClient() {
   return new ApolloClient({
-    ssrMode: typeof window === 'undefined',
     link: createHttpLink({
       uri: API_URL,
       credentials: 'same-origin', // Include credentials for authentication if needed
@@ -48,7 +43,3 @@ export function useApollo(initialState: NormalizedCacheObject | null) {
   const store = useMemo(() => initializeApollo(initialState), [initialState]);
   return store;
 }
-
-// Default export for backward compatibility
-const client = createApolloClient();
-export default client;

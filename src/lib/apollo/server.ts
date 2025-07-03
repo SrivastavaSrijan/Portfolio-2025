@@ -13,9 +13,7 @@ export const { getClient, query, PreloadQuery } = registerApolloClient(() => {
     cache: new InMemoryCache(),
     link: new HttpLink({
       uri: API_URL,
-      fetchOptions: {
-        cache: 'force-cache', // Default caching strategy
-      },
+      // Remove fetchOptions to let Next.js handle caching via tags
     }),
   });
 });

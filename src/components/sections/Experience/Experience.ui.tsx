@@ -1,36 +1,16 @@
-'use client';
-
-import {
-  useGetCaseStudiesByParamsSuspenseQuery,
-  useGetExperienceBySlugSuspenseQuery,
-} from '@/lib/graphql/__generated__/hooks';
-import { NotFound } from './404';
 import Image from 'next/image';
 import dayjs from 'dayjs';
-import { RichText } from './RichText';
+import { RichText } from '../../fragments/RichText';
 import { cn } from '@/lib/utils';
-import { CaseStudyCard } from './CaseStudyCard';
+import { CaseStudyCard } from '../../fragments/CaseStudyCard';
+import type { ExperienceUIProps } from './Experience.utils';
 
-interface ExperienceProps {
-  slug: string;
-}
-export const Experience = ({ slug }: ExperienceProps) => {
-  const { data } = useGetExperienceBySlugSuspenseQuery({
-    variables: { slug },
-  });
-
-  const { docs = [] } = data?.Experiences ?? {};
-  if (!docs || docs.length === 0) {
-    return <NotFound />;
-  }
-  const { id, summary, coverImage, tags, title, endDate, role, startDate } = docs[0];
-
-  const { data: caseStudiesData } = useGetCaseStudiesByParamsSuspenseQuery({
-    variables: {
-      experience: [id],
-    },
-  });
-  const caseStudies = caseStudiesData?.CaseStudies?.docs ?? [];
+/**
+ * Experience UI Component - Pure UI component that receives typed GraphQL data
+ * This component handles all the visual rendering
+ */
+export function ExperienceUI({ experience, caseStudies }: ExperienceUIProps) {
+  const { summary, coverImage, tags, title, endDate, role, startDate } = experience;
 
   const duration = (endDate ? dayjs(endDate) : dayjs()).diff(dayjs(startDate), 'months');
   const startDateFormatted = dayjs(startDate).format('MMM YYYY');
@@ -99,4 +79,4 @@ export const Experience = ({ slug }: ExperienceProps) => {
       </div>
     </div>
   );
-};
+}

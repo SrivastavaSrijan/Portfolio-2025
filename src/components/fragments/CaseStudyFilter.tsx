@@ -1,4 +1,3 @@
-'use client';
 import { Button } from '../ui';
 import { cn } from '@/lib/utils';
 

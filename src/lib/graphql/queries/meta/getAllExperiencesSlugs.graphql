@@ -1,0 +1,7 @@
+query GetAllExperiencesSlugs {
+  Experiences {
+    docs {
+      slug
+    }
+  }
+}

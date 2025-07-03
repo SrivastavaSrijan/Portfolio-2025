@@ -1,5 +1,6 @@
+'use client';
 import { useState, useEffect } from 'react';
-import { useAnimation } from 'framer-motion';
+import { useAnimation } from 'motion/react';
 
 interface AnimationSequenceOptions {
   /**
@@ -15,6 +16,7 @@ interface AnimationSequenceOptions {
 
 /**
  * A hook to handle a sequence of animations with completion state
+ * Optimized for SSR - motion components handle server-side rendering
  */
 export function useAnimationSequence({
   shouldAnimate,
@@ -24,16 +26,16 @@ export function useAnimationSequence({
   const controls = useAnimation();
 
   useEffect(() => {
-    const sequence = async () => {
-      if (shouldAnimate) {
-        // Start main animation
-        await controls.start('visible');
+    if (!shouldAnimate) return;
 
-        // Mark animation as complete after delay
-        setTimeout(() => {
-          setIsAnimationComplete(true);
-        }, completionDelay);
-      }
+    const sequence = async () => {
+      // Start main animation
+      await controls.start('visible');
+
+      // Mark animation as complete after delay
+      setTimeout(() => {
+        setIsAnimationComplete(true);
+      }, completionDelay);
     };
 
     sequence();

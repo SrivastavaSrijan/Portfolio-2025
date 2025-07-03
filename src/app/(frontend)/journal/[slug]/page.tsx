@@ -1,32 +1,42 @@
-import {
-  GetCaseStudyBySlugMetaDocument,
-  type GetCaseStudyBySlugMetaQuery,
-} from '@/lib/graphql/__generated__/hooks';
 import { isStringParam } from '@/lib/utils';
-
-import { query } from '@/lib/apollo/apolloClient';
 import { createMetadata } from '@/lib/config/metadata';
-import type { GetServerSideProps, Metadata } from 'next';
-import { CaseStudy, NotFound } from '@/components/fragments';
+import { api, PayloadEntity } from '@/lib/graphql/server';
 
-export const dynamic = 'force-dynamic';
-// export const revalidate = 60;
-// export const fetchCache = 'force-no-store';
+import type { Metadata } from 'next';
+import { NotFound } from '@/components/fragments';
+import { CaseStudy } from '@/components/sections';
 
-interface CaseStudyBySlugProps extends GetServerSideProps {
+export const revalidate = 3600;
+
+export async function generateStaticParams() {
+  // During build time, the Payload server might not be running
+  // Return empty array to allow fallback to ISR
+  try {
+    const caseStudies = await api.get(PayloadEntity.AllCaseStudies);
+    if (!caseStudies) {
+      throw new Error('Internal Server Error', { cause: [PayloadEntity.AllCaseStudies] });
+    }
+    return caseStudies.map((caseStudy) => ({
+      slug: caseStudy.slug,
+    }));
+  } catch {
+    return [];
+  }
+}
+
+interface CaseStudyBySlugProps {
   params: Promise<{
     slug: string;
   }>;
 }
 export async function generateMetadata({ params }: CaseStudyBySlugProps): Promise<Metadata> {
   const { slug } = await params;
-  const { data } = await query<GetCaseStudyBySlugMetaQuery>({
-    query: GetCaseStudyBySlugMetaDocument,
-    variables: {
-      slug,
-    },
+  const remoteMetadata = await api.get(PayloadEntity.CaseStudyMeta, {
+    slug,
   });
-  const remoteMetadata = data?.CaseStudies?.docs?.[0]?.meta ?? {};
+  if (!remoteMetadata) {
+    throw new Error('Internal Server Error', { cause: [PayloadEntity.CaseStudyMeta] });
+  }
   return createMetadata(remoteMetadata);
 }
 

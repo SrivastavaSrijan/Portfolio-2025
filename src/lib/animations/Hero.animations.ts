@@ -1,5 +1,5 @@
-import type { Variants } from 'framer-motion';
-import { useMotionValue, useSpring, animate, type AnimationPlaybackControls } from 'framer-motion';
+import type { Variants } from 'motion/react';
+import { useMotionValue, useSpring, animate, type AnimationPlaybackControls } from 'motion/react';
 import { useEffect } from 'react';
 
 // Page section animation variants
@@ -308,7 +308,7 @@ export const useToggleContainerAnimation = (isToggled: boolean) => {
 };
 
 // Custom hook for tagline text animations
-export const useTaglineAnimation = (isClient: boolean, initialAnimComplete: boolean) => {
+export const useTaglineAnimation = (shouldAnimate: boolean, initialAnimComplete: boolean) => {
   const fillOpacity = useMotionValue(0);
   const strokeDasharray = useMotionValue('0 100');
   const strokeWidth = useMotionValue(1);
@@ -316,7 +316,7 @@ export const useTaglineAnimation = (isClient: boolean, initialAnimComplete: bool
 
   // Animation sequence with improved timing
   useEffect(() => {
-    if (!isClient) return;
+    if (!shouldAnimate) return;
 
     let animationControls: AnimationPlaybackControls[] = [];
 
@@ -406,7 +406,7 @@ export const useTaglineAnimation = (isClient: boolean, initialAnimComplete: bool
     return () => {
       animationControls.forEach((control) => control.stop());
     };
-  }, [isClient, initialAnimComplete, fillOpacity, strokeDasharray, strokeWidth, pathLength]);
+  }, [shouldAnimate, initialAnimComplete, fillOpacity, strokeDasharray, strokeWidth, pathLength]);
 
   return { fillOpacity, strokeDasharray, strokeWidth, pathLength };
 };

@@ -1,9 +1,13 @@
 import type { GlobalConfig } from 'payload';
+import { api } from '@/lib/graphql/server/Api';
 
 export const FeaturedCaseStudies: GlobalConfig = {
   slug: 'featured-case-studies',
   access: {
     read: () => true,
+  },
+  hooks: {
+    afterChange: [() => api.revalidateAll()],
   },
   fields: [
     {

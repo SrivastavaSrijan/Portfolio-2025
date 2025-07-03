@@ -10683,6 +10683,16 @@ export type CreateContactFormMutationVariables = Exact<{
 
 export type CreateContactFormMutation = { readonly __typename?: 'Mutation', readonly createContactForm?: { readonly __typename?: 'ContactForm', readonly id: number, readonly name: string, readonly email: any, readonly subject: string, readonly message: string, readonly status?: ContactForm_Status | null } | null };
 
+export type GetAllCaseStudiesSlugsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetAllCaseStudiesSlugsQuery = { readonly __typename?: 'Query', readonly CaseStudies?: { readonly __typename?: 'CaseStudies', readonly docs: ReadonlyArray<{ readonly __typename?: 'CaseStudy', readonly slug?: string | null }> } | null };
+
+export type GetAllExperiencesSlugsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetAllExperiencesSlugsQuery = { readonly __typename?: 'Query', readonly Experiences?: { readonly __typename?: 'Experiences', readonly docs: ReadonlyArray<{ readonly __typename?: 'Experience', readonly slug?: string | null }> } | null };
+
 export type GetAllTagsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -10813,6 +10823,88 @@ export function useCreateContactFormMutation(baseOptions?: Apollo.MutationHookOp
 export type CreateContactFormMutationHookResult = ReturnType<typeof useCreateContactFormMutation>;
 export type CreateContactFormMutationResult = Apollo.MutationResult<CreateContactFormMutation>;
 export type CreateContactFormMutationOptions = Apollo.BaseMutationOptions<CreateContactFormMutation, CreateContactFormMutationVariables>;
+export const GetAllCaseStudiesSlugsDocument = gql`
+    query GetAllCaseStudiesSlugs {
+  CaseStudies {
+    docs {
+      slug
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetAllCaseStudiesSlugsQuery__
+ *
+ * To run a query within a React component, call `useGetAllCaseStudiesSlugsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetAllCaseStudiesSlugsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetAllCaseStudiesSlugsQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetAllCaseStudiesSlugsQuery(baseOptions?: Apollo.QueryHookOptions<GetAllCaseStudiesSlugsQuery, GetAllCaseStudiesSlugsQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetAllCaseStudiesSlugsQuery, GetAllCaseStudiesSlugsQueryVariables>(GetAllCaseStudiesSlugsDocument, options);
+      }
+export function useGetAllCaseStudiesSlugsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetAllCaseStudiesSlugsQuery, GetAllCaseStudiesSlugsQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetAllCaseStudiesSlugsQuery, GetAllCaseStudiesSlugsQueryVariables>(GetAllCaseStudiesSlugsDocument, options);
+        }
+export function useGetAllCaseStudiesSlugsSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetAllCaseStudiesSlugsQuery, GetAllCaseStudiesSlugsQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetAllCaseStudiesSlugsQuery, GetAllCaseStudiesSlugsQueryVariables>(GetAllCaseStudiesSlugsDocument, options);
+        }
+export type GetAllCaseStudiesSlugsQueryHookResult = ReturnType<typeof useGetAllCaseStudiesSlugsQuery>;
+export type GetAllCaseStudiesSlugsLazyQueryHookResult = ReturnType<typeof useGetAllCaseStudiesSlugsLazyQuery>;
+export type GetAllCaseStudiesSlugsSuspenseQueryHookResult = ReturnType<typeof useGetAllCaseStudiesSlugsSuspenseQuery>;
+export type GetAllCaseStudiesSlugsQueryResult = Apollo.QueryResult<GetAllCaseStudiesSlugsQuery, GetAllCaseStudiesSlugsQueryVariables>;
+export const GetAllExperiencesSlugsDocument = gql`
+    query GetAllExperiencesSlugs {
+  Experiences {
+    docs {
+      slug
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetAllExperiencesSlugsQuery__
+ *
+ * To run a query within a React component, call `useGetAllExperiencesSlugsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetAllExperiencesSlugsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetAllExperiencesSlugsQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetAllExperiencesSlugsQuery(baseOptions?: Apollo.QueryHookOptions<GetAllExperiencesSlugsQuery, GetAllExperiencesSlugsQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetAllExperiencesSlugsQuery, GetAllExperiencesSlugsQueryVariables>(GetAllExperiencesSlugsDocument, options);
+      }
+export function useGetAllExperiencesSlugsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetAllExperiencesSlugsQuery, GetAllExperiencesSlugsQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetAllExperiencesSlugsQuery, GetAllExperiencesSlugsQueryVariables>(GetAllExperiencesSlugsDocument, options);
+        }
+export function useGetAllExperiencesSlugsSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetAllExperiencesSlugsQuery, GetAllExperiencesSlugsQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetAllExperiencesSlugsQuery, GetAllExperiencesSlugsQueryVariables>(GetAllExperiencesSlugsDocument, options);
+        }
+export type GetAllExperiencesSlugsQueryHookResult = ReturnType<typeof useGetAllExperiencesSlugsQuery>;
+export type GetAllExperiencesSlugsLazyQueryHookResult = ReturnType<typeof useGetAllExperiencesSlugsLazyQuery>;
+export type GetAllExperiencesSlugsSuspenseQueryHookResult = ReturnType<typeof useGetAllExperiencesSlugsSuspenseQuery>;
+export type GetAllExperiencesSlugsQueryResult = Apollo.QueryResult<GetAllExperiencesSlugsQuery, GetAllExperiencesSlugsQueryVariables>;
 export const GetAllTagsDocument = gql`
     query GetAllTags {
   CaseStudies {
