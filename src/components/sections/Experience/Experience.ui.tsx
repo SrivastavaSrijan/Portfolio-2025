@@ -18,10 +18,10 @@ export function ExperienceUI({ experience, caseStudies }: ExperienceUIProps) {
 
   return (
     <div className="flex flex-col">
-      <div className="bg-accent px-4 py-4 md:px-20 md:pb-20">
-        <div className="flex flex-col gap-5 md:gap-5">
-          <h1 className="font-semibold text-4xl text-brand md:text-display-4">{title}</h1>
-          <div className="flex w-full flex-col gap-4 px-2 py-2 text-brand md:px-5 md:py-4">
+      <div className="bg-accent px-4 py-4 lg:px-20 lg:pb-20">
+        <div className="flex flex-col gap-5 lg:gap-5">
+          <h1 className="font-semibold text-4xl text-brand lg:text-display-4">{title}</h1>
+          <div className="flex w-full flex-col gap-4 px-2 py-2 text-brand lg:px-5 lg:py-4">
             {[
               { label: 'Role', value: role },
               { label: 'Duration', value: `${duration} months` },
@@ -67,17 +67,17 @@ export function ExperienceUI({ experience, caseStudies }: ExperienceUIProps) {
           variant="brand"
         />
       )}
-      <div className="bg-white px-4 py-5 md:px-8 md:py-10">
-        <div className="mx-auto md:max-w-3xl">
+      <div className="bg-white px-4 py-5 lg:px-8 lg:py-10">
+        <div className="mx-auto lg:max-w-3xl">
           <RichText className="text-accent" data={summary} />
-          <hr className="mt-5 sm:border-accent/20 md:border-0" />
+          <hr className="mt-5 sm:border-accent/20 lg:border-0" />
         </div>
       </div>
 
-      <div className="flex flex-col gap-5 bg-white px-4 py-5 md:gap-10 md:px-20 md:py-10">
-        <h2 className="text-4xl text-accent md:text-5xl">Related Case Studies</h2>
+      <div className="flex flex-col gap-5 bg-white px-4 py-5 lg:gap-10 lg:px-20 lg:py-10">
+        <h2 className="text-4xl text-accent lg:text-5xl">Related Case Studies</h2>
         {caseStudies && caseStudies.length > 0 && (
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-10">
+          <div className="grid grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-10">
             {caseStudies.map((caseStudy, index) => (
               <CaseStudyCard key={caseStudy.slug} {...caseStudy} grid index={index} />
             ))}

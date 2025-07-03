@@ -9,10 +9,10 @@ export function JournalSkeleton() {
 
   return (
     <div className="flex flex-col">
-      <div className="flex flex-col justify-between gap-8 bg-accent px-4 py-4 md:flex-row md:gap-6 md:px-20 md:pb-20">
-        <div className="flex flex-col gap-1 md:flex-2/3 md:gap-2">
+      <div className="flex flex-col justify-between gap-8 bg-accent px-4 py-4 lg:flex-row lg:gap-6 lg:px-20 lg:pb-20">
+        <div className="flex flex-col gap-1 lg:flex-2/3 lg:gap-2">
           <Skeleton className="h-6 w-24" variant="brand" />
-          <Skeleton className="h-12 w-3/4 md:h-16" variant="brand" />
+          <Skeleton className="h-12 w-3/4 lg:h-16" variant="brand" />
           <Skeleton className="mt-5 h-16 max-w-2xl" variant="brand" />
         </div>
         {/* Filter skeleton */}
@@ -32,10 +32,10 @@ export function JournalSkeleton() {
         </div>
       </div>
       {/* Case studies skeleton */}
-      <div className="grid grid-cols-1 gap-5 bg-white px-4 py-5 md:grid-cols-2 md:gap-10 md:px-8 md:py-10">
+      <div className="grid grid-cols-1 gap-5 bg-white px-4 py-5 lg:grid-cols-2 lg:gap-10 lg:px-8 lg:py-10">
         {caseStudyPlaceholders.map((placeholder) => (
           <div key={placeholder} className="space-y-4">
-            <Skeleton className="h-90 w-full rounded-4xl! md:h-256" />
+            <Skeleton className="h-90 w-full rounded-4xl! lg:h-256" />
             <Skeleton className="h-6 w-3/4" variant="default" />
             <Skeleton className="h-4 w-full" variant="default" />
           </div>

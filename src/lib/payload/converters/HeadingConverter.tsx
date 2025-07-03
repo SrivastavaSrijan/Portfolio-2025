@@ -17,26 +17,26 @@ export const HeadingConverter: JSXConverters<SerializedHeadingNode> = {
 
     const Tag = node.tag;
 
-    let className = 'md:font-normal font-medium';
+    let className = 'lg:font-normal font-medium';
 
     switch (node.tag) {
       case 'h1':
-        className = cn('text-3xl md:text-h1 md:my-10 my-6', className);
+        className = cn('text-3xl lg:text-h1 lg:my-10 my-6', className);
         break;
       case 'h2':
-        className = cn('text-2xl md:text-h2 md:my-8 my-4', className);
+        className = cn('text-2xl lg:text-h2 lg:my-8 my-4', className);
         break;
       case 'h3':
-        className = cn('text-xl md:text-h3 md:my-6 my-4', className);
+        className = cn('text-xl lg:text-h3 lg:my-6 my-4', className);
         break;
       case 'h4':
-        className = cn('text-lg md:text-h4 md:my-4 my-2', className);
+        className = cn('text-lg lg:text-h4 lg:my-4 my-2', className);
         break;
       case 'h5':
-        className = cn('text-lg md:text-h5 md:my-4 my-2', className);
+        className = cn('text-lg lg:text-h5 lg:my-4 my-2', className);
         break;
       case 'h6':
-        className = cn('text-base md:text-h6 md:my-2 my-2', className);
+        className = cn('text-base lg:text-h6 lg:my-2 my-2', className);
         break;
     }
 

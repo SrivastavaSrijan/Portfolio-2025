@@ -27,21 +27,21 @@ export function FeaturedExperiencesUI({
   description,
 }: FeaturedExperiencesUIProps) {
   return (
-    <div className="bg-white p-4 md:p-20">
-      <div className="flex flex-col gap-5 rounded-2xl border-1 border-black-500 bg-blue-black-50 px-6 py-12 shadow-sm md:flex-row md:gap-15 md:px-16 md:py-16">
+    <div className="bg-white p-4 lg:p-20">
+      <div className="flex flex-col gap-5 rounded-2xl border-1 border-black-500 bg-blue-black-50 px-6 py-12 shadow-sm lg:flex-row lg:gap-15 lg:px-16 lg:py-16">
         <motion.div
-          className="flex flex-1/3 flex-col gap-2 border-black-500 border-b-1 pr-5 pb-4 md:border-r-1 md:border-b-0 md:pr-10"
+          className="flex flex-1/3 flex-col gap-2 border-black-500 border-b-1 pr-5 pb-4 lg:border-r-1 lg:border-b-0 lg:pr-10"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
           <h3 className="text-left font-semibold text-accent text-base">{title}</h3>
-          <h2 className="text-left font-semibold text-2xl text-accent md:text-4xl">{subtitle}</h2>
-          <p className="mt-2 text-left text-sm text-white/90 md:mt-3 md:text-base">{description}</p>
+          <h2 className="text-left font-semibold text-2xl text-accent lg:text-4xl">{subtitle}</h2>
+          <p className="mt-2 text-left text-sm text-white/90 lg:mt-3 lg:text-base">{description}</p>
         </motion.div>
 
         <motion.div
-          className="flex flex-2/3 flex-col gap-2 pt-3 md:gap-7 md:pt-0"
+          className="flex flex-2/3 flex-col gap-2 pt-3 lg:gap-7 lg:pt-0"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -81,14 +81,14 @@ export function FeaturedExperiencesUI({
             return (
               <motion.div
                 key={id}
-                className="flex w-full flex-col gap-1 rounded-lg p-3 transition-colors hover:bg-white/5 md:flex-row md:items-center md:gap-10"
+                className="flex w-full flex-col gap-1 rounded-lg p-3 transition-colors hover:bg-white/5 lg:flex-row lg:items-center lg:gap-10"
                 variants={itemVariants}
                 custom={index}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
               >
-                <div className="group relative flex h-[60px] w-[156px] items-start overflow-hidden rounded-md bg-white/10 transition-transform hover:scale-[1.03] md:w-[200px]">
+                <div className="group relative flex h-[60px] w-[156px] items-start overflow-hidden rounded-md bg-white/10 transition-transform hover:scale-[1.03] lg:w-[200px]">
                   <ImageWithShimmer
                     alt={experienceTitle}
                     fill
@@ -99,8 +99,8 @@ export function FeaturedExperiencesUI({
                 </div>
                 <div className="flex flex-row items-center justify-center gap-5">
                   <div className="flex flex-1 flex-col gap-1">
-                    <h3 className="font-medium text-accent text-base md:text-xl">{role}</h3>
-                    <p className="text-black/70 text-xs md:text-sm">{getDateRange()}</p>
+                    <h3 className="font-medium text-accent text-base lg:text-xl">{role}</h3>
+                    <p className="text-black/70 text-xs lg:text-sm">{getDateRange()}</p>
                   </div>
                   <Link
                     href={`${Routes.Experiences}/${slug}`}

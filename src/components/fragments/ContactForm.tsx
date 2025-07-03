@@ -57,7 +57,7 @@ export function ContactForm({ children }: ContactFormProps) {
           <DialogDescription>If you'd like speak, please hmu!</DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="name">Name</Label>
               <Input id="name" name="name" value={formData.name} onChange={handleChange} required />
@@ -100,7 +100,7 @@ export function ContactForm({ children }: ContactFormProps) {
             />
           </div>
           <DialogClose asChild>
-            <Button type="submit" disabled={loading} className="w-full md:w-auto">
+            <Button type="submit" disabled={loading} className="w-full lg:w-auto">
               {loading ? 'Sending...' : 'Send Message'}
             </Button>
           </DialogClose>

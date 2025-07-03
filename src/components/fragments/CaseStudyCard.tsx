@@ -41,7 +41,7 @@ export const CaseStudyCard = ({
   return (
     <div
       className={cn(
-        'relative mx-auto flex w-full max-w-256 flex-col items-center justify-center overflow-hidden md:rounded-[42px]'
+        'relative mx-auto flex w-full max-w-256 flex-col items-center justify-center overflow-hidden lg:rounded-[42px]'
       )}
     >
       {illustration?.url && (
@@ -49,9 +49,9 @@ export const CaseStudyCard = ({
           fill
           src={illustration?.url}
           alt={title}
-          className={cn('relative h-full w-full rounded-4xl object-cover md:rounded-none')}
-          shimmerClassName="rounded-4xl md:rounded-none"
-          wrapperClassName="relative h-40 w-full md:h-208"
+          className={cn('relative h-full w-full rounded-4xl object-cover lg:rounded-none')}
+          shimmerClassName="rounded-4xl lg:rounded-none"
+          wrapperClassName="relative h-40 w-full lg:h-208"
         />
       )}
       <motion.div
@@ -66,17 +66,17 @@ export const CaseStudyCard = ({
           delay: 0.1,
         }}
         className={cn(
-          'bottom-0 w-full rounded-none bg-white shadow-md md:absolute md:bottom-4 md:w-[calc(100%-48px)] md:rounded-4xl'
+          'bottom-0 w-full rounded-none bg-white shadow-md lg:absolute lg:bottom-4 lg:w-[calc(100%-48px)] lg:rounded-4xl'
         )}
       >
         <Card>
           <CardContent className="flex items-center justify-between gap-3 px-2">
-            <CardDescription className="flex flex-col gap-4 md:gap-6">
+            <CardDescription className="flex flex-col gap-4 lg:gap-6">
               <div className="flex flex-col gap-2">
-                <h3 className="font-medium text-accent text-xl md:text-2xl">{title}</h3>
-                <RichText data={summary} className="text-accent text-xs md:text-sm" />
+                <h3 className="font-medium text-accent text-xl lg:text-2xl">{title}</h3>
+                <RichText data={summary} className="text-accent text-xs lg:text-sm" />
               </div>
-              <div className="flex flex-row flex-wrap gap-2 md:gap-3">
+              <div className="flex flex-row flex-wrap gap-2 lg:gap-3">
                 {(tags ?? []).map((tag) => (
                   <span
                     key={tag.id}

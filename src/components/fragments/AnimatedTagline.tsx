@@ -48,7 +48,7 @@ export const AnimatedTagline = ({ initialAnimComplete, taglines = [] }: Animated
   }, [controls]);
 
   return (
-    <div className="-mt-4 relative flex flex-wrap items-end gap-2 font-semibold text-brand text-xl md:mt-0 md:gap-3 md:font-normal md:text-display-5">
+    <div className="-mt-4 relative flex flex-wrap items-end gap-2 font-semibold text-brand text-xl lg:mt-0 lg:gap-3 lg:font-normal lg:text-display-5">
       {/* "I make things look" text */}
       <motion.span
         className="inline-block"
@@ -65,9 +65,9 @@ export const AnimatedTagline = ({ initialAnimComplete, taglines = [] }: Animated
       </motion.span>
 
       {/* "good" text with SVG effects */}
-      <div className="-left-1 relative top-1.5 inline-block md:top-2 md:left-0">
+      <div className="-left-1 relative top-1.5 inline-block lg:top-2 lg:left-0">
         <svg
-          className="inline-block h-[42px] w-[80px] md:h-[60px] md:w-[110px] lg:h-[70px] lg:w-[140px] xl:h-[80px] xl:w-[160px]"
+          className="inline-block h-[42px] w-[80px] lg:h-[70px] lg:w-[110px] xl:h-[80px] xl:w-[160px]"
           viewBox="0 0 100 50"
           preserveAspectRatio="xMidYMid meet"
           xmlns="http://www.w3.org/2000/svg"
@@ -108,7 +108,7 @@ export const AnimatedTagline = ({ initialAnimComplete, taglines = [] }: Animated
 
         {/* Underline - positioned based on text width */}
         <svg
-          className="md:-bottom-1 -bottom-1 absolute left-0 w-full"
+          className="lg:-bottom-1 -bottom-1 absolute left-0 w-full"
           height="8"
           viewBox="0 0 100 8"
           preserveAspectRatio="none"

@@ -10,7 +10,7 @@ interface WorkButtonProps {
 
 export const WorkButtons = ({ invert = false, buttons = [] }: WorkButtonProps) => {
   return (
-    <div className="flex w-full justify-between md:w-fit md:justify-end md:gap-5">
+    <div className="flex w-full justify-between lg:w-fit lg:justify-end lg:gap-5">
       {buttons.map((button) => (
         <Link href={button.url || '#'} key={button.text} passHref target="_blank">
           <Button variant="outlined" color={!invert ? 'brand' : 'accent'}>

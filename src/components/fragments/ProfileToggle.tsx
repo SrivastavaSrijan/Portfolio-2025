@@ -41,7 +41,7 @@ export const ProfileToggle = ({ initialAnimComplete }: ProfileToggleProps) => {
   return (
     <motion.div
       ref={ref}
-      className="relative h-20 w-60 cursor-pointer overflow-hidden rounded-r-full rounded-l-full shadow-md md:h-30 md:w-72"
+      className="relative h-20 w-60 cursor-pointer overflow-hidden rounded-r-full rounded-l-full shadow-md lg:h-30 lg:w-72"
       variants={toggleContainerVariants}
       initial="hidden"
       whileInView="visible"

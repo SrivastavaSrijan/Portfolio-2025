@@ -48,8 +48,8 @@ export const ListConverter: JSXConverters<SerializedListNode | SerializedListIte
     // Adjust spacing based on nesting
     const isNested = nestingLevel > 0;
     const className = isNested
-      ? `${markerStyle} px-4 md:px-8 mt-1 mb-1 space-y-0.5 marker:text-brand dark:marker:text-accent`
-      : `${markerStyle} px-4 md:px-8 mt-2 mb-6 space-y-1 marker:text-brand dark:marker:text-accent`;
+      ? `${markerStyle} px-4 lg:px-8 mt-1 mb-1 space-y-0.5 marker:text-brand dark:marker:text-accent`
+      : `${markerStyle} px-4 lg:px-8 mt-2 mb-6 space-y-1 marker:text-brand dark:marker:text-accent`;
 
     return (
       <ListTag type={listType} className={className}>
@@ -81,7 +81,7 @@ export const ListConverter: JSXConverters<SerializedListNode | SerializedListIte
     }
 
     return (
-      <li className={`pl-0.5 md:pl-1 ${markerClass}`}>{nodesToJSX({ nodes: node.children })}</li>
+      <li className={`pl-0.5 lg:pl-1 ${markerClass}`}>{nodesToJSX({ nodes: node.children })}</li>
     );
   },
 };

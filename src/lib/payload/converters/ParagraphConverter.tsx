@@ -154,7 +154,7 @@ export const ParagraphConverter: JSXConverters<
       node.children.length === 0 ||
       (node.children.length === 1 && 'text' in node.children[0] && node.children[0].text === '')
     ) {
-      return <div className="my-1 md:my-2" />;
+      return <div className="my-1 lg:my-2" />;
     }
 
     // Use the shared helper function for rendering formatted text
