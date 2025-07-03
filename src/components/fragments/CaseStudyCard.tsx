@@ -7,7 +7,6 @@ import { Routes } from '@/lib/config/routes';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { motion, type Variants } from 'motion/react';
-import { useRef } from 'react';
 import { RichText } from './RichText';
 
 type CaseStudyBySlugData = NonNullable<
@@ -18,25 +17,29 @@ interface CaseStudyCardProps extends CaseStudyBySlugData {
   index: number;
 }
 
-const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: [0.22, 1, 0.36, 1],
-      delay: i * 0.1,
+export const CaseStudyCard = ({
+  title,
+  tags,
+  slug,
+  illustration,
+  summary,
+  index,
+}: CaseStudyCardProps) => {
+  const cardVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: [0.22, 1, 0.36, 1],
+        delay: index * 0.1,
+      },
     },
-  }),
-};
-
-export const CaseStudyCard = ({ title, tags, slug, illustration, summary }: CaseStudyCardProps) => {
-  const ref = useRef(null);
+  };
 
   return (
     <div
-      ref={ref}
       className={cn(
         'relative mx-auto flex w-full max-w-256 flex-col items-center justify-center overflow-hidden md:rounded-[42px]'
       )}
@@ -55,7 +58,7 @@ export const CaseStudyCard = ({ title, tags, slug, illustration, summary }: Case
         variants={cardVariants}
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        custom={0}
+        custom={index}
         initial="hidden"
         transition={{
           duration: 0.6,

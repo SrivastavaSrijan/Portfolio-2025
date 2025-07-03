@@ -20,19 +20,6 @@ const containerVariants = {
   },
 };
 
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: [0.22, 1, 0.36, 1],
-      delay: i * 0.1,
-    },
-  }),
-};
-
 export function FeaturedExperiencesUI({
   experiences,
   subtitle,
@@ -77,6 +64,18 @@ export function FeaturedExperiencesUI({
                 return `${dayjs(startDate).format('MMM YYYY')} - ${dayjs(endDate).format('MMM YYYY')}`;
               }
               return `${dayjs(startDate).format('MMM YYYY')} - ${dayjs(endDate).format('MMM YYYY')}`;
+            };
+            const itemVariants: Variants = {
+              hidden: { opacity: 0, y: 20 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                  duration: 0.5,
+                  ease: [0.22, 1, 0.36, 1],
+                  delay: index * 0.1,
+                },
+              },
             };
 
             return (

@@ -5,18 +5,18 @@ import { Button } from '@/components/ui';
 import { ContactForm } from '@/components/fragments/ContactForm';
 import { RichText } from '@/components/fragments/RichText';
 import { containerVariants, itemVariants, paragraphVariants } from '@/lib/animations';
-import { useClientSide, useAnimationSequence } from '@/lib/hooks';
+import { useAnimationSequence } from '@/lib/hooks';
 import type { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical';
 import type { HeroUIProps } from './Hero.utils';
 
 /**
  * Hero UI Component - Pure UI component that receives typed GraphQL data
  * This component handles all the visual rendering and animations
+ * Now optimized for SSR with motion components
  */
-export function HeroUI({ name, title, description }: HeroUIProps) {
-  const isClient = useClientSide();
+export function HeroUI({ name, title, description, taglines, workButtons }: HeroUIProps) {
   const { controls, isAnimationComplete } = useAnimationSequence({
-    shouldAnimate: isClient,
+    shouldAnimate: true, // Always animate, motion handles SSR
   });
 
   return (
@@ -47,7 +47,7 @@ export function HeroUI({ name, title, description }: HeroUIProps) {
           >
             {title}
           </motion.h2>
-          <AnimatedTagline isClient={isClient} initialAnimComplete={isAnimationComplete} />
+          <AnimatedTagline taglines={taglines} initialAnimComplete={isAnimationComplete} />
         </div>
 
         <span className="flex-1" />
@@ -79,7 +79,7 @@ export function HeroUI({ name, title, description }: HeroUIProps) {
             </Button>
           </ContactForm>
           <span className="md:basis flex basis-full md:hidden" />
-          <WorkButtons />
+          <WorkButtons buttons={workButtons} />
         </motion.div>
       </motion.div>
     </AnimatePresence>

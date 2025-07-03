@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { fetchHeroData } from '@/lib/graphql/server';
+import { fetchHeroData, fetchWorkButtonsData } from '@/lib/graphql/server';
 import { HeroUI } from './Hero.ui';
 import { HeroSkeleton } from './Hero.skeleton';
 import type { HeroWrapperProps } from './Hero.utils';
@@ -8,8 +8,9 @@ import type { HeroWrapperProps } from './Hero.utils';
  * Hero Server Component - Clean and simple
  */
 async function HeroServer(_props: HeroWrapperProps) {
-  const data = await fetchHeroData();
-  return <HeroUI {...data} />;
+  const [heroData, workButtonsData] = await Promise.all([fetchHeroData(), fetchWorkButtonsData()]);
+
+  return <HeroUI {...heroData} workButtons={workButtonsData.buttons} />;
 }
 
 /**

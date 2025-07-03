@@ -15,6 +15,7 @@ import {
   GetCaseStudyBySlugMetaDocument,
   GetExperienceBySlugMetaDocument,
   GetJournalMetaDocument,
+  GetWorkButtonsDocument,
   type GetHeroQuery,
   type GetSkillsQuery,
   type GetFeaturedCaseStudiesQuery,
@@ -28,6 +29,7 @@ import {
   type GetCaseStudyBySlugMetaQuery,
   type GetExperienceBySlugMetaQuery,
   type GetJournalMetaQuery,
+  type GetWorkButtonsQuery,
 } from '@/lib/graphql/__generated__/hooks';
 import { ServerActionComponents, ServerConfig } from '../../config/server';
 import { query } from '../../apollo/server';
@@ -305,4 +307,23 @@ export async function fetchExperienceMetadata(slug: string) {
     throw new Error(`Experience metadata not found for slug: ${slug}`);
   }
   return data.Experiences.docs[0].meta;
+}
+
+/**
+ * Fetch data for WorkButtons component with proper typing
+ */
+export async function fetchWorkButtonsData() {
+  const { data } = await query<GetWorkButtonsQuery>({
+    query: GetWorkButtonsDocument,
+    context: {
+      fetchOptions: {
+        next: {
+          revalidate: ServerConfig.RevalidationTime,
+          tags: [ServerActionComponents.WorkButtons],
+        },
+      },
+    },
+  });
+  if (!data?.WorkButton) throw new Error('WorkButtons data not found');
+  return data.WorkButton;
 }
