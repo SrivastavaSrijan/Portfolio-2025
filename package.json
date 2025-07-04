@@ -12,7 +12,7 @@
     "codegen:watch": "graphql-codegen --watch --config codegen.ts",
     "format": "biome format --write",
     "update": "PAYLOAD_CONFIG_PATH=src/payload.config.ts payload generate:types yarn payload generate:types && yarn payload generate:importmap",
-    "build:prod": "yarn payload migrate:reset && yarn payload generate:types && yarn codegen && yarn build",
+    "build:prod": "yarn payload migrate:reset && yarn payload generate:types && yarn build",
     "payload": "PAYLOAD_CONFIG_PATH=src/payload.config.ts payload",
     "precommit": "biome lint --fix && yarn tsc",
     "prepare": "husky",

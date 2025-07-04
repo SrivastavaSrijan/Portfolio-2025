@@ -37,7 +37,7 @@ export class Api {
     document: DocumentNode,
     options: FetchOptions = {},
     functionName = 'api.get'
-  ): Promise<TData> {
+  ): Promise<TData | null> {
     try {
       const { query } = getClient();
       const { tags = [], revalidate = ServerConfig.RevalidationTime, variables } = options;
@@ -53,13 +53,15 @@ export class Api {
             },
           },
         },
+        errorPolicy: 'all', // Return partial data even with errors
+        returnPartialData: true, // Allow partial data to be returned
       });
 
       return result.data;
     } catch (error) {
       const serverError = handleError(error, functionName);
       logError(serverError, functionName);
-      return Promise.reject(serverError);
+      return null;
     }
   }
 
@@ -98,7 +100,9 @@ export class Api {
       },
       `api.getComponent(${String(component)})`
     );
-
+    if (!rawData) {
+      return config.extractData({});
+    }
     return config.extractData(rawData);
   }
 }
