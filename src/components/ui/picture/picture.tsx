@@ -92,7 +92,7 @@ export default function Picture({
     src: url,
     alt: extractedAlt,
     className: cn('transition-opacity duration-300', className),
-    onLoadingComplete: handleLoadComplete,
+    onLoad: handleLoadComplete,
     onError: handleError,
     priority,
     // Use blur placeholder if available, otherwise no placeholder

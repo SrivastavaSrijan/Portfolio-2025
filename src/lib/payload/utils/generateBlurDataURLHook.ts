@@ -1,7 +1,5 @@
 import type { CollectionAfterChangeHook } from 'payload';
 import type { Media } from '@/payload-types';
-import dotenv from 'dotenv';
-dotenv.config();
 
 /**
  * Generate blur data URL from a buffer using plaiceholder

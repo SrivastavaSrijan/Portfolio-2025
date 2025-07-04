@@ -1,7 +1,6 @@
 import { revalidateAll } from '../utils';
 
 import type { CollectionConfig } from 'payload';
-import { generateBlurDataURLHook } from '../utils/generateBlurDataURLHook';
 
 export const Media: CollectionConfig = {
   slug: 'media',
@@ -9,7 +8,7 @@ export const Media: CollectionConfig = {
     read: () => true,
   },
   hooks: {
-    afterChange: [revalidateAll, generateBlurDataURLHook],
+    afterChange: [revalidateAll],
     afterDelete: [revalidateAll],
   },
   upload: {

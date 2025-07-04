@@ -1,7 +1,5 @@
 import p from 'payload';
 import config from '../src/payload.config.js';
-import dotenv from 'dotenv';
-dotenv.config();
 /**
  * Script to regenerate blur data URLs for existing images
  * This will update all media items that don't have a blurDataURL
