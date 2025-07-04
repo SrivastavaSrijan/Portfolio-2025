@@ -3,8 +3,10 @@ query GetAllTags {
     docs {
       tags {
         name
+        slug
         id
       }
+      updatedAt
     }
   }
 }

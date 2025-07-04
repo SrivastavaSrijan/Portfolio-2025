@@ -19,7 +19,7 @@ export function CaseStudySkeleton() {
         </div>
       </div>
       {/* Illustration skeleton */}
-      <Skeleton className="h-20 w-full lg:h-144" variant="brand" />
+      <Skeleton className="h-20 w-full rounded-none lg:h-144" variant="brand" />
       <div className="bg-white">
         <div className="mx-auto flex flex-col gap-5 px-4 py-10 lg:max-w-205 lg:px-4 lg:py-20">
           {/* Content skeleton */}

@@ -24,11 +24,13 @@ import {
   Skills,
   WorkButtons,
 } from './lib/payload/globals';
+import dotenv from 'dotenv';
 import { seoConfig } from './lib/payload/seoConfig';
-
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
+// Load environment variables from .env file
+dotenv.config();
 export default buildConfig({
   admin: {
     user: Users.slug,
@@ -49,6 +51,7 @@ export default buildConfig({
     },
   }),
   sharp,
+
   plugins: [
     // storage-adapter-placeholder
     vercelBlobStorage({

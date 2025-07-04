@@ -14,7 +14,7 @@ export function FeaturedCaseStudiesSkeleton() {
             key={key}
             className="mx-auto flex w-full max-w-196 flex-col gap-4 rounded-4xl lg:gap-6"
           >
-            <Skeleton className="h-64 w-full rounded-4xl! lg:h-128" />
+            <Skeleton className="h-64 w-full rounded-4xl lg:h-128" />
           </div>
         ))}
       </div>

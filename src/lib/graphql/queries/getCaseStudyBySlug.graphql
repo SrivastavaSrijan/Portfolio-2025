@@ -1,3 +1,5 @@
+#import "../fragments/MediaFragment.graphql"
+
 query GetCaseStudyBySlug($slug: String!) {
   CaseStudies(where: { slug: { equals: $slug } }) {
     docs {
@@ -16,7 +18,7 @@ query GetCaseStudyBySlug($slug: String!) {
       }
       content
       illustration {
-        url
+        ...MediaFragment
       }
       updatedAt
     }

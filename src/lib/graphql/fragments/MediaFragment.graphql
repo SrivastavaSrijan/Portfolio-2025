@@ -1,0 +1,38 @@
+fragment MediaFragment on Media {
+  id
+  alt
+  caption
+  blurDataURL
+  focalX
+  focalY
+  url
+  width
+  height
+  sizes {
+    icon {
+      url
+      width
+      height
+    }
+    thumbnail {
+      url
+      width
+      height
+    }
+    card {
+      url
+      width
+      height
+    }
+    feature {
+      url
+      width
+      height
+    }
+    hero {
+      url
+      width
+      height
+    }
+  }
+}

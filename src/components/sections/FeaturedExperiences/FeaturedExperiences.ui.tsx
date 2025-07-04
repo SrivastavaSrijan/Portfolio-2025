@@ -3,8 +3,7 @@ import Link from 'next/link';
 import dayjs from 'dayjs';
 import { motion, type Variants } from 'motion/react';
 import { ArrowUpRight } from 'lucide-react';
-import { Button } from '../../ui';
-import { ImageWithShimmer } from '../../ui/ImageWithShimmer';
+import { Button, Picture } from '../../ui';
 import { Routes } from '@/lib/config/routes';
 import type { FeaturedExperiencesUIProps } from './FeaturedExperiences.utils';
 
@@ -88,15 +87,17 @@ export function FeaturedExperiencesUI({
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
               >
-                <div className="group relative flex h-[60px] w-[156px] items-start overflow-hidden rounded-md bg-white/10 transition-transform hover:scale-[1.03] lg:w-[200px]">
-                  <ImageWithShimmer
-                    alt={experienceTitle}
-                    fill
-                    className="object-contain brightness-90 grayscale-[80%] transition-all duration-300 group-hover:brightness-100 group-hover:grayscale-0"
-                    src={thumbnailImage?.url ?? ''}
-                    wrapperClassName="absolute inset-0"
-                  />
-                </div>
+                <Picture
+                  media={thumbnailImage}
+                  imageSize="thumbnail"
+                  alt={experienceTitle}
+                  fill
+                  className="object-contain brightness-90 grayscale-[80%] transition-all duration-300 group-hover:brightness-100 group-hover:grayscale-0"
+                  wrapperProps={{
+                    className:
+                      'group relative flex h-[60px] w-[156px] items-start overflow-hidden rounded-md bg-white/10 transition-transform hover:scale-[1.03] lg:w-[200px]',
+                  }}
+                />
                 <div className="flex flex-row items-center justify-center gap-5">
                   <div className="flex flex-1 flex-col gap-1">
                     <h3 className="font-medium text-accent text-base lg:text-xl">{role}</h3>

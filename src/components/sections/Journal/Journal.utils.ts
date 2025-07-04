@@ -1,4 +1,4 @@
-import type { PayloadFetchTypeMap, PayloadEntity } from '@/lib/graphql/server/types';
+import type { PayloadFetchTypeMap, PayloadEntity } from '@/lib/graphql/server';
 
 // Extract the exact data types from the PayloadFetchTypeMap
 export type AllTagsData = PayloadFetchTypeMap[PayloadEntity.AllTags]['result'];

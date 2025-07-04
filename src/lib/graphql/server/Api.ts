@@ -3,7 +3,7 @@ import { revalidateTag } from 'next/cache';
 import { getClient } from '../../apollo/server';
 import { handleError, logError } from './error';
 import { PayloadFetchConfig, type PayloadFetchTypeMap } from './types';
-import { PayloadEntity } from '.';
+import type { PayloadEntity } from '.';
 
 const ServerConfig = {
   RevalidationTime: 1800, // Default revalidation time in seconds
@@ -70,23 +70,6 @@ export class Api {
     for (const component of components) {
       revalidateTag(component);
     }
-  }
-
-  /**
-   * Revalidate everything - the nuclear option for portfolio sites
-   */
-  async revalidateAll(): Promise<{ success: boolean; revalidatedTags: number; timestamp: string }> {
-    const allTags = Object.values(PayloadEntity);
-
-    for (const tag of allTags) {
-      revalidateTag(tag);
-    }
-
-    return {
-      success: true,
-      revalidatedTags: allTags.length,
-      timestamp: new Date().toISOString(),
-    };
   }
 
   /**

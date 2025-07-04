@@ -2,8 +2,8 @@ import dayjs from 'dayjs';
 import { RichText } from '../../fragments/RichText';
 import { cn } from '@/lib/utils';
 import { CaseStudyCard } from '../../fragments/CaseStudyCard';
-import { ImageWithShimmer } from '../../ui/ImageWithShimmer';
 import type { ExperienceUIProps } from './Experience.utils';
+import { Picture } from '@/components/ui';
 
 /**
  * Experience UI Component - Pure UI component that receives typed GraphQL data
@@ -57,14 +57,14 @@ export function ExperienceUI({ experience, caseStudies }: ExperienceUIProps) {
           </div>
         </div>
       </div>
-      {coverImage?.url && (
-        <ImageWithShimmer
-          src={coverImage.url}
+      {coverImage && (
+        <Picture
+          media={coverImage}
+          imageSize="feature"
           alt={title}
           fill
           className="object-cover"
-          wrapperClassName="relative h-60 w-full"
-          variant="brand"
+          wrapperProps={{ className: 'relative h-60 w-full' }}
         />
       )}
       <div className="bg-white px-4 py-5 lg:px-8 lg:py-10">

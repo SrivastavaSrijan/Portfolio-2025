@@ -11,9 +11,10 @@
     "codegen": "graphql-codegen --config codegen.ts",
     "codegen:watch": "graphql-codegen --watch --config codegen.ts",
     "format": "biome format --write",
-    "update": "yarn payload generate:types && yarn payload generate:importmap",
+    "update": "PAYLOAD_CONFIG_PATH=src/payload.config.ts payload generate:types yarn payload generate:types && yarn payload generate:importmap",
     "precommit": "biome lint --fix && yarn tsc",
-    "prepare": "husky"
+    "prepare": "husky",
+    "analyze": "ANALYZE=true yarn build"
   },
   "dependencies": {
     "@apollo/client": "^3.13.6",
@@ -56,6 +57,7 @@
     "@graphql-codegen/typescript": "^4.1.6",
     "@graphql-codegen/typescript-operations": "^4.6.0",
     "@graphql-codegen/typescript-react-apollo": "^4.3.2",
+    "@next/bundle-analyzer": "^15.3.5",
     "@parcel/watcher": "^2.5.1",
     "@tailwindcss/postcss": "^4",
     "@types/lodash": "^4.17.17",
@@ -64,9 +66,12 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "concurrently": "^9.1.2",
+    "dotenv": "^17.0.1",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.0",
+    "plaiceholder": "^3.0.0",
     "tailwindcss": "^4",
+    "tsx": "^4.20.3",
     "typescript": "^5"
   },
   "lint-staged": {

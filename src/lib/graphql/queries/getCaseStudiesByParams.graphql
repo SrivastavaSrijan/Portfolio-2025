@@ -1,3 +1,5 @@
+#import "../fragments/MediaFragment.graphql"
+
 query GetCaseStudiesByParams($tagIds: [JSON], $experience: [JSON]) {
   CaseStudies(where: { tags: { in: $tagIds }, experience: { in: $experience } }) {
     offset
@@ -13,8 +15,7 @@ query GetCaseStudiesByParams($tagIds: [JSON], $experience: [JSON]) {
       }
       updatedAt
       illustration {
-        url
-        alt
+        ...MediaFragment
       }
       experience {
         role

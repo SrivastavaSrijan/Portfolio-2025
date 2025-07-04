@@ -2,6 +2,7 @@ query GetAllExperiencesSlugs {
   Experiences {
     docs {
       slug
+      updatedAt
     }
   }
 }

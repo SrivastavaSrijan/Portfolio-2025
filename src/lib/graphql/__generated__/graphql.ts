@@ -5633,6 +5633,8 @@ export type Journal_Meta = {
 export type Media = {
   __typename?: 'Media';
   alt: Scalars['String']['output'];
+  blurDataURL?: Maybe<Scalars['String']['output']>;
+  caption?: Maybe<Scalars['String']['output']>;
   createdAt?: Maybe<Scalars['DateTime']['output']>;
   filename?: Maybe<Scalars['String']['output']>;
   filesize?: Maybe<Scalars['Float']['output']>;
@@ -5641,6 +5643,7 @@ export type Media = {
   height?: Maybe<Scalars['Float']['output']>;
   id: Scalars['Int']['output'];
   mimeType?: Maybe<Scalars['String']['output']>;
+  sizes?: Maybe<Media_Sizes>;
   thumbnailURL?: Maybe<Scalars['String']['output']>;
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
   url?: Maybe<Scalars['String']['output']>;
@@ -5674,6 +5677,8 @@ export type MediaDeleteDocAccess = {
 export type MediaDocAccessFields = {
   __typename?: 'MediaDocAccessFields';
   alt?: Maybe<MediaDocAccessFields_Alt>;
+  blurDataURL?: Maybe<MediaDocAccessFields_BlurDataUrl>;
+  caption?: Maybe<MediaDocAccessFields_Caption>;
   createdAt?: Maybe<MediaDocAccessFields_CreatedAt>;
   filename?: Maybe<MediaDocAccessFields_Filename>;
   filesize?: Maybe<MediaDocAccessFields_Filesize>;
@@ -5681,6 +5686,7 @@ export type MediaDocAccessFields = {
   focalY?: Maybe<MediaDocAccessFields_FocalY>;
   height?: Maybe<MediaDocAccessFields_Height>;
   mimeType?: Maybe<MediaDocAccessFields_MimeType>;
+  sizes?: Maybe<MediaDocAccessFields_Sizes>;
   thumbnailURL?: Maybe<MediaDocAccessFields_ThumbnailUrl>;
   updatedAt?: Maybe<MediaDocAccessFields_UpdatedAt>;
   url?: Maybe<MediaDocAccessFields_Url>;
@@ -5712,6 +5718,62 @@ export type MediaDocAccessFields_Alt_Read = {
 
 export type MediaDocAccessFields_Alt_Update = {
   __typename?: 'MediaDocAccessFields_alt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_BlurDataUrl = {
+  __typename?: 'MediaDocAccessFields_blurDataURL';
+  create?: Maybe<MediaDocAccessFields_BlurDataUrl_Create>;
+  delete?: Maybe<MediaDocAccessFields_BlurDataUrl_Delete>;
+  read?: Maybe<MediaDocAccessFields_BlurDataUrl_Read>;
+  update?: Maybe<MediaDocAccessFields_BlurDataUrl_Update>;
+};
+
+export type MediaDocAccessFields_BlurDataUrl_Create = {
+  __typename?: 'MediaDocAccessFields_blurDataURL_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_BlurDataUrl_Delete = {
+  __typename?: 'MediaDocAccessFields_blurDataURL_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_BlurDataUrl_Read = {
+  __typename?: 'MediaDocAccessFields_blurDataURL_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_BlurDataUrl_Update = {
+  __typename?: 'MediaDocAccessFields_blurDataURL_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Caption = {
+  __typename?: 'MediaDocAccessFields_caption';
+  create?: Maybe<MediaDocAccessFields_Caption_Create>;
+  delete?: Maybe<MediaDocAccessFields_Caption_Delete>;
+  read?: Maybe<MediaDocAccessFields_Caption_Read>;
+  update?: Maybe<MediaDocAccessFields_Caption_Update>;
+};
+
+export type MediaDocAccessFields_Caption_Create = {
+  __typename?: 'MediaDocAccessFields_caption_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Caption_Delete = {
+  __typename?: 'MediaDocAccessFields_caption_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Caption_Read = {
+  __typename?: 'MediaDocAccessFields_caption_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Caption_Update = {
+  __typename?: 'MediaDocAccessFields_caption_Update';
   permission: Scalars['Boolean']['output'];
 };
 
@@ -5911,6 +5973,1079 @@ export type MediaDocAccessFields_MimeType_Update = {
   permission: Scalars['Boolean']['output'];
 };
 
+export type MediaDocAccessFields_Sizes = {
+  __typename?: 'MediaDocAccessFields_sizes';
+  create?: Maybe<MediaDocAccessFields_Sizes_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Delete>;
+  fields?: Maybe<MediaDocAccessFields_Sizes_Fields>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Fields = {
+  __typename?: 'MediaDocAccessFields_sizes_Fields';
+  card?: Maybe<MediaDocAccessFields_Sizes_Card>;
+  feature?: Maybe<MediaDocAccessFields_Sizes_Feature>;
+  hero?: Maybe<MediaDocAccessFields_Sizes_Hero>;
+  icon?: Maybe<MediaDocAccessFields_Sizes_Icon>;
+  thumbnail?: Maybe<MediaDocAccessFields_Sizes_Thumbnail>;
+};
+
+export type MediaDocAccessFields_Sizes_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Card = {
+  __typename?: 'MediaDocAccessFields_sizes_card';
+  create?: Maybe<MediaDocAccessFields_Sizes_Card_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Card_Delete>;
+  fields?: Maybe<MediaDocAccessFields_Sizes_Card_Fields>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Card_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Card_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Card_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_card_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Card_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_card_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Card_Fields = {
+  __typename?: 'MediaDocAccessFields_sizes_card_Fields';
+  filename?: Maybe<MediaDocAccessFields_Sizes_Card_Filename>;
+  filesize?: Maybe<MediaDocAccessFields_Sizes_Card_Filesize>;
+  height?: Maybe<MediaDocAccessFields_Sizes_Card_Height>;
+  mimeType?: Maybe<MediaDocAccessFields_Sizes_Card_MimeType>;
+  url?: Maybe<MediaDocAccessFields_Sizes_Card_Url>;
+  width?: Maybe<MediaDocAccessFields_Sizes_Card_Width>;
+};
+
+export type MediaDocAccessFields_Sizes_Card_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_card_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Card_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_card_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Card_Filename = {
+  __typename?: 'MediaDocAccessFields_sizes_card_filename';
+  create?: Maybe<MediaDocAccessFields_Sizes_Card_Filename_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Card_Filename_Delete>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Card_Filename_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Card_Filename_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Card_Filename_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_card_filename_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Card_Filename_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_card_filename_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Card_Filename_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_card_filename_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Card_Filename_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_card_filename_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Card_Filesize = {
+  __typename?: 'MediaDocAccessFields_sizes_card_filesize';
+  create?: Maybe<MediaDocAccessFields_Sizes_Card_Filesize_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Card_Filesize_Delete>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Card_Filesize_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Card_Filesize_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Card_Filesize_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_card_filesize_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Card_Filesize_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_card_filesize_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Card_Filesize_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_card_filesize_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Card_Filesize_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_card_filesize_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Card_Height = {
+  __typename?: 'MediaDocAccessFields_sizes_card_height';
+  create?: Maybe<MediaDocAccessFields_Sizes_Card_Height_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Card_Height_Delete>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Card_Height_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Card_Height_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Card_Height_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_card_height_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Card_Height_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_card_height_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Card_Height_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_card_height_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Card_Height_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_card_height_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Card_MimeType = {
+  __typename?: 'MediaDocAccessFields_sizes_card_mimeType';
+  create?: Maybe<MediaDocAccessFields_Sizes_Card_MimeType_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Card_MimeType_Delete>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Card_MimeType_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Card_MimeType_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Card_MimeType_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_card_mimeType_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Card_MimeType_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_card_mimeType_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Card_MimeType_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_card_mimeType_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Card_MimeType_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_card_mimeType_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Card_Url = {
+  __typename?: 'MediaDocAccessFields_sizes_card_url';
+  create?: Maybe<MediaDocAccessFields_Sizes_Card_Url_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Card_Url_Delete>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Card_Url_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Card_Url_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Card_Url_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_card_url_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Card_Url_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_card_url_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Card_Url_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_card_url_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Card_Url_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_card_url_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Card_Width = {
+  __typename?: 'MediaDocAccessFields_sizes_card_width';
+  create?: Maybe<MediaDocAccessFields_Sizes_Card_Width_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Card_Width_Delete>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Card_Width_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Card_Width_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Card_Width_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_card_width_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Card_Width_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_card_width_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Card_Width_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_card_width_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Card_Width_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_card_width_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Feature = {
+  __typename?: 'MediaDocAccessFields_sizes_feature';
+  create?: Maybe<MediaDocAccessFields_Sizes_Feature_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Feature_Delete>;
+  fields?: Maybe<MediaDocAccessFields_Sizes_Feature_Fields>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Feature_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Feature_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Feature_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Feature_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Feature_Fields = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_Fields';
+  filename?: Maybe<MediaDocAccessFields_Sizes_Feature_Filename>;
+  filesize?: Maybe<MediaDocAccessFields_Sizes_Feature_Filesize>;
+  height?: Maybe<MediaDocAccessFields_Sizes_Feature_Height>;
+  mimeType?: Maybe<MediaDocAccessFields_Sizes_Feature_MimeType>;
+  url?: Maybe<MediaDocAccessFields_Sizes_Feature_Url>;
+  width?: Maybe<MediaDocAccessFields_Sizes_Feature_Width>;
+};
+
+export type MediaDocAccessFields_Sizes_Feature_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Feature_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Feature_Filename = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_filename';
+  create?: Maybe<MediaDocAccessFields_Sizes_Feature_Filename_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Feature_Filename_Delete>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Feature_Filename_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Feature_Filename_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Feature_Filename_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_filename_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Feature_Filename_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_filename_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Feature_Filename_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_filename_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Feature_Filename_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_filename_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Feature_Filesize = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_filesize';
+  create?: Maybe<MediaDocAccessFields_Sizes_Feature_Filesize_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Feature_Filesize_Delete>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Feature_Filesize_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Feature_Filesize_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Feature_Filesize_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_filesize_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Feature_Filesize_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_filesize_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Feature_Filesize_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_filesize_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Feature_Filesize_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_filesize_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Feature_Height = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_height';
+  create?: Maybe<MediaDocAccessFields_Sizes_Feature_Height_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Feature_Height_Delete>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Feature_Height_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Feature_Height_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Feature_Height_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_height_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Feature_Height_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_height_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Feature_Height_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_height_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Feature_Height_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_height_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Feature_MimeType = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_mimeType';
+  create?: Maybe<MediaDocAccessFields_Sizes_Feature_MimeType_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Feature_MimeType_Delete>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Feature_MimeType_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Feature_MimeType_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Feature_MimeType_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_mimeType_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Feature_MimeType_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_mimeType_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Feature_MimeType_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_mimeType_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Feature_MimeType_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_mimeType_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Feature_Url = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_url';
+  create?: Maybe<MediaDocAccessFields_Sizes_Feature_Url_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Feature_Url_Delete>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Feature_Url_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Feature_Url_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Feature_Url_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_url_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Feature_Url_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_url_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Feature_Url_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_url_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Feature_Url_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_url_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Feature_Width = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_width';
+  create?: Maybe<MediaDocAccessFields_Sizes_Feature_Width_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Feature_Width_Delete>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Feature_Width_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Feature_Width_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Feature_Width_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_width_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Feature_Width_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_width_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Feature_Width_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_width_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Feature_Width_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_feature_width_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Hero = {
+  __typename?: 'MediaDocAccessFields_sizes_hero';
+  create?: Maybe<MediaDocAccessFields_Sizes_Hero_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Hero_Delete>;
+  fields?: Maybe<MediaDocAccessFields_Sizes_Hero_Fields>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Hero_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Hero_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Hero_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Hero_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Hero_Fields = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_Fields';
+  filename?: Maybe<MediaDocAccessFields_Sizes_Hero_Filename>;
+  filesize?: Maybe<MediaDocAccessFields_Sizes_Hero_Filesize>;
+  height?: Maybe<MediaDocAccessFields_Sizes_Hero_Height>;
+  mimeType?: Maybe<MediaDocAccessFields_Sizes_Hero_MimeType>;
+  url?: Maybe<MediaDocAccessFields_Sizes_Hero_Url>;
+  width?: Maybe<MediaDocAccessFields_Sizes_Hero_Width>;
+};
+
+export type MediaDocAccessFields_Sizes_Hero_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Hero_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Hero_Filename = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_filename';
+  create?: Maybe<MediaDocAccessFields_Sizes_Hero_Filename_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Hero_Filename_Delete>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Hero_Filename_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Hero_Filename_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Hero_Filename_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_filename_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Hero_Filename_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_filename_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Hero_Filename_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_filename_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Hero_Filename_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_filename_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Hero_Filesize = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_filesize';
+  create?: Maybe<MediaDocAccessFields_Sizes_Hero_Filesize_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Hero_Filesize_Delete>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Hero_Filesize_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Hero_Filesize_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Hero_Filesize_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_filesize_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Hero_Filesize_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_filesize_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Hero_Filesize_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_filesize_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Hero_Filesize_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_filesize_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Hero_Height = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_height';
+  create?: Maybe<MediaDocAccessFields_Sizes_Hero_Height_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Hero_Height_Delete>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Hero_Height_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Hero_Height_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Hero_Height_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_height_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Hero_Height_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_height_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Hero_Height_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_height_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Hero_Height_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_height_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Hero_MimeType = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_mimeType';
+  create?: Maybe<MediaDocAccessFields_Sizes_Hero_MimeType_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Hero_MimeType_Delete>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Hero_MimeType_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Hero_MimeType_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Hero_MimeType_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_mimeType_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Hero_MimeType_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_mimeType_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Hero_MimeType_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_mimeType_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Hero_MimeType_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_mimeType_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Hero_Url = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_url';
+  create?: Maybe<MediaDocAccessFields_Sizes_Hero_Url_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Hero_Url_Delete>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Hero_Url_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Hero_Url_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Hero_Url_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_url_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Hero_Url_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_url_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Hero_Url_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_url_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Hero_Url_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_url_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Hero_Width = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_width';
+  create?: Maybe<MediaDocAccessFields_Sizes_Hero_Width_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Hero_Width_Delete>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Hero_Width_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Hero_Width_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Hero_Width_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_width_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Hero_Width_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_width_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Hero_Width_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_width_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Hero_Width_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_hero_width_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Icon = {
+  __typename?: 'MediaDocAccessFields_sizes_icon';
+  create?: Maybe<MediaDocAccessFields_Sizes_Icon_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Icon_Delete>;
+  fields?: Maybe<MediaDocAccessFields_Sizes_Icon_Fields>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Icon_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Icon_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Icon_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Icon_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Icon_Fields = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_Fields';
+  filename?: Maybe<MediaDocAccessFields_Sizes_Icon_Filename>;
+  filesize?: Maybe<MediaDocAccessFields_Sizes_Icon_Filesize>;
+  height?: Maybe<MediaDocAccessFields_Sizes_Icon_Height>;
+  mimeType?: Maybe<MediaDocAccessFields_Sizes_Icon_MimeType>;
+  url?: Maybe<MediaDocAccessFields_Sizes_Icon_Url>;
+  width?: Maybe<MediaDocAccessFields_Sizes_Icon_Width>;
+};
+
+export type MediaDocAccessFields_Sizes_Icon_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Icon_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Icon_Filename = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_filename';
+  create?: Maybe<MediaDocAccessFields_Sizes_Icon_Filename_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Icon_Filename_Delete>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Icon_Filename_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Icon_Filename_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Icon_Filename_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_filename_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Icon_Filename_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_filename_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Icon_Filename_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_filename_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Icon_Filename_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_filename_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Icon_Filesize = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_filesize';
+  create?: Maybe<MediaDocAccessFields_Sizes_Icon_Filesize_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Icon_Filesize_Delete>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Icon_Filesize_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Icon_Filesize_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Icon_Filesize_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_filesize_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Icon_Filesize_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_filesize_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Icon_Filesize_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_filesize_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Icon_Filesize_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_filesize_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Icon_Height = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_height';
+  create?: Maybe<MediaDocAccessFields_Sizes_Icon_Height_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Icon_Height_Delete>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Icon_Height_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Icon_Height_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Icon_Height_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_height_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Icon_Height_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_height_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Icon_Height_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_height_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Icon_Height_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_height_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Icon_MimeType = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_mimeType';
+  create?: Maybe<MediaDocAccessFields_Sizes_Icon_MimeType_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Icon_MimeType_Delete>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Icon_MimeType_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Icon_MimeType_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Icon_MimeType_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_mimeType_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Icon_MimeType_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_mimeType_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Icon_MimeType_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_mimeType_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Icon_MimeType_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_mimeType_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Icon_Url = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_url';
+  create?: Maybe<MediaDocAccessFields_Sizes_Icon_Url_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Icon_Url_Delete>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Icon_Url_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Icon_Url_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Icon_Url_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_url_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Icon_Url_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_url_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Icon_Url_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_url_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Icon_Url_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_url_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Icon_Width = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_width';
+  create?: Maybe<MediaDocAccessFields_Sizes_Icon_Width_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Icon_Width_Delete>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Icon_Width_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Icon_Width_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Icon_Width_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_width_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Icon_Width_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_width_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Icon_Width_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_width_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Icon_Width_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_icon_width_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail';
+  create?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_Delete>;
+  fields?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_Fields>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_Fields = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_Fields';
+  filename?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_Filename>;
+  filesize?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_Filesize>;
+  height?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_Height>;
+  mimeType?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_MimeType>;
+  url?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_Url>;
+  width?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_Width>;
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_Filename = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_filename';
+  create?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_Filename_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_Filename_Delete>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_Filename_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_Filename_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_Filename_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_filename_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_Filename_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_filename_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_Filename_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_filename_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_Filename_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_filename_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_Filesize = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_filesize';
+  create?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_Filesize_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_Filesize_Delete>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_Filesize_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_Filesize_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_Filesize_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_filesize_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_Filesize_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_filesize_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_Filesize_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_filesize_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_Filesize_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_filesize_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_Height = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_height';
+  create?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_Height_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_Height_Delete>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_Height_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_Height_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_Height_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_height_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_Height_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_height_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_Height_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_height_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_Height_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_height_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_MimeType = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_mimeType';
+  create?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_MimeType_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_MimeType_Delete>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_MimeType_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_MimeType_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_MimeType_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_mimeType_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_MimeType_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_mimeType_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_MimeType_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_mimeType_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_MimeType_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_mimeType_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_Url = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_url';
+  create?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_Url_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_Url_Delete>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_Url_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_Url_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_Url_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_url_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_Url_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_url_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_Url_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_url_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_Url_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_url_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_Width = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_width';
+  create?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_Width_Create>;
+  delete?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_Width_Delete>;
+  read?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_Width_Read>;
+  update?: Maybe<MediaDocAccessFields_Sizes_Thumbnail_Width_Update>;
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_Width_Create = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_width_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_Width_Delete = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_width_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_Width_Read = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_width_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaDocAccessFields_Sizes_Thumbnail_Width_Update = {
+  __typename?: 'MediaDocAccessFields_sizes_thumbnail_width_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
 export type MediaDocAccessFields_ThumbnailUrl = {
   __typename?: 'MediaDocAccessFields_thumbnailURL';
   create?: Maybe<MediaDocAccessFields_ThumbnailUrl_Create>;
@@ -6026,6 +7161,8 @@ export type MediaDocAccessFields_Width_Update = {
 export type MediaFields = {
   __typename?: 'MediaFields';
   alt?: Maybe<MediaFields_Alt>;
+  blurDataURL?: Maybe<MediaFields_BlurDataUrl>;
+  caption?: Maybe<MediaFields_Caption>;
   createdAt?: Maybe<MediaFields_CreatedAt>;
   filename?: Maybe<MediaFields_Filename>;
   filesize?: Maybe<MediaFields_Filesize>;
@@ -6033,6 +7170,7 @@ export type MediaFields = {
   focalY?: Maybe<MediaFields_FocalY>;
   height?: Maybe<MediaFields_Height>;
   mimeType?: Maybe<MediaFields_MimeType>;
+  sizes?: Maybe<MediaFields_Sizes>;
   thumbnailURL?: Maybe<MediaFields_ThumbnailUrl>;
   updatedAt?: Maybe<MediaFields_UpdatedAt>;
   url?: Maybe<MediaFields_Url>;
@@ -6064,6 +7202,62 @@ export type MediaFields_Alt_Read = {
 
 export type MediaFields_Alt_Update = {
   __typename?: 'MediaFields_alt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_BlurDataUrl = {
+  __typename?: 'MediaFields_blurDataURL';
+  create?: Maybe<MediaFields_BlurDataUrl_Create>;
+  delete?: Maybe<MediaFields_BlurDataUrl_Delete>;
+  read?: Maybe<MediaFields_BlurDataUrl_Read>;
+  update?: Maybe<MediaFields_BlurDataUrl_Update>;
+};
+
+export type MediaFields_BlurDataUrl_Create = {
+  __typename?: 'MediaFields_blurDataURL_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_BlurDataUrl_Delete = {
+  __typename?: 'MediaFields_blurDataURL_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_BlurDataUrl_Read = {
+  __typename?: 'MediaFields_blurDataURL_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_BlurDataUrl_Update = {
+  __typename?: 'MediaFields_blurDataURL_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Caption = {
+  __typename?: 'MediaFields_caption';
+  create?: Maybe<MediaFields_Caption_Create>;
+  delete?: Maybe<MediaFields_Caption_Delete>;
+  read?: Maybe<MediaFields_Caption_Read>;
+  update?: Maybe<MediaFields_Caption_Update>;
+};
+
+export type MediaFields_Caption_Create = {
+  __typename?: 'MediaFields_caption_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Caption_Delete = {
+  __typename?: 'MediaFields_caption_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Caption_Read = {
+  __typename?: 'MediaFields_caption_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Caption_Update = {
+  __typename?: 'MediaFields_caption_Update';
   permission: Scalars['Boolean']['output'];
 };
 
@@ -6263,6 +7457,1079 @@ export type MediaFields_MimeType_Update = {
   permission: Scalars['Boolean']['output'];
 };
 
+export type MediaFields_Sizes = {
+  __typename?: 'MediaFields_sizes';
+  create?: Maybe<MediaFields_Sizes_Create>;
+  delete?: Maybe<MediaFields_Sizes_Delete>;
+  fields?: Maybe<MediaFields_Sizes_Fields>;
+  read?: Maybe<MediaFields_Sizes_Read>;
+  update?: Maybe<MediaFields_Sizes_Update>;
+};
+
+export type MediaFields_Sizes_Create = {
+  __typename?: 'MediaFields_sizes_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Delete = {
+  __typename?: 'MediaFields_sizes_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Fields = {
+  __typename?: 'MediaFields_sizes_Fields';
+  card?: Maybe<MediaFields_Sizes_Card>;
+  feature?: Maybe<MediaFields_Sizes_Feature>;
+  hero?: Maybe<MediaFields_Sizes_Hero>;
+  icon?: Maybe<MediaFields_Sizes_Icon>;
+  thumbnail?: Maybe<MediaFields_Sizes_Thumbnail>;
+};
+
+export type MediaFields_Sizes_Read = {
+  __typename?: 'MediaFields_sizes_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Update = {
+  __typename?: 'MediaFields_sizes_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Card = {
+  __typename?: 'MediaFields_sizes_card';
+  create?: Maybe<MediaFields_Sizes_Card_Create>;
+  delete?: Maybe<MediaFields_Sizes_Card_Delete>;
+  fields?: Maybe<MediaFields_Sizes_Card_Fields>;
+  read?: Maybe<MediaFields_Sizes_Card_Read>;
+  update?: Maybe<MediaFields_Sizes_Card_Update>;
+};
+
+export type MediaFields_Sizes_Card_Create = {
+  __typename?: 'MediaFields_sizes_card_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Card_Delete = {
+  __typename?: 'MediaFields_sizes_card_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Card_Fields = {
+  __typename?: 'MediaFields_sizes_card_Fields';
+  filename?: Maybe<MediaFields_Sizes_Card_Filename>;
+  filesize?: Maybe<MediaFields_Sizes_Card_Filesize>;
+  height?: Maybe<MediaFields_Sizes_Card_Height>;
+  mimeType?: Maybe<MediaFields_Sizes_Card_MimeType>;
+  url?: Maybe<MediaFields_Sizes_Card_Url>;
+  width?: Maybe<MediaFields_Sizes_Card_Width>;
+};
+
+export type MediaFields_Sizes_Card_Read = {
+  __typename?: 'MediaFields_sizes_card_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Card_Update = {
+  __typename?: 'MediaFields_sizes_card_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Card_Filename = {
+  __typename?: 'MediaFields_sizes_card_filename';
+  create?: Maybe<MediaFields_Sizes_Card_Filename_Create>;
+  delete?: Maybe<MediaFields_Sizes_Card_Filename_Delete>;
+  read?: Maybe<MediaFields_Sizes_Card_Filename_Read>;
+  update?: Maybe<MediaFields_Sizes_Card_Filename_Update>;
+};
+
+export type MediaFields_Sizes_Card_Filename_Create = {
+  __typename?: 'MediaFields_sizes_card_filename_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Card_Filename_Delete = {
+  __typename?: 'MediaFields_sizes_card_filename_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Card_Filename_Read = {
+  __typename?: 'MediaFields_sizes_card_filename_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Card_Filename_Update = {
+  __typename?: 'MediaFields_sizes_card_filename_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Card_Filesize = {
+  __typename?: 'MediaFields_sizes_card_filesize';
+  create?: Maybe<MediaFields_Sizes_Card_Filesize_Create>;
+  delete?: Maybe<MediaFields_Sizes_Card_Filesize_Delete>;
+  read?: Maybe<MediaFields_Sizes_Card_Filesize_Read>;
+  update?: Maybe<MediaFields_Sizes_Card_Filesize_Update>;
+};
+
+export type MediaFields_Sizes_Card_Filesize_Create = {
+  __typename?: 'MediaFields_sizes_card_filesize_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Card_Filesize_Delete = {
+  __typename?: 'MediaFields_sizes_card_filesize_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Card_Filesize_Read = {
+  __typename?: 'MediaFields_sizes_card_filesize_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Card_Filesize_Update = {
+  __typename?: 'MediaFields_sizes_card_filesize_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Card_Height = {
+  __typename?: 'MediaFields_sizes_card_height';
+  create?: Maybe<MediaFields_Sizes_Card_Height_Create>;
+  delete?: Maybe<MediaFields_Sizes_Card_Height_Delete>;
+  read?: Maybe<MediaFields_Sizes_Card_Height_Read>;
+  update?: Maybe<MediaFields_Sizes_Card_Height_Update>;
+};
+
+export type MediaFields_Sizes_Card_Height_Create = {
+  __typename?: 'MediaFields_sizes_card_height_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Card_Height_Delete = {
+  __typename?: 'MediaFields_sizes_card_height_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Card_Height_Read = {
+  __typename?: 'MediaFields_sizes_card_height_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Card_Height_Update = {
+  __typename?: 'MediaFields_sizes_card_height_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Card_MimeType = {
+  __typename?: 'MediaFields_sizes_card_mimeType';
+  create?: Maybe<MediaFields_Sizes_Card_MimeType_Create>;
+  delete?: Maybe<MediaFields_Sizes_Card_MimeType_Delete>;
+  read?: Maybe<MediaFields_Sizes_Card_MimeType_Read>;
+  update?: Maybe<MediaFields_Sizes_Card_MimeType_Update>;
+};
+
+export type MediaFields_Sizes_Card_MimeType_Create = {
+  __typename?: 'MediaFields_sizes_card_mimeType_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Card_MimeType_Delete = {
+  __typename?: 'MediaFields_sizes_card_mimeType_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Card_MimeType_Read = {
+  __typename?: 'MediaFields_sizes_card_mimeType_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Card_MimeType_Update = {
+  __typename?: 'MediaFields_sizes_card_mimeType_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Card_Url = {
+  __typename?: 'MediaFields_sizes_card_url';
+  create?: Maybe<MediaFields_Sizes_Card_Url_Create>;
+  delete?: Maybe<MediaFields_Sizes_Card_Url_Delete>;
+  read?: Maybe<MediaFields_Sizes_Card_Url_Read>;
+  update?: Maybe<MediaFields_Sizes_Card_Url_Update>;
+};
+
+export type MediaFields_Sizes_Card_Url_Create = {
+  __typename?: 'MediaFields_sizes_card_url_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Card_Url_Delete = {
+  __typename?: 'MediaFields_sizes_card_url_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Card_Url_Read = {
+  __typename?: 'MediaFields_sizes_card_url_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Card_Url_Update = {
+  __typename?: 'MediaFields_sizes_card_url_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Card_Width = {
+  __typename?: 'MediaFields_sizes_card_width';
+  create?: Maybe<MediaFields_Sizes_Card_Width_Create>;
+  delete?: Maybe<MediaFields_Sizes_Card_Width_Delete>;
+  read?: Maybe<MediaFields_Sizes_Card_Width_Read>;
+  update?: Maybe<MediaFields_Sizes_Card_Width_Update>;
+};
+
+export type MediaFields_Sizes_Card_Width_Create = {
+  __typename?: 'MediaFields_sizes_card_width_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Card_Width_Delete = {
+  __typename?: 'MediaFields_sizes_card_width_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Card_Width_Read = {
+  __typename?: 'MediaFields_sizes_card_width_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Card_Width_Update = {
+  __typename?: 'MediaFields_sizes_card_width_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Feature = {
+  __typename?: 'MediaFields_sizes_feature';
+  create?: Maybe<MediaFields_Sizes_Feature_Create>;
+  delete?: Maybe<MediaFields_Sizes_Feature_Delete>;
+  fields?: Maybe<MediaFields_Sizes_Feature_Fields>;
+  read?: Maybe<MediaFields_Sizes_Feature_Read>;
+  update?: Maybe<MediaFields_Sizes_Feature_Update>;
+};
+
+export type MediaFields_Sizes_Feature_Create = {
+  __typename?: 'MediaFields_sizes_feature_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Feature_Delete = {
+  __typename?: 'MediaFields_sizes_feature_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Feature_Fields = {
+  __typename?: 'MediaFields_sizes_feature_Fields';
+  filename?: Maybe<MediaFields_Sizes_Feature_Filename>;
+  filesize?: Maybe<MediaFields_Sizes_Feature_Filesize>;
+  height?: Maybe<MediaFields_Sizes_Feature_Height>;
+  mimeType?: Maybe<MediaFields_Sizes_Feature_MimeType>;
+  url?: Maybe<MediaFields_Sizes_Feature_Url>;
+  width?: Maybe<MediaFields_Sizes_Feature_Width>;
+};
+
+export type MediaFields_Sizes_Feature_Read = {
+  __typename?: 'MediaFields_sizes_feature_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Feature_Update = {
+  __typename?: 'MediaFields_sizes_feature_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Feature_Filename = {
+  __typename?: 'MediaFields_sizes_feature_filename';
+  create?: Maybe<MediaFields_Sizes_Feature_Filename_Create>;
+  delete?: Maybe<MediaFields_Sizes_Feature_Filename_Delete>;
+  read?: Maybe<MediaFields_Sizes_Feature_Filename_Read>;
+  update?: Maybe<MediaFields_Sizes_Feature_Filename_Update>;
+};
+
+export type MediaFields_Sizes_Feature_Filename_Create = {
+  __typename?: 'MediaFields_sizes_feature_filename_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Feature_Filename_Delete = {
+  __typename?: 'MediaFields_sizes_feature_filename_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Feature_Filename_Read = {
+  __typename?: 'MediaFields_sizes_feature_filename_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Feature_Filename_Update = {
+  __typename?: 'MediaFields_sizes_feature_filename_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Feature_Filesize = {
+  __typename?: 'MediaFields_sizes_feature_filesize';
+  create?: Maybe<MediaFields_Sizes_Feature_Filesize_Create>;
+  delete?: Maybe<MediaFields_Sizes_Feature_Filesize_Delete>;
+  read?: Maybe<MediaFields_Sizes_Feature_Filesize_Read>;
+  update?: Maybe<MediaFields_Sizes_Feature_Filesize_Update>;
+};
+
+export type MediaFields_Sizes_Feature_Filesize_Create = {
+  __typename?: 'MediaFields_sizes_feature_filesize_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Feature_Filesize_Delete = {
+  __typename?: 'MediaFields_sizes_feature_filesize_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Feature_Filesize_Read = {
+  __typename?: 'MediaFields_sizes_feature_filesize_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Feature_Filesize_Update = {
+  __typename?: 'MediaFields_sizes_feature_filesize_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Feature_Height = {
+  __typename?: 'MediaFields_sizes_feature_height';
+  create?: Maybe<MediaFields_Sizes_Feature_Height_Create>;
+  delete?: Maybe<MediaFields_Sizes_Feature_Height_Delete>;
+  read?: Maybe<MediaFields_Sizes_Feature_Height_Read>;
+  update?: Maybe<MediaFields_Sizes_Feature_Height_Update>;
+};
+
+export type MediaFields_Sizes_Feature_Height_Create = {
+  __typename?: 'MediaFields_sizes_feature_height_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Feature_Height_Delete = {
+  __typename?: 'MediaFields_sizes_feature_height_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Feature_Height_Read = {
+  __typename?: 'MediaFields_sizes_feature_height_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Feature_Height_Update = {
+  __typename?: 'MediaFields_sizes_feature_height_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Feature_MimeType = {
+  __typename?: 'MediaFields_sizes_feature_mimeType';
+  create?: Maybe<MediaFields_Sizes_Feature_MimeType_Create>;
+  delete?: Maybe<MediaFields_Sizes_Feature_MimeType_Delete>;
+  read?: Maybe<MediaFields_Sizes_Feature_MimeType_Read>;
+  update?: Maybe<MediaFields_Sizes_Feature_MimeType_Update>;
+};
+
+export type MediaFields_Sizes_Feature_MimeType_Create = {
+  __typename?: 'MediaFields_sizes_feature_mimeType_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Feature_MimeType_Delete = {
+  __typename?: 'MediaFields_sizes_feature_mimeType_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Feature_MimeType_Read = {
+  __typename?: 'MediaFields_sizes_feature_mimeType_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Feature_MimeType_Update = {
+  __typename?: 'MediaFields_sizes_feature_mimeType_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Feature_Url = {
+  __typename?: 'MediaFields_sizes_feature_url';
+  create?: Maybe<MediaFields_Sizes_Feature_Url_Create>;
+  delete?: Maybe<MediaFields_Sizes_Feature_Url_Delete>;
+  read?: Maybe<MediaFields_Sizes_Feature_Url_Read>;
+  update?: Maybe<MediaFields_Sizes_Feature_Url_Update>;
+};
+
+export type MediaFields_Sizes_Feature_Url_Create = {
+  __typename?: 'MediaFields_sizes_feature_url_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Feature_Url_Delete = {
+  __typename?: 'MediaFields_sizes_feature_url_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Feature_Url_Read = {
+  __typename?: 'MediaFields_sizes_feature_url_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Feature_Url_Update = {
+  __typename?: 'MediaFields_sizes_feature_url_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Feature_Width = {
+  __typename?: 'MediaFields_sizes_feature_width';
+  create?: Maybe<MediaFields_Sizes_Feature_Width_Create>;
+  delete?: Maybe<MediaFields_Sizes_Feature_Width_Delete>;
+  read?: Maybe<MediaFields_Sizes_Feature_Width_Read>;
+  update?: Maybe<MediaFields_Sizes_Feature_Width_Update>;
+};
+
+export type MediaFields_Sizes_Feature_Width_Create = {
+  __typename?: 'MediaFields_sizes_feature_width_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Feature_Width_Delete = {
+  __typename?: 'MediaFields_sizes_feature_width_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Feature_Width_Read = {
+  __typename?: 'MediaFields_sizes_feature_width_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Feature_Width_Update = {
+  __typename?: 'MediaFields_sizes_feature_width_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Hero = {
+  __typename?: 'MediaFields_sizes_hero';
+  create?: Maybe<MediaFields_Sizes_Hero_Create>;
+  delete?: Maybe<MediaFields_Sizes_Hero_Delete>;
+  fields?: Maybe<MediaFields_Sizes_Hero_Fields>;
+  read?: Maybe<MediaFields_Sizes_Hero_Read>;
+  update?: Maybe<MediaFields_Sizes_Hero_Update>;
+};
+
+export type MediaFields_Sizes_Hero_Create = {
+  __typename?: 'MediaFields_sizes_hero_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Hero_Delete = {
+  __typename?: 'MediaFields_sizes_hero_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Hero_Fields = {
+  __typename?: 'MediaFields_sizes_hero_Fields';
+  filename?: Maybe<MediaFields_Sizes_Hero_Filename>;
+  filesize?: Maybe<MediaFields_Sizes_Hero_Filesize>;
+  height?: Maybe<MediaFields_Sizes_Hero_Height>;
+  mimeType?: Maybe<MediaFields_Sizes_Hero_MimeType>;
+  url?: Maybe<MediaFields_Sizes_Hero_Url>;
+  width?: Maybe<MediaFields_Sizes_Hero_Width>;
+};
+
+export type MediaFields_Sizes_Hero_Read = {
+  __typename?: 'MediaFields_sizes_hero_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Hero_Update = {
+  __typename?: 'MediaFields_sizes_hero_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Hero_Filename = {
+  __typename?: 'MediaFields_sizes_hero_filename';
+  create?: Maybe<MediaFields_Sizes_Hero_Filename_Create>;
+  delete?: Maybe<MediaFields_Sizes_Hero_Filename_Delete>;
+  read?: Maybe<MediaFields_Sizes_Hero_Filename_Read>;
+  update?: Maybe<MediaFields_Sizes_Hero_Filename_Update>;
+};
+
+export type MediaFields_Sizes_Hero_Filename_Create = {
+  __typename?: 'MediaFields_sizes_hero_filename_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Hero_Filename_Delete = {
+  __typename?: 'MediaFields_sizes_hero_filename_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Hero_Filename_Read = {
+  __typename?: 'MediaFields_sizes_hero_filename_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Hero_Filename_Update = {
+  __typename?: 'MediaFields_sizes_hero_filename_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Hero_Filesize = {
+  __typename?: 'MediaFields_sizes_hero_filesize';
+  create?: Maybe<MediaFields_Sizes_Hero_Filesize_Create>;
+  delete?: Maybe<MediaFields_Sizes_Hero_Filesize_Delete>;
+  read?: Maybe<MediaFields_Sizes_Hero_Filesize_Read>;
+  update?: Maybe<MediaFields_Sizes_Hero_Filesize_Update>;
+};
+
+export type MediaFields_Sizes_Hero_Filesize_Create = {
+  __typename?: 'MediaFields_sizes_hero_filesize_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Hero_Filesize_Delete = {
+  __typename?: 'MediaFields_sizes_hero_filesize_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Hero_Filesize_Read = {
+  __typename?: 'MediaFields_sizes_hero_filesize_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Hero_Filesize_Update = {
+  __typename?: 'MediaFields_sizes_hero_filesize_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Hero_Height = {
+  __typename?: 'MediaFields_sizes_hero_height';
+  create?: Maybe<MediaFields_Sizes_Hero_Height_Create>;
+  delete?: Maybe<MediaFields_Sizes_Hero_Height_Delete>;
+  read?: Maybe<MediaFields_Sizes_Hero_Height_Read>;
+  update?: Maybe<MediaFields_Sizes_Hero_Height_Update>;
+};
+
+export type MediaFields_Sizes_Hero_Height_Create = {
+  __typename?: 'MediaFields_sizes_hero_height_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Hero_Height_Delete = {
+  __typename?: 'MediaFields_sizes_hero_height_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Hero_Height_Read = {
+  __typename?: 'MediaFields_sizes_hero_height_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Hero_Height_Update = {
+  __typename?: 'MediaFields_sizes_hero_height_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Hero_MimeType = {
+  __typename?: 'MediaFields_sizes_hero_mimeType';
+  create?: Maybe<MediaFields_Sizes_Hero_MimeType_Create>;
+  delete?: Maybe<MediaFields_Sizes_Hero_MimeType_Delete>;
+  read?: Maybe<MediaFields_Sizes_Hero_MimeType_Read>;
+  update?: Maybe<MediaFields_Sizes_Hero_MimeType_Update>;
+};
+
+export type MediaFields_Sizes_Hero_MimeType_Create = {
+  __typename?: 'MediaFields_sizes_hero_mimeType_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Hero_MimeType_Delete = {
+  __typename?: 'MediaFields_sizes_hero_mimeType_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Hero_MimeType_Read = {
+  __typename?: 'MediaFields_sizes_hero_mimeType_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Hero_MimeType_Update = {
+  __typename?: 'MediaFields_sizes_hero_mimeType_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Hero_Url = {
+  __typename?: 'MediaFields_sizes_hero_url';
+  create?: Maybe<MediaFields_Sizes_Hero_Url_Create>;
+  delete?: Maybe<MediaFields_Sizes_Hero_Url_Delete>;
+  read?: Maybe<MediaFields_Sizes_Hero_Url_Read>;
+  update?: Maybe<MediaFields_Sizes_Hero_Url_Update>;
+};
+
+export type MediaFields_Sizes_Hero_Url_Create = {
+  __typename?: 'MediaFields_sizes_hero_url_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Hero_Url_Delete = {
+  __typename?: 'MediaFields_sizes_hero_url_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Hero_Url_Read = {
+  __typename?: 'MediaFields_sizes_hero_url_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Hero_Url_Update = {
+  __typename?: 'MediaFields_sizes_hero_url_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Hero_Width = {
+  __typename?: 'MediaFields_sizes_hero_width';
+  create?: Maybe<MediaFields_Sizes_Hero_Width_Create>;
+  delete?: Maybe<MediaFields_Sizes_Hero_Width_Delete>;
+  read?: Maybe<MediaFields_Sizes_Hero_Width_Read>;
+  update?: Maybe<MediaFields_Sizes_Hero_Width_Update>;
+};
+
+export type MediaFields_Sizes_Hero_Width_Create = {
+  __typename?: 'MediaFields_sizes_hero_width_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Hero_Width_Delete = {
+  __typename?: 'MediaFields_sizes_hero_width_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Hero_Width_Read = {
+  __typename?: 'MediaFields_sizes_hero_width_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Hero_Width_Update = {
+  __typename?: 'MediaFields_sizes_hero_width_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Icon = {
+  __typename?: 'MediaFields_sizes_icon';
+  create?: Maybe<MediaFields_Sizes_Icon_Create>;
+  delete?: Maybe<MediaFields_Sizes_Icon_Delete>;
+  fields?: Maybe<MediaFields_Sizes_Icon_Fields>;
+  read?: Maybe<MediaFields_Sizes_Icon_Read>;
+  update?: Maybe<MediaFields_Sizes_Icon_Update>;
+};
+
+export type MediaFields_Sizes_Icon_Create = {
+  __typename?: 'MediaFields_sizes_icon_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Icon_Delete = {
+  __typename?: 'MediaFields_sizes_icon_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Icon_Fields = {
+  __typename?: 'MediaFields_sizes_icon_Fields';
+  filename?: Maybe<MediaFields_Sizes_Icon_Filename>;
+  filesize?: Maybe<MediaFields_Sizes_Icon_Filesize>;
+  height?: Maybe<MediaFields_Sizes_Icon_Height>;
+  mimeType?: Maybe<MediaFields_Sizes_Icon_MimeType>;
+  url?: Maybe<MediaFields_Sizes_Icon_Url>;
+  width?: Maybe<MediaFields_Sizes_Icon_Width>;
+};
+
+export type MediaFields_Sizes_Icon_Read = {
+  __typename?: 'MediaFields_sizes_icon_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Icon_Update = {
+  __typename?: 'MediaFields_sizes_icon_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Icon_Filename = {
+  __typename?: 'MediaFields_sizes_icon_filename';
+  create?: Maybe<MediaFields_Sizes_Icon_Filename_Create>;
+  delete?: Maybe<MediaFields_Sizes_Icon_Filename_Delete>;
+  read?: Maybe<MediaFields_Sizes_Icon_Filename_Read>;
+  update?: Maybe<MediaFields_Sizes_Icon_Filename_Update>;
+};
+
+export type MediaFields_Sizes_Icon_Filename_Create = {
+  __typename?: 'MediaFields_sizes_icon_filename_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Icon_Filename_Delete = {
+  __typename?: 'MediaFields_sizes_icon_filename_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Icon_Filename_Read = {
+  __typename?: 'MediaFields_sizes_icon_filename_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Icon_Filename_Update = {
+  __typename?: 'MediaFields_sizes_icon_filename_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Icon_Filesize = {
+  __typename?: 'MediaFields_sizes_icon_filesize';
+  create?: Maybe<MediaFields_Sizes_Icon_Filesize_Create>;
+  delete?: Maybe<MediaFields_Sizes_Icon_Filesize_Delete>;
+  read?: Maybe<MediaFields_Sizes_Icon_Filesize_Read>;
+  update?: Maybe<MediaFields_Sizes_Icon_Filesize_Update>;
+};
+
+export type MediaFields_Sizes_Icon_Filesize_Create = {
+  __typename?: 'MediaFields_sizes_icon_filesize_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Icon_Filesize_Delete = {
+  __typename?: 'MediaFields_sizes_icon_filesize_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Icon_Filesize_Read = {
+  __typename?: 'MediaFields_sizes_icon_filesize_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Icon_Filesize_Update = {
+  __typename?: 'MediaFields_sizes_icon_filesize_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Icon_Height = {
+  __typename?: 'MediaFields_sizes_icon_height';
+  create?: Maybe<MediaFields_Sizes_Icon_Height_Create>;
+  delete?: Maybe<MediaFields_Sizes_Icon_Height_Delete>;
+  read?: Maybe<MediaFields_Sizes_Icon_Height_Read>;
+  update?: Maybe<MediaFields_Sizes_Icon_Height_Update>;
+};
+
+export type MediaFields_Sizes_Icon_Height_Create = {
+  __typename?: 'MediaFields_sizes_icon_height_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Icon_Height_Delete = {
+  __typename?: 'MediaFields_sizes_icon_height_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Icon_Height_Read = {
+  __typename?: 'MediaFields_sizes_icon_height_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Icon_Height_Update = {
+  __typename?: 'MediaFields_sizes_icon_height_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Icon_MimeType = {
+  __typename?: 'MediaFields_sizes_icon_mimeType';
+  create?: Maybe<MediaFields_Sizes_Icon_MimeType_Create>;
+  delete?: Maybe<MediaFields_Sizes_Icon_MimeType_Delete>;
+  read?: Maybe<MediaFields_Sizes_Icon_MimeType_Read>;
+  update?: Maybe<MediaFields_Sizes_Icon_MimeType_Update>;
+};
+
+export type MediaFields_Sizes_Icon_MimeType_Create = {
+  __typename?: 'MediaFields_sizes_icon_mimeType_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Icon_MimeType_Delete = {
+  __typename?: 'MediaFields_sizes_icon_mimeType_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Icon_MimeType_Read = {
+  __typename?: 'MediaFields_sizes_icon_mimeType_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Icon_MimeType_Update = {
+  __typename?: 'MediaFields_sizes_icon_mimeType_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Icon_Url = {
+  __typename?: 'MediaFields_sizes_icon_url';
+  create?: Maybe<MediaFields_Sizes_Icon_Url_Create>;
+  delete?: Maybe<MediaFields_Sizes_Icon_Url_Delete>;
+  read?: Maybe<MediaFields_Sizes_Icon_Url_Read>;
+  update?: Maybe<MediaFields_Sizes_Icon_Url_Update>;
+};
+
+export type MediaFields_Sizes_Icon_Url_Create = {
+  __typename?: 'MediaFields_sizes_icon_url_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Icon_Url_Delete = {
+  __typename?: 'MediaFields_sizes_icon_url_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Icon_Url_Read = {
+  __typename?: 'MediaFields_sizes_icon_url_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Icon_Url_Update = {
+  __typename?: 'MediaFields_sizes_icon_url_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Icon_Width = {
+  __typename?: 'MediaFields_sizes_icon_width';
+  create?: Maybe<MediaFields_Sizes_Icon_Width_Create>;
+  delete?: Maybe<MediaFields_Sizes_Icon_Width_Delete>;
+  read?: Maybe<MediaFields_Sizes_Icon_Width_Read>;
+  update?: Maybe<MediaFields_Sizes_Icon_Width_Update>;
+};
+
+export type MediaFields_Sizes_Icon_Width_Create = {
+  __typename?: 'MediaFields_sizes_icon_width_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Icon_Width_Delete = {
+  __typename?: 'MediaFields_sizes_icon_width_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Icon_Width_Read = {
+  __typename?: 'MediaFields_sizes_icon_width_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Icon_Width_Update = {
+  __typename?: 'MediaFields_sizes_icon_width_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Thumbnail = {
+  __typename?: 'MediaFields_sizes_thumbnail';
+  create?: Maybe<MediaFields_Sizes_Thumbnail_Create>;
+  delete?: Maybe<MediaFields_Sizes_Thumbnail_Delete>;
+  fields?: Maybe<MediaFields_Sizes_Thumbnail_Fields>;
+  read?: Maybe<MediaFields_Sizes_Thumbnail_Read>;
+  update?: Maybe<MediaFields_Sizes_Thumbnail_Update>;
+};
+
+export type MediaFields_Sizes_Thumbnail_Create = {
+  __typename?: 'MediaFields_sizes_thumbnail_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Thumbnail_Delete = {
+  __typename?: 'MediaFields_sizes_thumbnail_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Thumbnail_Fields = {
+  __typename?: 'MediaFields_sizes_thumbnail_Fields';
+  filename?: Maybe<MediaFields_Sizes_Thumbnail_Filename>;
+  filesize?: Maybe<MediaFields_Sizes_Thumbnail_Filesize>;
+  height?: Maybe<MediaFields_Sizes_Thumbnail_Height>;
+  mimeType?: Maybe<MediaFields_Sizes_Thumbnail_MimeType>;
+  url?: Maybe<MediaFields_Sizes_Thumbnail_Url>;
+  width?: Maybe<MediaFields_Sizes_Thumbnail_Width>;
+};
+
+export type MediaFields_Sizes_Thumbnail_Read = {
+  __typename?: 'MediaFields_sizes_thumbnail_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Thumbnail_Update = {
+  __typename?: 'MediaFields_sizes_thumbnail_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Thumbnail_Filename = {
+  __typename?: 'MediaFields_sizes_thumbnail_filename';
+  create?: Maybe<MediaFields_Sizes_Thumbnail_Filename_Create>;
+  delete?: Maybe<MediaFields_Sizes_Thumbnail_Filename_Delete>;
+  read?: Maybe<MediaFields_Sizes_Thumbnail_Filename_Read>;
+  update?: Maybe<MediaFields_Sizes_Thumbnail_Filename_Update>;
+};
+
+export type MediaFields_Sizes_Thumbnail_Filename_Create = {
+  __typename?: 'MediaFields_sizes_thumbnail_filename_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Thumbnail_Filename_Delete = {
+  __typename?: 'MediaFields_sizes_thumbnail_filename_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Thumbnail_Filename_Read = {
+  __typename?: 'MediaFields_sizes_thumbnail_filename_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Thumbnail_Filename_Update = {
+  __typename?: 'MediaFields_sizes_thumbnail_filename_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Thumbnail_Filesize = {
+  __typename?: 'MediaFields_sizes_thumbnail_filesize';
+  create?: Maybe<MediaFields_Sizes_Thumbnail_Filesize_Create>;
+  delete?: Maybe<MediaFields_Sizes_Thumbnail_Filesize_Delete>;
+  read?: Maybe<MediaFields_Sizes_Thumbnail_Filesize_Read>;
+  update?: Maybe<MediaFields_Sizes_Thumbnail_Filesize_Update>;
+};
+
+export type MediaFields_Sizes_Thumbnail_Filesize_Create = {
+  __typename?: 'MediaFields_sizes_thumbnail_filesize_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Thumbnail_Filesize_Delete = {
+  __typename?: 'MediaFields_sizes_thumbnail_filesize_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Thumbnail_Filesize_Read = {
+  __typename?: 'MediaFields_sizes_thumbnail_filesize_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Thumbnail_Filesize_Update = {
+  __typename?: 'MediaFields_sizes_thumbnail_filesize_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Thumbnail_Height = {
+  __typename?: 'MediaFields_sizes_thumbnail_height';
+  create?: Maybe<MediaFields_Sizes_Thumbnail_Height_Create>;
+  delete?: Maybe<MediaFields_Sizes_Thumbnail_Height_Delete>;
+  read?: Maybe<MediaFields_Sizes_Thumbnail_Height_Read>;
+  update?: Maybe<MediaFields_Sizes_Thumbnail_Height_Update>;
+};
+
+export type MediaFields_Sizes_Thumbnail_Height_Create = {
+  __typename?: 'MediaFields_sizes_thumbnail_height_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Thumbnail_Height_Delete = {
+  __typename?: 'MediaFields_sizes_thumbnail_height_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Thumbnail_Height_Read = {
+  __typename?: 'MediaFields_sizes_thumbnail_height_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Thumbnail_Height_Update = {
+  __typename?: 'MediaFields_sizes_thumbnail_height_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Thumbnail_MimeType = {
+  __typename?: 'MediaFields_sizes_thumbnail_mimeType';
+  create?: Maybe<MediaFields_Sizes_Thumbnail_MimeType_Create>;
+  delete?: Maybe<MediaFields_Sizes_Thumbnail_MimeType_Delete>;
+  read?: Maybe<MediaFields_Sizes_Thumbnail_MimeType_Read>;
+  update?: Maybe<MediaFields_Sizes_Thumbnail_MimeType_Update>;
+};
+
+export type MediaFields_Sizes_Thumbnail_MimeType_Create = {
+  __typename?: 'MediaFields_sizes_thumbnail_mimeType_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Thumbnail_MimeType_Delete = {
+  __typename?: 'MediaFields_sizes_thumbnail_mimeType_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Thumbnail_MimeType_Read = {
+  __typename?: 'MediaFields_sizes_thumbnail_mimeType_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Thumbnail_MimeType_Update = {
+  __typename?: 'MediaFields_sizes_thumbnail_mimeType_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Thumbnail_Url = {
+  __typename?: 'MediaFields_sizes_thumbnail_url';
+  create?: Maybe<MediaFields_Sizes_Thumbnail_Url_Create>;
+  delete?: Maybe<MediaFields_Sizes_Thumbnail_Url_Delete>;
+  read?: Maybe<MediaFields_Sizes_Thumbnail_Url_Read>;
+  update?: Maybe<MediaFields_Sizes_Thumbnail_Url_Update>;
+};
+
+export type MediaFields_Sizes_Thumbnail_Url_Create = {
+  __typename?: 'MediaFields_sizes_thumbnail_url_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Thumbnail_Url_Delete = {
+  __typename?: 'MediaFields_sizes_thumbnail_url_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Thumbnail_Url_Read = {
+  __typename?: 'MediaFields_sizes_thumbnail_url_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Thumbnail_Url_Update = {
+  __typename?: 'MediaFields_sizes_thumbnail_url_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Thumbnail_Width = {
+  __typename?: 'MediaFields_sizes_thumbnail_width';
+  create?: Maybe<MediaFields_Sizes_Thumbnail_Width_Create>;
+  delete?: Maybe<MediaFields_Sizes_Thumbnail_Width_Delete>;
+  read?: Maybe<MediaFields_Sizes_Thumbnail_Width_Read>;
+  update?: Maybe<MediaFields_Sizes_Thumbnail_Width_Update>;
+};
+
+export type MediaFields_Sizes_Thumbnail_Width_Create = {
+  __typename?: 'MediaFields_sizes_thumbnail_width_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Thumbnail_Width_Delete = {
+  __typename?: 'MediaFields_sizes_thumbnail_width_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Thumbnail_Width_Read = {
+  __typename?: 'MediaFields_sizes_thumbnail_width_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MediaFields_Sizes_Thumbnail_Width_Update = {
+  __typename?: 'MediaFields_sizes_thumbnail_width_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
 export type MediaFields_ThumbnailUrl = {
   __typename?: 'MediaFields_thumbnailURL';
   create?: Maybe<MediaFields_ThumbnailUrl_Create>;
@@ -6399,10 +8666,91 @@ export type MediaUpdateDocAccess = {
   where?: Maybe<Scalars['JSONObject']['output']>;
 };
 
+export type Media_Sizes = {
+  __typename?: 'Media_Sizes';
+  card?: Maybe<Media_Sizes_Card>;
+  feature?: Maybe<Media_Sizes_Feature>;
+  hero?: Maybe<Media_Sizes_Hero>;
+  icon?: Maybe<Media_Sizes_Icon>;
+  thumbnail?: Maybe<Media_Sizes_Thumbnail>;
+};
+
+export type Media_Sizes_Card = {
+  __typename?: 'Media_Sizes_Card';
+  filename?: Maybe<Scalars['String']['output']>;
+  filesize?: Maybe<Scalars['Float']['output']>;
+  height?: Maybe<Scalars['Float']['output']>;
+  mimeType?: Maybe<Scalars['String']['output']>;
+  url?: Maybe<Scalars['String']['output']>;
+  width?: Maybe<Scalars['Float']['output']>;
+};
+
+export type Media_Sizes_Feature = {
+  __typename?: 'Media_Sizes_Feature';
+  filename?: Maybe<Scalars['String']['output']>;
+  filesize?: Maybe<Scalars['Float']['output']>;
+  height?: Maybe<Scalars['Float']['output']>;
+  mimeType?: Maybe<Scalars['String']['output']>;
+  url?: Maybe<Scalars['String']['output']>;
+  width?: Maybe<Scalars['Float']['output']>;
+};
+
+export type Media_Sizes_Hero = {
+  __typename?: 'Media_Sizes_Hero';
+  filename?: Maybe<Scalars['String']['output']>;
+  filesize?: Maybe<Scalars['Float']['output']>;
+  height?: Maybe<Scalars['Float']['output']>;
+  mimeType?: Maybe<Scalars['String']['output']>;
+  url?: Maybe<Scalars['String']['output']>;
+  width?: Maybe<Scalars['Float']['output']>;
+};
+
+export type Media_Sizes_Icon = {
+  __typename?: 'Media_Sizes_Icon';
+  filename?: Maybe<Scalars['String']['output']>;
+  filesize?: Maybe<Scalars['Float']['output']>;
+  height?: Maybe<Scalars['Float']['output']>;
+  mimeType?: Maybe<Scalars['String']['output']>;
+  url?: Maybe<Scalars['String']['output']>;
+  width?: Maybe<Scalars['Float']['output']>;
+};
+
+export type Media_Sizes_Thumbnail = {
+  __typename?: 'Media_Sizes_Thumbnail';
+  filename?: Maybe<Scalars['String']['output']>;
+  filesize?: Maybe<Scalars['Float']['output']>;
+  height?: Maybe<Scalars['Float']['output']>;
+  mimeType?: Maybe<Scalars['String']['output']>;
+  url?: Maybe<Scalars['String']['output']>;
+  width?: Maybe<Scalars['Float']['output']>;
+};
+
 export type Media_Alt_Operator = {
   all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Media_BlurDataUrl_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Media_Caption_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
@@ -6492,6 +8840,321 @@ export type Media_MimeType_Operator = {
   not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
+export type Media_Sizes__Card__Filename_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Media_Sizes__Card__Filesize_Operator = {
+  equals?: InputMaybe<Scalars['Float']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  greater_than?: InputMaybe<Scalars['Float']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+  less_than?: InputMaybe<Scalars['Float']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+  not_equals?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type Media_Sizes__Card__Height_Operator = {
+  equals?: InputMaybe<Scalars['Float']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  greater_than?: InputMaybe<Scalars['Float']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+  less_than?: InputMaybe<Scalars['Float']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+  not_equals?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type Media_Sizes__Card__MimeType_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Media_Sizes__Card__Url_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Media_Sizes__Card__Width_Operator = {
+  equals?: InputMaybe<Scalars['Float']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  greater_than?: InputMaybe<Scalars['Float']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+  less_than?: InputMaybe<Scalars['Float']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+  not_equals?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type Media_Sizes__Feature__Filename_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Media_Sizes__Feature__Filesize_Operator = {
+  equals?: InputMaybe<Scalars['Float']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  greater_than?: InputMaybe<Scalars['Float']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+  less_than?: InputMaybe<Scalars['Float']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+  not_equals?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type Media_Sizes__Feature__Height_Operator = {
+  equals?: InputMaybe<Scalars['Float']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  greater_than?: InputMaybe<Scalars['Float']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+  less_than?: InputMaybe<Scalars['Float']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+  not_equals?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type Media_Sizes__Feature__MimeType_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Media_Sizes__Feature__Url_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Media_Sizes__Feature__Width_Operator = {
+  equals?: InputMaybe<Scalars['Float']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  greater_than?: InputMaybe<Scalars['Float']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+  less_than?: InputMaybe<Scalars['Float']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+  not_equals?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type Media_Sizes__Hero__Filename_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Media_Sizes__Hero__Filesize_Operator = {
+  equals?: InputMaybe<Scalars['Float']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  greater_than?: InputMaybe<Scalars['Float']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+  less_than?: InputMaybe<Scalars['Float']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+  not_equals?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type Media_Sizes__Hero__Height_Operator = {
+  equals?: InputMaybe<Scalars['Float']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  greater_than?: InputMaybe<Scalars['Float']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+  less_than?: InputMaybe<Scalars['Float']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+  not_equals?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type Media_Sizes__Hero__MimeType_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Media_Sizes__Hero__Url_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Media_Sizes__Hero__Width_Operator = {
+  equals?: InputMaybe<Scalars['Float']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  greater_than?: InputMaybe<Scalars['Float']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+  less_than?: InputMaybe<Scalars['Float']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+  not_equals?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type Media_Sizes__Icon__Filename_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Media_Sizes__Icon__Filesize_Operator = {
+  equals?: InputMaybe<Scalars['Float']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  greater_than?: InputMaybe<Scalars['Float']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+  less_than?: InputMaybe<Scalars['Float']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+  not_equals?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type Media_Sizes__Icon__Height_Operator = {
+  equals?: InputMaybe<Scalars['Float']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  greater_than?: InputMaybe<Scalars['Float']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+  less_than?: InputMaybe<Scalars['Float']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+  not_equals?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type Media_Sizes__Icon__MimeType_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Media_Sizes__Icon__Url_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Media_Sizes__Icon__Width_Operator = {
+  equals?: InputMaybe<Scalars['Float']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  greater_than?: InputMaybe<Scalars['Float']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+  less_than?: InputMaybe<Scalars['Float']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+  not_equals?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type Media_Sizes__Thumbnail__Filename_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Media_Sizes__Thumbnail__Filesize_Operator = {
+  equals?: InputMaybe<Scalars['Float']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  greater_than?: InputMaybe<Scalars['Float']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+  less_than?: InputMaybe<Scalars['Float']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+  not_equals?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type Media_Sizes__Thumbnail__Height_Operator = {
+  equals?: InputMaybe<Scalars['Float']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  greater_than?: InputMaybe<Scalars['Float']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+  less_than?: InputMaybe<Scalars['Float']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+  not_equals?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type Media_Sizes__Thumbnail__MimeType_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Media_Sizes__Thumbnail__Url_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Media_Sizes__Thumbnail__Width_Operator = {
+  equals?: InputMaybe<Scalars['Float']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  greater_than?: InputMaybe<Scalars['Float']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+  less_than?: InputMaybe<Scalars['Float']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+  not_equals?: InputMaybe<Scalars['Float']['input']>;
+};
+
 export type Media_ThumbnailUrl_Operator = {
   all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
@@ -6529,6 +9192,8 @@ export type Media_Where = {
   AND?: InputMaybe<Array<InputMaybe<Media_Where_And>>>;
   OR?: InputMaybe<Array<InputMaybe<Media_Where_Or>>>;
   alt?: InputMaybe<Media_Alt_Operator>;
+  blurDataURL?: InputMaybe<Media_BlurDataUrl_Operator>;
+  caption?: InputMaybe<Media_Caption_Operator>;
   createdAt?: InputMaybe<Media_CreatedAt_Operator>;
   filename?: InputMaybe<Media_Filename_Operator>;
   filesize?: InputMaybe<Media_Filesize_Operator>;
@@ -6537,6 +9202,36 @@ export type Media_Where = {
   height?: InputMaybe<Media_Height_Operator>;
   id?: InputMaybe<Media_Id_Operator>;
   mimeType?: InputMaybe<Media_MimeType_Operator>;
+  sizes__card__filename?: InputMaybe<Media_Sizes__Card__Filename_Operator>;
+  sizes__card__filesize?: InputMaybe<Media_Sizes__Card__Filesize_Operator>;
+  sizes__card__height?: InputMaybe<Media_Sizes__Card__Height_Operator>;
+  sizes__card__mimeType?: InputMaybe<Media_Sizes__Card__MimeType_Operator>;
+  sizes__card__url?: InputMaybe<Media_Sizes__Card__Url_Operator>;
+  sizes__card__width?: InputMaybe<Media_Sizes__Card__Width_Operator>;
+  sizes__feature__filename?: InputMaybe<Media_Sizes__Feature__Filename_Operator>;
+  sizes__feature__filesize?: InputMaybe<Media_Sizes__Feature__Filesize_Operator>;
+  sizes__feature__height?: InputMaybe<Media_Sizes__Feature__Height_Operator>;
+  sizes__feature__mimeType?: InputMaybe<Media_Sizes__Feature__MimeType_Operator>;
+  sizes__feature__url?: InputMaybe<Media_Sizes__Feature__Url_Operator>;
+  sizes__feature__width?: InputMaybe<Media_Sizes__Feature__Width_Operator>;
+  sizes__hero__filename?: InputMaybe<Media_Sizes__Hero__Filename_Operator>;
+  sizes__hero__filesize?: InputMaybe<Media_Sizes__Hero__Filesize_Operator>;
+  sizes__hero__height?: InputMaybe<Media_Sizes__Hero__Height_Operator>;
+  sizes__hero__mimeType?: InputMaybe<Media_Sizes__Hero__MimeType_Operator>;
+  sizes__hero__url?: InputMaybe<Media_Sizes__Hero__Url_Operator>;
+  sizes__hero__width?: InputMaybe<Media_Sizes__Hero__Width_Operator>;
+  sizes__icon__filename?: InputMaybe<Media_Sizes__Icon__Filename_Operator>;
+  sizes__icon__filesize?: InputMaybe<Media_Sizes__Icon__Filesize_Operator>;
+  sizes__icon__height?: InputMaybe<Media_Sizes__Icon__Height_Operator>;
+  sizes__icon__mimeType?: InputMaybe<Media_Sizes__Icon__MimeType_Operator>;
+  sizes__icon__url?: InputMaybe<Media_Sizes__Icon__Url_Operator>;
+  sizes__icon__width?: InputMaybe<Media_Sizes__Icon__Width_Operator>;
+  sizes__thumbnail__filename?: InputMaybe<Media_Sizes__Thumbnail__Filename_Operator>;
+  sizes__thumbnail__filesize?: InputMaybe<Media_Sizes__Thumbnail__Filesize_Operator>;
+  sizes__thumbnail__height?: InputMaybe<Media_Sizes__Thumbnail__Height_Operator>;
+  sizes__thumbnail__mimeType?: InputMaybe<Media_Sizes__Thumbnail__MimeType_Operator>;
+  sizes__thumbnail__url?: InputMaybe<Media_Sizes__Thumbnail__Url_Operator>;
+  sizes__thumbnail__width?: InputMaybe<Media_Sizes__Thumbnail__Width_Operator>;
   thumbnailURL?: InputMaybe<Media_ThumbnailUrl_Operator>;
   updatedAt?: InputMaybe<Media_UpdatedAt_Operator>;
   url?: InputMaybe<Media_Url_Operator>;
@@ -6547,6 +9242,8 @@ export type Media_Where_And = {
   AND?: InputMaybe<Array<InputMaybe<Media_Where_And>>>;
   OR?: InputMaybe<Array<InputMaybe<Media_Where_Or>>>;
   alt?: InputMaybe<Media_Alt_Operator>;
+  blurDataURL?: InputMaybe<Media_BlurDataUrl_Operator>;
+  caption?: InputMaybe<Media_Caption_Operator>;
   createdAt?: InputMaybe<Media_CreatedAt_Operator>;
   filename?: InputMaybe<Media_Filename_Operator>;
   filesize?: InputMaybe<Media_Filesize_Operator>;
@@ -6555,6 +9252,36 @@ export type Media_Where_And = {
   height?: InputMaybe<Media_Height_Operator>;
   id?: InputMaybe<Media_Id_Operator>;
   mimeType?: InputMaybe<Media_MimeType_Operator>;
+  sizes__card__filename?: InputMaybe<Media_Sizes__Card__Filename_Operator>;
+  sizes__card__filesize?: InputMaybe<Media_Sizes__Card__Filesize_Operator>;
+  sizes__card__height?: InputMaybe<Media_Sizes__Card__Height_Operator>;
+  sizes__card__mimeType?: InputMaybe<Media_Sizes__Card__MimeType_Operator>;
+  sizes__card__url?: InputMaybe<Media_Sizes__Card__Url_Operator>;
+  sizes__card__width?: InputMaybe<Media_Sizes__Card__Width_Operator>;
+  sizes__feature__filename?: InputMaybe<Media_Sizes__Feature__Filename_Operator>;
+  sizes__feature__filesize?: InputMaybe<Media_Sizes__Feature__Filesize_Operator>;
+  sizes__feature__height?: InputMaybe<Media_Sizes__Feature__Height_Operator>;
+  sizes__feature__mimeType?: InputMaybe<Media_Sizes__Feature__MimeType_Operator>;
+  sizes__feature__url?: InputMaybe<Media_Sizes__Feature__Url_Operator>;
+  sizes__feature__width?: InputMaybe<Media_Sizes__Feature__Width_Operator>;
+  sizes__hero__filename?: InputMaybe<Media_Sizes__Hero__Filename_Operator>;
+  sizes__hero__filesize?: InputMaybe<Media_Sizes__Hero__Filesize_Operator>;
+  sizes__hero__height?: InputMaybe<Media_Sizes__Hero__Height_Operator>;
+  sizes__hero__mimeType?: InputMaybe<Media_Sizes__Hero__MimeType_Operator>;
+  sizes__hero__url?: InputMaybe<Media_Sizes__Hero__Url_Operator>;
+  sizes__hero__width?: InputMaybe<Media_Sizes__Hero__Width_Operator>;
+  sizes__icon__filename?: InputMaybe<Media_Sizes__Icon__Filename_Operator>;
+  sizes__icon__filesize?: InputMaybe<Media_Sizes__Icon__Filesize_Operator>;
+  sizes__icon__height?: InputMaybe<Media_Sizes__Icon__Height_Operator>;
+  sizes__icon__mimeType?: InputMaybe<Media_Sizes__Icon__MimeType_Operator>;
+  sizes__icon__url?: InputMaybe<Media_Sizes__Icon__Url_Operator>;
+  sizes__icon__width?: InputMaybe<Media_Sizes__Icon__Width_Operator>;
+  sizes__thumbnail__filename?: InputMaybe<Media_Sizes__Thumbnail__Filename_Operator>;
+  sizes__thumbnail__filesize?: InputMaybe<Media_Sizes__Thumbnail__Filesize_Operator>;
+  sizes__thumbnail__height?: InputMaybe<Media_Sizes__Thumbnail__Height_Operator>;
+  sizes__thumbnail__mimeType?: InputMaybe<Media_Sizes__Thumbnail__MimeType_Operator>;
+  sizes__thumbnail__url?: InputMaybe<Media_Sizes__Thumbnail__Url_Operator>;
+  sizes__thumbnail__width?: InputMaybe<Media_Sizes__Thumbnail__Width_Operator>;
   thumbnailURL?: InputMaybe<Media_ThumbnailUrl_Operator>;
   updatedAt?: InputMaybe<Media_UpdatedAt_Operator>;
   url?: InputMaybe<Media_Url_Operator>;
@@ -6565,6 +9292,8 @@ export type Media_Where_Or = {
   AND?: InputMaybe<Array<InputMaybe<Media_Where_And>>>;
   OR?: InputMaybe<Array<InputMaybe<Media_Where_Or>>>;
   alt?: InputMaybe<Media_Alt_Operator>;
+  blurDataURL?: InputMaybe<Media_BlurDataUrl_Operator>;
+  caption?: InputMaybe<Media_Caption_Operator>;
   createdAt?: InputMaybe<Media_CreatedAt_Operator>;
   filename?: InputMaybe<Media_Filename_Operator>;
   filesize?: InputMaybe<Media_Filesize_Operator>;
@@ -6573,6 +9302,36 @@ export type Media_Where_Or = {
   height?: InputMaybe<Media_Height_Operator>;
   id?: InputMaybe<Media_Id_Operator>;
   mimeType?: InputMaybe<Media_MimeType_Operator>;
+  sizes__card__filename?: InputMaybe<Media_Sizes__Card__Filename_Operator>;
+  sizes__card__filesize?: InputMaybe<Media_Sizes__Card__Filesize_Operator>;
+  sizes__card__height?: InputMaybe<Media_Sizes__Card__Height_Operator>;
+  sizes__card__mimeType?: InputMaybe<Media_Sizes__Card__MimeType_Operator>;
+  sizes__card__url?: InputMaybe<Media_Sizes__Card__Url_Operator>;
+  sizes__card__width?: InputMaybe<Media_Sizes__Card__Width_Operator>;
+  sizes__feature__filename?: InputMaybe<Media_Sizes__Feature__Filename_Operator>;
+  sizes__feature__filesize?: InputMaybe<Media_Sizes__Feature__Filesize_Operator>;
+  sizes__feature__height?: InputMaybe<Media_Sizes__Feature__Height_Operator>;
+  sizes__feature__mimeType?: InputMaybe<Media_Sizes__Feature__MimeType_Operator>;
+  sizes__feature__url?: InputMaybe<Media_Sizes__Feature__Url_Operator>;
+  sizes__feature__width?: InputMaybe<Media_Sizes__Feature__Width_Operator>;
+  sizes__hero__filename?: InputMaybe<Media_Sizes__Hero__Filename_Operator>;
+  sizes__hero__filesize?: InputMaybe<Media_Sizes__Hero__Filesize_Operator>;
+  sizes__hero__height?: InputMaybe<Media_Sizes__Hero__Height_Operator>;
+  sizes__hero__mimeType?: InputMaybe<Media_Sizes__Hero__MimeType_Operator>;
+  sizes__hero__url?: InputMaybe<Media_Sizes__Hero__Url_Operator>;
+  sizes__hero__width?: InputMaybe<Media_Sizes__Hero__Width_Operator>;
+  sizes__icon__filename?: InputMaybe<Media_Sizes__Icon__Filename_Operator>;
+  sizes__icon__filesize?: InputMaybe<Media_Sizes__Icon__Filesize_Operator>;
+  sizes__icon__height?: InputMaybe<Media_Sizes__Icon__Height_Operator>;
+  sizes__icon__mimeType?: InputMaybe<Media_Sizes__Icon__MimeType_Operator>;
+  sizes__icon__url?: InputMaybe<Media_Sizes__Icon__Url_Operator>;
+  sizes__icon__width?: InputMaybe<Media_Sizes__Icon__Width_Operator>;
+  sizes__thumbnail__filename?: InputMaybe<Media_Sizes__Thumbnail__Filename_Operator>;
+  sizes__thumbnail__filesize?: InputMaybe<Media_Sizes__Thumbnail__Filesize_Operator>;
+  sizes__thumbnail__height?: InputMaybe<Media_Sizes__Thumbnail__Height_Operator>;
+  sizes__thumbnail__mimeType?: InputMaybe<Media_Sizes__Thumbnail__MimeType_Operator>;
+  sizes__thumbnail__url?: InputMaybe<Media_Sizes__Thumbnail__Url_Operator>;
+  sizes__thumbnail__width?: InputMaybe<Media_Sizes__Thumbnail__Width_Operator>;
   thumbnailURL?: InputMaybe<Media_ThumbnailUrl_Operator>;
   updatedAt?: InputMaybe<Media_UpdatedAt_Operator>;
   url?: InputMaybe<Media_Url_Operator>;
@@ -10409,6 +13168,8 @@ export type MutationJournal_MetaInput = {
 
 export type MutationMediaInput = {
   alt: Scalars['String']['input'];
+  blurDataURL?: InputMaybe<Scalars['String']['input']>;
+  caption?: InputMaybe<Scalars['String']['input']>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   filename?: InputMaybe<Scalars['String']['input']>;
   filesize?: InputMaybe<Scalars['Float']['input']>;
@@ -10416,6 +13177,7 @@ export type MutationMediaInput = {
   focalY?: InputMaybe<Scalars['Float']['input']>;
   height?: InputMaybe<Scalars['Float']['input']>;
   mimeType?: InputMaybe<Scalars['String']['input']>;
+  sizes?: InputMaybe<MutationMedia_SizesInput>;
   thumbnailURL?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['String']['input']>;
   url?: InputMaybe<Scalars['String']['input']>;
@@ -10424,6 +13186,8 @@ export type MutationMediaInput = {
 
 export type MutationMediaUpdateInput = {
   alt?: InputMaybe<Scalars['String']['input']>;
+  blurDataURL?: InputMaybe<Scalars['String']['input']>;
+  caption?: InputMaybe<Scalars['String']['input']>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   filename?: InputMaybe<Scalars['String']['input']>;
   filesize?: InputMaybe<Scalars['Float']['input']>;
@@ -10431,8 +13195,115 @@ export type MutationMediaUpdateInput = {
   focalY?: InputMaybe<Scalars['Float']['input']>;
   height?: InputMaybe<Scalars['Float']['input']>;
   mimeType?: InputMaybe<Scalars['String']['input']>;
+  sizes?: InputMaybe<MutationMediaUpdate_SizesInput>;
   thumbnailURL?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['String']['input']>;
+  url?: InputMaybe<Scalars['String']['input']>;
+  width?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type MutationMediaUpdate_SizesInput = {
+  card?: InputMaybe<MutationMediaUpdate_Sizes_CardInput>;
+  feature?: InputMaybe<MutationMediaUpdate_Sizes_FeatureInput>;
+  hero?: InputMaybe<MutationMediaUpdate_Sizes_HeroInput>;
+  icon?: InputMaybe<MutationMediaUpdate_Sizes_IconInput>;
+  thumbnail?: InputMaybe<MutationMediaUpdate_Sizes_ThumbnailInput>;
+};
+
+export type MutationMediaUpdate_Sizes_CardInput = {
+  filename?: InputMaybe<Scalars['String']['input']>;
+  filesize?: InputMaybe<Scalars['Float']['input']>;
+  height?: InputMaybe<Scalars['Float']['input']>;
+  mimeType?: InputMaybe<Scalars['String']['input']>;
+  url?: InputMaybe<Scalars['String']['input']>;
+  width?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type MutationMediaUpdate_Sizes_FeatureInput = {
+  filename?: InputMaybe<Scalars['String']['input']>;
+  filesize?: InputMaybe<Scalars['Float']['input']>;
+  height?: InputMaybe<Scalars['Float']['input']>;
+  mimeType?: InputMaybe<Scalars['String']['input']>;
+  url?: InputMaybe<Scalars['String']['input']>;
+  width?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type MutationMediaUpdate_Sizes_HeroInput = {
+  filename?: InputMaybe<Scalars['String']['input']>;
+  filesize?: InputMaybe<Scalars['Float']['input']>;
+  height?: InputMaybe<Scalars['Float']['input']>;
+  mimeType?: InputMaybe<Scalars['String']['input']>;
+  url?: InputMaybe<Scalars['String']['input']>;
+  width?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type MutationMediaUpdate_Sizes_IconInput = {
+  filename?: InputMaybe<Scalars['String']['input']>;
+  filesize?: InputMaybe<Scalars['Float']['input']>;
+  height?: InputMaybe<Scalars['Float']['input']>;
+  mimeType?: InputMaybe<Scalars['String']['input']>;
+  url?: InputMaybe<Scalars['String']['input']>;
+  width?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type MutationMediaUpdate_Sizes_ThumbnailInput = {
+  filename?: InputMaybe<Scalars['String']['input']>;
+  filesize?: InputMaybe<Scalars['Float']['input']>;
+  height?: InputMaybe<Scalars['Float']['input']>;
+  mimeType?: InputMaybe<Scalars['String']['input']>;
+  url?: InputMaybe<Scalars['String']['input']>;
+  width?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type MutationMedia_SizesInput = {
+  card?: InputMaybe<MutationMedia_Sizes_CardInput>;
+  feature?: InputMaybe<MutationMedia_Sizes_FeatureInput>;
+  hero?: InputMaybe<MutationMedia_Sizes_HeroInput>;
+  icon?: InputMaybe<MutationMedia_Sizes_IconInput>;
+  thumbnail?: InputMaybe<MutationMedia_Sizes_ThumbnailInput>;
+};
+
+export type MutationMedia_Sizes_CardInput = {
+  filename?: InputMaybe<Scalars['String']['input']>;
+  filesize?: InputMaybe<Scalars['Float']['input']>;
+  height?: InputMaybe<Scalars['Float']['input']>;
+  mimeType?: InputMaybe<Scalars['String']['input']>;
+  url?: InputMaybe<Scalars['String']['input']>;
+  width?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type MutationMedia_Sizes_FeatureInput = {
+  filename?: InputMaybe<Scalars['String']['input']>;
+  filesize?: InputMaybe<Scalars['Float']['input']>;
+  height?: InputMaybe<Scalars['Float']['input']>;
+  mimeType?: InputMaybe<Scalars['String']['input']>;
+  url?: InputMaybe<Scalars['String']['input']>;
+  width?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type MutationMedia_Sizes_HeroInput = {
+  filename?: InputMaybe<Scalars['String']['input']>;
+  filesize?: InputMaybe<Scalars['Float']['input']>;
+  height?: InputMaybe<Scalars['Float']['input']>;
+  mimeType?: InputMaybe<Scalars['String']['input']>;
+  url?: InputMaybe<Scalars['String']['input']>;
+  width?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type MutationMedia_Sizes_IconInput = {
+  filename?: InputMaybe<Scalars['String']['input']>;
+  filesize?: InputMaybe<Scalars['Float']['input']>;
+  height?: InputMaybe<Scalars['Float']['input']>;
+  mimeType?: InputMaybe<Scalars['String']['input']>;
+  url?: InputMaybe<Scalars['String']['input']>;
+  width?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type MutationMedia_Sizes_ThumbnailInput = {
+  filename?: InputMaybe<Scalars['String']['input']>;
+  filesize?: InputMaybe<Scalars['Float']['input']>;
+  height?: InputMaybe<Scalars['Float']['input']>;
+  mimeType?: InputMaybe<Scalars['String']['input']>;
   url?: InputMaybe<Scalars['String']['input']>;
   width?: InputMaybe<Scalars['Float']['input']>;
 };
@@ -10676,6 +13547,8 @@ export type Work_ButtonsDocAccess = {
   update?: Maybe<WorkButtonsUpdateDocAccess>;
 };
 
+export type MediaFragmentFragment = { __typename?: 'Media', id: number, alt: string, caption?: string | null, blurDataURL?: string | null, focalX?: number | null, focalY?: number | null, url?: string | null, width?: number | null, height?: number | null, sizes?: { __typename?: 'Media_Sizes', icon?: { __typename?: 'Media_Sizes_Icon', url?: string | null, width?: number | null, height?: number | null } | null, thumbnail?: { __typename?: 'Media_Sizes_Thumbnail', url?: string | null, width?: number | null, height?: number | null } | null, card?: { __typename?: 'Media_Sizes_Card', url?: string | null, width?: number | null, height?: number | null } | null, feature?: { __typename?: 'Media_Sizes_Feature', url?: string | null, width?: number | null, height?: number | null } | null, hero?: { __typename?: 'Media_Sizes_Hero', url?: string | null, width?: number | null, height?: number | null } | null } | null } & { ' $fragmentName'?: 'MediaFragmentFragment' };
+
 export type CreateContactFormMutationVariables = Exact<{
   name: Scalars['String']['input'];
   email: Scalars['String']['input'];
@@ -10686,20 +13559,10 @@ export type CreateContactFormMutationVariables = Exact<{
 
 export type CreateContactFormMutation = { __typename?: 'Mutation', createContactForm?: { __typename?: 'ContactForm', id: number, name: string, email: any, subject: string, message: string, status?: ContactForm_Status | null } | null };
 
-export type GetAllCaseStudiesSlugsQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type GetAllCaseStudiesSlugsQuery = { __typename?: 'Query', CaseStudies?: { __typename?: 'CaseStudies', docs: Array<{ __typename?: 'CaseStudy', slug?: string | null }> } | null };
-
-export type GetAllExperiencesSlugsQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type GetAllExperiencesSlugsQuery = { __typename?: 'Query', Experiences?: { __typename?: 'Experiences', docs: Array<{ __typename?: 'Experience', slug?: string | null }> } | null };
-
 export type GetAllTagsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetAllTagsQuery = { __typename?: 'Query', CaseStudies?: { __typename?: 'CaseStudies', docs: Array<{ __typename?: 'CaseStudy', tags: Array<{ __typename?: 'Tag', name: string, id: number }> }> } | null };
+export type GetAllTagsQuery = { __typename?: 'Query', CaseStudies?: { __typename?: 'CaseStudies', docs: Array<{ __typename?: 'CaseStudy', updatedAt?: any | null, tags: Array<{ __typename?: 'Tag', name: string, slug: string, id: number }> }> } | null };
 
 export type GetCaseStudiesByParamsQueryVariables = Exact<{
   tagIds?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>> | InputMaybe<Scalars['JSON']['input']>>;
@@ -10707,14 +13570,20 @@ export type GetCaseStudiesByParamsQueryVariables = Exact<{
 }>;
 
 
-export type GetCaseStudiesByParamsQuery = { __typename?: 'Query', CaseStudies?: { __typename?: 'CaseStudies', offset?: number | null, totalDocs: number, pagingCounter: number, docs: Array<{ __typename?: 'CaseStudy', id: number, slug?: string | null, title: string, summary: any, updatedAt?: any | null, tags: Array<{ __typename?: 'Tag', name: string, id: number }>, illustration?: { __typename?: 'Media', url?: string | null, alt: string } | null, experience: { __typename?: 'Experience', role?: string | null, title: string, slug?: string | null } }> } | null, Journal?: { __typename?: 'Journal', title: string, subtitle?: string | null, description: string } | null };
+export type GetCaseStudiesByParamsQuery = { __typename?: 'Query', CaseStudies?: { __typename?: 'CaseStudies', offset?: number | null, totalDocs: number, pagingCounter: number, docs: Array<{ __typename?: 'CaseStudy', id: number, slug?: string | null, title: string, summary: any, updatedAt?: any | null, tags: Array<{ __typename?: 'Tag', name: string, id: number }>, illustration?: (
+        { __typename?: 'Media' }
+        & { ' $fragmentRefs'?: { 'MediaFragmentFragment': MediaFragmentFragment } }
+      ) | null, experience: { __typename?: 'Experience', role?: string | null, title: string, slug?: string | null } }> } | null, Journal?: { __typename?: 'Journal', title: string, subtitle?: string | null, description: string } | null };
 
 export type GetCaseStudyBySlugQueryVariables = Exact<{
   slug: Scalars['String']['input'];
 }>;
 
 
-export type GetCaseStudyBySlugQuery = { __typename?: 'Query', CaseStudies?: { __typename?: 'CaseStudies', docs: Array<{ __typename?: 'CaseStudy', title: string, content: any, updatedAt?: any | null, experience: { __typename?: 'Experience', title: string, role?: string | null, startDate?: any | null, endDate?: any | null, id: number }, tags: Array<{ __typename?: 'Tag', name: string }>, illustration?: { __typename?: 'Media', url?: string | null } | null }> } | null };
+export type GetCaseStudyBySlugQuery = { __typename?: 'Query', CaseStudies?: { __typename?: 'CaseStudies', docs: Array<{ __typename?: 'CaseStudy', title: string, content: any, updatedAt?: any | null, experience: { __typename?: 'Experience', title: string, role?: string | null, startDate?: any | null, endDate?: any | null, id: number }, tags: Array<{ __typename?: 'Tag', name: string }>, illustration?: (
+        { __typename?: 'Media' }
+        & { ' $fragmentRefs'?: { 'MediaFragmentFragment': MediaFragmentFragment } }
+      ) | null }> } | null };
 
 export type GetContactFormsQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -10726,17 +13595,26 @@ export type GetExperienceBySlugQueryVariables = Exact<{
 }>;
 
 
-export type GetExperienceBySlugQuery = { __typename?: 'Query', Experiences?: { __typename?: 'Experiences', docs: Array<{ __typename?: 'Experience', id: number, role?: string | null, slug?: string | null, startDate?: any | null, summary: any, title: string, endDate?: any | null, coverImage?: { __typename?: 'Media', url?: string | null } | null, tags: Array<{ __typename?: 'Tag', id: number, name: string }> }> } | null };
+export type GetExperienceBySlugQuery = { __typename?: 'Query', Experiences?: { __typename?: 'Experiences', docs: Array<{ __typename?: 'Experience', id: number, role?: string | null, slug?: string | null, startDate?: any | null, summary: any, title: string, endDate?: any | null, coverImage?: (
+        { __typename?: 'Media' }
+        & { ' $fragmentRefs'?: { 'MediaFragmentFragment': MediaFragmentFragment } }
+      ) | null, tags: Array<{ __typename?: 'Tag', id: number, name: string }> }> } | null };
 
 export type GetFeaturedCaseStudiesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetFeaturedCaseStudiesQuery = { __typename?: 'Query', FeaturedCaseStudy?: { __typename?: 'FeaturedCaseStudy', title: string, subtitle?: string | null, description: string, caseStudies: Array<{ __typename?: 'CaseStudy', title: string, slug?: string | null, summary: any, illustration?: { __typename?: 'Media', url?: string | null, alt: string } | null, tags: Array<{ __typename?: 'Tag', name: string, id: number }> }> } | null };
+export type GetFeaturedCaseStudiesQuery = { __typename?: 'Query', FeaturedCaseStudy?: { __typename?: 'FeaturedCaseStudy', title: string, subtitle?: string | null, description: string, caseStudies: Array<{ __typename?: 'CaseStudy', title: string, slug?: string | null, summary: any, illustration?: (
+        { __typename?: 'Media' }
+        & { ' $fragmentRefs'?: { 'MediaFragmentFragment': MediaFragmentFragment } }
+      ) | null, tags: Array<{ __typename?: 'Tag', name: string, id: number }> }> } | null };
 
 export type GetFeaturedExperiencesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetFeaturedExperiencesQuery = { __typename?: 'Query', FeaturedExperience?: { __typename?: 'FeaturedExperience', description?: string | null, title: string, subtitle: string, experiences: Array<{ __typename?: 'Experience', id: number, title: string, slug?: string | null, endDate?: any | null, startDate?: any | null, role?: string | null, thumbnailImage?: { __typename?: 'Media', url?: string | null } | null }> } | null };
+export type GetFeaturedExperiencesQuery = { __typename?: 'Query', FeaturedExperience?: { __typename?: 'FeaturedExperience', description?: string | null, title: string, subtitle: string, experiences: Array<{ __typename?: 'Experience', id: number, title: string, slug?: string | null, endDate?: any | null, startDate?: any | null, role?: string | null, thumbnailImage?: (
+        { __typename?: 'Media' }
+        & { ' $fragmentRefs'?: { 'MediaFragmentFragment': MediaFragmentFragment } }
+      ) | null }> } | null };
 
 export type GetFooterQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -10757,6 +13635,16 @@ export type GetWorkButtonsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetWorkButtonsQuery = { __typename?: 'Query', WorkButton?: { __typename?: 'WorkButton', buttons: Array<{ __typename?: 'WorkButton_Buttons', text?: string | null, url?: string | null }> } | null };
+
+export type GetAllCaseStudiesSlugsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetAllCaseStudiesSlugsQuery = { __typename?: 'Query', CaseStudies?: { __typename?: 'CaseStudies', docs: Array<{ __typename?: 'CaseStudy', slug?: string | null, updatedAt?: any | null }> } | null };
+
+export type GetAllExperiencesSlugsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetAllExperiencesSlugsQuery = { __typename?: 'Query', Experiences?: { __typename?: 'Experiences', docs: Array<{ __typename?: 'Experience', slug?: string | null, updatedAt?: any | null }> } | null };
 
 export type GetCaseStudyBySlugMetaQueryVariables = Exact<{
   slug: Scalars['String']['input'];
@@ -10782,21 +13670,21 @@ export type GetJournalMetaQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetJournalMetaQuery = { __typename?: 'Query', Journal?: { __typename?: 'Journal', meta?: { __typename?: 'Journal_Meta', title?: string | null, description?: string | null, image?: { __typename?: 'Media', alt: string, url?: string | null } | null } | null } | null };
 
-
+export const MediaFragmentFragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"MediaFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Media"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"caption"}},{"kind":"Field","name":{"kind":"Name","value":"blurDataURL"}},{"kind":"Field","name":{"kind":"Name","value":"focalX"}},{"kind":"Field","name":{"kind":"Name","value":"focalY"}},{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"sizes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"icon"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"thumbnail"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"card"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"feature"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"hero"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}}]}}]}}]} as unknown as DocumentNode<MediaFragmentFragment, unknown>;
 export const CreateContactFormDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"CreateContactForm"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"name"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"email"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"subject"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"message"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"createContactForm"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"data"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"name"},"value":{"kind":"Variable","name":{"kind":"Name","value":"name"}}},{"kind":"ObjectField","name":{"kind":"Name","value":"email"},"value":{"kind":"Variable","name":{"kind":"Name","value":"email"}}},{"kind":"ObjectField","name":{"kind":"Name","value":"subject"},"value":{"kind":"Variable","name":{"kind":"Name","value":"subject"}}},{"kind":"ObjectField","name":{"kind":"Name","value":"message"},"value":{"kind":"Variable","name":{"kind":"Name","value":"message"}}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"email"}},{"kind":"Field","name":{"kind":"Name","value":"subject"}},{"kind":"Field","name":{"kind":"Name","value":"message"}},{"kind":"Field","name":{"kind":"Name","value":"status"}}]}}]}}]} as unknown as DocumentNode<CreateContactFormMutation, CreateContactFormMutationVariables>;
-export const GetAllCaseStudiesSlugsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetAllCaseStudiesSlugs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"CaseStudies"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}}]}}]}}]} as unknown as DocumentNode<GetAllCaseStudiesSlugsQuery, GetAllCaseStudiesSlugsQueryVariables>;
-export const GetAllExperiencesSlugsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetAllExperiencesSlugs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Experiences"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}}]}}]}}]} as unknown as DocumentNode<GetAllExperiencesSlugsQuery, GetAllExperiencesSlugsQueryVariables>;
-export const GetAllTagsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetAllTags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"CaseStudies"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"tags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"id"}}]}}]}}]}}]}}]} as unknown as DocumentNode<GetAllTagsQuery, GetAllTagsQueryVariables>;
-export const GetCaseStudiesByParamsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetCaseStudiesByParams"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"tagIds"}},"type":{"kind":"ListType","type":{"kind":"NamedType","name":{"kind":"Name","value":"JSON"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"experience"}},"type":{"kind":"ListType","type":{"kind":"NamedType","name":{"kind":"Name","value":"JSON"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"CaseStudies"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"tags"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"in"},"value":{"kind":"Variable","name":{"kind":"Name","value":"tagIds"}}}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"experience"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"in"},"value":{"kind":"Variable","name":{"kind":"Name","value":"experience"}}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"offset"}},{"kind":"Field","name":{"kind":"Name","value":"totalDocs"}},{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"summary"}},{"kind":"Field","name":{"kind":"Name","value":"tags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"id"}}]}},{"kind":"Field","name":{"kind":"Name","value":"updatedAt"}},{"kind":"Field","name":{"kind":"Name","value":"illustration"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}}]}},{"kind":"Field","name":{"kind":"Name","value":"experience"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"role"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"pagingCounter"}}]}},{"kind":"Field","name":{"kind":"Name","value":"Journal"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}},{"kind":"Field","name":{"kind":"Name","value":"description"}}]}}]}}]} as unknown as DocumentNode<GetCaseStudiesByParamsQuery, GetCaseStudiesByParamsQueryVariables>;
-export const GetCaseStudyBySlugDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetCaseStudyBySlug"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"slug"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"CaseStudies"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"equals"},"value":{"kind":"Variable","name":{"kind":"Name","value":"slug"}}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"experience"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"role"}},{"kind":"Field","name":{"kind":"Name","value":"startDate"}},{"kind":"Field","name":{"kind":"Name","value":"endDate"}},{"kind":"Field","name":{"kind":"Name","value":"id"}}]}},{"kind":"Field","name":{"kind":"Name","value":"tags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}}]}},{"kind":"Field","name":{"kind":"Name","value":"content"}},{"kind":"Field","name":{"kind":"Name","value":"illustration"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"updatedAt"}}]}}]}}]}}]} as unknown as DocumentNode<GetCaseStudyBySlugQuery, GetCaseStudyBySlugQueryVariables>;
+export const GetAllTagsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetAllTags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"CaseStudies"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"tags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"id"}}]}},{"kind":"Field","name":{"kind":"Name","value":"updatedAt"}}]}}]}}]}}]} as unknown as DocumentNode<GetAllTagsQuery, GetAllTagsQueryVariables>;
+export const GetCaseStudiesByParamsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetCaseStudiesByParams"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"tagIds"}},"type":{"kind":"ListType","type":{"kind":"NamedType","name":{"kind":"Name","value":"JSON"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"experience"}},"type":{"kind":"ListType","type":{"kind":"NamedType","name":{"kind":"Name","value":"JSON"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"CaseStudies"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"tags"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"in"},"value":{"kind":"Variable","name":{"kind":"Name","value":"tagIds"}}}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"experience"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"in"},"value":{"kind":"Variable","name":{"kind":"Name","value":"experience"}}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"offset"}},{"kind":"Field","name":{"kind":"Name","value":"totalDocs"}},{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"summary"}},{"kind":"Field","name":{"kind":"Name","value":"tags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"id"}}]}},{"kind":"Field","name":{"kind":"Name","value":"updatedAt"}},{"kind":"Field","name":{"kind":"Name","value":"illustration"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"MediaFragment"}}]}},{"kind":"Field","name":{"kind":"Name","value":"experience"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"role"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"pagingCounter"}}]}},{"kind":"Field","name":{"kind":"Name","value":"Journal"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}},{"kind":"Field","name":{"kind":"Name","value":"description"}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"MediaFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Media"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"caption"}},{"kind":"Field","name":{"kind":"Name","value":"blurDataURL"}},{"kind":"Field","name":{"kind":"Name","value":"focalX"}},{"kind":"Field","name":{"kind":"Name","value":"focalY"}},{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"sizes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"icon"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"thumbnail"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"card"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"feature"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"hero"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}}]}}]}}]} as unknown as DocumentNode<GetCaseStudiesByParamsQuery, GetCaseStudiesByParamsQueryVariables>;
+export const GetCaseStudyBySlugDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetCaseStudyBySlug"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"slug"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"CaseStudies"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"equals"},"value":{"kind":"Variable","name":{"kind":"Name","value":"slug"}}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"experience"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"role"}},{"kind":"Field","name":{"kind":"Name","value":"startDate"}},{"kind":"Field","name":{"kind":"Name","value":"endDate"}},{"kind":"Field","name":{"kind":"Name","value":"id"}}]}},{"kind":"Field","name":{"kind":"Name","value":"tags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}}]}},{"kind":"Field","name":{"kind":"Name","value":"content"}},{"kind":"Field","name":{"kind":"Name","value":"illustration"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"MediaFragment"}}]}},{"kind":"Field","name":{"kind":"Name","value":"updatedAt"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"MediaFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Media"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"caption"}},{"kind":"Field","name":{"kind":"Name","value":"blurDataURL"}},{"kind":"Field","name":{"kind":"Name","value":"focalX"}},{"kind":"Field","name":{"kind":"Name","value":"focalY"}},{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"sizes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"icon"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"thumbnail"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"card"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"feature"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"hero"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}}]}}]}}]} as unknown as DocumentNode<GetCaseStudyBySlugQuery, GetCaseStudyBySlugQueryVariables>;
 export const GetContactFormsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetContactForms"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"ContactForms"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"limit"},"value":{"kind":"IntValue","value":"100"}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"email"}},{"kind":"Field","name":{"kind":"Name","value":"subject"}},{"kind":"Field","name":{"kind":"Name","value":"message"}},{"kind":"Field","name":{"kind":"Name","value":"status"}},{"kind":"Field","name":{"kind":"Name","value":"createdAt"}}]}},{"kind":"Field","name":{"kind":"Name","value":"totalDocs"}},{"kind":"Field","name":{"kind":"Name","value":"page"}},{"kind":"Field","name":{"kind":"Name","value":"totalPages"}}]}}]}}]} as unknown as DocumentNode<GetContactFormsQuery, GetContactFormsQueryVariables>;
-export const GetExperienceBySlugDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetExperienceBySlug"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"slug"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Experiences"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"equals"},"value":{"kind":"Variable","name":{"kind":"Name","value":"slug"}}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"role"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"startDate"}},{"kind":"Field","name":{"kind":"Name","value":"summary"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"endDate"}},{"kind":"Field","name":{"kind":"Name","value":"coverImage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"tags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}}]}}]}}]}}]}}]} as unknown as DocumentNode<GetExperienceBySlugQuery, GetExperienceBySlugQueryVariables>;
-export const GetFeaturedCaseStudiesDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetFeaturedCaseStudies"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"FeaturedCaseStudy"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"caseStudies"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"illustration"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}}]}},{"kind":"Field","name":{"kind":"Name","value":"summary"}},{"kind":"Field","name":{"kind":"Name","value":"tags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"id"}}]}}]}}]}}]}}]} as unknown as DocumentNode<GetFeaturedCaseStudiesQuery, GetFeaturedCaseStudiesQueryVariables>;
-export const GetFeaturedExperiencesDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetFeaturedExperiences"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"FeaturedExperience"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"experiences"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"endDate"}},{"kind":"Field","name":{"kind":"Name","value":"startDate"}},{"kind":"Field","name":{"kind":"Name","value":"thumbnailImage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"role"}}]}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}}]}}]}}]} as unknown as DocumentNode<GetFeaturedExperiencesQuery, GetFeaturedExperiencesQueryVariables>;
+export const GetExperienceBySlugDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetExperienceBySlug"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"slug"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Experiences"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"equals"},"value":{"kind":"Variable","name":{"kind":"Name","value":"slug"}}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"role"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"startDate"}},{"kind":"Field","name":{"kind":"Name","value":"summary"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"endDate"}},{"kind":"Field","name":{"kind":"Name","value":"coverImage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"MediaFragment"}}]}},{"kind":"Field","name":{"kind":"Name","value":"tags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}}]}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"MediaFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Media"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"caption"}},{"kind":"Field","name":{"kind":"Name","value":"blurDataURL"}},{"kind":"Field","name":{"kind":"Name","value":"focalX"}},{"kind":"Field","name":{"kind":"Name","value":"focalY"}},{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"sizes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"icon"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"thumbnail"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"card"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"feature"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"hero"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}}]}}]}}]} as unknown as DocumentNode<GetExperienceBySlugQuery, GetExperienceBySlugQueryVariables>;
+export const GetFeaturedCaseStudiesDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetFeaturedCaseStudies"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"FeaturedCaseStudy"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"caseStudies"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"illustration"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"MediaFragment"}}]}},{"kind":"Field","name":{"kind":"Name","value":"summary"}},{"kind":"Field","name":{"kind":"Name","value":"tags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"id"}}]}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"MediaFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Media"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"caption"}},{"kind":"Field","name":{"kind":"Name","value":"blurDataURL"}},{"kind":"Field","name":{"kind":"Name","value":"focalX"}},{"kind":"Field","name":{"kind":"Name","value":"focalY"}},{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"sizes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"icon"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"thumbnail"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"card"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"feature"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"hero"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}}]}}]}}]} as unknown as DocumentNode<GetFeaturedCaseStudiesQuery, GetFeaturedCaseStudiesQueryVariables>;
+export const GetFeaturedExperiencesDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetFeaturedExperiences"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"FeaturedExperience"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"experiences"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"endDate"}},{"kind":"Field","name":{"kind":"Name","value":"startDate"}},{"kind":"Field","name":{"kind":"Name","value":"thumbnailImage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"MediaFragment"}}]}},{"kind":"Field","name":{"kind":"Name","value":"role"}}]}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"MediaFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Media"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"caption"}},{"kind":"Field","name":{"kind":"Name","value":"blurDataURL"}},{"kind":"Field","name":{"kind":"Name","value":"focalX"}},{"kind":"Field","name":{"kind":"Name","value":"focalY"}},{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"sizes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"icon"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"thumbnail"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"card"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"feature"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"hero"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}}]}}]}}]} as unknown as DocumentNode<GetFeaturedExperiencesQuery, GetFeaturedExperiencesQueryVariables>;
 export const GetFooterDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetFooter"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Footer"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title1"}},{"kind":"Field","name":{"kind":"Name","value":"title2"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"buttonText"}},{"kind":"Field","name":{"kind":"Name","value":"bottomText"}}]}}]}}]} as unknown as DocumentNode<GetFooterQuery, GetFooterQueryVariables>;
 export const GetHeroDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetHero"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Hero"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"taglines"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"text"}}]}},{"kind":"Field","name":{"kind":"Name","value":"description"}}]}}]}}]} as unknown as DocumentNode<GetHeroQuery, GetHeroQueryVariables>;
 export const GetSkillsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetSkills"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Skill"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}},{"kind":"Field","name":{"kind":"Name","value":"skills"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"description"}}]}}]}}]}}]} as unknown as DocumentNode<GetSkillsQuery, GetSkillsQueryVariables>;
 export const GetWorkButtonsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetWorkButtons"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"WorkButton"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"buttons"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"text"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]} as unknown as DocumentNode<GetWorkButtonsQuery, GetWorkButtonsQueryVariables>;
+export const GetAllCaseStudiesSlugsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetAllCaseStudiesSlugs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"CaseStudies"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"updatedAt"}}]}}]}}]}}]} as unknown as DocumentNode<GetAllCaseStudiesSlugsQuery, GetAllCaseStudiesSlugsQueryVariables>;
+export const GetAllExperiencesSlugsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetAllExperiencesSlugs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Experiences"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"updatedAt"}}]}}]}}]}}]} as unknown as DocumentNode<GetAllExperiencesSlugsQuery, GetAllExperiencesSlugsQueryVariables>;
 export const GetCaseStudyBySlugMetaDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetCaseStudyBySlugMeta"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"slug"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"CaseStudies"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"equals"},"value":{"kind":"Variable","name":{"kind":"Name","value":"slug"}}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"meta"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]}}]}}]} as unknown as DocumentNode<GetCaseStudyBySlugMetaQuery, GetCaseStudyBySlugMetaQueryVariables>;
 export const GetExperienceBySlugMetaDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetExperienceBySlugMeta"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"slug"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Experiences"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"equals"},"value":{"kind":"Variable","name":{"kind":"Name","value":"slug"}}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"meta"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]}}]}}]} as unknown as DocumentNode<GetExperienceBySlugMetaQuery, GetExperienceBySlugMetaQueryVariables>;
 export const GetHeroMetaDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetHeroMeta"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Hero"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"meta"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]}}]} as unknown as DocumentNode<GetHeroMetaQuery, GetHeroMetaQueryVariables>;

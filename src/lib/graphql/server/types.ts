@@ -38,27 +38,7 @@ import {
   type GetCaseStudyBySlugMetaQueryVariables,
   type GetExperienceBySlugMetaQueryVariables,
 } from '@/lib/graphql/__generated__/hooks';
-
-export enum PayloadEntity {
-  Hero = 'hero',
-  Skills = 'skills',
-  FeaturedCaseStudies = 'featured-case-studies',
-  FeaturedExperiences = 'featured-experiences',
-  Footer = 'footer',
-  WorkButtons = 'work-buttons',
-  Journal = 'journal',
-  CaseStudy = 'case-studies',
-  Experience = 'experiences',
-  CaseStudiesByParams = 'case-studies-by-params',
-  AllTags = 'all-tags',
-  AllExperiences = 'all-experiences',
-  AllCaseStudies = 'all-case-studies',
-  // Metadata tags
-  HeroMeta = 'hero-meta',
-  JournalMeta = 'journal-meta',
-  CaseStudyMeta = 'case-study-meta',
-  ExperienceMeta = 'experience-meta',
-}
+import { PayloadEntity } from './enums';
 
 // Simple, direct type mapping with proper non-null assertions
 export type PayloadFetchTypeMap = {

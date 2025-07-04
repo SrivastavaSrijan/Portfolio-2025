@@ -1,5 +1,5 @@
 import type { GlobalConfig } from 'payload';
-import { api } from '@/lib/graphql/server/Api';
+import { revalidateAll } from '../utils';
 
 export const Footer: GlobalConfig = {
   slug: 'footer',
@@ -7,7 +7,7 @@ export const Footer: GlobalConfig = {
     read: () => true,
   },
   hooks: {
-    afterChange: [() => api.revalidateAll()],
+    afterChange: [revalidateAll],
   },
   fields: [
     {

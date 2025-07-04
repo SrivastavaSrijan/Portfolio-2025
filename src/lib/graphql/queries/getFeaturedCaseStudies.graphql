@@ -1,3 +1,5 @@
+#import "../fragments/MediaFragment.graphql"
+
 query GetFeaturedCaseStudies {
   FeaturedCaseStudy {
     title
@@ -7,8 +9,7 @@ query GetFeaturedCaseStudies {
       title
       slug
       illustration {
-        url
-        alt
+        ...MediaFragment
       }
       summary
       tags {

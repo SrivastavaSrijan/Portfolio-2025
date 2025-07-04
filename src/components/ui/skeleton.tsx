@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils';
 import { cva, type VariantProps } from 'class-variance-authority';
 
 const skeletonVariants = cva('animate-pulse rounded-md', {
@@ -22,7 +23,7 @@ interface SkeletonProps
 
 function Skeleton({ className, variant, ...props }: SkeletonProps) {
   return (
-    <div data-slot="skeleton" className={skeletonVariants({ variant, className })} {...props} />
+    <div data-slot="skeleton" className={cn(skeletonVariants({ variant, className }))} {...props} />
   );
 }
 

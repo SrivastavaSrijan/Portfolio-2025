@@ -23,7 +23,7 @@ export function HeroUI({ name, title, description, taglines, workButtons }: Hero
     <AnimatePresence mode="wait">
       <motion.div
         key="hero-section"
-        className="mx-auto flex h-full min-h-[calc(100vh-52px)] max-w-[1440px] flex-grow flex-col gap-7 px-5 py-5 lg:min-h-[calc(100vh-94px)] lg:gap-8 lg:px-20 lg:py-10"
+        className="mx-auto flex h-full min-h-[calc(50vh-52px)] max-w-[1440px] flex-grow flex-col gap-7 px-5 py-5 lg:min-h-[calc(100vh-94px)] lg:gap-8 lg:px-20 lg:py-10"
         initial="hidden"
         animate={controls}
         exit="exit"

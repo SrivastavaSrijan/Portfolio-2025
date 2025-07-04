@@ -1,3 +1,5 @@
+#import "../fragments/MediaFragment.graphql"
+
 query GetFeaturedExperiences {
   FeaturedExperience {
     experiences {
@@ -7,7 +9,7 @@ query GetFeaturedExperiences {
       endDate
       startDate
       thumbnailImage {
-        url
+        ...MediaFragment
       }
       role
     }

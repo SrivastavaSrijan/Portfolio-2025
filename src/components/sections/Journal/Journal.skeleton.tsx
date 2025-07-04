@@ -35,9 +35,11 @@ export function JournalSkeleton() {
       <div className="grid grid-cols-1 gap-5 bg-white px-4 py-5 lg:grid-cols-2 lg:gap-10 lg:px-8 lg:py-10">
         {caseStudyPlaceholders.map((placeholder) => (
           <div key={placeholder} className="space-y-4">
-            <Skeleton className="h-90 w-full rounded-4xl! lg:h-256" />
-            <Skeleton className="h-6 w-3/4" variant="default" />
-            <Skeleton className="h-4 w-full" variant="default" />
+            <Skeleton className="h-64 w-full rounded-4xl lg:h-256" />
+            <div className="flex flex-col gap-2 px-2">
+              <Skeleton className="h-6 w-3/4" variant="default" />
+              <Skeleton className="h-4 w-1/4" variant="default" />
+            </div>
           </div>
         ))}
       </div>

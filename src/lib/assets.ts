@@ -14,7 +14,7 @@ export const AssetsMap = {
   RemoteImages: {
     root: '/api/media/file/',
     get Face() {
-      return `${this.root}face.png`;
+      return `${this.root}face-2.webp`;
     },
     get Preview() {
       return `${this.root}preview.jpg`;

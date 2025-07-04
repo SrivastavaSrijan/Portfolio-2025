@@ -2,6 +2,7 @@ query GetAllCaseStudiesSlugs {
   CaseStudies {
     docs {
       slug
+      updatedAt
     }
   }
 }

@@ -1,4 +1,4 @@
-import type { PayloadFetchTypeMap, PayloadEntity } from '@/lib/graphql/server/types';
+import type { PayloadFetchTypeMap, PayloadEntity } from '@/lib/graphql/server';
 
 // Extract the exact FeaturedCaseStudies data type from the PayloadFetchTypeMap
 export type FeaturedCaseStudiesData =

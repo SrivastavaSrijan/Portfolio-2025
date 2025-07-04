@@ -1,3 +1,5 @@
+#import "../fragments/MediaFragment.graphql"
+
 query GetExperienceBySlug($slug: String!) {
   Experiences(where: { slug: { equals: $slug } }) {
     docs {
@@ -9,7 +11,7 @@ query GetExperienceBySlug($slug: String!) {
       title
       endDate
       coverImage {
-        url
+        ...MediaFragment
       }
       tags {
         id

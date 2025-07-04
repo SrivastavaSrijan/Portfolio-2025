@@ -1,10 +1,9 @@
 'use client';
 import type { GetFeaturedCaseStudiesQuery } from '@/lib/graphql/__generated__/hooks';
-import { Button, Card, CardAction, CardContent, CardDescription } from '../ui';
+import { Button, Card, CardAction, CardContent, CardDescription, Picture } from '../ui';
 import { ArrowUpRightIcon } from 'lucide-react';
 import Link from 'next/link';
 import { Routes } from '@/lib/config/routes';
-import { ImageWithShimmer } from '../ui/ImageWithShimmer';
 import { cn } from '@/lib/utils';
 import { motion, type Variants } from 'motion/react';
 import { RichText } from './RichText';
@@ -44,14 +43,14 @@ export const CaseStudyCard = ({
         'relative mx-auto flex w-full max-w-256 flex-col items-center justify-center overflow-hidden lg:rounded-[42px]'
       )}
     >
-      {illustration?.url && (
-        <ImageWithShimmer
-          fill
-          src={illustration?.url}
+      {illustration && (
+        <Picture
+          media={illustration}
+          imageSize="card"
           alt={title}
-          className={cn('relative h-full w-full rounded-4xl object-cover lg:rounded-none')}
-          shimmerClassName="rounded-4xl lg:rounded-none"
-          wrapperClassName="relative h-40 w-full lg:h-208"
+          fill
+          className={cn('h-full w-full rounded-4xl object-cover lg:rounded-none')}
+          wrapperProps={{ className: 'relative h-40 w-full lg:h-208' }}
         />
       )}
       <motion.div

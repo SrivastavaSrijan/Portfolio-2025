@@ -1,5 +1,6 @@
+import { revalidateAll } from '../utils';
+
 import type { CollectionConfig } from 'payload';
-import { api } from '@/lib/graphql/server/Api';
 
 export const CaseStudies: CollectionConfig = {
   slug: 'case-studies',
@@ -14,8 +15,8 @@ export const CaseStudies: CollectionConfig = {
     read: () => true,
   },
   hooks: {
-    afterChange: [() => api.revalidateAll()],
-    afterDelete: [() => api.revalidateAll()],
+    afterChange: [revalidateAll],
+    afterDelete: [revalidateAll],
   },
   fields: [
     {

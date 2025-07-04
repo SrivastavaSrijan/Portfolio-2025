@@ -4,8 +4,7 @@ import { Undo2, Clock } from 'lucide-react';
 import { RichText } from '../../fragments/RichText';
 import Link from 'next/link';
 import { Routes } from '@/lib/config/routes';
-import { Button } from '../../ui';
-import { ImageWithShimmer } from '../../ui/ImageWithShimmer';
+import { Button, Picture } from '../../ui';
 import type { CaseStudyUIProps } from './CaseStudy.utils';
 
 dayjs.extend(relativeTime);
@@ -40,16 +39,16 @@ export function CaseStudyUI({ title, content, updatedAt, illustration }: CaseStu
           </div>
         </div>
       </div>
-      {illustration?.url && (
-        <ImageWithShimmer
+      {illustration && (
+        <Picture
+          media={illustration}
+          imageSize="hero"
+          alt="Illustration"
           priority
           quality={100}
           width={1440}
           height={576}
-          src={illustration?.url}
-          alt="Illustration"
           className="h-40 w-full object-cover lg:h-144"
-          variant="brand"
         />
       )}
       <div className="bg-white">

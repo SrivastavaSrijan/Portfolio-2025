@@ -1,5 +1,5 @@
 import type { GetWorkButtonsQuery } from '@/lib/graphql/__generated__/hooks';
-import type { PayloadFetchTypeMap, PayloadEntity } from '@/lib/graphql/server/types';
+import type { PayloadFetchTypeMap, PayloadEntity } from '@/lib/graphql/server';
 
 // Extract the exact Footer data type from the PayloadFetchTypeMap
 export type FooterData = PayloadFetchTypeMap[PayloadEntity.Footer]['result'];

@@ -1,5 +1,6 @@
+import { revalidateAll } from '../utils';
+
 import type { GlobalConfig } from 'payload';
-import { api } from '@/lib/graphql/server/Api';
 
 export const Hero: GlobalConfig = {
   slug: 'hero',
@@ -7,7 +8,7 @@ export const Hero: GlobalConfig = {
     read: () => true,
   },
   hooks: {
-    afterChange: [() => api.revalidateAll()],
+    afterChange: [revalidateAll],
   },
   fields: [
     {

@@ -1,5 +1,6 @@
+import { revalidateAll } from '../utils';
+
 import type { GlobalConfig } from 'payload';
-import { api } from '@/lib/graphql/server/Api';
 
 export const WorkButtons: GlobalConfig = {
   slug: 'work-buttons',
@@ -7,7 +8,7 @@ export const WorkButtons: GlobalConfig = {
     read: () => true,
   },
   hooks: {
-    afterChange: [() => api.revalidateAll()],
+    afterChange: [revalidateAll],
   },
   fields: [
     {
