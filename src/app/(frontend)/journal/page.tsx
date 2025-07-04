@@ -9,7 +9,7 @@ export const revalidate = 3600;
 export async function generateMetadata(): Promise<Metadata> {
   const remoteMetadata = await api.get(PayloadEntity.JournalMeta);
   if (!remoteMetadata) {
-    throw new Error('Internal Server Error', { cause: [PayloadEntity.JournalMeta] });
+    return createMetadata({});
   }
   return createMetadata(remoteMetadata);
 }

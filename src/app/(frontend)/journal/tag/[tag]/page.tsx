@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: JournalTagPageProps): Promise
   const { tag } = await params;
   const remoteMetadata = await api.get(PayloadEntity.JournalMeta);
   if (!remoteMetadata) {
-    throw new Error('Internal Server Error', { cause: [PayloadEntity.JournalMeta] });
+    return createMetadata({});
   }
 
   const metadata = createMetadata(remoteMetadata);

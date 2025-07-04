@@ -101,7 +101,7 @@ export class Api {
       `api.getComponent(${String(component)})`
     );
     if (!rawData) {
-      return config.extractData({});
+      return null;
     }
     return config.extractData(rawData);
   }

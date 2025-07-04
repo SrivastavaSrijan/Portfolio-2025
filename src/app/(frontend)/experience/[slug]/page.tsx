@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
 import { NotFound } from '@/components/fragments';
 import { Experience } from '@/components/sections';
 
-export const revalidate = 3600;
+export const dynamic = 'force-dynamic';
 
 export async function generateStaticParams() {
   // During build time, the Payload server might not be running
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: ExperienceBySlugProps): Promi
   const { slug } = await params;
   const remoteMetadata = await api.get(PayloadEntity.ExperienceMeta, { slug });
   if (!remoteMetadata) {
-    throw new Error('Internal Server Error', { cause: [PayloadEntity.ExperienceMeta] });
+    return createMetadata({});
   }
   return createMetadata(remoteMetadata);
 }

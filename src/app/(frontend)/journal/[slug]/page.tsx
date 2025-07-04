@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: CaseStudyBySlugProps): Promis
     slug,
   });
   if (!remoteMetadata) {
-    throw new Error('Internal Server Error', { cause: [PayloadEntity.CaseStudyMeta] });
+    return createMetadata({});
   }
   return createMetadata(remoteMetadata);
 }
