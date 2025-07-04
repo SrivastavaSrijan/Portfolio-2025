@@ -33,9 +33,13 @@ async function JournalServer({ searchParams }: JournalWrapperProps) {
     }
 
     // Fetch case studies based on filters
-    const { caseStudies, journal } = await api.get(PayloadEntity.CaseStudiesByParams, {
+    const data = await api.get(PayloadEntity.CaseStudiesByParams, {
       ...(!!tagIds.length && { tagIds }),
     });
+    if (!data) {
+      throw new Error('Internal Server Error', { cause: [PayloadEntity.CaseStudiesByParams] });
+    }
+    const { caseStudies, journal } = data;
     if (!caseStudies || !journal) {
       throw new Error('Internal Server Error', {
         cause: [PayloadEntity.CaseStudiesByParams],

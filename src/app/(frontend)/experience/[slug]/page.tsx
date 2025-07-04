@@ -13,6 +13,9 @@ export async function generateStaticParams() {
   // Return empty array to allow fallback to ISR
   try {
     const experiences = await api.get(PayloadEntity.AllExperiences);
+    if (!experiences) {
+      throw new Error('Internal Server Error', { cause: [PayloadEntity.AllExperiences] });
+    }
     return experiences.map((experience) => ({
       slug: experience.slug,
     }));

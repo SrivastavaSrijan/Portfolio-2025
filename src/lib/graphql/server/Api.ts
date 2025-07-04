@@ -53,7 +53,6 @@ export class Api {
             },
           },
         },
-        errorPolicy: 'all', // Return partial data even with errors
       });
 
       return result.data;
