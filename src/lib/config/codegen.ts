@@ -1,6 +1,6 @@
 import type { CodegenConfig } from '@graphql-codegen/cli';
 const config: CodegenConfig = {
-  schema: 'http://localhost:3002/api/graphql',
+  schema: `${process.env.BASE_URL || 'http://localhost:3002'}/api/graphql`,
   documents: ['src/lib/graphql/**/*.graphql'],
   ignoreNoDocuments: true, // for better experience with the watcher
   generates: {
