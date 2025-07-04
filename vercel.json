@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "yarn update && yarn build",
+  "buildCommand": "yarn payload migrate && yarn payload generate:types && yarn build",
   "installCommand": "yarn",
   "framework": "nextjs"
 }
