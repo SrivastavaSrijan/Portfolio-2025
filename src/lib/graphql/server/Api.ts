@@ -54,7 +54,6 @@ export class Api {
           },
         },
         errorPolicy: 'all', // Return partial data even with errors
-        returnPartialData: true, // Allow partial data to be returned
       });
 
       return result.data;
