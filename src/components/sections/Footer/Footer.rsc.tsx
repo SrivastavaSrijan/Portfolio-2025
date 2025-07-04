@@ -9,16 +9,20 @@ import type { FooterWrapperProps } from './Footer.utils';
  * Footer Server Component - Clean and simple
  */
 async function FooterServer(_props: FooterWrapperProps) {
-  const [footerData, workButtonsData] = await Promise.all([
-    api.get(PayloadEntity.Footer),
-    api.get(PayloadEntity.WorkButtons),
-  ]);
-  if (!footerData || !workButtonsData) {
-    throw new Error('Internal Server Error', {
-      cause: [PayloadEntity.Footer, PayloadEntity.WorkButtons],
-    });
+  try {
+    const [footerData, workButtonsData] = await Promise.all([
+      api.get(PayloadEntity.Footer),
+      api.get(PayloadEntity.WorkButtons),
+    ]);
+    if (!footerData || !workButtonsData) {
+      throw new Error('Internal Server Error', {
+        cause: [PayloadEntity.Footer, PayloadEntity.WorkButtons],
+      });
+    }
+    return <FooterUI {...footerData} workButtons={workButtonsData.buttons} />;
+  } catch {
+    return <FooterSkeleton />;
   }
-  return <FooterUI {...footerData} workButtons={workButtonsData.buttons} />;
 }
 
 /**

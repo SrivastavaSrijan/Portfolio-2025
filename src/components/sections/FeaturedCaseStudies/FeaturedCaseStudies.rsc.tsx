@@ -9,13 +9,17 @@ import type { FeaturedCaseStudiesWrapperProps } from './FeaturedCaseStudies.util
  * FeaturedCaseStudies Server Component - Clean and simple
  */
 async function FeaturedCaseStudiesServer(_props: FeaturedCaseStudiesWrapperProps) {
-  const data = await api.get(PayloadEntity.FeaturedCaseStudies);
-  if (!data) {
-    throw new Error('Internal Server Error', {
-      cause: [PayloadEntity.FeaturedCaseStudies],
-    });
+  try {
+    const data = await api.get(PayloadEntity.FeaturedCaseStudies);
+    if (!data) {
+      throw new Error('Internal Server Error', {
+        cause: [PayloadEntity.FeaturedCaseStudies],
+      });
+    }
+    return <FeaturedCaseStudiesUI {...data} />;
+  } catch {
+    return <FeaturedCaseStudiesSkeleton />;
   }
-  return <FeaturedCaseStudiesUI {...data} />;
 }
 
 /**
