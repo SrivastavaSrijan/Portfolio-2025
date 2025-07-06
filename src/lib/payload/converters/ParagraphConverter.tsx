@@ -121,7 +121,7 @@ const Code = ({
   const highlightedCode = Prism.highlight(codeText, Prism.languages.javascript, 'javascript');
 
   return (
-    <pre className="my-4 overflow-x-auto rounded-lg bg-black-700 p-4">
+    <pre className="my-4 overflow-x-auto rounded-lg bg-black-700 p-2 lg:p-4">
       <code
         className="block font-mono text-sm leading-relaxed"
         dangerouslySetInnerHTML={{ __html: highlightedCode }}
@@ -142,7 +142,7 @@ export const ParagraphConverter: JSXConverters<
   quote: ({ node, nodesToJSX }) => {
     return (
       // we use blockquotes for code blocks cuz payload doesn't support code blocks
-      <blockquote className="my-6 border-primary border-l-4 pl-6 text-black-600 dark:text-black-300">
+      <blockquote className="-mx-2 my-6 border-primary border-l-4 pl-2 text-black-600 lg:pl-4 dark:text-black-300">
         <Code node={node as SerializedQuoteNode} nodesToJSX={nodesToJSX} />
       </blockquote>
     );

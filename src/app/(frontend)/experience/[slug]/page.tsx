@@ -6,8 +6,6 @@ import type { Metadata } from 'next';
 import { NotFound } from '@/components/fragments';
 import { Experience } from '@/components/sections';
 
-export const dynamic = 'force-dynamic';
-
 export async function generateStaticParams() {
   // During build time, the Payload server might not be running
   // Return empty array to allow fallback to ISR

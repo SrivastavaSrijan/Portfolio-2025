@@ -1,5 +1,6 @@
 import { createHttpLink, type NormalizedCacheObject } from '@apollo/client';
 import { InMemoryCache, ApolloClient } from '@apollo/client-integration-nextjs';
+import { loadDevMessages, loadErrorMessages } from '@apollo/client/dev';
 import { useMemo } from 'react';
 
 // URI fallback for both client and server side
@@ -7,6 +8,11 @@ const API_URL = process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT || 'http://localhost:30
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | undefined;
 
+if (process.env.NODE_ENV === 'development') {
+  // Adds messages only in a dev environment
+  loadDevMessages();
+  loadErrorMessages();
+}
 function createApolloClient() {
   return new ApolloClient({
     link: createHttpLink({

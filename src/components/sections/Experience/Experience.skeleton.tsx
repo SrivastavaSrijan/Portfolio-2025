@@ -4,7 +4,7 @@ import { Skeleton } from '../../ui';
  * Experience Skeleton Component - Loading state for experience
  */
 export function ExperienceSkeleton() {
-  const experienceDetails = ['Role', 'Duration', 'Start Date', 'End Date'];
+  const experienceDetails = ['Role', 'Duration', 'Start Date'];
   const caseStudiesPlaceholders = ['case-study-1', 'case-study-2'];
 
   return (
@@ -23,7 +23,7 @@ export function ExperienceSkeleton() {
         </div>
       </div>
       {/* Cover image skeleton */}
-      <Skeleton className="h-20 w-full lg:h-144" variant="brand" />
+      <Skeleton className="h-20 w-full rounded-none lg:h-144" variant="brand" />
       <div className="bg-white">
         <div className="mx-auto flex flex-col gap-5 px-4 py-10 lg:max-w-205 lg:px-4 lg:py-20">
           {/* Content skeleton */}

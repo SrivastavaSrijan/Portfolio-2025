@@ -1,9 +1,7 @@
 import type { DocumentNode, OperationVariables } from '@apollo/client';
-import { revalidateTag } from 'next/cache';
 import { getClient } from '../../apollo/server';
 import { handleError, logError } from './error';
 import { PayloadFetchConfig, type PayloadFetchTypeMap } from './types';
-import type { PayloadEntity } from '.';
 
 const ServerConfig = {
   RevalidationTime: 1800, // Default revalidation time in seconds
@@ -61,14 +59,6 @@ export class Api {
       const serverError = handleError(error, functionName);
       logError(serverError, functionName);
       return null;
-    }
-  }
-  /**
-   * Revalidate specific component tags
-   */
-  async revalidate(...components: PayloadEntity[]): Promise<void> {
-    for (const component of components) {
-      revalidateTag(component);
     }
   }
 

@@ -100,7 +100,7 @@ export default function Picture({
     blurDataURL: blurDataURL || undefined,
     style: {
       objectPosition,
-      ...(isLoading && blurDataURL && { filter: 'blur(0.5rem)' }),
+      ...(isLoading && blurDataURL && { filter: 'blur(1rem)' }),
       ...restImageProps.style,
     },
     ...restImageProps,
