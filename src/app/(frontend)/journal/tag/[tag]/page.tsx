@@ -10,20 +10,17 @@ export const revalidate = 3600;
 
 // Generate static params for all known tags
 export async function generateStaticParams() {
-  try {
-    const allTagsData = await api.get(PayloadEntity.AllTags);
-    if (!allTagsData) {
-      throw new Error('Internal Server Error', { cause: [PayloadEntity.AllTags] });
-    }
+  const allTagsData = await api.get(PayloadEntity.AllTags);
 
-    const allTags = uniqBy(allTagsData.flatMap((doc) => doc.tags).filter(Boolean), 'id');
-    const tagNames = allTags.map(({ name }) => name);
-
-    return tagNames.map((tag) => ({ tag: tag }));
-  } catch (error) {
-    console.error('Error generating static params for journal tags:', error);
+  if (!allTagsData) {
+    // Error already logged in api.get, return empty array for ISR fallback
     return [];
   }
+
+  const allTags = uniqBy(allTagsData.flatMap((doc) => doc.tags).filter(Boolean), 'id');
+  const tagNames = allTags.map(({ name }) => name);
+
+  return tagNames.map((tag) => ({ tag: tag }));
 }
 
 interface JournalTagPageProps {
@@ -51,19 +48,17 @@ export async function generateMetadata({ params }: JournalTagPageProps): Promise
 export default async function JournalTagPage({ params }: JournalTagPageProps) {
   const { tag: encodedTag } = await params;
   const tag = decodeURIComponent(encodedTag);
-  // Verify the tag exists
-  try {
-    const allTagsData = await api.get(PayloadEntity.AllTags);
-    if (!allTagsData) {
-      notFound();
-    }
 
-    const allTags = uniqBy(allTagsData.flatMap((doc) => doc.tags).filter(Boolean), 'id');
-    const tagExists = allTags.some(({ name }) => name === tag);
-    if (!tagExists) {
-      notFound();
-    }
-  } catch {
+  // Verify the tag exists
+  const allTagsData = await api.get(PayloadEntity.AllTags);
+  if (!allTagsData) {
+    notFound();
+  }
+
+  const allTags = uniqBy(allTagsData.flatMap((doc) => doc.tags).filter(Boolean), 'id');
+  const tagExists = allTags.some(({ name }) => name === tag);
+
+  if (!tagExists) {
     notFound();
   }
 

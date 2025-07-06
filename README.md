@@ -1,6 +1,6 @@
 # Portfolio Website
 
-A modern, type-safe portfolio website built with Next.js, PayloadCMS, and GraphQL. Features a streamlined content management workflow with automatic type generation and React Server Components.
+A modern, type-safe portfolio website built with Next.js, PayloadCMS, and GraphQL. Features a streamlined content management workflow with automatic type generation, React Server Components, and robust error handling.
 
 ## 🚀 Quick Start
 
@@ -34,7 +34,7 @@ A modern, type-safe portfolio website built with Next.js, PayloadCMS, and GraphQ
 
 ## 🏗️ Architecture Overview
 
-This portfolio uses a modern, type-safe architecture:
+This portfolio uses a modern, resilient, type-safe architecture:
 
 - **Next.js 15** with App Router and React Server Components
 - **PayloadCMS** for content management with GraphQL API
@@ -42,6 +42,54 @@ This portfolio uses a modern, type-safe architecture:
 - **TypeScript** with automatic type generation from GraphQL schema
 - **Tailwind CSS** with Radix UI components
 - **Vercel** deployment with PostgreSQL and Blob storage
+- **Centralized Error Handling** for graceful degradation during deployments
+
+## 🛡️ Error Handling & Resilience
+
+The application features a robust error handling system designed to handle the "chicken and egg" problem common in headless CMS deployments:
+
+### The Problem
+During deployment, your frontend might build before your CMS is fully available, causing build failures when trying to fetch data for static generation.
+
+### Our Solution
+**Centralized Error Handling in the Data Layer:**
+
+```typescript
+// All error handling happens in Api.ts
+async fetch() {
+  try {
+    const result = await query(/* ... */);
+    return result.data;
+  } catch (error) {
+    // Log error centrally
+    logError(error, context);
+    // Return null for graceful handling
+    return null;
+  }
+}
+```
+
+**Simple, Predictable Components:**
+
+```typescript
+// Server components handle null data gracefully
+async function ComponentServer() {
+  const data = await api.get(PayloadEntity.Something);
+  
+  if (!data) {
+    return <ComponentSkeleton />; // or <NotFound /> for dynamic pages
+  }
+  
+  return <ComponentUI {...data} />;
+}
+```
+
+### Benefits:
+- ✅ **Build Resilience**: Builds never fail due to CMS unavailability
+- ✅ **Graceful Degradation**: Shows skeletons/empty states instead of crashes
+- ✅ **Centralized Logging**: All errors logged in one place for debugging
+- ✅ **ISR Fallback**: Uses Incremental Static Regeneration when static generation fails
+- ✅ **Clean Components**: No try/catch blocks cluttering component logic
 
 ## 📝 Content Management Workflow
 
@@ -55,7 +103,6 @@ Follow this workflow to add new content to your portfolio:
 ```typescript
 // src/lib/payload/collections/BlogPosts.ts
 import type { CollectionConfig } from 'payload';
-import { api } from '@/lib/graphql/server/Api';
 
 export const BlogPosts: CollectionConfig = {
   slug: 'blog-posts',
@@ -70,8 +117,8 @@ export const BlogPosts: CollectionConfig = {
     read: () => true,
   },
   hooks: {
-    afterChange: [() => api.revalidateAll()],
-    afterDelete: [() => api.revalidateAll()],
+    afterChange: [revalidateAll],
+    afterDelete: [revalidateAll],
   },
   fields: [
     {
@@ -223,10 +270,7 @@ export const PayloadFetchConfig = {
   [PayloadEntity.BlogPosts]: {
     document: GetBlogPostsDocument,
     extractData: (data: GetBlogPostsQuery) => {
-      if (!data.BlogPosts?.docs) {
-        throw new Error('BlogPosts data is null or undefined');
-      }
-      return data.BlogPosts.docs;
+      return data.BlogPosts?.docs ?? null;
     },
     tags: [PayloadEntity.BlogPosts],
   },
@@ -234,10 +278,7 @@ export const PayloadFetchConfig = {
   [PayloadEntity.About]: {
     document: GetAboutDocument,
     extractData: (data: GetAboutQuery) => {
-      if (!data.About) {
-        throw new Error('About data is null or undefined');
-      }
-      return data.About;
+      return data.About ?? null;
     },
     tags: [PayloadEntity.About],
   },
@@ -259,7 +300,7 @@ async function BlogPostsServer() {
   const blogPosts = await api.get(PayloadEntity.BlogPosts);
   
   if (!blogPosts) {
-    throw new Error('Blog posts data not found');
+    return <BlogPostsSkeleton />;
   }
   
   return <BlogPostsUI posts={blogPosts} />;
@@ -293,7 +334,8 @@ The system automatically handles:
 - ✅ GraphQL schema generation
 - ✅ Cache invalidation when content changes
 - ✅ Server-side rendering with React Server Components
-- ✅ Loading states and error boundaries
+- ✅ Loading states and graceful error handling
+- ✅ Build resilience during deployments
 
 ## 🛠️ Development Scripts
 

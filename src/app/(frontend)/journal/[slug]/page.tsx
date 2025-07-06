@@ -11,17 +11,16 @@ export const revalidate = 3600;
 export async function generateStaticParams() {
   // During build time, the Payload server might not be running
   // Return empty array to allow fallback to ISR
-  try {
-    const caseStudies = await api.get(PayloadEntity.AllCaseStudies);
-    if (!caseStudies) {
-      throw new Error('Internal Server Error', { cause: [PayloadEntity.AllCaseStudies] });
-    }
-    return caseStudies.map((caseStudy) => ({
-      slug: caseStudy.slug,
-    }));
-  } catch {
+  const caseStudies = await api.get(PayloadEntity.AllCaseStudies);
+
+  if (!caseStudies) {
+    // Error already logged in api.get, return empty array for ISR fallback
     return [];
   }
+
+  return caseStudies.map((caseStudy) => ({
+    slug: caseStudy.slug,
+  }));
 }
 
 interface CaseStudyBySlugProps {

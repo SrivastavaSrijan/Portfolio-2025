@@ -9,15 +9,13 @@ import type { SkillsWrapperProps } from './Skills.utils';
  * Skills Server Component - Clean and simple
  */
 async function SkillsServer(_props: SkillsWrapperProps) {
-  try {
-    const data = await api.get(PayloadEntity.Skills);
-    if (!data) {
-      throw new Error('Internal Server Error', { cause: [PayloadEntity.Skills] });
-    }
-    return <SkillsUI {...data} />;
-  } catch {
+  const data = await api.get(PayloadEntity.Skills);
+
+  if (!data) {
     return <SkillsSkeleton />;
   }
+
+  return <SkillsUI {...data} />;
 }
 
 /**

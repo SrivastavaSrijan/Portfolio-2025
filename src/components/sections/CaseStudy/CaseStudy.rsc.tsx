@@ -10,16 +10,13 @@ import type { CaseStudyWrapperProps } from './CaseStudy.utils';
  * CaseStudy Server Component - Clean and simple
  */
 async function CaseStudyServer({ slug }: CaseStudyWrapperProps) {
-  try {
-    const data = await api.get(PayloadEntity.CaseStudy, { slug });
-    if (!data) {
-      throw new Error('Internal Server Error', { cause: [PayloadEntity.CaseStudy] });
-    }
-    return <CaseStudyUI {...data} />;
-  } catch (error) {
-    console.error('Error fetching case study:', error);
+  const data = await api.get(PayloadEntity.CaseStudy, { slug });
+
+  if (!data) {
     return <NotFound />;
   }
+
+  return <CaseStudyUI {...data} />;
 }
 
 /**

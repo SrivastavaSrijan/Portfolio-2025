@@ -127,7 +127,7 @@ export type PayloadFetchTypeMap = {
 // Individual config type for each component
 type ConfigFor<T extends keyof PayloadFetchTypeMap> = {
   document: DocumentNode;
-  extractData: (data: PayloadFetchTypeMap[T]['query']) => PayloadFetchTypeMap[T]['result'];
+  extractData: (data: PayloadFetchTypeMap[T]['query']) => PayloadFetchTypeMap[T]['result'] | null;
   tags: string[];
 } & ('variables' extends keyof PayloadFetchTypeMap[T]
   ? { variables: PayloadFetchTypeMap[T]['variables'] }
@@ -143,10 +143,7 @@ export const PayloadFetchConfig: {
   [PayloadEntity.Hero]: {
     document: GetHeroDocument,
     extractData: (data: GetHeroQuery) => {
-      if (!data.Hero) {
-        throw new Error('Hero data is null or undefined');
-      }
-      return data.Hero;
+      return data.Hero ?? null;
     },
     tags: [PayloadEntity.Hero],
   },
@@ -154,10 +151,7 @@ export const PayloadFetchConfig: {
   [PayloadEntity.Skills]: {
     document: GetSkillsDocument,
     extractData: (data: GetSkillsQuery) => {
-      if (!data.Skill) {
-        throw new Error('Skills data is null or undefined');
-      }
-      return data.Skill;
+      return data.Skill ?? null;
     },
     tags: [PayloadEntity.Skills],
   },
@@ -165,10 +159,7 @@ export const PayloadFetchConfig: {
   [PayloadEntity.FeaturedCaseStudies]: {
     document: GetFeaturedCaseStudiesDocument,
     extractData: (data: GetFeaturedCaseStudiesQuery) => {
-      if (!data.FeaturedCaseStudy) {
-        throw new Error('FeaturedCaseStudies data is null or undefined');
-      }
-      return data.FeaturedCaseStudy;
+      return data.FeaturedCaseStudy ?? null;
     },
     tags: [PayloadEntity.FeaturedCaseStudies],
   },
@@ -176,10 +167,7 @@ export const PayloadFetchConfig: {
   [PayloadEntity.FeaturedExperiences]: {
     document: GetFeaturedExperiencesDocument,
     extractData: (data: GetFeaturedExperiencesQuery) => {
-      if (!data.FeaturedExperience) {
-        throw new Error('FeaturedExperiences data is null or undefined');
-      }
-      return data.FeaturedExperience;
+      return data.FeaturedExperience ?? null;
     },
     tags: [PayloadEntity.FeaturedExperiences],
   },
@@ -187,10 +175,7 @@ export const PayloadFetchConfig: {
   [PayloadEntity.Footer]: {
     document: GetFooterDocument,
     extractData: (data: GetFooterQuery) => {
-      if (!data.Footer) {
-        throw new Error('Footer data is null or undefined');
-      }
-      return data.Footer;
+      return data.Footer ?? null;
     },
     tags: [PayloadEntity.Footer],
   },
@@ -198,10 +183,7 @@ export const PayloadFetchConfig: {
   [PayloadEntity.WorkButtons]: {
     document: GetWorkButtonsDocument,
     extractData: (data: GetWorkButtonsQuery) => {
-      if (!data.WorkButton) {
-        throw new Error('WorkButtons data is null or undefined');
-      }
-      return data.WorkButton;
+      return data.WorkButton ?? null;
     },
     tags: [PayloadEntity.WorkButtons],
   },
@@ -209,11 +191,7 @@ export const PayloadFetchConfig: {
   [PayloadEntity.CaseStudy]: {
     document: GetCaseStudyBySlugDocument,
     extractData: (data: GetCaseStudyBySlugQuery) => {
-      const caseStudy = data.CaseStudies?.docs?.[0];
-      if (!caseStudy) {
-        throw new Error('CaseStudy not found or data is null');
-      }
-      return caseStudy;
+      return data.CaseStudies?.docs?.[0] ?? null;
     },
     variables: { slug: '' },
     tags: [PayloadEntity.CaseStudy],
@@ -222,11 +200,7 @@ export const PayloadFetchConfig: {
   [PayloadEntity.Experience]: {
     document: GetExperienceBySlugDocument,
     extractData: (data: GetExperienceBySlugQuery) => {
-      const experience = data.Experiences?.docs?.[0];
-      if (!experience) {
-        throw new Error('Experience not found or data is null');
-      }
-      return experience;
+      return data.Experiences?.docs?.[0] ?? null;
     },
     variables: { slug: '' },
     tags: [PayloadEntity.Experience],
@@ -236,7 +210,7 @@ export const PayloadFetchConfig: {
     document: GetCaseStudiesByParamsDocument,
     extractData: (data: GetCaseStudiesByParamsQuery) => {
       if (!data.Journal) {
-        throw new Error('Journal data is null or undefined');
+        return null;
       }
       return {
         caseStudies: data.CaseStudies?.docs ?? [],
@@ -268,11 +242,7 @@ export const PayloadFetchConfig: {
   [PayloadEntity.HeroMeta]: {
     document: GetHeroMetaDocument,
     extractData: (data: GetHeroMetaQuery) => {
-      const meta = data.Hero?.meta;
-      if (!meta) {
-        throw new Error('HeroMeta is null or undefined');
-      }
-      return meta;
+      return data.Hero?.meta ?? null;
     },
     tags: [PayloadEntity.HeroMeta],
   },
@@ -280,11 +250,7 @@ export const PayloadFetchConfig: {
   [PayloadEntity.JournalMeta]: {
     document: GetJournalMetaDocument,
     extractData: (data: GetJournalMetaQuery) => {
-      const meta = data.Journal?.meta;
-      if (!meta) {
-        throw new Error('JournalMeta is null or undefined');
-      }
-      return meta;
+      return data.Journal?.meta ?? null;
     },
     tags: [PayloadEntity.JournalMeta],
   },
@@ -292,11 +258,7 @@ export const PayloadFetchConfig: {
   [PayloadEntity.CaseStudyMeta]: {
     document: GetCaseStudyBySlugMetaDocument,
     extractData: (data: GetCaseStudyBySlugMetaQuery) => {
-      const meta = data.CaseStudies?.docs?.[0]?.meta;
-      if (!meta) {
-        throw new Error('CaseStudyMeta not found or is null');
-      }
-      return meta;
+      return data.CaseStudies?.docs?.[0]?.meta ?? null;
     },
     variables: { slug: '' },
     tags: [PayloadEntity.CaseStudyMeta],
@@ -305,11 +267,7 @@ export const PayloadFetchConfig: {
   [PayloadEntity.ExperienceMeta]: {
     document: GetExperienceBySlugMetaDocument,
     extractData: (data: GetExperienceBySlugMetaQuery) => {
-      const meta = data.Experiences?.docs?.[0]?.meta;
-      if (!meta) {
-        throw new Error('ExperienceMeta not found or is null');
-      }
-      return meta;
+      return data.Experiences?.docs?.[0]?.meta ?? null;
     },
     variables: { slug: '' },
     tags: [PayloadEntity.ExperienceMeta],
@@ -318,10 +276,7 @@ export const PayloadFetchConfig: {
   [PayloadEntity.Journal]: {
     document: GetJournalMetaDocument,
     extractData: (data: GetJournalMetaQuery) => {
-      if (!data.Journal) {
-        throw new Error('Journal data is null or undefined');
-      }
-      return data.Journal;
+      return data.Journal ?? null;
     },
     tags: [PayloadEntity.Journal],
   },

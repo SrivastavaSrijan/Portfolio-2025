@@ -9,21 +9,16 @@ import type { HeroWrapperProps } from './Hero.utils';
  * Hero Server Component - Clean and simple
  */
 async function HeroServer(_props: HeroWrapperProps) {
-  try {
-    const [heroData, workButtonsData] = await Promise.all([
-      api.get(PayloadEntity.Hero),
-      api.get(PayloadEntity.WorkButtons),
-    ]);
+  const [heroData, workButtonsData] = await Promise.all([
+    api.get(PayloadEntity.Hero),
+    api.get(PayloadEntity.WorkButtons),
+  ]);
 
-    if (!heroData || !workButtonsData) {
-      throw new Error('Internal Server Error', {
-        cause: [PayloadEntity.Hero, PayloadEntity.WorkButtons],
-      });
-    }
-    return <HeroUI {...heroData} workButtons={workButtonsData.buttons} />;
-  } catch {
+  if (!heroData || !workButtonsData) {
     return <HeroSkeleton />;
   }
+
+  return <HeroUI {...heroData} workButtons={workButtonsData.buttons} />;
 }
 
 /**

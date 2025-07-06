@@ -1,9 +1,12 @@
 import { clsx, type ClassValue } from 'clsx';
-import { isString } from 'lodash';
 import { twMerge } from 'tailwind-merge';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
+}
+
+function isString(value: unknown): value is string {
+  return typeof value === 'string' || value instanceof String;
 }
 
 export const isElementInViewport = (bottom: number) => {

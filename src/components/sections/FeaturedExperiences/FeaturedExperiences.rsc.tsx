@@ -9,17 +9,13 @@ import type { FeaturedExperiencesWrapperProps } from './FeaturedExperiences.util
  * FeaturedExperiences Server Component - Clean and simple
  */
 async function FeaturedExperiencesServer(_props: FeaturedExperiencesWrapperProps) {
-  try {
-    const data = await api.get(PayloadEntity.FeaturedExperiences);
-    if (!data) {
-      throw new Error('Internal Server Error', {
-        cause: [PayloadEntity.FeaturedExperiences],
-      });
-    }
-    return <FeaturedExperiencesUI {...data} />;
-  } catch {
+  const data = await api.get(PayloadEntity.FeaturedExperiences);
+
+  if (!data) {
     return <FeaturedExperiencesSkeleton />;
   }
+
+  return <FeaturedExperiencesUI {...data} />;
 }
 
 /**

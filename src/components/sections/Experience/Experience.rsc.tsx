@@ -10,26 +10,23 @@ import type { ExperienceWrapperProps } from './Experience.utils';
  * Experience Server Component - Clean and simple
  */
 async function ExperienceServer({ slug }: ExperienceWrapperProps) {
-  try {
-    const experience = await api.get(PayloadEntity.Experience, {
-      slug,
-    });
-    if (!experience) {
-      throw new Error('Internal Server Error', { cause: [PayloadEntity.Experience] });
-    }
-    const { caseStudies } = await api.get(PayloadEntity.CaseStudiesByParams, {
-      experience: [experience.id],
-    });
-    if (!caseStudies) {
-      throw new Error('Internal Server Error', {
-        cause: [PayloadEntity.CaseStudiesByParams],
-      });
-    }
-    return <ExperienceUI experience={experience} caseStudies={caseStudies} />;
-  } catch (error) {
-    console.error('Error fetching experience:', error);
+  const experience = await api.get(PayloadEntity.Experience, {
+    slug,
+  });
+
+  if (!experience) {
     return <NotFound />;
   }
+
+  const caseStudiesData = await api.get(PayloadEntity.CaseStudiesByParams, {
+    experience: [experience.id],
+  });
+
+  if (!caseStudiesData) {
+    return <NotFound />;
+  }
+
+  return <ExperienceUI experience={experience} caseStudies={caseStudiesData.caseStudies} />;
 }
 
 /**
