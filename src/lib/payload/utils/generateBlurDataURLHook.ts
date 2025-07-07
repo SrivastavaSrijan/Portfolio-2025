@@ -8,41 +8,30 @@ dotenv.config({ quiet: true });
 /**
  * Generate blur data URL from a buffer using plaiceholder
  */
-export async function generateBlurDataURLFromBuffer(buffer: Buffer): Promise<string | null> {
+export async function generateBlurDataURLFromBuffer(
+  buffer: Buffer,
+  width: number | null | undefined,
+  height: number | null | undefined
+): Promise<string | null> {
   try {
     // Add buffer validation
     console.debug('Buffer received, size:', buffer.length);
     console.debug('Buffer first few bytes:', buffer.slice(0, 20).toString('hex'));
 
-    // First get the image dimensions to calculate aspect ratio
-    const sharp = (await import('sharp')).default;
-
-    // Add more detailed Sharp debugging
-    const sharpInstance = sharp(buffer);
-    const metadata = await sharpInstance.metadata();
-    console.debug('Sharp metadata:', metadata);
-
-    const { width, height } = metadata;
-
-    if (!width || !height) throw new Error('Could not determine image dimensions');
-
-    // Convert to a more compatible format first if it's WebP
-    let processedBuffer = buffer;
-    if (metadata.format === 'webp') {
-      console.debug('Converting WebP to JPEG for processing...');
-      processedBuffer = await sharp(buffer).jpeg({ quality: 90 }).toBuffer();
-    }
-
     // Use plaiceholder with the processed buffer
     const { getPlaiceholder } = await import('plaiceholder');
 
     // Generate a correctly proportioned placeholder
-    const { base64: originalBase64 } = await getPlaiceholder(processedBuffer, {
+    const { base64: originalBase64 } = await getPlaiceholder(buffer, {
       size: 10,
       saturation: 0.7,
       brightness: 0.7,
       autoOrient: true,
     });
+    if (!width || !height) {
+      console.warn('Width or height is not defined, cannot generate blur placeholder');
+      return null;
+    }
 
     // Create a custom SVG with proper aspect ratio and stronger blur
     const aspectRatio = width / height;
@@ -94,7 +83,7 @@ export const generateBlurDataURLHook: CollectionAfterChangeHook<Media> = async (
       console.debug('Buffer created, size:', buffer.length);
 
       // Generate the blur data URL
-      const blurDataURL = await generateBlurDataURLFromBuffer(buffer);
+      const blurDataURL = await generateBlurDataURLFromBuffer(buffer, doc.width, doc.height);
       console.debug('Blur data URL generated:', blurDataURL ? 'Success' : 'Failed');
 
       if (blurDataURL) {

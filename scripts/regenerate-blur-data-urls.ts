@@ -59,7 +59,7 @@ async function regenerateBlurDataURLs() {
         const { generateBlurDataURLFromBuffer } = await import(
           '../src/lib/payload/utils/generateBlurDataURLHook.js'
         );
-        const blurDataURL = await generateBlurDataURLFromBuffer(buffer);
+        const blurDataURL = await generateBlurDataURLFromBuffer(buffer, media.width, media.height);
 
         if (blurDataURL) {
           // Update the media item
