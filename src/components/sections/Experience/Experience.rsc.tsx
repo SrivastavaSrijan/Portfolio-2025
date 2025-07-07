@@ -11,7 +11,7 @@ import type { ExperienceWrapperProps } from './Experience.utils';
  */
 async function ExperienceServer({ slug }: ExperienceWrapperProps) {
   const experience = await api.get(PayloadEntity.Experience, {
-    slug,
+    variables: { slug },
   });
 
   if (!experience) {
@@ -19,7 +19,7 @@ async function ExperienceServer({ slug }: ExperienceWrapperProps) {
   }
 
   const caseStudiesData = await api.get(PayloadEntity.CaseStudiesByParams, {
-    experience: [experience.id],
+    variables: { experience: [experience.id] },
   });
 
   if (!caseStudiesData) {

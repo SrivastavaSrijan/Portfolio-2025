@@ -7,7 +7,7 @@ import type { Metadata } from 'next';
 export const revalidate = 3600;
 
 export async function generateMetadata(): Promise<Metadata> {
-  const remoteMetadata = await api.get(PayloadEntity.JournalMeta);
+  const remoteMetadata = await api.get(PayloadEntity.JournalMeta, { fetchPolicy: 'no-cache' });
   if (!remoteMetadata) {
     return createMetadata({});
   }

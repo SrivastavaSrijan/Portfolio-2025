@@ -1,11 +1,10 @@
 'use client';
 import Link from 'next/link';
-import dayjs from 'dayjs';
 import { motion, type Variants } from 'motion/react';
-import { ArrowUpRight } from 'lucide-react';
 import { Button, Picture } from '../../ui';
 import { Routes } from '@/lib/config/routes';
 import type { FeaturedExperiencesUIProps } from './FeaturedExperiences.utils';
+import { ArrowUpRight } from 'lucide-react';
 
 // Simplified animation variants
 const containerVariants = {
@@ -27,7 +26,7 @@ export function FeaturedExperiencesUI({
 }: FeaturedExperiencesUIProps) {
   return (
     <div className="bg-white p-4 lg:p-20">
-      <div className="flex flex-col gap-5 rounded-2xl border-1 border-black-500 bg-blue-black-50 px-6 py-12 shadow-sm lg:flex-row lg:gap-15 lg:px-16 lg:py-16">
+      <div className="flex flex-col gap-5 rounded-2xl border-1 border-black-500 bg-blue-black-50 px-6 py-12 shadow-sm lg:flex-row lg:items-center lg:gap-15 lg:px-12 lg:py-12">
         <motion.div
           className="flex flex-1/3 flex-col gap-2 border-black-500 border-b-1 pr-5 pb-4 lg:border-r-1 lg:border-b-0 lg:pr-10"
           initial={{ opacity: 0, x: -20 }}
@@ -40,30 +39,14 @@ export function FeaturedExperiencesUI({
         </motion.div>
 
         <motion.div
-          className="flex flex-2/3 flex-col gap-2 pt-3 lg:gap-7 lg:pt-0"
+          className="flex h-full flex-2/3 flex-col gap-10 pt-3 lg:flex-row lg:gap-15 lg:pt-0"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           {experiences.map((experience, index) => {
-            const {
-              id,
-              title: experienceTitle,
-              endDate,
-              slug,
-              role,
-              thumbnailImage,
-              startDate,
-            } = experience;
-            const getDateRange = () => {
-              if (!endDate) {
-                return `${dayjs(startDate).format('MMM YYYY')} - Present`;
-              }
-              if (dayjs(startDate).isSame(dayjs(endDate), 'year')) {
-                return `${dayjs(startDate).format('MMM YYYY')} - ${dayjs(endDate).format('MMM YYYY')}`;
-              }
-              return `${dayjs(startDate).format('MMM YYYY')} - ${dayjs(endDate).format('MMM YYYY')}`;
-            };
+            const { id, title: experienceTitle, slug, thumbnailImage } = experience;
+
             const itemVariants: Variants = {
               hidden: { opacity: 0, y: 20 },
               visible: {
@@ -78,41 +61,32 @@ export function FeaturedExperiencesUI({
             };
 
             return (
-              <motion.div
-                key={id}
-                className="flex w-full flex-col gap-1 rounded-lg p-3 transition-colors hover:bg-white/5 lg:flex-row lg:items-center lg:gap-10"
-                variants={itemVariants}
-                custom={index}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
-              >
-                <Picture
-                  media={thumbnailImage}
-                  imageSize="thumbnail"
-                  alt={experienceTitle}
-                  fill
-                  className="object-contain brightness-90 grayscale-[80%] transition-all duration-300 group-hover:brightness-100 group-hover:grayscale-0"
-                  wrapperProps={{
-                    className:
-                      'group relative flex h-[60px] w-[156px] items-start overflow-hidden rounded-md bg-white/10 transition-transform hover:scale-[1.03] lg:w-[200px]',
-                  }}
-                />
-                <div className="flex flex-row items-center justify-center gap-5">
-                  <div className="flex flex-1 flex-col gap-1">
-                    <h3 className="font-medium text-accent text-base lg:text-xl">{role}</h3>
-                    <p className="text-black/70 text-xs lg:text-sm">{getDateRange()}</p>
-                  </div>
-                  <Link
-                    href={`${Routes.Experiences}/${slug}`}
-                    className="transition-transform hover:scale-105 active:scale-95"
-                  >
-                    <Button variant="link" color="accent" size="icon">
-                      <ArrowUpRight />
-                    </Button>
-                  </Link>
-                </div>
-              </motion.div>
+              <Link key={id} href={`${Routes.Experiences}/${slug}`} className="contents" passHref>
+                <motion.div
+                  className="flex w-full cursor-pointer flex-row items-center justify-between rounded-lg transition-colors hover:bg-white/5"
+                  variants={itemVariants}
+                  custom={index}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.2 }}
+                >
+                  <Picture
+                    media={thumbnailImage}
+                    imageSize="thumbnail"
+                    alt={experienceTitle}
+                    fill
+                    className="object-contain brightness-90 grayscale-[80%] transition-all duration-300 group-hover:brightness-100 group-hover:grayscale-0"
+                    wrapperProps={{
+                      className:
+                        'group relative flex h-[60px] w-[128px] items-start overflow-hidden rounded-md bg-white/10 transition-transform hover:scale-[1.03] lg:w-[156px]',
+                    }}
+                  />
+                  <Button variant="link" color="accent" className="lg:hidden">
+                    Read More
+                    <ArrowUpRight />
+                  </Button>
+                </motion.div>
+              </Link>
             );
           })}
         </motion.div>

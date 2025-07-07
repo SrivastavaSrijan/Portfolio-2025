@@ -28,7 +28,10 @@ interface ExperienceBySlugProps {
 }
 export async function generateMetadata({ params }: ExperienceBySlugProps): Promise<Metadata> {
   const { slug } = await params;
-  const remoteMetadata = await api.get(PayloadEntity.ExperienceMeta, { slug });
+  const remoteMetadata = await api.get(PayloadEntity.ExperienceMeta, {
+    variables: { slug },
+    fetchPolicy: 'no-cache',
+  });
   if (!remoteMetadata) {
     return createMetadata({});
   }

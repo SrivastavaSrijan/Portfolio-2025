@@ -31,7 +31,8 @@ interface CaseStudyBySlugProps {
 export async function generateMetadata({ params }: CaseStudyBySlugProps): Promise<Metadata> {
   const { slug } = await params;
   const remoteMetadata = await api.get(PayloadEntity.CaseStudyMeta, {
-    slug,
+    variables: { slug },
+    fetchPolicy: 'no-cache',
   });
   if (!remoteMetadata) {
     return createMetadata({});

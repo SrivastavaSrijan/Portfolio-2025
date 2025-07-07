@@ -6,7 +6,7 @@ import { api, PayloadEntity } from '@/lib/graphql/server';
 export const revalidate = 3600;
 
 export async function generateMetadata(): Promise<Metadata> {
-  const remoteMetadata = await api.get(PayloadEntity.HeroMeta);
+  const remoteMetadata = await api.get(PayloadEntity.HeroMeta, { fetchPolicy: 'no-cache' });
   if (!remoteMetadata) {
     return createMetadata({});
   }

@@ -31,7 +31,7 @@ interface JournalTagPageProps {
 
 export async function generateMetadata({ params }: JournalTagPageProps): Promise<Metadata> {
   const { tag } = await params;
-  const remoteMetadata = await api.get(PayloadEntity.JournalMeta);
+  const remoteMetadata = await api.get(PayloadEntity.JournalMeta, { fetchPolicy: 'no-cache' });
   if (!remoteMetadata) {
     return createMetadata({});
   }

@@ -34,7 +34,9 @@ async function JournalServer({ searchParams }: JournalWrapperProps) {
 
   // Fetch case studies based on filters
   const data = await api.get(PayloadEntity.CaseStudiesByParams, {
-    ...(!!tagIds.length && { tagIds }),
+    variables: {
+      ...(!!tagIds.length && { tagIds }),
+    },
   });
 
   if (!data) {

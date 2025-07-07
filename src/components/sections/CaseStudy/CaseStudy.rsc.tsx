@@ -10,7 +10,7 @@ import type { CaseStudyWrapperProps } from './CaseStudy.utils';
  * CaseStudy Server Component - Clean and simple
  */
 async function CaseStudyServer({ slug }: CaseStudyWrapperProps) {
-  const data = await api.get(PayloadEntity.CaseStudy, { slug });
+  const data = await api.get(PayloadEntity.CaseStudy, { variables: { slug } });
 
   if (!data) {
     return <NotFound />;

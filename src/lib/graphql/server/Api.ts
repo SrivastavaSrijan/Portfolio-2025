@@ -1,4 +1,4 @@
-import type { DocumentNode, OperationVariables } from '@apollo/client';
+import type { DocumentNode, FetchPolicy, OperationVariables } from '@apollo/client';
 import { getClient } from '../../apollo/server';
 import { handleError, logError } from './error';
 import { PayloadFetchConfig, type PayloadFetchTypeMap } from './types';
@@ -11,6 +11,12 @@ export interface FetchOptions {
   tags?: string[];
   revalidate?: number;
   variables?: OperationVariables;
+  fetchPolicy?: FetchPolicy;
+}
+
+interface GetConfigFor<T extends keyof PayloadFetchTypeMap> {
+  variables?: PayloadFetchTypeMap[T] extends { variables: infer V } ? Partial<V> : undefined;
+  fetchPolicy?: FetchPolicy;
 }
 
 /**
@@ -38,7 +44,12 @@ export class Api {
   ): Promise<TData | null> {
     try {
       const { query } = getClient();
-      const { tags = [], revalidate = ServerConfig.RevalidationTime, variables } = options;
+      const {
+        tags = [],
+        revalidate = ServerConfig.RevalidationTime,
+        variables,
+        fetchPolicy,
+      } = options;
 
       const result = await query<TData, TVariables>({
         query: document,
@@ -51,6 +62,7 @@ export class Api {
             },
           },
         },
+        ...(fetchPolicy && { fetchPolicy }),
         errorPolicy: 'all', // Return partial data even with errors
       });
 
@@ -67,7 +79,7 @@ export class Api {
    */
   async get<T extends keyof PayloadFetchTypeMap>(
     component: T,
-    additionalVariables?: Record<string, unknown>
+    { variables: additionalVariables, fetchPolicy }: GetConfigFor<T> = {}
   ): Promise<PayloadFetchTypeMap[T]['result']> {
     const config = PayloadFetchConfig[component];
 
@@ -85,6 +97,7 @@ export class Api {
       {
         tags: [...config.tags],
         variables,
+        ...(fetchPolicy && { fetchPolicy }),
       },
       `api.getComponent(${String(component)})`
     );
