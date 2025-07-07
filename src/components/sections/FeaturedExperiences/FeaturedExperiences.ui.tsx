@@ -26,7 +26,7 @@ export function FeaturedExperiencesUI({
 }: FeaturedExperiencesUIProps) {
   return (
     <div className="bg-white p-4 lg:p-20">
-      <div className="flex flex-col gap-5 rounded-2xl border-1 border-black-500 bg-blue-black-50 px-6 py-12 shadow-sm lg:flex-row lg:items-center lg:gap-15 lg:px-12 lg:py-12">
+      <div className="flex flex-col gap-5 rounded-2xl border-1 border-black-500 bg-blue-black-50 px-6 py-8 shadow-sm lg:flex-row lg:items-center lg:gap-15 lg:px-12 lg:py-12">
         <motion.div
           className="flex flex-1/3 flex-col gap-2 border-black-500 border-b-1 pr-5 pb-4 lg:border-r-1 lg:border-b-0 lg:pr-10"
           initial={{ opacity: 0, x: -20 }}
@@ -61,7 +61,12 @@ export function FeaturedExperiencesUI({
             };
 
             return (
-              <Link key={id} href={`${Routes.Experiences}/${slug}`} className="contents" passHref>
+              <Link
+                key={id}
+                href={slug ? Routes.ExperiencesBySlug(slug) : ''}
+                className="contents"
+                passHref
+              >
                 <motion.div
                   className="flex w-full cursor-pointer flex-row items-center justify-between rounded-lg transition-colors hover:bg-white/5"
                   variants={itemVariants}

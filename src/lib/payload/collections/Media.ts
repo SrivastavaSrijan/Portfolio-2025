@@ -1,4 +1,4 @@
-import { revalidateAll } from '../utils';
+import { generateBlurDataURLHook, revalidateAll } from '../utils';
 
 import type { CollectionConfig } from 'payload';
 
@@ -8,7 +8,7 @@ export const Media: CollectionConfig = {
     read: () => true,
   },
   hooks: {
-    afterChange: [revalidateAll],
+    afterChange: [generateBlurDataURLHook, revalidateAll],
     afterDelete: [revalidateAll],
   },
   upload: {

@@ -1,11 +1,11 @@
-import type { GetWorkButtonsQuery } from '@/lib/graphql/__generated__/hooks';
 import { Button } from '../ui';
 import Link from 'next/link';
+import type { PayloadEntity, PayloadFetchTypeMap } from '@/lib/graphql/server';
 
 interface WorkButtonProps {
   className?: string;
   invert?: boolean;
-  buttons?: NonNullable<GetWorkButtonsQuery['WorkButton']>['buttons'];
+  buttons?: PayloadFetchTypeMap[PayloadEntity.WorkButtons]['result']['buttons'];
 }
 
 export const WorkButtons = ({ invert = false, buttons = [] }: WorkButtonProps) => {

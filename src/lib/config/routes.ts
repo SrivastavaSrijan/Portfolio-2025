@@ -2,6 +2,7 @@ export const Routes = {
   CaseStudies: '/journal',
   Experiences: '/experience',
   CaseStudiesByTag: (tag: string) => `${Routes.CaseStudies}/tag/${tag}`,
+  ExperiencesBySlug: (slug: string) => `${Routes.Experiences}/${slug}`,
 };
 
 export const FullURLs = {

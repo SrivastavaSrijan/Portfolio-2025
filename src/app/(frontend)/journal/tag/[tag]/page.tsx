@@ -1,4 +1,4 @@
-import { Journal, getUniqueTags } from '@/components/sections';
+import { Journal } from '@/components/sections';
 import { createMetadata } from '@/lib/config/metadata';
 import { api, PayloadEntity } from '@/lib/graphql/server';
 import { kebabCase } from 'lodash';
@@ -16,8 +16,7 @@ export async function generateStaticParams() {
     return [];
   }
 
-  const allTags = getUniqueTags(allTagsData);
-  return allTags.map(({ name }) => ({ tag: kebabCase(name) }));
+  return allTagsData.map(({ name }) => ({ tag: kebabCase(name) }));
 }
 
 interface JournalTagPageProps {
@@ -47,8 +46,7 @@ export default async function JournalTagPage({ params }: JournalTagPageProps) {
     notFound();
   }
 
-  const allTags = getUniqueTags(allTagsData);
-  const selectedTag = allTags.find(({ name }) => kebabCase(name) === kebabCase(tag)) ?? null;
+  const selectedTag = allTagsData.find(({ name }) => kebabCase(name) === kebabCase(tag)) ?? null;
 
   if (!selectedTag) {
     notFound();

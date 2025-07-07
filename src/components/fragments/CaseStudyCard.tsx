@@ -1,5 +1,4 @@
 'use client';
-import type { GetFeaturedCaseStudiesQuery } from '@/lib/graphql/__generated__/hooks';
 import { Button, Card, CardAction, CardContent, CardDescription, Picture } from '../ui';
 import { ArrowUpRightIcon } from 'lucide-react';
 import Link from 'next/link';
@@ -7,10 +6,11 @@ import { Routes } from '@/lib/config/routes';
 import { cn } from '@/lib/utils';
 import { motion, type Variants } from 'motion/react';
 import { RichText } from './RichText';
+import type { PayloadEntity, PayloadFetchTypeMap } from '@/lib/graphql/server';
 
-type CaseStudyBySlugData = NonNullable<
-  GetFeaturedCaseStudiesQuery['FeaturedCaseStudy']
->['caseStudies'][number];
+type CaseStudyBySlugData =
+  PayloadFetchTypeMap[PayloadEntity.FeaturedCaseStudies]['result']['caseStudies'][number];
+
 interface CaseStudyCardProps extends CaseStudyBySlugData {
   grid?: boolean;
   index: number;

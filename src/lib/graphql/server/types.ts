@@ -39,6 +39,7 @@ import {
   type GetExperienceBySlugMetaQueryVariables,
 } from '@/lib/graphql/__generated__/hooks';
 import { PayloadEntity } from './enums';
+import { uniqBy } from 'lodash';
 
 // Simple, direct type mapping with proper non-null assertions
 export type PayloadFetchTypeMap = {
@@ -86,7 +87,7 @@ export type PayloadFetchTypeMap = {
   };
   [PayloadEntity.AllTags]: {
     query: GetAllTagsQuery;
-    result: NonNullable<GetAllTagsQuery['CaseStudies']>['docs'];
+    result: NonNullable<GetAllTagsQuery['CaseStudies']>['docs'][number]['tags'];
   };
   [PayloadEntity.AllExperiences]: {
     query: GetAllExperiencesSlugsQuery;
@@ -223,7 +224,8 @@ export const PayloadFetchConfig: {
 
   [PayloadEntity.AllTags]: {
     document: GetAllTagsDocument,
-    extractData: (data: GetAllTagsQuery) => data.CaseStudies?.docs ?? [],
+    extractData: (data: GetAllTagsQuery) =>
+      uniqBy((data.CaseStudies?.docs ?? []).flatMap((doc) => doc.tags).filter(Boolean), 'id'),
     tags: [PayloadEntity.AllTags],
   },
 
@@ -281,9 +283,3 @@ export const PayloadFetchConfig: {
     tags: [PayloadEntity.Journal],
   },
 };
-
-/**
- *
- * Extracted Types for each entity
- */
-export type TagData = PayloadFetchTypeMap[PayloadEntity.AllTags]['result'][number]['tags'][number];

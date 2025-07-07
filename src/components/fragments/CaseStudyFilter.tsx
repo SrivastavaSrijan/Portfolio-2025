@@ -3,12 +3,13 @@ import { Button } from '../ui';
 import { cn } from '@/lib/utils';
 import { Routes } from '@/lib/config/routes';
 import { kebabCase } from 'lodash';
-import type { TagData } from '@/lib/graphql/server/types';
+import type { PayloadEntity, PayloadFetchTypeMap } from '@/lib/graphql/server';
 
 interface CaseStudyFilterProps {
   paginatedTags: string[][];
-  selectedTag?: TagData | null;
+  selectedTag?: PayloadFetchTypeMap[PayloadEntity.AllTags]['result'][number] | null;
 }
+
 export const CaseStudyFilter = ({ paginatedTags, selectedTag }: CaseStudyFilterProps) => {
   // Check if the tag is selected based on the current route
   const isSelected = (tag: string) =>

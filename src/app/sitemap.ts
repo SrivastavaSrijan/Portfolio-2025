@@ -6,7 +6,6 @@ import {
   createExperiencePages,
   createTagPages,
 } from '@/lib/config/sitemap';
-import { uniqBy } from 'lodash';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   try {
@@ -26,11 +25,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Create experience pages
     const experiencePages = experiences ? createExperiencePages(experiences) : [];
 
-    // Create tag pages from unique tags
-    const allTags = allTagsData
-      ? uniqBy(allTagsData.flatMap((doc) => doc.tags).filter(Boolean), 'id')
-      : [];
-    const tagPages = createTagPages(allTags);
+    const tagPages = createTagPages(allTagsData);
 
     return [...staticPages, ...caseStudyPages, ...experiencePages, ...tagPages];
   } catch (error) {

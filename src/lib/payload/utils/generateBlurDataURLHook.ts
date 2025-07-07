@@ -1,22 +1,43 @@
+import p from 'payload';
+import config from '../../../payload.config';
 import type { CollectionAfterChangeHook } from 'payload';
 import type { Media } from '@/payload-types';
+import dotenv from 'dotenv';
+dotenv.config({ quiet: true });
 
 /**
  * Generate blur data URL from a buffer using plaiceholder
  */
 export async function generateBlurDataURLFromBuffer(buffer: Buffer): Promise<string | null> {
   try {
+    // Add buffer validation
+    console.debug('Buffer received, size:', buffer.length);
+    console.debug('Buffer first few bytes:', buffer.slice(0, 20).toString('hex'));
+
     // First get the image dimensions to calculate aspect ratio
     const sharp = (await import('sharp')).default;
-    const { width, height } = await sharp(buffer).metadata();
+
+    // Add more detailed Sharp debugging
+    const sharpInstance = sharp(buffer);
+    const metadata = await sharpInstance.metadata();
+    console.debug('Sharp metadata:', metadata);
+
+    const { width, height } = metadata;
 
     if (!width || !height) throw new Error('Could not determine image dimensions');
 
-    // Use plaiceholder with correct aspect ratio
+    // Convert to a more compatible format first if it's WebP
+    let processedBuffer = buffer;
+    if (metadata.format === 'webp') {
+      console.debug('Converting WebP to JPEG for processing...');
+      processedBuffer = await sharp(buffer).jpeg({ quality: 90 }).toBuffer();
+    }
+
+    // Use plaiceholder with the processed buffer
     const { getPlaiceholder } = await import('plaiceholder');
 
     // Generate a correctly proportioned placeholder
-    const { base64: originalBase64 } = await getPlaiceholder(buffer, {
+    const { base64: originalBase64 } = await getPlaiceholder(processedBuffer, {
       size: 10,
       saturation: 0.7,
       brightness: 0.7,
@@ -49,33 +70,36 @@ export async function generateBlurDataURLFromBuffer(buffer: Buffer): Promise<str
 /**
  * Hook that generates blur data URL after media upload/change
  */
-export const generateBlurDataURLHook: CollectionAfterChangeHook<Media> = async ({
-  doc,
-  req,
-  operation,
-}) => {
-  // Only process images on create operation
-  if (operation !== 'create' || !doc.filename || !doc.mimeType?.startsWith('image/')) {
-    return doc;
-  }
-
-  // Skip if we already have a blur data URL
-  if (doc.blurDataURL) {
-    return doc;
-  }
-
+export const generateBlurDataURLHook: CollectionAfterChangeHook<Media> = async ({ doc }) => {
   try {
     // For new uploads, we need to fetch the image from the URL
-    if (doc.url) {
+    if (doc.url && !doc.blurDataURL) {
+      const payload = await p.init({
+        config,
+      });
+
       const response = await fetch(`${process.env.BASE_URL}${doc.url}`);
-      const buffer = Buffer.from(await response.arrayBuffer());
+      console.debug('Response status:', response.status);
+      console.debug('Response headers:', Object.fromEntries(response.headers.entries()));
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
+
+      // Get the response as arrayBuffer first, then convert
+      const arrayBuffer = await response.arrayBuffer();
+      console.debug('ArrayBuffer size:', arrayBuffer.byteLength);
+
+      const buffer = Buffer.from(arrayBuffer);
+      console.debug('Buffer created, size:', buffer.length);
 
       // Generate the blur data URL
       const blurDataURL = await generateBlurDataURLFromBuffer(buffer);
+      console.debug('Blur data URL generated:', blurDataURL ? 'Success' : 'Failed');
 
       if (blurDataURL) {
         // Update the document with the blur data URL
-        const updatedDoc = await req.payload.update({
+        const updatedDoc = await payload.update({
           collection: 'media',
           id: doc.id,
           data: {
