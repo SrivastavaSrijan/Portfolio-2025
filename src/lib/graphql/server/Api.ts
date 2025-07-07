@@ -82,7 +82,6 @@ export class Api {
     { variables: additionalVariables, fetchPolicy }: GetConfigFor<T> = {}
   ): Promise<PayloadFetchTypeMap[T]['result']> {
     const config = PayloadFetchConfig[component];
-
     // Merge default variables with additional variables
     const variables =
       'variables' in config

@@ -6,17 +6,42 @@ import type { Media } from '@/payload-types';
  */
 export async function generateBlurDataURLFromBuffer(buffer: Buffer): Promise<string | null> {
   try {
-    // Try to use plaiceholder for high-quality blur generation
+    // First get the image dimensions to calculate aspect ratio
+    const sharp = (await import('sharp')).default;
+    const { width, height } = await sharp(buffer).metadata();
+
+    if (!width || !height) throw new Error('Could not determine image dimensions');
+
+    // Use plaiceholder with correct aspect ratio
     const { getPlaiceholder } = await import('plaiceholder');
 
-    const { base64 } = await getPlaiceholder(buffer, { size: 24 });
-    return base64;
+    // Generate a correctly proportioned placeholder
+    const { base64: originalBase64 } = await getPlaiceholder(buffer, {
+      size: 10,
+      saturation: 0.7,
+      brightness: 0.7,
+      autoOrient: true,
+    });
+
+    // Create a custom SVG with proper aspect ratio and stronger blur
+    const aspectRatio = width / height;
+    const svgWidth = 100;
+    const svgHeight = Math.round(svgWidth / aspectRatio);
+
+    const svgWithBlur = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 ${svgWidth} ${svgHeight}'>
+      <filter id='b' color-interpolation-filters='sRGB'>
+        <feGaussianBlur stdDeviation='12'/>
+      </filter>
+      <image width='100%' height='100%' x='0' y='0' preserveAspectRatio='xMidYMid slice' 
+        style='filter: url(#b);' href='${originalBase64}'/>
+    </svg>`;
+
+    return `data:image/svg+xml;base64,${Buffer.from(svgWithBlur).toString('base64')}`;
   } catch (error) {
     console.warn(
-      'Plaiceholder not available, using simple blur fallback:',
+      'Error generating blur placeholder:',
       error instanceof Error ? error.message : String(error)
     );
-    // Fallback to simple SVG-based blur
     return '';
   }
 }

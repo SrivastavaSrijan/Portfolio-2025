@@ -1,7 +1,7 @@
-import { Journal } from '@/components/sections';
+import { Journal, getUniqueTags } from '@/components/sections';
 import { createMetadata } from '@/lib/config/metadata';
 import { api, PayloadEntity } from '@/lib/graphql/server';
-import { uniqBy } from 'lodash';
+import { kebabCase } from 'lodash';
 import { notFound } from 'next/navigation';
 
 import type { Metadata } from 'next';
@@ -13,14 +13,11 @@ export async function generateStaticParams() {
   const allTagsData = await api.get(PayloadEntity.AllTags);
 
   if (!allTagsData) {
-    // Error already logged in api.get, return empty array for ISR fallback
     return [];
   }
 
-  const allTags = uniqBy(allTagsData.flatMap((doc) => doc.tags).filter(Boolean), 'id');
-  const tagNames = allTags.map(({ name }) => name);
-
-  return tagNames.map((tag) => ({ tag: tag }));
+  const allTags = getUniqueTags(allTagsData);
+  return allTags.map(({ name }) => ({ tag: kebabCase(name) }));
 }
 
 interface JournalTagPageProps {
@@ -29,20 +26,15 @@ interface JournalTagPageProps {
   }>;
 }
 
-export async function generateMetadata({ params }: JournalTagPageProps): Promise<Metadata> {
-  const { tag } = await params;
-  const remoteMetadata = await api.get(PayloadEntity.JournalMeta, { fetchPolicy: 'no-cache' });
+export async function generateMetadata(): Promise<Metadata> {
+  const remoteMetadata = await api.get(PayloadEntity.JournalMeta, {
+    fetchPolicy: 'no-cache',
+  });
   if (!remoteMetadata) {
     return createMetadata({});
   }
 
-  const metadata = createMetadata(remoteMetadata);
-
-  // Customize metadata for the specific tag
-  return {
-    ...metadata,
-    title: `${metadata.title} - ${tag}`,
-  };
+  return createMetadata(remoteMetadata);
 }
 
 export default async function JournalTagPage({ params }: JournalTagPageProps) {
@@ -55,13 +47,12 @@ export default async function JournalTagPage({ params }: JournalTagPageProps) {
     notFound();
   }
 
-  const allTags = uniqBy(allTagsData.flatMap((doc) => doc.tags).filter(Boolean), 'id');
-  const tagExists = allTags.some(({ name }) => name === tag);
+  const allTags = getUniqueTags(allTagsData);
+  const selectedTag = allTags.find(({ name }) => kebabCase(name) === kebabCase(tag)) ?? null;
 
-  if (!tagExists) {
+  if (!selectedTag) {
     notFound();
   }
 
-  // Convert dynamic route param to searchParams format for the Journal component
-  return <Journal searchParams={{ tags: tag }} />;
+  return <Journal selectedTag={selectedTag} />;
 }

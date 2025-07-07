@@ -281,3 +281,9 @@ export const PayloadFetchConfig: {
     tags: [PayloadEntity.Journal],
   },
 };
+
+/**
+ *
+ * Extracted Types for each entity
+ */
+export type TagData = PayloadFetchTypeMap[PayloadEntity.AllTags]['result'][number]['tags'][number];

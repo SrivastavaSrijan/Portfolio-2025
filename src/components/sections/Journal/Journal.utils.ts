@@ -1,22 +1,18 @@
 import type { PayloadFetchTypeMap, PayloadEntity } from '@/lib/graphql/server';
+import type { TagData } from '@/lib/graphql/server/types';
+import { uniqBy } from 'lodash';
 
-export type AllTagsData = PayloadFetchTypeMap[PayloadEntity.AllTags]['result'];
-export type JournalCaseStudies =
-  PayloadFetchTypeMap[PayloadEntity.CaseStudiesByParams]['result']['caseStudies'];
-export type JournalData =
-  PayloadFetchTypeMap[PayloadEntity.CaseStudiesByParams]['result']['journal'];
-
-export interface JournalUIProps {
-  title?: string;
-  subtitle?: string;
-  description?: string;
-  caseStudies: JournalCaseStudies;
-  paginatedTags: string[][];
-  selectedTag: string | null;
-}
+type JournalCaseStudies = PayloadFetchTypeMap[PayloadEntity.CaseStudiesByParams]['result'];
+type AllTagsData = PayloadFetchTypeMap[PayloadEntity.AllTags]['result'];
 
 export interface JournalWrapperProps {
-  searchParams?: {
-    tags?: string;
-  };
+  selectedTag?: TagData;
+}
+
+export interface JournalUIProps extends JournalCaseStudies, JournalWrapperProps {
+  paginatedTags: string[][];
+}
+
+export function getAllJournalTags(allTagsData: AllTagsData): TagData[] {
+  return uniqBy(allTagsData.flatMap((doc) => doc.tags).filter(Boolean), 'id');
 }
