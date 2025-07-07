@@ -4,7 +4,7 @@ import { api, PayloadEntity } from '@/lib/graphql/server';
 import { JournalUI } from './Journal.ui';
 import { JournalSkeleton } from './Journal.skeleton';
 import type { JournalWrapperProps } from './Journal.utils';
-import { chunk, map } from 'lodash';
+import { map } from 'lodash';
 
 /**
  * Journal Server Component - Clean and simple
@@ -24,9 +24,9 @@ async function JournalServer({ selectedTag }: JournalWrapperProps) {
     return <JournalSkeleton />;
   }
 
-  const paginatedTags = chunk(map(allTagsData, 'name'), 3);
+  const tags = map(allTagsData, 'name');
 
-  return <JournalUI {...caseStudyData} paginatedTags={paginatedTags} selectedTag={selectedTag} />;
+  return <JournalUI {...caseStudyData} tags={tags} selectedTag={selectedTag} />;
 }
 
 /**

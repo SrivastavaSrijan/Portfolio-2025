@@ -39,7 +39,7 @@ export function FeaturedExperiencesUI({
         </motion.div>
 
         <motion.div
-          className="flex h-full flex-2/3 flex-col gap-10 pt-3 lg:flex-row lg:gap-15 lg:pt-0"
+          className="flex h-full flex-2/3 flex-col gap-5 pt-3 lg:flex-row lg:gap-15 lg:pt-0"
           variants={containerVariants}
           initial="hidden"
           animate="visible"

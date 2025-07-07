@@ -8,5 +8,5 @@ export interface JournalWrapperProps {
 }
 
 export interface JournalUIProps extends JournalCaseStudies, JournalWrapperProps {
-  paginatedTags: string[][];
+  tags: string[];
 }
