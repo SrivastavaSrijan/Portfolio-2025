@@ -1,6 +1,27 @@
-import { generateBlurDataURLHook, revalidateAll } from '../utils';
+import type { Media as MediaType } from '@/payload-types';
+import { revalidateAll } from '../utils';
+import type { CollectionAfterChangeHook, CollectionConfig } from 'payload';
 
-import type { CollectionConfig } from 'payload';
+export const generateDataURL: CollectionAfterChangeHook<MediaType> = async ({ doc, req }) => {
+  // Only trigger for new uploads
+  if (!doc.blurDataURL && doc.url) {
+    try {
+      // Call the API endpoint to process the image
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/media/process`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: doc.id }),
+      });
+
+      if (!response.ok) {
+        console.error('Failed to trigger image processing:', await response.text());
+      }
+    } catch (error) {
+      console.error('Error triggering image processing:', error);
+    }
+  }
+  return doc;
+};
 
 export const Media: CollectionConfig = {
   slug: 'media',
@@ -8,11 +29,11 @@ export const Media: CollectionConfig = {
     read: () => true,
   },
   hooks: {
-    afterChange: [generateBlurDataURLHook, revalidateAll],
+    afterChange: [generateDataURL, revalidateAll],
     afterDelete: [revalidateAll],
   },
   upload: {
-    // Auto-convert everything to WebP
+    // Keep your existing upload config but with some changes
     formatOptions: {
       format: 'webp',
       options: {

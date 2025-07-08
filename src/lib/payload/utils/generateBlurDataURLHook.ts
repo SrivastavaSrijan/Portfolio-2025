@@ -1,10 +1,3 @@
-import p from 'payload';
-import config from '../../../payload.config';
-import type { CollectionAfterChangeHook } from 'payload';
-import type { Media } from '@/payload-types';
-import dotenv from 'dotenv';
-dotenv.config({ quiet: true });
-
 /**
  * Generate blur data URL from a buffer using plaiceholder
  */
@@ -24,8 +17,7 @@ export async function generateBlurDataURLFromBuffer(
     // Generate a correctly proportioned placeholder
     const { base64: originalBase64 } = await getPlaiceholder(buffer, {
       size: 10,
-      saturation: 0.7,
-      brightness: 0.7,
+      saturation: 0.8,
       autoOrient: true,
     });
     if (!width || !height) {
@@ -40,7 +32,7 @@ export async function generateBlurDataURLFromBuffer(
 
     const svgWithBlur = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 ${svgWidth} ${svgHeight}'>
       <filter id='b' color-interpolation-filters='sRGB'>
-        <feGaussianBlur stdDeviation='12'/>
+        <feGaussianBlur stdDeviation='8'/>
       </filter>
       <image width='100%' height='100%' x='0' y='0' preserveAspectRatio='xMidYMid slice' 
         style='filter: url(#b);' href='${originalBase64}'/>
@@ -55,54 +47,3 @@ export async function generateBlurDataURLFromBuffer(
     return '';
   }
 }
-
-/**
- * Hook that generates blur data URL after media upload/change
- */
-export const generateBlurDataURLHook: CollectionAfterChangeHook<Media> = async ({ doc }) => {
-  try {
-    // For new uploads, we need to fetch the image from the URL
-    if (doc.url && !doc.blurDataURL) {
-      const payload = await p.init({
-        config,
-      });
-
-      const response = await fetch(`${process.env.BASE_URL}${doc.url}`);
-      console.debug('Response status:', response.status);
-      console.debug('Response headers:', Object.fromEntries(response.headers.entries()));
-
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-      }
-
-      // Get the response as arrayBuffer first, then convert
-      const arrayBuffer = await response.arrayBuffer();
-      console.debug('ArrayBuffer size:', arrayBuffer.byteLength);
-
-      const buffer = Buffer.from(arrayBuffer);
-      console.debug('Buffer created, size:', buffer.length);
-
-      // Generate the blur data URL
-      const blurDataURL = await generateBlurDataURLFromBuffer(buffer, doc.width, doc.height);
-      console.debug('Blur data URL generated:', blurDataURL ? 'Success' : 'Failed');
-
-      if (blurDataURL) {
-        // Update the document with the blur data URL
-        const updatedDoc = await payload.update({
-          collection: 'media',
-          id: doc.id,
-          data: {
-            blurDataURL,
-          },
-        });
-
-        return updatedDoc;
-      }
-    }
-  } catch (error) {
-    console.error('Error generating blur data URL in hook:', error);
-    // Don't fail the upload if blur generation fails
-  }
-
-  return doc;
-};
