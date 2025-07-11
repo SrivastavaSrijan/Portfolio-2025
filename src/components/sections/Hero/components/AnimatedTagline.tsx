@@ -25,11 +25,7 @@ export const AnimatedTagline = ({ initialAnimComplete, taglines = [] }: Animated
   // Update font size based on viewport
   useEffect(() => {
     const updateFontSize = () => {
-      if (window.innerWidth < 640) {
-        setFontSize(28);
-      } else if (window.innerWidth < 1024) {
-        setFontSize(32);
-      } else if (window.innerWidth < 1280) {
+      if (window.innerWidth < 1280) {
         setFontSize(36);
       } else {
         setFontSize(42);
@@ -48,7 +44,7 @@ export const AnimatedTagline = ({ initialAnimComplete, taglines = [] }: Animated
   }, [controls]);
 
   return (
-    <div className="-mt-4 relative flex flex-wrap items-end gap-2 font-semibold text-brand text-xl lg:mt-0 lg:gap-3 lg:font-normal lg:text-display-5">
+    <div className="-mt-4 relative flex flex-wrap items-end gap-2 font-semibold text-3xl text-brand lg:mt-0 lg:gap-3 lg:font-normal lg:text-display-5">
       {/* "I make things look" text */}
       <motion.span
         className="inline-block"
@@ -108,7 +104,7 @@ export const AnimatedTagline = ({ initialAnimComplete, taglines = [] }: Animated
 
         {/* Underline - positioned based on text width */}
         <svg
-          className="lg:-bottom-1 -bottom-1 absolute left-0 w-full"
+          className="lg:-bottom-1 -bottom-0.5 transform-[scaleX(0.9)] -left-1.5 absolute w-full lg:left-0 lg:transform-none"
           height="8"
           viewBox="0 0 100 8"
           preserveAspectRatio="none"

@@ -28,7 +28,7 @@ export function FeaturedCaseStudiesUI({
         </div>
       )}
       <Link href={Routes.CaseStudies} className="contents">
-        <Button variant="outlined" color="accent" className="mx-auto w-fit">
+        <Button variant="outlined" color="accent" className="mx-auto w-fit" size="lg">
           All case studies
           <ArrowUpRightIcon />
         </Button>

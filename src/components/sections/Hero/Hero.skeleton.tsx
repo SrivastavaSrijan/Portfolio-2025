@@ -2,7 +2,7 @@ import { Skeleton } from '@/components/ui';
 
 export function HeroSkeleton() {
   return (
-    <div className="mx-auto flex h-full min-h-[calc(50vh-52px)] w-full max-w-[1440px] flex-grow flex-col gap-7 px-5 py-5 lg:min-h-[calc(100vh-94px)] lg:gap-8 lg:px-20 lg:py-10">
+    <div className="mx-auto flex h-full min-h-[calc(60vh-52px)] w-full max-w-[1440px] flex-grow flex-col gap-7 px-5 py-5 lg:min-h-[calc(100vh-94px)] lg:gap-8 lg:px-20 lg:py-10">
       {/* Name skeleton */}
       <div className="mb-6 flex w-full flex-row gap-3 lg:mb-0 lg:gap-10">
         <Skeleton className="h-14 w-9/12" variant="brand" />
