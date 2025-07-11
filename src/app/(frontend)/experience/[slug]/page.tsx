@@ -3,7 +3,7 @@ import { createMetadata } from '@/lib/config/metadata';
 import { api, PayloadEntity } from '@/lib/graphql/server';
 
 import type { Metadata } from 'next';
-import { NotFound } from '@/components/fragments';
+import { NotFound } from '@/components/shared';
 import { Experience } from '@/components/sections';
 
 export async function generateStaticParams() {

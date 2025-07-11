@@ -3,7 +3,7 @@ import { api, PayloadEntity } from '@/lib/graphql/server';
 
 import { ExperienceUI } from './Experience.ui';
 import { ExperienceSkeleton } from './Experience.skeleton';
-import { NotFound } from '../../fragments/404';
+import { NotFound } from '@/components/shared/404';
 import type { ExperienceWrapperProps } from './Experience.utils';
 
 /**

@@ -1,4 +1,4 @@
-import { Skeleton } from '../../ui';
+import { Skeleton } from '@/components/ui';
 
 /**
  * Journal Skeleton Component - Loading state for journal

@@ -1,4 +1,4 @@
-import { Skeleton } from '../../ui';
+import { Skeleton } from '@/components/ui';
 
 /**
  * Experience Skeleton Component - Loading state for experience

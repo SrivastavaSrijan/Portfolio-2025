@@ -1,5 +1,5 @@
 'use client';
-import { Button, Card, CardAction, CardContent, CardDescription, Picture } from '../ui';
+import { Button, Card, CardAction, CardContent, CardDescription, Picture } from '@/components/ui';
 import { ArrowUpRightIcon } from 'lucide-react';
 import Link from 'next/link';
 import { Routes } from '@/lib/config/routes';
@@ -10,6 +10,19 @@ import type { PayloadEntity, PayloadFetchTypeMap } from '@/lib/graphql/server';
 
 type CaseStudyBySlugData =
   PayloadFetchTypeMap[PayloadEntity.FeaturedCaseStudies]['result']['caseStudies'][number];
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.22, 1, 0.36, 1],
+      delay: index * 0.1,
+    },
+  }),
+};
 
 interface CaseStudyCardProps extends CaseStudyBySlugData {
   grid?: boolean;
@@ -24,19 +37,6 @@ export const CaseStudyCard = ({
   summary,
   index,
 }: CaseStudyCardProps) => {
-  const cardVariants: Variants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: [0.22, 1, 0.36, 1],
-        delay: index * 0.1,
-      },
-    },
-  };
-
   return (
     <div
       className={cn(

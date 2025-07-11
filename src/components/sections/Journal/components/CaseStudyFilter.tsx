@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import { Button } from '../ui';
 import { cn } from '@/lib/utils';
 import { Routes } from '@/lib/config/routes';
 import { kebabCase } from 'lodash';
 import type { PayloadEntity, PayloadFetchTypeMap } from '@/lib/graphql/server';
+import { Button } from '@/components/ui';
 
 interface CaseStudyFilterProps {
   tags: string[];

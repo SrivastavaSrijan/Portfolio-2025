@@ -2,7 +2,7 @@ import './tailwind.css';
 import { ApolloWrapper, ProgressProviderClient } from '@/components/context';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Toaster } from '@/components/ui';
-import { ErrorBoundary, Navbar, ServerError } from '@/components/fragments';
+import { ErrorBoundary, Navbar, ServerError } from '@/components/shared';
 import { Footer } from '@/components/sections';
 import { createMetadata, defaultMetadata } from '@/lib/config/metadata';
 

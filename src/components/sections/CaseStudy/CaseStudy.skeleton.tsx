@@ -1,4 +1,4 @@
-import { Skeleton } from '../../ui';
+import { Skeleton } from '@/components/ui';
 
 /**
  * CaseStudy Skeleton Component - Loading state for case study

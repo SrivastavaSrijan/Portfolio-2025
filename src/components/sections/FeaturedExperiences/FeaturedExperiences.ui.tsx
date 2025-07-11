@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { motion, type Variants } from 'motion/react';
-import { Button, Picture } from '../../ui';
+import { Button, Picture } from '@/components/ui';
 import { Routes } from '@/lib/config/routes';
 import type { FeaturedExperiencesUIProps } from './FeaturedExperiences.utils';
 import { ArrowUpRight } from 'lucide-react';
@@ -16,6 +16,19 @@ const containerVariants = {
       delayChildren: 0.2,
     },
   },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.22, 1, 0.36, 1],
+      delay: index * 0.1,
+    },
+  }),
 };
 
 export function FeaturedExperiencesUI({
@@ -47,19 +60,6 @@ export function FeaturedExperiencesUI({
           {experiences.map((experience, index) => {
             const { id, title: experienceTitle, slug, thumbnailImage } = experience;
 
-            const itemVariants: Variants = {
-              hidden: { opacity: 0, y: 20 },
-              visible: {
-                opacity: 1,
-                y: 0,
-                transition: {
-                  duration: 0.5,
-                  ease: [0.22, 1, 0.36, 1],
-                  delay: index * 0.1,
-                },
-              },
-            };
-
             return (
               <Link
                 key={id}
@@ -86,6 +86,7 @@ export function FeaturedExperiencesUI({
                         'group relative flex h-[60px] w-[128px] items-start overflow-hidden rounded-md bg-white/10 transition-transform hover:scale-[1.03] lg:w-[156px]',
                     }}
                   />
+
                   <Button variant="link" color="accent" className="lg:hidden">
                     Read More
                     <ArrowUpRight />

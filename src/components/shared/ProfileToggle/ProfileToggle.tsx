@@ -2,12 +2,13 @@
 import { AssetsMap } from '@/lib/assets';
 import { motion } from 'motion/react';
 import { useState } from 'react';
+
+import { useResizeObserver } from '@/lib/hooks';
 import {
   toggleContainerVariants,
-  useToggleKnobAnimation,
   useToggleContainerAnimation,
-} from '@/lib/animations';
-import { useResizeObserver } from '@/lib/hooks';
+  useToggleKnobAnimation,
+} from './ProfileToggle.animations';
 
 interface ProfileToggleProps {
   initialAnimComplete: boolean;

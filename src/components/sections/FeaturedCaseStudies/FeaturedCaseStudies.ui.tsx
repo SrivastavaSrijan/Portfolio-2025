@@ -1,5 +1,5 @@
-import { CaseStudyCard } from '../../fragments/CaseStudyCard';
-import { Button } from '../../ui';
+import { CaseStudyCard } from '@/components/shared/CaseStudyCard';
+import { Button } from '@/components/ui';
 import { ArrowUpRightIcon } from 'lucide-react';
 import { Routes } from '@/lib/config/routes';
 import Link from 'next/link';

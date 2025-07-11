@@ -1,13 +1,14 @@
 'use client';
 import { motion, AnimatePresence } from 'motion/react';
-import { ProfileToggle, AnimatedTagline, WorkButtons } from '@/components/fragments';
+import { ProfileToggle, WorkButtons } from '@/components/shared';
 import { Button } from '@/components/ui';
-import { ContactForm } from '@/components/fragments/ContactForm';
-import { RichText } from '@/components/fragments/RichText';
-import { containerVariants, itemVariants, paragraphVariants } from '@/lib/animations';
+import { ContactForm } from '@/components/shared/ContactForm';
+import { RichText } from '@/components/shared/RichText';
+import { containerVariants, itemVariants, paragraphVariants } from './Hero.animations';
 import { useAnimationSequence } from '@/lib/hooks';
 import type { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical';
 import type { HeroUIProps } from './Hero.utils';
+import { AnimatedTagline } from './components/AnimatedTagline';
 
 /**
  * Hero UI Component - Pure UI component that receives typed GraphQL data

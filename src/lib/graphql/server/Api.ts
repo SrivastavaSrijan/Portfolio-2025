@@ -1,7 +1,8 @@
 import type { DocumentNode, FetchPolicy, OperationVariables } from '@apollo/client';
-import { getClient } from '../../apollo/server';
+
 import { handleError, logError } from './error';
 import { PayloadFetchConfig, type PayloadFetchTypeMap } from './types';
+import { getClient } from '@/lib/apollo/server';
 
 const ServerConfig = {
   RevalidationTime: 1800, // Default revalidation time in seconds

@@ -1,10 +1,10 @@
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { Undo2, Clock } from 'lucide-react';
-import { RichText } from '../../fragments/RichText';
+import { RichText } from '@/components/shared/RichText';
 import Link from 'next/link';
 import { Routes } from '@/lib/config/routes';
-import { Button, Picture } from '../../ui';
+import { Button, Picture } from '@/components/ui';
 import type { CaseStudyUIProps } from './CaseStudy.utils';
 
 dayjs.extend(relativeTime);

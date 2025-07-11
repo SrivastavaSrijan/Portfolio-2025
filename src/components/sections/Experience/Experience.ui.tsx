@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
-import { RichText } from '../../fragments/RichText';
+import { RichText } from '@/components/shared/RichText';
 import { cn } from '@/lib/utils';
-import { CaseStudyCard } from '../../fragments/CaseStudyCard';
+import { CaseStudyCard } from '@/components/shared/CaseStudyCard';
 import type { ExperienceUIProps } from './Experience.utils';
 import { Picture } from '@/components/ui';
 

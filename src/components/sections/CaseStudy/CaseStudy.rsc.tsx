@@ -3,7 +3,7 @@ import { api, PayloadEntity } from '@/lib/graphql/server';
 
 import { CaseStudyUI } from './CaseStudy.ui';
 import { CaseStudySkeleton } from './CaseStudy.skeleton';
-import { NotFound } from '../../fragments/404';
+import { NotFound } from '@/components/shared/404';
 import type { CaseStudyWrapperProps } from './CaseStudy.utils';
 
 /**

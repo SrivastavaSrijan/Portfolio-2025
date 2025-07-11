@@ -1,4 +1,4 @@
-import { NotFound } from '@/components/fragments';
+import { NotFound } from '@/components/shared';
 
 export default function NotFoundPage() {
   return <NotFound />;

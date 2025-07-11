@@ -1,4 +1,4 @@
-import { Button } from '../ui';
+import { Button } from '@/components/ui';
 import Link from 'next/link';
 import type { PayloadEntity, PayloadFetchTypeMap } from '@/lib/graphql/server';
 

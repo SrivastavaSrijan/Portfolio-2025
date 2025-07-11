@@ -1,6 +1,6 @@
-import { ProfileToggle, WorkButtons } from '../../fragments';
-import { Button } from '../../ui';
-import { ContactForm } from '../../fragments/ContactForm';
+import { ProfileToggle, WorkButtons } from '@/components/shared';
+import { Button } from '@/components/ui';
+import { ContactForm } from '@/components/shared/ContactForm';
 import type { FooterUIProps } from './Footer.utils';
 
 export function FooterUI({

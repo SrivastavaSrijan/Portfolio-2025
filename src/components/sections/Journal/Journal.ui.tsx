@@ -1,4 +1,5 @@
-import { CaseStudyCard, CaseStudyFilter } from '../../fragments';
+import { CaseStudyCard } from '@/components/shared';
+import { CaseStudyFilter } from './components/CaseStudyFilter';
 import type { JournalUIProps } from './Journal.utils';
 
 /**

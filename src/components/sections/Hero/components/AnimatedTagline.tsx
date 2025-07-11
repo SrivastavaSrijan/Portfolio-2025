@@ -1,8 +1,8 @@
 'use client';
 import { motion, useAnimation } from 'motion/react';
-import { useTaglineAnimation } from '@/lib/animations';
 import { useEffect, useState, useRef } from 'react';
 import type { GetHeroQuery } from '@/lib/graphql/__generated__/hooks';
+import { useTaglineAnimation } from '../Hero.animations';
 
 interface AnimatedTaglineProps {
   initialAnimComplete: boolean;
