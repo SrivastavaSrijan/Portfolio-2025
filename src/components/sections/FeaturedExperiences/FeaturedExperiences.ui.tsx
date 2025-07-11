@@ -38,7 +38,7 @@ export function FeaturedExperiencesUI({
   description,
 }: FeaturedExperiencesUIProps) {
   return (
-    <div className="bg-white p-4 lg:p-20">
+    <section className="bg-white p-4 lg:p-20">
       <div className="flex flex-col gap-5 rounded-2xl border-1 border-black-500 bg-blue-black-50 px-6 py-8 shadow-sm lg:flex-row lg:items-center lg:gap-15 lg:px-12 lg:py-12">
         <motion.div
           className="flex flex-1/3 flex-col gap-2 border-black-500 border-b-1 pr-5 pb-4 lg:border-r-1 lg:border-b-0 lg:pr-10"
@@ -97,6 +97,6 @@ export function FeaturedExperiencesUI({
           })}
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 }

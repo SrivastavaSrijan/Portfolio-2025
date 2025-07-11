@@ -11,12 +11,17 @@ import type { CaseStudyWrapperProps } from './CaseStudy.utils';
  */
 async function CaseStudyServer({ slug }: CaseStudyWrapperProps) {
   const data = await api.get(PayloadEntity.CaseStudy, { variables: { slug } });
-
+  const tagIds = data?.tags?.map((tag) => tag.id) || [];
+  const caseStudyData = await api.get(PayloadEntity.CaseStudiesByParams, {
+    variables: {
+      ...(!!tagIds.length && { tagIds }),
+    },
+  });
   if (!data) {
     return <NotFound />;
   }
 
-  return <CaseStudyUI {...data} />;
+  return <CaseStudyUI caseStudy={data} relatedCaseStudies={caseStudyData?.caseStudies ?? []} />;
 }
 
 /**

@@ -75,7 +75,6 @@ export function ExperienceUI({ experience, caseStudies }: ExperienceUIProps) {
       </div>
 
       <div className="flex flex-col gap-5 bg-white px-4 py-5 lg:gap-10 lg:px-20 lg:py-10">
-        <h2 className="text-4xl text-accent lg:text-5xl">Related Case Studies</h2>
         {caseStudies && caseStudies.length > 0 && (
           <div className="grid grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-10">
             {caseStudies.map((caseStudy, index) => (

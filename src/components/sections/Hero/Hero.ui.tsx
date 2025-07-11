@@ -22,7 +22,7 @@ export function HeroUI({ name, title, description, taglines, workButtons }: Hero
 
   return (
     <AnimatePresence mode="wait">
-      <motion.div
+      <motion.section
         key="hero-section"
         className="mx-auto flex h-full min-h-[calc(50vh-52px)] max-w-[1440px] flex-grow flex-col gap-7 px-5 py-5 lg:min-h-[calc(100vh-94px)] lg:gap-8 lg:px-20 lg:py-10"
         initial="hidden"
@@ -82,7 +82,7 @@ export function HeroUI({ name, title, description, taglines, workButtons }: Hero
           <span className="lg:basis flex basis-full lg:hidden" />
           <WorkButtons buttons={workButtons} />
         </motion.div>
-      </motion.div>
+      </motion.section>
     </AnimatePresence>
   );
 }

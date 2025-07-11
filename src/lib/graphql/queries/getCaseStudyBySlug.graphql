@@ -15,6 +15,7 @@ query GetCaseStudyBySlug($slug: String!) {
       }
       tags {
         name
+        id
       }
       content
       illustration {

@@ -8,7 +8,7 @@ import { containerVariants, itemVariants } from './Skills.animations';
 const MotionAccordionItem = motion.create(AccordionItem, { forwardMotionProps: true });
 export function SkillsUI({ title, subtitle, skills }: SkillsUIProps) {
   return (
-    <motion.div
+    <motion.section
       className="bg-primary"
       variants={containerVariants}
       initial="hidden"
@@ -49,6 +49,6 @@ export function SkillsUI({ title, subtitle, skills }: SkillsUIProps) {
           ))}
         </Accordion>
       </div>
-    </motion.div>
+    </motion.section>
   );
 }

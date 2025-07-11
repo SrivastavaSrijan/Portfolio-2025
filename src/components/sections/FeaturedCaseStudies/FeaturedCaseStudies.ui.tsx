@@ -12,7 +12,7 @@ export function FeaturedCaseStudiesUI({
   caseStudies,
 }: FeaturedCaseStudiesUIProps) {
   return (
-    <div className="flex flex-col gap-10 bg-white px-4 py-10 lg:gap-15 lg:px-20 lg:py-20">
+    <section className="flex flex-col gap-10 bg-white px-4 py-10 lg:gap-15 lg:px-20 lg:py-20">
       <div className="flex flex-col gap-1 lg:gap-2">
         <h3 className="text-center text-accent text-lg">{subtitle}</h3>
         <h2 className="text-center font-semibold text-4xl text-accent lg:text-6xl">{title}</h2>
@@ -33,6 +33,6 @@ export function FeaturedCaseStudiesUI({
           <ArrowUpRightIcon />
         </Button>
       </Link>
-    </div>
+    </section>
   );
 }

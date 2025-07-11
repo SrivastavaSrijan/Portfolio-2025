@@ -34,6 +34,31 @@ const nextConfig: NextConfig = {
     ];
   },
 
+  async redirects() {
+    return [
+      {
+        source: '/blog',
+        destination: '/journal',
+        permanent: true,
+      },
+      {
+        source: '/case-studies',
+        destination: '/journal',
+        permanent: true,
+      },
+      {
+        source: '/case-studies/:slug',
+        destination: '/journal/:slug',
+        permanent: true,
+      },
+      {
+        source: '/blog/:slug',
+        destination: '/journal/:slug',
+        permanent: true,
+      },
+    ];
+  },
+
   // Image optimization
   images: {
     formats: ['image/webp', 'image/avif'],

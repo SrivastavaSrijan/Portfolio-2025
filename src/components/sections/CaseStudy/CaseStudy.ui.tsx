@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { Routes } from '@/lib/config/routes';
 import { Button, Picture } from '@/components/ui';
 import type { CaseStudyUIProps } from './CaseStudy.utils';
+import { RelatedCaseStudies } from './components/RelatedCaseStudies';
 
 dayjs.extend(relativeTime);
 
@@ -13,7 +14,8 @@ dayjs.extend(relativeTime);
  * CaseStudy UI Component - Pure UI component that receives typed GraphQL data
  * This component handles all the visual rendering and animations
  */
-export function CaseStudyUI({ title, content, updatedAt, illustration }: CaseStudyUIProps) {
+export function CaseStudyUI({ caseStudy, relatedCaseStudies }: CaseStudyUIProps) {
+  const { title, content, updatedAt, illustration } = caseStudy;
   return (
     <div className="flex flex-col">
       <div className="bg-accent px-4 py-4 lg:px-20 lg:pb-20">
@@ -54,6 +56,9 @@ export function CaseStudyUI({ title, content, updatedAt, illustration }: CaseStu
           <RichText data={content} />
         </div>
       </div>
+      {relatedCaseStudies && relatedCaseStudies.length > 0 && (
+        <RelatedCaseStudies relatedCaseStudies={relatedCaseStudies} />
+      )}
     </div>
   );
 }
