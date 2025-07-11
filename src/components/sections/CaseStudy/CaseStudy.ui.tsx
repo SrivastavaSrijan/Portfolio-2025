@@ -45,9 +45,7 @@ export function CaseStudyUI({ title, content, updatedAt, illustration }: CaseStu
           imageSize="hero"
           alt="Illustration"
           priority
-          quality={100}
-          width={1440}
-          height={576}
+          animateOnView={false}
           className="h-40 w-full object-cover lg:h-144"
         />
       )}

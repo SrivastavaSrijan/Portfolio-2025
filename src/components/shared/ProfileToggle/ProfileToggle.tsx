@@ -49,7 +49,7 @@ export const ProfileToggle = ({ initialAnimComplete }: ProfileToggleProps) => {
       transition={{
         delay: 0.5,
       }}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 'some' }}
       style={{ backgroundColor }}
       onClick={handleToggle}
       role="switch"

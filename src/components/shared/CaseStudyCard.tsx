@@ -19,7 +19,7 @@ const cardVariants: Variants = {
     transition: {
       duration: 0.5,
       ease: [0.22, 1, 0.36, 1],
-      delay: index * 0.1,
+      delay: index * 0.05,
     },
   }),
 };
@@ -49,6 +49,7 @@ export const CaseStudyCard = ({
           imageSize="card"
           alt={title}
           fill
+          priority={index === 0 || index === 1}
           className={cn('h-full w-full rounded-4xl object-cover lg:rounded-none')}
           wrapperProps={{ className: 'relative h-40 w-full lg:h-208' }}
         />
@@ -56,14 +57,9 @@ export const CaseStudyCard = ({
       <motion.div
         variants={cardVariants}
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 'some' }}
         custom={index}
         initial="hidden"
-        transition={{
-          duration: 0.6,
-          ease: [0.22, 1, 0.36, 1],
-          delay: 0.1,
-        }}
         className={cn(
           'bottom-0 w-full rounded-none bg-white shadow-md lg:absolute lg:bottom-4 lg:w-[calc(100%-48px)] lg:rounded-4xl'
         )}
