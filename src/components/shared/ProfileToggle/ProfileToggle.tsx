@@ -1,6 +1,6 @@
 'use client';
 import { AssetsMap } from '@/lib/assets';
-import { motion } from 'motion/react';
+import * as m from 'motion/react-m';
 import { useState } from 'react';
 
 import { useResizeObserver } from '@/lib/hooks';
@@ -40,7 +40,7 @@ export const ProfileToggle = ({ initialAnimComplete }: ProfileToggleProps) => {
   };
 
   return (
-    <motion.div
+    <m.div
       ref={ref}
       className="relative h-20 w-60 cursor-pointer overflow-hidden rounded-r-full rounded-l-full shadow-md lg:h-30 lg:w-72"
       variants={toggleContainerVariants}
@@ -55,7 +55,7 @@ export const ProfileToggle = ({ initialAnimComplete }: ProfileToggleProps) => {
       role="switch"
       aria-checked={isToggled}
       tabIndex={0}
-      onKeyDown={(e) => {
+      onKeyDown={(e: React.KeyboardEvent<HTMLDivElement>) => {
         if (e.key === 'Enter' || e.key === ' ') {
           handleToggle();
           e.preventDefault();
@@ -63,14 +63,14 @@ export const ProfileToggle = ({ initialAnimComplete }: ProfileToggleProps) => {
       }}
     >
       {/* Image as toggle knob */}
-      <motion.div
+      <m.div
         className="absolute top-0 z-10 flex aspect-square h-full items-center justify-center overflow-hidden shadow-lg"
         style={{ x, scale, opacity }}
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1 }}
       >
         <img src={AssetsMap.RemoteImages.Face} alt="Face" className="h-full w-full object-cover" />
-      </motion.div>
-    </motion.div>
+      </m.div>
+    </m.div>
   );
 };

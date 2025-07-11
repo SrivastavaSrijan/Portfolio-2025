@@ -1,5 +1,5 @@
 import type { Variants } from 'motion/react';
-import { useMotionValue, animate, type AnimationPlaybackControls } from 'motion/react';
+import { useAnimate } from 'motion/react';
 import { useEffect } from 'react';
 
 // Page section animation variants
@@ -219,67 +219,50 @@ export const underlinePathVariants: Variants = {
 
 // Custom hook for tagline text animations
 export const useTaglineAnimation = (shouldAnimate: boolean, initialAnimComplete: boolean) => {
-  const fillOpacity = useMotionValue(0);
-  const strokeDasharray = useMotionValue('0 100');
-  const strokeWidth = useMotionValue(1);
-  const pathLength = useMotionValue(0);
+  const [scope, animate] = useAnimate();
 
   // Animation sequence with improved timing
   useEffect(() => {
     if (!shouldAnimate) return;
 
-    let animationControls: AnimationPlaybackControls[] = [];
-
     const runAnimation = async () => {
-      // Clear any existing animations
-      animationControls.forEach((control) => control.stop());
-      animationControls = [];
-
-      // Always start with visible elements
-      fillOpacity.set(0); // Start with no fill
-      strokeWidth.set(1);
-
       if (!initialAnimComplete) {
         // -- Initial animation sequence --
-
-        // Show outline immediately
-        strokeDasharray.set('0 100');
-
-        // 1. Draw the outline
-        const outlineAnim = animate(strokeDasharray, '100 0', {
-          duration: 0.8,
-          ease: 'easeInOut',
-          delay: 0.2,
-        });
-        animationControls.push(outlineAnim);
-
-        // 2. Animate the underline synchronized with fill
-        const pathAnim = animate(pathLength, [0, 1], {
-          duration: 0.5,
-          delay: 0.7, // Start slightly sooner
-          ease: 'easeOut',
-        });
-        animationControls.push(pathAnim);
-
-        // 3. Fill text as underline completes
-        const fillAnim = animate(fillOpacity, 0.7, {
-          duration: 0.8,
-          delay: 0.8, // Synchronize with underline
-          ease: 'easeInOut',
-        });
-        animationControls.push(fillAnim);
+        await animate([
+          [scope.current, { opacity: 1 }],
+          ['.tagline-outline-text', { strokeDasharray: '0 100', strokeWidth: 1 }, { duration: 0 }],
+          ['.tagline-fill-text', { fillOpacity: 0 }, { duration: 0 }],
+          ['.tagline-underline-path', { pathLength: 0 }, { duration: 0 }],
+          [
+            '.tagline-outline-text',
+            { strokeDasharray: '100 0' },
+            { duration: 0.8, ease: 'easeInOut', at: 0.2 },
+          ],
+          [
+            '.tagline-underline-path',
+            { pathLength: 1 },
+            { duration: 0.5, ease: 'easeOut', at: 0.7 },
+          ],
+          [
+            '.tagline-fill-text',
+            { fillOpacity: 0.7 },
+            { duration: 0.8, ease: 'easeInOut', at: 0.8 },
+          ],
+        ]);
       } else {
         // -- Ongoing animations after initial sequence --
-
-        // Ensure elements are visible before starting animations
-        strokeDasharray.set('100 0');
-        pathLength.set(1);
-        fillOpacity.set(0.7);
+        animate(
+          '.tagline-outline-text',
+          { strokeDasharray: '100 0', strokeWidth: 1 },
+          { duration: 0 }
+        );
+        animate('.tagline-underline-path', { pathLength: 1 }, { duration: 0 });
+        animate('.tagline-fill-text', { fillOpacity: 0.7 }, { duration: 0 });
 
         // 1. Animate stroke pattern
-        const strokeAnim = animate(
-          strokeDasharray,
-          ['100 0', '90 10', '80 20', '0 100', '20 80', '40 60', '100 0'],
+        animate(
+          '.tagline-outline-text',
+          { strokeDasharray: ['100 0', '90 10', '80 20', '0 100', '20 80', '40 60', '100 0'] },
           {
             duration: 8,
             ease: 'easeInOut',
@@ -287,36 +270,36 @@ export const useTaglineAnimation = (shouldAnimate: boolean, initialAnimComplete:
             repeatType: 'loop',
           }
         );
-        animationControls.push(strokeAnim);
 
         // 2. Animate stroke width for emphasis
-        const widthAnim = animate(strokeWidth, [1, 1.2, 1.5, 1.2, 1], {
-          duration: 8,
-          ease: 'easeInOut',
-          repeat: Number.POSITIVE_INFINITY,
-          repeatType: 'loop',
-        });
-        animationControls.push(widthAnim);
+        animate(
+          '.tagline-outline-text',
+          { strokeWidth: [1, 1.2, 1.5, 1.2, 1] },
+          {
+            duration: 8,
+            ease: 'easeInOut',
+            repeat: Number.POSITIVE_INFINITY,
+            repeatType: 'loop',
+          }
+        );
 
         // 3. Animate fill opacity for subtle effect
-        const opacityAnim = animate(fillOpacity, [0.6, 0.8, 0.6], {
-          duration: 4,
-          ease: 'easeInOut',
-          repeat: Number.POSITIVE_INFINITY,
-          repeatType: 'loop',
-        });
-        animationControls.push(opacityAnim);
+        animate(
+          '.tagline-fill-text',
+          { fillOpacity: [0.6, 0.8, 0.6] },
+          {
+            duration: 4,
+            ease: 'easeInOut',
+            repeat: Number.POSITIVE_INFINITY,
+            repeatType: 'loop',
+          }
+        );
       }
     };
 
     // Run the animation sequence
     runAnimation();
+  }, [shouldAnimate, initialAnimComplete, animate, scope]);
 
-    // Clean up animations on unmount or deps change
-    return () => {
-      animationControls.forEach((control) => control.stop());
-    };
-  }, [shouldAnimate, initialAnimComplete, fillOpacity, strokeDasharray, strokeWidth, pathLength]);
-
-  return { fillOpacity, strokeDasharray, strokeWidth, pathLength };
+  return { scope };
 };

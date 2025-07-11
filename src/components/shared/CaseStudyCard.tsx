@@ -4,7 +4,8 @@ import { ArrowUpRightIcon } from 'lucide-react';
 import Link from 'next/link';
 import { Routes } from '@/lib/config/routes';
 import { cn } from '@/lib/utils';
-import { motion, type Variants } from 'motion/react';
+import * as m from 'motion/react-m';
+import type { Variants } from 'motion/react';
 import { RichText } from './RichText';
 import type { PayloadEntity, PayloadFetchTypeMap } from '@/lib/graphql/server';
 
@@ -55,7 +56,7 @@ export const CaseStudyCard = ({
             wrapperProps={{ className: 'relative h-40 w-full lg:h-208' }}
           />
         )}
-        <motion.div
+        <m.div
           variants={cardVariants}
           whileInView="visible"
           viewport={{ once: true, amount: 'some' }}
@@ -92,7 +93,7 @@ export const CaseStudyCard = ({
               </CardAction>
             </CardContent>
           </Card>
-        </motion.div>
+        </m.div>
       </div>
     </Link>
   );

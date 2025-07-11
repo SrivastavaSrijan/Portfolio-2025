@@ -1,3 +1,4 @@
+import { MotionProvider } from '@/components/context/MotionProvider';
 import './tailwind.css';
 import { ApolloWrapper, ProgressProviderClient } from '@/components/context';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -12,17 +13,19 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="en" className="dark">
       <body>
-        <ProgressProviderClient>
-          <ApolloWrapper>
-            <Navbar />
-            <main>
-              <ErrorBoundary fallback={<ServerError />}>{children}</ErrorBoundary>
-            </main>
-            <Footer />
-            <SpeedInsights />
-            <Toaster position="top-right" />
-          </ApolloWrapper>
-        </ProgressProviderClient>
+        <MotionProvider>
+          <ProgressProviderClient>
+            <ApolloWrapper>
+              <Navbar />
+              <main>
+                <ErrorBoundary fallback={<ServerError />}>{children}</ErrorBoundary>
+              </main>
+              <Footer />
+              <SpeedInsights />
+              <Toaster position="top-right" />
+            </ApolloWrapper>
+          </ProgressProviderClient>
+        </MotionProvider>
       </body>
     </html>
   );

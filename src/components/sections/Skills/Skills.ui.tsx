@@ -1,14 +1,14 @@
 'use client';
-import { motion } from 'motion/react';
+import * as m from 'motion/react-m';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui';
 import { RichText } from '@/components/shared/RichText';
 import type { SkillsUIProps } from './Skills.utils';
 import { containerVariants, itemVariants } from './Skills.animations';
 
-const MotionAccordionItem = motion.create(AccordionItem, { forwardMotionProps: true });
+const MotionAccordionItem = m.create(AccordionItem, { forwardMotionProps: true });
 export function SkillsUI({ title, subtitle, skills }: SkillsUIProps) {
   return (
-    <motion.section
+    <m.section
       className="bg-primary"
       variants={containerVariants}
       initial="hidden"
@@ -16,7 +16,7 @@ export function SkillsUI({ title, subtitle, skills }: SkillsUIProps) {
       viewport={{ once: true, amount: 'some' }}
     >
       <div className="mx-auto flex max-w-[1440px] flex-col gap-4 px-5 py-5 lg:gap-8 lg:px-96 lg:py-20">
-        <motion.div
+        <m.div
           className="flex flex-col items-start gap-1 lg:mx-auto lg:gap-2 "
           variants={itemVariants}
         >
@@ -24,7 +24,7 @@ export function SkillsUI({ title, subtitle, skills }: SkillsUIProps) {
           <h2 className="w-full font-medium text-4xl text-accent lg:text-center lg:text-display-6">
             {title}
           </h2>
-        </motion.div>
+        </m.div>
         <Accordion
           type="multiple"
           className="flex w-full flex-col gap-2 text-accent *:border-accent lg:gap-2"
@@ -49,6 +49,6 @@ export function SkillsUI({ title, subtitle, skills }: SkillsUIProps) {
           ))}
         </Accordion>
       </div>
-    </motion.section>
+    </m.section>
   );
 }
