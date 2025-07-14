@@ -27,6 +27,8 @@ import {
 import { seoConfig } from './lib/payload/seoConfig';
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
+import dotenv from 'dotenv';
+dotenv.config({ quiet: true });
 
 // Load environment variables from .env file
 export default buildConfig({

@@ -1,6 +1,5 @@
-import { revalidateAll } from '../utils';
-
 import type { CollectionConfig } from 'payload';
+import { revalidateAll } from '../utils';
 
 export const Tags: CollectionConfig = {
   slug: 'tags',

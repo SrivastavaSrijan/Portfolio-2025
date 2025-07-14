@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { Routes, FullURLs } from '@/lib/config/routes';
+import type { PayloadEntity, PayloadFetchTypeMap } from '../graphql/server';
 
 export type SitemapEntry = MetadataRoute.Sitemap[number];
 
@@ -28,34 +29,32 @@ export const createStaticPages = (): SitemapEntryWithDate[] => [
 ];
 
 export const createCaseStudyPages = (
-  caseStudies: ReadonlyArray<{ readonly slug?: string | null; readonly updatedAt?: unknown }>
+  caseStudies: PayloadFetchTypeMap[PayloadEntity.AllCaseStudies]['result']
 ): SitemapEntryWithDate[] =>
   caseStudies
-    .filter((study): study is { readonly slug: string; readonly updatedAt: string } =>
-      Boolean(study.slug && study.updatedAt)
+    .filter(
+      (study): study is typeof study & { slug: string; updatedAt: string } =>
+        typeof study.slug === 'string' && typeof study.updatedAt === 'string'
     )
     .map((study) =>
-      createSitemapEntry(`${Routes.CaseStudies}/${study.slug}`, study.updatedAt, 'monthly', 0.7)
+      createSitemapEntry(Routes.CaseStudiesBySlug(study.slug), study.updatedAt, 'monthly', 0.7)
     );
 
 export const createExperiencePages = (
-  experiences: ReadonlyArray<{ readonly slug?: string | null; readonly updatedAt?: unknown }>
+  experiences: PayloadFetchTypeMap[PayloadEntity.AllExperiences]['result']
 ): SitemapEntryWithDate[] =>
   experiences
-    .filter((exp): exp is { readonly slug: string; readonly updatedAt: string } =>
-      Boolean(exp.slug && exp.updatedAt)
+    .filter(
+      (exp): exp is typeof exp & { slug: string; updatedAt: string } =>
+        typeof exp.slug === 'string' && typeof exp.updatedAt === 'string'
     )
     .map((exp) =>
-      createSitemapEntry(`${Routes.Experiences}/${exp.slug}`, exp.updatedAt, 'monthly', 0.6)
+      createSitemapEntry(Routes.ExperiencesBySlug(exp.slug), exp.updatedAt, 'monthly', 0.6)
     );
 
 export const createTagPages = (
-  tags: ReadonlyArray<{ readonly name: string; readonly slug?: string | null }>
+  tags: PayloadFetchTypeMap[PayloadEntity.AllTags]['result']
 ): SitemapEntryWithDate[] =>
   tags
-    .filter((tag): tag is { readonly name: string; readonly slug: string } =>
-      Boolean(tag.slug || tag.name)
-    )
-    .map((tag) =>
-      createSitemapEntry(Routes.CaseStudiesByTag(tag.slug || tag.name), new Date(), 'weekly', 0.5)
-    );
+    .filter((tag): tag is typeof tag & { slug: string } => typeof tag.slug === 'string')
+    .map((tag) => createSitemapEntry(Routes.CaseStudiesByTag(tag.slug), new Date(), 'weekly', 0.5));

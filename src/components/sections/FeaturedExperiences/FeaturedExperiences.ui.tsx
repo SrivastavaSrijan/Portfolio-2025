@@ -76,6 +76,7 @@ export function FeaturedExperiencesUI({
                   viewport={{ once: true, amount: 'some' }}
                 >
                   <Picture
+                    animateOnView={false}
                     media={thumbnailImage}
                     imageSize="thumbnail"
                     alt={experienceTitle}
