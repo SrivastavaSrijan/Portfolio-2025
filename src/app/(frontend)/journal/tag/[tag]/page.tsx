@@ -1,7 +1,6 @@
 import { Journal } from '@/components/sections';
 import { createMetadata } from '@/lib/config/metadata';
 import { api, PayloadEntity } from '@/lib/graphql/server';
-import { kebabCase } from 'lodash';
 import { notFound } from 'next/navigation';
 
 import type { Metadata } from 'next';
@@ -16,7 +15,7 @@ export async function generateStaticParams() {
     return [];
   }
 
-  return allTagsData.map(({ name }) => ({ tag: kebabCase(name) }));
+  return allTagsData.map(({ slug }) => ({ tag: slug }));
 }
 
 interface JournalTagPageProps {
@@ -46,7 +45,7 @@ export default async function JournalTagPage({ params }: JournalTagPageProps) {
     notFound();
   }
 
-  const selectedTag = allTagsData.find(({ name }) => kebabCase(name) === kebabCase(tag)) ?? null;
+  const selectedTag = allTagsData.find(({ slug }) => slug === tag) ?? null;
 
   if (!selectedTag) {
     notFound();
