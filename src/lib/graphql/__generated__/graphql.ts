@@ -90,6 +90,7 @@ export type CaseStudiesDocAccessFields = {
   experience?: Maybe<CaseStudiesDocAccessFields_Experience>;
   featured?: Maybe<CaseStudiesDocAccessFields_Featured>;
   illustration?: Maybe<CaseStudiesDocAccessFields_Illustration>;
+  links?: Maybe<CaseStudiesDocAccessFields_Links>;
   meta?: Maybe<CaseStudiesDocAccessFields_Meta>;
   publishedAt?: Maybe<CaseStudiesDocAccessFields_PublishedAt>;
   slug?: Maybe<CaseStudiesDocAccessFields_Slug>;
@@ -236,6 +237,126 @@ export type CaseStudiesDocAccessFields_Illustration_Read = {
 
 export type CaseStudiesDocAccessFields_Illustration_Update = {
   __typename?: 'CaseStudiesDocAccessFields_illustration_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Links = {
+  __typename?: 'CaseStudiesDocAccessFields_links';
+  create?: Maybe<CaseStudiesDocAccessFields_Links_Create>;
+  delete?: Maybe<CaseStudiesDocAccessFields_Links_Delete>;
+  fields?: Maybe<CaseStudiesDocAccessFields_Links_Fields>;
+  read?: Maybe<CaseStudiesDocAccessFields_Links_Read>;
+  update?: Maybe<CaseStudiesDocAccessFields_Links_Update>;
+};
+
+export type CaseStudiesDocAccessFields_Links_Create = {
+  __typename?: 'CaseStudiesDocAccessFields_links_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Links_Delete = {
+  __typename?: 'CaseStudiesDocAccessFields_links_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Links_Fields = {
+  __typename?: 'CaseStudiesDocAccessFields_links_Fields';
+  id?: Maybe<CaseStudiesDocAccessFields_Links_Id>;
+  label?: Maybe<CaseStudiesDocAccessFields_Links_Label>;
+  url?: Maybe<CaseStudiesDocAccessFields_Links_Url>;
+};
+
+export type CaseStudiesDocAccessFields_Links_Read = {
+  __typename?: 'CaseStudiesDocAccessFields_links_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Links_Update = {
+  __typename?: 'CaseStudiesDocAccessFields_links_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Links_Id = {
+  __typename?: 'CaseStudiesDocAccessFields_links_id';
+  create?: Maybe<CaseStudiesDocAccessFields_Links_Id_Create>;
+  delete?: Maybe<CaseStudiesDocAccessFields_Links_Id_Delete>;
+  read?: Maybe<CaseStudiesDocAccessFields_Links_Id_Read>;
+  update?: Maybe<CaseStudiesDocAccessFields_Links_Id_Update>;
+};
+
+export type CaseStudiesDocAccessFields_Links_Id_Create = {
+  __typename?: 'CaseStudiesDocAccessFields_links_id_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Links_Id_Delete = {
+  __typename?: 'CaseStudiesDocAccessFields_links_id_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Links_Id_Read = {
+  __typename?: 'CaseStudiesDocAccessFields_links_id_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Links_Id_Update = {
+  __typename?: 'CaseStudiesDocAccessFields_links_id_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Links_Label = {
+  __typename?: 'CaseStudiesDocAccessFields_links_label';
+  create?: Maybe<CaseStudiesDocAccessFields_Links_Label_Create>;
+  delete?: Maybe<CaseStudiesDocAccessFields_Links_Label_Delete>;
+  read?: Maybe<CaseStudiesDocAccessFields_Links_Label_Read>;
+  update?: Maybe<CaseStudiesDocAccessFields_Links_Label_Update>;
+};
+
+export type CaseStudiesDocAccessFields_Links_Label_Create = {
+  __typename?: 'CaseStudiesDocAccessFields_links_label_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Links_Label_Delete = {
+  __typename?: 'CaseStudiesDocAccessFields_links_label_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Links_Label_Read = {
+  __typename?: 'CaseStudiesDocAccessFields_links_label_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Links_Label_Update = {
+  __typename?: 'CaseStudiesDocAccessFields_links_label_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Links_Url = {
+  __typename?: 'CaseStudiesDocAccessFields_links_url';
+  create?: Maybe<CaseStudiesDocAccessFields_Links_Url_Create>;
+  delete?: Maybe<CaseStudiesDocAccessFields_Links_Url_Delete>;
+  read?: Maybe<CaseStudiesDocAccessFields_Links_Url_Read>;
+  update?: Maybe<CaseStudiesDocAccessFields_Links_Url_Update>;
+};
+
+export type CaseStudiesDocAccessFields_Links_Url_Create = {
+  __typename?: 'CaseStudiesDocAccessFields_links_url_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Links_Url_Delete = {
+  __typename?: 'CaseStudiesDocAccessFields_links_url_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Links_Url_Read = {
+  __typename?: 'CaseStudiesDocAccessFields_links_url_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Links_Url_Update = {
+  __typename?: 'CaseStudiesDocAccessFields_links_url_Update';
   permission: Scalars['Boolean']['output'];
 };
 
@@ -534,6 +655,7 @@ export type CaseStudiesFields = {
   experience?: Maybe<CaseStudiesFields_Experience>;
   featured?: Maybe<CaseStudiesFields_Featured>;
   illustration?: Maybe<CaseStudiesFields_Illustration>;
+  links?: Maybe<CaseStudiesFields_Links>;
   meta?: Maybe<CaseStudiesFields_Meta>;
   publishedAt?: Maybe<CaseStudiesFields_PublishedAt>;
   slug?: Maybe<CaseStudiesFields_Slug>;
@@ -680,6 +802,126 @@ export type CaseStudiesFields_Illustration_Read = {
 
 export type CaseStudiesFields_Illustration_Update = {
   __typename?: 'CaseStudiesFields_illustration_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Links = {
+  __typename?: 'CaseStudiesFields_links';
+  create?: Maybe<CaseStudiesFields_Links_Create>;
+  delete?: Maybe<CaseStudiesFields_Links_Delete>;
+  fields?: Maybe<CaseStudiesFields_Links_Fields>;
+  read?: Maybe<CaseStudiesFields_Links_Read>;
+  update?: Maybe<CaseStudiesFields_Links_Update>;
+};
+
+export type CaseStudiesFields_Links_Create = {
+  __typename?: 'CaseStudiesFields_links_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Links_Delete = {
+  __typename?: 'CaseStudiesFields_links_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Links_Fields = {
+  __typename?: 'CaseStudiesFields_links_Fields';
+  id?: Maybe<CaseStudiesFields_Links_Id>;
+  label?: Maybe<CaseStudiesFields_Links_Label>;
+  url?: Maybe<CaseStudiesFields_Links_Url>;
+};
+
+export type CaseStudiesFields_Links_Read = {
+  __typename?: 'CaseStudiesFields_links_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Links_Update = {
+  __typename?: 'CaseStudiesFields_links_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Links_Id = {
+  __typename?: 'CaseStudiesFields_links_id';
+  create?: Maybe<CaseStudiesFields_Links_Id_Create>;
+  delete?: Maybe<CaseStudiesFields_Links_Id_Delete>;
+  read?: Maybe<CaseStudiesFields_Links_Id_Read>;
+  update?: Maybe<CaseStudiesFields_Links_Id_Update>;
+};
+
+export type CaseStudiesFields_Links_Id_Create = {
+  __typename?: 'CaseStudiesFields_links_id_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Links_Id_Delete = {
+  __typename?: 'CaseStudiesFields_links_id_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Links_Id_Read = {
+  __typename?: 'CaseStudiesFields_links_id_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Links_Id_Update = {
+  __typename?: 'CaseStudiesFields_links_id_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Links_Label = {
+  __typename?: 'CaseStudiesFields_links_label';
+  create?: Maybe<CaseStudiesFields_Links_Label_Create>;
+  delete?: Maybe<CaseStudiesFields_Links_Label_Delete>;
+  read?: Maybe<CaseStudiesFields_Links_Label_Read>;
+  update?: Maybe<CaseStudiesFields_Links_Label_Update>;
+};
+
+export type CaseStudiesFields_Links_Label_Create = {
+  __typename?: 'CaseStudiesFields_links_label_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Links_Label_Delete = {
+  __typename?: 'CaseStudiesFields_links_label_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Links_Label_Read = {
+  __typename?: 'CaseStudiesFields_links_label_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Links_Label_Update = {
+  __typename?: 'CaseStudiesFields_links_label_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Links_Url = {
+  __typename?: 'CaseStudiesFields_links_url';
+  create?: Maybe<CaseStudiesFields_Links_Url_Create>;
+  delete?: Maybe<CaseStudiesFields_Links_Url_Delete>;
+  read?: Maybe<CaseStudiesFields_Links_Url_Read>;
+  update?: Maybe<CaseStudiesFields_Links_Url_Update>;
+};
+
+export type CaseStudiesFields_Links_Url_Create = {
+  __typename?: 'CaseStudiesFields_links_url_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Links_Url_Delete = {
+  __typename?: 'CaseStudiesFields_links_url_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Links_Url_Read = {
+  __typename?: 'CaseStudiesFields_links_url_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Links_Url_Update = {
+  __typename?: 'CaseStudiesFields_links_url_Update';
   permission: Scalars['Boolean']['output'];
 };
 
@@ -1003,6 +1245,7 @@ export type CaseStudy = {
   featured?: Maybe<Scalars['Boolean']['output']>;
   id: Scalars['Int']['output'];
   illustration?: Maybe<Media>;
+  links?: Maybe<Array<CaseStudy_Links>>;
   meta?: Maybe<CaseStudy_Meta>;
   publishedAt?: Maybe<Scalars['DateTime']['output']>;
   slug?: Maybe<Scalars['String']['output']>;
@@ -1020,6 +1263,13 @@ export type CaseStudyContentArgs = {
 
 export type CaseStudySummaryArgs = {
   depth?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export type CaseStudy_Links = {
+  __typename?: 'CaseStudy_Links';
+  id?: Maybe<Scalars['String']['output']>;
+  label?: Maybe<Scalars['String']['output']>;
+  url?: Maybe<Scalars['String']['output']>;
 };
 
 export type CaseStudy_Meta = {
@@ -1078,6 +1328,37 @@ export type CaseStudy_Illustration_Operator = {
   in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
   not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+};
+
+export type CaseStudy_Links__Id_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type CaseStudy_Links__Label_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type CaseStudy_Links__Url_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type CaseStudy_Meta__Description_Operator = {
@@ -1175,6 +1456,9 @@ export type CaseStudy_Where = {
   featured?: InputMaybe<CaseStudy_Featured_Operator>;
   id?: InputMaybe<CaseStudy_Id_Operator>;
   illustration?: InputMaybe<CaseStudy_Illustration_Operator>;
+  links__id?: InputMaybe<CaseStudy_Links__Id_Operator>;
+  links__label?: InputMaybe<CaseStudy_Links__Label_Operator>;
+  links__url?: InputMaybe<CaseStudy_Links__Url_Operator>;
   meta__description?: InputMaybe<CaseStudy_Meta__Description_Operator>;
   meta__image?: InputMaybe<CaseStudy_Meta__Image_Operator>;
   meta__title?: InputMaybe<CaseStudy_Meta__Title_Operator>;
@@ -1195,6 +1479,9 @@ export type CaseStudy_Where_And = {
   featured?: InputMaybe<CaseStudy_Featured_Operator>;
   id?: InputMaybe<CaseStudy_Id_Operator>;
   illustration?: InputMaybe<CaseStudy_Illustration_Operator>;
+  links__id?: InputMaybe<CaseStudy_Links__Id_Operator>;
+  links__label?: InputMaybe<CaseStudy_Links__Label_Operator>;
+  links__url?: InputMaybe<CaseStudy_Links__Url_Operator>;
   meta__description?: InputMaybe<CaseStudy_Meta__Description_Operator>;
   meta__image?: InputMaybe<CaseStudy_Meta__Image_Operator>;
   meta__title?: InputMaybe<CaseStudy_Meta__Title_Operator>;
@@ -1215,6 +1502,9 @@ export type CaseStudy_Where_Or = {
   featured?: InputMaybe<CaseStudy_Featured_Operator>;
   id?: InputMaybe<CaseStudy_Id_Operator>;
   illustration?: InputMaybe<CaseStudy_Illustration_Operator>;
+  links__id?: InputMaybe<CaseStudy_Links__Id_Operator>;
+  links__label?: InputMaybe<CaseStudy_Links__Label_Operator>;
+  links__url?: InputMaybe<CaseStudy_Links__Url_Operator>;
   meta__description?: InputMaybe<CaseStudy_Meta__Description_Operator>;
   meta__image?: InputMaybe<CaseStudy_Meta__Image_Operator>;
   meta__title?: InputMaybe<CaseStudy_Meta__Title_Operator>;
@@ -13004,6 +13294,7 @@ export type MutationCaseStudyInput = {
   experience?: InputMaybe<Scalars['Int']['input']>;
   featured?: InputMaybe<Scalars['Boolean']['input']>;
   illustration?: InputMaybe<Scalars['Int']['input']>;
+  links?: InputMaybe<Array<InputMaybe<MutationCaseStudy_LinksInput>>>;
   meta?: InputMaybe<MutationCaseStudy_MetaInput>;
   publishedAt?: InputMaybe<Scalars['String']['input']>;
   slug?: InputMaybe<Scalars['String']['input']>;
@@ -13019,6 +13310,7 @@ export type MutationCaseStudyUpdateInput = {
   experience?: InputMaybe<Scalars['Int']['input']>;
   featured?: InputMaybe<Scalars['Boolean']['input']>;
   illustration?: InputMaybe<Scalars['Int']['input']>;
+  links?: InputMaybe<Array<InputMaybe<MutationCaseStudyUpdate_LinksInput>>>;
   meta?: InputMaybe<MutationCaseStudyUpdate_MetaInput>;
   publishedAt?: InputMaybe<Scalars['String']['input']>;
   slug?: InputMaybe<Scalars['String']['input']>;
@@ -13028,10 +13320,22 @@ export type MutationCaseStudyUpdateInput = {
   updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
 
+export type MutationCaseStudyUpdate_LinksInput = {
+  id?: InputMaybe<Scalars['String']['input']>;
+  label: Scalars['String']['input'];
+  url: Scalars['String']['input'];
+};
+
 export type MutationCaseStudyUpdate_MetaInput = {
   description?: InputMaybe<Scalars['String']['input']>;
   image?: InputMaybe<Scalars['Int']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MutationCaseStudy_LinksInput = {
+  id?: InputMaybe<Scalars['String']['input']>;
+  label: Scalars['String']['input'];
+  url: Scalars['String']['input'];
 };
 
 export type MutationCaseStudy_MetaInput = {
@@ -13583,7 +13887,7 @@ export type GetCaseStudyBySlugQueryVariables = Exact<{
 export type GetCaseStudyBySlugQuery = { __typename?: 'Query', CaseStudies?: { __typename?: 'CaseStudies', docs: Array<{ __typename?: 'CaseStudy', title: string, content: any, updatedAt?: any | null, experience: { __typename?: 'Experience', title: string, role?: string | null, startDate?: any | null, endDate?: any | null, id: number }, tags: Array<{ __typename?: 'Tag', name: string, id: number }>, illustration?: (
         { __typename?: 'Media' }
         & { ' $fragmentRefs'?: { 'MediaFragmentFragment': MediaFragmentFragment } }
-      ) | null }> } | null };
+      ) | null, links?: Array<{ __typename?: 'CaseStudy_Links', label?: string | null, id?: string | null, url?: string | null }> | null }> } | null };
 
 export type GetContactFormsQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -13674,7 +13978,7 @@ export const MediaFragmentFragmentDoc = {"kind":"Document","definitions":[{"kind
 export const CreateContactFormDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"CreateContactForm"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"name"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"email"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"subject"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"message"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"createContactForm"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"data"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"name"},"value":{"kind":"Variable","name":{"kind":"Name","value":"name"}}},{"kind":"ObjectField","name":{"kind":"Name","value":"email"},"value":{"kind":"Variable","name":{"kind":"Name","value":"email"}}},{"kind":"ObjectField","name":{"kind":"Name","value":"subject"},"value":{"kind":"Variable","name":{"kind":"Name","value":"subject"}}},{"kind":"ObjectField","name":{"kind":"Name","value":"message"},"value":{"kind":"Variable","name":{"kind":"Name","value":"message"}}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"email"}},{"kind":"Field","name":{"kind":"Name","value":"subject"}},{"kind":"Field","name":{"kind":"Name","value":"message"}},{"kind":"Field","name":{"kind":"Name","value":"status"}}]}}]}}]} as unknown as DocumentNode<CreateContactFormMutation, CreateContactFormMutationVariables>;
 export const GetAllTagsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetAllTags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"CaseStudies"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"tags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"id"}}]}},{"kind":"Field","name":{"kind":"Name","value":"updatedAt"}}]}}]}}]}}]} as unknown as DocumentNode<GetAllTagsQuery, GetAllTagsQueryVariables>;
 export const GetCaseStudiesByParamsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetCaseStudiesByParams"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"tagIds"}},"type":{"kind":"ListType","type":{"kind":"NamedType","name":{"kind":"Name","value":"JSON"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"experience"}},"type":{"kind":"ListType","type":{"kind":"NamedType","name":{"kind":"Name","value":"JSON"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"CaseStudies"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"tags"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"in"},"value":{"kind":"Variable","name":{"kind":"Name","value":"tagIds"}}}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"experience"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"in"},"value":{"kind":"Variable","name":{"kind":"Name","value":"experience"}}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"offset"}},{"kind":"Field","name":{"kind":"Name","value":"totalDocs"}},{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"summary"}},{"kind":"Field","name":{"kind":"Name","value":"tags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"id"}}]}},{"kind":"Field","name":{"kind":"Name","value":"updatedAt"}},{"kind":"Field","name":{"kind":"Name","value":"illustration"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"MediaFragment"}}]}},{"kind":"Field","name":{"kind":"Name","value":"experience"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"role"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"pagingCounter"}}]}},{"kind":"Field","name":{"kind":"Name","value":"Journal"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}},{"kind":"Field","name":{"kind":"Name","value":"description"}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"MediaFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Media"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"caption"}},{"kind":"Field","name":{"kind":"Name","value":"blurDataURL"}},{"kind":"Field","name":{"kind":"Name","value":"focalX"}},{"kind":"Field","name":{"kind":"Name","value":"focalY"}},{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"sizes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"icon"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"thumbnail"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"card"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"feature"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"hero"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}}]}}]}}]} as unknown as DocumentNode<GetCaseStudiesByParamsQuery, GetCaseStudiesByParamsQueryVariables>;
-export const GetCaseStudyBySlugDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetCaseStudyBySlug"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"slug"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"CaseStudies"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"equals"},"value":{"kind":"Variable","name":{"kind":"Name","value":"slug"}}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"experience"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"role"}},{"kind":"Field","name":{"kind":"Name","value":"startDate"}},{"kind":"Field","name":{"kind":"Name","value":"endDate"}},{"kind":"Field","name":{"kind":"Name","value":"id"}}]}},{"kind":"Field","name":{"kind":"Name","value":"tags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"id"}}]}},{"kind":"Field","name":{"kind":"Name","value":"content"}},{"kind":"Field","name":{"kind":"Name","value":"illustration"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"MediaFragment"}}]}},{"kind":"Field","name":{"kind":"Name","value":"updatedAt"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"MediaFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Media"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"caption"}},{"kind":"Field","name":{"kind":"Name","value":"blurDataURL"}},{"kind":"Field","name":{"kind":"Name","value":"focalX"}},{"kind":"Field","name":{"kind":"Name","value":"focalY"}},{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"sizes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"icon"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"thumbnail"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"card"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"feature"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"hero"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}}]}}]}}]} as unknown as DocumentNode<GetCaseStudyBySlugQuery, GetCaseStudyBySlugQueryVariables>;
+export const GetCaseStudyBySlugDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetCaseStudyBySlug"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"slug"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"CaseStudies"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"equals"},"value":{"kind":"Variable","name":{"kind":"Name","value":"slug"}}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"experience"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"role"}},{"kind":"Field","name":{"kind":"Name","value":"startDate"}},{"kind":"Field","name":{"kind":"Name","value":"endDate"}},{"kind":"Field","name":{"kind":"Name","value":"id"}}]}},{"kind":"Field","name":{"kind":"Name","value":"tags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"id"}}]}},{"kind":"Field","name":{"kind":"Name","value":"content"}},{"kind":"Field","name":{"kind":"Name","value":"illustration"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"MediaFragment"}}]}},{"kind":"Field","name":{"kind":"Name","value":"updatedAt"}},{"kind":"Field","name":{"kind":"Name","value":"links"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"label"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"MediaFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Media"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"caption"}},{"kind":"Field","name":{"kind":"Name","value":"blurDataURL"}},{"kind":"Field","name":{"kind":"Name","value":"focalX"}},{"kind":"Field","name":{"kind":"Name","value":"focalY"}},{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"sizes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"icon"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"thumbnail"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"card"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"feature"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"hero"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}}]}}]}}]} as unknown as DocumentNode<GetCaseStudyBySlugQuery, GetCaseStudyBySlugQueryVariables>;
 export const GetContactFormsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetContactForms"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"ContactForms"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"limit"},"value":{"kind":"IntValue","value":"100"}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"email"}},{"kind":"Field","name":{"kind":"Name","value":"subject"}},{"kind":"Field","name":{"kind":"Name","value":"message"}},{"kind":"Field","name":{"kind":"Name","value":"status"}},{"kind":"Field","name":{"kind":"Name","value":"createdAt"}}]}},{"kind":"Field","name":{"kind":"Name","value":"totalDocs"}},{"kind":"Field","name":{"kind":"Name","value":"page"}},{"kind":"Field","name":{"kind":"Name","value":"totalPages"}}]}}]}}]} as unknown as DocumentNode<GetContactFormsQuery, GetContactFormsQueryVariables>;
 export const GetExperienceBySlugDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetExperienceBySlug"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"slug"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Experiences"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"equals"},"value":{"kind":"Variable","name":{"kind":"Name","value":"slug"}}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"role"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"startDate"}},{"kind":"Field","name":{"kind":"Name","value":"summary"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"endDate"}},{"kind":"Field","name":{"kind":"Name","value":"coverImage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"MediaFragment"}}]}},{"kind":"Field","name":{"kind":"Name","value":"tags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}}]}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"MediaFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Media"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"caption"}},{"kind":"Field","name":{"kind":"Name","value":"blurDataURL"}},{"kind":"Field","name":{"kind":"Name","value":"focalX"}},{"kind":"Field","name":{"kind":"Name","value":"focalY"}},{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"sizes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"icon"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"thumbnail"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"card"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"feature"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"hero"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}}]}}]}}]} as unknown as DocumentNode<GetExperienceBySlugQuery, GetExperienceBySlugQueryVariables>;
 export const GetFeaturedCaseStudiesDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetFeaturedCaseStudies"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"FeaturedCaseStudy"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"caseStudies"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"illustration"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"MediaFragment"}}]}},{"kind":"Field","name":{"kind":"Name","value":"summary"}},{"kind":"Field","name":{"kind":"Name","value":"tags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"id"}}]}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"MediaFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Media"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"caption"}},{"kind":"Field","name":{"kind":"Name","value":"blurDataURL"}},{"kind":"Field","name":{"kind":"Name","value":"focalX"}},{"kind":"Field","name":{"kind":"Name","value":"focalY"}},{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"sizes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"icon"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"thumbnail"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"card"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"feature"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}},{"kind":"Field","name":{"kind":"Name","value":"hero"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}}]}}]}}]}}]} as unknown as DocumentNode<GetFeaturedCaseStudiesQuery, GetFeaturedCaseStudiesQueryVariables>;

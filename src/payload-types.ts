@@ -85,9 +85,7 @@ export interface Config {
     'case-studies': CaseStudiesSelect<false> | CaseStudiesSelect<true>;
     experiences: ExperiencesSelect<false> | ExperiencesSelect<true>;
     tags: TagsSelect<false> | TagsSelect<true>;
-    'payload-locked-documents':
-      | PayloadLockedDocumentsSelect<false>
-      | PayloadLockedDocumentsSelect<true>;
+    'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
   };
@@ -287,6 +285,13 @@ export interface CaseStudy {
   slug?: string | null;
   publishedAt?: string | null;
   featured?: boolean | null;
+  links?:
+    | {
+        label: string;
+        url: string;
+        id?: string | null;
+      }[]
+    | null;
   meta?: {
     title?: string | null;
     description?: string | null;
@@ -539,6 +544,13 @@ export interface CaseStudiesSelect<T extends boolean = true> {
   slug?: T;
   publishedAt?: T;
   featured?: T;
+  links?:
+    | T
+    | {
+        label?: T;
+        url?: T;
+        id?: T;
+      };
   meta?:
     | T
     | {
@@ -885,6 +897,7 @@ export interface FeaturedExperiencesSelect<T extends boolean = true> {
 export interface Auth {
   [k: string]: unknown;
 }
+
 
 declare module 'payload' {
   export interface GeneratedTypes extends Config {}

@@ -65,5 +65,25 @@ export const CaseStudies: CollectionConfig = {
       name: 'featured',
       type: 'checkbox',
     },
+    {
+      name:"links",
+      type: 'array',
+      fields: [
+        {
+          name: 'label',
+          type: 'text',
+          required: true,
+        },
+        {
+          name: 'url',
+          type: 'text',
+          required: true,
+        },
+      ],
+      required: false,
+      minRows: 1,
+      maxRows: 5,
+      defaultValue: [],
+    }
   ],
 };

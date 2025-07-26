@@ -22,6 +22,11 @@ query GetCaseStudyBySlug($slug: String!) {
         ...MediaFragment
       }
       updatedAt
+      links {
+        label
+        id
+        url
+      }
     }
   }
 }

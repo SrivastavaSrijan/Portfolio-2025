@@ -87,6 +87,7 @@ export type CaseStudiesDocAccessFields = {
   readonly experience?: Maybe<CaseStudiesDocAccessFields_Experience>;
   readonly featured?: Maybe<CaseStudiesDocAccessFields_Featured>;
   readonly illustration?: Maybe<CaseStudiesDocAccessFields_Illustration>;
+  readonly links?: Maybe<CaseStudiesDocAccessFields_Links>;
   readonly meta?: Maybe<CaseStudiesDocAccessFields_Meta>;
   readonly publishedAt?: Maybe<CaseStudiesDocAccessFields_PublishedAt>;
   readonly slug?: Maybe<CaseStudiesDocAccessFields_Slug>;
@@ -233,6 +234,126 @@ export type CaseStudiesDocAccessFields_Illustration_Read = {
 
 export type CaseStudiesDocAccessFields_Illustration_Update = {
   readonly __typename?: 'CaseStudiesDocAccessFields_illustration_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Links = {
+  readonly __typename?: 'CaseStudiesDocAccessFields_links';
+  readonly create?: Maybe<CaseStudiesDocAccessFields_Links_Create>;
+  readonly delete?: Maybe<CaseStudiesDocAccessFields_Links_Delete>;
+  readonly fields?: Maybe<CaseStudiesDocAccessFields_Links_Fields>;
+  readonly read?: Maybe<CaseStudiesDocAccessFields_Links_Read>;
+  readonly update?: Maybe<CaseStudiesDocAccessFields_Links_Update>;
+};
+
+export type CaseStudiesDocAccessFields_Links_Create = {
+  readonly __typename?: 'CaseStudiesDocAccessFields_links_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Links_Delete = {
+  readonly __typename?: 'CaseStudiesDocAccessFields_links_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Links_Fields = {
+  readonly __typename?: 'CaseStudiesDocAccessFields_links_Fields';
+  readonly id?: Maybe<CaseStudiesDocAccessFields_Links_Id>;
+  readonly label?: Maybe<CaseStudiesDocAccessFields_Links_Label>;
+  readonly url?: Maybe<CaseStudiesDocAccessFields_Links_Url>;
+};
+
+export type CaseStudiesDocAccessFields_Links_Read = {
+  readonly __typename?: 'CaseStudiesDocAccessFields_links_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Links_Update = {
+  readonly __typename?: 'CaseStudiesDocAccessFields_links_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Links_Id = {
+  readonly __typename?: 'CaseStudiesDocAccessFields_links_id';
+  readonly create?: Maybe<CaseStudiesDocAccessFields_Links_Id_Create>;
+  readonly delete?: Maybe<CaseStudiesDocAccessFields_Links_Id_Delete>;
+  readonly read?: Maybe<CaseStudiesDocAccessFields_Links_Id_Read>;
+  readonly update?: Maybe<CaseStudiesDocAccessFields_Links_Id_Update>;
+};
+
+export type CaseStudiesDocAccessFields_Links_Id_Create = {
+  readonly __typename?: 'CaseStudiesDocAccessFields_links_id_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Links_Id_Delete = {
+  readonly __typename?: 'CaseStudiesDocAccessFields_links_id_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Links_Id_Read = {
+  readonly __typename?: 'CaseStudiesDocAccessFields_links_id_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Links_Id_Update = {
+  readonly __typename?: 'CaseStudiesDocAccessFields_links_id_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Links_Label = {
+  readonly __typename?: 'CaseStudiesDocAccessFields_links_label';
+  readonly create?: Maybe<CaseStudiesDocAccessFields_Links_Label_Create>;
+  readonly delete?: Maybe<CaseStudiesDocAccessFields_Links_Label_Delete>;
+  readonly read?: Maybe<CaseStudiesDocAccessFields_Links_Label_Read>;
+  readonly update?: Maybe<CaseStudiesDocAccessFields_Links_Label_Update>;
+};
+
+export type CaseStudiesDocAccessFields_Links_Label_Create = {
+  readonly __typename?: 'CaseStudiesDocAccessFields_links_label_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Links_Label_Delete = {
+  readonly __typename?: 'CaseStudiesDocAccessFields_links_label_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Links_Label_Read = {
+  readonly __typename?: 'CaseStudiesDocAccessFields_links_label_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Links_Label_Update = {
+  readonly __typename?: 'CaseStudiesDocAccessFields_links_label_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Links_Url = {
+  readonly __typename?: 'CaseStudiesDocAccessFields_links_url';
+  readonly create?: Maybe<CaseStudiesDocAccessFields_Links_Url_Create>;
+  readonly delete?: Maybe<CaseStudiesDocAccessFields_Links_Url_Delete>;
+  readonly read?: Maybe<CaseStudiesDocAccessFields_Links_Url_Read>;
+  readonly update?: Maybe<CaseStudiesDocAccessFields_Links_Url_Update>;
+};
+
+export type CaseStudiesDocAccessFields_Links_Url_Create = {
+  readonly __typename?: 'CaseStudiesDocAccessFields_links_url_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Links_Url_Delete = {
+  readonly __typename?: 'CaseStudiesDocAccessFields_links_url_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Links_Url_Read = {
+  readonly __typename?: 'CaseStudiesDocAccessFields_links_url_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesDocAccessFields_Links_Url_Update = {
+  readonly __typename?: 'CaseStudiesDocAccessFields_links_url_Update';
   readonly permission: Scalars['Boolean']['output'];
 };
 
@@ -531,6 +652,7 @@ export type CaseStudiesFields = {
   readonly experience?: Maybe<CaseStudiesFields_Experience>;
   readonly featured?: Maybe<CaseStudiesFields_Featured>;
   readonly illustration?: Maybe<CaseStudiesFields_Illustration>;
+  readonly links?: Maybe<CaseStudiesFields_Links>;
   readonly meta?: Maybe<CaseStudiesFields_Meta>;
   readonly publishedAt?: Maybe<CaseStudiesFields_PublishedAt>;
   readonly slug?: Maybe<CaseStudiesFields_Slug>;
@@ -677,6 +799,126 @@ export type CaseStudiesFields_Illustration_Read = {
 
 export type CaseStudiesFields_Illustration_Update = {
   readonly __typename?: 'CaseStudiesFields_illustration_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Links = {
+  readonly __typename?: 'CaseStudiesFields_links';
+  readonly create?: Maybe<CaseStudiesFields_Links_Create>;
+  readonly delete?: Maybe<CaseStudiesFields_Links_Delete>;
+  readonly fields?: Maybe<CaseStudiesFields_Links_Fields>;
+  readonly read?: Maybe<CaseStudiesFields_Links_Read>;
+  readonly update?: Maybe<CaseStudiesFields_Links_Update>;
+};
+
+export type CaseStudiesFields_Links_Create = {
+  readonly __typename?: 'CaseStudiesFields_links_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Links_Delete = {
+  readonly __typename?: 'CaseStudiesFields_links_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Links_Fields = {
+  readonly __typename?: 'CaseStudiesFields_links_Fields';
+  readonly id?: Maybe<CaseStudiesFields_Links_Id>;
+  readonly label?: Maybe<CaseStudiesFields_Links_Label>;
+  readonly url?: Maybe<CaseStudiesFields_Links_Url>;
+};
+
+export type CaseStudiesFields_Links_Read = {
+  readonly __typename?: 'CaseStudiesFields_links_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Links_Update = {
+  readonly __typename?: 'CaseStudiesFields_links_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Links_Id = {
+  readonly __typename?: 'CaseStudiesFields_links_id';
+  readonly create?: Maybe<CaseStudiesFields_Links_Id_Create>;
+  readonly delete?: Maybe<CaseStudiesFields_Links_Id_Delete>;
+  readonly read?: Maybe<CaseStudiesFields_Links_Id_Read>;
+  readonly update?: Maybe<CaseStudiesFields_Links_Id_Update>;
+};
+
+export type CaseStudiesFields_Links_Id_Create = {
+  readonly __typename?: 'CaseStudiesFields_links_id_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Links_Id_Delete = {
+  readonly __typename?: 'CaseStudiesFields_links_id_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Links_Id_Read = {
+  readonly __typename?: 'CaseStudiesFields_links_id_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Links_Id_Update = {
+  readonly __typename?: 'CaseStudiesFields_links_id_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Links_Label = {
+  readonly __typename?: 'CaseStudiesFields_links_label';
+  readonly create?: Maybe<CaseStudiesFields_Links_Label_Create>;
+  readonly delete?: Maybe<CaseStudiesFields_Links_Label_Delete>;
+  readonly read?: Maybe<CaseStudiesFields_Links_Label_Read>;
+  readonly update?: Maybe<CaseStudiesFields_Links_Label_Update>;
+};
+
+export type CaseStudiesFields_Links_Label_Create = {
+  readonly __typename?: 'CaseStudiesFields_links_label_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Links_Label_Delete = {
+  readonly __typename?: 'CaseStudiesFields_links_label_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Links_Label_Read = {
+  readonly __typename?: 'CaseStudiesFields_links_label_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Links_Label_Update = {
+  readonly __typename?: 'CaseStudiesFields_links_label_Update';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Links_Url = {
+  readonly __typename?: 'CaseStudiesFields_links_url';
+  readonly create?: Maybe<CaseStudiesFields_Links_Url_Create>;
+  readonly delete?: Maybe<CaseStudiesFields_Links_Url_Delete>;
+  readonly read?: Maybe<CaseStudiesFields_Links_Url_Read>;
+  readonly update?: Maybe<CaseStudiesFields_Links_Url_Update>;
+};
+
+export type CaseStudiesFields_Links_Url_Create = {
+  readonly __typename?: 'CaseStudiesFields_links_url_Create';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Links_Url_Delete = {
+  readonly __typename?: 'CaseStudiesFields_links_url_Delete';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Links_Url_Read = {
+  readonly __typename?: 'CaseStudiesFields_links_url_Read';
+  readonly permission: Scalars['Boolean']['output'];
+};
+
+export type CaseStudiesFields_Links_Url_Update = {
+  readonly __typename?: 'CaseStudiesFields_links_url_Update';
   readonly permission: Scalars['Boolean']['output'];
 };
 
@@ -1000,6 +1242,7 @@ export type CaseStudy = {
   readonly featured?: Maybe<Scalars['Boolean']['output']>;
   readonly id: Scalars['Int']['output'];
   readonly illustration?: Maybe<Media>;
+  readonly links?: Maybe<ReadonlyArray<CaseStudy_Links>>;
   readonly meta?: Maybe<CaseStudy_Meta>;
   readonly publishedAt?: Maybe<Scalars['DateTime']['output']>;
   readonly slug?: Maybe<Scalars['String']['output']>;
@@ -1017,6 +1260,13 @@ export type CaseStudyContentArgs = {
 
 export type CaseStudySummaryArgs = {
   depth?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export type CaseStudy_Links = {
+  readonly __typename?: 'CaseStudy_Links';
+  readonly id?: Maybe<Scalars['String']['output']>;
+  readonly label?: Maybe<Scalars['String']['output']>;
+  readonly url?: Maybe<Scalars['String']['output']>;
 };
 
 export type CaseStudy_Meta = {
@@ -1075,6 +1325,37 @@ export type CaseStudy_Illustration_Operator = {
   readonly in?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['JSON']['input']>>>;
   readonly not_equals?: InputMaybe<Scalars['JSON']['input']>;
   readonly not_in?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['JSON']['input']>>>;
+};
+
+export type CaseStudy_Links__Id_Operator = {
+  readonly all?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['String']['input']>>>;
+  readonly contains?: InputMaybe<Scalars['String']['input']>;
+  readonly equals?: InputMaybe<Scalars['String']['input']>;
+  readonly exists?: InputMaybe<Scalars['Boolean']['input']>;
+  readonly in?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['String']['input']>>>;
+  readonly like?: InputMaybe<Scalars['String']['input']>;
+  readonly not_equals?: InputMaybe<Scalars['String']['input']>;
+  readonly not_in?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type CaseStudy_Links__Label_Operator = {
+  readonly all?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['String']['input']>>>;
+  readonly contains?: InputMaybe<Scalars['String']['input']>;
+  readonly equals?: InputMaybe<Scalars['String']['input']>;
+  readonly in?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['String']['input']>>>;
+  readonly like?: InputMaybe<Scalars['String']['input']>;
+  readonly not_equals?: InputMaybe<Scalars['String']['input']>;
+  readonly not_in?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type CaseStudy_Links__Url_Operator = {
+  readonly all?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['String']['input']>>>;
+  readonly contains?: InputMaybe<Scalars['String']['input']>;
+  readonly equals?: InputMaybe<Scalars['String']['input']>;
+  readonly in?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['String']['input']>>>;
+  readonly like?: InputMaybe<Scalars['String']['input']>;
+  readonly not_equals?: InputMaybe<Scalars['String']['input']>;
+  readonly not_in?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type CaseStudy_Meta__Description_Operator = {
@@ -1172,6 +1453,9 @@ export type CaseStudy_Where = {
   readonly featured?: InputMaybe<CaseStudy_Featured_Operator>;
   readonly id?: InputMaybe<CaseStudy_Id_Operator>;
   readonly illustration?: InputMaybe<CaseStudy_Illustration_Operator>;
+  readonly links__id?: InputMaybe<CaseStudy_Links__Id_Operator>;
+  readonly links__label?: InputMaybe<CaseStudy_Links__Label_Operator>;
+  readonly links__url?: InputMaybe<CaseStudy_Links__Url_Operator>;
   readonly meta__description?: InputMaybe<CaseStudy_Meta__Description_Operator>;
   readonly meta__image?: InputMaybe<CaseStudy_Meta__Image_Operator>;
   readonly meta__title?: InputMaybe<CaseStudy_Meta__Title_Operator>;
@@ -1192,6 +1476,9 @@ export type CaseStudy_Where_And = {
   readonly featured?: InputMaybe<CaseStudy_Featured_Operator>;
   readonly id?: InputMaybe<CaseStudy_Id_Operator>;
   readonly illustration?: InputMaybe<CaseStudy_Illustration_Operator>;
+  readonly links__id?: InputMaybe<CaseStudy_Links__Id_Operator>;
+  readonly links__label?: InputMaybe<CaseStudy_Links__Label_Operator>;
+  readonly links__url?: InputMaybe<CaseStudy_Links__Url_Operator>;
   readonly meta__description?: InputMaybe<CaseStudy_Meta__Description_Operator>;
   readonly meta__image?: InputMaybe<CaseStudy_Meta__Image_Operator>;
   readonly meta__title?: InputMaybe<CaseStudy_Meta__Title_Operator>;
@@ -1212,6 +1499,9 @@ export type CaseStudy_Where_Or = {
   readonly featured?: InputMaybe<CaseStudy_Featured_Operator>;
   readonly id?: InputMaybe<CaseStudy_Id_Operator>;
   readonly illustration?: InputMaybe<CaseStudy_Illustration_Operator>;
+  readonly links__id?: InputMaybe<CaseStudy_Links__Id_Operator>;
+  readonly links__label?: InputMaybe<CaseStudy_Links__Label_Operator>;
+  readonly links__url?: InputMaybe<CaseStudy_Links__Url_Operator>;
   readonly meta__description?: InputMaybe<CaseStudy_Meta__Description_Operator>;
   readonly meta__image?: InputMaybe<CaseStudy_Meta__Image_Operator>;
   readonly meta__title?: InputMaybe<CaseStudy_Meta__Title_Operator>;
@@ -13001,6 +13291,7 @@ export type MutationCaseStudyInput = {
   readonly experience?: InputMaybe<Scalars['Int']['input']>;
   readonly featured?: InputMaybe<Scalars['Boolean']['input']>;
   readonly illustration?: InputMaybe<Scalars['Int']['input']>;
+  readonly links?: InputMaybe<ReadonlyArray<InputMaybe<MutationCaseStudy_LinksInput>>>;
   readonly meta?: InputMaybe<MutationCaseStudy_MetaInput>;
   readonly publishedAt?: InputMaybe<Scalars['String']['input']>;
   readonly slug?: InputMaybe<Scalars['String']['input']>;
@@ -13016,6 +13307,7 @@ export type MutationCaseStudyUpdateInput = {
   readonly experience?: InputMaybe<Scalars['Int']['input']>;
   readonly featured?: InputMaybe<Scalars['Boolean']['input']>;
   readonly illustration?: InputMaybe<Scalars['Int']['input']>;
+  readonly links?: InputMaybe<ReadonlyArray<InputMaybe<MutationCaseStudyUpdate_LinksInput>>>;
   readonly meta?: InputMaybe<MutationCaseStudyUpdate_MetaInput>;
   readonly publishedAt?: InputMaybe<Scalars['String']['input']>;
   readonly slug?: InputMaybe<Scalars['String']['input']>;
@@ -13025,10 +13317,22 @@ export type MutationCaseStudyUpdateInput = {
   readonly updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
 
+export type MutationCaseStudyUpdate_LinksInput = {
+  readonly id?: InputMaybe<Scalars['String']['input']>;
+  readonly label: Scalars['String']['input'];
+  readonly url: Scalars['String']['input'];
+};
+
 export type MutationCaseStudyUpdate_MetaInput = {
   readonly description?: InputMaybe<Scalars['String']['input']>;
   readonly image?: InputMaybe<Scalars['Int']['input']>;
   readonly title?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MutationCaseStudy_LinksInput = {
+  readonly id?: InputMaybe<Scalars['String']['input']>;
+  readonly label: Scalars['String']['input'];
+  readonly url: Scalars['String']['input'];
 };
 
 export type MutationCaseStudy_MetaInput = {
@@ -13574,7 +13878,7 @@ export type GetCaseStudyBySlugQueryVariables = Exact<{
 }>;
 
 
-export type GetCaseStudyBySlugQuery = { readonly __typename?: 'Query', readonly CaseStudies?: { readonly __typename?: 'CaseStudies', readonly docs: ReadonlyArray<{ readonly __typename?: 'CaseStudy', readonly title: string, readonly content: any, readonly updatedAt?: any | null, readonly experience: { readonly __typename?: 'Experience', readonly title: string, readonly role?: string | null, readonly startDate?: any | null, readonly endDate?: any | null, readonly id: number }, readonly tags: ReadonlyArray<{ readonly __typename?: 'Tag', readonly name: string, readonly id: number }>, readonly illustration?: { readonly __typename?: 'Media', readonly id: number, readonly alt: string, readonly caption?: string | null, readonly blurDataURL?: string | null, readonly focalX?: number | null, readonly focalY?: number | null, readonly url?: string | null, readonly width?: number | null, readonly height?: number | null, readonly sizes?: { readonly __typename?: 'Media_Sizes', readonly icon?: { readonly __typename?: 'Media_Sizes_Icon', readonly url?: string | null, readonly width?: number | null, readonly height?: number | null } | null, readonly thumbnail?: { readonly __typename?: 'Media_Sizes_Thumbnail', readonly url?: string | null, readonly width?: number | null, readonly height?: number | null } | null, readonly card?: { readonly __typename?: 'Media_Sizes_Card', readonly url?: string | null, readonly width?: number | null, readonly height?: number | null } | null, readonly feature?: { readonly __typename?: 'Media_Sizes_Feature', readonly url?: string | null, readonly width?: number | null, readonly height?: number | null } | null, readonly hero?: { readonly __typename?: 'Media_Sizes_Hero', readonly url?: string | null, readonly width?: number | null, readonly height?: number | null } | null } | null } | null }> } | null };
+export type GetCaseStudyBySlugQuery = { readonly __typename?: 'Query', readonly CaseStudies?: { readonly __typename?: 'CaseStudies', readonly docs: ReadonlyArray<{ readonly __typename?: 'CaseStudy', readonly title: string, readonly content: any, readonly updatedAt?: any | null, readonly experience: { readonly __typename?: 'Experience', readonly title: string, readonly role?: string | null, readonly startDate?: any | null, readonly endDate?: any | null, readonly id: number }, readonly tags: ReadonlyArray<{ readonly __typename?: 'Tag', readonly name: string, readonly id: number }>, readonly illustration?: { readonly __typename?: 'Media', readonly id: number, readonly alt: string, readonly caption?: string | null, readonly blurDataURL?: string | null, readonly focalX?: number | null, readonly focalY?: number | null, readonly url?: string | null, readonly width?: number | null, readonly height?: number | null, readonly sizes?: { readonly __typename?: 'Media_Sizes', readonly icon?: { readonly __typename?: 'Media_Sizes_Icon', readonly url?: string | null, readonly width?: number | null, readonly height?: number | null } | null, readonly thumbnail?: { readonly __typename?: 'Media_Sizes_Thumbnail', readonly url?: string | null, readonly width?: number | null, readonly height?: number | null } | null, readonly card?: { readonly __typename?: 'Media_Sizes_Card', readonly url?: string | null, readonly width?: number | null, readonly height?: number | null } | null, readonly feature?: { readonly __typename?: 'Media_Sizes_Feature', readonly url?: string | null, readonly width?: number | null, readonly height?: number | null } | null, readonly hero?: { readonly __typename?: 'Media_Sizes_Hero', readonly url?: string | null, readonly width?: number | null, readonly height?: number | null } | null } | null } | null, readonly links?: ReadonlyArray<{ readonly __typename?: 'CaseStudy_Links', readonly label?: string | null, readonly id?: string | null, readonly url?: string | null }> | null }> } | null };
 
 export type GetContactFormsQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -13869,6 +14173,11 @@ export const GetCaseStudyBySlugDocument = gql`
         ...MediaFragment
       }
       updatedAt
+      links {
+        label
+        id
+        url
+      }
     }
   }
 }

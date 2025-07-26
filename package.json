@@ -14,7 +14,6 @@
     "update": "PAYLOAD_CONFIG_PATH=src/payload.config.ts payload generate:types yarn payload generate:types && yarn payload generate:importmap",
     "payload": "PAYLOAD_CONFIG_PATH=src/payload.config.ts payload",
     "precommit": "biome lint --fix && yarn tsc",
-    "prepare": "husky",
     "analyze": "ANALYZE=true yarn build"
   },
   "dependencies": {
@@ -56,6 +55,7 @@
     "zod": "^4.0.5"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
     "@graphql-codegen/cli": "^5.0.5",
     "@graphql-codegen/typescript": "^4.1.6",
     "@graphql-codegen/typescript-operations": "^4.6.0",
