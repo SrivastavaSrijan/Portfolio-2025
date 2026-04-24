@@ -1,5 +1,5 @@
 query GetAllTags {
-  CaseStudies {
+  CaseStudies(limit: 100) {
     docs {
       tags {
         name

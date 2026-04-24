@@ -1,5 +1,5 @@
 query GetAllCaseStudiesSlugs {
-  CaseStudies {
+  CaseStudies(limit: 100) {
     docs {
       slug
       updatedAt
