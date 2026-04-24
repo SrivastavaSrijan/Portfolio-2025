@@ -3919,19 +3919,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/bundle-analyzer@npm:^15.3.5":
-  version: 15.3.5
-  resolution: "@next/bundle-analyzer@npm:15.3.5"
+"@next/bundle-analyzer@npm:15.3.6":
+  version: 15.3.6
+  resolution: "@next/bundle-analyzer@npm:15.3.6"
   dependencies:
     webpack-bundle-analyzer: "npm:4.10.1"
-  checksum: 10c0/6b69446543bf806ad2a2a373394e6b042fdbe847acf7cdcb408c4cae94cab416ee7c6516fb2868670331c60509f6fa2bbe9f0dfd67eff89f5a7f8e256dc6cebd
+  checksum: 10c0/37b6b371729f25551868ba792f082f4e8fda28e0714248af1bfa66963cf0e8f35cede9e178381109163d93720fa2170fb0d277dd51e1be41f6b5b5ca7f5cd150
   languageName: node
   linkType: hard
 
-"@next/env@npm:15.3.5":
-  version: 15.3.5
-  resolution: "@next/env@npm:15.3.5"
-  checksum: 10c0/7ffad993e85710bbfbf52826bb6a8726d807e714715b5f28fa1b770ea38e3757c1bef9dbe1a1c31ea8eae39a097aa8fc2987ea8d47a3d9f6f30a88e72919fd7b
+"@next/env@npm:15.3.6":
+  version: 15.3.6
+  resolution: "@next/env@npm:15.3.6"
+  checksum: 10c0/e448ec3893f1c0e8a35ea30c4834c2107f976112289d15b845675f36faa27d604f398b41c670343a948667e25c5a134b3bb73abd3f3c53f7ccf9c22981e10f27
   languageName: node
   linkType: hard
 
@@ -10227,11 +10227,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next@npm:^15.3.5":
-  version: 15.3.5
-  resolution: "next@npm:15.3.5"
+"next@npm:15.3.6":
+  version: 15.3.6
+  resolution: "next@npm:15.3.6"
   dependencies:
-    "@next/env": "npm:15.3.5"
+    "@next/env": "npm:15.3.6"
     "@next/swc-darwin-arm64": "npm:15.3.5"
     "@next/swc-darwin-x64": "npm:15.3.5"
     "@next/swc-linux-arm64-gnu": "npm:15.3.5"
@@ -10284,7 +10284,7 @@ __metadata:
       optional: true
   bin:
     next: dist/bin/next
-  checksum: 10c0/7a397be891adb86c57fbe48403e7b4f9f26220882d01938d6e2443e984509bf5f198654249de842e4e95598930bb22f10715b432c48f92e8641d3ae241b0e6d4
+  checksum: 10c0/98473d6c17fa7786cfa7178a301128161c40738514d29f22161083d1d178291f681fe72aed925e09bae0e1e865bb4f96ecc437e99d1a73d15b26e31b982103da
   languageName: node
   linkType: hard
 
@@ -11038,7 +11038,7 @@ __metadata:
     "@graphql-codegen/typescript-operations": "npm:^4.6.0"
     "@graphql-codegen/typescript-react-apollo": "npm:^4.3.2"
     "@graphql-yoga/render-graphiql": "npm:^5.13.3"
-    "@next/bundle-analyzer": "npm:^15.3.5"
+    "@next/bundle-analyzer": "npm:15.3.6"
     "@parcel/watcher": "npm:^2.5.1"
     "@payloadcms/db-vercel-postgres": "npm:^3.33.0"
     "@payloadcms/next": "npm:^3.33.0"
@@ -11072,7 +11072,7 @@ __metadata:
     lodash: "npm:^4.17.21"
     lucide-react: "npm:^0.487.0"
     motion: "npm:^12.6.3"
-    next: "npm:^15.3.5"
+    next: "npm:15.3.6"
     next-themes: "npm:^0.4.6"
     payload: "npm:^3.33.0"
     plaiceholder: "npm:^3.0.0"
