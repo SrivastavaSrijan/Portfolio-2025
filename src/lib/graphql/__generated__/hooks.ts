@@ -14041,7 +14041,7 @@ export type CreateContactFormMutationResult = Apollo.MutationResult<CreateContac
 export type CreateContactFormMutationOptions = Apollo.BaseMutationOptions<CreateContactFormMutation, CreateContactFormMutationVariables>;
 export const GetAllTagsDocument = gql`
     query GetAllTags {
-  CaseStudies {
+  CaseStudies(limit: 100) {
     docs {
       tags {
         name
@@ -14087,7 +14087,10 @@ export type GetAllTagsSuspenseQueryHookResult = ReturnType<typeof useGetAllTagsS
 export type GetAllTagsQueryResult = Apollo.QueryResult<GetAllTagsQuery, GetAllTagsQueryVariables>;
 export const GetCaseStudiesByParamsDocument = gql`
     query GetCaseStudiesByParams($tagIds: [JSON], $experience: [JSON]) {
-  CaseStudies(where: {tags: {in: $tagIds}, experience: {in: $experience}}) {
+  CaseStudies(
+    where: {tags: {in: $tagIds}, experience: {in: $experience}}
+    limit: 100
+  ) {
     offset
     totalDocs
     docs {
@@ -14600,7 +14603,7 @@ export type GetWorkButtonsSuspenseQueryHookResult = ReturnType<typeof useGetWork
 export type GetWorkButtonsQueryResult = Apollo.QueryResult<GetWorkButtonsQuery, GetWorkButtonsQueryVariables>;
 export const GetAllCaseStudiesSlugsDocument = gql`
     query GetAllCaseStudiesSlugs {
-  CaseStudies {
+  CaseStudies(limit: 100) {
     docs {
       slug
       updatedAt
