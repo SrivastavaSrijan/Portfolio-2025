@@ -34,17 +34,26 @@ const para = (children) => ({ type: 'paragraph', format: '', indent: 0, version:
 const heading = (tag, s) => ({ tag, type: 'heading', format: '', indent: 0, version: 1, children: inline(s), direction: 'ltr' });
 const hr = () => ({ type: 'horizontalrule', version: 1 });
 const listitem = (s, value) => ({ type: 'listitem', value, format: '', indent: 0, version: 1, children: inline(s), direction: 'ltr' });
+// ``` fenced code renders as a quote node holding one text child with \n newlines —
+// the shape used by the published posts (verified against case_studies id 21).
+const codequote = (lines) => ({ type: 'quote', format: '', indent: 0, version: 1, children: [text(lines.join('\n'))], direction: 'ltr' });
 const list = (tag, items) => ({ tag, type: 'list', start: 1, format: '', indent: 0, version: 1, children: items.map((s, i) => listitem(s, i + 1)), direction: 'ltr', listType: tag === 'ol' ? 'number' : 'bullet' });
 
 function parse(md) {
   const lines = md.split('\n');
   const children = [];
-  let buf = [], listBuf = null; // {tag, items}
+  let buf = [], listBuf = null, codeBuf = null; // codeBuf: array of raw lines inside a fence
   const flushPara = () => { if (buf.length) { children.push(para(inline(buf.join(' ')))); buf = []; } };
   const flushList = () => { if (listBuf) { children.push(list(listBuf.tag, listBuf.items)); listBuf = null; } };
   for (const raw of lines) {
     const line = raw.trimEnd();
     const t = line.trim();
+    if (codeBuf !== null) {
+      if (t.startsWith('```')) { children.push(codequote(codeBuf)); codeBuf = null; }
+      else codeBuf.push(line);
+      continue;
+    }
+    if (t.startsWith('```')) { flushPara(); flushList(); codeBuf = []; continue; }
     if (!t) { flushPara(); flushList(); continue; }
     let m;
     if ((m = t.match(/^(#{1,3})\s+(.*)/))) { flushPara(); flushList(); children.push(heading(`h${m[1].length}`, m[2])); }
